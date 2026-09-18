@@ -110,6 +110,65 @@ function levelsDe(base, spec) {
   return out;
 }
 
+// ── A tabela da especialização, para o motor do Space Dragon ──────────────
+//
+// O motor rola Sabotagem, Pilotar, Operar Máquinas, o orçamento mental e o
+// crítico pela tabela do LIVRO, e a especialização só existia no texto: o
+// Sabotador rolava a Sabotagem do Operativo, sem os +16% do 5º nível, e o
+// jogador tinha de somar à mão. O item de classe agora leva a tabela do cofre,
+// nível a nível, em `flags.spacedragon.progressao` (ver chassi.js do módulo
+// Space Dragon, que cai na tabela do livro onde a especialização não fala).
+
+/** Coluna da tabela do cofre → coluna do livro que o motor lê. */
+const COLUNA_DO_LIVRO = {
+  "Sabotagem": "sabotagem", "Escalar": "escalar", "Furtividade": "furtividade",
+  "Furtar": "furtar", "Percepção": "percepcao",
+  "Pilotar": "pilotarNaves", "Desarmar": "desarmarSubjugar", "Crítico": "danoCritico",
+  "Operar Máq.": "operarMaquinas",
+  "Alcance": "alcanceMental", "Grandeza": "grandezaMental",
+};
+
+/**
+ * O que a especialização muda no AJUSTE de atributo, e não na tabela. O
+ * Espião: "O Crédito Tecnológico (por Ciência) conta dobrado" na Sabotagem.
+ */
+const AJUSTE_DA_ESPECIALIZACAO = { "Espião": { sabotagem: 2 } };
+
+const limpaCelula = (c) => String(c ?? "").replace(/\*\*/g, "").replace(/⊘/g, "").trim();
+
+export function progressaoDaTabela(fonte, t) {
+  const iNv = coluna(t, "Nv");
+  const iRodadas = coluna(t, "Rodadas");
+  const iPV = coluna(t, "PV por nível");
+  const colunas = {};
+  t.cabecalho.forEach((h, i) => {
+    const col = COLUNA_DO_LIVRO[h];
+    if (!col) return;
+    colunas[col] = {};
+    for (const l of t.linhas) {
+      let v = limpaCelula(l[i]);
+      // Como na tabela do livro: "51% / 1d8", as rodadas depois da barra.
+      if (col === "sabotagem" && iRodadas >= 0) v = `${v} / ${limpaCelula(l[iRodadas])}`;
+      colunas[col][limpaCelula(l[iNv])] = v;
+    }
+  });
+  // O Artífice volta a ganhar PV do 17º em diante, numa coluna própria.
+  if (iPV >= 0) {
+    for (const l of t.linhas) {
+      const v = limpaCelula(l[iPV]);
+      if (/^\+\d+$/.test(v)) (colunas.dv ??= {})[limpaCelula(l[iNv])] = `${v} PV`;
+    }
+  }
+  const ajuste = AJUSTE_DA_ESPECIALIZACAO[fonte];
+  return { fonte, colunas, ...(ajuste ? { ajuste } : {}) };
+}
+
+/** A flag do chassi com a tabela da especialização junto. */
+const comProgressao = (flags, progressao) => ({
+  ...flags,
+  spacedragon: { ...(flags?.spacedragon ?? {}), progressao },
+});
+
 /** Texto do cofre com parágrafos separados por linha em branco → <p>s. */
 const paragrafos = (s) => (s ? s.split(/\n\n+/).map((x) => `<p>${md(x)}</p>`).join("") : "");
 
@@ -214,6 +273,7 @@ function buildClassesDocs() {
           : ""),
         equipment_restrictions: { ...cls.equipment_restrictions, ...(v.restricoes ?? {}) },
         levels: levelsDe(tabela, tSpec),
+        flags: comProgressao(cls.flags, progressaoDaTabela(v.nome, tSpec)),
       };
       // O Mudar de Guarda é patrimônio do Guardião, e chega no 10º com a
       // segunda Forma: vai na ficha dele, e não só no compêndio.
@@ -293,6 +353,7 @@ function buildSendaDocs(uuidsDaBase, formas, uuidAvulsa) {
           tabelaHTML(`Progressão do Mandaloriano ${cls.nome} — do 5º ao 20º nível`, tabela) +
           s.intro,
         levels: levelsDe(BASE[cls.nome], tabela),
+        flags: comProgressao(cls.flags, progressaoDaTabela("Mandaloriano", tabela)),
     };
     const uuids = [...uuidsDaBase.get(cls.nome), ...uuidsNucleo, itemUuid(CLASSES_PACK, troca._id)];
     docs.push({

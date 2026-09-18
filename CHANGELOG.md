@@ -1,5 +1,25 @@
 # Changelog
 
+## 1.3.0 — a especialização entra na conta
+
+- A tabela de cada especialização e de cada Senda Mandaloriana vai no item
+  de classe, e o módulo Space Dragon (1.12.0 ou mais novo) passa a rolar por
+  ela. Antes a ficha usava sempre a tabela da classe base:
+  - **Sabotador** rolava a Sabotagem do Operativo (35% no 5º), sem o bônus de
+    100% menos Escalar; agora são os 51% da tabela. Furtar congela onde a
+    tabela manda.
+  - **Espião, Assassino, Contrabandista**: Sabotagem, Escalar, Furtividade,
+    Furtar e Percepção pela tabela deles. O Espião conta o Crédito
+    Tecnológico **dobrado** na Sabotagem (o bônus, não a penalidade).
+  - **Mercenário, Caçador de Recompensas, Emissário**: Pilotar, Desarmar e o
+    multiplicador de crítico pela tabela deles (Mercenário ×3 já no 5º).
+  - **Médico de Campo** congela Operar Máquinas.
+  - **Consular, Guardião, Artífice** e o Mandaloriano Sensível: Alcance da
+    Força e Grandeza-limite pela tabela deles (Consular 17% e 4ª no 5º). O
+    Artífice volta a ganhar +2 PV por nível do 17º em diante.
+- O cartão de chat diz de onde veio o número ("nível 5, Sabotador").
+- Créditos iniciais atualizados do cofre.
+
 ## 1.2.1 — Em ascensão para todo o molde Humano
 
 - Wookiee, Twi'lek, Rodiano, Zabrak, Mon Calamari, Trandoshano e Chiss
