@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.1 — Em ascensão para todo o molde Humano
+
+- Wookiee, Twi'lek, Rodiano, Zabrak, Mon Calamari, Trandoshano e Chiss
+  ganham **Em ascensão** (+1 em um atributo à escolha no 4º, 8º, 12º, 16º e
+  20º), como o cofre agora diz: as espécies do cenário trocam só o +2/−2
+  livre pelos fixos. O Droide já o mantinha, na Chassi Reforçado.
+- A página "Os Povos da Galáxia" traz a explicação.
+
 ## 1.2.0 — os 17 Poderes do Cenário
 
 - **17 Poderes da Força novos**, marcados ✦ no cofre como criação do cenário:

@@ -13,7 +13,7 @@ export const TEXTOS = {
     "Convenções deste livro": "<ul><li><strong><code>5º</code>, <code>10º</code>, <code>20º</code></strong> marcam o <strong>nível</strong> em que uma habilidade aparece ou evolui. São os marcos do <em>Space Dragon</em> — é neles que as especializações do livro básico abrem os degraus. Um punhado de poderes do cenário usa um degrau intermediário (<code>15º</code>), como o próprio livro faz com o Psiquista no 17º.</li><li><strong><em>SD</em>, Tabela X-Y</strong> é uma remissão ao Módulo Básico do <em>Space Dragon</em>.</li><li><strong>Nome nativo entre parênteses</strong> — sempre que este livro renomeia algo do <em>SD</em> (uma classe, um poder, uma criatura, um aparato), o nome original vem entre parênteses, para você achar a regra no livro básico sem esforço. Ex.: <em>Sensível à Força (Mentálico)</em>, <em>Empurrão da Força (Telecinesia)</em>.</li><li><strong>Afiliação</strong> — é como o <em>SD</em> chama o alinhamento: <strong>Leal / Neutro / Rebelde</strong>. Não é invenção deste cenário; vem do livro básico. O <em>Old Dragon 2</em> chama o mesmo eixo de Ordeiro / Neutro / Caótico — se sua mesa preferir esses nomes, são intercambiáveis.</li></ul>"
   },
   "SW-SUP-Especies": {
-    "(abertura)": "<blockquote><p>O Space Dragon nativo trabalha com <strong>três moldes</strong>: <strong>Humano</strong> (<em>Homo sapiens</em>), <strong>Androide</strong> (<em>Homo machina</em>) e <strong>Mutante</strong> (<em>Homo novus</em>). Aqui os povos de Star Wars são construídos sobre eles. Todas as habilidades de espécie valem desde o <strong>1º nível</strong>. <strong>Movimento base: 10 m</strong> (do SD), modificado por gravidade, terreno e carga.</p><p><strong>Salvaguardas:</strong> onde se lê <strong>JPR</strong> (reflexos, mod. de Destreza), <strong>JPF</strong> (física, mod. de Constituição) e <strong>JPM</strong> (mental, mod. de Intelecto) — são as três Jogadas de Proteção nativas do SD.</p><p><strong>Sensível à Força?</strong> Todo povo vivo pode gerar Sensíveis (ver O Sensível à Força); <strong>Droides não</strong> — cérebro positrônico não sonha.</p></blockquote><blockquote><p><strong>Nota — as espécies não-humanas são criações do cenário.</strong> Wookiee, Twi'lek, Rodiano, Zabrak, Mon Calamari, Trandoshano e Chiss <strong>não</strong> rolam na Tabela 2-1 do molde <strong>Mutante</strong> e <strong>não pagam Degeneração</strong>: foram escritas à mão para Star Wars. O molde Mutante segue disponível como <strong>coringa</strong> para criar \"quase-humanos\" exóticos na hora (ver <em>Nota de conversão</em>, no fim). Isto é uma escolha de design do cenário.</p></blockquote>",
+    "(abertura)": "<blockquote><p>O Space Dragon nativo trabalha com <strong>três moldes</strong>: <strong>Humano</strong> (<em>Homo sapiens</em>), <strong>Androide</strong> (<em>Homo machina</em>) e <strong>Mutante</strong> (<em>Homo novus</em>). Aqui os povos de Star Wars são construídos sobre eles. Todas as habilidades de espécie valem desde o <strong>1º nível</strong>. <strong>Movimento base: 10 m</strong> (do SD), modificado por gravidade, terreno e carga.</p><p><strong>Salvaguardas:</strong> onde se lê <strong>JPR</strong> (reflexos, mod. de Destreza), <strong>JPF</strong> (física, mod. de Constituição) e <strong>JPM</strong> (mental, mod. de Intelecto) — são as três Jogadas de Proteção nativas do SD.</p><p><strong>Sensível à Força?</strong> Todo povo vivo pode gerar Sensíveis (ver O Sensível à Força); <strong>Droides não</strong> — cérebro positrônico não sonha.</p></blockquote><blockquote><p><strong>Nota — as espécies não-humanas são criações do cenário.</strong> Wookiee, Twi'lek, Rodiano, Zabrak, Mon Calamari, Trandoshano e Chiss <strong>não</strong> rolam na Tabela 2-1 do molde <strong>Mutante</strong> e <strong>não pagam Degeneração</strong>: foram escritas à mão para Star Wars. O molde Mutante segue disponível como <strong>coringa</strong> para criar \"quase-humanos\" exóticos na hora (ver <em>Nota de conversão</em>, no fim). Isto é uma escolha de design do cenário.</p></blockquote><blockquote><p><strong>Toda espécie sobre o molde Humano sobe atributo.</strong> As sete espécies do cenário trocam o <strong>+2/−2 livre</strong> por modificadores <strong>fixos</strong> — e é só isso que elas trocam. O livro é explícito com o Androide, que faz a mesma troca: <em>\"demais características idênticas às do Homo sapiens\"</em>. Então todas recebem <strong>+1 em um atributo à escolha a cada 4 níveis</strong> (4º, 8º, 12º, 16º e 20º). <strong>A única exceção é o Mutante</strong>, o único de quem o livro retira o incremento — em troca do Aprimoramento sorteado.</p></blockquote>",
     "Idiomas da galáxia": "<p>Todo personagem começa falando o <strong>idioma do seu povo</strong> e o <strong>Básico Galáctico</strong> (o \"idioma espacial\" do SD). Idiomas <strong>adicionais falados</strong> vêm do <strong>atributo Comunicação</strong> (<em>SD</em>, Tabela 1-6).</p><p><strong>Ler e escrever</strong> é outra coisa: <strong>Comunicação ÷ 6</strong>, arredondando para baixo — o número de idiomas em que é alfabetizado (escolha quais). <strong>Comunicação 6 ou menos = analfabeto</strong>, nem no idioma natal.</p><blockquote><p><strong>Nota de fidelidade.</strong> Tanto os idiomas falados quanto a alfabetização correm pela <strong>Comunicação</strong> (<em>SD</em>, Tabela 1-6) — não pela Ciência. É a regra do livro básico, sem desvio.</p></blockquote><table><thead><tr><th>Idioma</th><th>Quem fala</th><th>Observação</th></tr></thead><tbody><tr><td><strong>Básico Galáctico</strong></td><td>Praticamente todo mundo</td><td>Todos começam com ele</td></tr><tr><td><strong>Shyriiwook</strong></td><td>Wookiees</td><td>Humanos <strong>entendem</strong>, mas não conseguem <strong>falar</strong> (aparelho vocal)</td></tr><tr><td><strong>Ryl</strong></td><td>Twi'leks</td><td>Tem um dialeto silencioso de <strong>lekku</strong>, que só Twi'leks leem</td></tr><tr><td><strong>Rodês</strong></td><td>Rodianos</td><td>—</td></tr><tr><td><strong>Zabraki</strong></td><td>Zabraks</td><td>—</td></tr><tr><td><strong>Mon Calamariano</strong></td><td>Mon Calamari e Quarren</td><td>Difícil de pronunciar fora d'água</td></tr><tr><td><strong>Dosh</strong></td><td>Trandoshanos</td><td>—</td></tr><tr><td><strong>Cheunh</strong></td><td>Chiss</td><td>Raro fora das Regiões Desconhecidas; o Chiss já começa com um idioma extra</td></tr><tr><td><strong>Huttês</strong></td><td>Cartéis, submundo, Tatooine</td><td>O \"idioma do crime\" — vale mais que o Básico em muita doca</td></tr><tr><td><strong>Binário</strong></td><td>Droides</td><td>Não se <em>fala</em>: entende-se. Droides são fluentes por construção</td></tr><tr><td><strong>Ur-Kittât / Sith antigo</strong></td><td>Sith, arqueólogos, holocrons</td><td>Idioma <strong>morto</strong>; ler exige alfabetização e costuma ser gancho de aventura</td></tr></tbody></table>",
     "Nota de conversão": "<ul><li><strong>Molde Mutante (opcional):</strong> para \"quase-humanos\" exóticos não listados (Nautolanos, Cerianos, etc.), use o molde <strong>Mutante</strong> (<em>Homo novus</em>) do SD. É o coringa para criar povos na hora; as espécies acima <strong>não</strong> usam esse molde. Role <strong>2d10</strong> na <strong>Tabela 2-1</strong> (<em>SD</em>, Cap. 2), <strong>um dado por coluna</strong> — o primeiro dá o Aprimoramento, o segundo a Degeneração — e <strong>role os dois de novo</strong> se saírem iguais. Todo o resto é igual ao Humano, <strong>menos duas coisas</strong>: o Mutante <strong>não</strong> recebe o +2/−2 livre <strong>nem</strong> o +1 a cada 4 níveis. O aprimoramento e a degeneração são o que ele tem no lugar disso.</li><li><strong>Alinhamentos:</strong> o SD trabalha com <strong>Afiliação</strong> — <em>Leal / Neutro / Rebelde</em>. É o mesmo eixo que o <em>Old Dragon 2</em> chama de Ordeiro / Neutro / Caótico; se sua mesa tem o hábito de usar os nomes do OD2, são intercambiáveis. É a <strong>Afiliação</strong> que trava as especializações de classe.</li><li><strong>Modificadores fixos das espécies SW</strong> são design do cenário (o molde Humano nativo daria +2/−2 <em>livres</em>; aqui as espécies não-humanas trazem os seus <strong>fixos</strong>, temáticos). Ajuste à vontade se sua mesa preferir os livres.</li></ul>"
   },
@@ -161,6 +161,10 @@ export const ESPECIES = [
       {
         "nome": "Restrição",
         "desc": "<p>armas de <strong>uma mão</strong> causam <strong>−1 no dano</strong> nas suas mãos (grandes demais).</p>"
+      },
+      {
+        "nome": "Em ascensão",
+        "desc": "<p><strong>+1 em um atributo</strong> (à escolha) <strong>a cada 4 níveis</strong> — 4º, 8º, 12º, 16º e 20º.</p>"
       }
     ]
   },
@@ -185,6 +189,10 @@ export const ESPECIES = [
       {
         "nome": "Resistência Térmica",
         "desc": "<p>imune a penalidades por calor extremo.</p>"
+      },
+      {
+        "nome": "Em ascensão",
+        "desc": "<p><strong>+1 em um atributo</strong> (à escolha) <strong>a cada 4 níveis</strong> — 4º, 8º, 12º, 16º e 20º.</p>"
       }
     ]
   },
@@ -209,6 +217,10 @@ export const ESPECIES = [
       {
         "nome": "Sangue Frio",
         "desc": "<p>ataques contra um alvo que já o feriu antes são <strong>Fáceis</strong>.</p>"
+      },
+      {
+        "nome": "Em ascensão",
+        "desc": "<p><strong>+1 em um atributo</strong> (à escolha) <strong>a cada 4 níveis</strong> — 4º, 8º, 12º, 16º e 20º.</p>"
       }
     ]
   },
@@ -269,6 +281,10 @@ export const ESPECIES = [
       {
         "nome": "Vontade Férrea",
         "desc": "<p><strong>+1 em JPM</strong> contra medo, encantamento e controle mental.</p>"
+      },
+      {
+        "nome": "Em ascensão",
+        "desc": "<p><strong>+1 em um atributo</strong> (à escolha) <strong>a cada 4 níveis</strong> — 4º, 8º, 12º, 16º e 20º.</p>"
       }
     ]
   },
@@ -297,6 +313,10 @@ export const ESPECIES = [
       {
         "nome": "Liderança Serena",
         "desc": "<p>1x/dia, concede a um aliado que o escute um novo teste numa JP contra medo ou pânico.</p>"
+      },
+      {
+        "nome": "Em ascensão",
+        "desc": "<p><strong>+1 em um atributo</strong> (à escolha) <strong>a cada 4 níveis</strong> — 4º, 8º, 12º, 16º e 20º.</p>"
       }
     ]
   },
@@ -325,6 +345,10 @@ export const ESPECIES = [
       {
         "nome": "Restrição — Sangue-frio",
         "desc": "<p>em frio intenso, testes de Destreza e movimento ficam <strong>Difíceis</strong> até se aquecer.</p>"
+      },
+      {
+        "nome": "Em ascensão",
+        "desc": "<p><strong>+1 em um atributo</strong> (à escolha) <strong>a cada 4 níveis</strong> — 4º, 8º, 12º, 16º e 20º.</p>"
       }
     ]
   },
@@ -353,6 +377,10 @@ export const ESPECIES = [
       {
         "nome": "Disciplina de Csilla",
         "desc": "<p>imune a penalidades por frio extremo.</p>"
+      },
+      {
+        "nome": "Em ascensão",
+        "desc": "<p><strong>+1 em um atributo</strong> (à escolha) <strong>a cada 4 níveis</strong> — 4º, 8º, 12º, 16º e 20º.</p>"
       }
     ]
   }
