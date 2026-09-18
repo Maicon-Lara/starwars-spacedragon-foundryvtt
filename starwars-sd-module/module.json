@@ -48,7 +48,7 @@
         "type": "module",
         "manifest": "https://github.com/Maicon-Lara/space-dragon-foundryvtt/releases/latest/download/module.json",
         "compatibility": {
-          "minimum": "1.6.0"
+          "minimum": "1.7.0"
         }
       }
     ]

@@ -21,6 +21,8 @@ As 14 notas do cofre estão no módulo.
 - **Journals novos:** Equipamentos & Créditos, Aparatos e Feitos, Naves &
   Veículos, Bestiário e Seção do Mestre; Resumo das Classes e Nota de
   Estrutura.
+- Requer o Space Dragon 1.7.0: é nele que o Tiranossauro e o Tentaculoide
+  entraram, e o CP soma o bônus por nível da T4-1.
 - Compêndio vazio não é declarado: Bestiário e Macros saíram do module.json,
   e o build confere as duas pontas.
 
