@@ -1,0 +1,39 @@
+{
+  "folder": "BHwWOWdGLAJNnFHl",
+  "name": "Despertar a Mente",
+  "type": "spell",
+  "_id": "veMrR9IyaCDY7QYG",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "despertar-a-mente",
+    "school": "arcane",
+    "circle": "7",
+    "arcane": "7",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Visual",
+    "duration": "Permanente",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.UHgfxViFA62vOSEM]{Criar Inteligência}</p><hr><p>O mentálico pode transformar uma criatura irracional em um ser sapiente com este poder mental. O atributo Intelecto da criatura é imediatamente elevado a 10, e ela passa a ser capaz de raciocinar de maneira similar a um humano, embora não desenvolva quaisquer capacidades comunicativas ou científicas. É possível utilizar qualquer poder mental originalmente efetivo em humanos em uma criatura que tenha inteligência criada com este poder mental. Se utilizado em seres microbianos a inteligência se refletirá em toda a colônia de micro-organismos.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 500000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!veMrR9IyaCDY7QYG"
+}

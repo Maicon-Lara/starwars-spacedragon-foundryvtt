@@ -1,0 +1,39 @@
+{
+  "folder": "ArY9vWkOvwgFHL1z",
+  "name": "Telecinésia",
+  "type": "spell",
+  "_id": "dS4tooXVQGijP3nG",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "telecinesia",
+    "school": "arcane",
+    "circle": "4",
+    "arcane": "4",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "10 metros + 1 metro/nível",
+    "duration": "10 segundos/nível",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.rLUCFquFdAe7vq7J]{Telecinesia}</p><p><em>A <strong>Telecinésia</strong> é o poder mais icônico da franquia e o mais mal-entendido na mesa: pelos números do livro, erguer um caça do pântano exige tempo, concentração e um Sensível de alto nível. Deixe que exija — a cena vale mais assim.</em></p><hr><p>Este poder mental é capaz de fazer levitar, e mover um ser ou objeto de peso até 10 vezes o nível do mentálico. Objetos soltos são levitados automaticamente, mas o mestre pode pedir um teste de Intelecto para arrancar e erguer objetos que sejam parte de uma estrutura. Um alvo animado como um robô, humano ou alienígena deve fazer uma JPM para evitar ser erguido. O mentálico tem controle total sobre a levitação, podendo manipular o ser ou objeto de forma minuciosa ou mesmo usá-lo como projétil dentro do alcance do poder mental. Objetos arremessados causam dano de acordo com as regras de queda e contusões (consultar capítulo 7), levando em conta a gravidade do ambiente. Seres arremessados sofrem o mesmo dano, e caso acertem um alvo, este sofre a mesma quantidade se não passar em uma JPR – alvos estáticos são automaticamente acertados. Utilizar este poder mental como arma o encerra imediatamente após a resolução de JP e dano – o mentálico perde imediatamente o controle de quaisquer objetos ou personagens sob telecinesia.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!dS4tooXVQGijP3nG"
+}

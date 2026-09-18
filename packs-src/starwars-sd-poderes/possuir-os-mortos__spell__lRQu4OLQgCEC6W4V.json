@@ -1,0 +1,39 @@
+{
+  "folder": "GEd9Hhj0XErA8Clz",
+  "name": "Possuir os Mortos",
+  "type": "spell",
+  "_id": "lRQu4OLQgCEC6W4V",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "possuir-os-mortos",
+    "school": "arcane",
+    "circle": "8",
+    "arcane": "8",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Indefinido",
+    "duration": "1 minuto/nível",
+    "jp": "nenhuma",
+    "description": "<p><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.XpQKUR53n2tpQDA6]{Assumir Mente Desencarnada}</p><hr><p>Após contatar uma mente desencarnada, com o poder mental específico, o mentálico pode assumir completamente a personalidade e memórias dessa mente pela duração dos efeitos. A personalidade e memórias originais do mentálico são anuladas até que a mente retorne para o Espírito Galáctico. O mentálico terá quaisquer habilidades que a pessoa tinha em vida, mas seus atributos físicos (Força, Destreza e Constituição) permanecem os mesmos. Entretanto seus atributos mentais e sociais (Intelecto, Ciência e Comunicação) assumem automaticamente os valores da mente que foi assumida.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!lRQu4OLQgCEC6W4V"
+}

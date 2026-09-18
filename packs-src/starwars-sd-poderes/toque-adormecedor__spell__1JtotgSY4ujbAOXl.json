@@ -1,0 +1,39 @@
+{
+  "folder": "hHLdYEPr47qAcq7N",
+  "name": "Toque Adormecedor",
+  "type": "spell",
+  "_id": "1JtotgSY4ujbAOXl",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "toque-adormecedor",
+    "school": "arcane",
+    "circle": "1",
+    "arcane": "1",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Visual",
+    "duration": "1d4 minutos",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.wot8GgmaFWLn6mHX]{Provocar Sono}</p><hr><p>Este poder mental faz alvos caírem no sono, sem direito a uma JP. Ele afeta 1d4+1 DV ou níveis de criaturas para cada 5 níveis do mentálico. As criaturas afetadas são sempre as mais próximas do personagem.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 700000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!1JtotgSY4ujbAOXl"
+}

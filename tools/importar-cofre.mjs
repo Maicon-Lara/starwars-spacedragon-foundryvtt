@@ -252,6 +252,63 @@ function especiesDoCofre(texto) {
   return saida;
 }
 
+// ── Poderes da Força ────────────────────────────────────────────────────────
+//
+// O cofre dá, por Grandeza, uma tabela "Poder da Força | Poder Mental (SD) |
+// Corrente": o nome de Star Wars, o nome NATIVO e a etiqueta [U]/[L]/[S], com
+// ★ nos que sempre corrompem. Os números — alcance, duração, JP, o texto — o
+// cofre manda buscar no Cap. 9 do livro básico, que no Foundry é o compêndio
+// de Poderes Mentais do módulo Space Dragon. Então eles são lidos de lá, do
+// packs-src daquele repositório, e cada poder do cofre precisa achar o seu:
+// nome nativo que não existe, ou Grandeza que não bate, para o importador.
+
+const SD_PODERES = path.join(ROOT, "..", "space-dragon-foundryvtt", "packs-src", "spacedragon-poderes");
+const CORRENTE = { "[U]": "Universal", "[L]": "Luz", "[S]": "Sombra" };
+
+function poderesDoCofre(texto) {
+  const nativos = new Map();
+  for (const arq of fs.readdirSync(SD_PODERES).filter((f) => f.includes("__spell__"))) {
+    const d = JSON.parse(fs.readFileSync(path.join(SD_PODERES, arq), "utf8"));
+    nativos.set(d.name, d);
+  }
+
+  const saida = [];
+  const partes = texto.split(/\n(?=## )/);
+  for (const parte of partes) {
+    const g = parte.match(/^## (\d+)ª Grandeza/);
+    if (!g) continue;
+    const grandeza = Number(g[1]);
+    const t = tabelaApos(parte, 0);
+    // A nota em itálico depois da tabela cita poderes em negrito; ela vai
+    // para a descrição de cada poder que cita.
+    const nota = parte.split("\n").find((l) => /^\*[^*].*\*$/.test(l.trim()))?.trim().replace(/^\*|\*$/g, "") ?? "";
+    for (const [sw, nativo, etiqueta] of t.linhas) {
+      const nome = sw.replace(/\*\*/g, "").replace("★", "").trim();
+      const corrupcao = sw.includes("★");
+      const corrente = CORRENTE[etiqueta.replace(/`/g, "").trim()];
+      if (!corrente) throw new Error(`${nome}: corrente desconhecida ${etiqueta}`);
+      // O cofre escreve "Amputar/Restaurar Emoção"; o livro, "Amputar ou
+      // Restaurar Emoção". A barra é só grafia.
+      const doc = nativos.get(nativo.trim()) ?? nativos.get(nativo.trim().replace(/\s*\/\s*/, " ou "));
+      if (!doc) throw new Error(`${nome}: o Poder Mental "${nativo}" não existe no módulo Space Dragon`);
+      if (Number(doc.system.circle) !== grandeza) {
+        throw new Error(`${nome}: está na ${grandeza}ª Grandeza no cofre, e "${nativo}" é da ${doc.system.circle}ª no Space Dragon`);
+      }
+      saida.push({
+        nome, grandeza, corrente, corrupcao,
+        nativo: { nome: doc.name, id: doc._id, range: doc.system.range, duration: doc.system.duration, jp: doc.system.jp, description: doc.system.description },
+        nota: nota && nota.includes(`**${nome}**`) ? `<p><em>${md(nota)}</em></p>` : "",
+      });
+    }
+  }
+  const nomes = new Set();
+  for (const p of saida) {
+    if (nomes.has(p.nome)) throw new Error(`Poder da Força repetido: ${p.nome}`);
+    nomes.add(p.nome);
+  }
+  return saida;
+}
+
 // Quais seções de quais notas viram página. Nota nova entra aqui.
 const SECOES = {
   "SW-SUP-Usando-o-Basico": [
@@ -261,6 +318,7 @@ const SECOES = {
     "Convenções deste livro",
   ],
   "SW-SUP-Especies": ["Idiomas da galáxia", "Nota de conversão"],
+  "SW-SUP-Poderes-da-Forca": ["Como usar este capítulo", "As três correntes (Caminho)", "Crédito"],
   "SW-SUP-Forca": [
     "O Caminho: Luz, Sombra e o meio",
     "O Caminho Cinza",
@@ -278,6 +336,7 @@ for (const [nota, titulos] of Object.entries(SECOES)) {
 }
 
 const ESPECIES = especiesDoCofre(ler("SW-SUP-Especies"));
+const PODERES = poderesDoCofre(ler("SW-SUP-Poderes-da-Forca"));
 
 fs.writeFileSync(
   DESTINO_TEXTOS,
@@ -294,8 +353,15 @@ fs.writeFileSync(
     "// mecânicos (movimento, infravisão…) ficam em especies.mjs.",
     `export const ESPECIES = ${JSON.stringify(ESPECIES, null, 2)};`,
     "",
+    "// Os Poderes da Força de SW-SUP-Poderes-da-Forca, cada um com o Poder",
+    "// Mental nativo que ele é — os números e o texto vêm do módulo Space Dragon.",
+    `export const PODERES = ${JSON.stringify(PODERES, null, 2)};`,
+    "",
   ].join("\n"),
   "utf8"
 );
 const nSecoes = Object.values(TEXTOS).reduce((n, s) => n + Object.keys(s).length, 0);
-console.log(`  ✔ ${nSecoes} seções de ${Object.keys(TEXTOS).length} nota(s) e ${ESPECIES.length} espécies → tools/data/textos-do-cofre.mjs`);
+console.log(
+  `  ✔ ${nSecoes} seções de ${Object.keys(TEXTOS).length} nota(s), ${ESPECIES.length} espécies e ` +
+  `${PODERES.length} poderes → tools/data/textos-do-cofre.mjs`
+);

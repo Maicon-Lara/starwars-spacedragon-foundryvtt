@@ -1,0 +1,39 @@
+{
+  "folder": "dOfc6nLzCPXpwfLc",
+  "name": "Ceifar a Mente",
+  "type": "spell",
+  "_id": "hfFCvz2iFWJMKa5Z",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "ceifar-a-mente",
+    "school": "arcane",
+    "circle": "7",
+    "arcane": "7",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Visual",
+    "duration": "Permanente",
+    "jp": "nenhuma",
+    "description": "<p><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.tHVxbPoylSGIQb4x]{Sacrificar Inteligência}</p><hr><p>O mentálico pode reverter uma criatura cuja inteligência tenha sido criada por ele a seu estado natural também revertendo o atributo Intelecto da criatura ao original, fazendo com que ela perca quaisquer memórias ou hábitos que tenha adquirido com a inteligência superior. Também é possível utilizar este poder mental contra criaturas não humanas de inteligência natural, mas com apenas 25% de chance de sucesso. Ainda assim, o alvo afetado poderá fazer uma JPM para evitar os efeitos, mas uma falha significa que seu Intelecto é reduzido a 1, e quaisquer memórias da criatura são perdidas, junto com sua personalidade.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 400000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!hfFCvz2iFWJMKa5Z"
+}

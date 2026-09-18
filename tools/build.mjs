@@ -241,7 +241,7 @@ function buildPoderesDocs() {
       });
       docs.push(sub);
       porGrandeza.get(g).forEach((p, i) => {
-        docs.push(spellDoc({ ...p, school: lista.school }, sub._id, lista.school, (i + 1) * 100000));
+        docs.push(spellDoc({ ...p, school: lista.school }, sub._id, lista.folder, (i + 1) * 100000));
       });
     }
   }

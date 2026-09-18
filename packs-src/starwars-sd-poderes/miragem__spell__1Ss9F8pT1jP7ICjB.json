@@ -1,0 +1,39 @@
+{
+  "folder": "hHLdYEPr47qAcq7N",
+  "name": "Miragem",
+  "type": "spell",
+  "_id": "1Ss9F8pT1jP7ICjB",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "miragem",
+    "school": "arcane",
+    "circle": "1",
+    "arcane": "1",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Visual",
+    "duration": "30 segundos",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.ILnGTT97IHq1jVSu]{Alterar Sentido}</p><hr><p>O mentálico consegue alterar um dos sentidos do alvo por algum tempo. A alteração pode envolver qualquer estímulo que o sentido seria capaz de produzir naturalmente, como uma ilusão de ótica para a visão ou escutar vozes para a audição. A cada 4 níveis que o mentálico tiver ele poderá alterar mais de um sentido ao mesmo tempo, portanto um mentálico até o 4º nível consegue alterar apenas um sentido, um de 5º a 8º pode alterar dois e assim por diante. Neste caso, cada sentido adicional alterado exige um desconto de 1% do alcance mental diário.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 300000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!1Ss9F8pT1jP7ICjB"
+}

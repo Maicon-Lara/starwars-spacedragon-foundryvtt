@@ -1,0 +1,39 @@
+{
+  "folder": "eOD9G7cz0cmmmuBs",
+  "name": "Mente Coletiva",
+  "type": "spell",
+  "_id": "12egaL6tZW4nv1bM",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "mente-coletiva",
+    "school": "arcane",
+    "circle": "6",
+    "arcane": "6",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Indefinido",
+    "duration": "Permanente",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.jEuzlRR8XelzSegS]{Inteligência Coletiva}</p><hr><p>Com este poder mental o mentálico é capaz de criar uma rede de inteligência coletiva, pela qual pode compartilhar informações com outros indivíduos. Cada vez que este poder é utilizado o mentálico adiciona um alvo voluntário à sua rede pessoal, e poderá buscar livremente qualquer informação que queira na mente dele, ou na de outros membros da rede, que estejam no mesmo planeta ou a uma distância similar no espaço. A inteligência coletiva, entretanto, permite apenas a consulta à mente dos participantes, não envolvendo qualquer tipo de comunicação telepática, embora isso possa ser feito paralelamente sem problemas. Indivíduos não mentálicos que participem de uma rede de inteligência coletiva também podem desfrutar dos mesmos benefícios, mas só terão acesso às informações através de sonhos, nos quais interagirão com os outros membros da rede.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 600000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!12egaL6tZW4nv1bM"
+}

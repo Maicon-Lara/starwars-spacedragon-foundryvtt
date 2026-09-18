@@ -1,0 +1,39 @@
+{
+  "folder": "qgiY0A5wt54xmrL6",
+  "name": "Tornar-se Um com a Força",
+  "type": "spell",
+  "_id": "DE9LLkZMyzc1tIVd",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "tornar-se-um-com-a-forca",
+    "school": "arcane",
+    "circle": "10",
+    "arcane": "10",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Pessoal",
+    "duration": "1 segundo/nível",
+    "jp": "nenhuma",
+    "description": "<p><code>[L]</code> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.rf1pQLRGM4yWcYWU]{Assumir Espírito Galáctico}</p><p><em>O <strong>Tornar-se Um com a Força</strong> é o ápice da Luz — e, pelas regras do livro, cada uso deixa o Sensível mais perto de não voltar. A <strong>Morte pela Força</strong> é o aperto de garganta que não solta.</em></p><hr><p>Pela duração deste poder mental o mentálico consegue assumir o Espírito Galáctico, possuindo toda a sabedoria do universo. A personalidade do metálico é suprimida, e quem falará por ele é a mente coletiva de todos os seres inteligentes que já morreram. Ao final do efeito o mentálico desmaiará e ficará desacordado por 1d4 dias, a cada vez que utilizar este poder diminuirá em 10% a chance de conseguir realizá-lo novamente.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!DE9LLkZMyzc1tIVd"
+}

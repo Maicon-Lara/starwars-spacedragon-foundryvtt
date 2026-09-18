@@ -1,0 +1,39 @@
+{
+  "folder": "HNn6G3VkgpZjMAjE",
+  "name": "Fundir Mentes",
+  "type": "spell",
+  "_id": "luisdypY0JkrrRhQ",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "fundir-mentes",
+    "school": "arcane",
+    "circle": "8",
+    "arcane": "8",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Visual",
+    "duration": "Permanente",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.GtwEgbKVq1kBYmLh]{Combinar Mentes}</p><hr><p>O mentálico pode combinar a mente de dois indivíduos em uma só, formando uma nova personalidade, combinando todas as memórias de ambos. Um dos alvos deve ser escolhido como o receptor da nova mente, enquanto o outro perderá completamente suas memórias e personalidade, efetivamente tornando-se um novo personagem de 1º nível. O receptor da nova mente não soma os níveis de classe das mentes combinadas, mas assume o nível mais alto entre elas, e deve escolher uma classe dentre as duas para permanecer, caso sejam diferentes. Apenas indivíduos que se voluntariem espontaneamente para o procedimento podem participar deste processo.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 300000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!luisdypY0JkrrRhQ"
+}

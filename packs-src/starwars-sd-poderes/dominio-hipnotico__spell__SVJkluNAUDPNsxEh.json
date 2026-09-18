@@ -1,0 +1,39 @@
+{
+  "folder": "qrDoefGPZ2rAoNQz",
+  "name": "Domínio Hipnótico",
+  "type": "spell",
+  "_id": "SVJkluNAUDPNsxEh",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "dominio-hipnotico",
+    "school": "arcane",
+    "circle": "3",
+    "arcane": "3",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Visual",
+    "duration": "1 minuto/nível",
+    "jp": "nenhuma",
+    "description": "<p><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.HloNMM3MI0QJ3Vgx]{Hipnose}</p><hr><p>O mentálico consegue manter um controle hipnótico sobre o alvo, caso ele falhe em uma JPM. É possível fazer perguntas e uma única sugestão ao alvo, que dormirá por toda a duração do poder mental e não lembrará de nada. Para fazer uma sugestão pós-hipnótica basta usar o poder mental de mensagem subliminar durante o processo de hipnose, o que tornará possível que o mentálico crie uma palavra de ativação para os efeitos da sugestão.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!SVJkluNAUDPNsxEh"
+}

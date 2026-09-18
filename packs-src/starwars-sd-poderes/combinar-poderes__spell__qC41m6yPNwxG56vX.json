@@ -1,0 +1,39 @@
+{
+  "folder": "ssUIpA3hua5U5yw0",
+  "name": "Combinar Poderes",
+  "type": "spell",
+  "_id": "qC41m6yPNwxG56vX",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "combinar-poderes",
+    "school": "arcane",
+    "circle": "5",
+    "arcane": "5",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Pessoal",
+    "duration": "nstantâneo",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.jx8MzfVa8AlDmShb]{Combinar Poderes Mentais}</p><hr><p>Este poder tem o potencial de combinar a execução de dois ou mais poderes mentais, tornando possível utilizá-los ao mesmo tempo. É possível combinar, até dois poderes mentais limitados ao 10º nível na classe, e até três ao atingir o 15º nível. Ao atingir o 16º nível o mentálico torna-se capaz de combinar até 4 poderes mentais, e poderá combinar 5 no 20º nível. Ao realizar a combinação, as grandezas de ambos os poderes somados a da combinação são descontadas do alcance mental diário. As rolagens percentuais são feitas normalmente para determinar se os poderes mentais foram utilizados com sucesso. É necessário rolar uma jogada percentual de acordo com a regra para uso de poderes mentais desconhecidos para cada poder combinado, mesmo se o personagem já o tiver aprendido. Uma falha no teste significa que o poder em questão foi ineficaz, e a combinação ocorrerá apenas entre os poderes cuja rolagem for bem-sucedida.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 300000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!qC41m6yPNwxG56vX"
+}

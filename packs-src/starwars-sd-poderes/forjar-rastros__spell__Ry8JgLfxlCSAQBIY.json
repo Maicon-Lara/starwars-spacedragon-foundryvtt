@@ -1,0 +1,39 @@
+{
+  "folder": "eOD9G7cz0cmmmuBs",
+  "name": "Forjar Rastros",
+  "type": "spell",
+  "_id": "Ry8JgLfxlCSAQBIY",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "forjar-rastros",
+    "school": "arcane",
+    "circle": "6",
+    "arcane": "6",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Nulo",
+    "duration": "Permanente",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.lH8PtZARl5sI03RN]{Implantar Rastros}</p><p><em>O <strong>Espírito Galáctico</strong> do livro é, aqui, a própria Força. <strong>Apagar Rastros</strong> e <strong>Forjar Rastros</strong> são como um Jedi sobrevive ao Império: o uso da Força deixa marca, e a Inquisição sabe farejá-la.</em></p><hr><p>O mentálico pode forjar a assinatura mental de qualquer poder que seria capaz de realizar, como se o tivesse utilizado de fato. Outros mentálicos que tentem detectar a presença de poderes mentais na área interpretarão como se o poder imitado tivesse sido realizado ali, embora ele nunca tenha sido utilizado.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 900000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!Ry8JgLfxlCSAQBIY"
+}

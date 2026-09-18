@@ -1,0 +1,39 @@
+{
+  "folder": "qs03iBiCNXst3E9I",
+  "name": "Escudo Mental",
+  "type": "spell",
+  "_id": "s62e6CHb7ONAkwuW",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "escudo-mental",
+    "school": "arcane",
+    "circle": "6",
+    "arcane": "6",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Pessoal ou Toque",
+    "duration": "10 minutos/nível",
+    "jp": "nenhuma",
+    "description": "<p><code>[L]</code> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.sNbTTZ5NhCMBxwSD]{Bloqueio Mental}</p><hr><p>O alvo deste poder mental, seja o próprio mentálico ou outro indivíduo, terá resistência mental de 2% para cada nível do mentálico pela duração dos efeitos. Caso o bloqueio seja feito na mente de um mentálico ele será incapaz de tentar a utilização de poderes mentais que não conhece, e terá de fazer uma rolagem percentual para superar sua própria resistência mental quando for utilizar um poder que domina.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!s62e6CHb7ONAkwuW"
+}

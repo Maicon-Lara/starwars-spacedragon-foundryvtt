@@ -1,0 +1,39 @@
+{
+  "folder": "eOD9G7cz0cmmmuBs",
+  "name": "Vínculo com o Lugar",
+  "type": "spell",
+  "_id": "jXYHsGlIt9bcmdLc",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "vinculo-com-o-lugar",
+    "school": "arcane",
+    "circle": "6",
+    "arcane": "6",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "1 Km/nível",
+    "duration": "6 horas/nível",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.ZXixBCExexpQ8hzg]{Ligação Sensorial Local}</p><hr><p>Este poder mental funciona de forma similar à ligação sensorial pessoal, com a exceção de que o sentido do mentálico estará ligado a um lugar fechado específico, como um aposento ou nave. Pela ausência de órgãos sensoriais só é possível ligar a visão ou a audição ao local alvo, e a transmissão sensorial só funcionará quando houver pelo menos um ser vivo inteligente naquele local, que servirá de canalizador.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!jXYHsGlIt9bcmdLc"
+}

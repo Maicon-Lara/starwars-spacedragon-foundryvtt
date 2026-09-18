@@ -1,0 +1,39 @@
+{
+  "folder": "hHLdYEPr47qAcq7N",
+  "name": "Vínculo da Força",
+  "type": "spell",
+  "_id": "7egNDmY9dvUsrzlE",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "vinculo-da-forca",
+    "school": "arcane",
+    "circle": "1",
+    "arcane": "1",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "1 Km/ nível",
+    "duration": "30 minutos/ nível",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.cPHT16Udk8j41s92]{Conexão Psíquica}</p><p><em>O <strong>Vínculo da Força</strong> é o laço entre mestre e padawan — e entre gêmeos separados na infância. A <strong>Telepatia</strong> é como uma célula rebelde combina o ataque sem abrir o canal de rádio.</em></p><hr><p>O mentálico cria uma ligação psíquica com o alvo, sendo capaz de sentir sua presença e intuir sua localização, sendo necessário apenas o contato visual momentâneo. A conexão é perdida se o alvo estiver em uma distância além do alcance do poder mental, ou se ele, ou o próprio mentálico ficarem inconscientes ou morrerem. É possível criar um número de conexões psíquicas igual à metade do nível do mentálico, com o mínimo de uma conexão.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 500000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!7egNDmY9dvUsrzlE"
+}

@@ -1,0 +1,39 @@
+{
+  "folder": "feJmPNcrpAEHqfoH",
+  "name": "Prisão do Infinito",
+  "type": "spell",
+  "_id": "VJ93ZuI59MvdV0C7",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "prisao-do-infinito",
+    "school": "arcane",
+    "circle": "10",
+    "arcane": "10",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Toque ou Pessoal",
+    "duration": "Permanente",
+    "jp": "nenhuma",
+    "description": "<p><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>★ Sempre corrompe:</strong> mesmo para quem é da Sombra, o poder marca <strong>+1 de Corrupção</strong> (alimenta-se de sofrimento).</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.XjrRGVAB5tlJSYVS]{Universo Mental}</p><hr><p>O mentálico pode fazer com que um alvo tocado, que falhe em uma JPM, ou ele mesmo crie um universo dentro de sua própria mente, virtualmente idêntico ao universo real. A mente da pessoa ficará permanentemente presa nesse novo universo, continuando sua vida sem saber que na verdade tudo se trata de um fruto de sua mente. Muitas pessoas consideram essa condição mais aceitável do que a morte e junção ao Espírito Galáctico, e não são inéditos os casos em que este poder mental é utilizado como uma forma de reduzir a dor da perda de uma vida.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!VJ93ZuI59MvdV0C7"
+}

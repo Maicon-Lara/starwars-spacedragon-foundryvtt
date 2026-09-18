@@ -1,0 +1,39 @@
+{
+  "folder": "ssUIpA3hua5U5yw0",
+  "name": "Repelir a Fera",
+  "type": "spell",
+  "_id": "GvpCIE0RsqFvJ3sG",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "repelir-a-fera",
+    "school": "arcane",
+    "circle": "5",
+    "arcane": "5",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Visual",
+    "duration": "Instantâneo",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.Mh2MHeC4RQM1IMyH]{Afastar Criatura}</p><hr><p>Este poder mental faz com que um ser vivo – não humano e não microbiano – desista de atacar o mentálico e seus aliados. Para isso, é utilizada a tabela T3-2 de desativação de robôs, onde uma sucata representa uma criatura de 1DV e um androide equivale a uma criatura de 8DV, que é o limite de funcionamento deste poder mental. É feita uma rolagem idêntica à desativação de robôs dos cientistas, que caso seja bem-sucedida, faz com que a criatura recue. Um “A” na tabela indica que a criatura é automaticamente afastada, e um “D” significa que ela fugirá a todo custo. Criaturas cuja quantidade de DV esteja assinalada como “N” não são afetadas. Ao contrário dos robôs, entretanto, este poder mental consegue afastar uma única criatura.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!GvpCIE0RsqFvJ3sG"
+}

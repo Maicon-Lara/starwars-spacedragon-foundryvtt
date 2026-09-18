@@ -1,0 +1,39 @@
+{
+  "folder": "ArY9vWkOvwgFHL1z",
+  "name": "Círculo de Foco",
+  "type": "spell",
+  "_id": "Mf423AumA9HODRsp",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "circulo-de-foco",
+    "school": "arcane",
+    "circle": "4",
+    "arcane": "4",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "5 metros",
+    "duration": "30 segundos/nível",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.3KuHoH8r9X4ZaGL1]{Grupo Canalizador}</p><hr><p>Com este poder mental até 4 mentálicos podem aumentar temporariamente o nível de outro mentálico, para fins de utilização de um poder mental. Cada mentálico aumenta 1 nível do beneficiado, que poderá realizar poderes mentais de acordo com a grandeza mental de seu nível temporário. O beneficiado pelo grupo canalizador não recebe nenhum outro bônus devido aos níveis temporários.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 800000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!Mf423AumA9HODRsp"
+}

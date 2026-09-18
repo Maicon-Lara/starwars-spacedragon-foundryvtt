@@ -1,0 +1,39 @@
+{
+  "folder": "c09aDDrbeZrGPQgB",
+  "name": "Cárcere da Alma",
+  "type": "spell",
+  "_id": "IB0gZPpaXonQZyku",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "carcere-da-alma",
+    "school": "arcane",
+    "circle": "9",
+    "arcane": "9",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Visual",
+    "duration": "Permanente",
+    "jp": "nenhuma",
+    "description": "<p><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>★ Sempre corrompe:</strong> mesmo para quem é da Sombra, o poder marca <strong>+1 de Corrupção</strong> (alimenta-se de sofrimento).</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.pzSInIv5FrHs5UzC]{Aprisionamento Mental}</p><p><em>O <strong>Tornar-se Espírito</strong> é o primeiro passo do <strong>Fantasma da Força</strong> — a mente que sobrevive ao corpo. O <strong>Cárcere da Alma</strong> é o oposto exato: a consciência presa num holocron ou num cérebro positrônico, para sempre.</em></p><hr><p>O mentálico pode aprisionar a mente do alvo permanentemente em um cérebro positrônico, se ele falhar em uma JPM. O cérebro não pode conter nenhuma personalidade programada e armazenará a mente até ser destruído. Com a destruição do cérebro a mente voltará ao seu corpo original, caso ele ainda viva, mas se misturará ao Espírito Galáctico caso ele não esteja mais vivo. Uma mente aprisionada pode ser alvo de poderes mentais normalmente, mas ganha a resistência mental de 5% dos Homo machina. O cérebro positrônico pode ser instalado em um corpo robótico, que passará a agir como se fosse a pessoa cuja mente foi aprisionada.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!IB0gZPpaXonQZyku"
+}

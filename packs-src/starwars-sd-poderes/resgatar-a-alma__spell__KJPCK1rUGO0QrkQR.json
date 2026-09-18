@@ -1,0 +1,39 @@
+{
+  "folder": "zoMo9JDs7rADYx9g",
+  "name": "Resgatar a Alma",
+  "type": "spell",
+  "_id": "KJPCK1rUGO0QrkQR",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "resgatar-a-alma",
+    "school": "arcane",
+    "circle": "9",
+    "arcane": "9",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Visual",
+    "duration": "Permanente",
+    "jp": "nenhuma",
+    "description": "<p><code>[L]</code> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.KHEROMgwdgsJhnjh]{Resgatar Mente}</p><hr><p>Este poder mental pode resgatar uma mente aprisionada em um cérebro positrônico e transferi-la para um corpo, ou quebrar o efeito do isolamento de uma mente em um corpo. A resistência mental do cérebro positrônico deve ser superada anteriormente, caso a mente tenha sido aprisionada em um, e a mente a ser resgatada deve vencer uma JPM para que o processo seja bem-sucedido. Ela ficará armazenada indefinidamente na própria mente do mentálico até que ele possa fazer uma transferência mental para o novo corpo, se ela tiver sido aprisionada, ou assumirá novamente o corpo caso tenha sido isolada.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!KJPCK1rUGO0QrkQR"
+}

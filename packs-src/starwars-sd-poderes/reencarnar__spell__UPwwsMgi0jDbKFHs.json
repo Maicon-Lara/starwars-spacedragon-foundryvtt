@@ -1,0 +1,39 @@
+{
+  "folder": "gJj2qq4KrSfjMV51",
+  "name": "Reencarnar",
+  "type": "spell",
+  "_id": "UPwwsMgi0jDbKFHs",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "reencarnar",
+    "school": "arcane",
+    "circle": "9",
+    "arcane": "9",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Toque",
+    "duration": "Permanente",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.JFMs9c0df7m3TdpJ]{Reencarnação Mental}</p><hr><p>Este poder mental pode trazer de volta uma mente desencarnada que tenha se misturado ao Espírito Galáctico, ou um espírito mental que tenha deixado seu corpo. É necessário um corpo cuja mente foi isolada ou aprisionada, e a mente, pertencente ao Espírito Galáctico, deve vencer uma JPM para que o pro cesso seja efetivo, mas um espírito mental não precisa realizar nenhuma jogada. A mente ou o espírito assumirão permanentemente o corpo, com regras iguais às apresentadas no poder mental de assumir mentes desencarnadas.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!UPwwsMgi0jDbKFHs"
+}

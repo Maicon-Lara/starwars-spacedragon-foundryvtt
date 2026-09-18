@@ -1,0 +1,39 @@
+{
+  "folder": "dOfc6nLzCPXpwfLc",
+  "name": "Enlouquecer",
+  "type": "spell",
+  "_id": "uOQXB40s0CFYS14B",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "enlouquecer",
+    "school": "arcane",
+    "circle": "7",
+    "arcane": "7",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Visual",
+    "duration": "Permanente",
+    "jp": "nenhuma",
+    "description": "<p><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>★ Sempre corrompe:</strong> mesmo para quem é da Sombra, o poder marca <strong>+1 de Corrupção</strong> (alimenta-se de sofrimento).</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.IT4680IS2RoCShXm]{Causar Insanidade}</p><hr><p>O mentálico pode deixar um alvo permanentemente insano, caso ele falhe em uma JPM. Essa insanidade deve ser focada em um aspecto específico da mente e dos sentidos, como ouvir vozes, ver coisas que não existem ou ter memórias que não aconteceram. Um alvo afetado por insanidade pode realizar uma JPM toda vez que houver manifestação dessa condição, para evitar seus efeitos.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!uOQXB40s0CFYS14B"
+}

@@ -1,0 +1,39 @@
+{
+  "folder": "GfTcbekNGgR1rZXD",
+  "name": "Telepatia em Grupo",
+  "type": "spell",
+  "_id": "Xo4fPOAEhalUzZKh",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "telepatia-em-grupo",
+    "school": "arcane",
+    "circle": "2",
+    "arcane": "2",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "1 Km/nível",
+    "duration": "15 segundos/nível",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.Xa6TqmsPH3Lt9lRX]{Telepatia em Grupo}</p><hr><p>Similar ao poder de telepatia, mas a telepatia em grupo pode ser realizada com tantas pessoas quantas o mentálico conseguir criar uma conexão psíquica.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 700000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!Xo4fPOAEhalUzZKh"
+}

@@ -1,0 +1,39 @@
+{
+  "folder": "nkSxe9EoHMBVLJsk",
+  "name": "Dissipar a Força",
+  "type": "spell",
+  "_id": "1ILiCsrnW5zeMIdk",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "dissipar-a-forca",
+    "school": "arcane",
+    "circle": "3",
+    "arcane": "3",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "10 metros + 1 metro/nível",
+    "duration": "Instantâneo",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.40I86HtM1Y7L2eVO]{Dissipar Poder Mental}</p><p><em>O <strong>Truque Mental</strong> é \"estes não são os droides que procuram\" — e, como no livro, não funciona em quem tem vontade forte. A <strong>Dissipar a Força</strong> é o que sustenta um duelo de vontades entre dois Sensíveis.</em></p><hr><p>Este poder mental tem a capacidade de dissipar outros poderes de efeito não permanente que estejam afetando um personagem. O ato de dissipar um po der mental segue as mesmas regras para anulação e contra-ataque mental expressas anteriormente, utilizando o nível do mentálico que o utilizou no alvo, e permitindo gastos adicionais por parte do mentálico que deseja dissipar o poder mental. Entretanto, esse duelo não dá ao alvo a oportunidade de revidar com outro poder mental, caso saia vencedor por uma grande margem, e um sucesso por parte do atacante significa que o poder mental foi dissipado com sucesso.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 800000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!1ILiCsrnW5zeMIdk"
+}

@@ -1,0 +1,39 @@
+{
+  "folder": "GEd9Hhj0XErA8Clz",
+  "name": "Transferir a Alma",
+  "type": "spell",
+  "_id": "t4nPADxO4iT033RZ",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "transferir-a-alma",
+    "school": "arcane",
+    "circle": "8",
+    "arcane": "8",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Toque",
+    "duration": "Permanente",
+    "jp": "nenhuma",
+    "description": "<p><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.MCcq7B30tO2mNgmM]{Transferência Mental}</p><p><em>A <strong>Projeção Astral</strong> é a aparição impossível no campo de batalha — o mestre que trava um exército inteiro sem estar lá. A <strong>Transferir a Alma</strong> é a transferência de essência dos Sith, e o preço dela nunca é pequeno.</em></p><hr><p>O mentálico pode transferir uma mente que esteja armazenada em sua própria para um novo corpo, cuja personalidade tenha sido isolada anteriormente ou aprisionada em outro lugar. A mente assumirá o corpo como se fosse seu, mantendo os atributos físicos (Força, Destreza e Constituição), mas alterando os atributos mentais e sociais (Intelecto, Ciência e Comunicação) de acordo com suas capacidades mentais.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 400000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!t4nPADxO4iT033RZ"
+}

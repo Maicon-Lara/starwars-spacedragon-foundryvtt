@@ -1,0 +1,39 @@
+{
+  "folder": "HNn6G3VkgpZjMAjE",
+  "name": "Despertar o Outro",
+  "type": "spell",
+  "_id": "NKS1rCGhuHeT4nu1",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "despertar-o-outro",
+    "school": "arcane",
+    "circle": "8",
+    "arcane": "8",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Visual",
+    "duration": "Instantâneo",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.1I4cKrs0MWlv1h1H]{Alternar Personalidade}</p><hr><p>Este poder mental faz com que um alvo, que tenha dupla personalidade, imediatamente mude para a personalidade inativa no momento, caso falhe em uma JPM. Embora o efeito tenha duração instantânea, a personalidade continuará ativa até que um evento cause a inversão de forma natural ou este poder mental seja novamente utilizado sobre o alvo.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!NKS1rCGhuHeT4nu1"
+}

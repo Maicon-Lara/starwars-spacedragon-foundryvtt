@@ -1,0 +1,39 @@
+{
+  "folder": "teq3vOd2W2wCBg0E",
+  "name": "Presciência",
+  "type": "spell",
+  "_id": "1iBrw9OrceBoQwGd",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "presciencia",
+    "school": "arcane",
+    "circle": "7",
+    "arcane": "7",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Especial (ver texto)",
+    "duration": "Instantâneo",
+    "jp": "nenhuma",
+    "description": "<p><code>[L]</code> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.PvtFLRkGF2uJTNVQ]{Predizer Futuro}</p><p><em>A <strong>Presciência</strong> é a visão do futuro que atormenta os Jedi — e que sempre chega incompleta o bastante para provocar a tragédia que tentava evitar.</em></p><hr><p>O mentálico é capaz de predizer um acontecimento futuro envolvendo um grupo de pessoas, ao analisar os padrões cerebrais de todos os indivíduos. É necessário um grupo de no mínimo 4 pessoas, o que garante ao mentálico uma chance de 30% de predizer corretamente o futuro. Cada pessoa acima disso aumenta a precisão do mentálico em 5% conforme a amostragem mental se torna maior. É possível prever fatos que acontecerão a até 10 minutos para cada nível do mentálico. Já eventos totalmente independentes da ação das pessoas envolvidas, como intervenção de terceiros ou fenômenos naturais, não podem ser previstos.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!1iBrw9OrceBoQwGd"
+}

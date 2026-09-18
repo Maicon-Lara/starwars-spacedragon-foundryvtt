@@ -1,0 +1,39 @@
+{
+  "folder": "G7CUpUaHMN9BA00x",
+  "name": "Reescrever Memória",
+  "type": "spell",
+  "_id": "mAlXNKO8CtGvyv50",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "reescrever-memoria",
+    "school": "arcane",
+    "circle": "4",
+    "arcane": "4",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Visual",
+    "duration": "Permanente",
+    "jp": "nenhuma",
+    "description": "<p><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.XfUzo9YKpfFagPiO]{Alterar Memória}</p><hr><p>O mentálico pode alterar a memória de um alvo, que não se lembrará da memória verdadeira. É possível alterar memórias de fatos ocorridos há 1 mês para cada nível do mentálico, a quantidade de alterações também depende de seu nível. A cada 4 níveis na classe o mentálico pode alterar um elemento da memória, como um acontecimento, lugar ou identidade de um indivíduo, de modo que um mentálico de 5º nível pode alterar dois elementos, e assim por diante. O alvo pode resistir aos efeitos com uma JPM.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!mAlXNKO8CtGvyv50"
+}

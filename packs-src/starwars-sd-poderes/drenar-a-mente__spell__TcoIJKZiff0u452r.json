@@ -1,0 +1,39 @@
+{
+  "folder": "MghKZEjIjGfihlTo",
+  "name": "Drenar a Mente",
+  "type": "spell",
+  "_id": "TcoIJKZiff0u452r",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "drenar-a-mente",
+    "school": "arcane",
+    "circle": "6",
+    "arcane": "6",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Visual",
+    "duration": "Instantâneo",
+    "jp": "nenhuma",
+    "description": "<p><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>★ Sempre corrompe:</strong> mesmo para quem é da Sombra, o poder marca <strong>+1 de Corrupção</strong> (alimenta-se de sofrimento).</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.KBizEO8HfcfsTrpq]{Drenar Mente}</p><hr><p>Ao utilizar este poder mental, o mentálico causa 1d6 pontos de dano mental ao alvo, caso não passe em uma JPM. Esses pontos são absorvidos temporariamente, permitindo ao mentálico aumentar seu próprio atributo Intelecto em tantos pontos quanto os de dano no alvo, por um período de 1 hora por nível na classe. O bônus no alcance mental diário fornecido pelo novo Intelecto passa a vigorar imediatamente, mas não recupera eventuais porcentagens que já tenham sido gastas anteriormente. Um mentálico de Intelecto 14, por exemplo, ao drenar 2 pontos de um alvo ficará com Intelecto 16, aumentando seu bônus para 3%. Se ele já tiver usado os 2% aos quais tinha acesso ele ganhará 1% adicional. Um mentálico que aumente seu Intelecto em mais de 50% com este poder corre o risco de sofrer um choque mental.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 300000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!TcoIJKZiff0u452r"
+}

@@ -1,0 +1,39 @@
+{
+  "folder": "nkSxe9EoHMBVLJsk",
+  "name": "Ampliar a Força",
+  "type": "spell",
+  "_id": "7y4Yk7DlGEbIY0l3",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "ampliar-a-forca",
+    "school": "arcane",
+    "circle": "3",
+    "arcane": "3",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Pessoal",
+    "duration": "Variável (ver texto)",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.kkJb7mBD8Jv4OssR]{Ampliar Poder Mental}</p><hr><p>Este poder mental pode ser utilizado em conjunto com outro poder qualquer para ampliar sua duração ou seu alcance em 10%. O desconto a ser feito do alcance mental diário é o do poder mental principal e da ampliação somados.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 900000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!7y4Yk7DlGEbIY0l3"
+}

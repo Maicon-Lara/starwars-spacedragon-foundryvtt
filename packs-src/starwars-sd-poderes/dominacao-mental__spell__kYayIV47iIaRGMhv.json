@@ -1,0 +1,39 @@
+{
+  "folder": "MghKZEjIjGfihlTo",
+  "name": "Dominação Mental",
+  "type": "spell",
+  "_id": "kYayIV47iIaRGMhv",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "dominacao-mental",
+    "school": "arcane",
+    "circle": "6",
+    "arcane": "6",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Visual",
+    "duration": "1 minuto/nível",
+    "jp": "nenhuma",
+    "description": "<p><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>★ Sempre corrompe:</strong> mesmo para quem é da Sombra, o poder marca <strong>+1 de Corrupção</strong> (alimenta-se de sofrimento).</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.WRULS4cWzycvz2po]{Controlar Mente}</p><hr><p>O alvo deste poder mental ficará sob o controle do mentálico pela duração dos efeitos, se falhar em uma JPM. Um alvo controlado obedecerá a quaisquer comandos do mentálico, que são transmitidos mentalmente. O mentálico deve sempre manter o alvo ao alcance visual, senão o efeito é perdido. Situações de grande estresse mental ou potencialmente fatais também podem quebrar o efeito, permitindo uma nova JPM por parte do indivíduo sendo controlado.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!kYayIV47iIaRGMhv"
+}

@@ -1,0 +1,39 @@
+{
+  "folder": "OWndy081f918bB0N",
+  "name": "Serenidade em Área",
+  "type": "spell",
+  "_id": "r4ChCzGQBFBvAosB",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "serenidade-em-area",
+    "school": "arcane",
+    "circle": "3",
+    "arcane": "3",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "10 metros + 3 metros/nível",
+    "duration": "30 segundos/nível",
+    "jp": "nenhuma",
+    "description": "<p><code>[L]</code> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.T3SNUD46GScOO8OK]{Campo Desestimulante}</p><hr><p>Este poder mental desestimula todos os inimigos ao alcance, conferindo-lhes uma penalidade de -2 em ataques e dano contra o mentálico e seus aliados. Os inimigos podem fazer uma JPM para resistir aos efeitos.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!r4ChCzGQBFBvAosB"
+}

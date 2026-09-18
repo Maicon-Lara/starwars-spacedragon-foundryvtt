@@ -1,0 +1,39 @@
+{
+  "folder": "nkSxe9EoHMBVLJsk",
+  "name": "Sugestão da Força",
+  "type": "spell",
+  "_id": "jP6eIiHYOW1NFlxG",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "sugestao-da-forca",
+    "school": "arcane",
+    "circle": "3",
+    "arcane": "3",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Visual",
+    "duration": "6 horas/nível",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.qaRGQChHwhXpBMmf]{Sugestão Direta}</p><hr><p>A sugestão direta funciona de forma similar à sugestão subliminar, mas o indivíduo afetado estará consciente de seu impulso em realizar a sugestão plantada em sua mente – embora não possa explicá-lo. A sugestão também pode incluir dois verbos ao invés de um.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!jP6eIiHYOW1NFlxG"
+}

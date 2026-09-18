@@ -1,0 +1,39 @@
+{
+  "folder": "BHwWOWdGLAJNnFHl",
+  "name": "Falar com os Mortos",
+  "type": "spell",
+  "_id": "qcZiFqtimX3XF1k0",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "falar-com-os-mortos",
+    "school": "arcane",
+    "circle": "7",
+    "arcane": "7",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Indefinido",
+    "duration": "30 segundos/nível",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.MTNs3wkQRAYj7ZGF]{Contatar Mente Desencarnada}</p><hr><p>Este poder mental permite ao mentálico contatar a mente de alguém que já morreu, através do Espírito Galáctico. É preciso de um objeto que tenha pertencido ao indivíduo em vida como canalizador. O mentálico será capaz de conversar telepaticamente com a mente desencarnada e, até mesmo, assumir certas características que a pessoa tinha quando viva, como voz, caligrafia e trejeitos.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!qcZiFqtimX3XF1k0"
+}

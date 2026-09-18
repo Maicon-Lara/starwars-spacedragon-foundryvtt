@@ -1,0 +1,39 @@
+{
+  "folder": "qs03iBiCNXst3E9I",
+  "name": "Comungar com a Força",
+  "type": "spell",
+  "_id": "71ZvVkM79rssnCs4",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "comungar-com-a-forca",
+    "school": "arcane",
+    "circle": "6",
+    "arcane": "6",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Pessoal",
+    "duration": "1 minuto",
+    "jp": "nenhuma",
+    "description": "<p><code>[L]</code> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.t3LBEu6zQTilGAPu]{Contatar Espírito Galáctico}</p><hr><p>O mentálico entra em transe por 1 minuto, durante o qual estará em total comunhão com o Espírito Galáctico, podendo procurar a resposta para qualquer pergunta, que só possa ser respondida pela consciência de todos os seres vivos que já morreram no universo. O Espírito Galáctico envolve apenas o conhecimento dos que se juntam a ele após a morte, portanto até que um ser vivo que tenha o conhecimento desejado se junte à mente coletiva será impossível obter uma resposta. Não é possível contatar uma única pessoa com este poder mental, apenas a consciência coletiva dos mortos.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!71ZvVkM79rssnCs4"
+}

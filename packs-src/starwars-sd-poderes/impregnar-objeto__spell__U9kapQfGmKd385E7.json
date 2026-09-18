@@ -1,0 +1,39 @@
+{
+  "folder": "eOD9G7cz0cmmmuBs",
+  "name": "Impregnar Objeto",
+  "type": "spell",
+  "_id": "U9kapQfGmKd385E7",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "impregnar-objeto",
+    "school": "arcane",
+    "circle": "6",
+    "arcane": "6",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Toque",
+    "duration": "1 dia/nível",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.Wx6uxK6nejVgKc53]{Energizar Objeto}</p><hr><p>Ao energizar um objeto o mentálico deixa sua assinatura mental nele, e será capaz de saber tudo o que aconteceu em uma área de 20m² ao redor dele, ao tocá-lo novamente. As informações coletadas ao toque são audiovisuais, portanto o mentálico poderá ver e ouvir o que se passou naquele lugar como se estivesse presente.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 300000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!U9kapQfGmKd385E7"
+}

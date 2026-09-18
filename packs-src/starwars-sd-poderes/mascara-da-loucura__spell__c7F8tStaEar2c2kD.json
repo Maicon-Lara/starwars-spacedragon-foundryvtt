@@ -1,0 +1,39 @@
+{
+  "folder": "eOD9G7cz0cmmmuBs",
+  "name": "Máscara da Loucura",
+  "type": "spell",
+  "_id": "c7F8tStaEar2c2kD",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "mascara-da-loucura",
+    "school": "arcane",
+    "circle": "6",
+    "arcane": "6",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Visual ou pessoal",
+    "duration": "Variável (ver texto)",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.bpkUDTUBqFRKBluC]{Simular Insanidade}</p><hr><p>O alvo deste poder mental apresentará todos os sintomas e características de uma pessoa insana pela duração dos efeitos, porém retomará total controle sobre seu pensamento e atos se assim o desejar. Métodos tecnológicos de detecção de mentiras ou de análise de memórias não funcionam em pessoas insanas. Um mentálico pode usar este poder mental sobre si mesmo ou sobre outrem, e em todos os casos o efeito pode se estender por 1 hora por nível do mentálico, mas é cancelado assim que o indivíduo afetado deseje retomar o controle sobre si mesmo.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 400000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!c7F8tStaEar2c2kD"
+}

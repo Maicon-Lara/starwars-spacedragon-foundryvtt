@@ -1,0 +1,22 @@
+{
+  "name": "3ª Grandeza",
+  "sorting": "m",
+  "folder": "isXRSHm4LlxBLJKH",
+  "type": "Item",
+  "_id": "nkSxe9EoHMBVLJsk",
+  "description": "",
+  "sort": 300000,
+  "color": "#62666c",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1"
+  },
+  "_key": "!folders!nkSxe9EoHMBVLJsk"
+}

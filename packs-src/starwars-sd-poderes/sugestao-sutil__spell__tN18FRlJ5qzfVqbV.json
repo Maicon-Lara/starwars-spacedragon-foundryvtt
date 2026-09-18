@@ -1,0 +1,39 @@
+{
+  "folder": "GfTcbekNGgR1rZXD",
+  "name": "Sugestão Sutil",
+  "type": "spell",
+  "_id": "tN18FRlJ5qzfVqbV",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "sugestao-sutil",
+    "school": "arcane",
+    "circle": "2",
+    "arcane": "2",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Visual",
+    "duration": "1 dia/nível",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.A4BAn2RYpRcFslgO]{Sugestão Subliminar}</p><hr><p>O mentálico pode fazer uma única sugestão subliminar ao alvo, que deve fazer uma JPM para resistir aos efeitos. A sugestão deve consistir em uma frase de um único verbo. O indivíduo sentirá um impulso inexplicável de realizá-la a cada 1d8 horas até o fim do efeito, mas não estará consciente dele. Sugestões potencialmente letais para o alvo quebram o efeito imediatamente.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 800000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!tN18FRlJ5qzfVqbV"
+}

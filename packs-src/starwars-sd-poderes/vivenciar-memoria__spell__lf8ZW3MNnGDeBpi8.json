@@ -1,0 +1,39 @@
+{
+  "folder": "eOD9G7cz0cmmmuBs",
+  "name": "Vivenciar Memória",
+  "type": "spell",
+  "_id": "lf8ZW3MNnGDeBpi8",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "vivenciar-memoria",
+    "school": "arcane",
+    "circle": "6",
+    "arcane": "6",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Toque",
+    "duration": "Variável (ver texto)",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.JU6Qzs2yrUCVgAJ2]{Vivenciar Memória}</p><hr><p>Este poder mental funciona de forma similar à leitura de memórias, mas o mentálico será capaz de imergir nos acontecimentos, como se estivesse presente na ocasião. Entretanto, ele será incapaz de interagir com qualquer indivíduo ou com o próprio ambiente, ficando limitado ao papel de observador. O mentálico pode fazer com que até 4 aliados vivenciem a memória junto dele. capítulo 10 As espaçonaves e as estações são fundamentais à vida humana no espaço. Enquanto as naves são o meio de transporte mais viável para longas viagens estelares, as estações espaciais espalhadas pela galáxia são o lar de milhões de humanos, muitos dos quais nunca puseram os pés sobre o solo de um planeta. Ambas existem nos mais diversos estilos, tamanhos e formas. Em geral, as estações espaciais são estruturas de tamanho colossal capazes de abrigar centenas de espaçonaves e outros milhares de pessoas, e mantêmse paradas ou orbitando algum corpo celeste. ESPAÇONAVES E ESTAÇÕES</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 500000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!lf8ZW3MNnGDeBpi8"
+}

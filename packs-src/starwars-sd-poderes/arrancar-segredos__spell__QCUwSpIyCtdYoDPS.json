@@ -1,0 +1,39 @@
+{
+  "folder": "MghKZEjIjGfihlTo",
+  "name": "Arrancar Segredos",
+  "type": "spell",
+  "_id": "QCUwSpIyCtdYoDPS",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "arrancar-segredos",
+    "school": "arcane",
+    "circle": "6",
+    "arcane": "6",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Visual",
+    "duration": "Instantâneo",
+    "jp": "nenhuma",
+    "description": "<p><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.njBFCW6Nq6kfiwJN]{Revelar Segredos}</p><hr><p>O mentálico força o alvo a contar qualquer segredo que tenha, se ele não for bem-sucedido em uma JPM. Só é possível revelar segredos dos quais o alvo esteja consciente, portanto eventos ocorridos durante uma hipnose ou outro tipo de controle mental não são acessíveis. Apenas um segredo pode ser revelado por utilização deste poder mental.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!QCUwSpIyCtdYoDPS"
+}

@@ -1,0 +1,39 @@
+{
+  "folder": "BHwWOWdGLAJNnFHl",
+  "name": "Mapa da Força",
+  "type": "spell",
+  "_id": "fNLb325XH0BJnuiE",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "mapa-da-forca",
+    "school": "arcane",
+    "circle": "7",
+    "arcane": "7",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "100 metros/nível",
+    "duration": "1 hora/nível",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.7PqPcu8TvE6kdXFm]{Mapa Mental}</p><hr><p>O mentálico pode canalizar as ondas cerebrais residuais de todos os seres inteligentes que já passaram por um lugar, ou que lá estejam para traçar um mapa mental da área, cobrindo uma distância igual ao alcance total deste poder mental. A porcentagem de se perder na área é reduzida pela metade se for natural ou abandonada, mas se for uma estrutura habitada criada por humanos a chance é zerada, e em ambos os casos o mentálico terá noção dos obstáculos que encontrará pelo caminho. Este poder mental só funcionará se seres inteligentes já tiverem passado por ali.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 400000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!fNLb325XH0BJnuiE"
+}

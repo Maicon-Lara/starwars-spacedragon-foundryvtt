@@ -1,0 +1,39 @@
+{
+  "folder": "ArY9vWkOvwgFHL1z",
+  "name": "Tecer Sonhos",
+  "type": "spell",
+  "_id": "0Qc1Lju8wqyC2V4h",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "tecer-sonhos",
+    "school": "arcane",
+    "circle": "4",
+    "arcane": "4",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Visual",
+    "duration": "1 minuto/nível",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.zmeGGIcoFQ39nMk7]{Criar Sonho}</p><hr><p>O mentálico pode criar um sonho na mente de um alvo adormecido ou inconsciente, com a duração baseada em seu nível. O sonho pode envolver qualquer coisa que o mentálico quiser, mas não pode ser de caráter negativo. Ao acordar o alvo deve fazer uma JPM, que caso seja bem-sucedida, indica que ele consegue lembrar-se perfeitamente do sonho, mas uma falha faz com que apenas lampejos dos acontecimentos sejam lembrados.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 600000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!0Qc1Lju8wqyC2V4h"
+}

@@ -1,0 +1,39 @@
+{
+  "folder": "feJmPNcrpAEHqfoH",
+  "name": "Morte pela Força",
+  "type": "spell",
+  "_id": "x5YekhwDs6b6bLuw",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "morte-pela-forca",
+    "school": "arcane",
+    "circle": "10",
+    "arcane": "10",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Visual",
+    "duration": "Instantâneo",
+    "jp": "nenhuma",
+    "description": "<p><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>★ Sempre corrompe:</strong> mesmo para quem é da Sombra, o poder marca <strong>+1 de Corrupção</strong> (alimenta-se de sofrimento).</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.mRxY4zeOfovDGiJ8]{Morte Cerebral}</p><p><em>O <strong>Tornar-se Um com a Força</strong> é o ápice da Luz — e, pelas regras do livro, cada uso deixa o Sensível mais perto de não voltar. A <strong>Morte pela Força</strong> é o aperto de garganta que não solta.</em></p><hr><p>O mentálico pode causar a morte cerebral do alvo, caso falhe em uma JPM. Virtualmente qualquer criatura viva com um cérebro é suscetível a este poder mental. O processo é tão agressivo que causa 1d6 pontos de dano mental no próprio mentálico. A morte cerebral causada por um mentálico tem ganhado popularidade como forma de morrer preferida, embora a doutrina dos mentálicos seja contra esse tipo de prática.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!x5YekhwDs6b6bLuw"
+}

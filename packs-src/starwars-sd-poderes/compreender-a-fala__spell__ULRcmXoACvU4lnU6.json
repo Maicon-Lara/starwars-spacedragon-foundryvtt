@@ -1,0 +1,39 @@
+{
+  "folder": "hHLdYEPr47qAcq7N",
+  "name": "Compreender a Fala",
+  "type": "spell",
+  "_id": "ULRcmXoACvU4lnU6",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "compreender-a-fala",
+    "school": "arcane",
+    "circle": "1",
+    "arcane": "1",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Pessoal",
+    "duration": "Especial (ver texto)",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.rHvX1NMy2r5El18R]{Compreender Idiomas}</p><hr><p>Este poder mental permite ao mentálico compreender um idioma falado, através de análise das ondas cerebrais de um indivíduo. O mentálico deve se concentrar em apenas uma pessoa ou alienígena, e compreenderá o que ela disser até que sua concentração seja quebrada, ou após um longo período sem que a pessoa fale nada. O uso deste poder não torna o mentálico capaz de falar o idioma e nem o auxilia com línguas escritas.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 400000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!ULRcmXoACvU4lnU6"
+}

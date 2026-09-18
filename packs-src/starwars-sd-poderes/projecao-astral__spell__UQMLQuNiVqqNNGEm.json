@@ -1,0 +1,39 @@
+{
+  "folder": "HNn6G3VkgpZjMAjE",
+  "name": "Projeção Astral",
+  "type": "spell",
+  "_id": "UQMLQuNiVqqNNGEm",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "projecao-astral",
+    "school": "arcane",
+    "circle": "8",
+    "arcane": "8",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Indefinido",
+    "duration": "1 minuto/nível",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.XBoxdMrYZgdgqHd9]{Projeção Mental}</p><p><em>A <strong>Projeção Astral</strong> é a aparição impossível no campo de batalha — o mestre que trava um exército inteiro sem estar lá. A <strong>Transferir a Alma</strong> é a transferência de essência dos Sith, e o preço dela nunca é pequeno.</em></p><hr><p>O mentálico pode fazer com que sua mente deixe seu corpo e voe pelo universo, projetando-se através do Espírito Galáctico. Ele pode ir virtualmente a qualquer lugar do cosmos e vivenciar acontecimentos como se estivesse lá, embora não possa interagir com indivíduos e nem com o ambiente. Só é possível interagir com outros mentálicos que estejam em projeção mental e com eventuais mentes desencarnadas que venham a se aproximar do mentálico durante a projeção. Ao final do efeito a mente do mentálico volta automaticamente para seu corpo. A projeção mental é um dos poderes que mais une mentálicos ao Espírito galático.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!UQMLQuNiVqqNNGEm"
+}

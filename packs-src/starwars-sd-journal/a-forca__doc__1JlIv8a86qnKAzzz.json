@@ -5,9 +5,83 @@
   "pages": [
     {
       "sort": 100000,
+      "name": "Poderes da Força",
+      "type": "text",
+      "_id": "BS3S8q5G9RCaqPJv",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><blockquote><p>A Força não é um sistema novo: são os <strong>Poderes Mentais do Space Dragon</strong> (<em>SD</em>, Cap. 9), relidos como manifestações da Força. <strong>Alcance, duração, dano, Jogadas de Proteção e as regras de uso continuam sendo as do livro básico</strong> — este capítulo dá a cada poder o nome que ele tem na galáxia e o encaixa numa <strong>corrente</strong> (Universal, Luz ou Sombra).</p></blockquote><ol><li>Escolha o poder pelo <strong>nome de Star Wars</strong> na tabela da Grandeza correspondente.</li><li>Vá ao <strong><em>SD</em>, Cap. 9</strong> e procure o <strong>nome nativo</strong> da coluna do meio — é ali que estão os números.</li><li>Aplique a <strong>corrente</strong> e as marcas de <strong>Corrupção</strong> deste cenário (abaixo).</li></ol><p>As regras de Alcance da Força, Grandeza-Limite, poderes conhecidos × desconhecidos e Resistência Mental estão no livro básico e resumidas em O Sensível à Força.</p></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!1JlIv8a86qnKAzzz.BS3S8q5G9RCaqPJv"
+    },
+    {
+      "sort": 200000,
+      "name": "As Três Correntes",
+      "type": "text",
+      "_id": "h2Ie1Hbz18kChn9F",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>Cada poder traz uma etiqueta de corrente. <strong>Esta camada é do cenário</strong> — no livro básico não existe Luz nem Sombra, todos os Poderes Mentais estão disponíveis a qualquer Mentálico.</p><ul><li><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</li><li><code>[L]</code> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</li><li><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</li><li><strong>★</strong> = <strong>sempre corrompe</strong>: mesmo para quem é da Sombra, o poder marca <strong>+1 de Corrupção</strong> (alimenta-se de sofrimento).</li><li><strong>Caminho Cinza</strong> — acessa as <strong>três</strong> correntes. Usar <code>[S]</code> não é queda, mas toda Corrupção conta <strong>em dobro</strong> para ele (um poder <code>[S]</code> ou ★ marca <strong>+2</strong>). Ver O Sensível à Força.</li></ul><blockquote><p><strong>As etiquetas são um guia, não uma lei.</strong> Muitos poderes cabem em mais de uma corrente conforme o uso; o Mestre pode remanejar um poder <code>[U]</code> para <code>[S]</code> se o uso na cena for cruel.</p></blockquote></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!1JlIv8a86qnKAzzz.h2Ie1Hbz18kChn9F"
+    },
+    {
+      "sort": 300000,
       "name": "O Caminho: Luz, Sombra e o meio",
       "type": "text",
-      "_id": "FiTBhMHcmLEOLNMZ",
+      "_id": "yE3E1yN3ZowFFFyD",
       "title": {
         "show": true,
         "level": 1
@@ -38,13 +112,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!1JlIv8a86qnKAzzz.FiTBhMHcmLEOLNMZ"
+      "_key": "!journal.pages!1JlIv8a86qnKAzzz.yE3E1yN3ZowFFFyD"
     },
     {
-      "sort": 200000,
+      "sort": 400000,
       "name": "O Caminho Cinza",
       "type": "text",
-      "_id": "kKCb0J0TOLYSl256",
+      "_id": "QcO3mKZ1g3sNLgRR",
       "title": {
         "show": true,
         "level": 1
@@ -75,13 +149,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!1JlIv8a86qnKAzzz.kKCb0J0TOLYSl256"
+      "_key": "!journal.pages!1JlIv8a86qnKAzzz.QcO3mKZ1g3sNLgRR"
     },
     {
-      "sort": 300000,
+      "sort": 500000,
       "name": "Corrupção — Queda e Redenção",
       "type": "text",
-      "_id": "QnzgXU8kbjx3unRx",
+      "_id": "bl36LNx1Yas1DR0B",
       "title": {
         "show": true,
         "level": 1
@@ -112,13 +186,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!1JlIv8a86qnKAzzz.QnzgXU8kbjx3unRx"
+      "_key": "!journal.pages!1JlIv8a86qnKAzzz.bl36LNx1Yas1DR0B"
     },
     {
-      "sort": 400000,
+      "sort": 600000,
       "name": "A Tentação",
       "type": "text",
-      "_id": "RSSU5VbloAQCX2vJ",
+      "_id": "JobvYMItNurPGKWX",
       "title": {
         "show": true,
         "level": 1
@@ -149,13 +223,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!1JlIv8a86qnKAzzz.RSSU5VbloAQCX2vJ"
+      "_key": "!journal.pages!1JlIv8a86qnKAzzz.JobvYMItNurPGKWX"
     },
     {
-      "sort": 500000,
+      "sort": 700000,
       "name": "Eco da Senda",
       "type": "text",
-      "_id": "DRlyNfCF4GFezH40",
+      "_id": "mfKvaZz7oBwWxv9q",
       "title": {
         "show": true,
         "level": 1
@@ -186,7 +260,44 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!1JlIv8a86qnKAzzz.DRlyNfCF4GFezH40"
+      "_key": "!journal.pages!1JlIv8a86qnKAzzz.mfKvaZz7oBwWxv9q"
+    },
+    {
+      "sort": 800000,
+      "name": "Crédito",
+      "type": "text",
+      "_id": "Ckt3tHGruQ1tXyAN",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>A lista de Poderes Mentais, com todos os seus valores, é do <strong><em>Space Dragon</strong></em> (Old Dragon Editora) — consulte o <strong>Cap. 9</strong> do Módulo Básico. A repartição em correntes Universal/Luz/Sombra, as marcas ★ de Corrupção e os nomes de Star Wars são adaptação deste cenário.</p></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!1JlIv8a86qnKAzzz.Ckt3tHGruQ1tXyAN"
     }
   ],
   "flags": {},

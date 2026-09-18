@@ -1,0 +1,22 @@
+{
+  "name": "9ª Grandeza",
+  "sorting": "m",
+  "folder": "cn4HbW6iBTA6MCDr",
+  "type": "Item",
+  "_id": "zoMo9JDs7rADYx9g",
+  "description": "",
+  "sort": 900000,
+  "color": "#326b96",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1"
+  },
+  "_key": "!folders!zoMo9JDs7rADYx9g"
+}

@@ -1,0 +1,39 @@
+{
+  "folder": "BHwWOWdGLAJNnFHl",
+  "name": "Ecos do Lugar",
+  "type": "spell",
+  "_id": "EdaZaLT9egHB9LBT",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "ecos-do-lugar",
+    "school": "arcane",
+    "circle": "7",
+    "arcane": "7",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "5 metros/nível",
+    "duration": "Variável (ver texto)",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.AtKQbQ0WTLVvbBNX]{Reviver Memórias Locais}</p><hr><p>Este poder mental funciona de forma similar a vivenciar uma memória, com a diferença que é possível presenciar os eventos ocorridos em um lugar pelo período de até 1 hora por nível do mentálico. O alcance do poder mental define a área na qual os acontecimentos poderão ser vivenciados, e o poder mental durará até o final da memória ou até o mentálico cancelar sua execução.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 300000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!EdaZaLT9egHB9LBT"
+}

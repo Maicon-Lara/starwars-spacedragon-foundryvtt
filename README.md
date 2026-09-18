@@ -36,6 +36,16 @@ Cada nota vira um arquivo em `tools/data/`:
 
 O cofre é **só leitura**: o módulo copia dele, nunca escreve nele.
 
+O texto longo — as tabelas de progressão, as seções de regra, as espécies e a
+lista de poderes — entra por `node tools/importar-cofre.mjs`, que grava
+`tools/data/progressoes.mjs` e `tools/data/textos-do-cofre.mjs`. Esses dois
+são **gerados e versionados**: o build não lê o cofre, então um clone sem ele
+continua compilando. Rode o importador quando o cofre mudar.
+
+Os Poderes da Força trazem os números do Poder Mental nativo, lidos do
+`packs-src` do módulo Space Dragon (`../space-dragon-foundryvtt`) pelo mesmo
+importador.
+
 ## Estrutura
 
 A mesma do Star Dragon, para quem mexe num achar as coisas no outro:
@@ -56,6 +66,7 @@ tools/
   validar.mjs             pega o que compila mas quebra na mesa
   make-zip.py             starwars-sd.zip
   make-banners.mjs        capas
+  importar-cofre.mjs      cofre (e poderes do Space Dragon) → tools/data/
   extract.mjs             packs → _verify/, para conferir
   data/                   um arquivo por nota do cofre
 ```

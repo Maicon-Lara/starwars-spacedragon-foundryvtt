@@ -1,0 +1,39 @@
+{
+  "folder": "aXSMCIDvCKQFCEo0",
+  "name": "Enfraquecer",
+  "type": "spell",
+  "_id": "L2Tw2rOH9CsY4aHb",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "enfraquecer",
+    "school": "arcane",
+    "circle": "2",
+    "arcane": "2",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Visual",
+    "duration": "30 segundos/nível",
+    "jp": "nenhuma",
+    "description": "<p><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.BO1C0rW03PNtgBHL]{Enfraquecimento}</p><hr><p>O alvo deste poder mental sofrerá com fraqueza repentina, se falhar em uma JPM que anula os efeitos. A fraqueza confere uma penalidade de -2 no atributo Força do alvo até que passe a duração do efeito.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!L2Tw2rOH9CsY4aHb"
+}
