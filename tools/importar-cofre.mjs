@@ -406,6 +406,67 @@ function origemDoCofre(texto) {
   return { html: blocos(md0), degraus };
 }
 
+// ── Equipamentos ────────────────────────────────────────────────────────────
+//
+// Todas as tabelas da nota, na ordem, com o título "## " em que estão. Quem
+// decide o que vira item é equipamentos.mjs, pelo cabeçalho — o importador só
+// copia.
+
+function tabelasDaNota(texto) {
+  const saida = [];
+  let secaoAtual = null;
+  const linhas = texto.split("\n");
+  for (let i = 0; i < linhas.length; i++) {
+    const h = linhas[i].match(/^##\s+(.*)$/);
+    if (h) secaoAtual = h[1].trim();
+    if (linhas[i].trim().startsWith("|") && !linhas[i - 1]?.trim().startsWith("|")) {
+      const t = tabelaApos(linhas.slice(i).join("\n"), 0);
+      saida.push({ secao: secaoAtual, ...t });
+    }
+  }
+  return saida;
+}
+
+// ── Aparatos ────────────────────────────────────────────────────────────────
+//
+// Como os poderes: o cofre dá o NT, o nome nativo e o que ele é na galáxia; o
+// custo e o texto vêm do compêndio de Aparatos do módulo Space Dragon. O nome
+// lá está em caixa de título ("Mochila a Jato") e aqui não ("Mochila a
+// jato"), então a busca ignora caixa e acento.
+
+const SD_APARATOS = path.join(ROOT, "..", "space-dragon-foundryvtt", "packs-src", "spacedragon-aparatos");
+const chaveDeNome = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/\s+/g, " ").trim();
+
+// Aparatos que o cofre cita e que só existem no "Módulo Básico" antigo, não no
+// Aprimorado — que é a fonte do módulo Space Dragon. Saem sem nativo, e
+// equipamentos.mjs não os transforma em item. Conferido no PDF antigo em
+// 18/09/2026: o Soro reanimador é NT 4, $120.000, e o Aprimorado o retirou.
+const SO_NA_EDICAO_ANTIGA = ["Soro reanimador"];
+
+function aparatosDoCofre(texto) {
+  const nativos = new Map();
+  for (const arq of fs.readdirSync(SD_APARATOS).filter((f) => f.includes("__misc__"))) {
+    const d = JSON.parse(fs.readFileSync(path.join(SD_APARATOS, arq), "utf8"));
+    nativos.set(chaveDeNome(d.name), d);
+  }
+  const t = tabelaDoTitulo(texto, "## O catálogo, vestido de Star Wars");
+  const faltando = [];
+  const saida = t.linhas.map(([nt, nativo, galaxia]) => {
+    const nomeNativo = nativo.replace(/\*\*/g, "").trim();
+    const d = nativos.get(chaveDeNome(nomeNativo));
+    if (!d && !SO_NA_EDICAO_ANTIGA.includes(nomeNativo)) faltando.push(nomeNativo);
+    const [nome, ...explica] = galaxia.replace(/\*\*/g, "").split(/\s+—\s+/);
+    return {
+      nt: Number(nt.replace(/\D/g, "")),
+      nome: nome.trim(),
+      explica: explica.join(" — ").trim(),
+      nativo: d ? { nome: d.name, id: d._id, cost: d.system.cost, description: d.system.description } : null,
+    };
+  });
+  if (faltando.length) throw new Error(`aparatos do cofre sem par no módulo Space Dragon: ${faltando.join(", ")}`);
+  return saida;
+}
+
 // Quais seções de quais notas viram página. Nota nova entra aqui.
 const SECOES = {
   "SW-SUP-Usando-o-Basico": [
@@ -428,6 +489,20 @@ const SECOES = {
     "Origem: Filho de Mandalore (1º nível)",
     SENDA_TITULO,
     "Referência de equipamento",
+  ],
+  "SW-SUP-Equipamentos": [
+    "Créditos",
+    "Armas de combate corpo a corpo",
+    "Armas de fogo, arremesso e explosivos",
+    "Armaduras & Vestes",
+    "Aparelhos, kits e suprimentos",
+    "Crédito",
+  ],
+  "SW-SUP-Aparatos-e-Feitos": [
+    "O que você precisa saber do livro básico",
+    "O catálogo, vestido de Star Wars",
+    "Feitos Científicos, na galáxia",
+    "Crédito",
   ],
   "SW-SUP-Ordens-e-Ranks": [
     "A Ordem Jedi (Caminho da Luz)",
@@ -456,6 +531,8 @@ const PODERES = poderesDoCofre(ler("SW-SUP-Poderes-da-Forca"));
 const FORMAS = formasDoCofre(ler("SW-SUP-Sabre-e-Cristais"));
 const SENDA = sendaDoCofre(ler("SW-SUP-Senda-Mandaloriana"));
 const ORIGEM = origemDoCofre(ler("SW-SUP-Senda-Mandaloriana"));
+const EQUIPAMENTOS = tabelasDaNota(ler("SW-SUP-Equipamentos"));
+const APARATOS = aparatosDoCofre(ler("SW-SUP-Aparatos-e-Feitos"));
 
 fs.writeFileSync(
   DESTINO_TEXTOS,
@@ -484,6 +561,12 @@ fs.writeFileSync(
     "",
     "// A Origem Filho de Mandalore.",
     `export const ORIGEM = ${JSON.stringify(ORIGEM, null, 2)};`,
+    "",
+    "// Todas as tabelas de SW-SUP-Equipamentos, na ordem, com a seção de cada.",
+    `export const EQUIPAMENTOS = ${JSON.stringify(EQUIPAMENTOS, null, 2)};`,
+    "",
+    "// O catálogo de aparatos de SW-SUP-Aparatos-e-Feitos, cada um com o nativo.",
+    `export const APARATOS = ${JSON.stringify(APARATOS, null, 2)};`,
     "",
   ].join("\n"),
   "utf8"

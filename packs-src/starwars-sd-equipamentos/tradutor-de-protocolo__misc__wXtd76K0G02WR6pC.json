@@ -1,0 +1,35 @@
+{
+  "folder": "EDjh1YGfBQAl0Lj2",
+  "name": "Tradutor de protocolo",
+  "type": "misc",
+  "_id": "wXtd76K0G02WR6pC",
+  "img": "systems/olddragon2e/assets/icons/magic-scroll.svg",
+  "system": {
+    "odo_id": "tradutor-de-protocolo",
+    "description": "Na galáxia: Tradutor de protocolo — o que faz um droide de protocolo. Aparato (SD): Comunicador Idiomático, 3º NT. Aparato utilitário de 3º nível tecnológico. Operam: Técnico, Veterano, Operativo, Sensível à Força. Custo 180.000 CR. Tempo de construção 1d6 semanas. Este comunicador consiste em fones de ouvido e um microfone que consegue traduzir bilateralmente um diálogo em qualquer idioma do universo para o qual o comunicador for calibrado. O aparato inicialmente consegue traduzir os idiomas conhecidos pelo cientista, mas é possível adicionar novos idiomas. O cientista deve ter contato com um falante nativo do idioma, do qual deve fazer gravações para calibrar a linguagem, pagando 25% do valor do aparato conforme a regra para consertos.",
+    "quantity": 1,
+    "cost": "180.000 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!wXtd76K0G02WR6pC"
+}

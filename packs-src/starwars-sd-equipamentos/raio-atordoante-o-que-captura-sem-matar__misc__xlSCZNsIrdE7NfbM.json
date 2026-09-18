@@ -1,0 +1,35 @@
+{
+  "folder": "7jHxnJyxF9io1FTa",
+  "name": "Raio atordoante (o que captura sem matar)",
+  "type": "misc",
+  "_id": "xlSCZNsIrdE7NfbM",
+  "img": "systems/olddragon2e/assets/icons/misc.svg",
+  "system": {
+    "odo_id": "raio-atordoante-o-que-captura-sem-matar",
+    "description": "Na galáxia: Raio atordoante (o que captura sem matar). Aparato (SD): Raio Paralisador, 7º NT. Aparato ofensivo de 7º nível tecnológico. Operam: Técnico. Custo 350.000 CR. Tempo de construção 1d6 dias. O raio paralisador é emitido por um dispositivo semelhante a uma pistola e pode paralisar completamente uma criatura por 30 segundos. É realizada uma rolagem de ataque à distância que obrigará o alvo a fazer uma JPF, se for bem-sucedida. Uma falha na JPF deixa o alvo completamente imobilizado, mas um sucesso anula qualquer efeito. Criaturas muito maiores que um humano não são afetadas. O raio paralisador só pode ser usado 2 vezes antes de precisar de recarga, realizada de acordo com a regra de conserto de aparatos.",
+    "quantity": 1,
+    "cost": "350.000 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 500000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!xlSCZNsIrdE7NfbM"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "5º NT",
+  "sorting": "m",
+  "folder": "TYObNCU874x97FNs",
+  "type": "Item",
+  "_id": "VkGgTTVwaISs6GE8",
+  "description": "",
+  "sort": 1300000,
+  "color": "#806126",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1"
+  },
+  "_key": "!folders!VkGgTTVwaISs6GE8"
+}

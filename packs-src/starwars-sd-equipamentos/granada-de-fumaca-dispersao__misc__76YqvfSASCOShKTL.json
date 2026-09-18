@@ -1,0 +1,35 @@
+{
+  "folder": "EDjh1YGfBQAl0Lj2",
+  "name": "Granada de fumaça / dispersão",
+  "type": "misc",
+  "_id": "76YqvfSASCOShKTL",
+  "img": "systems/olddragon2e/assets/icons/throw.svg",
+  "system": {
+    "odo_id": "granada-de-fumaca-dispersao",
+    "description": "Na galáxia: Granada de fumaça / dispersão. Aparato (SD): Granada de Fumaça, 3º NT. Aparato utilitário de 3º nível tecnológico. Operam: Técnico, Veterano, Operativo, Sensível à Força. Custo 60.000 CR. Tempo de construção 1d6 horas. Esta bomba libera uma espessa fumaça ao ser detonada, prejudicando a visão de todos em um raio de 20m². Todos na área têm uma penalidade de -4 em rolagens de ataque, de acordo com a tabela T7-3.",
+    "quantity": 1,
+    "cost": "60.000 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 500000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!76YqvfSASCOShKTL"
+}

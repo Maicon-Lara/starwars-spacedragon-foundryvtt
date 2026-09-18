@@ -1,0 +1,22 @@
+{
+  "name": "Armaduras e Vestes",
+  "sorting": "m",
+  "folder": null,
+  "type": "Item",
+  "_id": "SZtXl5p9ckqNHO6l",
+  "description": "",
+  "sort": 500000,
+  "color": "#51687f",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1"
+  },
+  "_key": "!folders!SZtXl5p9ckqNHO6l"
+}

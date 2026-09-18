@@ -1,0 +1,35 @@
+{
+  "folder": "BLg4MVT3iraY9WJR",
+  "name": "Mira eletrônica de precisão",
+  "type": "misc",
+  "_id": "dGjNv2mWuhTeYZ4V",
+  "img": "systems/olddragon2e/assets/icons/ranged.svg",
+  "system": {
+    "odo_id": "mira-eletronica-de-precisao",
+    "description": "Na galáxia: Mira eletrônica de precisão. Aparato (SD): Visor de Precisão, 4º NT. Aparato utilitário de 4º nível tecnológico. Operam: Técnico, Veterano, Operativo, Sensível à Força. Custo 80.000 CR. Tempo de construção 1d6 horas. Este pequeno visor de radar pode ser acoplado a qualquer arma à distância, a fim de ajudar na precisão da mira, concedendo +2 de bônus em rolagens de ataque. O visor também faz com que cobertura não sólida como fumaça ou neblina seja ignorada ao determinar penalidades de visibilidade.",
+    "quantity": 1,
+    "cost": "80.000 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 600000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!dGjNv2mWuhTeYZ4V"
+}

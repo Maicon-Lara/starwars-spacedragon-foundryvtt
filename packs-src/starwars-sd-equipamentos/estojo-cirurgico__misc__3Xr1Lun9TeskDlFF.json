@@ -1,0 +1,35 @@
+{
+  "folder": "rKBNVDMQ0RjBYH71",
+  "name": "Estojo Cirúrgico",
+  "type": "misc",
+  "_id": "3Xr1Lun9TeskDlFF",
+  "img": "systems/olddragon2e/assets/icons/misc.svg",
+  "system": {
+    "odo_id": "estojo-cirurgico",
+    "description": "Necessário para cirurgia (perícia de tratar ferimentos).",
+    "quantity": 1,
+    "cost": "",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 400000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!3Xr1Lun9TeskDlFF"
+}

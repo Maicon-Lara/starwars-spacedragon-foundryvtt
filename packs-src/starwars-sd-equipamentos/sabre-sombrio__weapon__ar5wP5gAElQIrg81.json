@@ -1,0 +1,49 @@
+{
+  "folder": "t06mW9zUez6siGzJ",
+  "name": "Sabre Sombrio",
+  "type": "weapon",
+  "_id": "ar5wP5gAElQIrg81",
+  "img": "systems/olddragon2e/assets/icons/melee.svg",
+  "system": {
+    "odo_id": "sabre-sombrio",
+    "description": "Lâmina negra e achatada como uma espada, forjada há mil anos por Tarre Vizsla — o primeiro Mandaloriano admitido na Ordem Jedi. Artefato único e símbolo de liderança de Mandalore. Como um Sabre de Luz, mas corta até a Beskar — a única lâmina que ignora o CP da Armadura Beskar. O Peso da Dúvida: quem o empunha sem tê-lo conquistado em combate sofre −1 nos ataques com ele até vencer um duelo com a lâmina. O Direito de Mandalore: portá-lo é reivindicar a liderança de Mandalore. Sem preço: não se compra.",
+    "quantity": 1,
+    "cost": "",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false,
+    "type": "melee",
+    "damage_type": "none",
+    "damage": "2d10",
+    "bonus_damage": 0,
+    "bonus_ba": 0,
+    "bonus_ca": 0,
+    "shoot_range": 0,
+    "throw_range": 0,
+    "arrow": false,
+    "bolt": false,
+    "bolt_small": false,
+    "polearm": false,
+    "two_handed": false,
+    "versatile": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!ar5wP5gAElQIrg81"
+}

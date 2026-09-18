@@ -1,0 +1,35 @@
+{
+  "folder": "VuO0M0BDH63pCe6H",
+  "name": "Lança-chamas de tropa de choque",
+  "type": "misc",
+  "_id": "2FtszwSYLbvV1cpL",
+  "img": "systems/olddragon2e/assets/icons/ranged.svg",
+  "system": {
+    "odo_id": "lanca-chamas-de-tropa-de-choque",
+    "description": "Na galáxia: Lança-chamas de tropa de choque. Aparato (SD): Lança-Chamas, 8º NT. Aparato ofensivo de 8º nível tecnológico. Operam: Técnico. Custo 560.000 CR. Tempo de construção 1d4 dias. O lança-chamas projeta uma rajada de fogo que atinge a todos em uma linha que estejam a até 10 metros de distância, causando dano maior ou menor dependendo da proximidade do alvo. Se ele estiver a até 2 metros o lança-chamas causa 5d10 pontos de dano. Alvos do lança-chamas têm direito a uma JPR para reduzir o dano pela metade. Um alvo à distância, entre 2 a até 4 metros sofre 5d6 pontos de dano, e um alvo mais distante do que isso sofre 5d4 pontos de dano. Também há uma certa chance de deixar o alvo em chamas, com porcentagens de 50%, 25% e 10% para as distâncias citadas acima, respectivamente. Um alvo em chamas recebe o mesmo dano que sofreu inicialmente a cada nova rodada até que consiga apagar o fogo.",
+    "quantity": 1,
+    "cost": "560.000 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!2FtszwSYLbvV1cpL"
+}

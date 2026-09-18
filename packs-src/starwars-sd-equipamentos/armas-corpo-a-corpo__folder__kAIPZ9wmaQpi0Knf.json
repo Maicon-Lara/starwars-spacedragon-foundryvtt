@@ -1,0 +1,22 @@
+{
+  "name": "Armas Corpo a Corpo",
+  "sorting": "m",
+  "folder": null,
+  "type": "Item",
+  "_id": "kAIPZ9wmaQpi0Knf",
+  "description": "",
+  "sort": 100000,
+  "color": "#a14e43",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1"
+  },
+  "_key": "!folders!kAIPZ9wmaQpi0Knf"
+}

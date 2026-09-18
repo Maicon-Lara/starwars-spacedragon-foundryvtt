@@ -1,0 +1,49 @@
+{
+  "folder": "xQ28sq6a7KL059L8",
+  "name": "Granada de Fragmentação",
+  "type": "weapon",
+  "_id": "4jYjU4LWNOhSE11U",
+  "img": "systems/olddragon2e/assets/icons/ranged.svg",
+  "system": {
+    "odo_id": "granada-de-fragmentacao",
+    "description": "Dano 3d6, tipo Corte. Disponibilidade: Militar. Alcance — Arremesso: queima-roupa 0–6 m (+2), curto 7–8 (−2), médio 9–10 (−5), longo 11–12 (−10).",
+    "quantity": 1,
+    "cost": "8.000 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 250,
+    "magic_item": false,
+    "is_equipped": false,
+    "type": "throwing",
+    "damage_type": "slashing",
+    "damage": "3d6",
+    "bonus_damage": 0,
+    "bonus_ba": 0,
+    "bonus_ca": 0,
+    "shoot_range": 0,
+    "throw_range": 6,
+    "arrow": false,
+    "bolt": false,
+    "bolt_small": false,
+    "polearm": false,
+    "two_handed": false,
+    "versatile": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!4jYjU4LWNOhSE11U"
+}

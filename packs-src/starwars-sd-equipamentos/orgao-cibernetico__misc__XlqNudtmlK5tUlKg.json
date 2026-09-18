@@ -1,0 +1,35 @@
+{
+  "folder": "7jHxnJyxF9io1FTa",
+  "name": "Órgão cibernético",
+  "type": "misc",
+  "_id": "XlqNudtmlK5tUlKg",
+  "img": "systems/olddragon2e/assets/icons/magic-ring.svg",
+  "system": {
+    "odo_id": "orgao-cibernetico",
+    "description": "Na galáxia: Órgão cibernético — como Vader continua vivo. Aparato (SD): Órgão Biônico, 7º NT. Aparato utilitário de 7º nível tecnológico. Operam: Técnico, Veterano, Operativo, Sensível à Força. Custo 300.000 CR. Tempo de construção 1d4 semanas. O cientista é capaz de recriar qualquer órgão do corpo humano, com exceção do cérebro, em forma de máquina. Ele funcionará de maneira idêntica à sua contraparte orgânica, mas pode apresentar problemas de funcionamento com o uso prolongado. O implante do novo órgão deve ser feito através de uma cirurgia biônica.",
+    "quantity": 1,
+    "cost": "300.000 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 400000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!XlqNudtmlK5tUlKg"
+}

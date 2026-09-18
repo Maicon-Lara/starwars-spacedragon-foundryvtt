@@ -1,0 +1,35 @@
+{
+  "folder": "VkGgTTVwaISs6GE8",
+  "name": "Estimulante de combate (ilegal, vicia)",
+  "type": "misc",
+  "_id": "mgWEjQQnbjoMCoER",
+  "img": "systems/olddragon2e/assets/icons/melee.svg",
+  "system": {
+    "odo_id": "estimulante-de-combate-ilegal-vicia",
+    "description": "Na galáxia: Estimulante de combate (ilegal, vicia). Aparato (SD): Pílula de Aprimoramento, 5º NT. Aparato utilitário de 5º nível tecnológico. Operam: Técnico, Veterano, Operativo, Sensível à Força. Custo 200.000 CR. Tempo de construção 1d6 horas. Esta pílula é capaz de aumentar temporariamente qualquer atributo de um indivíduo em 2 pontos. No momento da criação o cientista decide que atributo a pílula afetará e é produzido o suficiente para 4 doses. A pílula começa a fazer efeito 1 minuto após ingerida e se mantém eficaz por 1 hora. Estas pílulas são consideradas ilegais em muitas regiões da galáxia e podem causar vício. Ingerir mais de uma pílula por vez pode levar a uma overdose potencialmente fatal.",
+    "quantity": 1,
+    "cost": "200.000 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 500000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!mgWEjQQnbjoMCoER"
+}

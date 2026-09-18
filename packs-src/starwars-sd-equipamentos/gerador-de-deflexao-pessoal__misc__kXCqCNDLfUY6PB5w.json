@@ -1,0 +1,35 @@
+{
+  "folder": "VkGgTTVwaISs6GE8",
+  "name": "Gerador de deflexão pessoal",
+  "type": "misc",
+  "_id": "kXCqCNDLfUY6PB5w",
+  "img": "systems/olddragon2e/assets/icons/misc.svg",
+  "system": {
+    "odo_id": "gerador-de-deflexao-pessoal",
+    "description": "Na galáxia: Gerador de deflexão pessoal. Aparato (SD): Cinto de Deflexão, 5º NT. Aparato defensivo de 5º nível tecnológico. Operam: Técnico, Veterano. Custo 450.000 CR. Tempo de construção 1d10 horas. Este cinto faz com que qualquer ataque de energia ou projétil tenha 25% de chance de rebater no campo de força gerado por ele e ricochetear para o atacante. Se a jogada percentual falhar o ataque ultrapassa o campo de força e atinge o usuário do cinto normalmente.",
+    "quantity": 1,
+    "cost": "450.000 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!kXCqCNDLfUY6PB5w"
+}

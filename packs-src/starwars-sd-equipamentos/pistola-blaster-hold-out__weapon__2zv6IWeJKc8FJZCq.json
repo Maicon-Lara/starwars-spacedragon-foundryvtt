@@ -1,0 +1,49 @@
+{
+  "folder": "pUXGEEgu2DB4vDSu",
+  "name": "Pistola Blaster Hold-Out",
+  "type": "weapon",
+  "_id": "2zv6IWeJKc8FJZCq",
+  "img": "systems/olddragon2e/assets/icons/ranged.svg",
+  "system": {
+    "odo_id": "pistola-blaster-hold-out",
+    "description": "Dano 2d4, tipo Energia. Cadência: semiautomática (permite Tiro Duplo). Alcance — Pistolas: queima-roupa 0–20 m (+2), curto 21–40 (−2), médio 41–60 (−5), longo 61–80 (−10). Disponibilidade: Ilegal.",
+    "quantity": 1,
+    "cost": "10.000 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 500,
+    "magic_item": false,
+    "is_equipped": false,
+    "type": "ranged",
+    "damage_type": "none",
+    "damage": "2d4",
+    "bonus_damage": 0,
+    "bonus_ba": 0,
+    "bonus_ca": 0,
+    "shoot_range": 20,
+    "throw_range": 0,
+    "arrow": false,
+    "bolt": false,
+    "bolt_small": false,
+    "polearm": false,
+    "two_handed": false,
+    "versatile": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!2zv6IWeJKc8FJZCq"
+}

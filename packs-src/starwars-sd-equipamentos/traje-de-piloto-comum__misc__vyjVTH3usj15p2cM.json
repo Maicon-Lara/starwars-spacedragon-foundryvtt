@@ -1,0 +1,35 @@
+{
+  "folder": "SIWQL7yQEPBoilwO",
+  "name": "Traje de Piloto Comum",
+  "type": "misc",
+  "_id": "vyjVTH3usj15p2cM",
+  "img": "systems/olddragon2e/assets/icons/vehicle.svg",
+  "system": {
+    "odo_id": "traje-de-piloto-comum",
+    "description": "10 h de suporte de vida; imune a atmosfera hostil/veneno inalado.",
+    "quantity": 1,
+    "cost": "",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 2200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!vyjVTH3usj15p2cM"
+}

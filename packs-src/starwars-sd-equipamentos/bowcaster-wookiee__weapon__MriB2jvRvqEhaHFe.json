@@ -1,0 +1,49 @@
+{
+  "folder": "pUXGEEgu2DB4vDSu",
+  "name": "Bowcaster Wookiee",
+  "type": "weapon",
+  "_id": "MriB2jvRvqEhaHFe",
+  "img": "systems/olddragon2e/assets/icons/ranged.svg",
+  "system": {
+    "odo_id": "bowcaster-wookiee",
+    "description": "Dano 2d10, tipo Energia. Cadência: disparo único. Alcance — Rifles: queima-roupa 0–30 m (+2), curto 31–60 (−2), médio 61–150 (−5), longo 151–300 (−10). Disponibilidade: Rara.",
+    "quantity": 1,
+    "cost": "60.000 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 8000,
+    "magic_item": false,
+    "is_equipped": false,
+    "type": "ranged",
+    "damage_type": "none",
+    "damage": "2d10",
+    "bonus_damage": 0,
+    "bonus_ba": 0,
+    "bonus_ca": 0,
+    "shoot_range": 30,
+    "throw_range": 0,
+    "arrow": false,
+    "bolt": false,
+    "bolt_small": false,
+    "polearm": false,
+    "two_handed": true,
+    "versatile": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 1200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!MriB2jvRvqEhaHFe"
+}

@@ -1,0 +1,246 @@
+{
+  "folder": null,
+  "name": "Equipamentos & Créditos",
+  "_id": "rGEnWqFKOilYsybX",
+  "pages": [
+    {
+      "sort": 100000,
+      "name": "Créditos",
+      "type": "text",
+      "_id": "SiNJU4fLR0ICDCov",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><blockquote><p>Armas, armaduras, aparelhos e serviços da galáxia, em <strong>Créditos (CR)</strong>. As tabelas de arsenal, armadura e preços vêm da adaptação <strong>\"Star Wars para Space Dragon\" de Jonas Picholaro</strong> (2014, CC BY 3.0), reconciliadas com o CP e as salvaguardas nativas do SD. Compatível com os Créditos iniciais das classes (ver Classes Mundanas).</p></blockquote><p>O <strong>Crédito (CR)</strong> é a moeda-padrão da galáxia. Cada classe começa com uma quantia rolada:</p><table><thead><tr><th>Classe</th><th>Créditos iniciais</th></tr></thead><tbody><tr><td><strong>Veterano</strong></td><td>2d10 × 5.000</td></tr><tr><td><strong>Operativo</strong></td><td>2d6 × 5.000</td></tr><tr><td><strong>Técnico</strong></td><td>1d8 × 5.000</td></tr><tr><td><strong>Sensível à Força</strong></td><td>1d6 × 5.000</td></tr></tbody></table><blockquote><p>O <strong>Técnico</strong> compra tudo com desconto (Crédito Tecnológico, por Ciência); ver <em>SD</em>, Tabela 1-5.</p></blockquote><p><strong>Disponibilidade</strong> (na coluna das tabelas): <em>(—)</em> livre · <strong>Licenciada</strong> (precisa de licença) · <strong>Restrita</strong> (mercado cinzento/militar) · <strong>Militar</strong> (só forças armadas) · <strong>Ilegal</strong> · <strong>Rara</strong>. Fora de mundos-fronteira, portar item Restrito/Militar atrai a lei.</p></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!rGEnWqFKOilYsybX.SiNJU4fLR0ICDCov"
+    },
+    {
+      "sort": 200000,
+      "name": "Armas Corpo a Corpo",
+      "type": "text",
+      "_id": "8LKLrUnhuwatbPv8",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><table><thead><tr><th>Arma</th><th>Custo</th><th>Dano</th><th>Tipo</th><th>Peso</th><th>Disponib.</th></tr></thead><tbody><tr><td>Faca</td><td>5.000</td><td>1d4</td><td>Corte/Perf.</td><td>0,5</td><td>—</td></tr><tr><td>Porrete</td><td>3.000</td><td>1d6</td><td>Contusão</td><td>1</td><td>—</td></tr><tr><td>Bastão de Atordoamento</td><td>6.000</td><td>1d6</td><td>Atord.</td><td>1</td><td>—</td></tr><tr><td>Baioneta</td><td>10.000</td><td>1d6</td><td>Perf.</td><td>1</td><td>—</td></tr><tr><td>Maça</td><td>10.000</td><td>1d8</td><td>Contusão</td><td>1,5</td><td>—</td></tr><tr><td>Lança</td><td>10.000</td><td>1d8</td><td>Perf.</td><td>1,5</td><td>—</td></tr><tr><td>Cajado</td><td>15.000</td><td>1d6/1d6</td><td>Contusão</td><td>2</td><td>—</td></tr><tr><td>Espada Longa</td><td>15.000</td><td>1d8</td><td>Corte/Perf.</td><td>1,5</td><td>—</td></tr><tr><td>Machado</td><td>20.000</td><td>1d12</td><td>Corte/Perf.</td><td>5</td><td>—</td></tr><tr><td>Luvas de Combate</td><td>40.000</td><td>+1</td><td>Contusão</td><td>0,5</td><td>—</td></tr><tr><td>Vibro-adaga</td><td>40.000</td><td>1d6</td><td>Corte/Perf.</td><td>0,5</td><td>—</td></tr><tr><td>Vibro-lâmina</td><td>50.000</td><td>1d8</td><td>Corte/Perf.</td><td>1</td><td>Licenciada</td></tr><tr><td>Vibro-baioneta</td><td>70.000</td><td>1d8</td><td>Perf.</td><td>1</td><td>Licenciada</td></tr><tr><td>Vibro-espada</td><td>70.000</td><td>1d10</td><td>Corte/Perf.</td><td>1,5</td><td>Licenciada</td></tr><tr><td>Vibro-machado</td><td>100.000</td><td>2d8</td><td>Corte</td><td>6</td><td>Restrita</td></tr><tr><td>Pique de Energia</td><td>100.000</td><td>1d12</td><td>Energia/Perf.</td><td>2</td><td>Restrita</td></tr><tr><td>Cajado Elétrico</td><td>600.000</td><td>1d8/1d8</td><td>Contusão/Energia</td><td>2</td><td>Restrita</td></tr><tr><td><strong>Sabre de Luz</strong></td><td>600.000</td><td><strong>2d10</strong></td><td>Energia</td><td>1</td><td>Rara</td></tr></tbody></table><h3>O Sabre de Luz</h3><p>Uma lâmina de energia pura: <strong>2d10 de dano por energia</strong>, e corta quase qualquer coisa. Regras do cenário:</p><ul><li><strong>Ignora a proteção de armaduras comuns</strong> (a lâmina atravessa placas), mas <strong>não</strong> a <strong>Beskar</strong> mandaloriana nem outro sabre.</li><li><strong>Manejo perigoso.</strong> Só o <strong>Sensível à Força</strong> o empunha sem risco (e o <strong>Guardião</strong> é o mestre da lâmina). Nas mãos de um não-sensível, um <strong>1 natural</strong> no ataque significa que ele <strong>se fere</strong> (2d10 no próprio portador).</li><li><strong>Deflexão de tiros</strong> é técnica de Forma (Soresu e cia.); a construção do sabre e os cristais kyber estão em Sabre de Luz e Cristais Kyber.</li></ul></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!rGEnWqFKOilYsybX.8LKLrUnhuwatbPv8"
+    },
+    {
+      "sort": 300000,
+      "name": "Armas de Fogo, Arremesso e Explosivos",
+      "type": "text",
+      "_id": "vGfqJC43ChxozabL",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p><strong>CDT (Cadência de Tiro):</strong> <strong>A</strong> = automática · <strong>SA</strong> = semiautomática · <strong>U</strong> = disparo único.</p><table><thead><tr><th>Arma</th><th>Custo</th><th>Dano</th><th>Tipo</th><th>CDT</th><th>Peso</th><th>Disponib.</th></tr></thead><tbody><tr><td>Pistola Blaster Hold-Out</td><td>10.000</td><td>2d4</td><td>Energia</td><td>SA</td><td>0,5</td><td>Ilegal</td></tr><tr><td>Pistola Blaster Esportiva</td><td>10.000</td><td>2d4</td><td>Energia</td><td>SA</td><td>1</td><td>Licenciada</td></tr><tr><td>Pistola de Íons</td><td>10.000</td><td>2d6</td><td>Iônico</td><td>SA</td><td>1</td><td>Licenciada</td></tr><tr><td>Pistola de Projéteis</td><td>10.000</td><td>2d4</td><td>Perf.</td><td>U</td><td>1,5</td><td>Licenciada</td></tr><tr><td><strong>Pistola Blaster</strong></td><td>20.000</td><td>2d6</td><td>Energia</td><td>SA</td><td>1</td><td>Restrita</td></tr><tr><td>Pistola Blaster Pesada</td><td>30.000</td><td>2d8</td><td>Energia</td><td>SA</td><td>1,5</td><td>Militar</td></tr><tr><td>Rifle Blaster Esportivo</td><td>30.000</td><td>2d6</td><td>Energia</td><td>SA</td><td>4</td><td>Licenciada</td></tr><tr><td>Rifle de Íons</td><td>30.000</td><td>2d8</td><td>Iônico</td><td>A</td><td>3</td><td>Restrita</td></tr><tr><td>Carabina Blaster</td><td>35.000</td><td>2d8</td><td>Energia</td><td>SA</td><td>2,5</td><td>Restrita</td></tr><tr><td>Escopeta Blaster</td><td>35.000</td><td>4d4</td><td>Energia</td><td>U</td><td>3</td><td>Licenciada</td></tr><tr><td>Rifle Blaster</td><td>40.000</td><td>2d8</td><td>Energia</td><td>A</td><td>4,5</td><td>Restrita</td></tr><tr><td>Bowcaster Wookiee</td><td>60.000</td><td>2d10</td><td>Energia</td><td>U</td><td>8</td><td>Rara</td></tr><tr><td>Rifle Blaster Pesado</td><td>80.000</td><td>2d10</td><td>Energia</td><td>A</td><td>6</td><td>Militar</td></tr><tr><td>Canhão Blaster</td><td>100.000</td><td>2d12</td><td>Energia</td><td>U</td><td>5</td><td>Restrita</td></tr><tr><td>Repetidora Blaster Leve</td><td>160.000</td><td>2d12</td><td>Energia</td><td>A</td><td>8</td><td>Militar</td></tr><tr><td>Repetidora Blaster Pesada</td><td>240.000</td><td>3d10</td><td>Energia</td><td>A</td><td>12</td><td>Militar</td></tr><tr><td>Blaster E-Web</td><td>320.000</td><td>3d12</td><td>Energia</td><td>A</td><td>38</td><td>Militar</td></tr><tr><td>Lança-Chamas</td><td>40.000</td><td>2d6</td><td>Fogo</td><td>U</td><td>7</td><td>Militar</td></tr><tr><td>Lança-Mísseis</td><td>60.000</td><td>3d12</td><td>—</td><td>U</td><td>10</td><td>Militar</td></tr><tr><td>Lança-Granadas</td><td>20.000</td><td>—</td><td>—</td><td>U</td><td>5</td><td>Militar</td></tr><tr><td>Arco</td><td>10.000</td><td>1d6</td><td>Perf.</td><td>U</td><td>1</td><td>—</td></tr><tr><td>Funda</td><td>1.500</td><td>1d4</td><td>Contusão</td><td>U</td><td>0,5</td><td>—</td></tr></tbody></table><p><strong>Granadas e explosivos</strong> (arremesso/fixação):</p><table><thead><tr><th>Item</th><th>Custo</th><th>Dano</th><th>Tipo</th><th>Peso</th><th>Disponib.</th></tr></thead><tbody><tr><td>Granada de Fumaça</td><td>8.000</td><td>2d4</td><td>Fumaça</td><td>0,25</td><td>Restrita</td></tr><tr><td>Granada de Fragmentação</td><td>8.000</td><td>3d6</td><td>Corte</td><td>0,25</td><td>Militar</td></tr><tr><td>Granada de Atordoamento</td><td>10.000</td><td>3d6</td><td>Energia (atord.)</td><td>0,5</td><td>Restrita</td></tr><tr><td>Granada de Íons</td><td>10.000</td><td>3d6</td><td>Iônico</td><td>0,5</td><td>Restrita</td></tr><tr><td>Detonita (bloco)</td><td>20.000</td><td>3d10</td><td>Energia</td><td>0,1</td><td>Restrita</td></tr><tr><td>Carga Explosiva</td><td>60.000</td><td>6d10</td><td>Energia</td><td>0,5</td><td>Restrita</td></tr><tr><td>Detonador Térmico</td><td>80.000</td><td>4d12</td><td>Energia</td><td>1</td><td>Ilegal</td></tr></tbody></table><h3>Regras de disparo</h3><ul><li><strong>Tiro Duplo</strong> <em>(armas SA e A)</em>: dispara duas vezes no mesmo alvo com <strong>−2 no ataque</strong>, somando <strong>+1 dado</strong> de dano (uma Pistola Blaster Pesada 2d8 → <strong>3d8</strong>).</li><li><strong>Rajada</strong> <em>(só armas A)</em>: <strong>−5 no ataque</strong>, somando <strong>+2 dados</strong> de dano (um Rifle Blaster 2d8 → <strong>4d8</strong>).</li><li><strong>Queima-roupa</strong> (dentro da 1ª faixa de alcance): <strong>+2</strong> no ataque e no dano.</li><li><strong>Explosivos de fixação</strong>: colocar exige teste de <strong>Demolição (Ciência)</strong>; sucesso <strong>ignora a redução de dano</strong> do alvo. Margem de 5 dobra o dano; 10 ou crítico triplica. Dobrar o número de cargas soma +2 dados.</li><li><strong>Armas Iônicas</strong> contra <strong>Droides</strong>: lembre que o Droide sofre <strong>dano dobrado</strong> de Íon e, num crítico, fica <strong>desativado</strong> (Espécies).</li></ul><h3>Alcance das armas (penalidade por faixa)</h3><table><thead><tr><th>Categoria</th><th>Queima-roupa (+2)</th><th>Curto (−2)</th><th>Médio (−5)</th><th>Longo (−10)</th></tr></thead><tbody><tr><td>Pistolas</td><td>0–20</td><td>21–40</td><td>41–60</td><td>61–80</td></tr><tr><td>Rifles</td><td>0–30</td><td>31–60</td><td>61–150</td><td>151–300</td></tr><tr><td>Artilharia</td><td>0–50</td><td>51–100</td><td>101–250</td><td>251–500</td></tr><tr><td>Armas simples</td><td>0–20</td><td>21–40</td><td>41–60</td><td>61–80</td></tr><tr><td>Arremesso</td><td>0–6</td><td>7–8</td><td>9–10</td><td>11–12</td></tr></tbody></table><p><em>(distâncias em metros.)</em></p></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!rGEnWqFKOilYsybX.vGfqJC43ChxozabL"
+    },
+    {
+      "sort": 400000,
+      "name": "Armaduras e Vestes",
+      "type": "text",
+      "_id": "cvi8HzWbVs9PmoHI",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>A coluna <strong>CP</strong> é o <strong>valor de proteção</strong> da veste, e é só a base da conta. O Coeficiente de Proteção final é:</p><blockquote><p><strong>CP = proteção da veste + modificador de Destreza + aparatos defensivos e poderes + bônus de nível</strong></p></blockquote><p>O <strong>modificador de Destreza entra inteiro</strong> — o Space Dragon não tem teto de Destreza por armadura. O <strong>bônus de nível</strong> vem da <strong>Tabela 4-1</strong> e <strong>não é cumulativo</strong>: o valor da faixa <em>é</em> o bônus total.</p><table><thead><tr><th>Nível</th><th>1–3</th><th>4–7</th><th>8–11</th><th>12–15</th><th>16–19</th><th>20</th></tr></thead><tbody><tr><td><strong>Bônus no CP</strong></td><td>—</td><td>+1</td><td>+2</td><td>+3</td><td>+4</td><td>+5</td></tr></tbody></table><p>Um ataque acerta com <strong>1d20 + BA ≥ CP</strong>.</p><table><thead><tr><th>Proteção</th><th>Custo</th><th>CP</th><th>Desloc.</th><th>Tipo</th><th>Peso</th><th>Disponib.</th></tr></thead><tbody><tr><td>Vestes Leves</td><td>20.000</td><td>10</td><td>—</td><td>Veste</td><td>0,5</td><td>—</td></tr><tr><td>Vestes Médias</td><td>40.000</td><td>11</td><td>—</td><td>Veste</td><td>1</td><td>Licenciada</td></tr><tr><td>Vestes Pesadas</td><td>50.000</td><td>12</td><td>—</td><td>Veste</td><td>2</td><td>Licenciada</td></tr><tr><td>Capacete e Colete</td><td>60.000</td><td>13</td><td>—</td><td>Leve</td><td>3</td><td>Licenciada</td></tr><tr><td>Traje de Piloto</td><td>75.000</td><td>13</td><td>—</td><td>Leve</td><td>5</td><td>Restrita</td></tr><tr><td>Armadura Projetada</td><td>100.000</td><td>14</td><td>—</td><td>Leve</td><td>8</td><td>Rara</td></tr><tr><td>Traje de Piloto Blindado</td><td>100.000</td><td>14</td><td>—</td><td>Leve</td><td>10</td><td>Restrita</td></tr><tr><td>Armadura de Stormtrooper</td><td>120.000</td><td>15</td><td>—</td><td>Leve</td><td>10</td><td>Restrita</td></tr><tr><td>Armadura Cerimonial</td><td>120.000</td><td>16</td><td>−1</td><td>Média</td><td>13</td><td>—</td></tr><tr><td>Armadura Mandaloriana</td><td>150.000</td><td>16</td><td>−1</td><td>Média</td><td>15</td><td>Rara</td></tr><tr><td>Armadura Corelliana</td><td>140.000</td><td>17</td><td>−1</td><td>Média</td><td>20</td><td>—</td></tr><tr><td>Armadura de Batalha</td><td>160.000</td><td>18</td><td>−1</td><td>Média</td><td>16</td><td>—</td></tr><tr><td>Projetada de Caçador</td><td>200.000</td><td>18</td><td>−1</td><td>Média</td><td>20</td><td>Ilegal</td></tr><tr><td>Traje Espacial Blindado</td><td>180.000</td><td>19</td><td>−2</td><td>Pesada</td><td>35</td><td>—</td></tr><tr><td>A. de Batalha Pesada</td><td>180.000</td><td>19</td><td>−2</td><td>Pesada</td><td>30</td><td>—</td></tr><tr><td>Mandaloriana Pesada</td><td>250.000</td><td>20</td><td>−2</td><td>Pesada</td><td>22</td><td>Rara</td></tr><tr><td>Dark Trooper</td><td>350.000</td><td>24</td><td>−3</td><td>Pesada</td><td>50</td><td>Militar</td></tr></tbody></table><p><strong>Proficiência:</strong> vestes leves e médias, qualquer um usa. Sem proficiência: <strong>vestes pesadas</strong> dão −1 em perícias físicas e ataque; <strong>armadura leve</strong> −2; <strong>média</strong> −5; <strong>pesada</strong> −10. As classes seguem suas restrições (Classes Mundanas): o Operativo/Sensível não passam de vestes; o Guardião pega médias; o Veterano usa qualquer uma + escudos.</p><p><strong>Vestes sob encomenda</strong> (Tabela 5-3 do livro) — qualquer veste pode ser melhorada:</p><table><thead><tr><th>Serviço</th><th>Custo</th><th>Benefício</th></tr></thead><tbody><tr><td>Material mais leve</td><td>40.000</td><td>reduz o peso da veste em <strong>2 kg</strong></td></tr><tr><td>Reforço de vestes</td><td>60.000</td><td>aumenta o valor de proteção em <strong>+2</strong></td></tr><tr><td>Vestes sob medida</td><td>50.000</td><td>reduz a penalidade de deslocamento em <strong>2</strong></td></tr></tbody></table><blockquote><p><strong>Alguns destaques:</strong> a <strong>Corelliana</strong> dá <strong>+2 de Força</strong> a quem tem proficiência em médias; a de <strong>Stormtrooper</strong> dá +2 em Percepção e visão na penumbra + comunicador no capacete (a variante da neve/deserto, 150.000 CR, dá imunidade a frio/calor extremo); a <strong>Mandaloriana</strong> é herança de clã (ver Senda Mandaloriana). A <strong>Beskar</strong> verdadeira — a que detém um sabre de luz — está em Sabre de Luz e Cristais Kyber.</p></blockquote></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!rGEnWqFKOilYsybX.cvi8HzWbVs9PmoHI"
+    },
+    {
+      "sort": 500000,
+      "name": "Aparelhos, Kits e Suprimentos",
+      "type": "text",
+      "_id": "YSnYmDWb7iyfARxr",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><table><thead><tr><th>Item</th><th>Custo</th><th>Peso</th><th>Efeito</th></tr></thead><tbody><tr><td>Comunicador (curto alcance)</td><td>10.000</td><td>—</td><td>50 km / órbita baixa; embutível em capacete</td></tr><tr><td>Comunicador (longo alcance)</td><td>50.000</td><td>4</td><td>200 km / órbita alta (miniaturizado por 2×)</td></tr><tr><td>Datapad</td><td>25.000</td><td>0,5</td><td>computador de mão (Ciência 12)</td></tr><tr><td>Computador Portátil</td><td>75.000</td><td>3</td><td>roda programas complexos (Ciência 14)</td></tr><tr><td>Lanterna</td><td>500</td><td>0,5</td><td>feixe de até ~12 m</td></tr><tr><td>Lanterna de Fusão</td><td>1.000</td><td>1</td><td>luz <strong>e</strong> calor num raio de ~12 m</td></tr><tr><td>Macrobinóculos</td><td>15.000</td><td>1</td><td>visão ampliada; útil de batedor</td></tr><tr><td>Cinto de Utilidades</td><td>25.000</td><td>4</td><td>organiza pequenos itens</td></tr><tr><td>Bandoleira</td><td>5.000</td><td>2</td><td>munição/granadas de acesso rápido</td></tr><tr><td>Coldre (cintura / oculto)</td><td>1.000 / 2.500</td><td>0,5</td><td>saque rápido / dissimulado</td></tr><tr><td>Mira Telescópica</td><td>5.000</td><td>—</td><td>reduz penalidade de alcance longo</td></tr><tr><td>Mira com Visão Noturna</td><td>50.000</td><td>1</td><td>mira no escuro</td></tr><tr><td>Algemas</td><td>2.500</td><td>0,5</td><td>prendem um alvo subjugado</td></tr><tr><td>Kit de Segurança</td><td>40.000</td><td>1</td><td>necessário para arrombar/desarmar sistemas (ilegal sem licença)</td></tr><tr><td>Kit de Ferramentas</td><td>10.000</td><td>1</td><td>necessário para reparar/reprogramar droides e veículos</td></tr><tr><td>Kit de Reparos Emergenciais</td><td>—</td><td>—</td><td>cura <strong>2d4+1</strong> de dispositivos, droides e veículos</td></tr><tr><td>Kit de Campo</td><td>—</td><td>—</td><td>necessário para resistir a temperaturas extremas</td></tr><tr><td>Gerador de Energia</td><td>40.000</td><td>15</td><td>energia contínua; se destruído em uso, explode (8d6 em área, JPR pela metade)</td></tr><tr><td>Carga de Energia</td><td>1.000</td><td>—</td><td>\"pente\" de uma arma de energia</td></tr><tr><td>Célula de Energia</td><td>—</td><td>—</td><td>bateria de dispositivos</td></tr><tr><td>Carregador de Energia</td><td>5.000</td><td>1</td><td>recarrega cargas/células (4 h cada)</td></tr><tr><td>Traje de Piloto Comum</td><td>—</td><td>—</td><td>10 h de suporte de vida; imune a atmosfera hostil/veneno inalado</td></tr><tr><td>Traje Espacial Comum</td><td>—</td><td>—</td><td>24 h de sobrevivência no vácuo</td></tr></tbody></table><p><strong>Medicina</strong> (o quintal do Médico de Campo):</p><table><thead><tr><th>Item</th><th>Custo</th><th>Efeito</th></tr></thead><tbody><tr><td>Medpac</td><td>—</td><td>estabiliza um ferido e cura o <strong>nível</strong> dele em PV</td></tr><tr><td>Pistola de Medicamentos</td><td>—</td><td>até 5 cargas; cada injeção cura <strong>2d4+1</strong> PV</td></tr><tr><td>Estojo Médico</td><td>—</td><td>necessário para reviver um moribundo, tratar doença/veneno/radiação</td></tr><tr><td>Estojo Cirúrgico</td><td>—</td><td>necessário para cirurgia (perícia de tratar ferimentos)</td></tr><tr><td>Tanque de Bacta</td><td>— (300/h de uso)</td><td><strong>2× o nível</strong> em PV por dia dentro do tanque, além da recuperação normal</td></tr></tbody></table><p><strong>Serviços & despesas</strong> (custo por uso/dia):</p><table><thead><tr><th>Serviço</th><th>Custo</th></tr></thead><tbody><tr><td>Refeição (econômica → luxuosa)</td><td>100 / 500 / 2.500 / 7.500</td></tr><tr><td>Alojamento (econômico → luxuoso)</td><td>1.000 / 2.500 / 5.000 / 10.000</td></tr><tr><td>Tanque de Bacta (hora)</td><td>15.000</td></tr><tr><td>Cuidados médicos / Medpac (dia)</td><td>15.000</td></tr><tr><td>Cirurgia (hora)</td><td>25.000</td></tr><tr><td>Tratar doenças (dia)</td><td>25.000</td></tr><tr><td>Tratar veneno (dia)</td><td>5.000</td></tr><tr><td>Tratar envenenamento por radiação (dia)</td><td>50.000</td></tr><tr><td>Aluguel: moto speeder / speeder terrestre / aéreo (dia)</td><td>1.000 / 2.500 / 25.000</td></tr><tr><td>Transporte interplanetário (dia)</td><td>100.000</td></tr></tbody></table></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!rGEnWqFKOilYsybX.YSnYmDWb7iyfARxr"
+    },
+    {
+      "sort": 600000,
+      "name": "Crédito",
+      "type": "text",
+      "_id": "uVp2YDEHy1HJCzXf",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>Tabelas de arsenal, armadura, aparelhos e preços adaptadas de <strong>\"Star Wars para Space Dragon\", de Jonas Picholaro</strong> (dez/2014, CC BY 3.0), reconciliadas com a escala de Créditos do <em>Space Dragon</em>. As naves estão em Naves e Veículos.</p></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!rGEnWqFKOilYsybX.uVp2YDEHy1HJCzXf"
+    }
+  ],
+  "flags": {},
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "_key": "!journal!rGEnWqFKOilYsybX"
+}

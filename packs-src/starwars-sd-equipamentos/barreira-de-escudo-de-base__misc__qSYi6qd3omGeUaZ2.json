@@ -1,0 +1,35 @@
+{
+  "folder": "VuO0M0BDH63pCe6H",
+  "name": "Barreira de escudo de base",
+  "type": "misc",
+  "_id": "qSYi6qd3omGeUaZ2",
+  "img": "systems/olddragon2e/assets/icons/shield.svg",
+  "system": {
+    "odo_id": "barreira-de-escudo-de-base",
+    "description": "Na galáxia: Barreira de escudo de base. Aparato (SD): Gerador de Campo Repulsor, 8º NT. Aparato defensivo de 8º nível tecnológico. Operam: Técnico, Veterano. Custo 700.000 CR. Tempo de construção 1d6 dias. Este gerador é capaz de tornar uma área de 20m² totalmente impenetrável através de um campo energético que repele qualquer coisa que tente entrar no espaço. O interior é perfeitamente visível por trás da parede hemisférica semitransparente do campo, mas um personagem que tente entrar sofrerá 1d4 pontos de dano por choque. O gerador funciona por 1 hora.",
+    "quantity": 1,
+    "cost": "700.000 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!qSYi6qd3omGeUaZ2"
+}

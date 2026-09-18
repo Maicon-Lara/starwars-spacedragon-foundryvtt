@@ -1,0 +1,22 @@
+{
+  "name": "Granadas e Explosivos",
+  "sorting": "m",
+  "folder": null,
+  "type": "Item",
+  "_id": "xQ28sq6a7KL059L8",
+  "description": "",
+  "sort": 400000,
+  "color": "#a14e43",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1"
+  },
+  "_key": "!folders!xQ28sq6a7KL059L8"
+}

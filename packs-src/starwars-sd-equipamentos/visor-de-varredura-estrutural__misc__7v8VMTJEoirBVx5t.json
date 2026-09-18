@@ -1,0 +1,35 @@
+{
+  "folder": "BLg4MVT3iraY9WJR",
+  "name": "Visor de varredura estrutural",
+  "type": "misc",
+  "_id": "7v8VMTJEoirBVx5t",
+  "img": "systems/olddragon2e/assets/icons/diamond.svg",
+  "system": {
+    "odo_id": "visor-de-varredura-estrutural",
+    "description": "Na galáxia: Visor de varredura estrutural. Aparato (SD): Óculos de Raio X, 4º NT. Aparato utilitário de 4º nível tecnológico. Operam: Técnico, Veterano, Operativo, Sensível à Força. Custo 300.00 CR. Tempo de construção 1d4 dias. Através dos raios X emitidos por esses óculos é possível enxergar através de um único obstáculo, como uma parede ou porta, embora o chumbo bloqueie os raios X, impossibilitando a visualização. A imagem tem qualidade razoável, mas confere uma penalidade de -2 aos ataques do usuário, conforme a tabela T7-3. O cientista pode optar por criar binóculos com esta mesma capacidade pelo dobro do custo e tempo.",
+    "quantity": 1,
+    "cost": "300.00 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 300000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!7v8VMTJEoirBVx5t"
+}

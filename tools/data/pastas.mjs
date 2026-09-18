@@ -57,6 +57,10 @@ export const CORES_DE_PASTA = {
   "Sabres de Luz": "#366f69", // a arma que não é como as outras
   "Cristais Kyber": "#366f69", // e o que a alimenta
   "Armaduras e Escudos": "#51687f",
+  "Armaduras e Vestes": "#51687f",
+  "Granadas e Explosivos": "#a14e43", // mesma família das armas
+  "Aparelhos e Kits": "#62666c",
+  "Medicina": "#4f6e4e",
   "Vestes sob Encomenda": "#51687f",
   "Aparatos Tecnológicos": "#806126",
   "Carregadores": "#a14e43", // mesma família das armas: é o dano delas que ele carrega

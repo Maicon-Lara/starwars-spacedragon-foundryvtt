@@ -1,0 +1,35 @@
+{
+  "folder": "VkGgTTVwaISs6GE8",
+  "name": "Compactador de carga",
+  "type": "misc",
+  "_id": "D3Vw1kAxNH79jM4f",
+  "img": "systems/olddragon2e/assets/icons/misc.svg",
+  "system": {
+    "odo_id": "compactador-de-carga",
+    "description": "Na galáxia: Compactador de carga. Aparato (SD): Miniaturizador, 5º NT. Aparato utilitário de 5º nível tecnológico. Operam: Técnico, Veterano, Operativo, Sensível à Força. Custo 150.000 CR. Tempo de construção 1d6 semanas. Este pequeno aparato transmite um raio capaz de reduzir qualquer objeto inanimado a 1/6 de seu tamanho original por um período indeterminado e também pode fazer um objeto miniaturizado voltar ao s e u tamanho original. Só é possível manter uma miniaturização por vez, sendo necessário desminiaturizar o objeto ativo caso seja necessário utilizar o aparato novamente.",
+    "quantity": 1,
+    "cost": "150.000 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 300000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!D3Vw1kAxNH79jM4f"
+}

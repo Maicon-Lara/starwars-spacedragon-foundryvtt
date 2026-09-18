@@ -1,0 +1,35 @@
+{
+  "folder": "mOEt5kaqVq0RnCR1",
+  "name": "Míssil de busca por calor",
+  "type": "misc",
+  "_id": "6QxFvLXyqPV0Z86B",
+  "img": "systems/olddragon2e/assets/icons/throw.svg",
+  "system": {
+    "odo_id": "missil-de-busca-por-calor",
+    "description": "Na galáxia: Míssil de busca por calor. Aparato (SD): Míssil Teleguiado, 6º NT. Aparato ofensivo de 6º nível tecnológico. Operam: Técnico. Custo 100.000 CR. Tempo de construção 1d6 horas. Este míssil seguirá a assinatura térmica do alvo contra o qual for disparado por 1d4+1 rodadas. Ele é disparado por um lança-mísseis comum e não é necessário fazer uma jogada de ataque, visto que só acertará o alvo se este falhar em uma JPR que deve ser feita a cada rodada, causando 2d10 pontos de dano. O procedimento cria um único míssil.",
+    "quantity": 1,
+    "cost": "100.000 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 700000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!6QxFvLXyqPV0Z86B"
+}

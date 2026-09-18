@@ -1,0 +1,35 @@
+{
+  "folder": "xQ28sq6a7KL059L8",
+  "name": "Carga Explosiva",
+  "type": "misc",
+  "_id": "9723p77tf9TqpSY4",
+  "img": "systems/olddragon2e/assets/icons/misc.svg",
+  "system": {
+    "odo_id": "carga-explosiva",
+    "description": "Dano 6d10, tipo Energia. Disponibilidade: Restrita. Explosivo de fixação: colocar exige teste de Demolição (Ciência); sucesso ignora a redução de dano do alvo. Margem de 5 dobra o dano; 10 ou crítico triplica. Dobrar o número de cargas soma +2 dados.",
+    "quantity": 1,
+    "cost": "60.000 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 500,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!9723p77tf9TqpSY4"
+}

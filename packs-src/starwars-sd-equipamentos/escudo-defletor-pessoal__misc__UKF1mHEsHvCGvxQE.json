@@ -1,0 +1,35 @@
+{
+  "folder": "BLg4MVT3iraY9WJR",
+  "name": "Escudo defletor pessoal",
+  "type": "misc",
+  "_id": "UKF1mHEsHvCGvxQE",
+  "img": "systems/olddragon2e/assets/icons/shield.svg",
+  "system": {
+    "odo_id": "escudo-defletor-pessoal",
+    "description": "Na galáxia: Escudo defletor pessoal. Aparato (SD): Campo de Força Individual, 4º NT. Aparato defensivo de 4º nível tecnológico. Operam: Técnico, Veterano. Custo 240.000 CR. Tempo de construção 1d4 dias. Este campo de força individual é preso ao cinto e substitui um escudo de energia, garantindo +4 no CP. Ao contrário do escudo, entretanto, ele deve ser ativado antes de fazer efeito e uma vez ativo funcionará por 1 minuto antes de precisar ser recarregado. A recarga demora 1d4 horas e é realizada automaticamente. A cada descarga completa, entretanto, o campo de força tem uma chance cumulativa de 5% de apresentar defeitos e necessitar de reparos.",
+    "quantity": 1,
+    "cost": "240.000 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!UKF1mHEsHvCGvxQE"
+}

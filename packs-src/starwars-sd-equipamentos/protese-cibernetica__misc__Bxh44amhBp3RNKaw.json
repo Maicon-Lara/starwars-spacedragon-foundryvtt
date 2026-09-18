@@ -1,0 +1,35 @@
+{
+  "folder": "mOEt5kaqVq0RnCR1",
+  "name": "Prótese cibernética",
+  "type": "misc",
+  "_id": "Bxh44amhBp3RNKaw",
+  "img": "systems/olddragon2e/assets/icons/magic-ring.svg",
+  "system": {
+    "odo_id": "protese-cibernetica",
+    "description": "Na galáxia: Prótese cibernética — a mão do Luke. Aparato (SD): Membro Biônico, 6º NT. Aparato utilitário de 6º nível tecnológico. Operam: Técnico, Veterano, Operativo, Sensível à Força. Custo 240.000 CR. Tempo de construção 1d4 semanas. O membro biônico é uma máquina que substitui um membro ausente no corpo humano. Ele funciona de maneira idêntica a um membro orgânico, mas pode apresentar defeitos e outros problemas. Em contrapartida, qualquer teste de Força ou Destreza que utilizar o membro biônico considera o atributo em questão como sendo 4 pontos acima do normal. Isto inclui também ataques desarmados, tentativas de desarme ou submissão de cosmonautas e regras similares onde o valor do atributo influencia uma rolagem. O implante do novo membro deve ser feito através de uma cirurgia biônica.",
+    "quantity": 1,
+    "cost": "240.000 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 600000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!Bxh44amhBp3RNKaw"
+}

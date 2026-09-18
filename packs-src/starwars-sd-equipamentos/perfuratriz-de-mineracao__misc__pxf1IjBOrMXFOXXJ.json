@@ -1,0 +1,35 @@
+{
+  "folder": "q6ttEQSrx9ILoHtS",
+  "name": "Perfuratriz de mineração",
+  "type": "misc",
+  "_id": "pxf1IjBOrMXFOXXJ",
+  "img": "systems/olddragon2e/assets/icons/misc.svg",
+  "system": {
+    "odo_id": "perfuratriz-de-mineracao",
+    "description": "Na galáxia: Perfuratriz de mineração. Aparato (SD): Broca Pneumática Portátil, 2º NT. Aparato utilitário de 2º nível tecnológico. Operam: Técnico, Veterano, Operativo, Sensível à Força. Custo 140.000 CR. Tempo de construção 1d6 horas. Esta broca pode ser utilizada para escavações em rocha e minerais ou para forçar a entrada através de portas ou paredes. A broca tem uma vida útil de 6 horas de uso contínuo, período após o qual é necessário efetuar reparos para que ela continue sendo utilizada.",
+    "quantity": 1,
+    "cost": "140.000 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 300000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!pxf1IjBOrMXFOXXJ"
+}

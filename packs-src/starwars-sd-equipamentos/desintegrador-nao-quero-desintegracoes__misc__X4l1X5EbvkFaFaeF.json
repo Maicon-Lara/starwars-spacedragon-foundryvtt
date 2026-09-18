@@ -1,0 +1,35 @@
+{
+  "folder": "UaHOszC41c18AI3F",
+  "name": "Desintegrador (\"não quero desintegrações\")",
+  "type": "misc",
+  "_id": "X4l1X5EbvkFaFaeF",
+  "img": "systems/olddragon2e/assets/icons/ranged.svg",
+  "system": {
+    "odo_id": "desintegrador-nao-quero-desintegracoes",
+    "description": "Na galáxia: Desintegrador (\"não quero desintegrações\"). Aparato (SD): Pistola Desintegradora, 9º NT. Aparato ofensivo de 9º nível tecnológico. Operam: Técnico. Custo 630.000 CR. Tempo de construção 1d4 meses. Trata-se de uma pistola laser aparentemente comum, mas que tem o poder de desintegrar completamente qualquer inimigo atingido por ela, não permitindo qualquer JP para evitar seus efeitos. Ela só pode ser usada uma única vez, ficando permanentemente inutilizável após o uso.",
+    "quantity": 1,
+    "cost": "630.000 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!X4l1X5EbvkFaFaeF"
+}

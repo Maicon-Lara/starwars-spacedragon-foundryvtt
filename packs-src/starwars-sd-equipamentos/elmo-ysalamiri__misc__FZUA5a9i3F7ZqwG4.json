@@ -1,0 +1,35 @@
+{
+  "folder": "7jHxnJyxF9io1FTa",
+  "name": "Elmo ysalamiri",
+  "type": "misc",
+  "_id": "FZUA5a9i3F7ZqwG4",
+  "img": "systems/olddragon2e/assets/icons/misc.svg",
+  "system": {
+    "odo_id": "elmo-ysalamiri",
+    "description": "Na galáxia: Elmo ysalamiri — a mente que a Força não alcança. Aparato (SD): Capacete de Proteção Mental, 7º NT. Aparato defensivo de 7º nível tecnológico. Operam: Técnico, Veterano. Custo 210.000 CR. Tempo de construção 1d4 semanas. Este capacete é capaz de proteger o usuário de poderes mentais, efetivamente conferindo-lhe RM de 75%. Um mentálico que realize um poder mental contra um indivíduo utilizando este capacete corre o risco de sofrer um choque mental, se a rolagem percentual resultar em um número igual ou abaixo de 25%.",
+    "quantity": 1,
+    "cost": "210.000 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!FZUA5a9i3F7ZqwG4"
+}

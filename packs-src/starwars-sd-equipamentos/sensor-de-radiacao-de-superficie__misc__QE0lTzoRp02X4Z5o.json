@@ -1,0 +1,35 @@
+{
+  "folder": "Uqsba8YIo4wArlrc",
+  "name": "Sensor de radiação de superfície",
+  "type": "misc",
+  "_id": "QE0lTzoRp02X4Z5o",
+  "img": "systems/olddragon2e/assets/icons/diamond.svg",
+  "system": {
+    "odo_id": "sensor-de-radiacao-de-superficie",
+    "description": "Na galáxia: Sensor de radiação de superfície. Aparato (SD): Medidor de Radiação, 1º NT. Aparato utilitário de 1º nível tecnológico. Operam: Técnico, Veterano, Operativo, Sensível à Força. Custo 70.000 CR. Tempo de construção 1d4 horas. Este medidor portátil permite ao usuário detectar os níveis de radiação de um local, determinando se é seguro permanecer ali sem um traje protetor. Altos níveis de radiação podem causar contaminações nos personagens.",
+    "quantity": 1,
+    "cost": "70.000 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 400000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!QE0lTzoRp02X4Z5o"
+}

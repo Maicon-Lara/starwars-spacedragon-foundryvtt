@@ -1,0 +1,35 @@
+{
+  "folder": "SIWQL7yQEPBoilwO",
+  "name": "Célula de Energia",
+  "type": "misc",
+  "_id": "nOoRL4V5oWGjad49",
+  "img": "systems/olddragon2e/assets/icons/misc.svg",
+  "system": {
+    "odo_id": "celula-de-energia",
+    "description": "Bateria de dispositivos.",
+    "quantity": 1,
+    "cost": "",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 2000000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!nOoRL4V5oWGjad49"
+}

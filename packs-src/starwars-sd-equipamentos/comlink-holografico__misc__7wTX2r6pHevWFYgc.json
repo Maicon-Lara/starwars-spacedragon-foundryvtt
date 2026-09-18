@@ -1,0 +1,35 @@
+{
+  "folder": "EDjh1YGfBQAl0Lj2",
+  "name": "Comlink holográfico",
+  "type": "misc",
+  "_id": "7wTX2r6pHevWFYgc",
+  "img": "systems/olddragon2e/assets/icons/magic-scroll.svg",
+  "system": {
+    "odo_id": "comlink-holografico",
+    "description": "Na galáxia: Comlink holográfico. Aparato (SD): Bracelete Vídeocomunicador, 3º NT. Aparato utilitário de 3º nível tecnológico. Operam: Técnico, Veterano, Operativo, Sensível à Força. Custo 150.000 CR. Tempo de construção 1d10 horas. Funciona da mesma forma que o bracelete radiocomunicador, mas inclui um visor pelo qual é possível ver e ser visto pelos interlocutores. Seu alcance entretanto é mais curto, de apenas 5 Km, e é possível sintonizar apenas 4 braceletes vídeocomunicadores na mesma frequência.",
+    "quantity": 1,
+    "cost": "150.000 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!7wTX2r6pHevWFYgc"
+}

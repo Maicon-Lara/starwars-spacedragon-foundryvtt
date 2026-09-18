@@ -1,0 +1,35 @@
+{
+  "folder": "EDjh1YGfBQAl0Lj2",
+  "name": "Luvas de choque de eletrobastão",
+  "type": "misc",
+  "_id": "VtDQ35E3nzSC8i7d",
+  "img": "systems/olddragon2e/assets/icons/misc.svg",
+  "system": {
+    "odo_id": "luvas-de-choque-de-eletrobastao",
+    "description": "Na galáxia: Luvas de choque de eletrobastão. Aparato (SD): Luvas de Indução Elétrica, 3º NT. Aparato ofensivo de 3º nível tecnológico. Operam: Técnico. Custo 180.000 CR. Tempo de construção 1d4 dias. As luvas de indução elétrica são capazes de eletrocutar os inimigos. Elas podem ser usadas para ataques corpo-a-corpo, causando 1d6 de dano elétrico ao toque, ou para ataques de descarga elétrica à distância que causam 1d4 de dano. Enquanto estiver usando as luvas, qualquer arma corporal causará +2 pontos de dano elétrico, mas quaisquer outros aparatos que o cientista segure podem sofrer um curto-circuito.",
+    "quantity": 1,
+    "cost": "180.000 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 600000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!VtDQ35E3nzSC8i7d"
+}

@@ -1,0 +1,35 @@
+{
+  "folder": "7jHxnJyxF9io1FTa",
+  "name": "Manto stygium (tecnologia de camuflagem)",
+  "type": "misc",
+  "_id": "1ajQbxzdiGK1GOj5",
+  "img": "systems/olddragon2e/assets/icons/kit.svg",
+  "system": {
+    "odo_id": "manto-stygium-tecnologia-de-camuflagem",
+    "description": "Na galáxia: Manto stygium (tecnologia de camuflagem). Aparato (SD): Cinto de Invisibilidade, 7º NT. Aparato utilitário de 7º nível tecnológico. Operam: Técnico, Veterano, Operativo, Sensível à Força. Custo 420.000 CR. Tempo de construção 1d6 semanas. Este cinto é capaz de deixar o usuário completamente invisível à visão comum. Ele tem autonomia de 1 hora, que pode ser dividida em diversas utilizações. Ao fim da carga o cinto perde seu poder e deve ser recarregado de acordo com a regra de conserto de aparatos.",
+    "quantity": 1,
+    "cost": "420.000 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!1ajQbxzdiGK1GOj5"
+}

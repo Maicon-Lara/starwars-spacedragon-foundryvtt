@@ -1,0 +1,35 @@
+{
+  "folder": "q6ttEQSrx9ILoHtS",
+  "name": "Cartucho de dados (o roubo de Scarif cabe num)",
+  "type": "misc",
+  "_id": "uMuszOur8KBJKWro",
+  "img": "systems/olddragon2e/assets/icons/misc.svg",
+  "system": {
+    "odo_id": "cartucho-de-dados-o-roubo-de-scarif-cabe-num",
+    "description": "Na galáxia: Cartucho de dados (o roubo de Scarif cabe num). Aparato (SD): Cilindro de Dados, 2º NT. Aparato utilitário de 2º nível tecnológico. Operam: Técnico, Veterano, Operativo, Sensível à Força. Custo 140.000 CR. Tempo de construção 1d4 horas. Um cilindro de dados é um dispositivo do tamanho e formato similar ao de uma caneta. É utilizado para transportar dados científicos de um laboratório para outro. Ele permite que informações coletadas, ou desenvolvidas pelo cientista possam ser armazenadas para transporte, ou como cópia de segu rança. Ele tem capacidade virtualmente ilimitada e pode ser lido facilmente por equipamentos existentes em laboratórios.",
+    "quantity": 1,
+    "cost": "140.000 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 500000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!uMuszOur8KBJKWro"
+}

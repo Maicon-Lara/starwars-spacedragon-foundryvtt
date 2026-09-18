@@ -262,9 +262,22 @@ function buildEspeciesDocs() {
 function buildEquipamentosDocs() {
   const builders = { weapon: weaponDoc, armor: armorDoc, misc: miscDoc };
   const docs = [];
+  // Pasta por NOME, criada uma vez: duas categorias podem dividir a mesma
+  // (as granadas, que se arremessam, e a detonita, que se fixa), e uma pasta
+  // "Pai — Filho" precisa do pai existindo para aninhaPastas() encaixá-la.
+  const pastas = new Map();
+  const pasta = (nome) => {
+    if (!pastas.has(nome)) {
+      const pai = nome.includes(" — ") ? nome.split(" — ")[0] : null;
+      if (pai) pasta(pai);
+      const f = folderDoc(nome, "Item", "equipamentos", { sort: (pastas.size + 1) * 100000 });
+      pastas.set(nome, f);
+      docs.push(f);
+    }
+    return pastas.get(nome);
+  };
   for (const cat of categorias) {
-    const folder = folderDoc(cat.folder, "Item", "equipamentos");
-    docs.push(folder);
+    const folder = pasta(cat.folder);
     const build = builders[cat.tipo];
     cat.itens.forEach((it, i) => {
       docs.push(build(it, folder._id, cat.folder, (i + 1) * 100000));

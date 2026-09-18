@@ -1,0 +1,35 @@
+{
+  "folder": "Uqsba8YIo4wArlrc",
+  "name": "Disruptor iônico",
+  "type": "misc",
+  "_id": "mGQKICE1fjqkaKhJ",
+  "img": "systems/olddragon2e/assets/icons/ranged.svg",
+  "system": {
+    "odo_id": "disruptor-ionico",
+    "description": "Na galáxia: Disruptor iônico — o que habilita Desativar Robôs (Classes Mundanas). Aparato (SD): Disruptor Positrônico, 1º NT. Aparato ofensivo de 1º nível tecnológico. Operam: Técnico. Custo 70.000 CR. Tempo de construção 1d4 horas. O disruptor positrônico se parece com um pequeno rádio e é o aparato que permite aos cientistas desativarem robôs através de seu talento de classe. Ele causa um conflito nos cérebros positrônicos, portanto quanto mais primitivo o inimigo, mais simples será desativá-lo. Ao ser construído pela primeira vez este aparato corresponderá ao 1° nível de classe do cientista e deverá ser atualizado pelo criador sempre que este adquirir novos níveis, acompanhando-o até o 20° nível. O custo da atualização é o mesmo pago para reparos, como previsto nas regras.",
+    "quantity": 1,
+    "cost": "70.000 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 300000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!mGQKICE1fjqkaKhJ"
+}

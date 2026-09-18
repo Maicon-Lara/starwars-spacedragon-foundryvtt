@@ -38,6 +38,22 @@ export const TEXTOS = {
     "A Senda Mandaloriana (arquétipo cross-class, 5º nível)": "<p>Um personagem de <strong>qualquer classe</strong> aceito num clã pode assumir a Senda <strong>no lugar de sua especialização</strong> (que também abre no 5º nível). Como toda especialização do SD, ele ganha o <strong>Núcleo Mandaloriano</strong> e <strong>troca</strong> parte das habilidades da classe base (Tabela de Trocas). A <strong>tabela de XP continua sendo a da classe</strong> — especializar-se no Space Dragon não muda a progressão de experiência. Se já tinha a Origem, a conversão é imediata; senão, exige um rito de aceitação.</p><h3>Núcleo Mandaloriano (todas as classes)</h3><ul><li><code>5º</code> <strong>O Resol'nare:</strong> adota o código, resumido em <strong>ao menos 3 votos</strong> criados com o Mestre. Enquanto o cumpre, <strong>+1 em JPM</strong>. Quebrá-lo <strong>suspende todas as habilidades da Senda</strong> até uma reparação.</li><li><code>5º</code> <strong>Treinamento de Clã:</strong> domina o arsenal Mandaloriano — <strong>+1 no dano</strong> com armas de haste, de arremesso e blasters, e usa livremente jetpack e capacete tático.</li><li><code>10º</code> <strong>Sangue de Beskar:</strong> ao vestir Armadura Beskar (ou pesada de clã), a Carga cai uma categoria e <strong>sabres de luz deixam de ignorar seu CP</strong> enquanto a usar.</li><li><code>10º</code> <strong>Voo de Combate:</strong> usa a Mochila de Propulsão em combate — o primeiro golpe da rodada vindo de cima leva <strong>+2 no ataque</strong>, ou reposiciona-se verticalmente sem gastar movimento extra.</li><li><code>20º</code> <strong>Lenda do Clã:</strong> você virou um nome que ecoa pela galáxia — um exército de um homem só. 1×/combate, desencadeia o <strong>arsenal completo do Beskar'gam</strong> (whistling birds, foguetes de pulso e lança-chamas) num <strong>ataque em área</strong> contra todos os inimigos a curta distância: <strong>5d6 de dano</strong>, uma <strong>JPR</strong> reduz à metade. Tropas comuns <strong>testam Moral</strong> ao entrar em combate contra você (d% ≤ Moral, ou recuam), e sua <strong>Reputação</strong> entre Mandalorianos e Caçadores é excelente.</li></ul><h3>Papéis (sabor, opcional)</h3><p><strong>Guerreiro de Clã</strong> (tropa leal), <strong>Caçador Solitário</strong> (renegado sem lar) ou <strong>Portador da Herança</strong> (guardião de relíquias, como o Sabre Sombrio).</p><h3>Tabela de Trocas (o que cada classe sacrifica)</h3><p>A Senda <strong>substitui a especialização normal</strong> da classe — esse é o custo principal. Por cima dele, cada classe entrega <strong>um talento que a define</strong>.</p><blockquote><p><strong>Por que ela não cobra o corpo.</strong> As especializações normais levam você <strong>mais fundo na sua classe</strong>, e por isso cobram nas colunas de progressão — é assim que o Mentálico paga BA e JP ao se aprofundar na Força. A Senda Mandaloriana leva você <strong>para fora dela</strong>: você não mergulhou na classe, jurou outro credo. Então a conta vem no <strong>ofício</strong> — no talento da classe que você está deixando pela metade — e não na carne.</p></blockquote><table><thead><tr><th>Classe base</th><th>O que troca (além de abrir mão da especialização)</th></tr></thead><tbody><tr><td><strong>Veterano</strong></td><td><strong>Desarmar/Subjugar</strong> para de progredir; mantém <strong>Ataques Múltiplos</strong> e <strong>Pilotar</strong>.</td></tr><tr><td><strong>Operativo</strong></td><td>o <strong>Ataque Furtivo para de progredir</strong> (o guerreiro de honra não apunhala pelas costas); em troca, o clã lhe ensina <strong>Rastrear</strong>.</td></tr><tr><td><strong>Técnico</strong></td><td><strong>perde o Crédito Tecnológico</strong> (o dever de clã rouba o tempo de barganha); mantém aparatos e feitos — o <strong>Armeiro</strong> de um clã é, em regra, um Técnico.</td></tr><tr><td><strong>Sensível à Força</strong></td><td>o <strong>Alcance conta como o de um Sensível de −1 nível</strong> e o <strong>teto de Grandeza para na 6ª</strong>; em troca, o clã lhe ensina <strong>uma Forma de Sabre</strong> (até a técnica <code>10º</code>).</td></tr></tbody></table><blockquote><p><strong>Por que o Sensível paga duas vezes.</strong> Ele é o único dos quatro chassis cujo aprofundamento normal cobraria <strong>BA e JP</strong> — as outras três classes não têm esse custo. Escapar dele vale muito mais para o Sensível do que para os demais, e o Alcance reduzido sozinho não cobre a diferença: sem o teto, ele chegaria ao 20º com a <strong>melhor JP de todos os Sensíveis</strong> e nada de novo a pagar por ela.</p><p>O teto na 6ª é a moeda certa porque é <strong>Força, não carne</strong> — fiel ao princípio da Senda. E é o que a ficção pede: ele passou a vida jurando um código e aprendendo a lutar de armadura, não meditando sobre a natureza da Força. <strong>Din Djarin não é Yoda.</strong> Em compensação, é o único Sensível com <strong>BA e JP progredindo até o 20º</strong>.</p></blockquote><blockquote><p><strong>O que o Sensível mandaloriano <em>não</em> tem.</strong> Abrir mão da especialização custa as duas engrenagens que dependem de ter uma Senda:</p><ul><li><strong>Sem Eco da Senda</strong> (ver O Sensível à Força § <em>Eco da Senda</em>) — o Alcance gasto nunca volta e nenhum poder de 1ª Grandeza fica gratuito. O clã lhe ensinou uma lâmina, não um atalho da Força.</li><li><strong>Sem Mudar de Guarda</strong> — conhece <strong>uma Forma só</strong>, a que o clã ensinou, e não tem para onde trocar.</li></ul><p><strong>A Tentação, sim, ele tem</strong> — ela pertence ao <strong>Caminho</strong>, não à especialização.</p></blockquote><blockquote><p><strong>Sensível à Força + Beskar:</strong> a mistura é lendária porque o <strong>Sangue de Beskar</strong> protege contra o próprio sabre — o Mandaloriano que encara um Jedi sem temer a lâmina.</p></blockquote><h3>As quatro tabelas da Senda</h3><p>A Senda substitui a especialização da classe, então a progressão muda conforme o chassi. Ache a sua e use a linha do seu nível.</p><p><strong>Progressão do Mandaloriano Veterano</strong> — do 5º ao 20º nível.</p><table><thead><tr><th>Nv</th><th>DV</th><th>BA</th><th>JP</th><th>Pilotar</th><th>Desarmar</th><th>Crítico</th></tr></thead><tbody><tr><td><strong>5</strong></td><td>5</td><td>+5</td><td>15</td><td>84%</td><td>⊘ 40%</td><td>×2</td></tr><tr><td><strong>6</strong></td><td>6</td><td>+6</td><td>15</td><td>85%</td><td>⊘ 40%</td><td>×3</td></tr><tr><td><strong>7</strong></td><td>7</td><td>+7/+1</td><td>14</td><td>86%</td><td>⊘ 40%</td><td>×3</td></tr><tr><td><strong>8</strong></td><td>8</td><td>+8/+2</td><td>14</td><td>87%</td><td>⊘ 40%</td><td>×3</td></tr><tr><td><strong>9</strong></td><td>9</td><td>+9/+3</td><td>14</td><td>88%</td><td>⊘ 40%</td><td>×3</td></tr><tr><td><strong>10</strong></td><td>+2</td><td>+10/+4</td><td>13</td><td>89%</td><td>⊘ 40%</td><td>×3</td></tr><tr><td><strong>11</strong></td><td>+2</td><td>+10/+4</td><td>13</td><td>90%</td><td>⊘ 40%</td><td>×3</td></tr><tr><td><strong>12</strong></td><td>+4</td><td>+11/+5</td><td>13</td><td>91%</td><td>⊘ 40%</td><td>×4</td></tr><tr><td><strong>13</strong></td><td>+4</td><td>+11/+5</td><td>12</td><td>92%</td><td>⊘ 40%</td><td>×4</td></tr><tr><td><strong>14</strong></td><td>+5</td><td>+12/+6</td><td>12</td><td>93%</td><td>⊘ 40%</td><td>×4</td></tr><tr><td><strong>15</strong></td><td>+5</td><td>+12/+6</td><td>12</td><td>94%</td><td>⊘ 40%</td><td>×4</td></tr><tr><td><strong>16</strong></td><td>+6</td><td>+13/+7</td><td>11</td><td>95%</td><td>⊘ 40%</td><td>×4</td></tr><tr><td><strong>17</strong></td><td>+6</td><td>+13/+7</td><td>11</td><td>96%</td><td>⊘ 40%</td><td>×4</td></tr><tr><td><strong>18</strong></td><td>+7</td><td>+14/+8</td><td>11</td><td>97%</td><td>⊘ 40%</td><td>×5</td></tr><tr><td><strong>19</strong></td><td>+7</td><td>+14/+8</td><td>10</td><td>98%</td><td>⊘ 40%</td><td>×5</td></tr><tr><td><strong>20</strong></td><td>+8</td><td>+15/+9</td><td>10</td><td>99%</td><td>⊘ 40%</td><td>×5</td></tr></tbody></table><p>⊘ = congelado, repete o valor em que travou.</p><blockquote><p>Mantém <strong>Ataques Múltiplos</strong> e <strong>Pilotar</strong> — o guerreiro de clã continua soldado e continua piloto. O que ele abre mão é da manobra de desarme, e da especialização que teria escolhido.</p></blockquote><p><strong>Progressão do Mandaloriano Operativo</strong> — do 5º ao 20º nível.</p><table><thead><tr><th>Nv</th><th>Sabotagem</th><th>Rodadas</th><th>Escalar</th><th>Furtividade</th><th>Furtar</th><th>Percepção</th><th>Atq. Furtivo</th><th>Rastrear</th></tr></thead><tbody><tr><td><strong>5</strong></td><td>35%</td><td>1d8</td><td>84%</td><td>40%</td><td>40%</td><td>1-3</td><td>⊘ ×2</td><td>1-3</td></tr><tr><td><strong>6</strong></td><td>40%</td><td>1d6</td><td>85%</td><td>45%</td><td>45%</td><td>1-3</td><td>⊘ ×2</td><td>1-3</td></tr><tr><td><strong>7</strong></td><td>45%</td><td>1d6</td><td>86%</td><td>50%</td><td>50%</td><td>1-3</td><td>⊘ ×2</td><td>1-3</td></tr><tr><td><strong>8</strong></td><td>50%</td><td>1d6</td><td>87%</td><td>55%</td><td>55%</td><td>1-3</td><td>⊘ ×2</td><td>1-3</td></tr><tr><td><strong>9</strong></td><td>55%</td><td>1d6</td><td>88%</td><td>60%</td><td>60%</td><td>1-3</td><td>⊘ ×2</td><td>1-3</td></tr><tr><td><strong>10</strong></td><td>60%</td><td>1d6</td><td>89%</td><td>65%</td><td>65%</td><td>1-4</td><td>⊘ ×2</td><td>1-4</td></tr><tr><td><strong>11</strong></td><td>62%</td><td>1d4</td><td>90%</td><td>70%</td><td>70%</td><td>1-4</td><td>⊘ ×2</td><td>1-4</td></tr><tr><td><strong>12</strong></td><td>64%</td><td>1d4</td><td>91%</td><td>72%</td><td>72%</td><td>1-4</td><td>⊘ ×2</td><td>1-4</td></tr><tr><td><strong>13</strong></td><td>66%</td><td>1d4</td><td>92%</td><td>74%</td><td>74%</td><td>1-4</td><td>⊘ ×2</td><td>1-4</td></tr><tr><td><strong>14</strong></td><td>68%</td><td>1d4</td><td>93%</td><td>76%</td><td>76%</td><td>1-4</td><td>⊘ ×2</td><td>1-4</td></tr><tr><td><strong>15</strong></td><td>70%</td><td>1d4</td><td>94%</td><td>78%</td><td>78%</td><td>1-4</td><td>⊘ ×2</td><td>1-4</td></tr><tr><td><strong>16</strong></td><td>72%</td><td>1d4</td><td>95%</td><td>80%</td><td>80%</td><td>1-5</td><td>⊘ ×2</td><td>1-5</td></tr><tr><td><strong>17</strong></td><td>74%</td><td>1d4</td><td>96%</td><td>82%</td><td>82%</td><td>1-5</td><td>⊘ ×2</td><td>1-5</td></tr><tr><td><strong>18</strong></td><td>76%</td><td>1d4</td><td>97%</td><td>84%</td><td>84%</td><td>1-5</td><td>⊘ ×2</td><td>1-5</td></tr><tr><td><strong>19</strong></td><td>78%</td><td>1d4</td><td>98%</td><td>86%</td><td>86%</td><td>1-5</td><td>⊘ ×2</td><td>1-5</td></tr><tr><td><strong>20</strong></td><td>80%</td><td>1d4</td><td>99%</td><td>88%</td><td>88%</td><td>1-5</td><td>⊘ ×2</td><td>1-5</td></tr></tbody></table><p>⊘ = congelado, repete o valor em que travou.</p><blockquote><p>O <strong>Ataque Furtivo congela</strong>: o guerreiro de honra não apunhala pelas costas. Em troca o clã lhe ensina a <strong>rastrear</strong>, com a mesma faixa da sua Percepção (1d6).</p></blockquote><p><strong>Progressão do Mandaloriano Técnico</strong> — do 5º ao 20º nível.</p><table><thead><tr><th>Nv</th><th>DV</th><th>BA</th><th>JP</th><th>Operar Máq.</th><th>NT</th><th>Crédito Tecnológico</th></tr></thead><tbody><tr><td><strong>5</strong></td><td>5</td><td>+3</td><td>14</td><td>84%</td><td>3º</td><td>perdido</td></tr><tr><td><strong>6</strong></td><td>6</td><td>+3</td><td>14</td><td>85%</td><td>–</td><td>perdido</td></tr><tr><td><strong>7</strong></td><td>7</td><td>+3</td><td>13</td><td>86%</td><td>4º</td><td>perdido</td></tr><tr><td><strong>8</strong></td><td>8</td><td>+4</td><td>13</td><td>87%</td><td>–</td><td>perdido</td></tr><tr><td><strong>9</strong></td><td>9</td><td>+4</td><td>13</td><td>88%</td><td>5º</td><td>perdido</td></tr><tr><td><strong>10</strong></td><td>+1</td><td>+4</td><td>12</td><td>89%</td><td>–</td><td>perdido</td></tr><tr><td><strong>11</strong></td><td>+1</td><td>+5</td><td>12</td><td>90%</td><td>6º</td><td>perdido</td></tr><tr><td><strong>12</strong></td><td>+2</td><td>+5</td><td>12</td><td>91%</td><td>–</td><td>perdido</td></tr><tr><td><strong>13</strong></td><td>+2</td><td>+5</td><td>11</td><td>92%</td><td>7º</td><td>perdido</td></tr><tr><td><strong>14</strong></td><td>+3</td><td>+6</td><td>11</td><td>93%</td><td>–</td><td>perdido</td></tr><tr><td><strong>15</strong></td><td>+3</td><td>+6</td><td>11</td><td>94%</td><td>8º</td><td>perdido</td></tr><tr><td><strong>16</strong></td><td>+4</td><td>+6</td><td>10</td><td>95%</td><td>–</td><td>perdido</td></tr><tr><td><strong>17</strong></td><td>+4</td><td>+7</td><td>10</td><td>96%</td><td>9º</td><td>perdido</td></tr><tr><td><strong>18</strong></td><td>+5</td><td>+7</td><td>10</td><td>97%</td><td>–</td><td>perdido</td></tr><tr><td><strong>19</strong></td><td>+5</td><td>+7</td><td>9</td><td>98%</td><td>10º</td><td>perdido</td></tr><tr><td><strong>20</strong></td><td>+6</td><td>+8</td><td>9</td><td>99%</td><td>–</td><td>perdido</td></tr></tbody></table><p><em>Nada congela nem muda: a tabela é a mesma da classe base.</em></p><blockquote><p>Perde o <strong>Crédito Tecnológico</strong> — o dever de clã rouba o tempo de barganha. Mantém aparatos e feitos: o <strong>Armeiro</strong> de um clã é, em regra, um Técnico.</p></blockquote><p><strong>Progressão do Mandaloriano Sensível</strong> — do 5º ao 20º nível.</p><table><thead><tr><th>Nv</th><th>DV</th><th>BA</th><th>JP</th><th>Alcance</th><th>Grandeza</th><th>Forma de Sabre</th></tr></thead><tbody><tr><td><strong>5</strong></td><td>5</td><td>+2</td><td>13</td><td><strong>6%</strong></td><td>3ª</td><td>até 10º</td></tr><tr><td><strong>6</strong></td><td>6</td><td>+2</td><td>13</td><td><strong>9%</strong></td><td><strong>3ª</strong></td><td>até 10º</td></tr><tr><td><strong>7</strong></td><td>7</td><td>+3</td><td>12</td><td><strong>13%</strong></td><td>4ª</td><td>até 10º</td></tr><tr><td><strong>8</strong></td><td>8</td><td>+3</td><td>12</td><td><strong>17%</strong></td><td><strong>4ª</strong></td><td>até 10º</td></tr><tr><td><strong>9</strong></td><td>9</td><td>+3</td><td>12</td><td><strong>23%</strong></td><td>5ª</td><td>até 10º</td></tr><tr><td><strong>10</strong></td><td>+1</td><td>+4</td><td>11</td><td><strong>28%</strong></td><td><strong>5ª</strong></td><td>até 10º</td></tr><tr><td><strong>11</strong></td><td>+1</td><td>+4</td><td>11</td><td><strong>36%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr><tr><td><strong>12</strong></td><td>+1</td><td>+4</td><td>11</td><td><strong>43%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr><tr><td><strong>13</strong></td><td>+1</td><td>+5</td><td>10</td><td><strong>53%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr><tr><td><strong>14</strong></td><td>+1</td><td>+5</td><td>10</td><td><strong>62%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr><tr><td><strong>15</strong></td><td>+2</td><td>+5</td><td>10</td><td><strong>74%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr><tr><td><strong>16</strong></td><td>+2</td><td>+6</td><td>9</td><td><strong>86%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr><tr><td><strong>17</strong></td><td>—</td><td>+6</td><td>9</td><td><strong>100%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr><tr><td><strong>18</strong></td><td>—</td><td>+6</td><td>9</td><td><strong>115%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr><tr><td><strong>19</strong></td><td>—</td><td>+6</td><td>9</td><td><strong>131%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr><tr><td><strong>20</strong></td><td>—</td><td>+6</td><td>9</td><td><strong>139%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr></tbody></table><p><strong>em negrito</strong> = o valor desta especialização, no lugar do da classe base.</p><blockquote><p>O <strong>Alcance conta como o de um Sensível de um nível abaixo</strong> e o <strong>teto de Grandeza para na 6ª</strong>: ele passou a vida jurando um credo e aprendendo a lutar de armadura, não meditando sobre a natureza da Força. Em troca, mantém BA e JP progredindo até o 20º — o único Sensível que não paga com o corpo — e o clã lhe ensina <strong>uma</strong> Forma de Sabre. Sem Eco da Senda e sem Mudar de Guarda: conhece uma Forma só, e não tem para onde trocar.</p></blockquote>",
     "Referência de equipamento": "<p>O arsenal Mandaloriano (Lança-Vibro, Mochila de Propulsão, Armadura Beskar/Mandaloriana, Capacete com Visor Tático) está em Equipamentos e Créditos. A <strong>Beskar</strong> é herança de clã ou conquista, sem preço de mercado. O <strong>Sabre Sombrio</strong> — símbolo de liderança de Mandalore e a única lâmina que corta a Beskar — tem regras em Sabre de Luz e Cristais Kyber, casando com o papel <strong>Portador da Herança</strong>.</p><blockquote><p>⚙️ <strong>Nota de design.</strong> O Núcleo segue os marcos do <em>Space Dragon</em> — <strong><code>5º</code> / <code>10º</code> / <code>20º</code></strong>, os níveis em que as especializações abrem degraus. A Senda abre no 5º, no lugar da especialização; <em>Sangue de Beskar</em> e <em>Voo de Combate</em> chegam juntos no 10º. A Origem <em>Filho de Mandalore</em> fica no 1º nível.</p></blockquote>"
   },
+  "SW-SUP-Equipamentos": {
+    "(abertura)": "<blockquote><p>Armas, armaduras, aparelhos e serviços da galáxia, em <strong>Créditos (CR)</strong>. As tabelas de arsenal, armadura e preços vêm da adaptação <strong>\"Star Wars para Space Dragon\" de Jonas Picholaro</strong> (2014, CC BY 3.0), reconciliadas com o CP e as salvaguardas nativas do SD. Compatível com os Créditos iniciais das classes (ver Classes Mundanas).</p></blockquote>",
+    "Créditos": "<p>O <strong>Crédito (CR)</strong> é a moeda-padrão da galáxia. Cada classe começa com uma quantia rolada:</p><table><thead><tr><th>Classe</th><th>Créditos iniciais</th></tr></thead><tbody><tr><td><strong>Veterano</strong></td><td>2d10 × 5.000</td></tr><tr><td><strong>Operativo</strong></td><td>2d6 × 5.000</td></tr><tr><td><strong>Técnico</strong></td><td>1d8 × 5.000</td></tr><tr><td><strong>Sensível à Força</strong></td><td>1d6 × 5.000</td></tr></tbody></table><blockquote><p>O <strong>Técnico</strong> compra tudo com desconto (Crédito Tecnológico, por Ciência); ver <em>SD</em>, Tabela 1-5.</p></blockquote><p><strong>Disponibilidade</strong> (na coluna das tabelas): <em>(—)</em> livre · <strong>Licenciada</strong> (precisa de licença) · <strong>Restrita</strong> (mercado cinzento/militar) · <strong>Militar</strong> (só forças armadas) · <strong>Ilegal</strong> · <strong>Rara</strong>. Fora de mundos-fronteira, portar item Restrito/Militar atrai a lei.</p>",
+    "Armas de combate corpo a corpo": "<table><thead><tr><th>Arma</th><th>Custo</th><th>Dano</th><th>Tipo</th><th>Peso</th><th>Disponib.</th></tr></thead><tbody><tr><td>Faca</td><td>5.000</td><td>1d4</td><td>Corte/Perf.</td><td>0,5</td><td>—</td></tr><tr><td>Porrete</td><td>3.000</td><td>1d6</td><td>Contusão</td><td>1</td><td>—</td></tr><tr><td>Bastão de Atordoamento</td><td>6.000</td><td>1d6</td><td>Atord.</td><td>1</td><td>—</td></tr><tr><td>Baioneta</td><td>10.000</td><td>1d6</td><td>Perf.</td><td>1</td><td>—</td></tr><tr><td>Maça</td><td>10.000</td><td>1d8</td><td>Contusão</td><td>1,5</td><td>—</td></tr><tr><td>Lança</td><td>10.000</td><td>1d8</td><td>Perf.</td><td>1,5</td><td>—</td></tr><tr><td>Cajado</td><td>15.000</td><td>1d6/1d6</td><td>Contusão</td><td>2</td><td>—</td></tr><tr><td>Espada Longa</td><td>15.000</td><td>1d8</td><td>Corte/Perf.</td><td>1,5</td><td>—</td></tr><tr><td>Machado</td><td>20.000</td><td>1d12</td><td>Corte/Perf.</td><td>5</td><td>—</td></tr><tr><td>Luvas de Combate</td><td>40.000</td><td>+1</td><td>Contusão</td><td>0,5</td><td>—</td></tr><tr><td>Vibro-adaga</td><td>40.000</td><td>1d6</td><td>Corte/Perf.</td><td>0,5</td><td>—</td></tr><tr><td>Vibro-lâmina</td><td>50.000</td><td>1d8</td><td>Corte/Perf.</td><td>1</td><td>Licenciada</td></tr><tr><td>Vibro-baioneta</td><td>70.000</td><td>1d8</td><td>Perf.</td><td>1</td><td>Licenciada</td></tr><tr><td>Vibro-espada</td><td>70.000</td><td>1d10</td><td>Corte/Perf.</td><td>1,5</td><td>Licenciada</td></tr><tr><td>Vibro-machado</td><td>100.000</td><td>2d8</td><td>Corte</td><td>6</td><td>Restrita</td></tr><tr><td>Pique de Energia</td><td>100.000</td><td>1d12</td><td>Energia/Perf.</td><td>2</td><td>Restrita</td></tr><tr><td>Cajado Elétrico</td><td>600.000</td><td>1d8/1d8</td><td>Contusão/Energia</td><td>2</td><td>Restrita</td></tr><tr><td><strong>Sabre de Luz</strong></td><td>600.000</td><td><strong>2d10</strong></td><td>Energia</td><td>1</td><td>Rara</td></tr></tbody></table><h3>O Sabre de Luz</h3><p>Uma lâmina de energia pura: <strong>2d10 de dano por energia</strong>, e corta quase qualquer coisa. Regras do cenário:</p><ul><li><strong>Ignora a proteção de armaduras comuns</strong> (a lâmina atravessa placas), mas <strong>não</strong> a <strong>Beskar</strong> mandaloriana nem outro sabre.</li><li><strong>Manejo perigoso.</strong> Só o <strong>Sensível à Força</strong> o empunha sem risco (e o <strong>Guardião</strong> é o mestre da lâmina). Nas mãos de um não-sensível, um <strong>1 natural</strong> no ataque significa que ele <strong>se fere</strong> (2d10 no próprio portador).</li><li><strong>Deflexão de tiros</strong> é técnica de Forma (Soresu e cia.); a construção do sabre e os cristais kyber estão em Sabre de Luz e Cristais Kyber.</li></ul>",
+    "Armas de fogo, arremesso e explosivos": "<p><strong>CDT (Cadência de Tiro):</strong> <strong>A</strong> = automática · <strong>SA</strong> = semiautomática · <strong>U</strong> = disparo único.</p><table><thead><tr><th>Arma</th><th>Custo</th><th>Dano</th><th>Tipo</th><th>CDT</th><th>Peso</th><th>Disponib.</th></tr></thead><tbody><tr><td>Pistola Blaster Hold-Out</td><td>10.000</td><td>2d4</td><td>Energia</td><td>SA</td><td>0,5</td><td>Ilegal</td></tr><tr><td>Pistola Blaster Esportiva</td><td>10.000</td><td>2d4</td><td>Energia</td><td>SA</td><td>1</td><td>Licenciada</td></tr><tr><td>Pistola de Íons</td><td>10.000</td><td>2d6</td><td>Iônico</td><td>SA</td><td>1</td><td>Licenciada</td></tr><tr><td>Pistola de Projéteis</td><td>10.000</td><td>2d4</td><td>Perf.</td><td>U</td><td>1,5</td><td>Licenciada</td></tr><tr><td><strong>Pistola Blaster</strong></td><td>20.000</td><td>2d6</td><td>Energia</td><td>SA</td><td>1</td><td>Restrita</td></tr><tr><td>Pistola Blaster Pesada</td><td>30.000</td><td>2d8</td><td>Energia</td><td>SA</td><td>1,5</td><td>Militar</td></tr><tr><td>Rifle Blaster Esportivo</td><td>30.000</td><td>2d6</td><td>Energia</td><td>SA</td><td>4</td><td>Licenciada</td></tr><tr><td>Rifle de Íons</td><td>30.000</td><td>2d8</td><td>Iônico</td><td>A</td><td>3</td><td>Restrita</td></tr><tr><td>Carabina Blaster</td><td>35.000</td><td>2d8</td><td>Energia</td><td>SA</td><td>2,5</td><td>Restrita</td></tr><tr><td>Escopeta Blaster</td><td>35.000</td><td>4d4</td><td>Energia</td><td>U</td><td>3</td><td>Licenciada</td></tr><tr><td>Rifle Blaster</td><td>40.000</td><td>2d8</td><td>Energia</td><td>A</td><td>4,5</td><td>Restrita</td></tr><tr><td>Bowcaster Wookiee</td><td>60.000</td><td>2d10</td><td>Energia</td><td>U</td><td>8</td><td>Rara</td></tr><tr><td>Rifle Blaster Pesado</td><td>80.000</td><td>2d10</td><td>Energia</td><td>A</td><td>6</td><td>Militar</td></tr><tr><td>Canhão Blaster</td><td>100.000</td><td>2d12</td><td>Energia</td><td>U</td><td>5</td><td>Restrita</td></tr><tr><td>Repetidora Blaster Leve</td><td>160.000</td><td>2d12</td><td>Energia</td><td>A</td><td>8</td><td>Militar</td></tr><tr><td>Repetidora Blaster Pesada</td><td>240.000</td><td>3d10</td><td>Energia</td><td>A</td><td>12</td><td>Militar</td></tr><tr><td>Blaster E-Web</td><td>320.000</td><td>3d12</td><td>Energia</td><td>A</td><td>38</td><td>Militar</td></tr><tr><td>Lança-Chamas</td><td>40.000</td><td>2d6</td><td>Fogo</td><td>U</td><td>7</td><td>Militar</td></tr><tr><td>Lança-Mísseis</td><td>60.000</td><td>3d12</td><td>—</td><td>U</td><td>10</td><td>Militar</td></tr><tr><td>Lança-Granadas</td><td>20.000</td><td>—</td><td>—</td><td>U</td><td>5</td><td>Militar</td></tr><tr><td>Arco</td><td>10.000</td><td>1d6</td><td>Perf.</td><td>U</td><td>1</td><td>—</td></tr><tr><td>Funda</td><td>1.500</td><td>1d4</td><td>Contusão</td><td>U</td><td>0,5</td><td>—</td></tr></tbody></table><p><strong>Granadas e explosivos</strong> (arremesso/fixação):</p><table><thead><tr><th>Item</th><th>Custo</th><th>Dano</th><th>Tipo</th><th>Peso</th><th>Disponib.</th></tr></thead><tbody><tr><td>Granada de Fumaça</td><td>8.000</td><td>2d4</td><td>Fumaça</td><td>0,25</td><td>Restrita</td></tr><tr><td>Granada de Fragmentação</td><td>8.000</td><td>3d6</td><td>Corte</td><td>0,25</td><td>Militar</td></tr><tr><td>Granada de Atordoamento</td><td>10.000</td><td>3d6</td><td>Energia (atord.)</td><td>0,5</td><td>Restrita</td></tr><tr><td>Granada de Íons</td><td>10.000</td><td>3d6</td><td>Iônico</td><td>0,5</td><td>Restrita</td></tr><tr><td>Detonita (bloco)</td><td>20.000</td><td>3d10</td><td>Energia</td><td>0,1</td><td>Restrita</td></tr><tr><td>Carga Explosiva</td><td>60.000</td><td>6d10</td><td>Energia</td><td>0,5</td><td>Restrita</td></tr><tr><td>Detonador Térmico</td><td>80.000</td><td>4d12</td><td>Energia</td><td>1</td><td>Ilegal</td></tr></tbody></table><h3>Regras de disparo</h3><ul><li><strong>Tiro Duplo</strong> <em>(armas SA e A)</em>: dispara duas vezes no mesmo alvo com <strong>−2 no ataque</strong>, somando <strong>+1 dado</strong> de dano (uma Pistola Blaster Pesada 2d8 → <strong>3d8</strong>).</li><li><strong>Rajada</strong> <em>(só armas A)</em>: <strong>−5 no ataque</strong>, somando <strong>+2 dados</strong> de dano (um Rifle Blaster 2d8 → <strong>4d8</strong>).</li><li><strong>Queima-roupa</strong> (dentro da 1ª faixa de alcance): <strong>+2</strong> no ataque e no dano.</li><li><strong>Explosivos de fixação</strong>: colocar exige teste de <strong>Demolição (Ciência)</strong>; sucesso <strong>ignora a redução de dano</strong> do alvo. Margem de 5 dobra o dano; 10 ou crítico triplica. Dobrar o número de cargas soma +2 dados.</li><li><strong>Armas Iônicas</strong> contra <strong>Droides</strong>: lembre que o Droide sofre <strong>dano dobrado</strong> de Íon e, num crítico, fica <strong>desativado</strong> (Espécies).</li></ul><h3>Alcance das armas (penalidade por faixa)</h3><table><thead><tr><th>Categoria</th><th>Queima-roupa (+2)</th><th>Curto (−2)</th><th>Médio (−5)</th><th>Longo (−10)</th></tr></thead><tbody><tr><td>Pistolas</td><td>0–20</td><td>21–40</td><td>41–60</td><td>61–80</td></tr><tr><td>Rifles</td><td>0–30</td><td>31–60</td><td>61–150</td><td>151–300</td></tr><tr><td>Artilharia</td><td>0–50</td><td>51–100</td><td>101–250</td><td>251–500</td></tr><tr><td>Armas simples</td><td>0–20</td><td>21–40</td><td>41–60</td><td>61–80</td></tr><tr><td>Arremesso</td><td>0–6</td><td>7–8</td><td>9–10</td><td>11–12</td></tr></tbody></table><p><em>(distâncias em metros.)</em></p>",
+    "Armaduras & Vestes": "<p>A coluna <strong>CP</strong> é o <strong>valor de proteção</strong> da veste, e é só a base da conta. O Coeficiente de Proteção final é:</p><blockquote><p><strong>CP = proteção da veste + modificador de Destreza + aparatos defensivos e poderes + bônus de nível</strong></p></blockquote><p>O <strong>modificador de Destreza entra inteiro</strong> — o Space Dragon não tem teto de Destreza por armadura. O <strong>bônus de nível</strong> vem da <strong>Tabela 4-1</strong> e <strong>não é cumulativo</strong>: o valor da faixa <em>é</em> o bônus total.</p><table><thead><tr><th>Nível</th><th>1–3</th><th>4–7</th><th>8–11</th><th>12–15</th><th>16–19</th><th>20</th></tr></thead><tbody><tr><td><strong>Bônus no CP</strong></td><td>—</td><td>+1</td><td>+2</td><td>+3</td><td>+4</td><td>+5</td></tr></tbody></table><p>Um ataque acerta com <strong>1d20 + BA ≥ CP</strong>.</p><table><thead><tr><th>Proteção</th><th>Custo</th><th>CP</th><th>Desloc.</th><th>Tipo</th><th>Peso</th><th>Disponib.</th></tr></thead><tbody><tr><td>Vestes Leves</td><td>20.000</td><td>10</td><td>—</td><td>Veste</td><td>0,5</td><td>—</td></tr><tr><td>Vestes Médias</td><td>40.000</td><td>11</td><td>—</td><td>Veste</td><td>1</td><td>Licenciada</td></tr><tr><td>Vestes Pesadas</td><td>50.000</td><td>12</td><td>—</td><td>Veste</td><td>2</td><td>Licenciada</td></tr><tr><td>Capacete e Colete</td><td>60.000</td><td>13</td><td>—</td><td>Leve</td><td>3</td><td>Licenciada</td></tr><tr><td>Traje de Piloto</td><td>75.000</td><td>13</td><td>—</td><td>Leve</td><td>5</td><td>Restrita</td></tr><tr><td>Armadura Projetada</td><td>100.000</td><td>14</td><td>—</td><td>Leve</td><td>8</td><td>Rara</td></tr><tr><td>Traje de Piloto Blindado</td><td>100.000</td><td>14</td><td>—</td><td>Leve</td><td>10</td><td>Restrita</td></tr><tr><td>Armadura de Stormtrooper</td><td>120.000</td><td>15</td><td>—</td><td>Leve</td><td>10</td><td>Restrita</td></tr><tr><td>Armadura Cerimonial</td><td>120.000</td><td>16</td><td>−1</td><td>Média</td><td>13</td><td>—</td></tr><tr><td>Armadura Mandaloriana</td><td>150.000</td><td>16</td><td>−1</td><td>Média</td><td>15</td><td>Rara</td></tr><tr><td>Armadura Corelliana</td><td>140.000</td><td>17</td><td>−1</td><td>Média</td><td>20</td><td>—</td></tr><tr><td>Armadura de Batalha</td><td>160.000</td><td>18</td><td>−1</td><td>Média</td><td>16</td><td>—</td></tr><tr><td>Projetada de Caçador</td><td>200.000</td><td>18</td><td>−1</td><td>Média</td><td>20</td><td>Ilegal</td></tr><tr><td>Traje Espacial Blindado</td><td>180.000</td><td>19</td><td>−2</td><td>Pesada</td><td>35</td><td>—</td></tr><tr><td>A. de Batalha Pesada</td><td>180.000</td><td>19</td><td>−2</td><td>Pesada</td><td>30</td><td>—</td></tr><tr><td>Mandaloriana Pesada</td><td>250.000</td><td>20</td><td>−2</td><td>Pesada</td><td>22</td><td>Rara</td></tr><tr><td>Dark Trooper</td><td>350.000</td><td>24</td><td>−3</td><td>Pesada</td><td>50</td><td>Militar</td></tr></tbody></table><p><strong>Proficiência:</strong> vestes leves e médias, qualquer um usa. Sem proficiência: <strong>vestes pesadas</strong> dão −1 em perícias físicas e ataque; <strong>armadura leve</strong> −2; <strong>média</strong> −5; <strong>pesada</strong> −10. As classes seguem suas restrições (Classes Mundanas): o Operativo/Sensível não passam de vestes; o Guardião pega médias; o Veterano usa qualquer uma + escudos.</p><p><strong>Vestes sob encomenda</strong> (Tabela 5-3 do livro) — qualquer veste pode ser melhorada:</p><table><thead><tr><th>Serviço</th><th>Custo</th><th>Benefício</th></tr></thead><tbody><tr><td>Material mais leve</td><td>40.000</td><td>reduz o peso da veste em <strong>2 kg</strong></td></tr><tr><td>Reforço de vestes</td><td>60.000</td><td>aumenta o valor de proteção em <strong>+2</strong></td></tr><tr><td>Vestes sob medida</td><td>50.000</td><td>reduz a penalidade de deslocamento em <strong>2</strong></td></tr></tbody></table><blockquote><p><strong>Alguns destaques:</strong> a <strong>Corelliana</strong> dá <strong>+2 de Força</strong> a quem tem proficiência em médias; a de <strong>Stormtrooper</strong> dá +2 em Percepção e visão na penumbra + comunicador no capacete (a variante da neve/deserto, 150.000 CR, dá imunidade a frio/calor extremo); a <strong>Mandaloriana</strong> é herança de clã (ver Senda Mandaloriana). A <strong>Beskar</strong> verdadeira — a que detém um sabre de luz — está em Sabre de Luz e Cristais Kyber.</p></blockquote>",
+    "Aparelhos, kits e suprimentos": "<table><thead><tr><th>Item</th><th>Custo</th><th>Peso</th><th>Efeito</th></tr></thead><tbody><tr><td>Comunicador (curto alcance)</td><td>10.000</td><td>—</td><td>50 km / órbita baixa; embutível em capacete</td></tr><tr><td>Comunicador (longo alcance)</td><td>50.000</td><td>4</td><td>200 km / órbita alta (miniaturizado por 2×)</td></tr><tr><td>Datapad</td><td>25.000</td><td>0,5</td><td>computador de mão (Ciência 12)</td></tr><tr><td>Computador Portátil</td><td>75.000</td><td>3</td><td>roda programas complexos (Ciência 14)</td></tr><tr><td>Lanterna</td><td>500</td><td>0,5</td><td>feixe de até ~12 m</td></tr><tr><td>Lanterna de Fusão</td><td>1.000</td><td>1</td><td>luz <strong>e</strong> calor num raio de ~12 m</td></tr><tr><td>Macrobinóculos</td><td>15.000</td><td>1</td><td>visão ampliada; útil de batedor</td></tr><tr><td>Cinto de Utilidades</td><td>25.000</td><td>4</td><td>organiza pequenos itens</td></tr><tr><td>Bandoleira</td><td>5.000</td><td>2</td><td>munição/granadas de acesso rápido</td></tr><tr><td>Coldre (cintura / oculto)</td><td>1.000 / 2.500</td><td>0,5</td><td>saque rápido / dissimulado</td></tr><tr><td>Mira Telescópica</td><td>5.000</td><td>—</td><td>reduz penalidade de alcance longo</td></tr><tr><td>Mira com Visão Noturna</td><td>50.000</td><td>1</td><td>mira no escuro</td></tr><tr><td>Algemas</td><td>2.500</td><td>0,5</td><td>prendem um alvo subjugado</td></tr><tr><td>Kit de Segurança</td><td>40.000</td><td>1</td><td>necessário para arrombar/desarmar sistemas (ilegal sem licença)</td></tr><tr><td>Kit de Ferramentas</td><td>10.000</td><td>1</td><td>necessário para reparar/reprogramar droides e veículos</td></tr><tr><td>Kit de Reparos Emergenciais</td><td>—</td><td>—</td><td>cura <strong>2d4+1</strong> de dispositivos, droides e veículos</td></tr><tr><td>Kit de Campo</td><td>—</td><td>—</td><td>necessário para resistir a temperaturas extremas</td></tr><tr><td>Gerador de Energia</td><td>40.000</td><td>15</td><td>energia contínua; se destruído em uso, explode (8d6 em área, JPR pela metade)</td></tr><tr><td>Carga de Energia</td><td>1.000</td><td>—</td><td>\"pente\" de uma arma de energia</td></tr><tr><td>Célula de Energia</td><td>—</td><td>—</td><td>bateria de dispositivos</td></tr><tr><td>Carregador de Energia</td><td>5.000</td><td>1</td><td>recarrega cargas/células (4 h cada)</td></tr><tr><td>Traje de Piloto Comum</td><td>—</td><td>—</td><td>10 h de suporte de vida; imune a atmosfera hostil/veneno inalado</td></tr><tr><td>Traje Espacial Comum</td><td>—</td><td>—</td><td>24 h de sobrevivência no vácuo</td></tr></tbody></table><p><strong>Medicina</strong> (o quintal do Médico de Campo):</p><table><thead><tr><th>Item</th><th>Custo</th><th>Efeito</th></tr></thead><tbody><tr><td>Medpac</td><td>—</td><td>estabiliza um ferido e cura o <strong>nível</strong> dele em PV</td></tr><tr><td>Pistola de Medicamentos</td><td>—</td><td>até 5 cargas; cada injeção cura <strong>2d4+1</strong> PV</td></tr><tr><td>Estojo Médico</td><td>—</td><td>necessário para reviver um moribundo, tratar doença/veneno/radiação</td></tr><tr><td>Estojo Cirúrgico</td><td>—</td><td>necessário para cirurgia (perícia de tratar ferimentos)</td></tr><tr><td>Tanque de Bacta</td><td>— (300/h de uso)</td><td><strong>2× o nível</strong> em PV por dia dentro do tanque, além da recuperação normal</td></tr></tbody></table><p><strong>Serviços & despesas</strong> (custo por uso/dia):</p><table><thead><tr><th>Serviço</th><th>Custo</th></tr></thead><tbody><tr><td>Refeição (econômica → luxuosa)</td><td>100 / 500 / 2.500 / 7.500</td></tr><tr><td>Alojamento (econômico → luxuoso)</td><td>1.000 / 2.500 / 5.000 / 10.000</td></tr><tr><td>Tanque de Bacta (hora)</td><td>15.000</td></tr><tr><td>Cuidados médicos / Medpac (dia)</td><td>15.000</td></tr><tr><td>Cirurgia (hora)</td><td>25.000</td></tr><tr><td>Tratar doenças (dia)</td><td>25.000</td></tr><tr><td>Tratar veneno (dia)</td><td>5.000</td></tr><tr><td>Tratar envenenamento por radiação (dia)</td><td>50.000</td></tr><tr><td>Aluguel: moto speeder / speeder terrestre / aéreo (dia)</td><td>1.000 / 2.500 / 25.000</td></tr><tr><td>Transporte interplanetário (dia)</td><td>100.000</td></tr></tbody></table>",
+    "Crédito": "<p>Tabelas de arsenal, armadura, aparelhos e preços adaptadas de <strong>\"Star Wars para Space Dragon\", de Jonas Picholaro</strong> (dez/2014, CC BY 3.0), reconciliadas com a escala de Créditos do <em>Space Dragon</em>. As naves estão em Naves e Veículos.</p>"
+  },
+  "SW-SUP-Aparatos-e-Feitos": {
+    "(abertura)": "<blockquote><p>As <strong>engenhocas</strong> do Técnico (chassi <em>Cientista</em>) são os \"itens mágicos\" desta galáxia: escudos defletores, jetpacks, cibernética, disruptores, medpacs de bacta. <strong>As regras e os números são os do <em>SD</em>, Cap. 8</strong> — criação, Nível Tecnológico, conserto, adaptação, recarga, serviços científicos, custos e tempos. Este capítulo faz outra coisa: diz <strong>o que cada aparato é, na galáxia</strong>.</p></blockquote>",
+    "O que você precisa saber do livro básico": "<ul><li><strong>Categorias:</strong> <em>ofensivos</em> (só o Técnico opera), <em>defensivos</em> (Técnico e Veterano), <em>utilitários</em> (todos). Só o Técnico <strong>cria</strong> aparatos e realiza <strong>feitos científicos</strong>.</li><li><strong>Nível Tecnológico (NT):</strong> limita o que o Técnico pode <strong>criar</strong>, não o que pode <strong>usar</strong>. Regras completas no livro.</li><li><strong>Usar não pede rolagem</strong>, salvo três casos: o Técnico com um aparato alheio, danificado, desconhecido ou acima do seu NT (<em>Operar Máquinas</em>); <strong>identificar para que serve</strong> um aparato (teste de <strong>Ciência</strong>, de graça); e outra classe operando um aparato sem proficiência em último recurso (rola o <strong>Crédito Tecnológico</strong>, se tiver). A falha nos dois últimos dá um defeito da <strong>Tabela 11-4</strong> (<em>SD</em>, Cap. 11 — ver Relíquias).</li><li><strong>O Técnico pode começar o jogo já com aparatos</strong>, quaisquer que o seu <strong>NT</strong> e a sua <strong>renda inicial</strong> permitirem — não precisa gastar tempo de jogo montando o kit de partida.</li><li><strong>Criar, consertar, adaptar, recarregar, encomendar:</strong> <em>SD</em>, Cap. 8.</li></ul><blockquote><p><strong>Sobre os preços.</strong> Aparatos custam de <strong>dezenas de milhares a milhões de CR</strong> — acima do arsenal mundano do Equipamentos e Créditos (uma pistola blaster custa 20.000, a mesma coisa que a pistola laser do livro). É de propósito: aparatos são <strong>raros e caríssimos</strong>, o verdadeiro sorvedouro de Créditos da campanha, na mesma escala dos <strong>créditos iniciais ×5.000</strong>. Um Técnico <strong>começa o jogo já possuindo</strong> os aparatos que seu NT e sua renda inicial permitirem.</p></blockquote>",
+    "O catálogo, vestido de Star Wars": "<p>Pegue o aparato no <em>SD</em>, Cap. 8, pelo <strong>nome nativo</strong>; use os números de lá. O que muda é o que ele é no mundo.</p><table><thead><tr><th>NT</th><th>Aparato (<em>SD</em>)</th><th>Na galáxia, é…</th></tr></thead><tbody><tr><td>1º</td><td>Bracelete radiocomunicador</td><td>Comlink de pulso</td></tr><tr><td>1º</td><td>Cortador laser</td><td>Maçarico de fusão — a ferramenta que abre um casco</td></tr><tr><td>1º</td><td><strong>Disruptor positrônico</strong></td><td><strong>Disruptor iônico</strong> — o que habilita <em>Desativar Robôs</em> (Classes Mundanas)</td></tr><tr><td>1º</td><td>Medidor de radiação</td><td>Sensor de radiação de superfície</td></tr><tr><td>1º</td><td>Óculos de visão noturna</td><td>Visor noturno de capacete</td></tr><tr><td>1º</td><td>Óculos de visão térmica</td><td><strong>Visor térmico mandaloriano</strong></td></tr><tr><td>1º</td><td>Trajes antirradiação</td><td>Traje de vácuo selado</td></tr><tr><td>2º</td><td>Algemas eletrônicas</td><td>Algemas de contenção imperiais</td></tr><tr><td>2º</td><td>Bloqueador de ondas de rádio</td><td>Bloqueador de sinal — mata o comlink da patrulha</td></tr><tr><td>2º</td><td>Broca pneumática portátil</td><td>Perfuratriz de mineração</td></tr><tr><td>2º</td><td>Câmera remota</td><td>Micro-sonda de vigilância</td></tr><tr><td>2º</td><td>Cilindro de dados</td><td><strong>Cartucho de dados</strong> (o roubo de Scarif cabe num)</td></tr><tr><td>2º</td><td>Dispositivo rastreador</td><td>Baliza de rastreio — o truque do Falcon em Yavin</td></tr><tr><td>2º</td><td>Lançador de gancho</td><td>Cabo com garra ascensora</td></tr><tr><td>2º</td><td>Projetor holográfico</td><td><strong>Holoprojetor</strong> — a mensagem da Leia</td></tr><tr><td>3º</td><td>Bracelete vídeocomunicador</td><td>Comlink holográfico</td></tr><tr><td>3º</td><td><strong>Comunicador idiomático</strong></td><td><strong>Tradutor de protocolo</strong> — o que faz um droide de protocolo</td></tr><tr><td>3º</td><td>Detector de mentiras</td><td>Analisador de voz imperial</td></tr><tr><td>3º</td><td>Explosivo remotamente controlado</td><td>Carga de detonita com detonador remoto</td></tr><tr><td>3º</td><td>Granada de fumaça</td><td>Granada de fumaça / dispersão</td></tr><tr><td>3º</td><td>Luvas de indução elétrica</td><td>Luvas de choque de eletrobastão</td></tr><tr><td>3º</td><td><strong>Mochila a jato</strong></td><td><strong>Jetpack mandaloriano</strong></td></tr><tr><td>4º</td><td>Botas antigravidade</td><td>Botas magnéticas de casco</td></tr><tr><td>4º</td><td><strong>Campo de força individual</strong></td><td><strong>Escudo defletor pessoal</strong></td></tr><tr><td>4º</td><td>Óculos de raio X</td><td>Visor de varredura estrutural</td></tr><tr><td>4º</td><td>Pílula de recuperação rápida</td><td>Estimulante médico</td></tr><tr><td>4º</td><td>Pistola de repetição</td><td>Blaster de repetição</td></tr><tr><td>4º</td><td><strong>Soro reanimador</strong></td><td><strong>Estimulante de bacta</strong> — o que tira alguém do chão</td></tr><tr><td>4º</td><td>Visor de precisão</td><td>Mira eletrônica de precisão</td></tr><tr><td>5º</td><td>Cinto de deflexão</td><td>Gerador de deflexão pessoal</td></tr><tr><td>5º</td><td>Laço de energia</td><td>Laço de energia — a arma de captura do caçador</td></tr><tr><td>5º</td><td>Miniaturizador</td><td>Compactador de carga</td></tr><tr><td>5º</td><td>Metralhadora energética</td><td>Blaster repetidor pesado</td></tr><tr><td>5º</td><td>Pílula de aprimoramento</td><td><strong>Estimulante de combate</strong> (ilegal, vicia)</td></tr><tr><td>5º</td><td>Respirador subaquático</td><td>Respirador anfíbio (padrão mon-calamari)</td></tr><tr><td>5º</td><td>Trocador instantâneo de trajes</td><td>Traje de troca rápida</td></tr><tr><td>6º</td><td>Bracelete controlador</td><td>Implante de controle motor</td></tr><tr><td>6º</td><td>Campo de força coletivo</td><td>Gerador de escudo de esquadrão</td></tr><tr><td>6º</td><td>Canhão de fótons</td><td>Canhão de plasma pesado</td></tr><tr><td>6º</td><td>Capacete de detecção mental</td><td><strong>Detector de sensíveis à Força</strong> (equipamento da Inquisição)</td></tr><tr><td>6º</td><td>Fórmula de controle corporal</td><td>Ração de sustentação de campo</td></tr><tr><td>6º</td><td><strong>Membro biônico</strong></td><td><strong>Prótese cibernética</strong> — a mão do Luke</td></tr><tr><td>6º</td><td>Míssil teleguiado</td><td>Míssil de busca por calor</td></tr><tr><td>7º</td><td>Capacete de proteção mental</td><td><strong>Elmo ysalamiri</strong> — a mente que a Força não alcança</td></tr><tr><td>7º</td><td>Cinto de invisibilidade</td><td><strong>Manto stygium</strong> (tecnologia de camuflagem)</td></tr><tr><td>7º</td><td>Coleira de controle alienígena</td><td>Coleira de domação de feras</td></tr><tr><td>7º</td><td><strong>Órgão biônico</strong></td><td><strong>Órgão cibernético</strong> — como Vader continua vivo</td></tr><tr><td>7º</td><td><strong>Raio paralisador</strong></td><td><strong>Raio atordoante</strong> (o que captura sem matar)</td></tr><tr><td>8º</td><td>Gerador de campo repulsor</td><td>Barreira de escudo de base</td></tr><tr><td>8º</td><td>Lança-chamas</td><td>Lança-chamas de tropa de choque</td></tr><tr><td>8º</td><td>Visor de realidade alternativa</td><td>Computador tático preditivo</td></tr><tr><td>9º</td><td><strong>Pistola desintegradora</strong></td><td><strong>Desintegrador</strong> (\"não quero desintegrações\")</td></tr><tr><td>9º</td><td>Teletransportador</td><td>Plataforma de transmatéria — tecnologia perdida</td></tr><tr><td>10º</td><td>Máquina do tempo</td><td>Portal do Mortis — lenda, gancho de campanha, nunca item</td></tr></tbody></table><blockquote><p>Aparatos que o <em>SD</em> traz e este capítulo não renomeia funcionam como estão: são tecnologia genérica da galáxia.</p></blockquote>",
+    "Feitos Científicos, na galáxia": "<p>Mesma regra: o feito, o NT, o custo e o efeito estão no <strong><em>SD</em>, Cap. 8</strong>. Aqui está o que eles significam neste cenário.</p><table><thead><tr><th>Feito (<em>SD</em>)</th><th>Na galáxia, é…</th></tr></thead><tbody><tr><td>Diagnosticar / curar doença</td><td>Medicina de campo rebelde; a praga de um mundo do Interior</td></tr><tr><td>Identificar veneno · Destilar antídoto</td><td>O ofício sujo do submundo — e o antídoto que salva o senador</td></tr><tr><td>Operações cirúrgicas (simples a complexa)</td><td><strong>Tanque de bacta</strong>, mesa cirúrgica de droide 2-1B</td></tr><tr><td><strong>Cirurgia biônica</strong></td><td>A reconstrução de Vader; a mão nova do Luke</td></tr><tr><td>Imunizar paciente</td><td>Vacina contra uma arma biológica separatista</td></tr><tr><td>Aprimoramento permanente</td><td>Terapia genética ilegal de corporação</td></tr><tr><td>Decodificar DNA · Clonagem</td><td><strong>Kamino</strong> — a indústria que fez um exército</td></tr><tr><td>Provocar mutação genética</td><td>Experimento proibido de um cientista imperial</td></tr><tr><td>Sondagem cerebral</td><td><strong>Interrogatório da Inquisição</strong> (a alternativa tecnológica ao Truque Mental)</td></tr><tr><td>Combinar / desenvolver espécie</td><td>As criações do Projeto Fósforo Negro</td></tr><tr><td><strong>Hibernação criogênica</strong></td><td><strong>Congelamento em carbonita</strong></td></tr><tr><td>Reanimar cadáver</td><td>Necrotecnologia sith — sempre errado, sempre um preço</td></tr><tr><td>Reparos robóticos · Construir robô</td><td>A oficina de droides; o R2 remendado depois da batalha</td></tr><tr><td>Construir / transplantar cérebro positrônico</td><td>A alma de um droide — e a pergunta se ele tem uma</td></tr><tr><td>Solidificar líquido</td><td>Utilidade industrial; ótimo para armadilhas</td></tr></tbody></table>",
+    "Crédito": "<p>Regras, catálogo, custos e efeitos de <strong>Aparatos e Feitos Científicos</strong> são do <strong><em>Space Dragon</strong></em> (Old Dragon Editora), <strong>Cap. 8</strong> — consulte o Módulo Básico. Os nomes de Star Wars e a moldura de cenário são adaptação.</p>"
+  },
   "SW-SUP-Ordens-e-Ranks": {
     "(abertura)": "<blockquote><p>As ordens dão contexto social e dramático aos Sensíveis. <strong>Rank é sobretudo narrativo</strong> — não dá bônus de atributo —, mas destrava privilégios, deveres e ganchos. Os níveis sugeridos seguem a escala nativa <strong>1–20</strong> do Sensível à Força (lembre: a especialização abre no <strong>5º nível</strong>, então virar Cavaleiro/Aprendiz \"pleno\" casa com esse marco).</p></blockquote>",
     "A Ordem Jedi (Caminho da Luz)": "<p>Guardiões da paz sob um Código de serenidade, desapego e serviço. Treinam desde cedo, constroem o próprio sabre e sobem por Provações.</p><p><strong>O Código:</strong> <em>Não há emoção, há paz. Não há ignorância, há conhecimento. Não há paixão, há serenidade. Não há caos, há harmonia. Não há morte, há a Força.</em></p><h3>Ranks Jedi</h3><table><thead><tr><th>Rank</th><th>Nível sugerido</th><th>Representa / destrava</th></tr></thead><tbody><tr><td><strong>Iniciado</strong></td><td>(antes do jogo)</td><td>Criança treinada no Templo; ainda não é PC pleno.</td></tr><tr><td><strong>Padawan</strong></td><td>1º–4º</td><td>Aprendiz vinculado a um <strong>Mestre</strong>. Montando o próprio sabre e a identidade.</td></tr><tr><td><strong>Cavaleiro Jedi</strong></td><td>5º–11º</td><td>Passou pelas <strong>Provações</strong> e escolheu a Senda (a especialização do 5º). Age com autonomia.</td></tr><tr><td><strong>Mestre Jedi</strong></td><td>12º–17º</td><td>Reconhecido pela sabedoria; <strong>treina um Padawan</strong> e acessa arquivos e artefatos restritos.</td></tr><tr><td><strong>Mestre do Conselho</strong></td><td>18º + feito notável</td><td>Voz da Ordem; influência política e acesso pleno (ferramenta de campanha).</td></tr></tbody></table><p><strong>As Provações (virar Cavaleiro):</strong> por volta do <strong>5º nível</strong> — o mesmo marco em que a Senda se abre —, enfrenta as cinco provações clássicas: <strong>Coragem, Habilidade, Carne</strong> (resistir à dor/perda), <strong>Espírito</strong> (encarar o próprio lado sombrio) e <strong>Insight</strong>. Resolva como um arco, com uma cena de confronto interior (uma tentação de usar a Sombra — ver <em>A Tentação</em> em O Sensível à Força).</p>",
@@ -2584,3 +2600,1558 @@ export const ORIGEM = {
     }
   ]
 };
+
+// Todas as tabelas de SW-SUP-Equipamentos, na ordem, com a seção de cada.
+export const EQUIPAMENTOS = [
+  {
+    "secao": "Créditos",
+    "cabecalho": [
+      "Classe",
+      "Créditos iniciais"
+    ],
+    "linhas": [
+      [
+        "**Veterano**",
+        "2d10 × 5.000"
+      ],
+      [
+        "**Operativo**",
+        "2d6 × 5.000"
+      ],
+      [
+        "**Técnico**",
+        "1d8 × 5.000"
+      ],
+      [
+        "**Sensível à Força**",
+        "1d6 × 5.000"
+      ]
+    ]
+  },
+  {
+    "secao": "Armas de combate corpo a corpo",
+    "cabecalho": [
+      "Arma",
+      "Custo",
+      "Dano",
+      "Tipo",
+      "Peso",
+      "Disponib."
+    ],
+    "linhas": [
+      [
+        "Faca",
+        "5.000",
+        "1d4",
+        "Corte/Perf.",
+        "0,5",
+        "—"
+      ],
+      [
+        "Porrete",
+        "3.000",
+        "1d6",
+        "Contusão",
+        "1",
+        "—"
+      ],
+      [
+        "Bastão de Atordoamento",
+        "6.000",
+        "1d6",
+        "Atord.",
+        "1",
+        "—"
+      ],
+      [
+        "Baioneta",
+        "10.000",
+        "1d6",
+        "Perf.",
+        "1",
+        "—"
+      ],
+      [
+        "Maça",
+        "10.000",
+        "1d8",
+        "Contusão",
+        "1,5",
+        "—"
+      ],
+      [
+        "Lança",
+        "10.000",
+        "1d8",
+        "Perf.",
+        "1,5",
+        "—"
+      ],
+      [
+        "Cajado",
+        "15.000",
+        "1d6/1d6",
+        "Contusão",
+        "2",
+        "—"
+      ],
+      [
+        "Espada Longa",
+        "15.000",
+        "1d8",
+        "Corte/Perf.",
+        "1,5",
+        "—"
+      ],
+      [
+        "Machado",
+        "20.000",
+        "1d12",
+        "Corte/Perf.",
+        "5",
+        "—"
+      ],
+      [
+        "Luvas de Combate",
+        "40.000",
+        "+1",
+        "Contusão",
+        "0,5",
+        "—"
+      ],
+      [
+        "Vibro-adaga",
+        "40.000",
+        "1d6",
+        "Corte/Perf.",
+        "0,5",
+        "—"
+      ],
+      [
+        "Vibro-lâmina",
+        "50.000",
+        "1d8",
+        "Corte/Perf.",
+        "1",
+        "Licenciada"
+      ],
+      [
+        "Vibro-baioneta",
+        "70.000",
+        "1d8",
+        "Perf.",
+        "1",
+        "Licenciada"
+      ],
+      [
+        "Vibro-espada",
+        "70.000",
+        "1d10",
+        "Corte/Perf.",
+        "1,5",
+        "Licenciada"
+      ],
+      [
+        "Vibro-machado",
+        "100.000",
+        "2d8",
+        "Corte",
+        "6",
+        "Restrita"
+      ],
+      [
+        "Pique de Energia",
+        "100.000",
+        "1d12",
+        "Energia/Perf.",
+        "2",
+        "Restrita"
+      ],
+      [
+        "Cajado Elétrico",
+        "600.000",
+        "1d8/1d8",
+        "Contusão/Energia",
+        "2",
+        "Restrita"
+      ],
+      [
+        "**Sabre de Luz**",
+        "600.000",
+        "**2d10**",
+        "Energia",
+        "1",
+        "Rara"
+      ]
+    ]
+  },
+  {
+    "secao": "Armas de fogo, arremesso e explosivos",
+    "cabecalho": [
+      "Arma",
+      "Custo",
+      "Dano",
+      "Tipo",
+      "CDT",
+      "Peso",
+      "Disponib."
+    ],
+    "linhas": [
+      [
+        "Pistola Blaster Hold-Out",
+        "10.000",
+        "2d4",
+        "Energia",
+        "SA",
+        "0,5",
+        "Ilegal"
+      ],
+      [
+        "Pistola Blaster Esportiva",
+        "10.000",
+        "2d4",
+        "Energia",
+        "SA",
+        "1",
+        "Licenciada"
+      ],
+      [
+        "Pistola de Íons",
+        "10.000",
+        "2d6",
+        "Iônico",
+        "SA",
+        "1",
+        "Licenciada"
+      ],
+      [
+        "Pistola de Projéteis",
+        "10.000",
+        "2d4",
+        "Perf.",
+        "U",
+        "1,5",
+        "Licenciada"
+      ],
+      [
+        "**Pistola Blaster**",
+        "20.000",
+        "2d6",
+        "Energia",
+        "SA",
+        "1",
+        "Restrita"
+      ],
+      [
+        "Pistola Blaster Pesada",
+        "30.000",
+        "2d8",
+        "Energia",
+        "SA",
+        "1,5",
+        "Militar"
+      ],
+      [
+        "Rifle Blaster Esportivo",
+        "30.000",
+        "2d6",
+        "Energia",
+        "SA",
+        "4",
+        "Licenciada"
+      ],
+      [
+        "Rifle de Íons",
+        "30.000",
+        "2d8",
+        "Iônico",
+        "A",
+        "3",
+        "Restrita"
+      ],
+      [
+        "Carabina Blaster",
+        "35.000",
+        "2d8",
+        "Energia",
+        "SA",
+        "2,5",
+        "Restrita"
+      ],
+      [
+        "Escopeta Blaster",
+        "35.000",
+        "4d4",
+        "Energia",
+        "U",
+        "3",
+        "Licenciada"
+      ],
+      [
+        "Rifle Blaster",
+        "40.000",
+        "2d8",
+        "Energia",
+        "A",
+        "4,5",
+        "Restrita"
+      ],
+      [
+        "Bowcaster Wookiee",
+        "60.000",
+        "2d10",
+        "Energia",
+        "U",
+        "8",
+        "Rara"
+      ],
+      [
+        "Rifle Blaster Pesado",
+        "80.000",
+        "2d10",
+        "Energia",
+        "A",
+        "6",
+        "Militar"
+      ],
+      [
+        "Canhão Blaster",
+        "100.000",
+        "2d12",
+        "Energia",
+        "U",
+        "5",
+        "Restrita"
+      ],
+      [
+        "Repetidora Blaster Leve",
+        "160.000",
+        "2d12",
+        "Energia",
+        "A",
+        "8",
+        "Militar"
+      ],
+      [
+        "Repetidora Blaster Pesada",
+        "240.000",
+        "3d10",
+        "Energia",
+        "A",
+        "12",
+        "Militar"
+      ],
+      [
+        "Blaster E-Web",
+        "320.000",
+        "3d12",
+        "Energia",
+        "A",
+        "38",
+        "Militar"
+      ],
+      [
+        "Lança-Chamas",
+        "40.000",
+        "2d6",
+        "Fogo",
+        "U",
+        "7",
+        "Militar"
+      ],
+      [
+        "Lança-Mísseis",
+        "60.000",
+        "3d12",
+        "—",
+        "U",
+        "10",
+        "Militar"
+      ],
+      [
+        "Lança-Granadas",
+        "20.000",
+        "—",
+        "—",
+        "U",
+        "5",
+        "Militar"
+      ],
+      [
+        "Arco",
+        "10.000",
+        "1d6",
+        "Perf.",
+        "U",
+        "1",
+        "—"
+      ],
+      [
+        "Funda",
+        "1.500",
+        "1d4",
+        "Contusão",
+        "U",
+        "0,5",
+        "—"
+      ]
+    ]
+  },
+  {
+    "secao": "Armas de fogo, arremesso e explosivos",
+    "cabecalho": [
+      "Item",
+      "Custo",
+      "Dano",
+      "Tipo",
+      "Peso",
+      "Disponib."
+    ],
+    "linhas": [
+      [
+        "Granada de Fumaça",
+        "8.000",
+        "2d4",
+        "Fumaça",
+        "0,25",
+        "Restrita"
+      ],
+      [
+        "Granada de Fragmentação",
+        "8.000",
+        "3d6",
+        "Corte",
+        "0,25",
+        "Militar"
+      ],
+      [
+        "Granada de Atordoamento",
+        "10.000",
+        "3d6",
+        "Energia (atord.)",
+        "0,5",
+        "Restrita"
+      ],
+      [
+        "Granada de Íons",
+        "10.000",
+        "3d6",
+        "Iônico",
+        "0,5",
+        "Restrita"
+      ],
+      [
+        "Detonita (bloco)",
+        "20.000",
+        "3d10",
+        "Energia",
+        "0,1",
+        "Restrita"
+      ],
+      [
+        "Carga Explosiva",
+        "60.000",
+        "6d10",
+        "Energia",
+        "0,5",
+        "Restrita"
+      ],
+      [
+        "Detonador Térmico",
+        "80.000",
+        "4d12",
+        "Energia",
+        "1",
+        "Ilegal"
+      ]
+    ]
+  },
+  {
+    "secao": "Armas de fogo, arremesso e explosivos",
+    "cabecalho": [
+      "Categoria",
+      "Queima-roupa (+2)",
+      "Curto (−2)",
+      "Médio (−5)",
+      "Longo (−10)"
+    ],
+    "linhas": [
+      [
+        "Pistolas",
+        "0–20",
+        "21–40",
+        "41–60",
+        "61–80"
+      ],
+      [
+        "Rifles",
+        "0–30",
+        "31–60",
+        "61–150",
+        "151–300"
+      ],
+      [
+        "Artilharia",
+        "0–50",
+        "51–100",
+        "101–250",
+        "251–500"
+      ],
+      [
+        "Armas simples",
+        "0–20",
+        "21–40",
+        "41–60",
+        "61–80"
+      ],
+      [
+        "Arremesso",
+        "0–6",
+        "7–8",
+        "9–10",
+        "11–12"
+      ]
+    ]
+  },
+  {
+    "secao": "Armaduras & Vestes",
+    "cabecalho": [
+      "Nível",
+      "1–3",
+      "4–7",
+      "8–11",
+      "12–15",
+      "16–19",
+      "20"
+    ],
+    "linhas": [
+      [
+        "**Bônus no CP**",
+        "—",
+        "+1",
+        "+2",
+        "+3",
+        "+4",
+        "+5"
+      ]
+    ]
+  },
+  {
+    "secao": "Armaduras & Vestes",
+    "cabecalho": [
+      "Proteção",
+      "Custo",
+      "CP",
+      "Desloc.",
+      "Tipo",
+      "Peso",
+      "Disponib."
+    ],
+    "linhas": [
+      [
+        "Vestes Leves",
+        "20.000",
+        "10",
+        "—",
+        "Veste",
+        "0,5",
+        "—"
+      ],
+      [
+        "Vestes Médias",
+        "40.000",
+        "11",
+        "—",
+        "Veste",
+        "1",
+        "Licenciada"
+      ],
+      [
+        "Vestes Pesadas",
+        "50.000",
+        "12",
+        "—",
+        "Veste",
+        "2",
+        "Licenciada"
+      ],
+      [
+        "Capacete e Colete",
+        "60.000",
+        "13",
+        "—",
+        "Leve",
+        "3",
+        "Licenciada"
+      ],
+      [
+        "Traje de Piloto",
+        "75.000",
+        "13",
+        "—",
+        "Leve",
+        "5",
+        "Restrita"
+      ],
+      [
+        "Armadura Projetada",
+        "100.000",
+        "14",
+        "—",
+        "Leve",
+        "8",
+        "Rara"
+      ],
+      [
+        "Traje de Piloto Blindado",
+        "100.000",
+        "14",
+        "—",
+        "Leve",
+        "10",
+        "Restrita"
+      ],
+      [
+        "Armadura de Stormtrooper",
+        "120.000",
+        "15",
+        "—",
+        "Leve",
+        "10",
+        "Restrita"
+      ],
+      [
+        "Armadura Cerimonial",
+        "120.000",
+        "16",
+        "−1",
+        "Média",
+        "13",
+        "—"
+      ],
+      [
+        "Armadura Mandaloriana",
+        "150.000",
+        "16",
+        "−1",
+        "Média",
+        "15",
+        "Rara"
+      ],
+      [
+        "Armadura Corelliana",
+        "140.000",
+        "17",
+        "−1",
+        "Média",
+        "20",
+        "—"
+      ],
+      [
+        "Armadura de Batalha",
+        "160.000",
+        "18",
+        "−1",
+        "Média",
+        "16",
+        "—"
+      ],
+      [
+        "Projetada de Caçador",
+        "200.000",
+        "18",
+        "−1",
+        "Média",
+        "20",
+        "Ilegal"
+      ],
+      [
+        "Traje Espacial Blindado",
+        "180.000",
+        "19",
+        "−2",
+        "Pesada",
+        "35",
+        "—"
+      ],
+      [
+        "A. de Batalha Pesada",
+        "180.000",
+        "19",
+        "−2",
+        "Pesada",
+        "30",
+        "—"
+      ],
+      [
+        "Mandaloriana Pesada",
+        "250.000",
+        "20",
+        "−2",
+        "Pesada",
+        "22",
+        "Rara"
+      ],
+      [
+        "Dark Trooper",
+        "350.000",
+        "24",
+        "−3",
+        "Pesada",
+        "50",
+        "Militar"
+      ]
+    ]
+  },
+  {
+    "secao": "Armaduras & Vestes",
+    "cabecalho": [
+      "Serviço",
+      "Custo",
+      "Benefício"
+    ],
+    "linhas": [
+      [
+        "Material mais leve",
+        "40.000",
+        "reduz o peso da veste em **2 kg**"
+      ],
+      [
+        "Reforço de vestes",
+        "60.000",
+        "aumenta o valor de proteção em **+2**"
+      ],
+      [
+        "Vestes sob medida",
+        "50.000",
+        "reduz a penalidade de deslocamento em **2**"
+      ]
+    ]
+  },
+  {
+    "secao": "Aparelhos, kits e suprimentos",
+    "cabecalho": [
+      "Item",
+      "Custo",
+      "Peso",
+      "Efeito"
+    ],
+    "linhas": [
+      [
+        "Comunicador (curto alcance)",
+        "10.000",
+        "—",
+        "50 km / órbita baixa; embutível em capacete"
+      ],
+      [
+        "Comunicador (longo alcance)",
+        "50.000",
+        "4",
+        "200 km / órbita alta (miniaturizado por 2×)"
+      ],
+      [
+        "Datapad",
+        "25.000",
+        "0,5",
+        "computador de mão (Ciência 12)"
+      ],
+      [
+        "Computador Portátil",
+        "75.000",
+        "3",
+        "roda programas complexos (Ciência 14)"
+      ],
+      [
+        "Lanterna",
+        "500",
+        "0,5",
+        "feixe de até ~12 m"
+      ],
+      [
+        "Lanterna de Fusão",
+        "1.000",
+        "1",
+        "luz **e** calor num raio de ~12 m"
+      ],
+      [
+        "Macrobinóculos",
+        "15.000",
+        "1",
+        "visão ampliada; útil de batedor"
+      ],
+      [
+        "Cinto de Utilidades",
+        "25.000",
+        "4",
+        "organiza pequenos itens"
+      ],
+      [
+        "Bandoleira",
+        "5.000",
+        "2",
+        "munição/granadas de acesso rápido"
+      ],
+      [
+        "Coldre (cintura / oculto)",
+        "1.000 / 2.500",
+        "0,5",
+        "saque rápido / dissimulado"
+      ],
+      [
+        "Mira Telescópica",
+        "5.000",
+        "—",
+        "reduz penalidade de alcance longo"
+      ],
+      [
+        "Mira com Visão Noturna",
+        "50.000",
+        "1",
+        "mira no escuro"
+      ],
+      [
+        "Algemas",
+        "2.500",
+        "0,5",
+        "prendem um alvo subjugado"
+      ],
+      [
+        "Kit de Segurança",
+        "40.000",
+        "1",
+        "necessário para arrombar/desarmar sistemas (ilegal sem licença)"
+      ],
+      [
+        "Kit de Ferramentas",
+        "10.000",
+        "1",
+        "necessário para reparar/reprogramar droides e veículos"
+      ],
+      [
+        "Kit de Reparos Emergenciais",
+        "—",
+        "—",
+        "cura **2d4+1** de dispositivos, droides e veículos"
+      ],
+      [
+        "Kit de Campo",
+        "—",
+        "—",
+        "necessário para resistir a temperaturas extremas"
+      ],
+      [
+        "Gerador de Energia",
+        "40.000",
+        "15",
+        "energia contínua; se destruído em uso, explode (8d6 em área, JPR pela metade)"
+      ],
+      [
+        "Carga de Energia",
+        "1.000",
+        "—",
+        "\"pente\" de uma arma de energia"
+      ],
+      [
+        "Célula de Energia",
+        "—",
+        "—",
+        "bateria de dispositivos"
+      ],
+      [
+        "Carregador de Energia",
+        "5.000",
+        "1",
+        "recarrega cargas/células (4 h cada)"
+      ],
+      [
+        "Traje de Piloto Comum",
+        "—",
+        "—",
+        "10 h de suporte de vida; imune a atmosfera hostil/veneno inalado"
+      ],
+      [
+        "Traje Espacial Comum",
+        "—",
+        "—",
+        "24 h de sobrevivência no vácuo"
+      ]
+    ]
+  },
+  {
+    "secao": "Aparelhos, kits e suprimentos",
+    "cabecalho": [
+      "Item",
+      "Custo",
+      "Efeito"
+    ],
+    "linhas": [
+      [
+        "Medpac",
+        "—",
+        "estabiliza um ferido e cura o **nível** dele em PV"
+      ],
+      [
+        "Pistola de Medicamentos",
+        "—",
+        "até 5 cargas; cada injeção cura **2d4+1** PV"
+      ],
+      [
+        "Estojo Médico",
+        "—",
+        "necessário para reviver um moribundo, tratar doença/veneno/radiação"
+      ],
+      [
+        "Estojo Cirúrgico",
+        "—",
+        "necessário para cirurgia (perícia de tratar ferimentos)"
+      ],
+      [
+        "Tanque de Bacta",
+        "— (300/h de uso)",
+        "**2× o nível** em PV por dia dentro do tanque, além da recuperação normal"
+      ]
+    ]
+  },
+  {
+    "secao": "Aparelhos, kits e suprimentos",
+    "cabecalho": [
+      "Serviço",
+      "Custo"
+    ],
+    "linhas": [
+      [
+        "Refeição (econômica → luxuosa)",
+        "100 / 500 / 2.500 / 7.500"
+      ],
+      [
+        "Alojamento (econômico → luxuoso)",
+        "1.000 / 2.500 / 5.000 / 10.000"
+      ],
+      [
+        "Tanque de Bacta (hora)",
+        "15.000"
+      ],
+      [
+        "Cuidados médicos / Medpac (dia)",
+        "15.000"
+      ],
+      [
+        "Cirurgia (hora)",
+        "25.000"
+      ],
+      [
+        "Tratar doenças (dia)",
+        "25.000"
+      ],
+      [
+        "Tratar veneno (dia)",
+        "5.000"
+      ],
+      [
+        "Tratar envenenamento por radiação (dia)",
+        "50.000"
+      ],
+      [
+        "Aluguel: moto speeder / speeder terrestre / aéreo (dia)",
+        "1.000 / 2.500 / 25.000"
+      ],
+      [
+        "Transporte interplanetário (dia)",
+        "100.000"
+      ]
+    ]
+  }
+];
+
+// O catálogo de aparatos de SW-SUP-Aparatos-e-Feitos, cada um com o nativo.
+export const APARATOS = [
+  {
+    "nt": 1,
+    "nome": "Comlink de pulso",
+    "explica": "",
+    "nativo": {
+      "nome": "Bracelete Radiocomunicador",
+      "id": "8ClNFEjeBR1mNrie",
+      "cost": "$90.000",
+      "description": "Aparato utilitário de 1º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $90.000. Tempo de construção 1d6 horas. Este bracelete é utilizado para comunicar-se com outros similares na mesma frequência a uma distância máxima de 10 Km. Ele transmite apenas áudio e pode sofrer interferência de outros aparelhos próximos ou obstruções pelo caminho. É possível sintonizar até 6 braceletes radiocomunicadores na mesma frequência."
+    }
+  },
+  {
+    "nt": 1,
+    "nome": "Maçarico de fusão",
+    "explica": "a ferramenta que abre um casco",
+    "nativo": {
+      "nome": "Cortador Laser",
+      "id": "VEfxDmPSPQBLpXBY",
+      "cost": "$40.000",
+      "description": "Aparato ofensivo de 1º nível tecnológico. Operam: Cientista. Custo $40.000. Tempo de construção 1d10 horas. Este aparato emite um pequeno feixe de laser que pode ser usado para cortar lentamente superfícies finas como portas ou paredes. Se usado como arma realiza-se uma jogada de ataque corpo-a-corpo que causa 1d4 pontos de dano mais o modificador de Destreza do personagem."
+    }
+  },
+  {
+    "nt": 1,
+    "nome": "Disruptor iônico",
+    "explica": "o que habilita *Desativar Robôs* ([[SW-SUP-Classes]])",
+    "nativo": {
+      "nome": "Disruptor Positrônico",
+      "id": "XDQr3yOQDzC5fmCx",
+      "cost": "$70.000",
+      "description": "Aparato ofensivo de 1º nível tecnológico. Operam: Cientista. Custo $70.000. Tempo de construção 1d4 horas. O disruptor positrônico se parece com um pequeno rádio e é o aparato que permite aos cientistas desativarem robôs através de seu talento de classe. Ele causa um conflito nos cérebros positrônicos, portanto quanto mais primitivo o inimigo, mais simples será desativá-lo. Ao ser construído pela primeira vez este aparato corresponderá ao 1° nível de classe do cientista e deverá ser atualizado pelo criador sempre que este adquirir novos níveis, acompanhando-o até o 20° nível. O custo da atualização é o mesmo pago para reparos, como previsto nas regras."
+    }
+  },
+  {
+    "nt": 1,
+    "nome": "Sensor de radiação de superfície",
+    "explica": "",
+    "nativo": {
+      "nome": "Medidor de Radiação",
+      "id": "30cE9TOAoI33ibqU",
+      "cost": "$70.000",
+      "description": "Aparato utilitário de 1º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $70.000. Tempo de construção 1d4 horas. Este medidor portátil permite ao usuário detectar os níveis de radiação de um local, determinando se é seguro permanecer ali sem um traje protetor. Altos níveis de radiação podem causar contaminações nos personagens."
+    }
+  },
+  {
+    "nt": 1,
+    "nome": "Visor noturno de capacete",
+    "explica": "",
+    "nativo": {
+      "nome": "Óculos de Visão Noturna",
+      "id": "2W9sMomZdwswJNDH",
+      "cost": "$40.000",
+      "description": "Aparato utilitário de 1º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $40.000. Tempo de construção 1d6 horas. Os óculos de visão noturna permitem que um personagem enxergue normalmente na escuridão total. A imagem gerada é boa o suficiente para não conferir penalidades, mas é impossível enxergar além da distância limite de até 15 metros de distância. O cientista pode optar por criar binóculos com esta mesma capacidade pelo dobro do custo e tempo, mas que aumentam a área de visão a até 45 metros."
+    }
+  },
+  {
+    "nt": 1,
+    "nome": "Visor térmico mandaloriano",
+    "explica": "",
+    "nativo": {
+      "nome": "Óculos de Visão Térmica",
+      "id": "N2Cwmeo9hrI6QVV8",
+      "cost": "$20.000",
+      "description": "Aparato utilitário de 1º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $20.000. Tempo de construção 1d6 horas. Estes óculos permitem que o usuário visualize a assinatura térmica dos objetos, variando de cores frias, para baixas temperaturas, a cores quentes, para temperaturas elevadas. Por não permitir uma visão perfeita, o personagem sofre uma penalidade de -4 para ataques, de acordo com a tabela T7-3. O cientista pode optar por criar binóculos com esta mesma capacidade pelo dobro do custo e tempo."
+    }
+  },
+  {
+    "nt": 1,
+    "nome": "Traje de vácuo selado",
+    "explica": "",
+    "nativo": {
+      "nome": "Trajes Antirradiação",
+      "id": "3wPxDE77vwtsUo6I",
+      "cost": "$80.000",
+      "description": "Aparato defensivo de 1º nível tecnológico. Operam: Cientista, Cosmonauta. Custo $80.000. Tempo de construção 1d10 horas. Estes trajes herméticos protegem o usuário de emissões radioativas, deixando-o fora de perigo de contaminação. Se a vedação for comprometida, entretanto, o usuário estará exposto à radiação, sendo impossível reparar o traje antes que isso aconteça. O traje tem proteção 10 e redução de movimento 5."
+    }
+  },
+  {
+    "nt": 2,
+    "nome": "Algemas de contenção imperiais",
+    "explica": "",
+    "nativo": {
+      "nome": "Algemas Eletrônicas",
+      "id": "lYi3pcBjoniSTOqV",
+      "cost": "$80.000",
+      "description": "Aparato ofensivo de 2º nível tecnológico. Operam: Cientista. Custo $80.000. Tempo de construção 1d4 horas. Estas algemas são usadas para prender criminosos e alienígenas de tamanho e morfologia humanoides. Elas funcionam indefinidamente, mas podem sofrer curto-circuito se atingidas ou sabotadas. Só é possível algemar um inimigo que esteja inconsciente, imobilizado ou sob controle de outro personagem."
+    }
+  },
+  {
+    "nt": 2,
+    "nome": "Bloqueador de sinal",
+    "explica": "mata o comlink da patrulha",
+    "nativo": {
+      "nome": "Bloqueador de Ondas de Rádio",
+      "id": "seJp2f9aDhbgmhfV",
+      "cost": "$160.000",
+      "description": "Aparato utilitário de 2º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $160.000. Tempo de construção 1d6 horas. Este aparato é capaz de bloquear a transmissão e recepção de ondas de rádio em uma área de 50m² ao seu redor. Nenhum transmissor ou dispositivo de controle remoto funcionará corretamente até que o aparato seja desativado."
+    }
+  },
+  {
+    "nt": 2,
+    "nome": "Perfuratriz de mineração",
+    "explica": "",
+    "nativo": {
+      "nome": "Broca Pneumática Portátil",
+      "id": "tC61GEuq0tGUwpEd",
+      "cost": "$140.000",
+      "description": "Aparato utilitário de 2º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $140.000. Tempo de construção 1d6 horas. Esta broca pode ser utilizada para escavações em rocha e minerais ou para forçar a entrada através de portas ou paredes. A broca tem uma vida útil de 6 horas de uso contínuo, período após o qual é necessário efetuar reparos para que ela continue sendo utilizada."
+    }
+  },
+  {
+    "nt": 2,
+    "nome": "Micro-sonda de vigilância",
+    "explica": "",
+    "nativo": {
+      "nome": "Câmera Remota",
+      "id": "ypKcNxIk8j5YbcJN",
+      "cost": "$160.000",
+      "description": "Aparato utilitário de 2º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $160.000. Tempo de construção 1d4 dias. Esta câmera minúscula pode ser posicionada em qualquer local, que se deseje vigiar, e transmitirá imagem e som para um videocomunicador portátil ou fixo. A transmissão alcança até 5 Km e pode sofrer interferência."
+    }
+  },
+  {
+    "nt": 2,
+    "nome": "Cartucho de dados (o roubo de Scarif cabe num)",
+    "explica": "",
+    "nativo": {
+      "nome": "Cilindro de Dados",
+      "id": "V6m79O6euwJbcEC9",
+      "cost": "$140.000",
+      "description": "Aparato utilitário de 2º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $140.000. Tempo de construção 1d4 horas. Um cilindro de dados é um dispositivo do tamanho e formato similar ao de uma caneta. É utilizado para transportar dados científicos de um laboratório para outro. Ele permite que informações coletadas, ou desenvolvidas pelo cientista possam ser armazenadas para transporte, ou como cópia de segu rança. Ele tem capacidade virtualmente ilimitada e pode ser lido facilmente por equipamentos existentes em laboratórios."
+    }
+  },
+  {
+    "nt": 2,
+    "nome": "Baliza de rastreio",
+    "explica": "o truque do Falcon em Yavin",
+    "nativo": {
+      "nome": "Dispositivo Rastreador",
+      "id": "9qkn3UWV1TmsbM30",
+      "cost": "$60.000",
+      "description": "Aparato utilitário de 2º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $60.000. Tempo de construção 1d4 horas. Este pequeno transmissor pode ser acoplado a qualquer superfície e transmitirá, em tempo real, a localização do objeto ao qual está acoplado para um radiocomunicador ou videocomunicador. Ele funcionará apenas se o alvo rastreado estiver no mesmo planeta ou a uma distância similar no espaço."
+    }
+  },
+  {
+    "nt": 2,
+    "nome": "Cabo com garra ascensora",
+    "explica": "",
+    "nativo": {
+      "nome": "Lançador de Gancho",
+      "id": "QRknxHCqGDaA67tb",
+      "cost": "$80.000",
+      "description": "Aparato utilitário de 2º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $80.000. Tempo de construção 1d4 horas. Este lançador projeta um gancho a até 30 metros, a fim de prendê-lo e possibilitar a escalada de superfícies íngremes demais. A corda ou outra maneira de sustentação deve ser acoplada ao gancho previamente e não está inclusa no processo de criação."
+    }
+  },
+  {
+    "nt": 2,
+    "nome": "Holoprojetor",
+    "explica": "a mensagem da Leia",
+    "nativo": {
+      "nome": "Projetor Holográfico",
+      "id": "wL6XYkLFkzr1lDMP",
+      "cost": "$40.000",
+      "description": "Aparato utilitário de 2º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $40.000. Tempo de construção 1d4 dias. O projetor holográfico é capaz de criar uma representação audiovisual tridimensional de qualquer ser ou objeto que tenha sido previamente gravado por ele. A imagem gerada é facilmente distinguível da realidade por seres de inteligência equivalente à humana ou superior, mas espécies de mente menos desenvolvida podem ser enganadas."
+    }
+  },
+  {
+    "nt": 3,
+    "nome": "Comlink holográfico",
+    "explica": "",
+    "nativo": {
+      "nome": "Bracelete Vídeocomunicador",
+      "id": "vdMLMjT4YZpgk0ww",
+      "cost": "$150.000",
+      "description": "Aparato utilitário de 3º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $150.000. Tempo de construção 1d10 horas. Funciona da mesma forma que o bracelete radiocomunicador, mas inclui um visor pelo qual é possível ver e ser visto pelos interlocutores. Seu alcance entretanto é mais curto, de apenas 5 Km, e é possível sintonizar apenas 4 braceletes vídeocomunicadores na mesma frequência."
+    }
+  },
+  {
+    "nt": 3,
+    "nome": "Tradutor de protocolo",
+    "explica": "o que faz um droide de protocolo",
+    "nativo": {
+      "nome": "Comunicador Idiomático",
+      "id": "tl1pFCQgq0ZIA2ey",
+      "cost": "$180.000",
+      "description": "Aparato utilitário de 3º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $180.000. Tempo de construção 1d6 semanas. Este comunicador consiste em fones de ouvido e um microfone que consegue traduzir bilateralmente um diálogo em qualquer idioma do universo para o qual o comunicador for calibrado. O aparato inicialmente consegue traduzir os idiomas conhecidos pelo cientista, mas é possível adicionar novos idiomas. O cientista deve ter contato com um falante nativo do idioma, do qual deve fazer gravações para calibrar a linguagem, pagando 25% do valor do aparato conforme a regra para consertos."
+    }
+  },
+  {
+    "nt": 3,
+    "nome": "Analisador de voz imperial",
+    "explica": "",
+    "nativo": {
+      "nome": "Detector de Mentiras",
+      "id": "eFRgEmiJDMs5hQFR",
+      "cost": "$90.000",
+      "description": "Aparato utilitário de 3º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $90.000. Tempo de construção 1d8 horas. Este aparato é um pequeno indicador que pode ser preso às vestes de um personagem, ou em outras superfícies, e emite um pequeno sinal vibratório quando alguém a até 10m² estiver mentindo. O detector não indica quem está mentindo e nem que parte da informação é falsa."
+    }
+  },
+  {
+    "nt": 3,
+    "nome": "Carga de detonita com detonador remoto",
+    "explica": "",
+    "nativo": {
+      "nome": "Explosivo Remotamente Controlado",
+      "id": "gRYfSu3IXd6NG4LE",
+      "cost": "Variável",
+      "description": "Aparato ofensivo de 3º nível tecnológico. Operam: Cientista. Custo Variável. Tempo de construção 1d4 horas. Este explosivo pode ser controlado remotamente por um radiocomunicador ou videocomunicador a até 500 metros do local onde for plantado. Ele pode ser usado para escavações, infiltrações ou como arma. O custo inicial é de $200.000, fazendo com que o explosivo cause 3d12 pontos de dano a todos em uma área de 20 m² – um sucesso em uma JPR reduz o dano pela metade. O dano pode ser aumentado em 1d12 adicional por mais $20.000, adicionando 1 NT ao aparato. Desta forma, um cientista com acesso ao 6º NT poderia criar um explosivo remotamente controlado de 6d12 de dano."
+    }
+  },
+  {
+    "nt": 3,
+    "nome": "Granada de fumaça / dispersão",
+    "explica": "",
+    "nativo": {
+      "nome": "Granada de Fumaça",
+      "id": "Pq38Ota8bi1pBR8Q",
+      "cost": "$60.000",
+      "description": "Aparato utilitário de 3º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $60.000. Tempo de construção 1d6 horas. Esta bomba libera uma espessa fumaça ao ser detonada, prejudicando a visão de todos em um raio de 20m². Todos na área têm uma penalidade de -4 em rolagens de ataque, de acordo com a tabela T7-3."
+    }
+  },
+  {
+    "nt": 3,
+    "nome": "Luvas de choque de eletrobastão",
+    "explica": "",
+    "nativo": {
+      "nome": "Luvas de Indução Elétrica",
+      "id": "dAKCCdqMdXAx8GF5",
+      "cost": "$180.000",
+      "description": "Aparato ofensivo de 3º nível tecnológico. Operam: Cientista. Custo $180.000. Tempo de construção 1d4 dias. As luvas de indução elétrica são capazes de eletrocutar os inimigos. Elas podem ser usadas para ataques corpo-a-corpo, causando 1d6 de dano elétrico ao toque, ou para ataques de descarga elétrica à distância que causam 1d4 de dano. Enquanto estiver usando as luvas, qualquer arma corporal causará +2 pontos de dano elétrico, mas quaisquer outros aparatos que o cientista segure podem sofrer um curto-circuito."
+    }
+  },
+  {
+    "nt": 3,
+    "nome": "Jetpack mandaloriano",
+    "explica": "",
+    "nativo": {
+      "nome": "Mochila a Jato",
+      "id": "JXHYibN7Al6DBAwJ",
+      "cost": "$150.000",
+      "description": "Aparato utilitário de 3º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $150.000. Tempo de construção 1d4 dias. Esta mochila permite que o usuário voe e tem autonomia aproximada de 4 horas. De maneira similar à pilotagem de espaçonaves, será necessário efe tuar uma rolagem de pilotagem ou pilotagem improvisada em situações de perigo potencial, mas não para manobras simples. O personagem fica com as mãos livres, mas sofre penalidade de atacar pilotando conforme a tabela T7-3. A criação de mais combustível para a mochila a jato é coberta pela regra de consertos."
+    }
+  },
+  {
+    "nt": 4,
+    "nome": "Botas magnéticas de casco",
+    "explica": "",
+    "nativo": {
+      "nome": "Botas Antigravidade",
+      "id": "OSWIEcDUddhIKSe2",
+      "cost": "$200.000",
+      "description": "Aparato utilitário de 4º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $200.000. Tempo de construção 1d6 dias. Estas botas podem ser usadas por qualquer um para andar sobre superfícies íngremes como se fossem terreno plano comum. Gatunos conseguem usá-las perfeitamente, visto que elas aumentam sua porcentagem de escalar superfícies até 100%. As demais classes devem realizar uma jogada percentual com 75% de chance de sucesso ou podem se desequilibrar e cair."
+    }
+  },
+  {
+    "nt": 4,
+    "nome": "Escudo defletor pessoal",
+    "explica": "",
+    "nativo": {
+      "nome": "Campo de Força Individual",
+      "id": "a825kyKGq5HsFyaw",
+      "cost": "$240.000",
+      "description": "Aparato defensivo de 4º nível tecnológico. Operam: Cientista, Cosmonauta. Custo $240.000. Tempo de construção 1d4 dias. Este campo de força individual é preso ao cinto e substitui um escudo de energia, garantindo +4 no CP. Ao contrário do escudo, entretanto, ele deve ser ativado antes de fazer efeito e uma vez ativo funcionará por 1 minuto antes de precisar ser recarregado. A recarga demora 1d4 horas e é realizada automaticamente. A cada descarga completa, entretanto, o campo de força tem uma chance cumulativa de 5% de apresentar defeitos e necessitar de reparos."
+    }
+  },
+  {
+    "nt": 4,
+    "nome": "Visor de varredura estrutural",
+    "explica": "",
+    "nativo": {
+      "nome": "Óculos de Raio X",
+      "id": "EUpJbVU601WYez7R",
+      "cost": "$300.00",
+      "description": "Aparato utilitário de 4º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $300.00. Tempo de construção 1d4 dias. Através dos raios X emitidos por esses óculos é possível enxergar através de um único obstáculo, como uma parede ou porta, embora o chumbo bloqueie os raios X, impossibilitando a visualização. A imagem tem qualidade razoável, mas confere uma penalidade de -2 aos ataques do usuário, conforme a tabela T7-3. O cientista pode optar por criar binóculos com esta mesma capacidade pelo dobro do custo e tempo."
+    }
+  },
+  {
+    "nt": 4,
+    "nome": "Estimulante médico",
+    "explica": "",
+    "nativo": {
+      "nome": "Pílula de Recuperação Rápida",
+      "id": "iayiiuMysatJ9iFO",
+      "cost": "$180.000",
+      "description": "Aparato utilitário de 4º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $180.000. Tempo de construção 1d4 horas. Quem ingerir esta pílula recuperará 1 PV a cada 2 níveis possuídos por cada hora de descanso, no máximo por 24 horas. Mutantes com recuperação acelerada recuperarão 2 PV por hora/nível. O procedimento cria 4 pílulas."
+    }
+  },
+  {
+    "nt": 4,
+    "nome": "Blaster de repetição",
+    "explica": "",
+    "nativo": {
+      "nome": "Pistola de Repetição",
+      "id": "silhwUtFIKx9FcZ9",
+      "cost": "$320.000",
+      "description": "Aparato ofensivo de 4º nível tecnológico. Operam: Cientista. Custo $320.000. Tempo de construção 1d10 horas. Esta pistola é quase idêntica a uma pistola laser comum, mas em uma rolagem de ataque bem-sucedida ela efetuará um novo disparo, efetivamente causando 2d6 de dano."
+    }
+  },
+  {
+    "nt": 4,
+    "nome": "Estimulante de bacta",
+    "explica": "o que tira alguém do chão",
+    "nativo": null
+  },
+  {
+    "nt": 4,
+    "nome": "Mira eletrônica de precisão",
+    "explica": "",
+    "nativo": {
+      "nome": "Visor de Precisão",
+      "id": "t6IkI4GXFB0VpTFq",
+      "cost": "$80.000",
+      "description": "Aparato utilitário de 4º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $80.000. Tempo de construção 1d6 horas. Este pequeno visor de radar pode ser acoplado a qualquer arma à distância, a fim de ajudar na precisão da mira, concedendo +2 de bônus em rolagens de ataque. O visor também faz com que cobertura não sólida como fumaça ou neblina seja ignorada ao determinar penalidades de visibilidade."
+    }
+  },
+  {
+    "nt": 5,
+    "nome": "Gerador de deflexão pessoal",
+    "explica": "",
+    "nativo": {
+      "nome": "Cinto de Deflexão",
+      "id": "28ubF64ysHE35HEp",
+      "cost": "$450.000",
+      "description": "Aparato defensivo de 5º nível tecnológico. Operam: Cientista, Cosmonauta. Custo $450.000. Tempo de construção 1d10 horas. Este cinto faz com que qualquer ataque de energia ou projétil tenha 25% de chance de rebater no campo de força gerado por ele e ricochetear para o atacante. Se a jogada percentual falhar o ataque ultrapassa o campo de força e atinge o usuário do cinto normalmente."
+    }
+  },
+  {
+    "nt": 5,
+    "nome": "Laço de energia",
+    "explica": "a arma de captura do caçador",
+    "nativo": {
+      "nome": "Laço de Energia",
+      "id": "0f0CqnQUqbn6mEdX",
+      "cost": "$400.000",
+      "description": "Aparato ofensivo de 5º nível tecnológico. Operam: Cientista. Custo $400.000. Tempo de construção 1d4 semanas. Este laço pode ser usado para prender uma criatura por um período limitado de tempo. Deve ser feito um ataque à distância que, caso seja efetivo, não causa dano, mas pede que a criatura faça um teste de Força para resistir ao efeito. Um sucesso interrompe o fluxo de energia do laço, mas não o destrói. O aparato tem autonomia de 4 horas antes que fique sem energia."
+    }
+  },
+  {
+    "nt": 5,
+    "nome": "Compactador de carga",
+    "explica": "",
+    "nativo": {
+      "nome": "Miniaturizador",
+      "id": "9MBTSNMLR4XiRvmk",
+      "cost": "$150.000",
+      "description": "Aparato utilitário de 5º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $150.000. Tempo de construção 1d6 semanas. Este pequeno aparato transmite um raio capaz de reduzir qualquer objeto inanimado a 1/6 de seu tamanho original por um período indeterminado e também pode fazer um objeto miniaturizado voltar ao s e u tamanho original. Só é possível manter uma miniaturização por vez, sendo necessário desminiaturizar o objeto ativo caso seja necessário utilizar o aparato novamente."
+    }
+  },
+  {
+    "nt": 5,
+    "nome": "Blaster repetidor pesado",
+    "explica": "",
+    "nativo": {
+      "nome": "Metralhadora Energética",
+      "id": "dGutkcuUnCEdRyE4",
+      "cost": "$240.000",
+      "description": "Aparato ofensivo de 5º nível tecnológico. Operam: Cientista. Custo $240.000. Tempo de construção 1d4 dias. Esta arma pesada pode disparar raios laser até 4 vezes por rodada, causando 1d10 pontos de dano em cada um dos disparos. A rolagem de ataque é feita separadamente para cada disparo efetuado, mas a metralhadora precisará esfriar por 30 segundos se for usada por duas rodadas consecutivas."
+    }
+  },
+  {
+    "nt": 5,
+    "nome": "Estimulante de combate (ilegal, vicia)",
+    "explica": "",
+    "nativo": {
+      "nome": "Pílula de Aprimoramento",
+      "id": "71qRxGUhPciYj16D",
+      "cost": "$200.000",
+      "description": "Aparato utilitário de 5º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $200.000. Tempo de construção 1d6 horas. Esta pílula é capaz de aumentar temporariamente qualquer atributo de um indivíduo em 2 pontos. No momento da criação o cientista decide que atributo a pílula afetará e é produzido o suficiente para 4 doses. A pílula começa a fazer efeito 1 minuto após ingerida e se mantém eficaz por 1 hora. Estas pílulas são consideradas ilegais em muitas regiões da galáxia e podem causar vício. Ingerir mais de uma pílula por vez pode levar a uma overdose potencialmente fatal."
+    }
+  },
+  {
+    "nt": 5,
+    "nome": "Respirador anfíbio (padrão mon-calamari)",
+    "explica": "",
+    "nativo": {
+      "nome": "Respirador Subaquático",
+      "id": "OaFmCdIkC0kiJzp2",
+      "cost": "$250.000",
+      "description": "Aparato utilitário de 5º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $250.000. Tempo de construção 1d4 horas. Este respirador permite que o usuário respire normalmente embaixo d’água. Ele pode ser usado sem um capacete ou acoplado ao conector para cilindros de oxigênio, dispensando o uso de um traje separado para expedições subaquáticas. Tem autonomia indefinida se usado na água, mas pode ser menos efetivo se utilizado em outros tipos de líquido."
+    }
+  },
+  {
+    "nt": 5,
+    "nome": "Traje de troca rápida",
+    "explica": "",
+    "nativo": {
+      "nome": "Trocador Instantâneo de Trajes",
+      "id": "3fVdDBzJ4tV1WJNT",
+      "cost": "$200.000",
+      "description": "Aparato utilitário de 5º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $200.000. Tempo de construção 1d4 semanas. Este aparato pode trocar instantaneamente as vestes de um personagem ao ser ativado. Quaisquer vestes que o personagem possuir podem ser usadas com este aparato, contanto que não sejam pressurizadas ou herméticas. “Fixe coordenadas!”"
+    }
+  },
+  {
+    "nt": 6,
+    "nome": "Implante de controle motor",
+    "explica": "",
+    "nativo": {
+      "nome": "Bracelete Controlador",
+      "id": "Gj2SsaB9BFCeazBy",
+      "cost": "$180.000",
+      "description": "Aparato ofensivo de 6º nível tecnológico. Operam: Cientista. Custo $180.000. Tempo de construção 1d4 dias. Este bracelete aparentemente inofensivo pode ser controlado remotamente por um cientista a até 100 metros do usuário. O membro em que o bracelete se encontrar agirá de acordo com os comandos do cientista, negando qualquer controle ao usuário do bracelete. É possível controlar a mão caso o aparato seja acoplado ao braço, permitindo, por exemplo, o saque e disparo de uma arma. O efeito é quebrado se o bracelete for removido."
+    }
+  },
+  {
+    "nt": 6,
+    "nome": "Gerador de escudo de esquadrão",
+    "explica": "",
+    "nativo": {
+      "nome": "Campo de Força Coletivo",
+      "id": "M4qt2n3WxTP9FAf9",
+      "cost": "$420.000",
+      "description": "Aparato defensivo de 6º nível tecnológico. Operam: Cientista, Cosmonauta. Custo $420.000. Tempo de construção 1d6 dias. Este aparato funciona de maneira semelhante ao campo de força individual, mas cobre uma área de 10m² ao redor do usuário. Dentro da área quaisquer escudos de energia não funcionarão. A duração também é de 1 minuto, mas a recarga demora 1d8 horas."
+    }
+  },
+  {
+    "nt": 6,
+    "nome": "Canhão de plasma pesado",
+    "explica": "",
+    "nativo": {
+      "nome": "Canhão de Fótons",
+      "id": "z7iKzh9JVm4uY7KP",
+      "cost": "$480.000",
+      "description": "Aparato ofensivo de 6º nível tecnológico. Operam: Cientista. Custo $480.000. Tempo de construção 1d6 semanas. Este aparato tem o formato e funcionamento similar ao de um lança-granadas, mas dispara um feixe concentrado de fótons contra alvos em uma área de 10m² – eles podem fazer uma JPR para reduzir o dano pela metade. O dano base é de 2d10, mas o usuário pode escolher carregar o feixe por até duas rodadas, aumentando o dano para 2d12 e 4d8, respectivamente. Carregar o feixe é tratado como o uso de um aparato tecnológico para definir a ordem de ação conforme a tabela T7-2."
+    }
+  },
+  {
+    "nt": 6,
+    "nome": "Detector de sensíveis à Força (equipamento da Inquisição)",
+    "explica": "",
+    "nativo": {
+      "nome": "Capacete de Detecção Mental",
+      "id": "WsoOQtGivTuFKrOL",
+      "cost": "$120.000",
+      "description": "Aparato utilitário de 6º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $120.000. Tempo de construção 1d4 dias. Este capacete é capaz de detectar a presença de poderes mentais em ação a até 200 metros do usuário e indicar sua direção. O capacete pode detectar poderes mentais sendo executados naquele mesmo momento ou de efeito prolongado."
+    }
+  },
+  {
+    "nt": 6,
+    "nome": "Ração de sustentação de campo",
+    "explica": "",
+    "nativo": {
+      "nome": "Fórmula de Controle Corporal",
+      "id": "lq4vjt0ExJyI4cwz",
+      "cost": "$420.000",
+      "description": "Aparato utilitário de 6º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $420.000. Tempo de construção 1d6 horas. Uma dose desta fórmula faz com que o indivíduo possa ignorar completamente uma necessidade básica do corpo humano como alimentação ou sono por até 1 dia. O cientista decide que função corporal será anulada no ato de criação. O uso contínuo da fórmula pode trazer sérios problemas de saúde. O processo cria 4 doses."
+    }
+  },
+  {
+    "nt": 6,
+    "nome": "Prótese cibernética",
+    "explica": "a mão do Luke",
+    "nativo": {
+      "nome": "Membro Biônico",
+      "id": "7SBY8jE1qqaNkdrK",
+      "cost": "$240.000",
+      "description": "Aparato utilitário de 6º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $240.000. Tempo de construção 1d4 semanas. O membro biônico é uma máquina que substitui um membro ausente no corpo humano. Ele funciona de maneira idêntica a um membro orgânico, mas pode apresentar defeitos e outros problemas. Em contrapartida, qualquer teste de Força ou Destreza que utilizar o membro biônico considera o atributo em questão como sendo 4 pontos acima do normal. Isto inclui também ataques desarmados, tentativas de desarme ou submissão de cosmonautas e regras similares onde o valor do atributo influencia uma rolagem. O implante do novo membro deve ser feito através de uma cirurgia biônica."
+    }
+  },
+  {
+    "nt": 6,
+    "nome": "Míssil de busca por calor",
+    "explica": "",
+    "nativo": {
+      "nome": "Míssil Teleguiado",
+      "id": "2G4eGYcoI7nChF55",
+      "cost": "$100.000",
+      "description": "Aparato ofensivo de 6º nível tecnológico. Operam: Cientista. Custo $100.000. Tempo de construção 1d6 horas. Este míssil seguirá a assinatura térmica do alvo contra o qual for disparado por 1d4+1 rodadas. Ele é disparado por um lança-mísseis comum e não é necessário fazer uma jogada de ataque, visto que só acertará o alvo se este falhar em uma JPR que deve ser feita a cada rodada, causando 2d10 pontos de dano. O procedimento cria um único míssil."
+    }
+  },
+  {
+    "nt": 7,
+    "nome": "Elmo ysalamiri",
+    "explica": "a mente que a Força não alcança",
+    "nativo": {
+      "nome": "Capacete de Proteção Mental",
+      "id": "6MLIDeFdSwGFLrpi",
+      "cost": "$210.000",
+      "description": "Aparato defensivo de 7º nível tecnológico. Operam: Cientista, Cosmonauta. Custo $210.000. Tempo de construção 1d4 semanas. Este capacete é capaz de proteger o usuário de poderes mentais, efetivamente conferindo-lhe RM de 75%. Um mentálico que realize um poder mental contra um indivíduo utilizando este capacete corre o risco de sofrer um choque mental, se a rolagem percentual resultar em um número igual ou abaixo de 25%."
+    }
+  },
+  {
+    "nt": 7,
+    "nome": "Manto stygium (tecnologia de camuflagem)",
+    "explica": "",
+    "nativo": {
+      "nome": "Cinto de Invisibilidade",
+      "id": "ArApoqahV0OfWpRw",
+      "cost": "$420.000",
+      "description": "Aparato utilitário de 7º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $420.000. Tempo de construção 1d6 semanas. Este cinto é capaz de deixar o usuário completamente invisível à visão comum. Ele tem autonomia de 1 hora, que pode ser dividida em diversas utilizações. Ao fim da carga o cinto perde seu poder e deve ser recarregado de acordo com a regra de conserto de aparatos."
+    }
+  },
+  {
+    "nt": 7,
+    "nome": "Coleira de domação de feras",
+    "explica": "",
+    "nativo": {
+      "nome": "Coleira de Controle Alienígena",
+      "id": "sMAC6wjFQ3Z91AZ0",
+      "cost": "$700.000",
+      "description": "Aparato ofensivo de 7º nível tecnológico. Operam: Cientista. Custo $700.000. Tempo de construção 1d4 dias. Esta coleira é capaz de colocar qualquer espécie alienígena com inteligência inferior à humana sob o controle do cientista. O alienígena obedecerá a qualquer comando dado a ele enquanto a estiver utilizando."
+    }
+  },
+  {
+    "nt": 7,
+    "nome": "Órgão cibernético",
+    "explica": "como Vader continua vivo",
+    "nativo": {
+      "nome": "Órgão Biônico",
+      "id": "p4IRlvIrVVBdlYlB",
+      "cost": "$300.000",
+      "description": "Aparato utilitário de 7º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $300.000. Tempo de construção 1d4 semanas. O cientista é capaz de recriar qualquer órgão do corpo humano, com exceção do cérebro, em forma de máquina. Ele funcionará de maneira idêntica à sua contraparte orgânica, mas pode apresentar problemas de funcionamento com o uso prolongado. O implante do novo órgão deve ser feito através de uma cirurgia biônica."
+    }
+  },
+  {
+    "nt": 7,
+    "nome": "Raio atordoante (o que captura sem matar)",
+    "explica": "",
+    "nativo": {
+      "nome": "Raio Paralisador",
+      "id": "QCY4DUdXKb3h4OzE",
+      "cost": "$350.000",
+      "description": "Aparato ofensivo de 7º nível tecnológico. Operam: Cientista. Custo $350.000. Tempo de construção 1d6 dias. O raio paralisador é emitido por um dispositivo semelhante a uma pistola e pode paralisar completamente uma criatura por 30 segundos. É realizada uma rolagem de ataque à distância que obrigará o alvo a fazer uma JPF, se for bem-sucedida. Uma falha na JPF deixa o alvo completamente imobilizado, mas um sucesso anula qualquer efeito. Criaturas muito maiores que um humano não são afetadas. O raio paralisador só pode ser usado 2 vezes antes de precisar de recarga, realizada de acordo com a regra de conserto de aparatos."
+    }
+  },
+  {
+    "nt": 8,
+    "nome": "Barreira de escudo de base",
+    "explica": "",
+    "nativo": {
+      "nome": "Gerador de Campo Repulsor",
+      "id": "wFDLkftFmgAcgcM1",
+      "cost": "$700.000",
+      "description": "Aparato defensivo de 8º nível tecnológico. Operam: Cientista, Cosmonauta. Custo $700.000. Tempo de construção 1d6 dias. Este gerador é capaz de tornar uma área de 20m² totalmente impenetrável através de um campo energético que repele qualquer coisa que tente entrar no espaço. O interior é perfeitamente visível por trás da parede hemisférica semitransparente do campo, mas um personagem que tente entrar sofrerá 1d4 pontos de dano por choque. O gerador funciona por 1 hora."
+    }
+  },
+  {
+    "nt": 8,
+    "nome": "Lança-chamas de tropa de choque",
+    "explica": "",
+    "nativo": {
+      "nome": "Lança-Chamas",
+      "id": "hkSb8BAEQLKjTXnF",
+      "cost": "$560.000",
+      "description": "Aparato ofensivo de 8º nível tecnológico. Operam: Cientista. Custo $560.000. Tempo de construção 1d4 dias. O lança-chamas projeta uma rajada de fogo que atinge a todos em uma linha que estejam a até 10 metros de distância, causando dano maior ou menor dependendo da proximidade do alvo. Se ele estiver a até 2 metros o lança-chamas causa 5d10 pontos de dano. Alvos do lança-chamas têm direito a uma JPR para reduzir o dano pela metade. Um alvo à distância, entre 2 a até 4 metros sofre 5d6 pontos de dano, e um alvo mais distante do que isso sofre 5d4 pontos de dano. Também há uma certa chance de deixar o alvo em chamas, com porcentagens de 50%, 25% e 10% para as distâncias citadas acima, respectivamente. Um alvo em chamas recebe o mesmo dano que sofreu inicialmente a cada nova rodada até que consiga apagar o fogo."
+    }
+  },
+  {
+    "nt": 8,
+    "nome": "Computador tático preditivo",
+    "explica": "",
+    "nativo": {
+      "nome": "Visor de Realidade Alternativa",
+      "id": "mGcnLhiMkhQcqzij",
+      "cost": "$600.000",
+      "description": "Aparato utilitário de 8º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $600.000. Tempo de construção 1d10 dias. Este visor de óculos possibilita ao seu portador observar uma realidade alternativa a que efetivamente está ocorrendo no momento. Isso permite que durante um ataque ou qualquer outra ação que demande uma jogada de dados, o jogador possa realizá-lo em duplicidade, optando pelo melhor resultado sempre. Se em um ataque um gatuno vê seu alvo se esquivando para a direita e para a esquerda, ele pode realizar dois disparos nas duas direções diferentes e com isso potencializar suas chances de acertá-lo. 8.7. INVENTANDO NOVOS APARATOS E FEITOS Embora a lista de aparatos e feitos seja extensa é impossível cobrir todas as possibilidades de experiências científicas e de aparatos que os cientistas são capazes de criar. Por isso, é apresentada a seguir uma regra para personagens que desejem inventar novos aparatos ou feitos, seja por necessidade ou pela especialização de inventor. Ela se divide entre cientistas comuns e os que seguiram essa especialização. CIENTISTAS COMUNS Cientistas que não seguiram uma especialização ou que se tornaram pesquisadores ou niilógicos podem desenvolver novos aparatos ou feitos baseando-se em projetos já existentes e alterando seu funcionamento. Qualquer aparato ou feito ao qual tenham acesso devido ao nível tecnológico pode ser alterado para uma finalidade que não a original. Uma mochila a jato poderia se transformar em propulsor subaquático, ou um detector de mentiras poderia ser configurado para reagir quando certa palavra for dita, por exemplo. Considera-se que o preço a ser pago por estes aparatos é o mesmo do original, mas o tempo de criação é dobrado. INVENTORES A especialização de inventor permite que o cientista combine diferentes aparatos em um só, ou que crie aparatos e feitos totalmente novos. Ao contrário de cientistas não especializados, ou que seguiram as outras especializações, os inventores a partir do 10º nível podem combinar as características de 3 aparatos distintos para formar um novo, desde que estejam ao alcance de seu nível tecnológico e que sejam bem-sucedidos em um teste simples de operar máquinas. Um membro biônico poderia ter um cortador laser e um visor de precisão acoplados, por exemplo. Neste caso, o preço a ser pago é a soma do custo de todos os aparatos combinados mais o prejuízo tecnológico do inventor, o tempo de execução é calculado da mesma forma. Já inventores de 20º nível podem criar novos aparatos e feitos livremente, sendo necessário apresentar a proposta ao mestre para aprovação. Ele então determinará a que nível tecnológico o novo aparato ou feito pertence e o custo será calculado rolando-se 1d10 para cada NT, multiplicando-se o resultado final por $10.000, aplicando-se posteriormente o prejuízo tecnológico do inventor. O tempo de criação ou realização deve ser determinado pelo mestre. PODERES MENTAIS capítulo 9 9.1. TIPOS DE PODERES MENTAIS Embora os mentálicos definam seus poderes como uma ciência, ela está longe de ser exata. Em geral os poderes mentais consistem em manipular a mente e a percepção dos indivíduos sobre o ambiente ao seu redor. Essas manipulações podem envolver os sentidos, memória, raciocínio, ou mesmo, a personalidade e funções vitais de quem for afetado por elas, através dos Personagens mentálicos têm a capacidade de usar suas mentes para realizar façanhas extraordinárias, chamadas de poderes mentais. Embora muitos, em especial cientistas, tomem os poderes mentais como atos de charlatanismo ou superstição, eles são parte de uma ciência avançada, dominada apenas pelos mentálicos."
+    }
+  },
+  {
+    "nt": 9,
+    "nome": "Desintegrador (\"não quero desintegrações\")",
+    "explica": "",
+    "nativo": {
+      "nome": "Pistola Desintegradora",
+      "id": "l2761RxwNXjDrdnH",
+      "cost": "$630.000",
+      "description": "Aparato ofensivo de 9º nível tecnológico. Operam: Cientista. Custo $630.000. Tempo de construção 1d4 meses. Trata-se de uma pistola laser aparentemente comum, mas que tem o poder de desintegrar completamente qualquer inimigo atingido por ela, não permitindo qualquer JP para evitar seus efeitos. Ela só pode ser usada uma única vez, ficando permanentemente inutilizável após o uso."
+    }
+  },
+  {
+    "nt": 9,
+    "nome": "Plataforma de transmatéria",
+    "explica": "tecnologia perdida",
+    "nativo": {
+      "nome": "Teletransportador",
+      "id": "S5kqpnX6c0aqsQXN",
+      "cost": "$800.000",
+      "description": "Aparato utilitário de 9º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $800.000. Tempo de construção 1d10 semanas. Este aparato pode ser em formato de bracelete ou cinto, e automaticamente teletransportará o usuário até o local para o qual está configurado. O procedimento de criação envolve a construção de uma plataforma que serve como marco zero da teletransportação e o ativador que realiza o teletransporte. Mais de um ativador pode ser criado no mesmo período de tempo para outros personagens, mediante o valor adequado."
+    }
+  },
+  {
+    "nt": 10,
+    "nome": "Portal do Mortis",
+    "explica": "lenda, gancho de campanha, nunca item",
+    "nativo": {
+      "nome": "Máquina do Tempo",
+      "id": "9bFlFrS5GxqLFzXy",
+      "cost": "$2.000.000",
+      "description": "Aparato utilitário de 10º nível tecnológico. Operam: Cientista, Cosmonauta, Gatuno, Mentálico. Custo $2.000.000. Tempo de construção 1d4 anos. Uma máquina do tempo é um aparato extremamente poderoso capaz de transportar uma ou mais pessoas através do espaço-tempo a qualquer ponto no passado ou futuro do universo. A existência de tal aparato é apenas hipotética, visto que nunca foi construído devido às implicações paradoxais que uma viagem no tempo poderia ter no curso histórico conhecido. Um cientista que desenvolva uma máquina do tempo estará sujeito a todo tipo de controvérsia e polêmica, portanto deve estar preparado para isso."
+    }
+  }
+];

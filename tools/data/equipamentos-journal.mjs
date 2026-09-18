@@ -7,7 +7,23 @@
 // ⚠️ AINDA NÃO TRANSCRITO. O export existe vazio para o build já rodar e o
 // compêndio já existir no Foundry; o conteúdo entra nota por nota.
 
-export const equipamentosJournal = { title: "Equipamentos & Créditos", pages: [] };
+import { TEXTOS as T } from "./textos-do-cofre.mjs";
+const eq = T["SW-SUP-Equipamentos"];
+
+// A nota inteira, para leitura: as tabelas de preço, as regras de disparo, o
+// alcance, o CP das vestes e os serviços. As armas, vestes e aparelhos também
+// estão como itens no compêndio de Equipamentos.
+export const equipamentosJournal = {
+  title: "Equipamentos & Créditos",
+  pages: [
+    { title: "Créditos", content: eq["(abertura)"] + eq["Créditos"] },
+    { title: "Armas Corpo a Corpo", content: eq["Armas de combate corpo a corpo"] },
+    { title: "Armas de Fogo, Arremesso e Explosivos", content: eq["Armas de fogo, arremesso e explosivos"] },
+    { title: "Armaduras e Vestes", content: eq["Armaduras & Vestes"] },
+    { title: "Aparelhos, Kits e Suprimentos", content: eq["Aparelhos, kits e suprimentos"] },
+    { title: "Crédito", content: eq["Crédito"] },
+  ],
+};
 
 // ── Sabre de Luz e Cristais Kyber ───────────────────────────────────────────
 //

@@ -1,0 +1,35 @@
+{
+  "folder": "q6ttEQSrx9ILoHtS",
+  "name": "Bloqueador de sinal",
+  "type": "misc",
+  "_id": "DTyoWJB3CEGunnJ2",
+  "img": "systems/olddragon2e/assets/icons/magic-scroll.svg",
+  "system": {
+    "odo_id": "bloqueador-de-sinal",
+    "description": "Na galáxia: Bloqueador de sinal — mata o comlink da patrulha. Aparato (SD): Bloqueador de Ondas de Rádio, 2º NT. Aparato utilitário de 2º nível tecnológico. Operam: Técnico, Veterano, Operativo, Sensível à Força. Custo 160.000 CR. Tempo de construção 1d6 horas. Este aparato é capaz de bloquear a transmissão e recepção de ondas de rádio em uma área de 50m² ao seu redor. Nenhum transmissor ou dispositivo de controle remoto funcionará corretamente até que o aparato seja desativado.",
+    "quantity": 1,
+    "cost": "160.000 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!DTyoWJB3CEGunnJ2"
+}

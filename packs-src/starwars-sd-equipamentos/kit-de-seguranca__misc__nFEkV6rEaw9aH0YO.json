@@ -1,0 +1,35 @@
+{
+  "folder": "SIWQL7yQEPBoilwO",
+  "name": "Kit de Segurança",
+  "type": "misc",
+  "_id": "nFEkV6rEaw9aH0YO",
+  "img": "systems/olddragon2e/assets/icons/misc.svg",
+  "system": {
+    "odo_id": "kit-de-seguranca",
+    "description": "Necessário para arrombar/desarmar sistemas (ilegal sem licença).",
+    "quantity": 1,
+    "cost": "40.000 CR",
+    "weight_in_load": 0,
+    "weight_in_grams": 1000,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 1400000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!nFEkV6rEaw9aH0YO"
+}
