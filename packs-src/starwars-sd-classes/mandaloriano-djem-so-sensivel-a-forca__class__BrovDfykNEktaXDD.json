@@ -1,0 +1,160 @@
+{
+  "folder": "xZ8H6MGYjdeJr5NK",
+  "name": "Mandaloriano (Djem So) — Sensível à Força",
+  "type": "class",
+  "_id": "BrovDfykNEktaXDD",
+  "img": "systems/olddragon2e/assets/icons/legiao-shield.svg",
+  "system": {
+    "flavor": "<p><em>Mandaloriano não é uma espécie, é uma cultura.</em></p>",
+    "description": "<p><strong>Esta variante já traz a Forma Djem So</strong>, a que o clã ensinou. Ela progride <strong>até o degrau do 10º</strong>, e é só ela: <em>Mudar de Guarda</em> é patrimônio do Guardião, e o Mandaloriano não tem para onde trocar.</p><p>A <strong>Senda Mandaloriana</strong> para o Sensível à Força, assumida no <strong>5º nível</strong> no lugar da especialização. Mantém tudo o que a classe já lhe deu, ganha o Núcleo Mandaloriano e troca o que a tabela abaixo diz.</p><p><strong>O que troca:</strong></p><p>o <strong>Alcance conta como o de um Sensível de −1 nível</strong> e o <strong>teto de Grandeza para na 6ª</strong>; em troca, o clã lhe ensina <strong>uma Forma de Sabre</strong> (até a técnica <code>10º</code>).</p><p><strong>Progressão do Mandaloriano Sensível à Força — do 5º ao 20º nível</strong></p><table><thead><tr><th>Nv</th><th>DV</th><th>BA</th><th>JP</th><th>Alcance</th><th>Grandeza</th><th>Forma de Sabre</th></tr></thead><tbody><tr><td><strong>5</strong></td><td>5</td><td>+2</td><td>13</td><td><strong>6%</strong></td><td>3ª</td><td>até 10º</td></tr><tr><td><strong>6</strong></td><td>6</td><td>+2</td><td>13</td><td><strong>9%</strong></td><td><strong>3ª</strong></td><td>até 10º</td></tr><tr><td><strong>7</strong></td><td>7</td><td>+3</td><td>12</td><td><strong>13%</strong></td><td>4ª</td><td>até 10º</td></tr><tr><td><strong>8</strong></td><td>8</td><td>+3</td><td>12</td><td><strong>17%</strong></td><td><strong>4ª</strong></td><td>até 10º</td></tr><tr><td><strong>9</strong></td><td>9</td><td>+3</td><td>12</td><td><strong>23%</strong></td><td>5ª</td><td>até 10º</td></tr><tr><td><strong>10</strong></td><td>+1</td><td>+4</td><td>11</td><td><strong>28%</strong></td><td><strong>5ª</strong></td><td>até 10º</td></tr><tr><td><strong>11</strong></td><td>+1</td><td>+4</td><td>11</td><td><strong>36%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr><tr><td><strong>12</strong></td><td>+1</td><td>+4</td><td>11</td><td><strong>43%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr><tr><td><strong>13</strong></td><td>+1</td><td>+5</td><td>10</td><td><strong>53%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr><tr><td><strong>14</strong></td><td>+1</td><td>+5</td><td>10</td><td><strong>62%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr><tr><td><strong>15</strong></td><td>+2</td><td>+5</td><td>10</td><td><strong>74%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr><tr><td><strong>16</strong></td><td>+2</td><td>+6</td><td>9</td><td><strong>86%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr><tr><td><strong>17</strong></td><td>—</td><td>+6</td><td>9</td><td><strong>100%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr><tr><td><strong>18</strong></td><td>—</td><td>+6</td><td>9</td><td><strong>115%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr><tr><td><strong>19</strong></td><td>—</td><td>+6</td><td>9</td><td><strong>131%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr><tr><td><strong>20</strong></td><td>—</td><td>+6</td><td>9</td><td><strong>139%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr></tbody></table><p><em><strong>em negrito</strong> = o valor desta especialização, no lugar do da classe base.</em></p><blockquote><p>O <strong>Alcance conta como o de um Sensível de um nível abaixo</strong> e o <strong>teto de Grandeza para na 6ª</strong>: ele passou a vida jurando um credo e aprendendo a lutar de armadura, não meditando sobre a natureza da Força. Em troca, mantém BA e JP progredindo até o 20º — o único Sensível que não paga com o corpo — e o clã lhe ensina <strong>uma</strong> Forma de Sabre. Sem Eco da Senda e sem Mudar de Guarda: conhece uma Forma só, e não tem para onde trocar.</p></blockquote><blockquote><p>Mandaloriano <strong>não é uma espécie, é uma cultura</strong>: há Mandalorianos humanos, Twi'lek, Rodianos e até um raro Sensível à Força. Existe quem <strong>nasce no berço da cultura</strong> (a Origem, no 1º nível) e quem <strong>é adotado no Credo</strong> (a Senda, no 5º nível), trocando parte das habilidades da classe pelo pacote de clã.</p></blockquote><p>Um personagem de <strong>qualquer classe</strong> aceito num clã pode assumir a Senda <strong>no lugar de sua especialização</strong> (que também abre no 5º nível). Como toda especialização do SD, ele ganha o <strong>Núcleo Mandaloriano</strong> e <strong>troca</strong> parte das habilidades da classe base (Tabela de Trocas). A <strong>tabela de XP continua sendo a da classe</strong> — especializar-se no Space Dragon não muda a progressão de experiência. Se já tinha a Origem, a conversão é imediata; senão, exige um rito de aceitação.</p>",
+    "hp": 4,
+    "high_level_hp_bonus": null,
+    "equipment_restrictions": {
+      "weapons": "O sabre de luz e pistolas. E o arsenal do clã: armas de haste, de arremesso e blasters (Treinamento de Clã).",
+      "armors": "Só leves (vestes pesadas ou escudos bloqueiam os poderes); o Guardião é a exceção. E a Armadura Beskar ou pesada de clã (Sangue de Beskar).",
+      "magic_items": "Só utilitários."
+    },
+    "restrictions": {
+      "alignments": [],
+      "races": []
+    },
+    "levels": {
+      "1": {
+        "ba": 0,
+        "jp": 14
+      },
+      "2": {
+        "ba": 0,
+        "jp": 14,
+        "xp": 2500
+      },
+      "3": {
+        "ba": 1,
+        "jp": 14,
+        "xp": 5000
+      },
+      "4": {
+        "ba": 1,
+        "jp": 13,
+        "xp": 10000
+      },
+      "5": {
+        "ba": 2,
+        "jp": 13,
+        "xp": 20000
+      },
+      "6": {
+        "ba": 2,
+        "jp": 13,
+        "xp": 40000
+      },
+      "7": {
+        "ba": 3,
+        "jp": 12,
+        "xp": 80000
+      },
+      "8": {
+        "ba": 3,
+        "jp": 12,
+        "xp": 160000
+      },
+      "9": {
+        "ba": 3,
+        "jp": 12,
+        "xp": 310000
+      },
+      "10": {
+        "ba": 4,
+        "jp": 11,
+        "xp": 460000
+      },
+      "11": {
+        "ba": 4,
+        "jp": 11,
+        "xp": 510000
+      },
+      "12": {
+        "ba": 4,
+        "jp": 11,
+        "xp": 660000
+      },
+      "13": {
+        "ba": 5,
+        "jp": 10,
+        "xp": 710000
+      },
+      "14": {
+        "ba": 5,
+        "jp": 10,
+        "xp": 860000
+      },
+      "15": {
+        "ba": 5,
+        "jp": 10,
+        "xp": 910000
+      },
+      "16": {
+        "ba": 6,
+        "jp": 9,
+        "xp": 1060000
+      },
+      "17": {
+        "ba": 6,
+        "jp": 9,
+        "xp": 1110000
+      },
+      "18": {
+        "ba": 6,
+        "jp": 9,
+        "xp": 1160000
+      },
+      "19": {
+        "ba": 6,
+        "jp": 9,
+        "xp": 1210000
+      },
+      "20": {
+        "ba": 6,
+        "jp": 9,
+        "xp": 1260000
+      }
+    },
+    "class_abilities": [
+      "Compendium.starwars-sd.starwars-sd-classes.Item.ILrnJdDIgky1BV6e",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.9Fz9ogqj3P6d5vpH",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.xrUeP0qvRJ38gYQC",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.ExwxoQTCL8E8ifLi",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.8ASJGHviDKmp5ru0",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.aNFKWkNuvhiYP7ig",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.DXVGww7Pds0F9Kip",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.iO1T8Cx10TWkl1xJ",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.t9qNfX7RY8gut7GG",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.x1ZGjpeDexLGXQZP",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.Izr8HnFtApHUFyF9",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.tfi4B4GsUEWZFPLX",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.rfpiBG0O2PDeElwU"
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "spacedragon": {
+      "chassi": "Mentálico"
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 405000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!BrovDfykNEktaXDD"
+}

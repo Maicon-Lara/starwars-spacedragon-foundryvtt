@@ -123,9 +123,41 @@ const paragrafos = (s) => (s ? s.split(/\n\n+/).map((x) => `<p>${md(x)}</p>`).jo
 // especialização vem primeiro — "Mercenário — Veterano" —, que é como o
 // módulo Space Dragon faz e o que se procura numa lista. O _id é semeado pela
 // forma "Classe — Especialização", a da pasta.
+// ── Variantes com a escolha embutida ───────────────────────────────────────
+//
+// O sistema NÃO aceita habilidade de classe solta no personagem: a ficha
+// recusa com "Habilidades de classe não podem ser adicionadas diretamente ao
+// personagem. Adicione-as à classe do personagem." O caminho nativo é abrir o
+// item da classe na ficha e soltar a habilidade DENTRO dele — funciona, mas
+// ninguém descobre sozinho.
+//
+// Então, como no Star Dragon, a escolha que todo personagem daquela trilha
+// faz — a Forma do Guardião, a Forma que o clã ensina ao Mandaloriano
+// Sensível — vira uma VARIANTE de classe com a habilidade já dentro: arrasta a
+// classe certa e acabou. As variantes apontam para as habilidades avulsas
+// (mesmo UUID, sem cópia de texto), que continuam no compêndio para a segunda
+// e a terceira Forma.
+
+/** "Shii-Cho (I)" → "Shii-Cho"; "Juyo / Vaapad (VII)" → "Juyo / Vaapad". */
+const nomeCurtoDaForma = (nome) => nome.split("(")[0].trim();
+const COMO_ADICIONAR =
+  "<p class='nota-casa'><em>Para somar uma Forma a mais, abra o item da classe na ficha e solte a Forma " +
+  "do compêndio dentro dele: o sistema não aceita habilidade de classe solta no personagem.</em></p>";
+
 function buildClassesDocs() {
   const docs = [];
   const uuidsDaBase = new Map();
+
+  // As avulsas primeiro: as variantes apontam para elas.
+  const avulsas = [];
+  agrupaAvulsas(avulsas, classAbilitiesAvulsas, "classes", classAbilityDoc);
+  const uuidAvulsa = new Map(
+    avulsas.filter((d) => d.type === "class_ability").map((d) => [d.name, itemUuid(CLASSES_PACK, d._id)])
+  );
+  const formas = classAbilitiesAvulsas.filter((a) => a.folder === "Formas de Sabre (Guardião)" && a.nome !== "Mudar de Guarda");
+  const mudarDeGuarda = uuidAvulsa.get("Mudar de Guarda");
+  if (formas.length !== 7 || !mudarDeGuarda) throw new Error("as Formas de Sabre e o Mudar de Guarda precisam estar nas avulsas");
+
   for (const cls of classes) {
     const tabela = BASE[cls.nome];
     if (!tabela) throw new Error(`sem tabela de progressão para ${cls.nome}`);
@@ -168,21 +200,50 @@ function buildClassesDocs() {
         paragrafos(v.extra) +
         tabelaHTML(`Do 1º ao 4º nível: a tabela do ${cls.nome}`, { ...tabela, linhas: tabela.linhas.slice(0, 4) });
 
-      docs.push(classDoc({
+      const guardiao = v.nome === "Guardião";
+      const uuidsSpec = habsSpec.map((h) => itemUuid(CLASSES_PACK, h._id));
+      const especializacao = {
         ...cls,
         nome: `${v.nome} — ${cls.nome}`,
         seedNome,
         flavor: `<p><em>${v.frase}</em></p>`,
-        descricao,
+        descricao: descricao + (guardiao
+          ? "<p><strong>Prefira a variante com a sua Forma</strong> — <em>Guardião (Ataru)</em> e as outras seis, " +
+            "nesta mesma pasta: a Forma Mestra já vem dentro. Esta, genérica, é para quem ainda vai escolher." +
+            "</p>" + COMO_ADICIONAR
+          : ""),
         equipment_restrictions: { ...cls.equipment_restrictions, ...(v.restricoes ?? {}) },
         levels: levelsDe(tabela, tSpec),
-      }, pasta._id, [...uuidsBase, ...habsSpec.map((h) => itemUuid(CLASSES_PACK, h._id))]));
+      };
+      // O Mudar de Guarda é patrimônio do Guardião, e chega no 10º com a
+      // segunda Forma: vai na ficha dele, e não só no compêndio.
+      docs.push(classDoc(especializacao, pasta._id, [...uuidsBase, ...uuidsSpec, ...(guardiao ? [mudarDeGuarda] : [])]));
+
+      // ── Guardião: uma variante por Forma de Sabre ──
+      if (guardiao) {
+        const semPonteiro = habsSpec.filter((h) => h.name !== "Formas de Sabre").map((h) => itemUuid(CLASSES_PACK, h._id));
+        formas.forEach((forma, k) => {
+          const curto = nomeCurtoDaForma(forma.nome);
+          docs.push({
+            ...classDoc({
+              ...especializacao,
+              nome: `${v.nome} (${curto}) — ${cls.nome}`,
+              seedNome: `${seedNome} (${curto})`,
+              flavor: `<p><em>${v.frase}</em>, na Forma <strong>${curto}</strong>.</p>`,
+              descricao:
+                `<p><strong>Esta variante já traz a Forma ${curto} embutida</strong>: é a sua <strong>Forma Mestra</strong>, ` +
+                "que progride inteira, nos degraus 5º, 10º e 20º. No 10º, o <em>Mudar de Guarda</em> abre a " +
+                "segunda Forma (só até o degrau do 10º); no 20º, a terceira (só até o 5º).</p>" +
+                COMO_ADICIONAR + descricao,
+            }, pasta._id, [...uuidsBase, ...semPonteiro, uuidAvulsa.get(forma.nome), mudarDeGuarda]),
+            sort: (k + 1) * 1000,
+          });
+        });
+      }
     }
   }
-  docs.push(...buildSendaDocs(uuidsDaBase));
-
-  // Formas de Sabre e Mudar de Guarda: habilidades escolhidas à parte.
-  agrupaAvulsas(docs, classAbilitiesAvulsas, "classes", classAbilityDoc);
+  docs.push(...buildSendaDocs(uuidsDaBase, formas, uuidAvulsa));
+  docs.push(...avulsas);
   return docs;
 }
 
@@ -192,7 +253,7 @@ function buildClassesDocs() {
 // especialização. Vira uma classe por base — "Mandaloriano — Veterano" —
 // numa pasta própria. As cinco habilidades do Núcleo existem UMA vez e as
 // quatro classes apontam para elas; a troca é uma habilidade por classe.
-function buildSendaDocs(uuidsDaBase) {
+function buildSendaDocs(uuidsDaBase, formas, uuidAvulsa) {
   const s = sendaMandaloriana;
   const docs = [];
   const pasta = folderDoc(s.pasta, "Item", "classes");
@@ -210,8 +271,8 @@ function buildSendaDocs(uuidsDaBase) {
     );
     docs.push(troca);
     const seedNome = `${s.pasta} — ${cls.nome}`;
-    docs.push({
-      ...classDoc({
+    const sensivel = cls.nome === "Sensível à Força";
+    const mandaloriano = {
         ...cls,
         nome: `Mandaloriano — ${cls.nome}`,
         seedNome,
@@ -232,9 +293,39 @@ function buildSendaDocs(uuidsDaBase) {
           tabelaHTML(`Progressão do Mandaloriano ${cls.nome} — do 5º ao 20º nível`, tabela) +
           s.intro,
         levels: levelsDe(BASE[cls.nome], tabela),
-      }, pasta._id, [...uuidsDaBase.get(cls.nome), ...uuidsNucleo, itemUuid(CLASSES_PACK, troca._id)]),
+    };
+    const uuids = [...uuidsDaBase.get(cls.nome), ...uuidsNucleo, itemUuid(CLASSES_PACK, troca._id)];
+    docs.push({
+      ...classDoc({
+        ...mandaloriano,
+        descricao: mandaloriano.descricao + (sensivel
+          ? "<p><strong>Prefira a variante com a Forma que o clã ensinou</strong> — <em>Mandaloriano (Ataru)</em> " +
+            "e as outras seis, nesta mesma pasta. Esta, genérica, é para quem ainda vai escolher.</p>" + COMO_ADICIONAR
+          : ""),
+      }, pasta._id, uuids),
       sort: (j + 1) * 100000,
     });
+
+    // ── O Sensível mandaloriano: uma variante por Forma que o clã ensina ──
+    // Uma Forma só, até o degrau do 10º, e sem Mudar de Guarda — que é
+    // patrimônio do Guardião.
+    if (sensivel) {
+      formas.forEach((forma, k) => {
+        const curto = nomeCurtoDaForma(forma.nome);
+        docs.push({
+          ...classDoc({
+            ...mandaloriano,
+            nome: `Mandaloriano (${curto}) — ${cls.nome}`,
+            seedNome: `${seedNome} (${curto})`,
+            descricao:
+              `<p><strong>Esta variante já traz a Forma ${curto}</strong>, a que o clã ensinou. Ela progride ` +
+              "<strong>até o degrau do 10º</strong>, e é só ela: <em>Mudar de Guarda</em> é patrimônio do Guardião, " +
+              "e o Mandaloriano não tem para onde trocar.</p>" + mandaloriano.descricao,
+          }, pasta._id, [...uuids, uuidAvulsa.get(forma.nome)]),
+          sort: (j + 1) * 100000 + (k + 1) * 1000,
+        });
+      });
+    }
   });
   return docs;
 }

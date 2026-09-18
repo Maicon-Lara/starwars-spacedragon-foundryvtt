@@ -20,12 +20,22 @@ const senda = TEXTOS["SW-SUP-Senda-Mandaloriana"];
 // Mudar de Guarda, que também é uma habilidade daqui.
 const PASTA_FORMAS = "Formas de Sabre (Guardião)";
 
-const formas = FORMAS.map((f) => ({ folder: PASTA_FORMAS, nome: f.nome, level: 5, desc: f.desc }));
+// O sistema não aceita habilidade solta no personagem. A Forma Mestra já vem
+// nas variantes "Guardião (Ataru)" e "Mandaloriano (Ataru)"; estas avulsas são
+// para a segunda e a terceira Forma, e a nota diz o caminho.
+const COMO_ADICIONAR =
+  "<p class='nota-casa'><em>Como adicionar: abra o item da classe na ficha do personagem e solte esta " +
+  "habilidade dentro dele — o sistema não aceita habilidade de classe solta no personagem. A Forma Mestra " +
+  "já vem pronta nas variantes <strong>Guardião (…)</strong> e <strong>Mandaloriano (…)</strong>.</em></p>";
+
+const formas = FORMAS.map((f) => ({ folder: PASTA_FORMAS, nome: f.nome, level: 5, desc: f.desc + COMO_ADICIONAR }));
 const mudarDeGuarda = {
   folder: PASTA_FORMAS,
   nome: "Mudar de Guarda",
   level: 10,
-  desc: sabre["Mudar de Guarda — trocar de Forma no meio do duelo"],
+  desc: sabre["Mudar de Guarda — trocar de Forma no meio do duelo"] +
+    "<p class='nota-casa'><em>Já vem na ficha de todo Guardião. A segunda e a terceira Forma se somam " +
+    "abrindo o item da classe na ficha e soltando a Forma do compêndio dentro dele.</em></p>",
 };
 
 export const classAbilitiesAvulsas = [...formas, mudarDeGuarda];
@@ -35,7 +45,9 @@ export const classAbilitiesAvulsas = [...formas, mudarDeGuarda];
 // Uma Origem é escolhida na criação, POR CIMA da espécie. Vira uma habilidade
 // de espécie avulsa, com os três degraus do 1º nível dentro: é uma escolha só.
 export const origensAvulsas = [
-  { folder: "Origens", nome: "Filho de Mandalore", desc: ORIGEM.html },
+  { folder: "Origens", nome: "Filho de Mandalore", desc: ORIGEM.html +
+    "<p class='nota-casa'><em>Como adicionar: abra o item da espécie na ficha do personagem e solte esta " +
+    "Origem dentro dele — o sistema não aceita habilidade de espécie solta no personagem.</em></p>" },
 ];
 
 // ── Senda Mandaloriana ──────────────────────────────────────────────────────

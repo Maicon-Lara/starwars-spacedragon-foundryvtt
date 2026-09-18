@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.1.0 — as Formas de Sabre entram na ficha
+
+O sistema não aceita habilidade de classe solta no personagem ("Adicione-as
+à classe do personagem"), e as Formas e o Mudar de Guarda estavam só
+avulsos — não havia como chegar à ficha sem abrir o item da classe e soltar
+dentro dele. Como no Star Dragon, a escolha agora vem embutida:
+
+- **Guardião (Ataru) — Sensível à Força** e as outras seis: a Forma Mestra já
+  vem na classe. O **Mudar de Guarda** entra na ficha de todo Guardião.
+- **Mandaloriano (Ataru) — Sensível à Força** e as outras seis: a Forma que o
+  clã ensina, até o degrau do 10º.
+- As variantes apontam para as mesmas habilidades avulsas, sem cópia de texto.
+- As Formas avulsas, o Mudar de Guarda e a Origem Filho de Mandalore dizem na
+  descrição como somar mais uma: soltando dentro do item da classe (ou da
+  espécie) na ficha.
+
 ## 1.0.0 — o Suplemento inteiro
 
 As 14 notas do cofre estão no módulo.
