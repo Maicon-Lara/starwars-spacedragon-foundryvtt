@@ -1,0 +1,152 @@
+{
+  "folder": "MpIZaQIDyd4kh0QQ",
+  "name": "Mercenário — Veterano",
+  "type": "class",
+  "_id": "LJlpIqetFBLXiRS4",
+  "img": "systems/olddragon2e/assets/icons/melee.svg",
+  "system": {
+    "flavor": "<p><em>o soldado/pistoleiro</em></p>",
+    "description": "<p><em>o soldado/pistoleiro</em></p><p>Especialização de Veterano, para Afiliação <strong>Neutro</strong>, escolhida no <strong>5º nível</strong>. Mantém tudo o que o Veterano já lhe deu, e as habilidades da classe seguem na ficha.</p><p><strong>Progressão do Mercenário — do 5º ao 20º nível</strong></p><table><thead><tr><th>Nv</th><th>DV</th><th>BA</th><th>JP</th><th>Pilotar</th><th>Desarmar</th><th>Crítico</th></tr></thead><tbody><tr><td><strong>5</strong></td><td>5</td><td>+5</td><td>15</td><td>⊘ 84%</td><td>40%</td><td><strong>×3</strong></td></tr><tr><td><strong>6</strong></td><td>6</td><td>+6</td><td>15</td><td>⊘ 84%</td><td>45%</td><td><strong>×4</strong></td></tr><tr><td><strong>7</strong></td><td>7</td><td>+7/+1</td><td>14</td><td>⊘ 84%</td><td>50%</td><td><strong>×4</strong></td></tr><tr><td><strong>8</strong></td><td>8</td><td>+8/+2</td><td>14</td><td>⊘ 84%</td><td>55%</td><td><strong>×4</strong></td></tr><tr><td><strong>9</strong></td><td>9</td><td>+9/+3</td><td>14</td><td>⊘ 84%</td><td>60%</td><td><strong>×4</strong></td></tr><tr><td><strong>10</strong></td><td>+2</td><td>+10/+4</td><td>⊘ 13</td><td>⊘ 84%</td><td>65%</td><td><strong>×4</strong></td></tr><tr><td><strong>11</strong></td><td>+2</td><td>+10/+4</td><td>⊘ 13</td><td>⊘ 84%</td><td>70%</td><td><strong>×4</strong></td></tr><tr><td><strong>12</strong></td><td>+4</td><td>+11/+5</td><td>⊘ 13</td><td>⊘ 84%</td><td>72%</td><td><strong>×5</strong></td></tr><tr><td><strong>13</strong></td><td>+4</td><td>+11/+5</td><td>⊘ 13</td><td>⊘ 84%</td><td>74%</td><td><strong>×5</strong></td></tr><tr><td><strong>14</strong></td><td>+5</td><td>+12/+6</td><td>⊘ 13</td><td>⊘ 84%</td><td>76%</td><td><strong>×5</strong></td></tr><tr><td><strong>15</strong></td><td>+5</td><td>+12/+6</td><td>⊘ 13</td><td>⊘ 84%</td><td>78%</td><td><strong>×5</strong></td></tr><tr><td><strong>16</strong></td><td>+6</td><td>+13/+7</td><td>⊘ 13</td><td>⊘ 84%</td><td>80%</td><td><strong>×5</strong></td></tr><tr><td><strong>17</strong></td><td>+6</td><td>+13/+7</td><td>⊘ 13</td><td>⊘ 84%</td><td>82%</td><td><strong>×5</strong></td></tr><tr><td><strong>18</strong></td><td>+7</td><td>+14/+8</td><td>⊘ 13</td><td>⊘ 84%</td><td>84%</td><td><strong>×6</strong></td></tr><tr><td><strong>19</strong></td><td>+7</td><td>+14/+8</td><td>⊘ 13</td><td>⊘ 84%</td><td>86%</td><td><strong>×6</strong></td></tr><tr><td><strong>20</strong></td><td>+8</td><td>+15/+9</td><td>⊘ 13</td><td>⊘ 84%</td><td>88%</td><td><strong>×6</strong></td></tr></tbody></table><p><em>⊘ = congelado, repete o valor em que travou · <strong>em negrito</strong> = o valor desta especialização, no lugar do da classe base.</em></p><blockquote><p>A coluna Crítico já é a da <strong>arma escolhida</strong>, sempre um multiplicador acima da tabela do Veterano. Com outra arma vale o crítico normal — e do 10º em diante, mais −4 no ataque.</p></blockquote><blockquote><p><em>Stormtroopers de elite, mercenários, pistoleiros do submundo, soldados clones.</em></p></blockquote><p><strong>Do 1º ao 4º nível: a tabela do Veterano</strong></p><table><thead><tr><th>Nível</th><th>XP</th><th>DV</th><th>BA</th><th>JP</th><th>Pilotar</th><th>Desarmar/Subjugar</th><th>Crítico</th></tr></thead><tbody><tr><td>1</td><td>0</td><td>1</td><td>+1</td><td>16</td><td>80%</td><td>20%</td><td>×2</td></tr><tr><td>2</td><td>2.000</td><td>2</td><td>+2</td><td>16</td><td>81%</td><td>25%</td><td>×2</td></tr><tr><td>3</td><td>4.000</td><td>3</td><td>+3</td><td>16</td><td>82%</td><td>30%</td><td>×2</td></tr><tr><td>4</td><td>8.000</td><td>4</td><td>+4</td><td>15</td><td>83%</td><td>35%</td><td>×2</td></tr></tbody></table>",
+    "hp": 10,
+    "high_level_hp_bonus": null,
+    "equipment_restrictions": {
+      "weapons": "Qualquer tipo.",
+      "armors": "Qualquer veste, e escudos.",
+      "magic_items": "Aparatos defensivos e utilitários (não ofensivos)."
+    },
+    "restrictions": {
+      "alignments": [],
+      "races": []
+    },
+    "levels": {
+      "1": {
+        "ba": 1,
+        "jp": 16
+      },
+      "2": {
+        "ba": 2,
+        "jp": 16,
+        "xp": 2000
+      },
+      "3": {
+        "ba": 3,
+        "jp": 16,
+        "xp": 4000
+      },
+      "4": {
+        "ba": 4,
+        "jp": 15,
+        "xp": 8000
+      },
+      "5": {
+        "ba": 5,
+        "jp": 15,
+        "xp": 16000
+      },
+      "6": {
+        "ba": 6,
+        "jp": 15,
+        "xp": 32000
+      },
+      "7": {
+        "ba": 7,
+        "jp": 14,
+        "xp": 64000
+      },
+      "8": {
+        "ba": 8,
+        "jp": 14,
+        "xp": 128000
+      },
+      "9": {
+        "ba": 9,
+        "jp": 14,
+        "xp": 256000
+      },
+      "10": {
+        "ba": 10,
+        "jp": 13,
+        "xp": 304000
+      },
+      "11": {
+        "ba": 10,
+        "jp": 13,
+        "xp": 408000
+      },
+      "12": {
+        "ba": 11,
+        "jp": 13,
+        "xp": 516000
+      },
+      "13": {
+        "ba": 11,
+        "jp": 13,
+        "xp": 632000
+      },
+      "14": {
+        "ba": 12,
+        "jp": 13,
+        "xp": 704000
+      },
+      "15": {
+        "ba": 12,
+        "jp": 13,
+        "xp": 808000
+      },
+      "16": {
+        "ba": 13,
+        "jp": 13,
+        "xp": 916000
+      },
+      "17": {
+        "ba": 13,
+        "jp": 13,
+        "xp": 1032000
+      },
+      "18": {
+        "ba": 14,
+        "jp": 13,
+        "xp": 1064000
+      },
+      "19": {
+        "ba": 14,
+        "jp": 13,
+        "xp": 1128000
+      },
+      "20": {
+        "ba": 15,
+        "jp": 13,
+        "xp": 1256000
+      }
+    },
+    "class_abilities": [
+      "Compendium.starwars-sd.starwars-sd-classes.Item.OEQzEHVCXzPoR1pf",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.9634BG0bJW8AESYi",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.rvAqGhJ8uSEhbxJR",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.f8hisFoOnx4vd66b",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.TSPgjSFRKfkpYshD"
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "spacedragon": {
+      "chassi": "Cosmonauta"
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!LJlpIqetFBLXiRS4"
+}

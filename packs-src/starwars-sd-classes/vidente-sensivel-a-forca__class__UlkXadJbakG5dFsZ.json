@@ -1,0 +1,155 @@
+{
+  "folder": "XubfmemJO8PFrUaB",
+  "name": "Vidente — Sensível à Força",
+  "type": "class",
+  "_id": "UlkXadJbakG5dFsZ",
+  "img": "systems/olddragon2e/assets/icons/brain.svg",
+  "system": {
+    "flavor": "<p><em>o místico dos nexos</em></p>",
+    "description": "<p><em>o místico dos nexos</em> — <em>base: Radiestésico</em></p><p>Senda do Sensível à Força, escolhida no <strong>5º nível</strong>. Mantém tudo o que o Sensível à Força já lhe deu, e as habilidades da classe seguem na ficha.</p><p><em>\"A Força não está em mim. Eu é que estou nela.\"</em> Nem Jedi nem Sith: puxa a Força do <strong>mundo ao redor</strong> — dos vivos, das raízes, das pedras, dos nexos.</p><p>Toda especialização de Mentálico no <em>Space Dragon</em> paga com as <strong>duas colunas de corpo</strong>: a Base de Ataque e a Jogada de Proteção param de progredir, uma no 5º nível e a outra no 10º. É o preço fixo de mergulhar na Força, e vale para as quatro Sendas.</p><p><strong>Qual das duas congela primeiro é o seu Caminho que diz:</strong></p><ul><li><strong>Luz</strong> — congela a <strong>Base de Ataque</strong> no 5º: a serenidade abre mão da agressão.</li><li><strong>Sombra</strong> — congela a <strong>Jogada de Proteção</strong> no 5º: a paixão abre mão do autocontrole.</li><li><strong>Sem Caminho</strong> — você escolhe, e a escolha é definitiva.</li></ul><p>A outra congela no <strong>10º</strong>. Repare que as duas Sendas de base nativa já nascem com o Caminho \"natural\" delas: o <strong>Consular</strong> (o Psiquista do livro) congela a BA primeiro, perfil de Luz; o <strong>Vidente</strong> (o Radiestésico) congela a JP primeiro, perfil de Sombra. Seguir o outro Caminho inverte a ordem, e o personagem sente a diferença no corpo antes de sentir na alma.</p><blockquote><p><strong>O Guardião é a exceção.</strong> Ele trocou a Base de Ataque pela de um Veterano, então não tem essa moeda para gastar: congela sempre a <strong>JP</strong>, nos dois Caminhos. E a <strong>Sentinela</strong> paga tarde — só no 10º —, que é o preço de não se comprometer com nenhum extremo.</p></blockquote><blockquote><p>✅ <strong>As Sendas NÃO têm restrição de Afiliação.</strong> Nas classes mundanas, cada especialização é presa a Leal/Neutro/Rebelde. Aqui isso é <strong>removido de propósito</strong>: no Sensível, a diferenciação moral já é feita pelo <strong>Caminho</strong> (Luz, Sombra ou Cinza) e pela <strong>Corrupção</strong> — e o Caminho <strong>tem peso mecânico</strong>: é ele que decide qual coluna do corpo congela primeiro.</p></blockquote><p><strong>Progressão do Vidente — do 5º ao 20º nível</strong></p><table><thead><tr><th>Nv</th><th>DV</th><th>BA</th><th>JP</th><th>Alcance</th><th>Grandeza</th><th>Comunhão</th><th>Teto da Comunhão</th><th>Atrai descargas</th></tr></thead><tbody><tr><td><strong>5</strong></td><td>5</td><td>+2</td><td>⊘ 13</td><td>9%</td><td>3ª</td><td>20 m</td><td>¼</td><td>—</td></tr><tr><td><strong>6</strong></td><td>6</td><td>+2</td><td>⊘ 13</td><td>13%</td><td>—</td><td>20 m</td><td>¼</td><td>—</td></tr><tr><td><strong>7</strong></td><td>7</td><td>+3</td><td>⊘ 13</td><td>17%</td><td>4ª</td><td>20 m</td><td>¼</td><td>—</td></tr><tr><td><strong>8</strong></td><td>8</td><td>+3</td><td>⊘ 13</td><td>23%</td><td>—</td><td>20 m</td><td>¼</td><td>—</td></tr><tr><td><strong>9</strong></td><td>9</td><td>+3</td><td>⊘ 13</td><td>28%</td><td>5ª</td><td>20 m</td><td>¼</td><td>—</td></tr><tr><td><strong>10</strong></td><td>+1</td><td>⊘ +4</td><td>⊘ 13</td><td>36%</td><td>—</td><td>40 m</td><td>⅓</td><td>30%</td></tr><tr><td><strong>11</strong></td><td>+1</td><td>⊘ +4</td><td>⊘ 13</td><td>43%</td><td>6ª</td><td>40 m</td><td>⅓</td><td>30%</td></tr><tr><td><strong>12</strong></td><td>+1</td><td>⊘ +4</td><td>⊘ 13</td><td>53%</td><td>—</td><td>40 m</td><td>⅓</td><td>30%</td></tr><tr><td><strong>13</strong></td><td>+1</td><td>⊘ +4</td><td>⊘ 13</td><td>62%</td><td>7ª</td><td>40 m</td><td>⅓</td><td>30%</td></tr><tr><td><strong>14</strong></td><td>+1</td><td>⊘ +4</td><td>⊘ 13</td><td>74%</td><td>—</td><td>40 m</td><td>⅓</td><td>30%</td></tr><tr><td><strong>15</strong></td><td>+2</td><td>⊘ +4</td><td>⊘ 13</td><td>86%</td><td>8ª</td><td>40 m</td><td>⅓</td><td>30%</td></tr><tr><td><strong>16</strong></td><td>+2</td><td>⊘ +4</td><td>⊘ 13</td><td>100%</td><td>—</td><td>40 m</td><td>⅓</td><td>30%</td></tr><tr><td><strong>17</strong></td><td>—</td><td>⊘ +4</td><td>⊘ 13</td><td>115%</td><td>9ª</td><td>40 m</td><td>⅓</td><td>30%</td></tr><tr><td><strong>18</strong></td><td>—</td><td>⊘ +4</td><td>⊘ 13</td><td>131%</td><td>—</td><td>40 m</td><td>⅓</td><td>30%</td></tr><tr><td><strong>19</strong></td><td>—</td><td>⊘ +4</td><td>⊘ 13</td><td>139%</td><td>10ª</td><td>40 m</td><td>⅓</td><td>30%</td></tr><tr><td><strong>20</strong></td><td>—</td><td>⊘ +4</td><td>⊘ 13</td><td>150%</td><td>—</td><td>100 m</td><td>½ do Alcance</td><td>80%</td></tr></tbody></table><p><em>⊘ = congelado, repete o valor em que travou.</em></p><blockquote><p>Canaliza a Força dos seres inteligentes por perto, somando os bônus de Intelecto deles. A sintonia é involuntária: do 10º em diante ele atrai raios.</p></blockquote><blockquote><p>As Nightsisters de Dathomir, Bendu, os místicos dos Whills, a velha do vilarejo que sabia que você vinha.</p></blockquote><p><strong>Do 1º ao 4º nível: a tabela do Sensível à Força</strong></p><table><thead><tr><th>Nível</th><th>XP</th><th>DV</th><th>BA</th><th>JP</th><th>Alcance da Força</th><th>Grandeza-Limite</th></tr></thead><tbody><tr><td>1</td><td>0</td><td>1</td><td>0</td><td>14</td><td>1%</td><td>1ª</td></tr><tr><td>2</td><td>2.500</td><td>2</td><td>0</td><td>14</td><td>2%</td><td>—</td></tr><tr><td>3</td><td>5.000</td><td>3</td><td>+1</td><td>14</td><td>4%</td><td>2ª</td></tr><tr><td>4</td><td>10.000</td><td>4</td><td>+1</td><td>13</td><td>6%</td><td>—</td></tr></tbody></table>",
+    "hp": 4,
+    "high_level_hp_bonus": null,
+    "equipment_restrictions": {
+      "weapons": "Pistolas; o sabre de luz, só com penalidade (não é treinado).",
+      "armors": "Só leves (vestes pesadas ou escudos bloqueiam os poderes); o Guardião é a exceção.",
+      "magic_items": "Só utilitários."
+    },
+    "restrictions": {
+      "alignments": [],
+      "races": []
+    },
+    "levels": {
+      "1": {
+        "ba": 0,
+        "jp": 14
+      },
+      "2": {
+        "ba": 0,
+        "jp": 14,
+        "xp": 2500
+      },
+      "3": {
+        "ba": 1,
+        "jp": 14,
+        "xp": 5000
+      },
+      "4": {
+        "ba": 1,
+        "jp": 13,
+        "xp": 10000
+      },
+      "5": {
+        "ba": 2,
+        "jp": 13,
+        "xp": 20000
+      },
+      "6": {
+        "ba": 2,
+        "jp": 13,
+        "xp": 40000
+      },
+      "7": {
+        "ba": 3,
+        "jp": 13,
+        "xp": 80000
+      },
+      "8": {
+        "ba": 3,
+        "jp": 13,
+        "xp": 160000
+      },
+      "9": {
+        "ba": 3,
+        "jp": 13,
+        "xp": 310000
+      },
+      "10": {
+        "ba": 4,
+        "jp": 13,
+        "xp": 460000
+      },
+      "11": {
+        "ba": 4,
+        "jp": 13,
+        "xp": 510000
+      },
+      "12": {
+        "ba": 4,
+        "jp": 13,
+        "xp": 660000
+      },
+      "13": {
+        "ba": 4,
+        "jp": 13,
+        "xp": 710000
+      },
+      "14": {
+        "ba": 4,
+        "jp": 13,
+        "xp": 860000
+      },
+      "15": {
+        "ba": 4,
+        "jp": 13,
+        "xp": 910000
+      },
+      "16": {
+        "ba": 4,
+        "jp": 13,
+        "xp": 1060000
+      },
+      "17": {
+        "ba": 4,
+        "jp": 13,
+        "xp": 1110000
+      },
+      "18": {
+        "ba": 4,
+        "jp": 13,
+        "xp": 1160000
+      },
+      "19": {
+        "ba": 4,
+        "jp": 13,
+        "xp": 1210000
+      },
+      "20": {
+        "ba": 4,
+        "jp": 13,
+        "xp": 1260000
+      }
+    },
+    "class_abilities": [
+      "Compendium.starwars-sd.starwars-sd-classes.Item.ILrnJdDIgky1BV6e",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.9Fz9ogqj3P6d5vpH",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.xrUeP0qvRJ38gYQC",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.ExwxoQTCL8E8ifLi",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.8ASJGHviDKmp5ru0",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.aNFKWkNuvhiYP7ig",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.aGV3ZlbLNCAmbbbP",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.dCg1rGAZ0FmEtwAo"
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "spacedragon": {
+      "chassi": "Mentálico"
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!UlkXadJbakG5dFsZ"
+}

@@ -1,0 +1,54 @@
+{
+  "folder": "tnTdEFRuPBitOkPw",
+  "name": "Ofícios do Submundo",
+  "type": "class_ability",
+  "_id": "l7K4zUu9HdTtCmMR",
+  "img": "systems/olddragon2e/assets/icons/bag.svg",
+  "system": {
+    "description": "<p><strong>Ofícios do Submundo:</strong> ganha <strong>três talentos de Operativo</strong> à escolha (Furtividade, Sabotagem, Escalar, Ataque Furtivo…), com a % de um Gatuno de <strong>metade</strong> do seu nível (mínimo 1).</p><p><strong>Progressão:</strong> mantém a Grandeza e o Alcance da coluna normal — sem o teto do Guardião nem o salto do Consular. É a mais versátil das quatro, e por isso paga <strong>mais tarde</strong>: a JP só congela no 10º, enquanto as outras pagam já no 5º.</p>",
+    "level": 5,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {
+    "spacedragon": {
+      "habilidade": "Talentos de Gatuno"
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!l7K4zUu9HdTtCmMR"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Emissário",
+  "sorting": "m",
+  "folder": "uOaAnuDAppEsehHI",
+  "type": "Item",
+  "_id": "apPGrIzXSjXs9ye3",
+  "description": "",
+  "sort": 0,
+  "color": "#9a532e",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1"
+  },
+  "_key": "!folders!apPGrIzXSjXs9ye3"
+}

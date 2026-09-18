@@ -1,0 +1,50 @@
+{
+  "folder": "MpIZaQIDyd4kh0QQ",
+  "name": "Mercenário",
+  "type": "class_ability",
+  "_id": "TSPgjSFRKfkpYshD",
+  "img": "systems/olddragon2e/assets/icons/kit.svg",
+  "system": {
+    "description": "<p>Para de progredir em <strong>Pilotar Naves</strong>. Escolhe <strong>uma arma</strong> com a qual fica mais perigoso do que nunca: o dano crítico com ela é sempre <strong>um multiplicador acima</strong> do da tabela do Veterano. Assim, um Mercenário de <strong>5º nível</strong> tem crítico <strong>×4</strong> com a arma preferida, e um de <strong>18º nível</strong> tem <strong>×6</strong>.</p><ul><li><code>10º</code> <strong>−4</strong> ao usar qualquer arma que não a preferida e <strong>+2</strong> com ela (só no 1º ataque); pode <strong>sacrificar o 2º ataque</strong> para garantir chance de crítico; a <strong>JP para de progredir</strong>.</li><li><code>20º</code> só usa a arma escolhida, mas <strong>garante chance de crítico nos dois ataques</strong>.</li></ul>",
+    "level": 5,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!TSPgjSFRKfkpYshD"
+}

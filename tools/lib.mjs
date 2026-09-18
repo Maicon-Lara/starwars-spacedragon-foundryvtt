@@ -67,6 +67,53 @@ export function htmlParaTexto(html) {
     .trim();
 }
 
+// Markdown de LINHA do cofre → HTML: **negrito**, *itálico*, `código` e os
+// links do Obsidian ([[Nota|rótulo]] vira "rótulo", [[Nota]] vira "Nota").
+//
+// Só o de linha, de propósito: parágrafo, lista e tabela são montados nos
+// dados, onde a estrutura é explícita. Um conversor de markdown inteiro seria
+// uma dependência para resolver o que meia dúzia de regex resolve.
+const TITULO_DA_NOTA = {
+  "SW-SUP-Usando-o-Basico": "Usando o Suplemento",
+  "SW-SUP-Especies": "Espécies",
+  "SW-SUP-Classes": "Classes Mundanas",
+  "SW-SUP-Forca": "O Sensível à Força",
+  "SW-SUP-Poderes-da-Forca": "Poderes da Força",
+  "SW-SUP-Sabre-e-Cristais": "Sabre de Luz e Cristais Kyber",
+  "SW-SUP-Senda-Mandaloriana": "Senda Mandaloriana",
+  "SW-SUP-Ordens-e-Ranks": "Ordens e Ranks da Força",
+  "SW-SUP-Equipamentos": "Equipamentos e Créditos",
+  "SW-SUP-Aparatos-e-Feitos": "Aparatos e Feitos Científicos",
+  "SW-SUP-Naves": "Naves e Veículos",
+  "SW-SUP-Combate-Tatico-de-Naves": "Combate Tático de Naves",
+  "SW-SUP-Bestiario": "Bestiário",
+  "SW-SUP-Secao-do-Mestre": "Seção do Mestre",
+};
+const tituloDaNota = (n) =>
+  TITULO_DA_NOTA[n.replace(/^SW-SDN-/, "SW-SUP-")] ?? n.replace(/^SW-S(UP|DN)-/, "").replace(/-/g, " ");
+
+export function md(s) {
+  return String(s ?? "")
+    .replace(/\[\[[^\]|]+\|([^\]]+)\]\]/g, "$1")
+    .replace(/\[\[([^\]]+)\]\]/g, (_, n) => tituloDaNota(n))
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/(^|[^*])\*(?!\s)(.+?)\*(?!\*)/g, "$1<em>$2</em>")
+    .replace(/`([^`]+)`/g, "<code>$1</code>");
+}
+
+// Tabela do cofre ({ cabecalho, linhas }) → HTML, com a legenda e a nota que a
+// acompanham no cofre, quando houver.
+export function tabelaHTML(titulo, t) {
+  const cab = t.cabecalho.map((c) => `<th>${md(c)}</th>`).join("");
+  const corpo = t.linhas.map((l) => `<tr>${l.map((c) => `<td>${md(c)}</td>`).join("")}</tr>`).join("");
+  return (
+    (titulo ? `<p><strong>${titulo}</strong></p>` : "") +
+    `<table><thead><tr>${cab}</tr></thead><tbody>${corpo}</tbody></table>` +
+    (t.legenda ? `<p><em>${md(t.legenda)}</em></p>` : "") +
+    (t.nota ? `<blockquote><p>${md(t.nota)}</p></blockquote>` : "")
+  );
+}
+
 // Slug simples para usar em seeds.
 export function slug(s) {
   return String(s)
@@ -356,7 +403,9 @@ export function classAbilityDoc(ability, folderId, seedPrefix, sort) {
       daily_uses: dailyUses(ability),
     },
     effects: [],
-    flags: {},
+    // `flags.spacedragon.habilidade` diz ao módulo Space Dragon qual habilidade
+    // do livro esta é, para ela ganhar os botões de teste (ver chassi.js lá).
+    flags: ability.flags ?? {},
     _stats: stats(),
     sort: sort,
     ownership: { default: 0 },
@@ -411,7 +460,10 @@ export function classDoc(cls, folderId, abilityUuids) {
       class_abilities: abilityUuids,
     },
     effects: [],
-    flags: {},
+    // `flags.spacedragon.chassi` diz ao módulo Space Dragon qual classe do
+    // livro está por trás desta ("Sensível à Força" é o Mentálico): é por ela
+    // que ele acha a tabela do alcance mental, dos PV e do dano crítico.
+    flags: cls.flags ?? {},
     _stats: stats(),
     sort: 0,
     ownership: { default: 0 },

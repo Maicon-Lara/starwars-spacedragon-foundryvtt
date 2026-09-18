@@ -1,0 +1,153 @@
+{
+  "folder": "knlgzJBXuoA1ma6r",
+  "name": "Sensível à Força",
+  "type": "class",
+  "_id": "iSVW2p6qYpPCi8Sx",
+  "img": "systems/olddragon2e/assets/icons/brain.svg",
+  "system": {
+    "flavor": "<p>Jedi, Sith, Nightsisters e místicos de fronteira.</p>",
+    "description": "<blockquote><p>Jedi, Sith, Nightsisters e místicos de fronteira. O Sensível à Força é o <strong>Mentálico</strong> do Space Dragon reskinado — os <strong>Poderes Mentais</strong> viram <strong>Poderes da Força</strong>, e as <strong>Grandezas</strong> (1ª a 10ª) medem o quão poderoso é cada poder. Corpo frágil (<strong>d4</strong>), mas a mente alcança o impossível. Por cima da classe vem o <strong>Caminho</strong> (Luz ou Sombra).</p></blockquote><blockquote><p><strong>A Força é regida por Intelecto.</strong> É o atributo nativo do Mentálico — e é justamente o que o guia OD2 traduz como <strong>Sabedoria</strong>. Então o \"Jedi sábio\" e a regra do livro são a <strong>mesma coisa</strong>: aqui não há adaptação nenhuma, é o Intelecto do SD puro.</p></blockquote><ul><li><strong>Atributo-chave:</strong> <strong>Intelecto</strong> — rege a chance de realizar/aprender poderes desconhecidos (<em>SD</em>, Tabela 1-4), o bônus de Alcance Mental e a <strong>JPM</strong>.</li><li><strong>Dado de Vida:</strong> d4 (o corpo do Mentálico). · <strong>Créditos iniciais:</strong> <strong>1d6 × 5.000 CR</strong>.</li><li><strong>Armas:</strong> o <strong>sabre de luz</strong> e <strong>pistolas</strong>. · <strong>Vestes:</strong> só <strong>leves</strong> (vestes pesadas ou escudos <strong>bloqueiam os poderes</strong>) — o <strong>Guardião</strong> é a exceção. · <strong>Aparatos:</strong> só utilitários.</li></ul><p><strong>Reputação (nível alto).</strong> Como toda classe do SD, no topo da carreira o Sensível é <strong>um nome</strong>. O que a fama <em>diz</em> depende do Caminho: o nome de um <strong>Mestre Jedi</strong> abre portas; o de um <strong>Lorde Sith</strong> também \"funciona\", mas por terror — e sob o Império pode ser rolado <em>contra</em> você.</p><p><strong>Tabela do Sensível à Força</strong></p><table><thead><tr><th>Nível</th><th>XP</th><th>DV</th><th>BA</th><th>JP</th><th>Alcance da Força</th><th>Grandeza-Limite</th></tr></thead><tbody><tr><td>1</td><td>0</td><td>1</td><td>0</td><td>14</td><td>1%</td><td>1ª</td></tr><tr><td>2</td><td>2.500</td><td>2</td><td>0</td><td>14</td><td>2%</td><td>—</td></tr><tr><td>3</td><td>5.000</td><td>3</td><td>+1</td><td>14</td><td>4%</td><td>2ª</td></tr><tr><td>4</td><td>10.000</td><td>4</td><td>+1</td><td>13</td><td>6%</td><td>—</td></tr><tr><td>5</td><td>20.000</td><td>5</td><td>+2</td><td>13</td><td>9%</td><td>3ª</td></tr><tr><td>6</td><td>40.000</td><td>6</td><td>+2</td><td>13</td><td>13%</td><td>—</td></tr><tr><td>7</td><td>80.000</td><td>7</td><td>+3</td><td>12</td><td>17%</td><td>4ª</td></tr><tr><td>8</td><td>160.000</td><td>8</td><td>+3</td><td>12</td><td>23%</td><td>—</td></tr><tr><td>9</td><td>310.000</td><td>9</td><td>+3</td><td>12</td><td>28%</td><td>5ª</td></tr><tr><td>10</td><td>460.000</td><td>+1</td><td>+4</td><td>11</td><td>36%</td><td>—</td></tr><tr><td>11</td><td>510.000</td><td>+1</td><td>+4</td><td>11</td><td>43%</td><td>6ª</td></tr><tr><td>12</td><td>660.000</td><td>+1</td><td>+4</td><td>11</td><td>53%</td><td>—</td></tr><tr><td>13</td><td>710.000</td><td>+1</td><td>+5</td><td>10</td><td>62%</td><td>7ª</td></tr><tr><td>14</td><td>860.000</td><td>+1</td><td>+5</td><td>10</td><td>74%</td><td>—</td></tr><tr><td>15</td><td>910.000</td><td>+2</td><td>+5</td><td>10</td><td>86%</td><td>8ª</td></tr><tr><td>16</td><td>1.060.000</td><td>+2</td><td>+6</td><td>9</td><td>100%</td><td>—</td></tr><tr><td>17</td><td>1.110.000</td><td>—</td><td>+6</td><td>9</td><td>115%</td><td>9ª</td></tr><tr><td>18</td><td>1.160.000</td><td>—</td><td>+6</td><td>9</td><td>131%</td><td>—</td></tr><tr><td>19</td><td>1.210.000</td><td>—</td><td>+6</td><td>9</td><td>139%</td><td>10ª</td></tr><tr><td>20</td><td>1.260.000</td><td>—</td><td>+6</td><td>9</td><td>150%</td><td>—</td></tr></tbody></table><p><strong>Especializações (5º nível):</strong> Guardião, Consular, Sentinela, Vidente, Artífice.</p>",
+    "hp": 4,
+    "high_level_hp_bonus": null,
+    "equipment_restrictions": {
+      "weapons": "O sabre de luz e pistolas.",
+      "armors": "Só leves (vestes pesadas ou escudos bloqueiam os poderes); o Guardião é a exceção.",
+      "magic_items": "Só utilitários."
+    },
+    "restrictions": {
+      "alignments": [],
+      "races": []
+    },
+    "levels": {
+      "1": {
+        "ba": 0,
+        "jp": 14
+      },
+      "2": {
+        "ba": 0,
+        "jp": 14,
+        "xp": 2500
+      },
+      "3": {
+        "ba": 1,
+        "jp": 14,
+        "xp": 5000
+      },
+      "4": {
+        "ba": 1,
+        "jp": 13,
+        "xp": 10000
+      },
+      "5": {
+        "ba": 2,
+        "jp": 13,
+        "xp": 20000
+      },
+      "6": {
+        "ba": 2,
+        "jp": 13,
+        "xp": 40000
+      },
+      "7": {
+        "ba": 3,
+        "jp": 12,
+        "xp": 80000
+      },
+      "8": {
+        "ba": 3,
+        "jp": 12,
+        "xp": 160000
+      },
+      "9": {
+        "ba": 3,
+        "jp": 12,
+        "xp": 310000
+      },
+      "10": {
+        "ba": 4,
+        "jp": 11,
+        "xp": 460000
+      },
+      "11": {
+        "ba": 4,
+        "jp": 11,
+        "xp": 510000
+      },
+      "12": {
+        "ba": 4,
+        "jp": 11,
+        "xp": 660000
+      },
+      "13": {
+        "ba": 5,
+        "jp": 10,
+        "xp": 710000
+      },
+      "14": {
+        "ba": 5,
+        "jp": 10,
+        "xp": 860000
+      },
+      "15": {
+        "ba": 5,
+        "jp": 10,
+        "xp": 910000
+      },
+      "16": {
+        "ba": 6,
+        "jp": 9,
+        "xp": 1060000
+      },
+      "17": {
+        "ba": 6,
+        "jp": 9,
+        "xp": 1110000
+      },
+      "18": {
+        "ba": 6,
+        "jp": 9,
+        "xp": 1160000
+      },
+      "19": {
+        "ba": 6,
+        "jp": 9,
+        "xp": 1210000
+      },
+      "20": {
+        "ba": 6,
+        "jp": 9,
+        "xp": 1260000
+      }
+    },
+    "class_abilities": [
+      "Compendium.starwars-sd.starwars-sd-classes.Item.ILrnJdDIgky1BV6e",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.9Fz9ogqj3P6d5vpH",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.xrUeP0qvRJ38gYQC",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.ExwxoQTCL8E8ifLi",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.8ASJGHviDKmp5ru0",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.aNFKWkNuvhiYP7ig"
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "spacedragon": {
+      "chassi": "Mentálico"
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!iSVW2p6qYpPCi8Sx"
+}

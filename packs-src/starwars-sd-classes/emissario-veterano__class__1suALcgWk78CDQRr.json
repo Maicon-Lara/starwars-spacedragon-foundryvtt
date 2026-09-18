@@ -1,0 +1,152 @@
+{
+  "folder": "apPGrIzXSjXs9ye3",
+  "name": "Emissário — Veterano",
+  "type": "class",
+  "_id": "1suALcgWk78CDQRr",
+  "img": "systems/olddragon2e/assets/icons/melee.svg",
+  "system": {
+    "flavor": "<p><em>o diplomata/senador/capitão-líder</em></p>",
+    "description": "<p><em>o diplomata/senador/capitão-líder</em></p><p>Especialização de Veterano, para Afiliação <strong>Leal</strong>, escolhida no <strong>5º nível</strong>. Mantém tudo o que o Veterano já lhe deu, e as habilidades da classe seguem na ficha.</p><p><strong>Progressão do Emissário — do 5º ao 20º nível</strong></p><table><thead><tr><th>Nv</th><th>DV</th><th>BA</th><th>JP</th><th>Pilotar</th><th>Desarmar</th><th>Crítico</th><th>Reação ×</th><th>Salário/mês</th></tr></thead><tbody><tr><td><strong>5</strong></td><td>5</td><td>+5</td><td>15</td><td>84%</td><td>40%</td><td>⊘ ×2</td><td>×2</td><td>$100.000</td></tr><tr><td><strong>6</strong></td><td>6</td><td>+6</td><td>15</td><td>85%</td><td>45%</td><td>⊘ ×2</td><td>×3</td><td>$120.000</td></tr><tr><td><strong>7</strong></td><td>7</td><td>+7/+1</td><td>14</td><td>86%</td><td>50%</td><td>⊘ ×2</td><td>×3</td><td>$140.000</td></tr><tr><td><strong>8</strong></td><td>8</td><td>+8/+2</td><td>14</td><td>87%</td><td>55%</td><td>⊘ ×2</td><td>×3</td><td>$160.000</td></tr><tr><td><strong>9</strong></td><td>9</td><td>+9/+3</td><td>14</td><td>88%</td><td>60%</td><td>⊘ ×2</td><td>×3</td><td>$180.000</td></tr><tr><td><strong>10</strong></td><td>+2</td><td>+10/+4</td><td>13</td><td>89%</td><td>⊘ 65%</td><td>⊘ ×2</td><td>×3</td><td>$200.000</td></tr><tr><td><strong>11</strong></td><td>+2</td><td>+10/+4</td><td>13</td><td>90%</td><td>⊘ 65%</td><td>⊘ ×2</td><td>×3</td><td>$220.000</td></tr><tr><td><strong>12</strong></td><td>+4</td><td>+11/+5</td><td>13</td><td>91%</td><td>⊘ 65%</td><td>⊘ ×2</td><td>×4</td><td>$240.000</td></tr><tr><td><strong>13</strong></td><td>+4</td><td>+11/+5</td><td>12</td><td>92%</td><td>⊘ 65%</td><td>⊘ ×2</td><td>×4</td><td>$260.000</td></tr><tr><td><strong>14</strong></td><td>+5</td><td>+12/+6</td><td>12</td><td>93%</td><td>⊘ 65%</td><td>⊘ ×2</td><td>×4</td><td>$280.000</td></tr><tr><td><strong>15</strong></td><td>+5</td><td>+12/+6</td><td>12</td><td>94%</td><td>⊘ 65%</td><td>⊘ ×2</td><td>×4</td><td>$300.000</td></tr><tr><td><strong>16</strong></td><td>+6</td><td>+13/+7</td><td>11</td><td>95%</td><td>⊘ 65%</td><td>⊘ ×2</td><td>×4</td><td>$320.000</td></tr><tr><td><strong>17</strong></td><td>+6</td><td>+13/+7</td><td>11</td><td>96%</td><td>⊘ 65%</td><td>⊘ ×2</td><td>×4</td><td>$340.000</td></tr><tr><td><strong>18</strong></td><td>+7</td><td>+14/+8</td><td>11</td><td>97%</td><td>⊘ 65%</td><td>⊘ ×2</td><td>×5</td><td>$360.000</td></tr><tr><td><strong>19</strong></td><td>+7</td><td>+14/+8</td><td>10</td><td>98%</td><td>⊘ 65%</td><td>⊘ ×2</td><td>×5</td><td>$380.000</td></tr><tr><td><strong>20</strong></td><td>+8</td><td>+15/+9</td><td>10</td><td>99%</td><td>⊘ 65%</td><td>⊘ ×2</td><td>×5</td><td>$400.000</td></tr></tbody></table><p><em>⊘ = congelado, repete o valor em que travou.</em></p><blockquote><p>A progressão do crítico não morre: ela vira o multiplicador do seu ajuste de reação.</p></blockquote><blockquote><p><em>Leia Organa, Bail, Mon Mothma, um capitão contrabandista que virou general da Aliança.</em></p></blockquote><p><strong>Do 1º ao 4º nível: a tabela do Veterano</strong></p><table><thead><tr><th>Nível</th><th>XP</th><th>DV</th><th>BA</th><th>JP</th><th>Pilotar</th><th>Desarmar/Subjugar</th><th>Crítico</th></tr></thead><tbody><tr><td>1</td><td>0</td><td>1</td><td>+1</td><td>16</td><td>80%</td><td>20%</td><td>×2</td></tr><tr><td>2</td><td>2.000</td><td>2</td><td>+2</td><td>16</td><td>81%</td><td>25%</td><td>×2</td></tr><tr><td>3</td><td>4.000</td><td>3</td><td>+3</td><td>16</td><td>82%</td><td>30%</td><td>×2</td></tr><tr><td>4</td><td>8.000</td><td>4</td><td>+4</td><td>15</td><td>83%</td><td>35%</td><td>×2</td></tr></tbody></table>",
+    "hp": 10,
+    "high_level_hp_bonus": null,
+    "equipment_restrictions": {
+      "weapons": "Qualquer tipo.",
+      "armors": "Qualquer veste, e escudos.",
+      "magic_items": "Aparatos defensivos e utilitários (não ofensivos)."
+    },
+    "restrictions": {
+      "alignments": [],
+      "races": []
+    },
+    "levels": {
+      "1": {
+        "ba": 1,
+        "jp": 16
+      },
+      "2": {
+        "ba": 2,
+        "jp": 16,
+        "xp": 2000
+      },
+      "3": {
+        "ba": 3,
+        "jp": 16,
+        "xp": 4000
+      },
+      "4": {
+        "ba": 4,
+        "jp": 15,
+        "xp": 8000
+      },
+      "5": {
+        "ba": 5,
+        "jp": 15,
+        "xp": 16000
+      },
+      "6": {
+        "ba": 6,
+        "jp": 15,
+        "xp": 32000
+      },
+      "7": {
+        "ba": 7,
+        "jp": 14,
+        "xp": 64000
+      },
+      "8": {
+        "ba": 8,
+        "jp": 14,
+        "xp": 128000
+      },
+      "9": {
+        "ba": 9,
+        "jp": 14,
+        "xp": 256000
+      },
+      "10": {
+        "ba": 10,
+        "jp": 13,
+        "xp": 304000
+      },
+      "11": {
+        "ba": 10,
+        "jp": 13,
+        "xp": 408000
+      },
+      "12": {
+        "ba": 11,
+        "jp": 13,
+        "xp": 516000
+      },
+      "13": {
+        "ba": 11,
+        "jp": 12,
+        "xp": 632000
+      },
+      "14": {
+        "ba": 12,
+        "jp": 12,
+        "xp": 704000
+      },
+      "15": {
+        "ba": 12,
+        "jp": 12,
+        "xp": 808000
+      },
+      "16": {
+        "ba": 13,
+        "jp": 11,
+        "xp": 916000
+      },
+      "17": {
+        "ba": 13,
+        "jp": 11,
+        "xp": 1032000
+      },
+      "18": {
+        "ba": 14,
+        "jp": 11,
+        "xp": 1064000
+      },
+      "19": {
+        "ba": 14,
+        "jp": 10,
+        "xp": 1128000
+      },
+      "20": {
+        "ba": 15,
+        "jp": 10,
+        "xp": 1256000
+      }
+    },
+    "class_abilities": [
+      "Compendium.starwars-sd.starwars-sd-classes.Item.OEQzEHVCXzPoR1pf",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.9634BG0bJW8AESYi",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.rvAqGhJ8uSEhbxJR",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.f8hisFoOnx4vd66b",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.jg4RRPdY0dlG6aU1"
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "spacedragon": {
+      "chassi": "Cosmonauta"
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!1suALcgWk78CDQRr"
+}

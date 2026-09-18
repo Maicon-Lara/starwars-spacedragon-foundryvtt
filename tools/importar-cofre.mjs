@@ -1,0 +1,234 @@
+// Tira do cofre o que é longo demais para digitar e grava em tools/data/:
+//
+//   progressoes.mjs     as tabelas de progressão das classes e especializações
+//   textos-do-cofre.mjs as seções de regra que viram páginas de journal, já
+//                       em HTML
+//
+// ── POR QUE UM IMPORTADOR, E NÃO DIGITAR ────────────────────────────────────
+//
+// São 20 tabelas de 16 a 20 linhas, e páginas de regra com tabela e lista.
+// Digitar é onde nasce o erro que ninguém vê — um "13" onde era "12" na JP do
+// 11º nível só aparece na mesa. Ler do cofre copia exatamente o que está lá.
+//
+// ── POR QUE O RESULTADO É VERSIONADO ────────────────────────────────────────
+//
+// O build não lê o cofre: o cofre é da máquina do autor e não existe num
+// clone. Este script roda quando o cofre muda; o build lê os arquivos gerados.
+// O cofre é SÓ LEITURA — nada aqui escreve nele.
+//
+// Uso: node tools/importar-cofre.mjs
+
+import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { md } from "./lib.mjs";
+
+const ROOT = path.resolve(fileURLToPath(import.meta.url), "../..");
+const COFRE = path.join(os.homedir(), "Documents", "Ekhoria", "20 Space Dragon", "Space Dragon Suplemento");
+const DESTINO = path.join(ROOT, "tools", "data", "progressoes.mjs");
+const DESTINO_TEXTOS = path.join(ROOT, "tools", "data", "textos-do-cofre.mjs");
+
+const ler = (nota) => fs.readFileSync(path.join(COFRE, `${nota}.md`), "utf8").replace(/\r\n/g, "\n");
+
+/** "| a | b |" → ["a", "b"]. */
+const celulas = (linha) => linha.trim().replace(/^\|/, "").replace(/\|$/, "").split("|").map((c) => c.trim());
+
+/** A primeira tabela markdown a partir da posição dada. */
+function tabelaApos(texto, inicio) {
+  const linhas = texto.slice(inicio).split("\n");
+  const i = linhas.findIndex((l) => l.trim().startsWith("|"));
+  if (i < 0) throw new Error(`nenhuma tabela depois da posição ${inicio}`);
+  const bloco = [];
+  for (const l of linhas.slice(i)) {
+    if (!l.trim().startsWith("|")) break;
+    bloco.push(l);
+  }
+  const [cab, , ...corpo] = bloco;
+  return { cabecalho: celulas(cab), linhas: corpo.map(celulas) };
+}
+
+/** A tabela logo depois de um título exato. */
+function tabelaDoTitulo(texto, titulo) {
+  const i = texto.indexOf(titulo);
+  if (i < 0) throw new Error(`título não encontrado: ${titulo}`);
+  return tabelaApos(texto, i);
+}
+
+/** O bloco <!-- tabela-spec: X --> inteiro: tabela, legenda e nota. */
+function tabelaDaSpec(texto, nome) {
+  const abre = `<!-- tabela-spec: ${nome} -->`;
+  const i = texto.indexOf(abre);
+  const f = texto.indexOf("<!-- /tabela-spec -->", i);
+  if (i < 0 || f < 0) throw new Error(`bloco de especialização não encontrado: ${nome}`);
+  const bloco = texto.slice(i + abre.length, f);
+  const t = tabelaApos(bloco, 0);
+  const depois = bloco.split("\n").filter((l) => l.trim() && !l.trim().startsWith("|"));
+  // A primeira linha é o título ("**Progressão do X** — …"); o resto, legenda
+  // e nota ("> …").
+  const legenda = depois.filter((l) => !l.startsWith("**Progressão") && !l.startsWith(">")).join(" ").trim();
+  const nota = depois.filter((l) => l.startsWith(">")).map((l) => l.replace(/^>\s?/, "")).join(" ").trim();
+  return { ...t, legenda, nota };
+}
+
+const classes = ler("SW-SUP-Classes");
+const forca = ler("SW-SUP-Forca");
+
+const BASE = {
+  Veterano: tabelaDoTitulo(classes, "# Veterano"),
+  Operativo: tabelaDoTitulo(classes, "# Operativo"),
+  "Técnico": tabelaDoTitulo(classes, "# Técnico"),
+  "Sensível à Força": tabelaDoTitulo(forca, "### Tabela do Sensível à Força"),
+};
+
+const SPECS = {
+  Veterano: ["Mercenário", "Caçador de Recompensas", "Emissário"],
+  Operativo: ["Espião", "Sabotador", "Assassino", "Contrabandista"],
+  "Técnico": ["Médico de Campo", "Engenheiro", "Slicer"],
+  "Sensível à Força": ["Guardião", "Consular", "Sentinela", "Vidente", "Artífice"],
+};
+
+const ESPECIALIZACOES = {};
+for (const [classe, nomes] of Object.entries(SPECS)) {
+  const fonte = classe === "Sensível à Força" ? forca : classes;
+  for (const nome of nomes) ESPECIALIZACOES[nome] = { classe, ...tabelaDaSpec(fonte, nome) };
+}
+
+// Sanidade: toda base tem 20 níveis, toda especialização do 5º ao 20º.
+for (const [n, t] of Object.entries(BASE)) {
+  if (t.linhas.length !== 20) throw new Error(`${n}: ${t.linhas.length} linhas, esperava 20`);
+}
+for (const [n, t] of Object.entries(ESPECIALIZACOES)) {
+  if (t.linhas.length !== 16) throw new Error(`${n}: ${t.linhas.length} linhas, esperava 16 (5º ao 20º)`);
+}
+
+const js = [
+  "// GERADO POR tools/importar-cofre.mjs — NÃO EDITE À MÃO.",
+  "// Fonte: o cofre, Documents\\Ekhoria\\20 Space Dragon\\Space Dragon Suplemento\\",
+  "//   SW-SUP-Classes.md e SW-SUP-Forca.md.",
+  "//",
+  "// As células ficam como TEXTO, com a marcação do cofre (**negrito**, ⊘ de",
+  "// congelado): não são todas número (\"+7/+1\", \"×3\", \"⊘ 84%\"), e converter",
+  "// perderia justamente o que a tabela diz.",
+  "",
+  `export const BASE = ${JSON.stringify(BASE, null, 2)};`,
+  "",
+  `export const ESPECIALIZACOES = ${JSON.stringify(ESPECIALIZACOES, null, 2)};`,
+  "",
+].join("\n");
+
+fs.writeFileSync(DESTINO, js, "utf8");
+console.log(`  ✔ ${Object.keys(BASE).length} tabelas-base e ${Object.keys(ESPECIALIZACOES).length} de especialização → tools/data/progressoes.mjs`);
+
+// ── Seções de regra → HTML ──────────────────────────────────────────────────
+//
+// Um conversor de markdown de BLOCO para o subconjunto que o cofre usa:
+// títulos, parágrafos, listas (com linha de continuação recuada), listas
+// numeradas, citações e tabelas. O resto — comentário HTML, régua `---` — some.
+// A marcação de LINHA é a do md() da lib, a mesma dos dados escritos à mão.
+
+function blocos(texto) {
+  const linhas = texto.split("\n");
+  const saida = [];
+  let i = 0;
+  const vazia = (l) => !l || !l.trim();
+  while (i < linhas.length) {
+    const l = linhas[i];
+    if (vazia(l) || /^---+\s*$/.test(l) || /^<!--.*-->\s*$/.test(l.trim())) { i++; continue; }
+
+    const h = l.match(/^(#{2,4})\s+(.*)$/);
+    if (h) { saida.push(`<h${h[1].length}>${md(h[2])}</h${h[1].length}>`); i++; continue; }
+
+    if (l.trim().startsWith("|")) {
+      const bloco = [];
+      while (i < linhas.length && linhas[i].trim().startsWith("|")) bloco.push(linhas[i++]);
+      const [cab, , ...corpo] = bloco;
+      const th = celulas(cab);
+      const temCab = th.some((c) => c);
+      saida.push(
+        "<table>" +
+          (temCab ? `<thead><tr>${th.map((c) => `<th>${md(c)}</th>`).join("")}</tr></thead>` : "") +
+          `<tbody>${corpo.map((r) => `<tr>${celulas(r).map((c) => `<td>${md(c)}</td>`).join("")}</tr>`).join("")}</tbody>` +
+          "</table>"
+      );
+      continue;
+    }
+
+    if (l.startsWith(">")) {
+      const bloco = [];
+      while (i < linhas.length && linhas[i].startsWith(">")) bloco.push(linhas[i++].replace(/^>\s?/, ""));
+      saida.push(`<blockquote>${blocos(bloco.join("\n"))}</blockquote>`);
+      continue;
+    }
+
+    const itemLista = /^(\s*)([-*]|\d+\.)\s+/;
+    if (itemLista.test(l)) {
+      const ordenada = /^\s*\d+\./.test(l);
+      const itens = [];
+      while (i < linhas.length && !vazia(linhas[i])) {
+        const atual = linhas[i];
+        if (itemLista.test(atual)) itens.push(atual.replace(itemLista, ""));
+        else if (/^\s+\S/.test(atual) && itens.length) itens[itens.length - 1] += " " + atual.trim();
+        else break;
+        i++;
+      }
+      const tag = ordenada ? "ol" : "ul";
+      saida.push(`<${tag}>${itens.map((t) => `<li>${md(t)}</li>`).join("")}</${tag}>`);
+      continue;
+    }
+
+    const par = [];
+    while (
+      i < linhas.length && !vazia(linhas[i]) && !/^(#{2,4}\s|>|\||---)/.test(linhas[i]) && !itemLista.test(linhas[i])
+    ) par.push(linhas[i++].trim());
+    saida.push(`<p>${md(par.join(" "))}</p>`);
+  }
+  return saida.join("");
+}
+
+/**
+ * O conteúdo de uma seção "## Título", até a próxima "## " ou o rodapé de
+ * crédito. O título em si fica de fora: ele vira o nome da página.
+ */
+function secao(texto, titulo) {
+  const linhas = texto.split("\n");
+  const i = linhas.findIndex((l) => l.trim() === `## ${titulo}`);
+  if (i < 0) throw new Error(`seção não encontrada: ## ${titulo}`);
+  const fim = linhas.findIndex((l, j) => j > i && (/^#{1,2}\s/.test(l) || /^\*Star Wars — suplemento/.test(l)));
+  return blocos(linhas.slice(i + 1, fim < 0 ? undefined : fim).join("\n"));
+}
+
+// Quais seções de quais notas viram página. Nota nova entra aqui.
+const SECOES = {
+  "SW-SUP-Forca": [
+    "O Caminho: Luz, Sombra e o meio",
+    "O Caminho Cinza",
+    "Corrupção — Queda e Redenção",
+    "A Tentação — a Corrupção como moeda",
+    "Eco da Senda — o Alcance que volta",
+  ],
+};
+
+const TEXTOS = {};
+for (const [nota, titulos] of Object.entries(SECOES)) {
+  const texto = ler(nota);
+  TEXTOS[nota] = {};
+  for (const t of titulos) TEXTOS[nota][t] = secao(texto, t);
+}
+
+fs.writeFileSync(
+  DESTINO_TEXTOS,
+  [
+    "// GERADO POR tools/importar-cofre.mjs — NÃO EDITE À MÃO.",
+    "// Fonte: o cofre, Documents\\Ekhoria\\20 Space Dragon\\Space Dragon Suplemento\\",
+    "//",
+    "// Seções de regra das notas SW-SUP, já em HTML, por nota e por título. Os",
+    "// arquivos de dados montam os journals com elas.",
+    "",
+    `export const TEXTOS = ${JSON.stringify(TEXTOS, null, 2)};`,
+    "",
+  ].join("\n"),
+  "utf8"
+);
+const nSecoes = Object.values(TEXTOS).reduce((n, s) => n + Object.keys(s).length, 0);
+console.log(`  ✔ ${nSecoes} seções de ${Object.keys(TEXTOS).length} nota(s) → tools/data/textos-do-cofre.mjs`);

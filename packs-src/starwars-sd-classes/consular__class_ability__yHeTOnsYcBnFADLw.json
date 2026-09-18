@@ -1,0 +1,50 @@
+{
+  "folder": "ooAXCSoF9Pmo8MFk",
+  "name": "Consular",
+  "type": "class_ability",
+  "_id": "yHeTOnsYcBnFADLw",
+  "img": "systems/olddragon2e/assets/icons/kit.svg",
+  "system": {
+    "description": "<ul><li><code>5º</code> ganha a <strong>4ª Grandeza direto</strong> (englobando a 3ª) e <strong>+1 Grandeza a cada 2 níveis</strong> (chega à 10ª no 17º); a <strong>BA congela</strong> no 5º.</li><li><code>10º</code> a <strong>JP congela</strong>; seu Alcance conta como o de um Sensível <strong>+2 níveis</strong> (100% já no 14º); começa a <strong>perder 1-2 PV</strong> a cada nível que sobe.</li><li><code>17º+</code> a cada subida de nível, faça <strong>JPF ou perca 1 de Constituição</strong> (permanente).</li><li><code>20º</code> <strong>JPF ou morre</strong>; Alcance a <strong>200%</strong>; realiza qualquer poder <strong>sem rolagem</strong>.</li></ul>",
+    "level": 5,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!yHeTOnsYcBnFADLw"
+}

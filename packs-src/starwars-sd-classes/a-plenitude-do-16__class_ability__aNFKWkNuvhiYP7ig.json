@@ -1,0 +1,50 @@
+{
+  "folder": "knlgzJBXuoA1ma6r",
+  "name": "A Plenitude do 16º",
+  "type": "class_ability",
+  "_id": "aNFKWkNuvhiYP7ig",
+  "img": "systems/olddragon2e/assets/icons/kit.svg",
+  "system": {
+    "description": "<p><strong>A plenitude do 16º.</strong> Ao chegar a <strong>100% de Alcance</strong> no 16º nível, o Mentálico atinge a plenitude mental — e o <strong>corpo para de evoluir</strong>: BA, JP e PV <strong>congelam</strong> a partir daí (por isso o DV some do 17º em diante). A mente segue crescendo até os 150% do 20º.</p>",
+    "level": 16,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 600000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!aNFKWkNuvhiYP7ig"
+}

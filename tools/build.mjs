@@ -23,11 +23,13 @@ import { compilePack } from "@foundryvtt/foundryvtt-cli";
 import {
   folderDoc, aninhaPastas, classDoc, classAbilityDoc, raceDoc, raceAbilityDoc,
   weaponDoc, armorDoc, miscDoc, spellDoc, journalDoc, macroDoc, rollTableDoc, itemUuid, writeSource, pintaPastas,
+  md, tabelaHTML,
 } from "./lib.mjs";
 import { monsterDoc } from "./lib-actors.mjs";
 
 import { classes } from "./data/classes.mjs";
-import { variantes } from "./data/variantes.mjs";
+import { variantes, CAMINHO_E_CORPO } from "./data/variantes.mjs";
+import { BASE, ESPECIALIZACOES } from "./data/progressoes.mjs";
 import { especies, especieAbilitiesAvulsas } from "./data/especies.mjs";
 import { classAbilitiesAvulsas, origensAvulsas } from "./data/avulsas.mjs";
 import { categorias } from "./data/equipamentos.mjs";
@@ -68,24 +70,112 @@ function agrupaAvulsas(docs, lista, seed, build) {
   });
 }
 
-// ── Pack de classes (classes + class_abilities, agrupadas em folders) ──
+// ── As tabelas de progressão viram `levels` ────────────────────────────────
+//
+// O `levels` do OD2 guarda três números por nível: xp, ba e jp. A tabela do
+// cofre tem mais que isso ("+7/+1", "⊘ 13", "**+5**"), e o resto vai inteiro
+// na descrição — aqui só se tira o número que o sistema sabe ler.
+
+/** "**+7/+1**" → 7; "⊘ 13" → 13; "1.256.000" → 1256000. */
+function numero(celula) {
+  const limpo = String(celula ?? "").replace(/\*\*/g, "").replace(/⊘/g, "");
+  const m = limpo.match(/-?\d[\d.]*/);
+  return m ? Number(m[0].replace(/\./g, "")) : 0;
+}
+
+const coluna = (t, ...nomes) => t.cabecalho.findIndex((h) => nomes.includes(h));
+
+/**
+ * O `levels` de uma classe. A especialização começa no 5º: do 1º ao 4º vale a
+ * tabela da base, e do 5º em diante a BA e a JP da especialização, QUANDO a
+ * tabela dela tem essas colunas. As do Operativo não têm, porque as trilhas
+ * dele só mexem nos talentos — e aí fica a da base.
+ */
+function levelsDe(base, spec) {
+  const [iXp, iBa, iJp] = [coluna(base, "XP"), coluna(base, "BA"), coluna(base, "JP")];
+  const out = {};
+  base.linhas.forEach((l, i) => {
+    const xp = numero(l[iXp]);
+    // Mesmo formato do módulo Space Dragon: sem `xp` no 1º nível, que é zero.
+    out[String(i + 1)] = { ba: numero(l[iBa]), jp: numero(l[iJp]), ...(xp ? { xp } : {}) };
+  });
+  if (spec) {
+    const [sNv, sBa, sJp] = [coluna(spec, "Nv"), coluna(spec, "BA"), coluna(spec, "JP")];
+    for (const l of spec.linhas) {
+      const n = String(numero(l[sNv]));
+      if (sBa >= 0) out[n].ba = numero(l[sBa]);
+      if (sJp >= 0) out[n].jp = numero(l[sJp]);
+    }
+  }
+  return out;
+}
+
+/** Texto do cofre com parágrafos separados por linha em branco → <p>s. */
+const paragrafos = (s) => (s ? s.split(/\n\n+/).map((x) => `<p>${md(x)}</p>`).join("") : "");
+
+// ── Pack de classes ────────────────────────────────────────────────────────
+//
+// Uma pasta por classe-base, e dentro dela uma por especialização:
+// "Veterano — Mercenário" vira Veterano › Mercenário pelo aninhaPastas().
+//
+// A especialização é um item de classe PRÓPRIO que herda as habilidades da
+// base (os mesmos UUIDs, sem cópia) e acrescenta as suas. No item, a
+// especialização vem primeiro — "Mercenário — Veterano" —, que é como o
+// módulo Space Dragon faz e o que se procura numa lista. O _id é semeado pela
+// forma "Classe — Especialização", a da pasta.
 function buildClassesDocs() {
   const docs = [];
-  for (const cls of [...classes, ...variantes]) {
-    // O item da classe mostra só a especialização; a pasta, o nome completo
-    // ("Sensível à Força — Guardião"), que é o que aninhaPastas() usa para
-    // montar Sensível à Força › Guardião. Os _id são semeados pelo completo.
-    const nomeCompleto = cls.nome;
-    const nomeCurto = nomeCompleto.split(" — ").pop();
-    const folder = folderDoc(nomeCompleto, "Item", "classes");
+  for (const cls of classes) {
+    const tabela = BASE[cls.nome];
+    if (!tabela) throw new Error(`sem tabela de progressão para ${cls.nome}`);
+
+    const folder = folderDoc(cls.nome, "Item", "classes");
     docs.push(folder);
-    const abilityUuids = [];
-    cls.habilidades.forEach((ab, i) => {
-      const doc = classAbilityDoc(ab, folder._id, nomeCompleto, (i + 1) * 100000);
-      docs.push(doc);
-      abilityUuids.push(itemUuid(CLASSES_PACK, doc._id));
-    });
-    docs.push(classDoc({ ...cls, nome: nomeCurto, seedNome: nomeCompleto }, folder._id, abilityUuids));
+    const habsBase = cls.habilidades.map((ab, i) => classAbilityDoc(ab, folder._id, cls.nome, (i + 1) * 100000));
+    docs.push(...habsBase);
+    const uuidsBase = habsBase.map((h) => itemUuid(CLASSES_PACK, h._id));
+
+    const specs = variantes.filter((v) => v.classe === cls.nome);
+    const descricaoBase =
+      cls.descricao +
+      tabelaHTML(`Tabela do ${cls.nome}`, tabela) +
+      (cls.notaTabela ? `<p>${md(cls.notaTabela)}</p>` : "") +
+      `<p><strong>Especializações (5º nível):</strong> ${specs.map((v) => v.nome).join(", ")}.</p>`;
+    docs.push(classDoc({ ...cls, descricao: descricaoBase, levels: levelsDe(tabela) }, folder._id, uuidsBase));
+
+    for (const v of specs) {
+      const tSpec = ESPECIALIZACOES[v.nome];
+      if (!tSpec) throw new Error(`sem tabela de progressão para ${v.nome}`);
+      const seedNome = `${cls.nome} — ${v.nome}`;
+      const pasta = folderDoc(seedNome, "Item", "classes");
+      docs.push(pasta);
+      const habsSpec = v.habilidades.map((ab, i) => classAbilityDoc(ab, pasta._id, seedNome, (i + 1) * 100000));
+      docs.push(...habsSpec);
+
+      const quem = v.afiliacao
+        ? `Especialização de ${cls.nome}, para Afiliação <strong>${v.afiliacao}</strong>`
+        : `Senda do ${cls.nome}`;
+      const deOnde = v.base ? ` — <em>base: ${v.base}</em>` : v.origem ? ` — <em>${v.origem}</em>` : "";
+      const descricao =
+        `<p><em>${v.frase}</em>${deOnde}</p>` +
+        `<p>${quem}, escolhida no <strong>5º nível</strong>. Mantém tudo o que o ${cls.nome} já lhe deu, e as habilidades da classe seguem na ficha.</p>` +
+        paragrafos(v.intro) +
+        (cls.nome === "Sensível à Força" ? CAMINHO_E_CORPO : "") +
+        tabelaHTML(`Progressão do ${v.nome} — do 5º ao 20º nível`, tSpec) +
+        `<blockquote>${paragrafos(v.exemplos)}</blockquote>` +
+        paragrafos(v.extra) +
+        tabelaHTML(`Do 1º ao 4º nível: a tabela do ${cls.nome}`, { ...tabela, linhas: tabela.linhas.slice(0, 4) });
+
+      docs.push(classDoc({
+        ...cls,
+        nome: `${v.nome} — ${cls.nome}`,
+        seedNome,
+        flavor: `<p><em>${v.frase}</em></p>`,
+        descricao,
+        equipment_restrictions: { ...cls.equipment_restrictions, ...(v.restricoes ?? {}) },
+        levels: levelsDe(tabela, tSpec),
+      }, pasta._id, [...uuidsBase, ...habsSpec.map((h) => itemUuid(CLASSES_PACK, h._id))]));
+    }
   }
   // Formas de Sabre e a Senda Mandaloriana: habilidades escolhidas à parte.
   agrupaAvulsas(docs, classAbilitiesAvulsas, "classes", classAbilityDoc);

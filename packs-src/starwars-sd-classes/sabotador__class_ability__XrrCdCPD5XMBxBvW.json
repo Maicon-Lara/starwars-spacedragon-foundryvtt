@@ -1,0 +1,50 @@
+{
+  "folder": "MUhBVJTAHfUC55UA",
+  "name": "Sabotador",
+  "type": "class_ability",
+  "_id": "XrrCdCPD5XMBxBvW",
+  "img": "systems/olddragon2e/assets/icons/kit.svg",
+  "system": {
+    "description": "<p>Ganha um <strong>bônus em Sabotagem</strong> igual à diferença entre a % de Escalar e 100% (ex.: no 5º, Escalar 84% → <strong>+16%</strong>). O bônus <strong>não é cumulativo</strong>: a cada nível ele é recalculado sobre a % da tabela, resultando numa porcentagem nova. Para de progredir em <strong>Furtar</strong> e <strong>Ataque Furtivo</strong>.</p><ul><li><code>10º</code> para de progredir em <strong>todo talento exceto Sabotagem</strong>, e passa a <strong>criar armadilhas</strong> com as máquinas que sabota: a chance de <strong>desarmá-las</strong> é inversa à sua % de Sabotagem (quanto melhor ele sabota, mais difícil desfazer sua obra). No 10º isso dá <strong>29% de desarme</strong>, contra os 71% de sabotagem já com o bônus e sem contar atributo. <em>(O livro imprime 27%/73% neste exemplo, mas isso só fecha com a linha do 11º nível: no 10º a Sabotagem é 60% e Escalar 89%, então o bônus é +11% e o total 71%. A fórmula confere com o exemplo do 5º nível, que o próprio livro dá: Escalar 84% → +16%.)</em></li><li><code>20º</code> Sabota a <strong>99%</strong>; armadilhas dele têm <strong>1% de chance de desarme</strong>.</li></ul>",
+    "level": 5,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!XrrCdCPD5XMBxBvW"
+}

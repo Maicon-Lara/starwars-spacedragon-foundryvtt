@@ -1,0 +1,50 @@
+{
+  "folder": "3a81P6ZblhlJywz2",
+  "name": "Engenheiro",
+  "type": "class_ability",
+  "_id": "LE2uX8JCuhaUrjwB",
+  "img": "systems/olddragon2e/assets/icons/kit.svg",
+  "system": {
+    "description": "<p>Salta para o <strong>4º Nível Tecnológico</strong> já no 5º nível e ganha <strong>+1 NT a cada 2 níveis</strong> (chega ao 10º NT no 17º). O Crédito Tecnológico vira <strong>custo adicional</strong> — inventar do zero sai mais caro que comprar pronto.</p><ul><li><code>10º</code> o prejuízo <strong>dobra</strong>, mas ele passa a <strong>combinar até 3 aparatos</strong> num só engenho.</li><li><code>20º</code> cria <strong>qualquer</strong> máquina e realiza <strong>qualquer</strong> feito, a custo dobrado, independente das condições.</li></ul>",
+    "level": 5,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!LE2uX8JCuhaUrjwB"
+}

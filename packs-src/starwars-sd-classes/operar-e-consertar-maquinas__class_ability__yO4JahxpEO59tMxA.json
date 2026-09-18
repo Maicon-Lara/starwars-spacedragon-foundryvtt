@@ -1,0 +1,54 @@
+{
+  "folder": "6zInFMN2YAsqAN8M",
+  "name": "Operar e Consertar Máquinas",
+  "type": "class_ability",
+  "_id": "yO4JahxpEO59tMxA",
+  "img": "systems/olddragon2e/assets/icons/kit.svg",
+  "system": {
+    "description": "<p><strong>Operar e Consertar Máquinas (%):</strong> opera e conserta máquinas; pode <strong>pilotar naves</strong> (menos eficiente que o Veterano). Máquinas avariadas precisam ser consertadas antes de usar.</p>",
+    "level": 1,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {
+    "spacedragon": {
+      "habilidade": "Operar Máquinas"
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!yO4JahxpEO59tMxA"
+}

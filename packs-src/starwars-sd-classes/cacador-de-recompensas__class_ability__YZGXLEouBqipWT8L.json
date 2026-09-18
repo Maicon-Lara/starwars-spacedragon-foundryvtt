@@ -1,0 +1,50 @@
+{
+  "folder": "CUKsadcWW9Xjh3at",
+  "name": "Caçador de Recompensas",
+  "type": "class_ability",
+  "_id": "YZGXLEouBqipWT8L",
+  "img": "systems/olddragon2e/assets/icons/kit.svg",
+  "system": {
+    "description": "<p>Passa a <strong>operar aparatos ofensivos</strong> e a <strong>operar e consertar máquinas</strong>, usando como chance a <strong>% de Desarmar/Subjugar</strong> somada ao <strong>Crédito Tecnológico</strong> da sua Ciência. O talento <strong>muda de ofício</strong>: como manobra de desarmar e subjugar, ele <strong>para de progredir no 5º</strong>; a progressão da tabela continua, mas passa a valer só para aparatos e máquinas.</p><ul><li><code>10º</code> <strong>Ataque extra:</strong> logo depois do primeiro ataque do turno, pode rolar <strong>Desarmar/Subjugar com a % do 5º nível</strong>. Sucesso: faz <strong>mais dois ataques</strong> naquele turno, os dois com a <strong>2ª BA</strong> — três no total. Falha: <strong>não faz mais nada</strong> no turno. O ataque extra pode ser trocado por uma tentativa de desarmar ou subjugar.</li><li><code>20º</code> usa <strong>qualquer aparato</strong> como um Técnico de igual nível e faz <strong>sempre 3 ataques</strong> por turno, sem rolar — o extra com a 2ª BA, e ainda podendo virar desarme ou submissão.</li></ul>",
+    "level": 5,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!YZGXLEouBqipWT8L"
+}

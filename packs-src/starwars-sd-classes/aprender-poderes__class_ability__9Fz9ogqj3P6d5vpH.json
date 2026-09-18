@@ -1,0 +1,50 @@
+{
+  "folder": "knlgzJBXuoA1ma6r",
+  "name": "Aprender Poderes",
+  "type": "class_ability",
+  "_id": "9Fz9ogqj3P6d5vpH",
+  "img": "systems/olddragon2e/assets/icons/kit.svg",
+  "system": {
+    "description": "<p><strong>Aprender Poderes.</strong> Depois de usar com sucesso um poder desconhecido, uma <strong>segunda rolagem</strong> (mesma %) o <strong>memoriza</strong> permanentemente. Falhar na primeira trava nova tentativa por 24 h (ou 1d4 dias, se falhar por mais do dobro). Um mestre que o ensine torna a rolagem mais fácil.</p>",
+    "level": 1,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!9Fz9ogqj3P6d5vpH"
+}

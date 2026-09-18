@@ -1,0 +1,54 @@
+{
+  "folder": "5iDBnUxkdBKABJXn",
+  "name": "Talentos de Operativo",
+  "type": "class_ability",
+  "_id": "KLgBEd8lpcKHDZ7X",
+  "img": "systems/olddragon2e/assets/icons/bag.svg",
+  "system": {
+    "description": "<blockquote><p><strong>Use a tabela de talentos do Gatuno</strong> (<em>SD</em>, Cap. 3), sem alteração de valores. As regras de uso — uma tentativa por objeto, instrumentos necessários, queda ao falhar em Escalar, o Mestre rolando Furtividade em segredo, o bônus e o multiplicador do Ataque Furtivo — são as do livro básico.</p></blockquote><p>Os nomes são os mesmos do livro básico. O que o cenário acrescenta é <strong>onde cada talento entra</strong> numa galáxia de naves e bases:</p><ul><li><strong>Sabotagem</strong> — do painel de acesso ao gerador de escudos e ao hiperdrive; é o mesmo talento que destranca e que avaria, e a única % que o <strong>Crédito Tecnológico</strong> modifica.</li><li><strong>Escalar</strong> — cascos, dutos de manutenção, torres de comunicação.</li><li><strong>Furtividade</strong> — esconder-se <em>e</em> mover-se em silêncio, num talento só — corredores de patrulha, hangares, o compartimento de carga.</li><li><strong>Furtar</strong> — o crédito, o chip de dados, o comunicador do oficial.</li><li><strong>Percepção</strong> — 1d6 contra a faixa do nível.</li><li><strong>Ataque Furtivo</strong> — +2 no ataque e dano multiplicado, uma vez por posição revelada.</li></ul>",
+    "level": 1,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {
+    "spacedragon": {
+      "habilidade": "Talentos de Gatuno"
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!KLgBEd8lpcKHDZ7X"
+}

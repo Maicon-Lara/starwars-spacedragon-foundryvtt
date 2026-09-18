@@ -1,0 +1,22 @@
+{
+  "name": "Operativo",
+  "sorting": "m",
+  "folder": null,
+  "type": "Item",
+  "_id": "5iDBnUxkdBKABJXn",
+  "description": "",
+  "sort": 0,
+  "color": "#78579f",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1"
+  },
+  "_key": "!folders!5iDBnUxkdBKABJXn"
+}

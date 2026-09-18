@@ -1,0 +1,50 @@
+{
+  "folder": "TCAq2zJDi763pAj3",
+  "name": "Slicer",
+  "type": "class_ability",
+  "_id": "DM735zW8TDurrc9o",
+  "img": "systems/olddragon2e/assets/icons/kit.svg",
+  "system": {
+    "description": "<ul><li><code>5º</code> passa a <strong>sabotar e reprogramar máquinas como um Operativo de 1/3 dos seus níveis</strong> (arromba fechaduras eletrônicas, derruba alarmes, força cofres de dados).</li><li><code>10º</code> para de progredir na sabotagem, mas passa a <strong>Reprogramar Robôs</strong>: contra a Tabela 3-2, um resultado <strong>\"D\"</strong> significa <strong>robô reprogramado permanentemente</strong> para servi-lo, e um <strong>\"A\"</strong>, controlável por <strong>24 horas</strong>. Não destrói o exército de droides do inimigo — vira-o contra o dono.</li><li><code>20º</code> <strong>Faísca do Oculto:</strong> de tanto mergulhar nos fluxos de dados, a mente do Slicer toca o <strong>Espírito Galáctico</strong> e passa a manifestar <strong>poderes da Força de 1ª Grandeza</strong> (lista Universal), com <strong>alcance mental diário = bônus de Ciência</strong>.</li></ul><blockquote><p>⚙️ <strong>Divergência deliberada do livro (travada).</strong> No SD nativo, a faísca do Niilógico corre pelo <strong>Intelecto</strong> — mas o Niilógico é um <strong>Mentálico</strong> (classe de Intelecto). Nosso Slicer é um <strong>Técnico</strong> (Cientista, classe de <strong>Ciência</strong>), então a faísca dele nasce da <strong>maestria científica</strong>: usa <strong>Ciência</strong>. Isso mantém o Slicer num atributo só (sem atributo secundário órfão) e preserva o contraste do cenário — <em>o Jedi sente (Intelecto), o hacker calcula (Ciência)</em>. <em>Variante fiel ao livro: troque por Intelecto se quiser o número nativo cru.</em></p></blockquote>",
+    "level": 5,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!DM735zW8TDurrc9o"
+}

@@ -1,0 +1,50 @@
+{
+  "folder": "uOaAnuDAppEsehHI",
+  "name": "Ataques Múltiplos",
+  "type": "class_ability",
+  "_id": "f8hisFoOnx4vd66b",
+  "img": "systems/olddragon2e/assets/icons/melee.svg",
+  "system": {
+    "description": "<p><strong>Ataques Múltiplos:</strong> a partir do <strong>7º nível</strong>, um <strong>ataque adicional</strong> por rodada, usando a <strong>segunda Base de Ataque</strong> da tabela (ex.: <code>+7/+1</code> no 7º). Podem ser trocados por manobras de Desarmar/Subjugar.</p>",
+    "level": 7,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 400000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!f8hisFoOnx4vd66b"
+}

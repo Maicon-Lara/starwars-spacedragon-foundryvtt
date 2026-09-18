@@ -1,0 +1,22 @@
+{
+  "name": "Engenheiro",
+  "sorting": "m",
+  "folder": "6zInFMN2YAsqAN8M",
+  "type": "Item",
+  "_id": "3a81P6ZblhlJywz2",
+  "description": "",
+  "sort": 0,
+  "color": "#806126",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1"
+  },
+  "_key": "!folders!3a81P6ZblhlJywz2"
+}

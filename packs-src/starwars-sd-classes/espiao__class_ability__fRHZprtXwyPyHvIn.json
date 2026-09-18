@@ -1,0 +1,50 @@
+{
+  "folder": "YUxJyKoIrlUKBrZp",
+  "name": "Espião",
+  "type": "class_ability",
+  "_id": "fRHZprtXwyPyHvIn",
+  "img": "systems/olddragon2e/assets/icons/bag.svg",
+  "system": {
+    "description": "<p>Sua <strong>Sabotagem</strong> sobe para a <strong>% de Furtividade</strong> e passa a progredir junto com ela. O <strong>Crédito Tecnológico</strong> (por Ciência) conta <strong>dobrado</strong>. Usa a <strong>% de Furtar</strong> para <strong>passar-se por outra pessoa</strong>, somando o ajuste de reação por Comunicação.</p><ul><li><code>10º</code> usa a <strong>% de Escalar</strong> como chance de <strong>obter informação</strong> relevante, por contatos ou registros; usa <strong>aparatos defensivos</strong> como um Técnico.</li><li><code>20º</code> <strong>Furtividade, Sabotagem e Furtar igualam os 99% de Escalar</strong>.</li></ul>",
+    "level": 5,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!fRHZprtXwyPyHvIn"
+}

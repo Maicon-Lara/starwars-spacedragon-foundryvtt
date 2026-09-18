@@ -1,0 +1,50 @@
+{
+  "folder": "knlgzJBXuoA1ma6r",
+  "name": "Duelo da Força",
+  "type": "class_ability",
+  "_id": "ExwxoQTCL8E8ifLi",
+  "img": "systems/olddragon2e/assets/icons/brain.svg",
+  "system": {
+    "description": "<p><strong>Duelo da Força (= Anulação / Contra-Ataque Mental).</strong> Ao ser alvo de um poder, você pode gastar <strong>Alcance igual à Grandeza</strong> dele e fazer uma <strong>rolagem resistida de 1d6 + seu nível</strong> contra quem o lançou (pode gastar +2% de Alcance por +1 no total). Empate = <strong>choque da Força</strong>: 1d4 de dano mental nos dois, e <strong>JPM</strong> para não ficar atordoado. Vencer por dobro permite <strong>revidar</strong> na hora com um poder seu.</p>",
+    "level": 1,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 400000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!ExwxoQTCL8E8ifLi"
+}

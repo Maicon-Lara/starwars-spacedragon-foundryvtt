@@ -1,0 +1,50 @@
+{
+  "folder": "XubfmemJO8PFrUaB",
+  "name": "Eco da Senda",
+  "type": "class_ability",
+  "_id": "dCg1rGAZ0FmEtwAo",
+  "img": "systems/olddragon2e/assets/icons/legiao-shield.svg",
+  "system": {
+    "description": "<p>Chega um ponto em que a Força para de ser esforço — <strong>só naquilo que é o seu ofício</strong>. O Domínio desta Senda é <strong>A Vida e a Presciência — a Força que corre nos vivos e no tempo</strong>.</p><ul><li><code>10º</code> <strong>Eco.</strong> Sempre que gastar Alcance num <strong>poder da sua Senda</strong> (do Domínio dela, de qualquer corrente), role <strong>1d10</strong> depois de resolver o poder: num <strong>1</strong>, o <strong>% de Alcance gasto volta</strong>.</li><li><code>15º</code> <strong>Eco Maior.</strong> A rolagem passa a ser <strong>1d4</strong> (num 1, volta); além disso, os <strong>poderes de 1ª Grandeza da sua Senda não custam mais Alcance</strong> — de graça, no máximo <strong>um por rodada</strong>.</li></ul><blockquote><p><strong>Um poder cabe no Domínio de uma Senda só por personagem.</strong> Na dúvida, o Mestre decide <strong>antes da rolagem</strong>. Quem trilhou a Senda Mandaloriana abriu mão da especialização — e do Domínio: <strong>não tem Eco da Senda</strong>.</p></blockquote>",
+    "level": 10,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!dCg1rGAZ0FmEtwAo"
+}

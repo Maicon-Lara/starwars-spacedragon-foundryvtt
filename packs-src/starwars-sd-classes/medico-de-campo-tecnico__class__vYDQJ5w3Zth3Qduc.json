@@ -1,0 +1,152 @@
+{
+  "folder": "TrJ2Ov50wKQaf6ov",
+  "name": "Médico de Campo — Técnico",
+  "type": "class",
+  "_id": "vYDQJ5w3Zth3Qduc",
+  "img": "systems/olddragon2e/assets/icons/kit.svg",
+  "system": {
+    "flavor": "<p><em>o curandeiro</em></p>",
+    "description": "<p><em>o curandeiro</em> — <em>base: Pesquisador</em></p><p>Especialização de Técnico, para Afiliação <strong>Leal</strong>, escolhida no <strong>5º nível</strong>. Mantém tudo o que o Técnico já lhe deu, e as habilidades da classe seguem na ficha.</p><p><strong>Progressão do Médico de Campo — do 5º ao 20º nível</strong></p><table><thead><tr><th>Nv</th><th>DV</th><th>BA</th><th>JP</th><th>Operar Máq.</th><th>NT</th><th>Crédito Tec. (extra)</th><th>NT máx. que cria</th></tr></thead><tbody><tr><td><strong>5</strong></td><td>5</td><td>+3</td><td>14</td><td>⊘ 84%</td><td>3º</td><td>+5%</td><td>3º</td></tr><tr><td><strong>6</strong></td><td>6</td><td>+3</td><td>14</td><td>⊘ 84%</td><td>–</td><td>+6%</td><td>3º</td></tr><tr><td><strong>7</strong></td><td>7</td><td>+3</td><td>13</td><td>⊘ 84%</td><td>4º</td><td>+7%</td><td>4º</td></tr><tr><td><strong>8</strong></td><td>8</td><td>+4</td><td>13</td><td>⊘ 84%</td><td>–</td><td>+8%</td><td>4º</td></tr><tr><td><strong>9</strong></td><td>9</td><td>+4</td><td>13</td><td>⊘ 84%</td><td>5º</td><td>+9%</td><td>5º</td></tr><tr><td><strong>10</strong></td><td>+1</td><td>+4</td><td>12</td><td>⊘ 84%</td><td>–</td><td>+10%</td><td>5º</td></tr><tr><td><strong>11</strong></td><td>+1</td><td>+5</td><td>12</td><td>⊘ 84%</td><td>6º</td><td>+11%</td><td>6º</td></tr><tr><td><strong>12</strong></td><td>+2</td><td>+5</td><td>12</td><td>⊘ 84%</td><td>–</td><td>+12%</td><td>6º</td></tr><tr><td><strong>13</strong></td><td>+2</td><td>+5</td><td>11</td><td>⊘ 84%</td><td>7º</td><td>+13%</td><td>7º</td></tr><tr><td><strong>14</strong></td><td>+3</td><td>+6</td><td>11</td><td>⊘ 84%</td><td>–</td><td>+14%</td><td>7º</td></tr><tr><td><strong>15</strong></td><td>+3</td><td>+6</td><td>11</td><td>⊘ 84%</td><td>8º</td><td>+15%</td><td>8º</td></tr><tr><td><strong>16</strong></td><td>+4</td><td>+6</td><td>10</td><td>⊘ 84%</td><td>–</td><td>+16%</td><td>8º</td></tr><tr><td><strong>17</strong></td><td>+4</td><td>+7</td><td>10</td><td>⊘ 84%</td><td>9º</td><td>+17%</td><td>8º</td></tr><tr><td><strong>18</strong></td><td>+5</td><td>+7</td><td>10</td><td>⊘ 84%</td><td>–</td><td>+18%</td><td>8º</td></tr><tr><td><strong>19</strong></td><td>+5</td><td>+7</td><td>9</td><td>⊘ 84%</td><td>10º</td><td>+19%</td><td>8º</td></tr><tr><td><strong>20</strong></td><td>+6</td><td>+8</td><td>9</td><td>⊘ 84%</td><td>–</td><td>100% (total)</td><td>8º</td></tr></tbody></table><p><em>⊘ = congelado, repete o valor em que travou.</em></p><blockquote><p>A coluna é o que ele SOMA ao Crédito Tecnológico que já vem da Ciência. Do 10º em diante os aparatos dele contam 2 NT acima, o que o limita a criar até o 8º NT. No 20º o livro fixa o Crédito em 100%.</p></blockquote><blockquote><p><em>Médicos rebeldes, cirurgiões de bacta, os que remendam heróis entre uma batalha e outra.</em></p></blockquote><p><strong>Do 1º ao 4º nível: a tabela do Técnico</strong></p><table><thead><tr><th>Nível</th><th>XP</th><th>DV</th><th>BA</th><th>JP</th><th>Operar Máquinas</th><th>NT Máx.</th></tr></thead><tbody><tr><td>1</td><td>0</td><td>1</td><td>0</td><td>15</td><td>80%</td><td>1º</td></tr><tr><td>2</td><td>1.500</td><td>2</td><td>+1</td><td>15</td><td>81%</td><td>–</td></tr><tr><td>3</td><td>3.000</td><td>3</td><td>+2</td><td>15</td><td>82%</td><td>2º</td></tr><tr><td>4</td><td>6.000</td><td>4</td><td>+2</td><td>14</td><td>83%</td><td>–</td></tr></tbody></table>",
+    "hp": 8,
+    "high_level_hp_bonus": null,
+    "equipment_restrictions": {
+      "weapons": "Nenhuma, exceto os artefatos que ele mesmo cria.",
+      "armors": "Qualquer veste, e aparatos defensivos.",
+      "magic_items": "Constrói e opera qualquer um (só o Técnico opera ofensivos)."
+    },
+    "restrictions": {
+      "alignments": [],
+      "races": []
+    },
+    "levels": {
+      "1": {
+        "ba": 0,
+        "jp": 15
+      },
+      "2": {
+        "ba": 1,
+        "jp": 15,
+        "xp": 1500
+      },
+      "3": {
+        "ba": 2,
+        "jp": 15,
+        "xp": 3000
+      },
+      "4": {
+        "ba": 2,
+        "jp": 14,
+        "xp": 6000
+      },
+      "5": {
+        "ba": 3,
+        "jp": 14,
+        "xp": 12000
+      },
+      "6": {
+        "ba": 3,
+        "jp": 14,
+        "xp": 24000
+      },
+      "7": {
+        "ba": 3,
+        "jp": 13,
+        "xp": 48000
+      },
+      "8": {
+        "ba": 4,
+        "jp": 13,
+        "xp": 100000
+      },
+      "9": {
+        "ba": 4,
+        "jp": 13,
+        "xp": 200000
+      },
+      "10": {
+        "ba": 4,
+        "jp": 12,
+        "xp": 300000
+      },
+      "11": {
+        "ba": 5,
+        "jp": 12,
+        "xp": 400000
+      },
+      "12": {
+        "ba": 5,
+        "jp": 12,
+        "xp": 500000
+      },
+      "13": {
+        "ba": 5,
+        "jp": 11,
+        "xp": 600000
+      },
+      "14": {
+        "ba": 6,
+        "jp": 11,
+        "xp": 700000
+      },
+      "15": {
+        "ba": 6,
+        "jp": 11,
+        "xp": 800000
+      },
+      "16": {
+        "ba": 6,
+        "jp": 10,
+        "xp": 900000
+      },
+      "17": {
+        "ba": 7,
+        "jp": 10,
+        "xp": 1000000
+      },
+      "18": {
+        "ba": 7,
+        "jp": 10,
+        "xp": 1100000
+      },
+      "19": {
+        "ba": 7,
+        "jp": 9,
+        "xp": 1200000
+      },
+      "20": {
+        "ba": 8,
+        "jp": 9,
+        "xp": 1300000
+      }
+    },
+    "class_abilities": [
+      "Compendium.starwars-sd.starwars-sd-classes.Item.yO4JahxpEO59tMxA",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.dc3b6jLpkSxoB0VI",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.7DONpPDdYd4e6M9q",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.ek0YwOa9jOf3Q7cT",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.pGgrdTbHTBqT1BJD"
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "spacedragon": {
+      "chassi": "Cientista"
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!vYDQJ5w3Zth3Qduc"
+}

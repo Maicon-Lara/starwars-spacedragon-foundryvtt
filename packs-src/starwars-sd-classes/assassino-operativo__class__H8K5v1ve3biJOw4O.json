@@ -1,0 +1,149 @@
+{
+  "folder": "uT7QdDBC3uUdPsGI",
+  "name": "Assassino — Operativo",
+  "type": "class",
+  "_id": "H8K5v1ve3biJOw4O",
+  "img": "systems/olddragon2e/assets/icons/bag.svg",
+  "system": {
+    "flavor": "<p><em>a lâmina do submundo</em></p>",
+    "description": "<p><em>a lâmina do submundo</em></p><p>Especialização de Operativo, para Afiliação <strong>Neutro</strong>, escolhida no <strong>5º nível</strong>. Mantém tudo o que o Operativo já lhe deu, e as habilidades da classe seguem na ficha.</p><p><strong>Progressão do Assassino — do 5º ao 20º nível</strong></p><table><thead><tr><th>Nv</th><th>Sabotagem</th><th>Rodadas</th><th>Escalar</th><th>Furtividade</th><th>Furtar</th><th>Percepção</th><th>Atq. Furtivo</th><th>Acerto vira furtivo</th></tr></thead><tbody><tr><td><strong>5</strong></td><td>⊘ 35%</td><td>1d8</td><td>⊘ 84%</td><td>40%</td><td>40%</td><td>1-3</td><td><strong>×3</strong></td><td>—</td></tr><tr><td><strong>6</strong></td><td>⊘ 35%</td><td>1d6</td><td>⊘ 84%</td><td>45%</td><td>45%</td><td>1-3</td><td><strong>×4</strong></td><td>—</td></tr><tr><td><strong>7</strong></td><td>⊘ 35%</td><td>1d6</td><td>⊘ 84%</td><td>50%</td><td>50%</td><td>1-3</td><td><strong>×4</strong></td><td>—</td></tr><tr><td><strong>8</strong></td><td>⊘ 35%</td><td>1d6</td><td>⊘ 84%</td><td>55%</td><td>55%</td><td>1-3</td><td><strong>×4</strong></td><td>—</td></tr><tr><td><strong>9</strong></td><td>⊘ 35%</td><td>1d6</td><td>⊘ 84%</td><td>60%</td><td>60%</td><td>1-3</td><td><strong>×4</strong></td><td>—</td></tr><tr><td><strong>10</strong></td><td>⊘ 35%</td><td>1d6</td><td>⊘ 84%</td><td>65%</td><td>⊘ 65%</td><td>1-4</td><td><strong>×4</strong></td><td>20%</td></tr><tr><td><strong>11</strong></td><td>⊘ 35%</td><td>1d4</td><td>⊘ 84%</td><td>70%</td><td>⊘ 65%</td><td>1-4</td><td><strong>×4</strong></td><td>20%</td></tr><tr><td><strong>12</strong></td><td>⊘ 35%</td><td>1d4</td><td>⊘ 84%</td><td>72%</td><td>⊘ 65%</td><td>1-4</td><td><strong>×5</strong></td><td>20%</td></tr><tr><td><strong>13</strong></td><td>⊘ 35%</td><td>1d4</td><td>⊘ 84%</td><td>74%</td><td>⊘ 65%</td><td>1-4</td><td><strong>×5</strong></td><td>20%</td></tr><tr><td><strong>14</strong></td><td>⊘ 35%</td><td>1d4</td><td>⊘ 84%</td><td>76%</td><td>⊘ 65%</td><td>1-4</td><td><strong>×5</strong></td><td>20%</td></tr><tr><td><strong>15</strong></td><td>⊘ 35%</td><td>1d4</td><td>⊘ 84%</td><td>78%</td><td>⊘ 65%</td><td>1-4</td><td><strong>×5</strong></td><td>20%</td></tr><tr><td><strong>16</strong></td><td>⊘ 35%</td><td>1d4</td><td>⊘ 84%</td><td>80%</td><td>⊘ 65%</td><td>1-5</td><td><strong>×5</strong></td><td>20%</td></tr><tr><td><strong>17</strong></td><td>⊘ 35%</td><td>1d4</td><td>⊘ 84%</td><td>82%</td><td>⊘ 65%</td><td>1-5</td><td><strong>×5</strong></td><td>20%</td></tr><tr><td><strong>18</strong></td><td>⊘ 35%</td><td>1d4</td><td>⊘ 84%</td><td>84%</td><td>⊘ 65%</td><td>1-5</td><td><strong>×6</strong></td><td>20%</td></tr><tr><td><strong>19</strong></td><td>⊘ 35%</td><td>1d4</td><td>⊘ 84%</td><td>86%</td><td>⊘ 65%</td><td>1-5</td><td><strong>×6</strong></td><td>20%</td></tr><tr><td><strong>20</strong></td><td>⊘ 35%</td><td>1d4</td><td>⊘ 84%</td><td>88%</td><td>⊘ 65%</td><td>1-5</td><td><strong>×6</strong></td><td>20%</td></tr></tbody></table><p><em>⊘ = congelado, repete o valor em que travou · <strong>em negrito</strong> = o valor desta especialização, no lugar do da classe base.</em></p><blockquote><p>A coluna do Ataque Furtivo já traz o +1 de multiplicador: ×3 no 5º, ×4 no 6º, e assim por diante. No 20º todos os ataques contam como Ataque Furtivo, e um crítico pede JPF ou morte.</p></blockquote><blockquote><p><em>Matadores da Aurora Negra, agentes de eliminação do submundo.</em></p></blockquote><p><strong>Do 1º ao 4º nível: a tabela do Operativo</strong></p><table><thead><tr><th>Nível</th><th>XP</th><th>DV</th><th>BA</th><th>JP</th></tr></thead><tbody><tr><td>1</td><td>0</td><td>1</td><td>+1</td><td>15</td></tr><tr><td>2</td><td>1.250</td><td>2</td><td>+1</td><td>15</td></tr><tr><td>3</td><td>2.500</td><td>3</td><td>+2</td><td>15</td></tr><tr><td>4</td><td>5.000</td><td>4</td><td>+2</td><td>14</td></tr></tbody></table>",
+    "hp": 6,
+    "high_level_hp_bonus": null,
+    "equipment_restrictions": {
+      "weapons": "Só as que se empunham com uma mão.",
+      "armors": "Leves ou médias, sem escudos (senão perde os talentos).",
+      "magic_items": "Só utilitários."
+    },
+    "restrictions": {
+      "alignments": [],
+      "races": []
+    },
+    "levels": {
+      "1": {
+        "ba": 1,
+        "jp": 15
+      },
+      "2": {
+        "ba": 1,
+        "jp": 15,
+        "xp": 1250
+      },
+      "3": {
+        "ba": 2,
+        "jp": 15,
+        "xp": 2500
+      },
+      "4": {
+        "ba": 2,
+        "jp": 14,
+        "xp": 5000
+      },
+      "5": {
+        "ba": 2,
+        "jp": 14,
+        "xp": 10000
+      },
+      "6": {
+        "ba": 3,
+        "jp": 14,
+        "xp": 20000
+      },
+      "7": {
+        "ba": 3,
+        "jp": 13,
+        "xp": 40000
+      },
+      "8": {
+        "ba": 3,
+        "jp": 13,
+        "xp": 80000
+      },
+      "9": {
+        "ba": 4,
+        "jp": 13,
+        "xp": 160000
+      },
+      "10": {
+        "ba": 4,
+        "jp": 12,
+        "xp": 240000
+      },
+      "11": {
+        "ba": 4,
+        "jp": 12,
+        "xp": 400000
+      },
+      "12": {
+        "ba": 5,
+        "jp": 12,
+        "xp": 520000
+      },
+      "13": {
+        "ba": 5,
+        "jp": 11,
+        "xp": 640000
+      },
+      "14": {
+        "ba": 5,
+        "jp": 11,
+        "xp": 760000
+      },
+      "15": {
+        "ba": 6,
+        "jp": 11,
+        "xp": 880000
+      },
+      "16": {
+        "ba": 6,
+        "jp": 10,
+        "xp": 1000000
+      },
+      "17": {
+        "ba": 6,
+        "jp": 10,
+        "xp": 1120000
+      },
+      "18": {
+        "ba": 7,
+        "jp": 10,
+        "xp": 1240000
+      },
+      "19": {
+        "ba": 7,
+        "jp": 9,
+        "xp": 1360000
+      },
+      "20": {
+        "ba": 7,
+        "jp": 9,
+        "xp": 1480000
+      }
+    },
+    "class_abilities": [
+      "Compendium.starwars-sd.starwars-sd-classes.Item.KLgBEd8lpcKHDZ7X",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.g6G0SdYtsiQ3nmOc"
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "spacedragon": {
+      "chassi": "Gatuno"
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!H8K5v1ve3biJOw4O"
+}

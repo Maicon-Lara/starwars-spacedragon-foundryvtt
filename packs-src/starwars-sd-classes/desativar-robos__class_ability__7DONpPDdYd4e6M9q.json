@@ -1,0 +1,50 @@
+{
+  "folder": "6zInFMN2YAsqAN8M",
+  "name": "Desativar Robôs",
+  "type": "class_ability",
+  "_id": "7DONpPDdYd4e6M9q",
+  "img": "systems/olddragon2e/assets/icons/kit.svg",
+  "system": {
+    "description": "<p><strong>Desativar Robôs:</strong> com um <strong>disruptor positrônico</strong>, rola <strong>1d20 contra a Tabela 3-2</strong> do livro básico (o \"nível\" é o do disruptor = seu nível de classe). O <strong>número de robôs por dia</strong> é dado pelo atributo <strong>Ciência</strong> (<em>SD</em>, Tabela 1-5). O de-para das categorias de robô para os droides da galáxia está abaixo.</p><p><strong>Os droides da galáxia na Tabela 3-2.</strong> Role contra a <strong>Tabela 3-2 do livro básico</strong>, usando a coluna da categoria correspondente. As oito categorias de robô do <em>SD</em> cobrem toda a droidaria de Star Wars:</p><ul><li><strong>Sucata Robótica</strong> — Droide de carga GNK, droides-aranha de manutenção, ferro-velho reanimado.</li><li><strong>Protótipo</strong> — Droide experimental, modelo único saído de uma bancada.</li><li><strong>Repetidor</strong> — <strong>Droide de batalha B1</strong> — o soldado descartável, em enxame.</li><li><strong>Autômato</strong> — Droide-sonda, droide-vigia, seeker.</li><li><strong>Humanoide</strong> — <strong>Super droide de batalha B2</strong>, droides de guarda pesados.</li><li><strong>Serviçal</strong> — <strong>Astromecânico (R2)</strong>, droide de protocolo (C-3PO), droides médicos.</li><li><strong>Metahumano</strong> — Droide de comando tático, IA de alto escalão.</li><li><strong>Androide</strong> — <strong>Droideka</strong>, droides-assassinos (HK, IG), o que passa por gente.</li></ul>",
+    "level": 1,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 300000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!7DONpPDdYd4e6M9q"
+}

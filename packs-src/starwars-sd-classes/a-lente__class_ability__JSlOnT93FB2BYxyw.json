@@ -1,0 +1,50 @@
+{
+  "folder": "OpD2tXVVJYCbs8Y6",
+  "name": "A Lente",
+  "type": "class_ability",
+  "_id": "JSlOnT93FB2BYxyw",
+  "img": "systems/olddragon2e/assets/icons/kit.svg",
+  "system": {
+    "description": "<p><strong>A Lente:</strong> usa <strong>aparatos defensivos</strong> livremente. Sua <strong>Grandeza trava na 3ª</strong> e o <strong>Alcance passa a avançar uma linha da tabela a cada dois níveis</strong> — no 5º você tem 9%, e só no 7º sobe para 13%, que é o valor do 6º.</p><ul><li><code>9º</code> a Grandeza destrava na <strong>4ª</strong>.</li><li><code>13º</code> a Grandeza destrava na <strong>5ª</strong> e volta a subir de dois em dois — <strong>teto prático na 8ª</strong>.</li></ul><p><strong>Troca:</strong> <strong>BA e JP congelam no 5º</strong> e nunca mais progridem. É a única Senda que paga as duas colunas de uma vez — e, por isso, <strong>a única em que o Caminho não decide nada</strong>. Ele está tão fora do eixo místico que nem a escolha moral chega ao corpo dele.</p>",
+    "level": 5,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!JSlOnT93FB2BYxyw"
+}

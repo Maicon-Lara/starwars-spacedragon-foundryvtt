@@ -1,0 +1,22 @@
+{
+  "name": "Guardião",
+  "sorting": "m",
+  "folder": "knlgzJBXuoA1ma6r",
+  "type": "Item",
+  "_id": "iu6PmIx74jTf9mDg",
+  "description": "",
+  "sort": 0,
+  "color": "#42679c",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1"
+  },
+  "_key": "!folders!iu6PmIx74jTf9mDg"
+}

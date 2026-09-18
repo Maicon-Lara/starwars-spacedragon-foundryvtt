@@ -1,0 +1,50 @@
+{
+  "folder": "XubfmemJO8PFrUaB",
+  "name": "Comunhão",
+  "type": "class_ability",
+  "_id": "aGV3ZlbLNCAmbbbP",
+  "img": "systems/olddragon2e/assets/icons/brain.svg",
+  "system": {
+    "description": "<ul><li><code>5º</code> <strong>Comunhão:</strong> canaliza a Força dos seres vivos inteligentes <strong>amigáveis ou neutros a 20 m</strong>, ganhando Alcance extra igual à <strong>soma dos bônus de Intelecto</strong> deles — até <strong>1/4</strong> do seu Alcance Diário (deixa de somar o próprio bônus de Intelecto). A <strong>JP congela</strong>.</li><li><code>10º</code> a Comunhão alcança <strong>40 m</strong> e o teto sobe para <strong>1/3</strong>; a <strong>BA congela</strong>; passa a ter <strong>30% de atrair descargas elétricas</strong> por perto (a sintonia é involuntária).</li><li><code>20º</code> a Comunhão alcança <strong>100 m</strong> e o teto é <strong>metade</strong> do Alcance (podendo passar de 200%); a atração de descargas sobe para <strong>80%</strong> — estar perto dele numa tempestade ou num tiroteio é perigoso para todos.</li></ul><blockquote><p><strong>Troca:</strong> o Vidente <strong>não é treinado</strong> — não usa sabre de luz sem penalidade e seu <strong>teto de Grandeza é a 8ª</strong> (os feitos de 9ª–10ª exigem uma disciplina formal que ele não tem).</p></blockquote>",
+    "level": 5,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!aGV3ZlbLNCAmbbbP"
+}

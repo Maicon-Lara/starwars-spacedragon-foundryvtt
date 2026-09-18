@@ -1,0 +1,50 @@
+{
+  "folder": "uT7QdDBC3uUdPsGI",
+  "name": "Assassino",
+  "type": "class_ability",
+  "_id": "g6G0SdYtsiQ3nmOc",
+  "img": "systems/olddragon2e/assets/icons/piercing.svg",
+  "system": {
+    "description": "<p>Para de progredir em <strong>Escalar</strong> e <strong>Sabotagem</strong>. O <strong>Ataque Furtivo</strong> ganha <strong>+1 no multiplicador</strong> (×3 já no 5º, ×4 no 6º…).</p><ul><li><code>10º</code> para de progredir em <strong>Furtar</strong>; qualquer acerto passa a ter <strong>20%</strong> de contar como Ataque Furtivo (fora os que já contariam); desenvolve <strong>venenos</strong>, de efeito acertado com o Mestre.</li><li><code>20º</code> <strong>todos os seus ataques</strong> contam como Ataque Furtivo; num crítico, o alvo faz <strong>JPF ou morre</strong> (dano massivo).</li></ul>",
+    "level": 5,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!g6G0SdYtsiQ3nmOc"
+}

@@ -1,0 +1,209 @@
+{
+  "folder": null,
+  "name": "A Força",
+  "_id": "1JlIv8a86qnKAzzz",
+  "pages": [
+    {
+      "sort": 100000,
+      "name": "O Caminho: Luz, Sombra e o meio",
+      "type": "text",
+      "_id": "FiTBhMHcmLEOLNMZ",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>No <strong>1º nível</strong>, o Sensível escolhe um <strong>Caminho</strong>, que fica <em>por cima</em> da especialização e decide <strong>quais listas de poderes</strong> acessa:</p><ul><li><strong>Caminho da Luz</strong> — serenidade, defesa, cura, previdência. Acessa <strong>Universal + Luz</strong>.</li><li><strong>Caminho da Sombra</strong> — paixão, domínio, medo, destruição. Acessa <strong>Universal + Sombra</strong>.</li><li><strong>Neutralidade</strong> — começa <strong>sem Caminho declarado</strong> (só Universal) e escolhe depois.</li><li><strong>Caminho Cinza</strong> — as <strong>três listas</strong>. Não se escolhe no 1º nível: conquista-se (adiante).</li></ul><blockquote><p><strong>Cruzar de lista (a Queda).</strong> Um personagem da Luz pode usar um poder da Sombra em desespero, mas cada uso marca <strong>+1 de Corrupção</strong>. Alguns poderes marcam Corrupção <strong>mesmo para a Sombra</strong> (os que se nutrem de sofrimento — virão marcados com ★ na lista de poderes).</p></blockquote></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!1JlIv8a86qnKAzzz.FiTBhMHcmLEOLNMZ"
+    },
+    {
+      "sort": 200000,
+      "name": "O Caminho Cinza",
+      "type": "text",
+      "_id": "kKCb0J0TOLYSl256",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p><em>\"Eu sou o meio.\"</em></p><p>O Cinza usa <strong>as três listas</strong> — Universal, Luz e Sombra — e não cai. Não porque seja mais forte que os outros, mas porque aprendeu onde fica a borda: <strong>ele já esteve lá</strong>.</p><blockquote><p><strong>Não se escolhe o Cinza no 1º nível.</strong> Ele não é uma opção de ficha, é um lugar aonde se chega. Quem começa sem Caminho declarado é só um <strong>neutro</strong> — acessa apenas a lista Universal, e escolhe um lado quando quiser.</p></blockquote><h3>Como se entra</h3><p>Duas coisas, nesta ordem, e nenhuma delas se compra:</p><ol><li><strong>Chegar à Corrupção 6 ou mais</strong> — o estado <em>Tomado</em>. Você viu o que há do outro lado, e não foi de longe.</li><li><strong>Voltar a 2 ou menos</strong> — o estado <em>Sereno</em>, pelo caminho normal: compaixão, sacrifício, recusar o atalho quando ele custa caro.</li></ol><p>No momento em que a Corrupção desce a 2, e <strong>só nesse momento</strong>, o jogador pode declarar que não está voltando para a Luz — está parando no meio. A Corrupção é então <strong>fixada em 3</strong>, e daí em diante você anda no Cinza.</p><h3>O que muda</h3><table><tbody><tr><td><strong>Ganha</strong></td><td>acesso às <strong>três listas</strong> de poderes — Universal, Luz e Sombra. Usar um poder da Sombra <strong>não é mais uma queda</strong>; é o seu ofício.</td></tr><tr><td><strong>Custa</strong></td><td><strong>toda Corrupção conta em dobro.</strong> Um poder da Sombra marca <strong>+2</strong>. Um poder ★ marca <strong>+2</strong>. <em>Insistir</em> na Tentão custa <strong>2</strong>, <em>Arrancar</em> custa <strong>4</strong>.</td></tr><tr><td><strong>Piso 3</strong></td><td>se a Corrupção cair <strong>abaixo de 3</strong>, você <strong>retorna ao Caminho da Luz</strong> e perde a lista Sombra. Não é castigo: é a serenidade reabsorvendo você. Um Cinza que só faz o bem vira Jedi, e está tudo certo.</td></tr><tr><td><strong>Teto 10</strong></td><td>a <strong>Queda</strong> funciona como para todo mundo — mas você chega lá com <strong>metade dos usos</strong>. Caiu, vira <strong>Sombra</strong> e a Corrupção volta a 7.</td></tr></tbody></table><p>Na prática você vive numa janela de <strong>3 a 9</strong>, e ela não se mantém sozinha: subir é fácil (dobrado) e descer dá trabalho. O Cinza é o único Caminho em que o jogador tem de fazer alguma coisa <strong>toda sessão</strong> para continuar sendo o que é. Essa é a graça.</p><blockquote><p><strong>E as colunas do corpo?</strong> Você <strong>mantém a ordem</strong> que o seu Caminho de origem já definiu (ver <em>O Caminho decide o que você perde</em>). Entrar no Cinza não devolve o que a carne já pagou — a BA ou a JP que congelou continua congelada.</p></blockquote><blockquote><p><strong>Na galáxia.</strong> O <strong>Bendu</strong>, que se diz o meio entre a luz e a sombra. Os <strong>Je'daii</strong> de Tython, a ordem antiga que buscava equilíbrio entre as duas luas — Ashla e Bogan — e exilava quem pendesse demais para um lado. <strong>Ahsoka</strong>, que saiu da Ordem e não virou Sith. Todos começaram em algum lugar e pararam no meio de propósito.</p></blockquote></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!1JlIv8a86qnKAzzz.kKCb0J0TOLYSl256"
+    },
+    {
+      "sort": 300000,
+      "name": "Corrupção — Queda e Redenção",
+      "type": "text",
+      "_id": "QnzgXU8kbjx3unRx",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>A Corrupção é uma trilha de <strong>0 a 10</strong> que mede o quanto a Sombra já enraizou.</p><table><thead><tr><th>Corrupção</th><th>Estado</th></tr></thead><tbody><tr><td>0–2</td><td>Sereno. Sem penalidade.</td></tr><tr><td>3–5</td><td>Marcado. Olhos amarelam sob esforço; testes sociais com não-corrompidos ficam Difíceis quando a Força é usada à vista.</td></tr><tr><td>6–8</td><td>Tomado. Surtos de fúria; em estresse extremo o Mestre pode assumir uma ação.</td></tr><tr><td>9</td><td>À beira. Todas as penalidades de <em>Tomado</em> — e a Sombra passa a <strong>oferecer</strong> (a Tentação).</td></tr><tr><td>10</td><td><strong>Queda</strong> (Luz/neutro → Sombra, volta a 7) ou <strong>Consumido</strong> (quem já é da Sombra vira NPC do Mestre).</td></tr></tbody></table><ul><li><strong>Ganhar (+1):</strong> usar poder da lista <strong>Sombra</strong>, crueldade deliberada, ceder ao ódio numa cena-chave.</li><li><strong>Perder (−1):</strong> atos definidores de compaixão e sacrifício, meditação orientada, recusar o caminho fácil quando custa caro.</li><li><strong>A Redenção:</strong> reduzir a Corrupção a <strong>menos de 3</strong> <em>e</em> um <strong>sacrifício definidor</strong> (a vida, o poder, tudo o que ama) — no momento do sacrifício, retorna ao Caminho da Luz.</li></ul></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!1JlIv8a86qnKAzzz.QnzgXU8kbjx3unRx"
+    },
+    {
+      "sort": 400000,
+      "name": "A Tentação",
+      "type": "text",
+      "_id": "RSSU5VbloAQCX2vJ",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>Na galáxia, a Sombra não multa ninguém: ela <strong>oferece</strong>. É mais rápida, é mais fácil, e funciona.</p><p><strong>A Tentação.</strong> Quando você <strong>falha numa rolagem decisiva</strong> — ou quando um golpe seu acerta e você quer que ele <em>termine</em> a questão —, a Força propõe um negócio. Aceitar custa <strong>Corrupção</strong>:</p><ul><li><strong>Insistir — +1 de Corrupção.</strong> Você <strong>rerrola</strong> a jogada falha e fica com o <strong>segundo resultado, seja ele qual for</strong>.</li><li><strong>Arrancar — +2 de Corrupção.</strong> Você <strong>rerrola</strong> e fica com o <strong>melhor dos dois</strong>. Custa o dobro porque a certeza é o que a Sombra vende mais caro.</li><li><strong>Sentenciar — +1 de Corrupção.</strong> Um ataque que <strong>já acertou</strong> vira <strong>crítico</strong>, ou um poder que <strong>já passou</strong> tem dano/duração/alvos <strong>dobrados</strong>.</li></ul><p><strong>\"Rolagem decisiva\"</strong> é aquela cuja falha <strong>fecha um caminho</strong> (o Duelo que decide a sala, o teste que impede a nave de cair). <strong>Não</strong> vale para rotina, iniciativa ou dano avulso. Quem decide é o <strong>Mestre</strong>, e <strong>antes</strong> de você rolar.</p><p><strong>A trava:</strong> <strong>1×/cena</strong> e no máximo <strong>3×/dia de jogo</strong>. Sem ela, um Padawan sereno viraria Lorde Sith na segunda sessão — a Sombra tem de ganhar terreno <strong>devagar, e sempre porque você deixou</strong>.</p><p><strong>Vale igual para Luz e Sombra:</strong> o preço é o mesmo; muda só a paisagem da descida (para a Luz, empurra à <strong>Queda</strong>; para a Sombra, ao <strong>Consumido</strong>). <strong>Com poderes ★, os custos somam.</strong> Em <strong>Corrupção 9</strong>, a Sombra oferece <strong>sozinha</strong> — o Mestre descreve a oferta e o preço em voz alta; aceitar leva a 10. <strong>Recusar nunca exige rolagem nem penalidade</strong> — Corrupção pega sem escolha não é tentação, é imposto.</p></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!1JlIv8a86qnKAzzz.RSSU5VbloAQCX2vJ"
+    },
+    {
+      "sort": 500000,
+      "name": "Eco da Senda",
+      "type": "text",
+      "_id": "DRlyNfCF4GFezH40",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>Chega um ponto em que a Força para de ser esforço — <strong>só naquilo que é o seu ofício</strong>. Cada Senda tem um <strong>Domínio</strong>, a família de efeitos que ela pratica até virar hábito:</p><table><thead><tr><th>Senda</th><th>Domínio</th></tr></thead><tbody><tr><td><strong>Guardião</strong></td><td><strong>O Corpo e a Lâmina</strong> — a Força que empurra, sustenta, apara e golpeia matéria.</td></tr><tr><td><strong>Consular</strong></td><td><strong>A Mente e o Domínio</strong> — a Força que fala, convence, dobra e escraviza vontades.</td></tr><tr><td><strong>Sentinela</strong></td><td><strong>O Rastro e o Véu</strong> — a Força que procura, revela e esconde.</td></tr><tr><td><strong>Vidente</strong></td><td><strong>A Vida e a Presciência</strong> — a Força que corre nos vivos e no tempo.</td></tr></tbody></table><ul><li><code>10º</code> <strong>Eco.</strong> Sempre que gastar Alcance num <strong>poder da sua Senda</strong> (do Domínio dela, de qualquer corrente), role <strong>1d10</strong> depois de resolver o poder: num <strong>1</strong>, o <strong>% de Alcance gasto volta</strong>.</li><li><code>15º</code> <strong>Eco Maior.</strong> A rolagem passa a ser <strong>1d4</strong> (num 1, volta); além disso, os <strong>poderes de 1ª Grandeza da sua Senda não custam mais Alcance</strong> — de graça, no máximo <strong>um por rodada</strong>.</li></ul><blockquote><p><strong>Um poder cabe no Domínio de uma Senda só por personagem.</strong> Na dúvida, o Mestre decide <strong>antes da rolagem</strong>. Quem trilhou a Senda Mandaloriana abriu mão da especialização — e do Domínio: <strong>não tem Eco da Senda</strong>.</p></blockquote></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!1JlIv8a86qnKAzzz.DRlyNfCF4GFezH40"
+    }
+  ],
+  "flags": {},
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "_key": "!journal!1JlIv8a86qnKAzzz"
+}

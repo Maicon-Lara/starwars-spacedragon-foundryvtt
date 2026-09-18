@@ -1,0 +1,149 @@
+{
+  "folder": "YUxJyKoIrlUKBrZp",
+  "name": "Espião — Operativo",
+  "type": "class",
+  "_id": "szFsBtHEBUE7y7FJ",
+  "img": "systems/olddragon2e/assets/icons/bag.svg",
+  "system": {
+    "flavor": "<p><em>agente de inteligência</em></p>",
+    "description": "<p><em>agente de inteligência</em></p><p>Especialização de Operativo, para Afiliação <strong>Leal</strong>, escolhida no <strong>5º nível</strong>. Mantém tudo o que o Operativo já lhe deu, e as habilidades da classe seguem na ficha.</p><p><strong>Progressão do Espião — do 5º ao 20º nível</strong></p><table><thead><tr><th>Nv</th><th>Sabotagem</th><th>Rodadas</th><th>Escalar</th><th>Furtividade</th><th>Furtar</th><th>Percepção</th><th>Atq. Furtivo</th></tr></thead><tbody><tr><td><strong>5</strong></td><td><strong>40%</strong></td><td>1d8</td><td>84%</td><td>40%</td><td>40%</td><td>1-3</td><td>×2</td></tr><tr><td><strong>6</strong></td><td><strong>45%</strong></td><td>1d6</td><td>85%</td><td>45%</td><td>45%</td><td>1-3</td><td>×3</td></tr><tr><td><strong>7</strong></td><td><strong>50%</strong></td><td>1d6</td><td>86%</td><td>50%</td><td>50%</td><td>1-3</td><td>×3</td></tr><tr><td><strong>8</strong></td><td><strong>55%</strong></td><td>1d6</td><td>87%</td><td>55%</td><td>55%</td><td>1-3</td><td>×3</td></tr><tr><td><strong>9</strong></td><td><strong>60%</strong></td><td>1d6</td><td>88%</td><td>60%</td><td>60%</td><td>1-3</td><td>×3</td></tr><tr><td><strong>10</strong></td><td><strong>65%</strong></td><td>1d6</td><td>89%</td><td>65%</td><td>65%</td><td>1-4</td><td>×3</td></tr><tr><td><strong>11</strong></td><td><strong>70%</strong></td><td>1d4</td><td>90%</td><td>70%</td><td>70%</td><td>1-4</td><td>×3</td></tr><tr><td><strong>12</strong></td><td><strong>72%</strong></td><td>1d4</td><td>91%</td><td>72%</td><td>72%</td><td>1-4</td><td>×4</td></tr><tr><td><strong>13</strong></td><td><strong>74%</strong></td><td>1d4</td><td>92%</td><td>74%</td><td>74%</td><td>1-4</td><td>×4</td></tr><tr><td><strong>14</strong></td><td><strong>76%</strong></td><td>1d4</td><td>93%</td><td>76%</td><td>76%</td><td>1-4</td><td>×4</td></tr><tr><td><strong>15</strong></td><td><strong>78%</strong></td><td>1d4</td><td>94%</td><td>78%</td><td>78%</td><td>1-4</td><td>×4</td></tr><tr><td><strong>16</strong></td><td><strong>80%</strong></td><td>1d4</td><td>95%</td><td>80%</td><td>80%</td><td>1-5</td><td>×4</td></tr><tr><td><strong>17</strong></td><td><strong>82%</strong></td><td>1d4</td><td>96%</td><td>82%</td><td>82%</td><td>1-5</td><td>×4</td></tr><tr><td><strong>18</strong></td><td><strong>84%</strong></td><td>1d4</td><td>97%</td><td>84%</td><td>84%</td><td>1-5</td><td>×5</td></tr><tr><td><strong>19</strong></td><td><strong>86%</strong></td><td>1d4</td><td>98%</td><td>86%</td><td>86%</td><td>1-5</td><td>×5</td></tr><tr><td><strong>20</strong></td><td><strong>99%</strong></td><td>1d4</td><td>99%</td><td><strong>99%</strong></td><td><strong>99%</strong></td><td>1-5</td><td>×5</td></tr></tbody></table><p><em><strong>em negrito</strong> = o valor desta especialização, no lugar do da classe base.</em></p><blockquote><p>A Sabotagem dele <em>é</em> a % de Furtividade, e sobe junto com ela — por isso as duas colunas andam iguais. A mesma % de Furtar serve para passar-se por outra pessoa. No 20º, Furtividade, Sabotagem e Furtar igualam os 99% de Escalar.</p></blockquote><blockquote><p><em>Cassian Andor, Fulcrum, agentes do ISB.</em></p></blockquote><p><strong>Do 1º ao 4º nível: a tabela do Operativo</strong></p><table><thead><tr><th>Nível</th><th>XP</th><th>DV</th><th>BA</th><th>JP</th></tr></thead><tbody><tr><td>1</td><td>0</td><td>1</td><td>+1</td><td>15</td></tr><tr><td>2</td><td>1.250</td><td>2</td><td>+1</td><td>15</td></tr><tr><td>3</td><td>2.500</td><td>3</td><td>+2</td><td>15</td></tr><tr><td>4</td><td>5.000</td><td>4</td><td>+2</td><td>14</td></tr></tbody></table>",
+    "hp": 6,
+    "high_level_hp_bonus": null,
+    "equipment_restrictions": {
+      "weapons": "Só as que se empunham com uma mão.",
+      "armors": "Leves ou médias, sem escudos (senão perde os talentos).",
+      "magic_items": "Só utilitários."
+    },
+    "restrictions": {
+      "alignments": [],
+      "races": []
+    },
+    "levels": {
+      "1": {
+        "ba": 1,
+        "jp": 15
+      },
+      "2": {
+        "ba": 1,
+        "jp": 15,
+        "xp": 1250
+      },
+      "3": {
+        "ba": 2,
+        "jp": 15,
+        "xp": 2500
+      },
+      "4": {
+        "ba": 2,
+        "jp": 14,
+        "xp": 5000
+      },
+      "5": {
+        "ba": 2,
+        "jp": 14,
+        "xp": 10000
+      },
+      "6": {
+        "ba": 3,
+        "jp": 14,
+        "xp": 20000
+      },
+      "7": {
+        "ba": 3,
+        "jp": 13,
+        "xp": 40000
+      },
+      "8": {
+        "ba": 3,
+        "jp": 13,
+        "xp": 80000
+      },
+      "9": {
+        "ba": 4,
+        "jp": 13,
+        "xp": 160000
+      },
+      "10": {
+        "ba": 4,
+        "jp": 12,
+        "xp": 240000
+      },
+      "11": {
+        "ba": 4,
+        "jp": 12,
+        "xp": 400000
+      },
+      "12": {
+        "ba": 5,
+        "jp": 12,
+        "xp": 520000
+      },
+      "13": {
+        "ba": 5,
+        "jp": 11,
+        "xp": 640000
+      },
+      "14": {
+        "ba": 5,
+        "jp": 11,
+        "xp": 760000
+      },
+      "15": {
+        "ba": 6,
+        "jp": 11,
+        "xp": 880000
+      },
+      "16": {
+        "ba": 6,
+        "jp": 10,
+        "xp": 1000000
+      },
+      "17": {
+        "ba": 6,
+        "jp": 10,
+        "xp": 1120000
+      },
+      "18": {
+        "ba": 7,
+        "jp": 10,
+        "xp": 1240000
+      },
+      "19": {
+        "ba": 7,
+        "jp": 9,
+        "xp": 1360000
+      },
+      "20": {
+        "ba": 7,
+        "jp": 9,
+        "xp": 1480000
+      }
+    },
+    "class_abilities": [
+      "Compendium.starwars-sd.starwars-sd-classes.Item.KLgBEd8lpcKHDZ7X",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.fRHZprtXwyPyHvIn"
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "spacedragon": {
+      "chassi": "Gatuno"
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!szFsBtHEBUE7y7FJ"
+}

@@ -1,1 +1,5 @@
-2026/09/18-08:46:29.345 996c Delete type=3 #1
+2026/09/18-08:56:46.188 a9c8 Delete type=3 #1
+2026/09/18-08:56:46.192 3cec Level-0 table #5: started
+2026/09/18-08:56:46.194 3cec Level-0 table #5: 8169 bytes OK
+2026/09/18-08:56:46.195 3cec Delete type=0 #3
+2026/09/18-08:56:46.195 3cec Manual compaction at level-0 from '!journal!1JlIv8a86qnKAzzz' @ 72057594037927935 : 1 .. '!journal.pages!1JlIv8a86qnKAzzz.kKCb0J0TOLYSl256' @ 0 : 0; will stop at (end)

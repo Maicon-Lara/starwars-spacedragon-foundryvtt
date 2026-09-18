@@ -1,0 +1,50 @@
+{
+  "folder": "tnTdEFRuPBitOkPw",
+  "name": "Vontade Inquebrável",
+  "type": "class_ability",
+  "_id": "0oT4wUsCnPbs8rop",
+  "img": "systems/olddragon2e/assets/icons/shield.svg",
+  "system": {
+    "description": "<p><strong>Vontade Inquebrável:</strong> <strong>+4 nas JPM</strong> contra poderes da Força e efeitos mentais. Em troca, a sua <strong>JP congela</strong> neste nível.</p>",
+    "level": 10,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!0oT4wUsCnPbs8rop"
+}
