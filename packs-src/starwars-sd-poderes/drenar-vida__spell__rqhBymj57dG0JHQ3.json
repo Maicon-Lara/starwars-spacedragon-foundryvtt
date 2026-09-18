@@ -1,0 +1,39 @@
+{
+  "folder": "MghKZEjIjGfihlTo",
+  "name": "Drenar Vida",
+  "type": "spell",
+  "_id": "rqhBymj57dG0JHQ3",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "drenar-vida",
+    "school": "arcane",
+    "circle": "6",
+    "arcane": "6",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Visual",
+    "duration": "Instantâneo",
+    "jp": "JPM (ver texto)",
+    "description": "<p><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>★ Sempre corrompe:</strong> mesmo para quem é da Sombra, o poder marca <strong>+1 de Corrupção</strong> (alimenta-se de sofrimento).</p><p><strong>✦ Criação do cenário</strong> — não há Poder Mental equivalente no livro básico. O preço é o de qualquer poder: a Grandeza diz quanto custa em Alcance e a partir de que nível se chega lá.</p><hr><p><strong>JPM</strong> ou o alvo sofre <strong>1d6 de dano</strong> e você <strong>recupera esse mesmo número em PV</strong>; o excedente vira <strong>PV temporários</strong> que duram até o fim da cena.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 400000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!rqhBymj57dG0JHQ3"
+}

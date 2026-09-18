@@ -1,0 +1,39 @@
+{
+  "folder": "YcA7gTD6P5KgTW29",
+  "name": "Premonição",
+  "type": "spell",
+  "_id": "Dzw6KLNPAz3xUZw2",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "premonicao",
+    "school": "arcane",
+    "circle": "4",
+    "arcane": "4",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Pessoal",
+    "duration": "Instantâneo",
+    "jp": "nenhuma",
+    "description": "<p><code>[L]</code> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</p><p><strong>✦ Criação do cenário</strong> — não há Poder Mental equivalente no livro básico. O preço é o de qualquer poder: a Grandeza diz quanto custa em Alcance e a partir de que nível se chega lá.</p><hr><p>Uma pergunta sobre um curso de ação <strong>imediato</strong> (a próxima hora); o Mestre responde <em>favorável</em>, <em>desfavorável</em> ou <em>nublado</em>.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!Dzw6KLNPAz3xUZw2"
+}

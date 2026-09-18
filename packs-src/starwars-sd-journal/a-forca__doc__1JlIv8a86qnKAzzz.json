@@ -52,7 +52,7 @@
       "image": {},
       "text": {
         "format": 1,
-        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>Cada poder traz uma etiqueta de corrente. <strong>Esta camada é do cenário</strong> — no livro básico não existe Luz nem Sombra, todos os Poderes Mentais estão disponíveis a qualquer Mentálico.</p><ul><li><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</li><li><code>[L]</code> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</li><li><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</li><li><strong>★</strong> = <strong>sempre corrompe</strong>: mesmo para quem é da Sombra, o poder marca <strong>+1 de Corrupção</strong> (alimenta-se de sofrimento).</li><li><strong>Caminho Cinza</strong> — acessa as <strong>três</strong> correntes. Usar <code>[S]</code> não é queda, mas toda Corrupção conta <strong>em dobro</strong> para ele (um poder <code>[S]</code> ou ★ marca <strong>+2</strong>). Ver O Sensível à Força.</li></ul><blockquote><p><strong>As etiquetas são um guia, não uma lei.</strong> Muitos poderes cabem em mais de uma corrente conforme o uso; o Mestre pode remanejar um poder <code>[U]</code> para <code>[S]</code> se o uso na cena for cruel.</p></blockquote></div>"
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>Cada poder traz uma etiqueta de corrente. <strong>Esta camada é do cenário</strong> — no livro básico não existe Luz nem Sombra, todos os Poderes Mentais estão disponíveis a qualquer Mentálico.</p><ul><li><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</li><li><code>[L]</code> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</li><li><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</li><li><strong>✦</strong> = <strong>criação do cenário</strong> — o poder não tem equivalente no livro básico (ver <em>Poderes do cenário</em>, no fim).</li><li><strong>★</strong> = <strong>sempre corrompe</strong>: mesmo para quem é da Sombra, o poder marca <strong>+1 de Corrupção</strong> (alimenta-se de sofrimento).</li><li><strong>Caminho Cinza</strong> — acessa as <strong>três</strong> correntes. Usar <code>[S]</code> não é queda, mas toda Corrupção conta <strong>em dobro</strong> para ele (um poder <code>[S]</code> ou ★ marca <strong>+2</strong>). Ver O Sensível à Força.</li></ul><blockquote><p><strong>As etiquetas são um guia, não uma lei.</strong> Muitos poderes cabem em mais de uma corrente conforme o uso; o Mestre pode remanejar um poder <code>[U]</code> para <code>[S]</code> se o uso na cena for cruel.</p></blockquote></div>"
       },
       "video": {
         "controls": true,
@@ -301,9 +301,46 @@
     },
     {
       "sort": 900000,
+      "name": "Poderes do Cenário",
+      "type": "text",
+      "_id": "wu0F6Hh5ah9a4TCM",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>Os poderes marcados com <strong>✦</strong> não vêm do capítulo 9 do <em>Space Dragon</em>: são criação deste cenário, porque a galáxia tem gestos que a lista de Poderes Mentais não cobre — empurrar alguém com a mão aberta, aparar um tiro, estrangular à distância, sentar no meio da batalha e mudar o rumo dela.</p><p><strong>O preço é o mesmo de qualquer poder:</strong> a Grandeza diz quanto custa em Alcance e a partir de que nível você chega lá. Nada de economia nova.</p><p><strong>Três decisões que valem explicar:</strong></p><ul><li><strong>A Cura pela Força ficou na 3ª</strong>, como o livro a entrega (<em>Cura Psicológica</em>), e não na 1ª. Numa reserva única como a do Space Dragon, curar <code>1d8</code> por <strong>1%</strong> faria um Sensível de 10º nível curar trinta e seis dados por dia. A Grandeza aqui é preço, não só patamar.</li><li><strong>Estrangular e Prisão da Força convivem.</strong> As duas são de 3ª e as duas prendem; a diferença é que a Prisão (do livro) <strong>imobiliza sem ferir</strong>, e o Estrangular <strong>ergue, sufoca e causa dano</strong> enquanto você se concentra. Um Inquisidor usa o segundo.</li><li><strong>Deflexão da Força duplica de propósito</strong> o que a Forma <strong>Soresu</strong> já faz com a lâmina. Quem tem a Forma não gasta Alcance; o poder existe para quem <strong>não</strong> é Guardião — ou está sem o sabre.</li></ul><blockquote><p><strong>De onde vieram.</strong> Quinze destes foram escritos para a versão <em>Star Dragon</em> do cenário e trazidos para cá com a Grandeza reconferida contra o preço em porcentagem. <strong>Absorver Energia</strong> e <strong>Ocultar-se da Força</strong> são novos: o primeiro é o gesto de palma aberta que para um disparo; o segundo é como um Sensível atravessa uma cidade imperial sem ser sentido.</p></blockquote></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!1JlIv8a86qnKAzzz.wu0F6Hh5ah9a4TCM"
+    },
+    {
+      "sort": 1000000,
       "name": "Crédito",
       "type": "text",
-      "_id": "OOBb7mPO7BLynrpz",
+      "_id": "tttOhm8VxqzsTcCa",
       "title": {
         "show": true,
         "level": 1
@@ -334,7 +371,7 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!1JlIv8a86qnKAzzz.OOBb7mPO7BLynrpz"
+      "_key": "!journal.pages!1JlIv8a86qnKAzzz.tttOhm8VxqzsTcCa"
     }
   ],
   "flags": {},

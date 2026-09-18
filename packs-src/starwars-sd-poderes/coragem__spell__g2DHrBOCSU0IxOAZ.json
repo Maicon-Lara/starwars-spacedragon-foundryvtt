@@ -1,0 +1,39 @@
+{
+  "folder": "OWndy081f918bB0N",
+  "name": "Coragem",
+  "type": "spell",
+  "_id": "g2DHrBOCSU0IxOAZ",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "coragem",
+    "school": "arcane",
+    "circle": "3",
+    "arcane": "3",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "18 m",
+    "duration": "10 rodadas",
+    "jp": "JPM (ver texto)",
+    "description": "<p><code>[L]</code> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</p><p><strong>✦ Criação do cenário</strong> — não há Poder Mental equivalente no livro básico. O preço é o de qualquer poder: a Grandeza diz quanto custa em Alcance e a partir de que nível se chega lá.</p><hr><p>Aliados que o escutem ganham <strong>+1 em ataque e em JP a cada 3 níveis</strong> seus; inimigos que falhem numa <strong>JPM</strong> sofrem a mesma penalidade.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 400000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!g2DHrBOCSU0IxOAZ"
+}

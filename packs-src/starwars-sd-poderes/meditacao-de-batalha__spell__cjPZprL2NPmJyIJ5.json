@@ -1,0 +1,39 @@
+{
+  "folder": "uyBsKMMN1PHxzzy1",
+  "name": "Meditação de Batalha",
+  "type": "spell",
+  "_id": "cjPZprL2NPmJyIJ5",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "meditacao-de-batalha",
+    "school": "arcane",
+    "circle": "8",
+    "arcane": "8",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "100 m",
+    "duration": "10 rodadas",
+    "jp": "JPM (ver texto)",
+    "description": "<p><code>[L]</code> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</p><p><strong>✦ Criação do cenário</strong> — não há Poder Mental equivalente no livro básico. O preço é o de qualquer poder: a Grandeza diz quanto custa em Alcance e a partir de que nível se chega lá.</p><hr><p>Você se senta, fecha os olhos <strong>no meio da batalha</strong>, e a batalha muda de forma: aliados ao alcance ganham <strong>+2 em ataque e nas JP</strong>; inimigos que falhem numa <strong>JPM</strong> sofrem <strong>−2</strong> nas mesmas coisas, e os de Moral mais baixa começam a recuar.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!cjPZprL2NPmJyIJ5"
+}

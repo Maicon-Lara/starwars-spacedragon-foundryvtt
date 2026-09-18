@@ -267,12 +267,54 @@ function especiesDoCofre(texto) {
 const SD_PODERES = path.join(ROOT, "..", "space-dragon-foundryvtt", "packs-src", "spacedragon-poderes");
 const CORRENTE = { "[U]": "Universal", "[L]": "Luz", "[S]": "Sombra" };
 
+// ── Poderes do cenário (✦) ──────────────────────────────────────────────────
+//
+// Os poderes marcados com ✦ não têm Poder Mental nativo: são criação do
+// cenário. Na nota do Suplemento eles só aparecem na tabela — nome, Grandeza,
+// corrente. O EFEITO está escrito na nota do Nativo, a mesma do mesmo autor,
+// numa linha por poder:
+//
+//   - ✦ **Nome** `[U]` — Alcance / Duração — o efeito.
+//
+// O Suplemento continua mandando no nome, na Grandeza e na corrente; do Nativo
+// vem só o texto. As duas notas precisam concordar na Grandeza, e o importador
+// para se não concordarem.
+const COFRE_NATIVO = path.join(COFRE, "..", "Space Dragon Nativo");
+
+function poderesDoCenario() {
+  const texto = fs.readFileSync(path.join(COFRE_NATIVO, "SW-SDN-Poderes-da-Forca.md"), "utf8").replace(/\r\n/g, "\n");
+  const saida = new Map();
+  let grandeza = 0;
+  for (const l of texto.split("\n")) {
+    const h = l.match(/^##+ (\d+)ª Grandeza/);
+    if (h) grandeza = Number(h[1]);
+    const m = l.match(/^- ✦ \*\*(.+?)\*\*\s*★?\s*`\[[ULS]\]`\s*—\s*(.+?)\s*\/\s*(.+?)\s*—\s*(.+)$/);
+    if (!m) continue;
+    const efeito = m[4].trim();
+    // A JP que o efeito PEDE, para o campo da ficha; o texto diz o resto. A
+    // que vem depois de "+2 na" é bônus, não jogada — o Sentir o Perigo dá
+    // "+2 na JPR" e não pede JP nenhuma.
+    const jp = [...efeito.matchAll(/\b(JP[RFM])\b/g)]
+      .find((m) => !/\+\d+\s+(na|em|nas)\s*\**\s*$/.test(efeito.slice(Math.max(0, m.index - 14), m.index)))?.[1];
+    saida.set(m[1].trim(), {
+      grandeza,
+      range: m[2].trim(),
+      duration: m[3].trim(),
+      jp: jp ? `${jp} (ver texto)` : "nenhuma",
+      // Na nota o efeito vem depois de um travessão, em minúscula.
+      description: `<p>${md(efeito.charAt(0).toUpperCase() + efeito.slice(1))}</p>`,
+    });
+  }
+  return saida;
+}
+
 function poderesDoCofre(texto) {
   const nativos = new Map();
   for (const arq of fs.readdirSync(SD_PODERES).filter((f) => f.includes("__spell__"))) {
     const d = JSON.parse(fs.readFileSync(path.join(SD_PODERES, arq), "utf8"));
     nativos.set(d.name, d);
   }
+  const doCenario = poderesDoCenario();
 
   const saida = [];
   const partes = texto.split(/\n(?=## )/);
@@ -285,10 +327,20 @@ function poderesDoCofre(texto) {
     // para a descrição de cada poder que cita.
     const nota = parte.split("\n").find((l) => /^\*[^*].*\*$/.test(l.trim()))?.trim().replace(/^\*|\*$/g, "") ?? "";
     for (const [sw, nativo, etiqueta] of t.linhas) {
-      const nome = sw.replace(/\*\*/g, "").replace("★", "").trim();
+      const nome = sw.replace(/\*\*/g, "").replace("★", "").replace("✦", "").trim();
       const corrupcao = sw.includes("★");
       const corrente = CORRENTE[etiqueta.replace(/`/g, "").trim()];
       if (!corrente) throw new Error(`${nome}: corrente desconhecida ${etiqueta}`);
+      const notaDoPoder = nota && nota.includes(`**${nome}**`) ? `<p><em>${md(nota)}</em></p>` : "";
+
+      // ✦ Criação do cenário: sem nativo, com o efeito da nota do Nativo.
+      if (sw.includes("✦")) {
+        const c = doCenario.get(nome);
+        if (!c) throw new Error(`${nome}: é ✦ no Suplemento, mas o efeito não está no SW-SDN-Poderes-da-Forca`);
+        if (c.grandeza !== grandeza) throw new Error(`${nome}: ${grandeza}ª no Suplemento e ${c.grandeza}ª no Nativo`);
+        saida.push({ nome, grandeza, corrente, corrupcao, cenario: true, nativo: null, efeito: c, nota: notaDoPoder });
+        continue;
+      }
       // O cofre escreve "Amputar/Restaurar Emoção"; o livro, "Amputar ou
       // Restaurar Emoção". A barra é só grafia.
       const doc = nativos.get(nativo.trim()) ?? nativos.get(nativo.trim().replace(/\s*\/\s*/, " ou "));
@@ -299,7 +351,7 @@ function poderesDoCofre(texto) {
       saida.push({
         nome, grandeza, corrente, corrupcao,
         nativo: { nome: doc.name, id: doc._id, range: doc.system.range, duration: doc.system.duration, jp: doc.system.jp, description: doc.system.description },
-        nota: nota && nota.includes(`**${nome}**`) ? `<p><em>${md(nota)}</em></p>` : "",
+        nota: notaDoPoder,
       });
     }
   }
@@ -589,7 +641,7 @@ const SECOES = {
     "Convenções deste livro",
   ],
   "SW-SUP-Especies": ["Idiomas da galáxia", "Nota de conversão"],
-  "SW-SUP-Poderes-da-Forca": ["Como usar este capítulo", "As três correntes (Caminho)", "Crédito"],
+  "SW-SUP-Poderes-da-Forca": ["Como usar este capítulo", "As três correntes (Caminho)", "Crédito", "Poderes do cenário"],
   "SW-SUP-Sabre-e-Cristais": [
     "O Cristal Kyber",
     "Construir o Próprio Sabre",

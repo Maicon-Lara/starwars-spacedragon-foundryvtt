@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.2.0 — os 17 Poderes do Cenário
+
+- **17 Poderes da Força novos**, marcados ✦ no cofre como criação do cenário:
+  Empurrão da Força, Sentir o Perigo, Toque Sombrio, Manto de Escuridão,
+  Ocultar-se da Força, Correr com a Força, Salto da Força, Deflexão da Força,
+  Coragem, Estrangular, Premonição, Absorver Energia, Drenar Vida ★,
+  Tempestade da Força ★, Barreira da Força, Meditação de Batalha e Projeção da
+  Força. São 118 no total.
+- Não têm Poder Mental nativo: o nome, a Grandeza e a corrente vêm da tabela
+  do Suplemento, e o alcance, a duração e o efeito, da nota do Nativo, onde
+  estão escritos. O importador para se as duas notas discordarem na Grandeza.
+- Journal "A Força" ganha a página **Poderes do Cenário**.
+
 ## 1.1.0 — as Formas de Sabre entram na ficha
 
 O sistema não aceita habilidade de classe solta no personagem ("Adicione-as

@@ -1,0 +1,39 @@
+{
+  "folder": "gJj2qq4KrSfjMV51",
+  "name": "Projeção da Força",
+  "type": "spell",
+  "_id": "n0UzRbIKQn0br2GR",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "projecao-da-forca",
+    "school": "arcane",
+    "circle": "9",
+    "arcane": "9",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Ilimitado, dentro da mesma galáxia",
+    "duration": "1 min por nível",
+    "jp": "nenhuma",
+    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>✦ Criação do cenário</strong> — não há Poder Mental equivalente no livro básico. O preço é o de qualquer poder: a Grandeza diz quanto custa em Alcance e a partir de que nível se chega lá.</p><hr><p>Você <strong>aparece em outro lugar</strong>, com a sua voz e o seu rosto, <strong>indistinguível de você</strong>. A projeção não toca nada e não pode ser tocada. Você, enquanto isso, fica onde está, imóvel e cego ao redor — e o esforço cobra caro.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!n0UzRbIKQn0br2GR"
+}

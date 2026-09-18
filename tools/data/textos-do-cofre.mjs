@@ -20,8 +20,9 @@ export const TEXTOS = {
   "SW-SUP-Poderes-da-Forca": {
     "(abertura)": "<blockquote><p>A Força não é um sistema novo: são os <strong>Poderes Mentais do Space Dragon</strong> (<em>SD</em>, Cap. 9), relidos como manifestações da Força. <strong>Alcance, duração, dano, Jogadas de Proteção e as regras de uso continuam sendo as do livro básico</strong> — este capítulo dá a cada poder o nome que ele tem na galáxia e o encaixa numa <strong>corrente</strong> (Universal, Luz ou Sombra).</p></blockquote>",
     "Como usar este capítulo": "<ol><li>Escolha o poder pelo <strong>nome de Star Wars</strong> na tabela da Grandeza correspondente.</li><li>Vá ao <strong><em>SD</em>, Cap. 9</strong> e procure o <strong>nome nativo</strong> da coluna do meio — é ali que estão os números.</li><li>Aplique a <strong>corrente</strong> e as marcas de <strong>Corrupção</strong> deste cenário (abaixo).</li></ol><p>As regras de Alcance da Força, Grandeza-Limite, poderes conhecidos × desconhecidos e Resistência Mental estão no livro básico e resumidas em O Sensível à Força.</p>",
-    "As três correntes (Caminho)": "<p>Cada poder traz uma etiqueta de corrente. <strong>Esta camada é do cenário</strong> — no livro básico não existe Luz nem Sombra, todos os Poderes Mentais estão disponíveis a qualquer Mentálico.</p><ul><li><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</li><li><code>[L]</code> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</li><li><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</li><li><strong>★</strong> = <strong>sempre corrompe</strong>: mesmo para quem é da Sombra, o poder marca <strong>+1 de Corrupção</strong> (alimenta-se de sofrimento).</li><li><strong>Caminho Cinza</strong> — acessa as <strong>três</strong> correntes. Usar <code>[S]</code> não é queda, mas toda Corrupção conta <strong>em dobro</strong> para ele (um poder <code>[S]</code> ou ★ marca <strong>+2</strong>). Ver O Sensível à Força.</li></ul><blockquote><p><strong>As etiquetas são um guia, não uma lei.</strong> Muitos poderes cabem em mais de uma corrente conforme o uso; o Mestre pode remanejar um poder <code>[U]</code> para <code>[S]</code> se o uso na cena for cruel.</p></blockquote>",
-    "Crédito": "<p>A lista de Poderes Mentais, com todos os seus valores, é do <strong><em>Space Dragon</strong></em> (Old Dragon Editora) — consulte o <strong>Cap. 9</strong> do Módulo Básico. A repartição em correntes Universal/Luz/Sombra, as marcas ★ de Corrupção e os nomes de Star Wars são adaptação deste cenário.</p>"
+    "As três correntes (Caminho)": "<p>Cada poder traz uma etiqueta de corrente. <strong>Esta camada é do cenário</strong> — no livro básico não existe Luz nem Sombra, todos os Poderes Mentais estão disponíveis a qualquer Mentálico.</p><ul><li><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</li><li><code>[L]</code> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</li><li><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</li><li><strong>✦</strong> = <strong>criação do cenário</strong> — o poder não tem equivalente no livro básico (ver <em>Poderes do cenário</em>, no fim).</li><li><strong>★</strong> = <strong>sempre corrompe</strong>: mesmo para quem é da Sombra, o poder marca <strong>+1 de Corrupção</strong> (alimenta-se de sofrimento).</li><li><strong>Caminho Cinza</strong> — acessa as <strong>três</strong> correntes. Usar <code>[S]</code> não é queda, mas toda Corrupção conta <strong>em dobro</strong> para ele (um poder <code>[S]</code> ou ★ marca <strong>+2</strong>). Ver O Sensível à Força.</li></ul><blockquote><p><strong>As etiquetas são um guia, não uma lei.</strong> Muitos poderes cabem em mais de uma corrente conforme o uso; o Mestre pode remanejar um poder <code>[U]</code> para <code>[S]</code> se o uso na cena for cruel.</p></blockquote>",
+    "Crédito": "<p>A lista de Poderes Mentais, com todos os seus valores, é do <strong><em>Space Dragon</strong></em> (Old Dragon Editora) — consulte o <strong>Cap. 9</strong> do Módulo Básico. A repartição em correntes Universal/Luz/Sombra, as marcas ★ de Corrupção e os nomes de Star Wars são adaptação deste cenário.</p>",
+    "Poderes do cenário": "<p>Os poderes marcados com <strong>✦</strong> não vêm do capítulo 9 do <em>Space Dragon</em>: são criação deste cenário, porque a galáxia tem gestos que a lista de Poderes Mentais não cobre — empurrar alguém com a mão aberta, aparar um tiro, estrangular à distância, sentar no meio da batalha e mudar o rumo dela.</p><p><strong>O preço é o mesmo de qualquer poder:</strong> a Grandeza diz quanto custa em Alcance e a partir de que nível você chega lá. Nada de economia nova.</p><p><strong>Três decisões que valem explicar:</strong></p><ul><li><strong>A Cura pela Força ficou na 3ª</strong>, como o livro a entrega (<em>Cura Psicológica</em>), e não na 1ª. Numa reserva única como a do Space Dragon, curar <code>1d8</code> por <strong>1%</strong> faria um Sensível de 10º nível curar trinta e seis dados por dia. A Grandeza aqui é preço, não só patamar.</li><li><strong>Estrangular e Prisão da Força convivem.</strong> As duas são de 3ª e as duas prendem; a diferença é que a Prisão (do livro) <strong>imobiliza sem ferir</strong>, e o Estrangular <strong>ergue, sufoca e causa dano</strong> enquanto você se concentra. Um Inquisidor usa o segundo.</li><li><strong>Deflexão da Força duplica de propósito</strong> o que a Forma <strong>Soresu</strong> já faz com a lâmina. Quem tem a Forma não gasta Alcance; o poder existe para quem <strong>não</strong> é Guardião — ou está sem o sabre.</li></ul><blockquote><p><strong>De onde vieram.</strong> Quinze destes foram escritos para a versão <em>Star Dragon</em> do cenário e trazidos para cá com a Grandeza reconferida contra o preço em porcentagem. <strong>Absorver Energia</strong> e <strong>Ocultar-se da Força</strong> são novos: o primeiro é o gesto de palma aberta que para um disparo; o segundo é como um Sensível atravessa uma cidade imperial sem ser sentido.</p></blockquote>"
   },
   "SW-SUP-Sabre-e-Cristais": {
     "(abertura)": "<blockquote><p>O sabre de luz não é só uma arma (ficha em Equipamentos e Créditos, <strong>2d10</strong> de energia) — é um rito, uma identidade e, para alguns, um símbolo político. Este arquivo cobre o cristal que o alimenta, a construção, as lâminas lendárias e as <strong>sete Formas</strong> do Guardião (na escala nativa 1–20).</p></blockquote>",
@@ -481,6 +482,54 @@ export const PODERES = [
     "nota": "<p><em>O <strong>Vínculo da Força</strong> é o laço entre mestre e padawan — e entre gêmeos separados na infância. A <strong>Telepatia</strong> é como uma célula rebelde combina o ataque sem abrir o canal de rádio.</em></p>"
   },
   {
+    "nome": "Empurrão da Força",
+    "grandeza": 1,
+    "corrente": "Universal",
+    "corrupcao": false,
+    "cenario": true,
+    "nativo": null,
+    "efeito": {
+      "grandeza": 1,
+      "range": "Visual",
+      "duration": "Instantâneo",
+      "jp": "JPR (ver texto)",
+      "description": "<p>Um estouro breve de telecinese: empurra o alvo <strong>3 m</strong> para trás e, se ele falhar numa <strong>JPR</strong>, o derruba. Ou arremessa um objeto solto por perto como projétil, causando <strong>1d6</strong>. É o suficiente para jogar alguém de um parapeito ou abrir espaço num corredor.</p>"
+    },
+    "nota": ""
+  },
+  {
+    "nome": "Sentir o Perigo",
+    "grandeza": 1,
+    "corrente": "Universal",
+    "corrupcao": false,
+    "cenario": true,
+    "nativo": null,
+    "efeito": {
+      "grandeza": 1,
+      "range": "Pessoal",
+      "duration": "1 cena",
+      "jp": "nenhuma",
+      "description": "<p>A Força formiga na nuca um instante antes do golpe: <strong>+2 na JPR</strong> contra o próximo ataque-surpresa ou armadilha da cena. É a voz muda que faz o Jedi se abaixar sem saber por quê.</p>"
+    },
+    "nota": ""
+  },
+  {
+    "nome": "Toque Sombrio",
+    "grandeza": 1,
+    "corrente": "Sombra",
+    "corrupcao": false,
+    "cenario": true,
+    "nativo": null,
+    "efeito": {
+      "grandeza": 1,
+      "range": "Toque",
+      "duration": "Instantâneo",
+      "jp": "JPF (ver texto)",
+      "description": "<p>Verte podridão pela pele do alvo: <strong>1d4 de dano</strong> e, falhando uma <strong>JPF</strong>, <strong>−1 de Constituição</strong> até um descanso de 8 h. O beijo frio do Lado Sombrio, que fere e enfraquece de uma vez.</p>"
+    },
+    "nota": ""
+  },
+  {
     "nome": "Levitação",
     "grandeza": 2,
     "corrente": "Universal",
@@ -642,6 +691,38 @@ export const PODERES = [
       "duration": "30 segundos/nível",
       "jp": "nenhuma",
       "description": "<p>O alvo deste poder mental sofrerá com fraqueza repentina, se falhar em uma JPM que anula os efeitos. A fraqueza confere uma penalidade de -2 no atributo Força do alvo até que passe a duração do efeito.</p>"
+    },
+    "nota": ""
+  },
+  {
+    "nome": "Manto de Escuridão",
+    "grandeza": 2,
+    "corrente": "Sombra",
+    "corrupcao": false,
+    "cenario": true,
+    "nativo": null,
+    "efeito": {
+      "grandeza": 2,
+      "range": "18 m",
+      "duration": "10 rodadas",
+      "jp": "nenhuma",
+      "description": "<p>Esfera de <strong>6 m de raio</strong> de trevas sobrenaturais: quem não tem infravisão fica <strong>cego</strong> lá dentro, enquanto você e quem você designar enxergam normalmente.</p>"
+    },
+    "nota": ""
+  },
+  {
+    "nome": "Ocultar-se da Força",
+    "grandeza": 2,
+    "corrente": "Universal",
+    "corrupcao": false,
+    "cenario": true,
+    "nativo": null,
+    "efeito": {
+      "grandeza": 2,
+      "range": "Pessoal",
+      "duration": "10 min por nível",
+      "jp": "nenhuma",
+      "description": "<p>Você <strong>apaga a própria presença</strong> na Força: poderes de detecção não o encontram, e um Sensível que desconfie precisa vencer um <strong>Duelo da Força</strong> contra você para furar o véu. Não esconde o corpo — esconde <strong>o que você é</strong>. É como um Sensível anda por uma cidade imperial.</p>"
     },
     "nota": ""
   },
@@ -826,6 +907,86 @@ export const PODERES = [
     "nota": ""
   },
   {
+    "nome": "Correr com a Força",
+    "grandeza": 3,
+    "corrente": "Universal",
+    "corrupcao": false,
+    "cenario": true,
+    "nativo": null,
+    "efeito": {
+      "grandeza": 3,
+      "range": "Pessoal",
+      "duration": "1 rodada por nível",
+      "jp": "nenhuma",
+      "description": "<p><strong>dobra o deslocamento</strong> e dá uma <strong>ação extra de movimento</strong> por rodada. É o borrão que cruza o hangar antes das portas fecharem.</p>"
+    },
+    "nota": ""
+  },
+  {
+    "nome": "Salto da Força",
+    "grandeza": 3,
+    "corrente": "Universal",
+    "corrupcao": false,
+    "cenario": true,
+    "nativo": null,
+    "efeito": {
+      "grandeza": 3,
+      "range": "Pessoal",
+      "duration": "Instantâneo",
+      "jp": "nenhuma",
+      "description": "<p>Salta <strong>3 m por nível</strong> na horizontal (metade na vertical) e <strong>ignora todo o dano de queda</strong> ao pousar.</p>"
+    },
+    "nota": ""
+  },
+  {
+    "nome": "Deflexão da Força",
+    "grandeza": 3,
+    "corrente": "Luz",
+    "corrupcao": false,
+    "cenario": true,
+    "nativo": null,
+    "efeito": {
+      "grandeza": 3,
+      "range": "Pessoal",
+      "duration": "1 rodada por nível",
+      "jp": "JPR (ver texto)",
+      "description": "<p>Disparos dirigidos a você exigem que o atirador <strong>vença a sua JPR</strong>; falhando, o tiro é aparado no ar. É a versão em poder do que as <strong>Formas do Guardião</strong> fazem com a lâmina (ver Sabre de Luz e Cristais Kyber) — quem tem Soresu não precisa gastar Alcance com isto.</p>"
+    },
+    "nota": ""
+  },
+  {
+    "nome": "Coragem",
+    "grandeza": 3,
+    "corrente": "Luz",
+    "corrupcao": false,
+    "cenario": true,
+    "nativo": null,
+    "efeito": {
+      "grandeza": 3,
+      "range": "18 m",
+      "duration": "10 rodadas",
+      "jp": "JPM (ver texto)",
+      "description": "<p>Aliados que o escutem ganham <strong>+1 em ataque e em JP a cada 3 níveis</strong> seus; inimigos que falhem numa <strong>JPM</strong> sofrem a mesma penalidade.</p>"
+    },
+    "nota": ""
+  },
+  {
+    "nome": "Estrangular",
+    "grandeza": 3,
+    "corrente": "Sombra",
+    "corrupcao": false,
+    "cenario": true,
+    "nativo": null,
+    "efeito": {
+      "grandeza": 3,
+      "range": "Visual",
+      "duration": "enquanto se concentrar, até 1 rodada por nível",
+      "jp": "JPM (ver texto)",
+      "description": "<p>A garra invisível fecha na garganta à distância: <strong>JPM</strong> ou o alvo é <strong>erguido do chão, imobilizado e sufocado</strong>, sofrendo <strong>1d6 por rodada</strong> enquanto você mantiver o punho cerrado. Difere da <strong>Prisão da Força</strong>, que imobiliza sem ferir.</p>"
+    },
+    "nota": ""
+  },
+  {
     "nome": "Telecinésia",
     "grandeza": 4,
     "corrente": "Universal",
@@ -972,6 +1133,38 @@ export const PODERES = [
       "duration": "Permanente",
       "jp": "nenhuma",
       "description": "<p>O mentálico pode alterar a memória de um alvo, que não se lembrará da memória verdadeira. É possível alterar memórias de fatos ocorridos há 1 mês para cada nível do mentálico, a quantidade de alterações também depende de seu nível. A cada 4 níveis na classe o mentálico pode alterar um elemento da memória, como um acontecimento, lugar ou identidade de um indivíduo, de modo que um mentálico de 5º nível pode alterar dois elementos, e assim por diante. O alvo pode resistir aos efeitos com uma JPM.</p>"
+    },
+    "nota": ""
+  },
+  {
+    "nome": "Premonição",
+    "grandeza": 4,
+    "corrente": "Luz",
+    "corrupcao": false,
+    "cenario": true,
+    "nativo": null,
+    "efeito": {
+      "grandeza": 4,
+      "range": "Pessoal",
+      "duration": "Instantâneo",
+      "jp": "nenhuma",
+      "description": "<p>Uma pergunta sobre um curso de ação <strong>imediato</strong> (a próxima hora); o Mestre responde <em>favorável</em>, <em>desfavorável</em> ou <em>nublado</em>.</p>"
+    },
+    "nota": ""
+  },
+  {
+    "nome": "Absorver Energia",
+    "grandeza": 4,
+    "corrente": "Universal",
+    "corrupcao": false,
+    "cenario": true,
+    "nativo": null,
+    "efeito": {
+      "grandeza": 4,
+      "range": "Pessoal",
+      "duration": "1 rodada",
+      "jp": "nenhuma",
+      "description": "<p><strong>anula o dano de um ataque de energia</strong> dirigido a você — disparo de blaster, relâmpago, descarga de aparato (sabre de luz, não). Se o que você absorveu era um <strong>poder da Força</strong>, você <strong>recupera 1% de Alcance</strong>. É o que se faz com a mão aberta e a palma para a frente.</p>"
     },
     "nota": ""
   },
@@ -1366,6 +1559,38 @@ export const PODERES = [
     "nota": ""
   },
   {
+    "nome": "Drenar Vida",
+    "grandeza": 6,
+    "corrente": "Sombra",
+    "corrupcao": true,
+    "cenario": true,
+    "nativo": null,
+    "efeito": {
+      "grandeza": 6,
+      "range": "Visual",
+      "duration": "Instantâneo",
+      "jp": "JPM (ver texto)",
+      "description": "<p><strong>JPM</strong> ou o alvo sofre <strong>1d6 de dano</strong> e você <strong>recupera esse mesmo número em PV</strong>; o excedente vira <strong>PV temporários</strong> que duram até o fim da cena.</p>"
+    },
+    "nota": ""
+  },
+  {
+    "nome": "Tempestade da Força",
+    "grandeza": 6,
+    "corrente": "Sombra",
+    "corrupcao": true,
+    "cenario": true,
+    "nativo": null,
+    "efeito": {
+      "grandeza": 6,
+      "range": "20 m",
+      "duration": "Instantâneo",
+      "jp": "JPR (ver texto)",
+      "description": "<p>Os relâmpagos deixam de sair de uma mão e passam a cair de todo lado: <strong>4d6 de dano elétrico</strong> num raio de <strong>10 m</strong>, <strong>JPR</strong> para metade. Máquinas e droides sofrem o <strong>dobro</strong> e entram em curto-circuito.</p>"
+    },
+    "nota": ""
+  },
+  {
     "nome": "Presciência",
     "grandeza": 7,
     "corrente": "Luz",
@@ -1546,6 +1771,22 @@ export const PODERES = [
     "nota": ""
   },
   {
+    "nome": "Barreira da Força",
+    "grandeza": 7,
+    "corrente": "Universal",
+    "corrupcao": false,
+    "cenario": true,
+    "nativo": null,
+    "efeito": {
+      "grandeza": 7,
+      "range": "Pessoal, esfera de 3 m",
+      "duration": "1 min por nível",
+      "jp": "nenhuma",
+      "description": "<p>Uma casca de pura vontade: <strong>nenhum poder da Força atravessa</strong>, nem para dentro nem para fora — enquanto durar, <strong>você também não conjura</strong>. Não detém matéria: tiro, lâmina e granada passam normalmente.</p>"
+    },
+    "nota": ""
+  },
+  {
     "nome": "Projeção Astral",
     "grandeza": 8,
     "corrente": "Universal",
@@ -1696,6 +1937,22 @@ export const PODERES = [
     "nota": "<p><em>A <strong>Projeção Astral</strong> é a aparição impossível no campo de batalha — o mestre que trava um exército inteiro sem estar lá. A <strong>Transferir a Alma</strong> é a transferência de essência dos Sith, e o preço dela nunca é pequeno.</em></p>"
   },
   {
+    "nome": "Meditação de Batalha",
+    "grandeza": 8,
+    "corrente": "Luz",
+    "corrupcao": false,
+    "cenario": true,
+    "nativo": null,
+    "efeito": {
+      "grandeza": 8,
+      "range": "100 m",
+      "duration": "10 rodadas",
+      "jp": "JPM (ver texto)",
+      "description": "<p>Você se senta, fecha os olhos <strong>no meio da batalha</strong>, e a batalha muda de forma: aliados ao alcance ganham <strong>+2 em ataque e nas JP</strong>; inimigos que falhem numa <strong>JPM</strong> sofrem <strong>−2</strong> nas mesmas coisas, e os de Moral mais baixa começam a recuar.</p>"
+    },
+    "nota": ""
+  },
+  {
     "nome": "Tornar-se Espírito",
     "grandeza": 9,
     "corrente": "Luz",
@@ -1812,6 +2069,22 @@ export const PODERES = [
       "duration": "Permanente",
       "jp": "nenhuma",
       "description": "<p>O mentálico pode causar 1d6 pontos de dano mental permanente a um alvo que falhe em uma JPM, ou restaurar o dano causado por este mesmo poder mental, caso o alvo seja bem-sucedido em uma JPM. Ao receber dano mental permanente o alvo desmaiará automaticamente e ficará inconsciente por 1d4 dias.</p>"
+    },
+    "nota": ""
+  },
+  {
+    "nome": "Projeção da Força",
+    "grandeza": 9,
+    "corrente": "Universal",
+    "corrupcao": false,
+    "cenario": true,
+    "nativo": null,
+    "efeito": {
+      "grandeza": 9,
+      "range": "Ilimitado, dentro da mesma galáxia",
+      "duration": "1 min por nível",
+      "jp": "nenhuma",
+      "description": "<p>Você <strong>aparece em outro lugar</strong>, com a sua voz e o seu rosto, <strong>indistinguível de você</strong>. A projeção não toca nada e não pode ser tocada. Você, enquanto isso, fica onde está, imóvel e cego ao redor — e o esforço cobra caro.</p>"
     },
     "nota": ""
   },

@@ -1,5 +1,6 @@
 // Os Poderes da Força: os 101 Poderes Mentais do Space Dragon relidos, da 1ª
-// à 10ª Grandeza, nas três correntes Universal, Luz e Sombra.
+// à 10ª Grandeza, nas três correntes Universal, Luz e Sombra — e os 17 ✦,
+// criação do cenário, com o efeito da nota do Nativo.
 //
 // Fonte: o cofre, em Documents\Ekhoria\20 Space Dragon\Space Dragon Suplemento\
 //   SW-SUP-Poderes-da-Forca.md; as regras do journal vêm também de
@@ -31,15 +32,23 @@ const REGRA_DA_CORRENTE = {
 };
 const ESTRELA = "**★ Sempre corrompe:** mesmo para quem é da Sombra, o poder marca **+1 de Corrupção** (alimenta-se de sofrimento).";
 
+// Os ✦ são criação do cenário: não há Poder Mental nativo para linkar, e o
+// efeito vem da nota do Nativo (ver poderesDoCenario no importador).
+const CENARIO =
+  "<p><strong>✦ Criação do cenário</strong> — não há Poder Mental equivalente no livro básico. " +
+  "O preço é o de qualquer poder: a Grandeza diz quanto custa em Alcance e a partir de que nível se chega lá.</p>";
+
 function descricao(p) {
-  const link = `@UUID[Compendium.spacedragon.spacedragon-poderes.Item.${p.nativo.id}]{${p.nativo.nome}}`;
+  const origem = p.cenario
+    ? CENARIO
+    : `<p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.${p.nativo.id}]{${p.nativo.nome}}</p>`;
   return (
     `<p>${md(REGRA_DA_CORRENTE[p.corrente])}</p>` +
     (p.corrupcao ? `<p>${md(ESTRELA)}</p>` : "") +
-    `<p><strong>Poder Mental (<em>SD</em>):</strong> ${link}</p>` +
+    origem +
     p.nota +
     "<hr>" +
-    p.nativo.description
+    (p.cenario ? p.efeito.description : p.nativo.description)
   );
 }
 
@@ -50,9 +59,9 @@ export const listasDePoder = ["Universal", "Luz", "Sombra"].map((corrente) => ({
   poderes: PODERES.filter((p) => p.corrente === corrente).map((p) => ({
     nome: p.nome,
     circle: p.grandeza,
-    range: p.nativo.range,
-    duration: p.nativo.duration,
-    jp: p.nativo.jp,
+    range: (p.nativo ?? p.efeito).range,
+    duration: (p.nativo ?? p.efeito).duration,
+    jp: (p.nativo ?? p.efeito).jp,
     desc: descricao(p),
   })),
 }));
@@ -74,6 +83,7 @@ export const poderesJournal = {
     { title: "A Tentação", content: forca["A Tentação — a Corrupção como moeda"] },
     { title: "Eco da Senda", content: forca["Eco da Senda — o Alcance que volta"] },
     { title: "Nota de Estrutura", content: forca["Nota de estrutura"] },
+    { title: "Poderes do Cenário", content: poderes["Poderes do cenário"] },
     { title: "Crédito", content: poderes["Crédito"] },
   ],
 };

@@ -1,0 +1,39 @@
+{
+  "folder": "A5lmmawcT0NdVYlL",
+  "name": "Toque Sombrio",
+  "type": "spell",
+  "_id": "QxRGcqVOX1z8Fqwv",
+  "img": "systems/olddragon2e/assets/icons/arcane.svg",
+  "system": {
+    "odo_id": "toque-sombrio",
+    "school": "arcane",
+    "circle": "1",
+    "arcane": "1",
+    "divine": "null",
+    "necromancer": "null",
+    "illusionist": "null",
+    "reverse": false,
+    "range": "Toque",
+    "duration": "Instantâneo",
+    "jp": "JPF (ver texto)",
+    "description": "<p><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>✦ Criação do cenário</strong> — não há Poder Mental equivalente no livro básico. O preço é o de qualquer poder: a Grandeza diz quanto custa em Alcance e a partir de que nível se chega lá.</p><hr><p>Verte podridão pela pele do alvo: <strong>1d4 de dano</strong> e, falhando uma <strong>JPF</strong>, <strong>−1 de Constituição</strong> até um descanso de 8 h. O beijo frio do Lado Sombrio, que fere e enfraquece de uma vez.</p>"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!QxRGcqVOX1z8Fqwv"
+}
