@@ -1,0 +1,431 @@
+{
+  "folder": null,
+  "name": "Naves & Veículos",
+  "_id": "Nc0FRuuv0XXg3ESV",
+  "pages": [
+    {
+      "sort": 100000,
+      "name": "Ter e Pilotar uma Nave",
+      "type": "text",
+      "_id": "RWHnvPeGGEWbAHxE",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><blockquote><p>As naves de Star Wars rodando no <strong>motor de Espaçonaves do Space Dragon</strong> (<em>SD</em>, Cap. 10). Cada nave é um dos <strong>8 tipos</strong> da Tabela 10-1 — os números estão no livro básico; o que está aqui é <strong>qual nave da galáxia é qual tipo</strong>. O roster e o sabor (X-wing, TIE, Falcon, Star Destroyer…) vêm da adaptação de <strong>Jonas Picholaro</strong> (CC BY 3.0); as fichas seguem os números do SD.</p></blockquote><blockquote><p><strong>Quer dogfight tático?</strong> Existe um <strong>módulo opcional</strong> — Combate Tático de Naves — que troca a resolução abstrata por hexes, dial de manobras e esquiva (no espírito do <em>X-Wing Miniatures</em>), usando estes mesmos perfis de nave. Se preferir o simples, o combate espacial abaixo resolve tudo com BA × CP e PV, como um duelo entre personagens grandes.</p></blockquote><ul><li>Um personagem pode <strong>ter uma nave a partir do 5º nível</strong> — em geral por uma especialização (o <strong>Emissário</strong> ganha nave patrocinada; o <strong>Contrabandista</strong> tem a sua corja e seu cargueiro), ou conquistada no jogo. Abaixo disso, ele pode <strong>fazer parte de uma tripulação</strong> ou pilotar, mas não comandar a própria.</li><li>O <strong>Veterano</strong> é o <strong>piloto e capitão natural</strong> (talento <em>Pilotar</em>, em %). Técnicos pilotam pior; o Contrabandista pilota como um Veterano.</li><li><strong>Combate espacial:</strong> pelas regras do <em>SD</em>, Cap. 10 — a nave ataca com a <strong>BA</strong> dela contra o <strong>CP</strong> da nave-alvo (o piloto rola <em>Pilotar</em> para manobrar e mirar), o dano vem das <strong>armas acopladas</strong> e sai do <strong>PV</strong> do alvo.</li></ul></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!Nc0FRuuv0XXg3ESV.RWHnvPeGGEWbAHxE"
+    },
+    {
+      "sort": 200000,
+      "name": "Os Oito Tipos de Espaçonave",
+      "type": "text",
+      "_id": "uMsF5wiujlKEGmCe",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>Os perfis completos — PV, BA, CP, JP, movimento, tripulação — estão na <strong>Tabela 10-1</strong> do <strong><em>SD</em>, Cap. 10</strong>. São oito tipos, e a galáxia inteira cabe neles:</p><p><strong>Caça · Escolta · Cápsula · Espaçonave particular · Cargueiro · Transuniversal · Cruzador · Nave-mãe</strong></p><blockquote><p><strong>Lendo a tabela com olhos de Star Wars.</strong> A <strong>Espaçonave particular</strong> é a \"nave-herói\" — o <strong>PV mais gordo da escala pequena</strong> (3d100) e tripulação de até 10, ao preço da <strong>pior JP da tabela (16)</strong>: é a Falcon, é a Ghost, que aguenta pancada mas não se esquiva. O <strong>Caça</strong> tem a maior BA (+16) e o maior movimento (150 m), mas PV frágil (1d100) — o X-wing morre rápido, e é por isso que a cena funciona. O <strong>Cruzador</strong> é a coisa mais perigosa da tabela, com BA +18 e CP 30. Os colossos trocam agilidade por PV brutal: não se persegue um Destróier Estelar, foge-se dele.</p><p><strong>Cuidado com a JP:</strong> ela é <strong>número-alvo</strong> (<code>1d20 + modificador ≥ JP</code>), então <strong>menor é melhor</strong>. Os gigantes e colossos, com 10 a 12, são os mais resistentes; a Cápsula e a Espaçonave particular, com 16, os menos. O modificador vem do teste de pilotagem (T10-5).</p></blockquote></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!Nc0FRuuv0XXg3ESV.uMsF5wiujlKEGmCe"
+    },
+    {
+      "sort": 300000,
+      "name": "De-para: as Naves da Galáxia",
+      "type": "text",
+      "_id": "Uk9cmSSJvESxnilh",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><h3>Caças <em>(tipo: Caça)</em></h3><p>O núcleo de qualquer batalha espacial. Um piloto, uma nave, muito perigo.</p><ul><li><strong>Aliança:</strong> X-wing T-65, Y-wing (bombardeiro resistente), A-wing (velocíssimo), B-wing (canhoneiro), Z-95 Headhunter (o avô do X-wing).</li><li><strong>Império:</strong> TIE Fighter (barato e em enxame — sem escudo nem hiperdrive), TIE Interceptor (mais rápido, resposta ao X-wing), TIE Bomber (torpedos e bombas).</li><li><strong>Outros:</strong> N-1 de Naboo, o Interceptor Jedi (Eta-2). <em>Ajuste fino:</em> dê ao TIE Fighter o <strong>CP cheio de Caça, mas o PV mínimo</strong> e sem escudo; ao X-wing, PV cheio e escudo — a diferença que faz o herói sobreviver ao enxame.</li></ul><h3>Naves de escolta & abordagem <em>(tipo: Escolta)</em></h3><p>Patrulha, canhoneira, transporte armado.</p><ul><li>Cargueiro leve armado, a <strong>LAAT</strong> (gunship clônica), a lançadeira <strong>Lambda</strong> armada, corvetas pequenas de patrulha, naves de abordagem pirata.</li></ul><h3>Cápsulas <em>(tipo: Cápsula)</em></h3><ul><li>Cápsula de fuga (o par que salvou R2 e C-3PO), sondas de exploração, batedores pequenos.</li></ul><h3>A nave-herói <em>(tipo: Espaçonave particular)</em></h3><p>O lar móvel do grupo — o tipo mais valioso para os jogadores.</p><ul><li><strong>Millennium Falcon</strong> (cargueiro leve YT-1300 \"modificado\"), <strong>Slave I / Firespray</strong> de Boba Fett, a <strong>Ghost</strong> (VCX-100), transportes particulares e lançadeiras. Casa com o <strong>Contrabandista</strong> e o <strong>Emissário</strong>.</li></ul><h3>Cargueiros & transportes civis <em>(tipos: Cargueiro / Transuniversal)</em></h3><ul><li>Cargueiro de granel, o <strong>transporte médio GR-75</strong> rebelde, naves-contêiner; e, no lado civil, cruzeiros de passageiros, transportes de colônia e naves de lazer.</li></ul><h3>Capitais <em>(tipo: Cruzador)</em></h3><ul><li><strong>Destróier Estelar Imperial</strong> (o clássico triângulo), a <strong>fragata Nebulon-B</strong>, a corveta corelliana <strong>CR90</strong> (a Tantive IV — trate como um Cruzador pequeno/rápido, JP um pouco melhor), o cruzador <strong>MC80</strong> mon-calamari (Home One). Contra um Cruzador, o grupo não vence no peito — sabota, foge ou mira o ponto fraco.</li></ul><h3>Colossos <em>(tipo: Nave-mãe)</em></h3><ul><li>O <strong>Super Destróier Executor</strong> e outras naves capitais imensas. A <strong>Estrela da Morte</strong> é uma <strong>estação</strong>, não uma nave — escala além da tabela (gancho de campanha, não alvo de dogfight).</li></ul></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!Nc0FRuuv0XXg3ESV.Uk9cmSSJvESxnilh"
+    },
+    {
+      "sort": 400000,
+      "name": "Câmaras da Nave",
+      "type": "text",
+      "_id": "chozY2MD03Y31K5s",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>Toda nave é feita de câmaras (<strong>Tabela 10-2</strong> do livro básico) — o Mestre decide quais existem. Na galáxia, são estas que rendem cena:</p><p><strong>Ponte de comando</strong> (controles, radar, escudo, piloto automático) · <strong>Aposentos da tripulação</strong> · <strong>Sala de máquinas</strong> (motores, gerador) · <strong>Ala hospitalar</strong> (maca, cirurgia — o palco do Médico de Campo) · <strong>Laboratório</strong> (aparatos, análise — o do Técnico) · <strong>Arsenal</strong> · <strong>Câmara de acoplagem</strong> (abordagem) · <strong>Câmara de despressurização</strong> (entrada/saída no espaço) · <strong>Depósito</strong> · <strong>Refeitório</strong> · <strong>Corredores</strong> · <strong>Saída de emergência</strong> (cápsulas).</p></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!Nc0FRuuv0XXg3ESV.chozY2MD03Y31K5s"
+    },
+    {
+      "sort": 500000,
+      "name": "Combate Tático: Preparação",
+      "type": "text",
+      "_id": "FyHvp2uclBvR6qZT",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><blockquote><p>Uma camada <strong>opcional</strong> por cima do combate espacial nativo (Naves e Veículos): troca a resolução abstrata por um <strong>dogfight em hexes</strong>, com dial de manobras e esquiva — o sabor do <em>X-Wing Miniatures</em> rodando no motor do Space Dragon, <strong>sem dados customizados nem cartas</strong>. Mesmo espírito do módulo ED-12 do Estrela Dracônica. Se sua mesa quer perseguição de caças, use isto; senão, o sistema nativo resolve tudo com BA × CP.</p></blockquote><ul><li><strong>Mapa em hexes.</strong> <strong>1 hexágono = 20 metros.</strong> Um tapete de hexes, um app ou papel quadriculado hexagonal serve. Cada nave é um token com uma <strong>frente</strong> marcada (a face para onde aponta).</li><li>Não precisa de mais nada — sem cartas de dano, sem dados especiais, sem pontos de esquadrão.</li></ul><p>Este módulo <strong>não cria fichas de nave</strong> — usa as da <strong>Tabela 10-1</strong> (<em>SD</em>, Cap. 10). De lá saem <strong>BA de Casco</strong>, <strong>CP de Casco</strong> e <strong>PV</strong>, sem mudança. Só dois números são calculados aqui:</p><table><thead><tr><th>Tipo</th><th>Tam.</th><th><strong>Velocidade</strong> (hexes)</th><th><strong>Esquiva</strong> (agilidade)</th></tr></thead><tbody><tr><td>Caça</td><td>Peq</td><td>5</td><td><strong>3d6</strong></td></tr><tr><td>Escolta</td><td>Peq</td><td>4</td><td><strong>3d6</strong></td></tr><tr><td>Cápsula</td><td>Peq</td><td>4</td><td><strong>3d6</strong></td></tr><tr><td>Espaçonave particular</td><td>Méd</td><td>3</td><td><strong>2d6</strong></td></tr><tr><td>Cargueiro</td><td>Gig</td><td>2</td><td><strong>1d6</strong></td></tr><tr><td>Transuniversal</td><td>Gig</td><td>2</td><td><strong>1d6</strong></td></tr><tr><td>Cruzador</td><td>Col</td><td>1</td><td><strong>0</strong></td></tr><tr><td>Nave-mãe</td><td>Col</td><td>1</td><td><strong>0</strong></td></tr></tbody></table><ul><li><strong>Velocidade</strong> = o máximo de hexes que a nave anda numa manobra reta. É uma <strong>escada de mesa</strong> calibrada para o mapa, não uma divisão do Movimento — mas respeita a ordem da <strong>Tabela 10-1</strong> (150 m > 120 m > 100 m > 40 m > 20 m).</li><li><strong>Esquiva</strong> vem do <strong>tamanho</strong> (a agilidade): Pequena = <strong>3d6</strong>, Média = <strong>2d6</strong>, Gigantesca = <strong>1d6</strong>, Colossal = <strong>0</strong> (não esquiva — colossos são atingidos, mas absorvem no PV).</li><li><strong>Armas:</strong> cada nave tem 1+ armas com um <strong>dado de dano</strong> (ver a ficha da nave; ex.: um caça leve <strong>4d8</strong>, um pesado <strong>5d8</strong>, um canhão de capital <strong>6d10+</strong>). O Mestre define pelas fichas do de-para.</li></ul></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!Nc0FRuuv0XXg3ESV.FyHvp2uclBvR6qZT"
+    },
+    {
+      "sort": 600000,
+      "name": "Combate Tático: a Rodada",
+      "type": "text",
+      "_id": "tGyjYqGCEG1YLC9d",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><ol><li><strong>Planejar (em segredo).</strong> Cada piloto escolhe sua <strong>manobra</strong> no dial (abaixo) sem revelar.</li><li><strong>Mover.</strong> Revela-se tudo e move-se na <strong>ordem crescente de Velocidade</strong> (as naves mais lentas primeiro — o caça veloz reage por último ao que os outros fizeram).</li><li><strong>Atirar.</strong> Na <strong>ordem de Iniciativa</strong> dos pilotos (1d20 + mod. de Destreza), cada nave dispara. <em>(Iniciativa própria deste módulo — substitui de propósito a Ordem de Ação de espaçonaves do </em>SD<em>, Cap. 10, onde o menor resultado vem primeiro.)</em></li></ol><h3>O Dial de Manobras</h3><table><thead><tr><th>Manobra</th><th>Cor</th><th>Efeito</th></tr></thead><tbody><tr><td><strong>Reta</strong></td><td>🟢 verde</td><td>Anda 1 a <em>Velocidade</em> hexes em linha reta.</td></tr><tr><td><strong>Inclinada</strong></td><td>⚪ branca</td><td>Anda e <strong>vira 60°</strong> (uma face) ao terminar.</td></tr><tr><td><strong>Curva fechada</strong></td><td>🔴 vermelha</td><td>Anda metade da Velocidade e <strong>vira 120°</strong> (duas faces).</td></tr><tr><td><strong>Koiogran (meia-volta)</strong></td><td>🔴 vermelha</td><td>Anda reto e <strong>vira 180°</strong> — a virada clássica de perseguido para perseguidor.</td></tr><tr><td><strong>Parar</strong></td><td>⚪ branca</td><td>Fica no lugar (Velocidade 0), reposicionando só a mira.</td></tr><tr><td><strong>Ré</strong></td><td>🔴 vermelha</td><td>Recua 1 hex mantendo a frente.</td></tr></tbody></table><p><strong>Sobrecarga (o \"stress\").</strong> Uma manobra <strong>🔴 vermelha</strong> exige esforço do casco e dá <strong>1 marca de Sobrecarga</strong>. Uma nave <strong>com Sobrecarga não pode fazer outra vermelha</strong> — precisa antes de uma manobra <strong>🟢 verde</strong>, que <strong>remove 1 marca</strong>. Manobras ⚪ brancas não mexem na Sobrecarga. <em>(Colossos só fazem Reta, Inclinada e Parar — não viram fechado.)</em></p><blockquote><p><strong>Colisão.</strong> Se a manobra terminaria em cima de outra nave ou obstáculo, a nave <strong>para no hex imediatamente antes</strong> e ganha <strong>1 Sobrecarga</strong>; ambas as naves sofrem <strong>1 dado de dano</strong> se forem do mesmo tamanho ou a menor leva o dobro.</p></blockquote></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!Nc0FRuuv0XXg3ESV.tGyjYqGCEG1YLC9d"
+    },
+    {
+      "sort": 700000,
+      "name": "Combate Tático: Atacar",
+      "type": "text",
+      "_id": "FQbXDY34bzGRLIYk",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><ol><li><strong>Alcance e arco.</strong> Conte os hexes em linha até o alvo. Um <strong>caça</strong> só dispara no <strong>arco frontal</strong> (as duas faces à frente); naves com torres/baterias (Espaçonave particular pra cima) atiram em <strong>qualquer arco</strong>.</li><li><strong>Acerto:</strong> role <strong>1d20 + BA de Casco</strong> contra o <strong>CP de Casco</strong> do alvo.</li><li><strong>Faixa curta (1–3 hexes):</strong> <strong>+2</strong> no ataque (queima-roupa).</li><li><strong>Faixa média (4–6 hexes):</strong> normal.</li><li><strong>Faixa longa (7–9 hexes, teto 180 m):</strong> <strong>−2</strong> no ataque. Além de 9 hexes, sem tiro.</li><li><strong>Dano:</strong> no acerto, role os <strong>dados de dano</strong> da arma.</li><li><strong>Esquiva:</strong> o alvo rola seus <strong>dados de Esquiva</strong> (pela agilidade). <strong>Cada 5–6 cancela um dado de dano inteiro</strong> (não pontos — um dado). O que sobrar <strong>sai dos PV</strong>.</li></ol><blockquote><p><strong>Exemplo:</strong> um X-wing (Caça) dispara <strong>4d8</strong> num TIE (Caça, Esquiva 3d6). Acerta. O TIE rola 3d6 e tira 5, 2, 6 → <strong>dois êxitos</strong>, cancela <strong>2 dos 4 dados</strong>. Sobram <strong>2d8</strong> de dano no casco do TIE.</p></blockquote><h3>Críticos de nave (20 natural)</h3><p>Um <strong>20 natural</strong> acerta e é crítico: <strong>role um dado de dano extra</strong> e role <strong>1d6</strong> na tabela:</p><table><thead><tr><th>d6</th><th>Avaria</th></tr></thead><tbody><tr><td>1</td><td><strong>Motor</strong> — Velocidade −1 até reparar.</td></tr><tr><td>2</td><td><strong>Leme</strong> — só manobras 🟢/⚪ na próxima rodada.</td></tr><tr><td>3</td><td><strong>Armas</strong> — −1 dado de dano até reparar.</td></tr><tr><td>4</td><td><strong>Sensores</strong> — −2 nos ataques até reparar.</td></tr><tr><td>5</td><td><strong>Tripulação</strong> — um posto fica fora por 1 rodada (ou o piloto leva 1d6).</td></tr><tr><td>6</td><td><strong>Brecha no casco</strong> — o dano desta arma é <strong>dobrado</strong>.</td></tr></tbody></table><p><strong>Reparar</strong> uma avaria: o posto de <strong>Engenharia</strong> (ou o piloto solo, gastando o tiro) faz <strong>Operar Máquinas</strong> (Técnico/Veterano); sucesso remove uma avaria <strong>ou</strong> recupera <strong>1d10 PV</strong> (feito de <em>Reparos Robóticos/de campo</em>).</p></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!Nc0FRuuv0XXg3ESV.FQbXDY34bzGRLIYk"
+    },
+    {
+      "sort": 800000,
+      "name": "Combate Tático: os Dois Modos",
+      "type": "text",
+      "_id": "VT4SACOaxSl4WGK7",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><h3>Modo Caça — <em>um PJ, uma nave</em></h3><p>Cada jogador comanda o próprio caça: escolhe a manobra, pilota e atira. A <strong>BA de Casco</strong> resolve o tiro; o <strong>mod. de Destreza</strong> do piloto entra na <strong>Iniciativa</strong> e em testes de <strong>Pilotar</strong> para manobras arriscadas (evitar colisão, voar por um desfiladeiro). É o modo das batalhas de esquadrão (a corrida da trincheira da Estrela da Morte).</p><h3>Modo Tripulação — <em>o grupo, uma nave</em></h3><p>O grupo tripula <strong>uma nave maior</strong> (a Falcon, um cargueiro), cada PJ num <strong>posto</strong> — cada posto é a <strong>ação daquele personagem na rodada</strong>:</p><table><thead><tr><th>Posto</th><th>Quem combina</th><th>O que faz</th></tr></thead><tbody><tr><td><strong>Leme</strong></td><td>Veterano / Contrabandista</td><td>Escolhe e executa a <strong>manobra</strong>; rola <strong>Pilotar</strong> em situações-limite.</td></tr><tr><td><strong>Artilharia</strong></td><td>qualquer</td><td>Faz <strong>um ataque</strong> (uma arma/arco por artilheiro).</td></tr><tr><td><strong>Engenharia</strong></td><td>Técnico</td><td><strong>Remove 1 Sobrecarga</strong> extra ou <strong>repara</strong> (avaria / 1d10 PV).</td></tr><tr><td><strong>Sensores</strong></td><td>qualquer</td><td><strong>Trava um alvo</strong>: +2 no próximo ataque aliado contra ele; informa alcances.</td></tr><tr><td><strong>Comando</strong></td><td>Emissário / líder</td><td>Dá a um posto <strong>uma ação a mais</strong> na rodada, ou concede <strong>re-rolar</strong> um dado.</td></tr></tbody></table><p>Postos vazios simplesmente não agem. Um grupo de 4–5 vira uma tripulação completa — e cada um tem o que fazer no dogfight.</p></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!Nc0FRuuv0XXg3ESV.VT4SACOaxSl4WGK7"
+    },
+    {
+      "sort": 900000,
+      "name": "Combate Tático: Ajuste de Ritmo",
+      "type": "text",
+      "_id": "gGbd3HxaHq6Iyspr",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>As faixas padrão (1–3 / 4–6 / 7–9 hexes, teto 180 m) dão às naves mais <strong>alcance</strong> do que <strong>velocidade</strong> — o combate tende a ser mais posicional que um dogfight veloz. <strong>Se a sua mesa achar lento, a correção não é mexer no hex</strong> (mantenha 20 m): <strong>encurte as faixas</strong> para <strong>1 / 2–3 / 4–5 hexes</strong>. Aí a velocidade dos caças passa a valer mais que o alcance, e vira perseguição.</p></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!Nc0FRuuv0XXg3ESV.gGbd3HxaHq6Iyspr"
+    },
+    {
+      "sort": 1000000,
+      "name": "A Ficha de Nave",
+      "type": "text",
+      "_id": "VesDOw30xlg5BMoR",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>O módulo tem um tipo de ator próprio, <strong>Nave</strong>, com uma ficha que roda o Combate Tático. Crie o ator, escolha o tipo e use <strong>aplicar tipo</strong>: BA, CP, JP e a fórmula de PV vêm da Tabela 10-1; Velocidade e Esquiva, do Combate Tático. Depois role os PV.</p><h3>O que a ficha faz sozinha</h3><ul><li><strong>Planejar e mover.</strong> A manobra é escolhida em segredo no dial; <em>mover</em> a revela, anda com o token no hex e aplica a Sobrecarga pela cor. Com Sobrecarga (ou o Leme avariado), as vermelhas ficam bloqueadas; o colosso só vê Reta, Inclinada e Parar.</li><li><strong>Atirar.</strong> Marque o alvo (tecla T) e clique <em>atirar</em>: 1d20 + BA contra o CP do alvo, com a faixa e a Trava; no acerto, o alvo rola a Esquiva ANTES do dano, cada 5–6 cancela um dado, e só então se rola o que sobrou. O 20 natural soma um dado e rola a avaria; a Brecha dobra o tiro. Com permissão sobre o alvo, o dano e a avaria já entram na ficha dele.</li><li><strong>Iniciativa</strong> (1d20 + Destreza do piloto) grava no combate, se a nave estiver nele. <strong>Reparar</strong> remove uma avaria, recupera 1d10 PV ou tira 1 Sobrecarga. <strong>Fim da rodada</strong> limpa a manobra e as avarias de uma rodada.</li></ul><h3>O que fica com a mesa</h3><ul><li>O arco de tiro e a contagem de hexes até o alvo — a ficha pergunta a faixa.</li><li>O dano da colisão: o cartão avisa, mas o Suplemento não diz de qual arma é o dado.</li><li>O teste de Operar Máquinas antes do reparo e o de Pilotar nas situações-limite: são da ficha do personagem.</li></ul></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!Nc0FRuuv0XXg3ESV.VesDOw30xlg5BMoR"
+    },
+    {
+      "sort": 1100000,
+      "name": "Crédito",
+      "type": "text",
+      "_id": "KeB6teoNPa35pzop",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>Regras, perfis e tabelas de espaçonave são do <strong><em>Space Dragon</strong></em> (Old Dragon Editora), <strong>Cap. 10, Tabelas 10-1 e 10-2</strong> — consulte o Módulo Básico. Roster e sabor das naves adaptados de <strong>\"Star Wars para Space Dragon\", de Jonas Picholaro</strong> (CC BY 3.0).</p><p>Módulo adaptado do <strong>ED-12 (Estrela Dracônica)</strong>, por sua vez inspirado no <em>X-Wing Miniatures Game</em> (FFG), rodando sobre as naves nativas do <strong>Space Dragon</strong>.</p></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!Nc0FRuuv0XXg3ESV.KeB6teoNPa35pzop"
+    }
+  ],
+  "flags": {},
+  "sort": 800000,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "_key": "!journal!Nc0FRuuv0XXg3ESV"
+}

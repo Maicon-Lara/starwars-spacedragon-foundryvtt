@@ -1,0 +1,139 @@
+{{!-- Ficha da Nave — Star Wars para Space Dragon. A ordem segue a da rodada
+      do Combate Tático: perfil, estado, dial (planejar e mover), armamento
+      (atirar), postos. --}}
+<form class="starwars-sd-nave" autocomplete="off">
+
+  <header class="cabecalho">
+    <img class="retrato" src="{{ator.img}}" data-edit="img" alt="{{ator.name}}">
+    <div class="titulo">
+      <input type="text" name="name" value="{{ator.name}}" placeholder="Nome da nave">
+      <div class="linha-tipo">
+        <select name="system.tipo">
+          {{#each tipos}}<option value="{{k}}" {{#if sel}}selected{{/if}}>{{rotulo}} · {{tamanho}}</option>{{/each}}
+        </select>
+        <button type="button" data-action="aplicarTipo" title="Preenche BA, CP, JP, Velocidade, Esquiva e a fórmula de PV pela Tabela 10-1">
+          aplicar tipo
+        </button>
+      </div>
+      <p class="tabela">Tabela 10-1: tripulação {{s.perfil.tripulacao}} · movimento {{s.perfil.mov}}</p>
+    </div>
+  </header>
+
+  <section class="perfil">
+    <div class="dado"><label>BA <span class="unid">casco</span></label><input type="number" name="system.ba" value="{{s.ba}}"></div>
+    <div class="dado"><label>CP <span class="unid">casco</span></label><input type="number" name="system.cp" value="{{s.cp}}"></div>
+    <div class="dado" title="Número-alvo: 1d20 + modificador ≥ JP. Menor é melhor."><label>JP</label><input type="number" name="system.jp" value="{{s.jp}}"></div>
+    <div class="dado"><label>Velocidade <span class="unid">hex</span></label><input type="number" name="system.velocidade" value="{{s.velocidade}}" min="0"></div>
+    <div class="dado"><label>Esquiva <span class="unid">d6</span></label><input type="number" name="system.esquiva" value="{{s.esquiva}}" min="0" max="5"></div>
+    <div class="dado" title="Modificador de Destreza do piloto: Iniciativa = 1d20 + este número."><label>Iniciativa <span class="unid">DES</span></label><input type="number" name="system.iniciativa" value="{{s.iniciativa}}"></div>
+  </section>
+
+  <section class="barras">
+    <div class="barra">
+      <div class="rotulo">
+        <span>Pontos de vida</span>
+        <span class="nums">
+          <input type="number" name="system.pv.value" value="{{s.pv.value}}"> /
+          <input type="number" name="system.pv.max" value="{{s.pv.max}}">
+        </span>
+      </div>
+      <div class="trilho"><div class="preenche pv" style="width:{{pctPV}}%"></div></div>
+      <div class="acoes">
+        <input type="text" name="system.pv.formula" value="{{s.pv.formula}}" title="Fórmula de PV do tipo">
+        <button type="button" data-action="rolarPV">rolar</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="estado">
+    <h3>Estado da rodada</h3>
+    <div class="linha-estado">
+      <div class="sobrecarga" title="Manobra vermelha dá 1. Com Sobrecarga, nada de vermelha; uma verde tira 1.">
+        <label>Sobrecarga</label>
+        <button type="button" data-action="sobrecarga" data-delta="-1">−</button>
+        <strong>{{s.sobrecarga}}</strong>
+        <button type="button" data-action="sobrecarga" data-delta="1">+</button>
+      </div>
+      <button type="button" class="ficha trava {{#if s.trava}}ligada{{/if}}" data-action="trava"
+              title="Sensores: +2 no próximo ataque aliado contra o alvo travado">
+        Trava{{#if s.trava}} → {{s.trava}}{{/if}}
+      </button>
+    </div>
+    <div class="avarias">
+      {{#each avarias}}
+      <button type="button" class="ficha {{#if ligada}}ligada avaria{{/if}}" data-action="avaria" data-chave="{{chave}}" title="{{efeito}}">{{rotulo}}</button>
+      {{/each}}
+    </div>
+    <div class="botoes">
+      <button type="button" data-action="iniciativa" title="1d20 + Destreza do piloto — a ordem dos tiros">iniciativa</button>
+      <button type="button" data-action="esquivar" title="Rola a Esquiva desta nave: cada 5–6 cancela um dado de dano">esquivar</button>
+      <button type="button" data-action="reparar" title="Engenharia: remove uma avaria, recupera 1d10 PV ou tira 1 Sobrecarga">reparar</button>
+      <button type="button" data-action="fimDaRodada" title="Limpa a manobra e as avarias de uma rodada (Leme, Tripulação)">fim da rodada</button>
+    </div>
+  </section>
+
+  {{!-- Dial de manobras. A escolha é SECRETA: fica gravada e só sai no chat
+        no Mover, que também move o token e aplica a Sobrecarga. --}}
+  <section class="dial">
+    <h3>Manobra <span class="dica">planeje em segredo · mova na ordem crescente de Velocidade</span></h3>
+    {{#unless escala.ok}}<p class="aviso-escala">{{{escala.motivo}}} O token não será movido.</p>{{/unless}}
+    {{#if s.colosso}}<p class="dica-colosso">Colosso: só Reta, Inclinada e Parar.</p>{{/if}}
+    <div class="manobras">
+      {{#each dial}}
+      <button type="button" class="mano {{cor}} {{#if bloqueada}}bloqueada{{/if}} {{#if (eq ../s.manobra.tipo tipo)}}{{#if (eq ../s.manobra.velocidade velocidade)}}{{#if (eq ../s.manobra.lado lado)}}escolhida{{/if}}{{/if}}{{/if}}"
+              data-action="planejar" data-tipo="{{tipo}}" data-vel="{{velocidade}}" data-lado="{{lado}}" data-bloqueada="{{bloqueada}}"
+              title="{{rotulo}} — giro {{giro}}° · {{cor}}">{{etiqueta}}</button>
+      {{/each}}
+    </div>
+    <div class="planejada">
+      {{#if manobraAtual}}
+        <span class="{{#if s.manobra.revelada}}revelada{{else}}secreta{{/if}}">
+          {{#if s.manobra.revelada}}executada: {{manobraAtual}}{{else}}planejada (em segredo){{/if}}
+        </span>
+      {{else}}<span class="secreta">nenhuma manobra planejada</span>{{/if}}
+      <button type="button" data-action="revelar">mover</button>
+    </div>
+  </section>
+
+  <section class="armamento">
+    <h3>Armamento <span class="dica">marque o alvo (T) antes de atirar</span>
+      <button type="button" class="mais" data-action="addArma" title="Adicionar arma">+</button></h3>
+    {{#if s.armas.length}}
+      <ul class="armas">
+        {{#each s.armas as |arma i|}}
+        <li>
+          <input type="text" class="nome" name="system.armas.{{i}}.nome" value="{{arma.nome}}">
+          <input type="text" class="dano" name="system.armas.{{i}}.dano" value="{{arma.dano}}" title="Dados de dano, ex.: 4d8">
+          <select class="arco" name="system.armas.{{i}}.arco">
+            <option value="frontal" {{#if (eq arma.arco "frontal")}}selected{{/if}}>frontal</option>
+            <option value="livre" {{#if (eq arma.arco "livre")}}selected{{/if}}>qualquer arco</option>
+          </select>
+          <button type="button" class="atacar" data-action="atacar" data-idx="{{i}}">atirar</button>
+          <button type="button" class="menos" data-action="delArma" data-idx="{{i}}" title="Remover">×</button>
+        </li>
+        {{/each}}
+      </ul>
+    {{else}}
+      <p class="vazio">Sem armamento. Use o <strong>+</strong>. Um caça leve atira com 4d8, um pesado com 5d8, um canhão de capital com 6d10 ou mais.</p>
+    {{/if}}
+  </section>
+
+  <section class="postos">
+    <h3>Postos <span class="dica">Modo Tripulação — cada posto é a ação daquele personagem</span></h3>
+    <div class="grade">
+      {{#each postos}}
+      <div class="posto" title="{{acao}}">
+        <label>{{rotulo}}</label>
+        <input type="text" name="system.postos.{{chave}}" value="{{valor}}" placeholder="{{quem}}">
+        <p class="acao-posto">{{acao}}</p>
+      </div>
+      {{/each}}
+    </div>
+  </section>
+
+  <section class="notas">
+    <h3>Notas</h3>
+    {{formInput (lookup s "descricao") name="system.descricao" type="editorHTML" enriched=descricao toggled=true}}
+  </section>
+
+</form>

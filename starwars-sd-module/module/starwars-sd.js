@@ -23,10 +23,26 @@
  * só chaves com o prefixo "starwars-sd.".
  */
 
+import { NaveDataModel } from "./nave-modelo.js";
+import { NaveFicha, TIPO_NAVE } from "./nave-ficha.js";
+
 const ID = "starwars-sd";
 
 Hooks.once("init", () => {
   console.log(`${ID} | Star Wars — Suplemento para Space Dragon`);
+
+  // ── Nave: tipo de ator próprio ──
+  // O subtipo é declarado em module.json (documentTypes); aqui se ligam o
+  // modelo de dados e a ficha. A chave leva o id do módulo como prefixo —
+  // "starwars-sd.nave" —, e por isso não colide com a "stardragon.nave" do
+  // Star Dragon: as duas naves convivem no mesmo mundo, cada uma com a sua
+  // regra.
+  Object.assign(CONFIG.Actor.dataModels, { [TIPO_NAVE]: NaveDataModel });
+  foundry.documents.collections.Actors.registerSheet(ID, NaveFicha, {
+    types: [TIPO_NAVE],
+    label: "Nave (Star Wars SD)",
+    makeDefault: true,
+  });
 });
 
 Hooks.once("ready", () => {

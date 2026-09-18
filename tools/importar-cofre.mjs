@@ -504,6 +504,22 @@ const SECOES = {
     "Feitos Científicos, na galáxia",
     "Crédito",
   ],
+  "SW-SUP-Naves": [
+    "Ter e pilotar uma nave",
+    "Os oito tipos de espaçonave",
+    "De-para — as naves da galáxia",
+    "Câmaras da nave",
+    "Crédito",
+  ],
+  "SW-SUP-Combate-Tatico-de-Naves": [
+    "Preparação",
+    "Perfil tático da nave",
+    "A rodada",
+    "Atacar",
+    "Os dois modos",
+    "Ajuste de ritmo (leia se o combate ficar estático)",
+    "Crédito",
+  ],
   "SW-SUP-Ordens-e-Ranks": [
     "A Ordem Jedi (Caminho da Luz)",
     "Os Sith — a Regra de Dois (Caminho da Sombra)",
