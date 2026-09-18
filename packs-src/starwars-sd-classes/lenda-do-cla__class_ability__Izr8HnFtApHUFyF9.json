@@ -1,0 +1,50 @@
+{
+  "folder": "xZ8H6MGYjdeJr5NK",
+  "name": "Lenda do Clã",
+  "type": "class_ability",
+  "_id": "Izr8HnFtApHUFyF9",
+  "img": "systems/olddragon2e/assets/icons/legiao-shield.svg",
+  "system": {
+    "description": "<p>você virou um nome que ecoa pela galáxia — um exército de um homem só. 1×/combate, desencadeia o <strong>arsenal completo do Beskar'gam</strong> (whistling birds, foguetes de pulso e lança-chamas) num <strong>ataque em área</strong> contra todos os inimigos a curta distância: <strong>5d6 de dano</strong>, uma <strong>JPR</strong> reduz à metade. Tropas comuns <strong>testam Moral</strong> ao entrar em combate contra você (d% ≤ Moral, ou recuam), e sua <strong>Reputação</strong> entre Mandalorianos e Caçadores é excelente.</p>",
+    "level": 20,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 500000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!Izr8HnFtApHUFyF9"
+}

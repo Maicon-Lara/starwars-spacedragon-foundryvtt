@@ -1,0 +1,50 @@
+{
+  "folder": "oBtcnSSVf2Dl01Tj",
+  "name": "Makashi (II)",
+  "type": "class_ability",
+  "_id": "JVEd1TmDvugRUTxV",
+  "img": "systems/olddragon2e/assets/icons/slashing.svg",
+  "system": {
+    "description": "<p><em>o duelo elegante</em></p><ul><li><code>5º</code> <strong>Precisão do Duelista:</strong> marque um oponente — <strong>+1 no ataque e no dano</strong> contra ele; 1×/rodada, <strong>apara</strong> uma lâmina/sabre (teste de ataque) para <strong>reduzir o dano à metade</strong>.</li><li><code>10º</code> <strong>Riposte:</strong> quando o alvo do duelo <strong>erra</strong> você, ganha um <strong>ataque de resposta</strong> imediato.</li><li><code>20º</code> <strong>Mestre Makashi:</strong> no duelo, críticos saem em <strong>1-2 no d20</strong> e o oponente tem desvantagem para anular seus golpes com a Força.</li></ul>",
+    "level": 5,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!JVEd1TmDvugRUTxV"
+}

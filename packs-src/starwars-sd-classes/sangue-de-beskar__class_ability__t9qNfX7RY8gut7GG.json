@@ -1,0 +1,50 @@
+{
+  "folder": "xZ8H6MGYjdeJr5NK",
+  "name": "Sangue de Beskar",
+  "type": "class_ability",
+  "_id": "t9qNfX7RY8gut7GG",
+  "img": "systems/olddragon2e/assets/icons/legiao-shield.svg",
+  "system": {
+    "description": "<p>ao vestir Armadura Beskar (ou pesada de clã), a Carga cai uma categoria e <strong>sabres de luz deixam de ignorar seu CP</strong> enquanto a usar.</p>",
+    "level": 10,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 300000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!t9qNfX7RY8gut7GG"
+}

@@ -1,0 +1,50 @@
+{
+  "folder": "oBtcnSSVf2Dl01Tj",
+  "name": "Niman (VI)",
+  "type": "class_ability",
+  "_id": "GdEZCfns57v28aLO",
+  "img": "systems/olddragon2e/assets/icons/slashing.svg",
+  "system": {
+    "description": "<p><em>o equilíbrio sabre + Força</em></p><ul><li><code>5º</code> <strong>Fluxo Equilibrado:</strong> na rodada em que usa um poder da Força, ainda faz um <strong>ataque de sabre</strong> (ou vice-versa) sem penalidade; empunha a lâmina com a Força para atacar a curta distância ou desarmar telecineticamente.</li><li><code>10º</code> <strong>Golpe Carregado:</strong> ao acertar, gasta <strong>1% de Alcance</strong> para somar ao golpe um poder de <strong>1ª Grandeza</strong>.</li><li><code>20º</code> <strong>Mestre Niman:</strong> 1×/rodada, <strong>um poder da Força e um ataque de sabre</strong> contam como <strong>uma só ação</strong>.</li></ul>",
+    "level": 5,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 600000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!GdEZCfns57v28aLO"
+}

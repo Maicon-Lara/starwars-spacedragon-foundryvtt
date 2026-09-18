@@ -1,0 +1,246 @@
+{
+  "folder": null,
+  "name": "Sabre de Luz e Cristais Kyber",
+  "_id": "cgQiXSkD3atK7DkV",
+  "pages": [
+    {
+      "sort": 100000,
+      "name": "O Cristal Kyber",
+      "type": "text",
+      "_id": "9lMrVgl659xxyr6L",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><blockquote><p>O sabre de luz não é só uma arma (ficha em Equipamentos e Créditos, <strong>2d10</strong> de energia) — é um rito, uma identidade e, para alguns, um símbolo político. Este arquivo cobre o cristal que o alimenta, a construção, as lâminas lendárias e as <strong>sete Formas</strong> do Guardião (na escala nativa 1–20).</p></blockquote><p>No coração de todo sabre há um <strong>cristal kyber</strong>, pedra sensível à Força que focaliza a lâmina. Cristais são incolores até um usuário se <strong>sintonizar</strong> por meditação, quando o cristal <strong>assume uma cor</strong> que reflete o vínculo. A cor é <strong>narrativa, não mecânica</strong> (não dá bônus), mas costuma seguir a Senda:</p><table><thead><tr><th>Cor</th><th>Vínculo típico</th></tr></thead><tbody><tr><td><strong>Azul</strong></td><td><strong>Guardiões</strong> da Luz (o Jedi de sabre)</td></tr><tr><td><strong>Verde</strong></td><td><strong>Consulares</strong> da Luz (mais ligados à Força que à lâmina)</td></tr><tr><td><strong>Amarelo / raros</strong></td><td><strong>Sentinelas</strong> e híbridos que equilibram combate e mística</td></tr><tr><td><strong>Vermelho</strong></td><td>Caminho da Sombra — obtido pelo <strong>Sangramento</strong> (adiante)</td></tr></tbody></table></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!cgQiXSkD3atK7DkV.9lMrVgl659xxyr6L"
+    },
+    {
+      "sort": 200000,
+      "name": "Construir o Próprio Sabre",
+      "type": "text",
+      "_id": "7Jz7WQJFv8gANqbk",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>Um marco na vida de um Sensível — tradicionalmente a primeira Provação, ou uma cena de <em>downtime</em>. <strong>Exige</strong> um cristal kyber sintonizado + componentes (emissor, célula, empunhadura) + um período de <strong>concentração através da Força</strong>. <strong>Resultado:</strong> o Sabre de Luz da ficha — e <strong>o sabre que você mesmo construiu</strong> nunca falha nem \"sangra\" nas suas mãos.</p><blockquote><p>Cristais raros/lendários podem conceder propriedades únicas (um dado de dano extra, resistência a desarme), a critério do Mestre como recompensa — não como padrão.</p></blockquote></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!cgQiXSkD3atK7DkV.7Jz7WQJFv8gANqbk"
+    },
+    {
+      "sort": 300000,
+      "name": "Sangrar o Cristal",
+      "type": "text",
+      "_id": "XKZ8RXBMZ3GOTAOu",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>Um personagem do <strong>Caminho da Sombra</strong> pode <strong>sangrar</strong> um cristal — derramar ódio até ele racher num <strong>vermelho ardente</strong>.</p><ul><li><strong>Custo:</strong> <strong>+1 de Corrupção</strong>.</li><li><strong>Benefício:</strong> com <strong>Corrupção 3+</strong>, o sabre vermelho dá <strong>+1 no dano</strong>. Abaixo disso, é um sabre comum vermelho.</li><li><strong>Purificar:</strong> um cristal sangrado pode ser purificado por um ato da Luz — conta como gesto de <strong>Redenção</strong>.</li></ul></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!cgQiXSkD3atK7DkV.XKZ8RXBMZ3GOTAOu"
+    },
+    {
+      "sort": 400000,
+      "name": "O Sabre Sombrio",
+      "type": "text",
+      "_id": "gKGisUDnQnXVTNhn",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>Lâmina <strong>negra e achatada como uma espada</strong>, forjada há mil anos por <strong>Tarre Vizsla — o primeiro Mandaloriano admitido na Ordem Jedi</strong>. Artefato único e <strong>símbolo de liderança de Mandalore</strong>.</p><ul><li><strong>Ficha:</strong> como um Sabre de Luz, mas corta <strong>até a Beskar</strong> — a única lâmina que ignora o CP da Armadura Beskar (Senda Mandaloriana).</li><li><strong>O Peso da Dúvida:</strong> quem o empunha <strong>sem tê-lo conquistado em combate</strong> sofre <strong>−1 nos ataques</strong> com ele até vencer um duelo com a lâmina.</li><li><strong>O Direito de Mandalore:</strong> portá-lo é <strong>reivindicar a liderança de Mandalore</strong> — um enorme gancho político (casa com o papel <em>Portador da Herança</em>).</li></ul></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!cgQiXSkD3atK7DkV.gKGisUDnQnXVTNhn"
+    },
+    {
+      "sort": 500000,
+      "name": "As Formas de Sabre",
+      "type": "text",
+      "_id": "EKfmFntBmDHAHAVK",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>As <strong>Formas</strong> são o coração do <strong>Guardião</strong>: no <strong>5º nível</strong> (quando a especialização abre) ele escolhe <strong>uma</strong> das sete — sua <strong>Forma Mestra</strong> —, que progride nos degraus <strong><code>5º</code> / <code>10º</code> / <code>20º</code></strong>, por cima do <em>Adestramento de Combate</em> (BA de Veterano) que ele já tem. Onde uma técnica gasta Foco, ela consome <strong>1% de Alcance da Força</strong> (O Sensível à Força).</p><h3>Shii-Cho (I) — <em>a forma fundamental</em></h3><p>Versátil, feita para enfrentar vários oponentes.</p><ul><li><code>5º</code> <strong>Sequência Aberta:</strong> ao derrubar ou errar um inimigo, transfere o ataque a <strong>outro adjacente</strong>; ao acertar, pode <strong>desarmar</strong> sem gastar o ataque.</li><li><code>10º</code> <strong>Domínio do Enxame:</strong> cercado por 2+ inimigos, <strong>+2 no CP</strong> e um <strong>ataque extra</strong> contra um flanqueador.</li><li><code>20º</code> <strong>Mestre Shii-Cho:</strong> distribui os ataques livremente entre adjacentes e <strong>nunca sofre penalidade por estar cercado</strong>.</li></ul><h3>Makashi (II) — <em>o duelo elegante</em></h3><ul><li><code>5º</code> <strong>Precisão do Duelista:</strong> marque um oponente — <strong>+1 no ataque e no dano</strong> contra ele; 1×/rodada, <strong>apara</strong> uma lâmina/sabre (teste de ataque) para <strong>reduzir o dano à metade</strong>.</li><li><code>10º</code> <strong>Riposte:</strong> quando o alvo do duelo <strong>erra</strong> você, ganha um <strong>ataque de resposta</strong> imediato.</li><li><code>20º</code> <strong>Mestre Makashi:</strong> no duelo, críticos saem em <strong>1-2 no d20</strong> e o oponente tem desvantagem para anular seus golpes com a Força.</li></ul><h3>Soresu (III) — <em>defesa pura</em></h3><ul><li><code>5º</code> <strong>Postura Defensiva:</strong> <strong>+2 no CP</strong> contra ataques à distância e você <strong>deflete disparos de blaster</strong> sem gastar ação; gastando a ação, deflete <strong>todos</strong> os disparos contra você e aliados adjacentes.</li><li><code>10º</code> <strong>Devolver ao Remetente:</strong> ao defletir, pode <strong>redirecionar o disparo ao atirador</strong> com um ataque seu.</li><li><code>20º</code> <strong>Mestre Soresu:</strong> ataques à distância só o acertam num <strong>crítico</strong>.</li></ul><h3>Ataru (IV) — <em>acrobática</em></h3><ul><li><code>5º</code> <strong>Ímpeto Acrobático:</strong> se você <strong>se moveu</strong> antes de atacar, <strong>+1 no ataque e no dano</strong>; atacar de cima torna o primeiro golpe <strong>Fácil</strong>.</li><li><code>10º</code> <strong>Turbilhão:</strong> gastando <strong>1% de Alcance</strong>, um <strong>ataque extra</strong> enquanto se reposiciona.</li><li><code>20º</code> <strong>Mestre Ataru:</strong> em terreno aberto, <strong>dois ataques extras</strong> em movimento — mas <strong>−2 no CP</strong> se for <strong>imobilizado</strong>.</li></ul><h3>Djem So (V) — <em>força e contra-ataque</em></h3><ul><li><code>5º</code> <strong>Contra-Ataque:</strong> quando um inimigo adjacente <strong>erra</strong> você em corpo a corpo, ganha um <strong>ataque de resposta</strong>; pode trocar precisão (<strong>−2 no ataque</strong>) por <strong>+1d8 de dano</strong>.</li><li><code>10º</code> <strong>Fúria Controlada:</strong> com metade dos PV ou menos, <strong>+2 no ataque e no dano</strong>.</li><li><code>20º</code> <strong>Mestre Djem So:</strong> todo ataque inimigo que você <strong>aparar ou que errar</strong> abre uma resposta.</li></ul><h3>Niman (VI) — <em>o equilíbrio sabre + Força</em></h3><ul><li><code>5º</code> <strong>Fluxo Equilibrado:</strong> na rodada em que usa um poder da Força, ainda faz um <strong>ataque de sabre</strong> (ou vice-versa) sem penalidade; empunha a lâmina com a Força para atacar a curta distância ou desarmar telecineticamente.</li><li><code>10º</code> <strong>Golpe Carregado:</strong> ao acertar, gasta <strong>1% de Alcance</strong> para somar ao golpe um poder de <strong>1ª Grandeza</strong>.</li><li><code>20º</code> <strong>Mestre Niman:</strong> 1×/rodada, <strong>um poder da Força e um ataque de sabre</strong> contam como <strong>uma só ação</strong>.</li></ul><h3>Juyo / Vaapad (VII) — <em>a forma feroz</em></h3><ul><li><code>5º</code> <strong>Fúria Canalizada:</strong> <strong>+1 no ataque e no dano</strong>, mas usá-la movido pela raiva arrisca <strong>+1 de Corrupção</strong> por combate (a critério do Mestre); inimigos têm desvantagem para aparar/anular seus golpes.</li><li><code>10º</code> <strong>Sede de Batalha:</strong> ao <strong>derrubar</strong> um inimigo, um <strong>ataque extra</strong> imediato.</li><li><code>20º</code> <strong>Mestre Vaapad:</strong> <strong>+1 no dano para cada inimigo que o atacou</strong> na rodada — mas a Sombra cobra.</li></ul></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!cgQiXSkD3atK7DkV.EKfmFntBmDHAHAVK"
+    },
+    {
+      "sort": 600000,
+      "name": "Mudar de Guarda",
+      "type": "text",
+      "_id": "IcR2jBbmnwECPZ5c",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>Uma Forma é <strong>como você fica de pé</strong>. Trocar no meio do combate é abrir a guarda de propósito — e todo espadachim do outro lado <strong>vê</strong> você fazendo isso. Custa caro, e é por isso que ganha duelos.</p><table><thead><tr><th>Nível</th><th>O que você ganha</th><th>Até que degrau</th></tr></thead><tbody><tr><td><code>5º</code></td><td><strong>Forma Mestra</strong> — a primeira, a sua.</td><td><code>5º</code> → <code>10º</code> → <code>20º</code> (inteira)</td></tr><tr><td><code>10º</code></td><td><strong>Segunda Forma</strong>, à escolha.</td><td>só até <code>10º</code></td></tr><tr><td><code>20º</code></td><td><strong>Terceira Forma</strong>, à escolha.</td><td>só até <code>5º</code></td></tr></tbody></table><p><strong>Só a Forma Mestra chega ao <code>20º</code>.</strong> Você continua sendo <em>um</em> duelista com <em>um</em> estilo; as outras Formas são <strong>respostas guardadas na manga</strong>. Aprendê-las é <em>downtime</em> (um mestre, um holocron de duelo, ou um adversário que sobreviveu para você estudar).</p><p><strong>A troca:</strong></p><ul><li><strong>Gasta 1 turno</strong> (sem ataque, sem poder, sem Duelo da Força — só se move).</li><li><strong>É declarada em voz alta:</strong> inimigos com treino de sabre reconhecem a guarda nova.</li><li><strong>Você fica aberto:</strong> <strong>−2 no CP</strong> até seu próximo turno.</li><li><strong>Uma troca por rodada.</strong> A <strong>Forma inicial</strong> de cada combate é declarada de graça.</li><li><code>20º</code> <strong>Guarda Fluida:</strong> troca gastando <strong>1% de Alcance</strong> em vez do turno — 1×/rodada, e <strong>sem</strong> o −2 no CP.</li></ul><blockquote><p><strong>Quem não é Guardião</strong> — o Vidente, ou quem trilhou a Senda Mandaloriana e recebeu uma Forma do clã — conhece <strong>uma Forma só</strong> e não tem para onde trocar. <em>Mudar de Guarda</em> é patrimônio do Guardião.</p><p><strong>Juyo/Vaapad e a Corrupção.</strong> Trocar <em>para</em> a Forma feroz na raiva já ativa o risco de <strong>+1 de Corrupção</strong>; largá-la quando ainda está ganhando pode render <strong>−1</strong>, a critério do Mestre.</p></blockquote><blockquote><p>⚙️ <strong>Nota de design.</strong> Os degraus das Formas seguem a escala de 20 níveis do <em>Space Dragon</em>: <strong><code>5º</code> / <code>10º</code> / <code>20º</code></strong>, com a Forma abrindo no <strong>5º</strong> — o mesmo nível em que as especializações abrem. Ajuste-os à sua mesa se a campanha for mais curta.</p></blockquote></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!cgQiXSkD3atK7DkV.IcR2jBbmnwECPZ5c"
+    }
+  ],
+  "flags": {},
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "_key": "!journal!cgQiXSkD3atK7DkV"
+}

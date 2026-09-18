@@ -2,7 +2,7 @@
   "id": "starwars-sd",
   "title": "Star Wars — Suplemento para Space Dragon",
   "description": "Star Wars como suplemento de cenário para Space Dragon: as quatro classes (Veterano, Operativo, Técnico e Sensível à Força) sobre os chassis do Space Dragon, nível 1 a 20, com espécies da galáxia, os Poderes da Força em três correntes, sabre e cristais kyber, a Senda Mandaloriana, naves, bestiário e a Seção do Mestre. Não repete as regras: depende do módulo Space Dragon, que é o livro básico. Obra de fã, não oficial e sem fins lucrativos.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "compatibility": {
     "minimum": "13",
     "verified": "13"

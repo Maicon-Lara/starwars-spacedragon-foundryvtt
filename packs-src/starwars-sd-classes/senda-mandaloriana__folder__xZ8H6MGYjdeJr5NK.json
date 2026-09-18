@@ -1,0 +1,22 @@
+{
+  "name": "Senda Mandaloriana",
+  "sorting": "m",
+  "folder": null,
+  "type": "Item",
+  "_id": "xZ8H6MGYjdeJr5NK",
+  "description": "",
+  "sort": 0,
+  "color": "#5d6670",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1"
+  },
+  "_key": "!folders!xZ8H6MGYjdeJr5NK"
+}

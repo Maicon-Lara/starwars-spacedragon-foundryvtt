@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.3.0 — Sabre, Senda Mandaloriana e Ordens
+
+- **Formas de Sabre:** as sete, uma habilidade cada com os degraus 5º/10º/20º
+  dentro, e o **Mudar de Guarda**, na pasta "Formas de Sabre (Guardião)".
+- **Senda Mandaloriana:** quatro classes, "Mandaloriano — Veterano" e as
+  outras, que herdam a base, somam o Núcleo (Resol'nare, Treinamento de Clã,
+  Sangue de Beskar, Voo de Combate, Lenda do Clã) e a troca da sua classe, com
+  o BA e a JP da tabela da Senda. As restrições de equipamento abrem o arsenal
+  do clã, senão a ficha proibiria a própria Beskar.
+- **Origem Filho de Mandalore:** habilidade avulsa no compêndio de Espécies.
+- **Journals:** Sabre de Luz e Cristais Kyber, Ordens e Ranks da Força e A
+  Senda Mandaloriana.
+
 ## 0.2.0 — Classes, Força, Espécies e Poderes
 
 - **Classes:** Veterano, Operativo, Técnico e Sensível à Força, do 1º ao 20º,

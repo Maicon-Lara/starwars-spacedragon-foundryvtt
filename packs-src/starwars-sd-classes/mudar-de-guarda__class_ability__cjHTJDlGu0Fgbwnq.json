@@ -1,0 +1,50 @@
+{
+  "folder": "oBtcnSSVf2Dl01Tj",
+  "name": "Mudar de Guarda",
+  "type": "class_ability",
+  "_id": "cjHTJDlGu0Fgbwnq",
+  "img": "systems/olddragon2e/assets/icons/slashing.svg",
+  "system": {
+    "description": "<p>Uma Forma é <strong>como você fica de pé</strong>. Trocar no meio do combate é abrir a guarda de propósito — e todo espadachim do outro lado <strong>vê</strong> você fazendo isso. Custa caro, e é por isso que ganha duelos.</p><table><thead><tr><th>Nível</th><th>O que você ganha</th><th>Até que degrau</th></tr></thead><tbody><tr><td><code>5º</code></td><td><strong>Forma Mestra</strong> — a primeira, a sua.</td><td><code>5º</code> → <code>10º</code> → <code>20º</code> (inteira)</td></tr><tr><td><code>10º</code></td><td><strong>Segunda Forma</strong>, à escolha.</td><td>só até <code>10º</code></td></tr><tr><td><code>20º</code></td><td><strong>Terceira Forma</strong>, à escolha.</td><td>só até <code>5º</code></td></tr></tbody></table><p><strong>Só a Forma Mestra chega ao <code>20º</code>.</strong> Você continua sendo <em>um</em> duelista com <em>um</em> estilo; as outras Formas são <strong>respostas guardadas na manga</strong>. Aprendê-las é <em>downtime</em> (um mestre, um holocron de duelo, ou um adversário que sobreviveu para você estudar).</p><p><strong>A troca:</strong></p><ul><li><strong>Gasta 1 turno</strong> (sem ataque, sem poder, sem Duelo da Força — só se move).</li><li><strong>É declarada em voz alta:</strong> inimigos com treino de sabre reconhecem a guarda nova.</li><li><strong>Você fica aberto:</strong> <strong>−2 no CP</strong> até seu próximo turno.</li><li><strong>Uma troca por rodada.</strong> A <strong>Forma inicial</strong> de cada combate é declarada de graça.</li><li><code>20º</code> <strong>Guarda Fluida:</strong> troca gastando <strong>1% de Alcance</strong> em vez do turno — 1×/rodada, e <strong>sem</strong> o −2 no CP.</li></ul><blockquote><p><strong>Quem não é Guardião</strong> — o Vidente, ou quem trilhou a Senda Mandaloriana e recebeu uma Forma do clã — conhece <strong>uma Forma só</strong> e não tem para onde trocar. <em>Mudar de Guarda</em> é patrimônio do Guardião.</p><p><strong>Juyo/Vaapad e a Corrupção.</strong> Trocar <em>para</em> a Forma feroz na raiva já ativa o risco de <strong>+1 de Corrupção</strong>; largá-la quando ainda está ganhando pode render <strong>−1</strong>, a critério do Mestre.</p></blockquote><blockquote><p>⚙️ <strong>Nota de design.</strong> Os degraus das Formas seguem a escala de 20 níveis do <em>Space Dragon</em>: <strong><code>5º</code> / <code>10º</code> / <code>20º</code></strong>, com a Forma abrindo no <strong>5º</strong> — o mesmo nível em que as especializações abrem. Ajuste-os à sua mesa se a campanha for mais curta.</p></blockquote>",
+    "level": 10,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 800000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!cjHTJDlGu0Fgbwnq"
+}

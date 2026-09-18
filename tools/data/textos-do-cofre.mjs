@@ -23,6 +23,28 @@ export const TEXTOS = {
     "As três correntes (Caminho)": "<p>Cada poder traz uma etiqueta de corrente. <strong>Esta camada é do cenário</strong> — no livro básico não existe Luz nem Sombra, todos os Poderes Mentais estão disponíveis a qualquer Mentálico.</p><ul><li><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</li><li><code>[L]</code> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</li><li><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</li><li><strong>★</strong> = <strong>sempre corrompe</strong>: mesmo para quem é da Sombra, o poder marca <strong>+1 de Corrupção</strong> (alimenta-se de sofrimento).</li><li><strong>Caminho Cinza</strong> — acessa as <strong>três</strong> correntes. Usar <code>[S]</code> não é queda, mas toda Corrupção conta <strong>em dobro</strong> para ele (um poder <code>[S]</code> ou ★ marca <strong>+2</strong>). Ver O Sensível à Força.</li></ul><blockquote><p><strong>As etiquetas são um guia, não uma lei.</strong> Muitos poderes cabem em mais de uma corrente conforme o uso; o Mestre pode remanejar um poder <code>[U]</code> para <code>[S]</code> se o uso na cena for cruel.</p></blockquote>",
     "Crédito": "<p>A lista de Poderes Mentais, com todos os seus valores, é do <strong><em>Space Dragon</strong></em> (Old Dragon Editora) — consulte o <strong>Cap. 9</strong> do Módulo Básico. A repartição em correntes Universal/Luz/Sombra, as marcas ★ de Corrupção e os nomes de Star Wars são adaptação deste cenário.</p>"
   },
+  "SW-SUP-Sabre-e-Cristais": {
+    "(abertura)": "<blockquote><p>O sabre de luz não é só uma arma (ficha em Equipamentos e Créditos, <strong>2d10</strong> de energia) — é um rito, uma identidade e, para alguns, um símbolo político. Este arquivo cobre o cristal que o alimenta, a construção, as lâminas lendárias e as <strong>sete Formas</strong> do Guardião (na escala nativa 1–20).</p></blockquote>",
+    "O Cristal Kyber": "<p>No coração de todo sabre há um <strong>cristal kyber</strong>, pedra sensível à Força que focaliza a lâmina. Cristais são incolores até um usuário se <strong>sintonizar</strong> por meditação, quando o cristal <strong>assume uma cor</strong> que reflete o vínculo. A cor é <strong>narrativa, não mecânica</strong> (não dá bônus), mas costuma seguir a Senda:</p><table><thead><tr><th>Cor</th><th>Vínculo típico</th></tr></thead><tbody><tr><td><strong>Azul</strong></td><td><strong>Guardiões</strong> da Luz (o Jedi de sabre)</td></tr><tr><td><strong>Verde</strong></td><td><strong>Consulares</strong> da Luz (mais ligados à Força que à lâmina)</td></tr><tr><td><strong>Amarelo / raros</strong></td><td><strong>Sentinelas</strong> e híbridos que equilibram combate e mística</td></tr><tr><td><strong>Vermelho</strong></td><td>Caminho da Sombra — obtido pelo <strong>Sangramento</strong> (adiante)</td></tr></tbody></table>",
+    "Construir o Próprio Sabre": "<p>Um marco na vida de um Sensível — tradicionalmente a primeira Provação, ou uma cena de <em>downtime</em>. <strong>Exige</strong> um cristal kyber sintonizado + componentes (emissor, célula, empunhadura) + um período de <strong>concentração através da Força</strong>. <strong>Resultado:</strong> o Sabre de Luz da ficha — e <strong>o sabre que você mesmo construiu</strong> nunca falha nem \"sangra\" nas suas mãos.</p><blockquote><p>Cristais raros/lendários podem conceder propriedades únicas (um dado de dano extra, resistência a desarme), a critério do Mestre como recompensa — não como padrão.</p></blockquote>",
+    "Sangrar o Cristal (o vermelho Sith)": "<p>Um personagem do <strong>Caminho da Sombra</strong> pode <strong>sangrar</strong> um cristal — derramar ódio até ele racher num <strong>vermelho ardente</strong>.</p><ul><li><strong>Custo:</strong> <strong>+1 de Corrupção</strong>.</li><li><strong>Benefício:</strong> com <strong>Corrupção 3+</strong>, o sabre vermelho dá <strong>+1 no dano</strong>. Abaixo disso, é um sabre comum vermelho.</li><li><strong>Purificar:</strong> um cristal sangrado pode ser purificado por um ato da Luz — conta como gesto de <strong>Redenção</strong>.</li></ul>",
+    "O Sabre Sombrio (Darksaber)": "<p>Lâmina <strong>negra e achatada como uma espada</strong>, forjada há mil anos por <strong>Tarre Vizsla — o primeiro Mandaloriano admitido na Ordem Jedi</strong>. Artefato único e <strong>símbolo de liderança de Mandalore</strong>.</p><ul><li><strong>Ficha:</strong> como um Sabre de Luz, mas corta <strong>até a Beskar</strong> — a única lâmina que ignora o CP da Armadura Beskar (Senda Mandaloriana).</li><li><strong>O Peso da Dúvida:</strong> quem o empunha <strong>sem tê-lo conquistado em combate</strong> sofre <strong>−1 nos ataques</strong> com ele até vencer um duelo com a lâmina.</li><li><strong>O Direito de Mandalore:</strong> portá-lo é <strong>reivindicar a liderança de Mandalore</strong> — um enorme gancho político (casa com o papel <em>Portador da Herança</em>).</li></ul>",
+    "As Formas de Sabre (Senda Guardião)": "<p>As <strong>Formas</strong> são o coração do <strong>Guardião</strong>: no <strong>5º nível</strong> (quando a especialização abre) ele escolhe <strong>uma</strong> das sete — sua <strong>Forma Mestra</strong> —, que progride nos degraus <strong><code>5º</code> / <code>10º</code> / <code>20º</code></strong>, por cima do <em>Adestramento de Combate</em> (BA de Veterano) que ele já tem. Onde uma técnica gasta Foco, ela consome <strong>1% de Alcance da Força</strong> (O Sensível à Força).</p><h3>Shii-Cho (I) — <em>a forma fundamental</em></h3><p>Versátil, feita para enfrentar vários oponentes.</p><ul><li><code>5º</code> <strong>Sequência Aberta:</strong> ao derrubar ou errar um inimigo, transfere o ataque a <strong>outro adjacente</strong>; ao acertar, pode <strong>desarmar</strong> sem gastar o ataque.</li><li><code>10º</code> <strong>Domínio do Enxame:</strong> cercado por 2+ inimigos, <strong>+2 no CP</strong> e um <strong>ataque extra</strong> contra um flanqueador.</li><li><code>20º</code> <strong>Mestre Shii-Cho:</strong> distribui os ataques livremente entre adjacentes e <strong>nunca sofre penalidade por estar cercado</strong>.</li></ul><h3>Makashi (II) — <em>o duelo elegante</em></h3><ul><li><code>5º</code> <strong>Precisão do Duelista:</strong> marque um oponente — <strong>+1 no ataque e no dano</strong> contra ele; 1×/rodada, <strong>apara</strong> uma lâmina/sabre (teste de ataque) para <strong>reduzir o dano à metade</strong>.</li><li><code>10º</code> <strong>Riposte:</strong> quando o alvo do duelo <strong>erra</strong> você, ganha um <strong>ataque de resposta</strong> imediato.</li><li><code>20º</code> <strong>Mestre Makashi:</strong> no duelo, críticos saem em <strong>1-2 no d20</strong> e o oponente tem desvantagem para anular seus golpes com a Força.</li></ul><h3>Soresu (III) — <em>defesa pura</em></h3><ul><li><code>5º</code> <strong>Postura Defensiva:</strong> <strong>+2 no CP</strong> contra ataques à distância e você <strong>deflete disparos de blaster</strong> sem gastar ação; gastando a ação, deflete <strong>todos</strong> os disparos contra você e aliados adjacentes.</li><li><code>10º</code> <strong>Devolver ao Remetente:</strong> ao defletir, pode <strong>redirecionar o disparo ao atirador</strong> com um ataque seu.</li><li><code>20º</code> <strong>Mestre Soresu:</strong> ataques à distância só o acertam num <strong>crítico</strong>.</li></ul><h3>Ataru (IV) — <em>acrobática</em></h3><ul><li><code>5º</code> <strong>Ímpeto Acrobático:</strong> se você <strong>se moveu</strong> antes de atacar, <strong>+1 no ataque e no dano</strong>; atacar de cima torna o primeiro golpe <strong>Fácil</strong>.</li><li><code>10º</code> <strong>Turbilhão:</strong> gastando <strong>1% de Alcance</strong>, um <strong>ataque extra</strong> enquanto se reposiciona.</li><li><code>20º</code> <strong>Mestre Ataru:</strong> em terreno aberto, <strong>dois ataques extras</strong> em movimento — mas <strong>−2 no CP</strong> se for <strong>imobilizado</strong>.</li></ul><h3>Djem So (V) — <em>força e contra-ataque</em></h3><ul><li><code>5º</code> <strong>Contra-Ataque:</strong> quando um inimigo adjacente <strong>erra</strong> você em corpo a corpo, ganha um <strong>ataque de resposta</strong>; pode trocar precisão (<strong>−2 no ataque</strong>) por <strong>+1d8 de dano</strong>.</li><li><code>10º</code> <strong>Fúria Controlada:</strong> com metade dos PV ou menos, <strong>+2 no ataque e no dano</strong>.</li><li><code>20º</code> <strong>Mestre Djem So:</strong> todo ataque inimigo que você <strong>aparar ou que errar</strong> abre uma resposta.</li></ul><h3>Niman (VI) — <em>o equilíbrio sabre + Força</em></h3><ul><li><code>5º</code> <strong>Fluxo Equilibrado:</strong> na rodada em que usa um poder da Força, ainda faz um <strong>ataque de sabre</strong> (ou vice-versa) sem penalidade; empunha a lâmina com a Força para atacar a curta distância ou desarmar telecineticamente.</li><li><code>10º</code> <strong>Golpe Carregado:</strong> ao acertar, gasta <strong>1% de Alcance</strong> para somar ao golpe um poder de <strong>1ª Grandeza</strong>.</li><li><code>20º</code> <strong>Mestre Niman:</strong> 1×/rodada, <strong>um poder da Força e um ataque de sabre</strong> contam como <strong>uma só ação</strong>.</li></ul><h3>Juyo / Vaapad (VII) — <em>a forma feroz</em></h3><ul><li><code>5º</code> <strong>Fúria Canalizada:</strong> <strong>+1 no ataque e no dano</strong>, mas usá-la movido pela raiva arrisca <strong>+1 de Corrupção</strong> por combate (a critério do Mestre); inimigos têm desvantagem para aparar/anular seus golpes.</li><li><code>10º</code> <strong>Sede de Batalha:</strong> ao <strong>derrubar</strong> um inimigo, um <strong>ataque extra</strong> imediato.</li><li><code>20º</code> <strong>Mestre Vaapad:</strong> <strong>+1 no dano para cada inimigo que o atacou</strong> na rodada — mas a Sombra cobra.</li></ul>",
+    "Mudar de Guarda — trocar de Forma no meio do duelo": "<p>Uma Forma é <strong>como você fica de pé</strong>. Trocar no meio do combate é abrir a guarda de propósito — e todo espadachim do outro lado <strong>vê</strong> você fazendo isso. Custa caro, e é por isso que ganha duelos.</p><table><thead><tr><th>Nível</th><th>O que você ganha</th><th>Até que degrau</th></tr></thead><tbody><tr><td><code>5º</code></td><td><strong>Forma Mestra</strong> — a primeira, a sua.</td><td><code>5º</code> → <code>10º</code> → <code>20º</code> (inteira)</td></tr><tr><td><code>10º</code></td><td><strong>Segunda Forma</strong>, à escolha.</td><td>só até <code>10º</code></td></tr><tr><td><code>20º</code></td><td><strong>Terceira Forma</strong>, à escolha.</td><td>só até <code>5º</code></td></tr></tbody></table><p><strong>Só a Forma Mestra chega ao <code>20º</code>.</strong> Você continua sendo <em>um</em> duelista com <em>um</em> estilo; as outras Formas são <strong>respostas guardadas na manga</strong>. Aprendê-las é <em>downtime</em> (um mestre, um holocron de duelo, ou um adversário que sobreviveu para você estudar).</p><p><strong>A troca:</strong></p><ul><li><strong>Gasta 1 turno</strong> (sem ataque, sem poder, sem Duelo da Força — só se move).</li><li><strong>É declarada em voz alta:</strong> inimigos com treino de sabre reconhecem a guarda nova.</li><li><strong>Você fica aberto:</strong> <strong>−2 no CP</strong> até seu próximo turno.</li><li><strong>Uma troca por rodada.</strong> A <strong>Forma inicial</strong> de cada combate é declarada de graça.</li><li><code>20º</code> <strong>Guarda Fluida:</strong> troca gastando <strong>1% de Alcance</strong> em vez do turno — 1×/rodada, e <strong>sem</strong> o −2 no CP.</li></ul><blockquote><p><strong>Quem não é Guardião</strong> — o Vidente, ou quem trilhou a Senda Mandaloriana e recebeu uma Forma do clã — conhece <strong>uma Forma só</strong> e não tem para onde trocar. <em>Mudar de Guarda</em> é patrimônio do Guardião.</p><p><strong>Juyo/Vaapad e a Corrupção.</strong> Trocar <em>para</em> a Forma feroz na raiva já ativa o risco de <strong>+1 de Corrupção</strong>; largá-la quando ainda está ganhando pode render <strong>−1</strong>, a critério do Mestre.</p></blockquote><blockquote><p>⚙️ <strong>Nota de design.</strong> Os degraus das Formas seguem a escala de 20 níveis do <em>Space Dragon</em>: <strong><code>5º</code> / <code>10º</code> / <code>20º</code></strong>, com a Forma abrindo no <strong>5º</strong> — o mesmo nível em que as especializações abrem. Ajuste-os à sua mesa se a campanha for mais curta.</p></blockquote>"
+  },
+  "SW-SUP-Senda-Mandaloriana": {
+    "(abertura)": "<blockquote><p>Mandaloriano <strong>não é uma espécie, é uma cultura</strong>: há Mandalorianos humanos, Twi'lek, Rodianos e até um raro Sensível à Força. Existe quem <strong>nasce no berço da cultura</strong> (a Origem, no 1º nível) e quem <strong>é adotado no Credo</strong> (a Senda, no 5º nível), trocando parte das habilidades da classe pelo pacote de clã.</p></blockquote>",
+    "Origem: Filho de Mandalore (1º nível)": "<p>Uma <strong>Origem</strong> é escolhida na criação, por cima da espécie e da classe, e representa o berço cultural. <em>Filho de Mandalore</em> está disponível a <strong>qualquer espécie e classe</strong>.</p><ul><li><code>1º</code> <strong>Criado na Armadura:</strong> usa a Lança-Vibro Mandaloriana, a Mochila de Propulsão (jetpack) e a armadura de clã <strong>sem penalidade</strong>, mesmo que a classe normalmente não permitisse.</li><li><code>1º</code> <strong>Sangue de Clã:</strong> +1 em testes de reação com Mandalorianos e caçadores que reconheçam sua herança.</li><li><code>1º</code> <strong>Mando'a:</strong> fala o idioma Mandaloriano além dos idiomas iniciais.</li></ul><blockquote><p>A Origem é leve e <strong>não substitui habilidades de classe</strong>. É a <strong>porta de entrada</strong> para a Senda — mas não é obrigatória.</p></blockquote>",
+    "A Senda Mandaloriana (arquétipo cross-class, 5º nível)": "<p>Um personagem de <strong>qualquer classe</strong> aceito num clã pode assumir a Senda <strong>no lugar de sua especialização</strong> (que também abre no 5º nível). Como toda especialização do SD, ele ganha o <strong>Núcleo Mandaloriano</strong> e <strong>troca</strong> parte das habilidades da classe base (Tabela de Trocas). A <strong>tabela de XP continua sendo a da classe</strong> — especializar-se no Space Dragon não muda a progressão de experiência. Se já tinha a Origem, a conversão é imediata; senão, exige um rito de aceitação.</p><h3>Núcleo Mandaloriano (todas as classes)</h3><ul><li><code>5º</code> <strong>O Resol'nare:</strong> adota o código, resumido em <strong>ao menos 3 votos</strong> criados com o Mestre. Enquanto o cumpre, <strong>+1 em JPM</strong>. Quebrá-lo <strong>suspende todas as habilidades da Senda</strong> até uma reparação.</li><li><code>5º</code> <strong>Treinamento de Clã:</strong> domina o arsenal Mandaloriano — <strong>+1 no dano</strong> com armas de haste, de arremesso e blasters, e usa livremente jetpack e capacete tático.</li><li><code>10º</code> <strong>Sangue de Beskar:</strong> ao vestir Armadura Beskar (ou pesada de clã), a Carga cai uma categoria e <strong>sabres de luz deixam de ignorar seu CP</strong> enquanto a usar.</li><li><code>10º</code> <strong>Voo de Combate:</strong> usa a Mochila de Propulsão em combate — o primeiro golpe da rodada vindo de cima leva <strong>+2 no ataque</strong>, ou reposiciona-se verticalmente sem gastar movimento extra.</li><li><code>20º</code> <strong>Lenda do Clã:</strong> você virou um nome que ecoa pela galáxia — um exército de um homem só. 1×/combate, desencadeia o <strong>arsenal completo do Beskar'gam</strong> (whistling birds, foguetes de pulso e lança-chamas) num <strong>ataque em área</strong> contra todos os inimigos a curta distância: <strong>5d6 de dano</strong>, uma <strong>JPR</strong> reduz à metade. Tropas comuns <strong>testam Moral</strong> ao entrar em combate contra você (d% ≤ Moral, ou recuam), e sua <strong>Reputação</strong> entre Mandalorianos e Caçadores é excelente.</li></ul><h3>Papéis (sabor, opcional)</h3><p><strong>Guerreiro de Clã</strong> (tropa leal), <strong>Caçador Solitário</strong> (renegado sem lar) ou <strong>Portador da Herança</strong> (guardião de relíquias, como o Sabre Sombrio).</p><h3>Tabela de Trocas (o que cada classe sacrifica)</h3><p>A Senda <strong>substitui a especialização normal</strong> da classe — esse é o custo principal. Por cima dele, cada classe entrega <strong>um talento que a define</strong>.</p><blockquote><p><strong>Por que ela não cobra o corpo.</strong> As especializações normais levam você <strong>mais fundo na sua classe</strong>, e por isso cobram nas colunas de progressão — é assim que o Mentálico paga BA e JP ao se aprofundar na Força. A Senda Mandaloriana leva você <strong>para fora dela</strong>: você não mergulhou na classe, jurou outro credo. Então a conta vem no <strong>ofício</strong> — no talento da classe que você está deixando pela metade — e não na carne.</p></blockquote><table><thead><tr><th>Classe base</th><th>O que troca (além de abrir mão da especialização)</th></tr></thead><tbody><tr><td><strong>Veterano</strong></td><td><strong>Desarmar/Subjugar</strong> para de progredir; mantém <strong>Ataques Múltiplos</strong> e <strong>Pilotar</strong>.</td></tr><tr><td><strong>Operativo</strong></td><td>o <strong>Ataque Furtivo para de progredir</strong> (o guerreiro de honra não apunhala pelas costas); em troca, o clã lhe ensina <strong>Rastrear</strong>.</td></tr><tr><td><strong>Técnico</strong></td><td><strong>perde o Crédito Tecnológico</strong> (o dever de clã rouba o tempo de barganha); mantém aparatos e feitos — o <strong>Armeiro</strong> de um clã é, em regra, um Técnico.</td></tr><tr><td><strong>Sensível à Força</strong></td><td>o <strong>Alcance conta como o de um Sensível de −1 nível</strong> e o <strong>teto de Grandeza para na 6ª</strong>; em troca, o clã lhe ensina <strong>uma Forma de Sabre</strong> (até a técnica <code>10º</code>).</td></tr></tbody></table><blockquote><p><strong>Por que o Sensível paga duas vezes.</strong> Ele é o único dos quatro chassis cujo aprofundamento normal cobraria <strong>BA e JP</strong> — as outras três classes não têm esse custo. Escapar dele vale muito mais para o Sensível do que para os demais, e o Alcance reduzido sozinho não cobre a diferença: sem o teto, ele chegaria ao 20º com a <strong>melhor JP de todos os Sensíveis</strong> e nada de novo a pagar por ela.</p><p>O teto na 6ª é a moeda certa porque é <strong>Força, não carne</strong> — fiel ao princípio da Senda. E é o que a ficção pede: ele passou a vida jurando um código e aprendendo a lutar de armadura, não meditando sobre a natureza da Força. <strong>Din Djarin não é Yoda.</strong> Em compensação, é o único Sensível com <strong>BA e JP progredindo até o 20º</strong>.</p></blockquote><blockquote><p><strong>O que o Sensível mandaloriano <em>não</em> tem.</strong> Abrir mão da especialização custa as duas engrenagens que dependem de ter uma Senda:</p><ul><li><strong>Sem Eco da Senda</strong> (ver O Sensível à Força § <em>Eco da Senda</em>) — o Alcance gasto nunca volta e nenhum poder de 1ª Grandeza fica gratuito. O clã lhe ensinou uma lâmina, não um atalho da Força.</li><li><strong>Sem Mudar de Guarda</strong> — conhece <strong>uma Forma só</strong>, a que o clã ensinou, e não tem para onde trocar.</li></ul><p><strong>A Tentação, sim, ele tem</strong> — ela pertence ao <strong>Caminho</strong>, não à especialização.</p></blockquote><blockquote><p><strong>Sensível à Força + Beskar:</strong> a mistura é lendária porque o <strong>Sangue de Beskar</strong> protege contra o próprio sabre — o Mandaloriano que encara um Jedi sem temer a lâmina.</p></blockquote><h3>As quatro tabelas da Senda</h3><p>A Senda substitui a especialização da classe, então a progressão muda conforme o chassi. Ache a sua e use a linha do seu nível.</p><p><strong>Progressão do Mandaloriano Veterano</strong> — do 5º ao 20º nível.</p><table><thead><tr><th>Nv</th><th>DV</th><th>BA</th><th>JP</th><th>Pilotar</th><th>Desarmar</th><th>Crítico</th></tr></thead><tbody><tr><td><strong>5</strong></td><td>5</td><td>+5</td><td>15</td><td>84%</td><td>⊘ 40%</td><td>×2</td></tr><tr><td><strong>6</strong></td><td>6</td><td>+6</td><td>15</td><td>85%</td><td>⊘ 40%</td><td>×3</td></tr><tr><td><strong>7</strong></td><td>7</td><td>+7/+1</td><td>14</td><td>86%</td><td>⊘ 40%</td><td>×3</td></tr><tr><td><strong>8</strong></td><td>8</td><td>+8/+2</td><td>14</td><td>87%</td><td>⊘ 40%</td><td>×3</td></tr><tr><td><strong>9</strong></td><td>9</td><td>+9/+3</td><td>14</td><td>88%</td><td>⊘ 40%</td><td>×3</td></tr><tr><td><strong>10</strong></td><td>+2</td><td>+10/+4</td><td>13</td><td>89%</td><td>⊘ 40%</td><td>×3</td></tr><tr><td><strong>11</strong></td><td>+2</td><td>+10/+4</td><td>13</td><td>90%</td><td>⊘ 40%</td><td>×3</td></tr><tr><td><strong>12</strong></td><td>+4</td><td>+11/+5</td><td>13</td><td>91%</td><td>⊘ 40%</td><td>×4</td></tr><tr><td><strong>13</strong></td><td>+4</td><td>+11/+5</td><td>12</td><td>92%</td><td>⊘ 40%</td><td>×4</td></tr><tr><td><strong>14</strong></td><td>+5</td><td>+12/+6</td><td>12</td><td>93%</td><td>⊘ 40%</td><td>×4</td></tr><tr><td><strong>15</strong></td><td>+5</td><td>+12/+6</td><td>12</td><td>94%</td><td>⊘ 40%</td><td>×4</td></tr><tr><td><strong>16</strong></td><td>+6</td><td>+13/+7</td><td>11</td><td>95%</td><td>⊘ 40%</td><td>×4</td></tr><tr><td><strong>17</strong></td><td>+6</td><td>+13/+7</td><td>11</td><td>96%</td><td>⊘ 40%</td><td>×4</td></tr><tr><td><strong>18</strong></td><td>+7</td><td>+14/+8</td><td>11</td><td>97%</td><td>⊘ 40%</td><td>×5</td></tr><tr><td><strong>19</strong></td><td>+7</td><td>+14/+8</td><td>10</td><td>98%</td><td>⊘ 40%</td><td>×5</td></tr><tr><td><strong>20</strong></td><td>+8</td><td>+15/+9</td><td>10</td><td>99%</td><td>⊘ 40%</td><td>×5</td></tr></tbody></table><p>⊘ = congelado, repete o valor em que travou.</p><blockquote><p>Mantém <strong>Ataques Múltiplos</strong> e <strong>Pilotar</strong> — o guerreiro de clã continua soldado e continua piloto. O que ele abre mão é da manobra de desarme, e da especialização que teria escolhido.</p></blockquote><p><strong>Progressão do Mandaloriano Operativo</strong> — do 5º ao 20º nível.</p><table><thead><tr><th>Nv</th><th>Sabotagem</th><th>Rodadas</th><th>Escalar</th><th>Furtividade</th><th>Furtar</th><th>Percepção</th><th>Atq. Furtivo</th><th>Rastrear</th></tr></thead><tbody><tr><td><strong>5</strong></td><td>35%</td><td>1d8</td><td>84%</td><td>40%</td><td>40%</td><td>1-3</td><td>⊘ ×2</td><td>1-3</td></tr><tr><td><strong>6</strong></td><td>40%</td><td>1d6</td><td>85%</td><td>45%</td><td>45%</td><td>1-3</td><td>⊘ ×2</td><td>1-3</td></tr><tr><td><strong>7</strong></td><td>45%</td><td>1d6</td><td>86%</td><td>50%</td><td>50%</td><td>1-3</td><td>⊘ ×2</td><td>1-3</td></tr><tr><td><strong>8</strong></td><td>50%</td><td>1d6</td><td>87%</td><td>55%</td><td>55%</td><td>1-3</td><td>⊘ ×2</td><td>1-3</td></tr><tr><td><strong>9</strong></td><td>55%</td><td>1d6</td><td>88%</td><td>60%</td><td>60%</td><td>1-3</td><td>⊘ ×2</td><td>1-3</td></tr><tr><td><strong>10</strong></td><td>60%</td><td>1d6</td><td>89%</td><td>65%</td><td>65%</td><td>1-4</td><td>⊘ ×2</td><td>1-4</td></tr><tr><td><strong>11</strong></td><td>62%</td><td>1d4</td><td>90%</td><td>70%</td><td>70%</td><td>1-4</td><td>⊘ ×2</td><td>1-4</td></tr><tr><td><strong>12</strong></td><td>64%</td><td>1d4</td><td>91%</td><td>72%</td><td>72%</td><td>1-4</td><td>⊘ ×2</td><td>1-4</td></tr><tr><td><strong>13</strong></td><td>66%</td><td>1d4</td><td>92%</td><td>74%</td><td>74%</td><td>1-4</td><td>⊘ ×2</td><td>1-4</td></tr><tr><td><strong>14</strong></td><td>68%</td><td>1d4</td><td>93%</td><td>76%</td><td>76%</td><td>1-4</td><td>⊘ ×2</td><td>1-4</td></tr><tr><td><strong>15</strong></td><td>70%</td><td>1d4</td><td>94%</td><td>78%</td><td>78%</td><td>1-4</td><td>⊘ ×2</td><td>1-4</td></tr><tr><td><strong>16</strong></td><td>72%</td><td>1d4</td><td>95%</td><td>80%</td><td>80%</td><td>1-5</td><td>⊘ ×2</td><td>1-5</td></tr><tr><td><strong>17</strong></td><td>74%</td><td>1d4</td><td>96%</td><td>82%</td><td>82%</td><td>1-5</td><td>⊘ ×2</td><td>1-5</td></tr><tr><td><strong>18</strong></td><td>76%</td><td>1d4</td><td>97%</td><td>84%</td><td>84%</td><td>1-5</td><td>⊘ ×2</td><td>1-5</td></tr><tr><td><strong>19</strong></td><td>78%</td><td>1d4</td><td>98%</td><td>86%</td><td>86%</td><td>1-5</td><td>⊘ ×2</td><td>1-5</td></tr><tr><td><strong>20</strong></td><td>80%</td><td>1d4</td><td>99%</td><td>88%</td><td>88%</td><td>1-5</td><td>⊘ ×2</td><td>1-5</td></tr></tbody></table><p>⊘ = congelado, repete o valor em que travou.</p><blockquote><p>O <strong>Ataque Furtivo congela</strong>: o guerreiro de honra não apunhala pelas costas. Em troca o clã lhe ensina a <strong>rastrear</strong>, com a mesma faixa da sua Percepção (1d6).</p></blockquote><p><strong>Progressão do Mandaloriano Técnico</strong> — do 5º ao 20º nível.</p><table><thead><tr><th>Nv</th><th>DV</th><th>BA</th><th>JP</th><th>Operar Máq.</th><th>NT</th><th>Crédito Tecnológico</th></tr></thead><tbody><tr><td><strong>5</strong></td><td>5</td><td>+3</td><td>14</td><td>84%</td><td>3º</td><td>perdido</td></tr><tr><td><strong>6</strong></td><td>6</td><td>+3</td><td>14</td><td>85%</td><td>–</td><td>perdido</td></tr><tr><td><strong>7</strong></td><td>7</td><td>+3</td><td>13</td><td>86%</td><td>4º</td><td>perdido</td></tr><tr><td><strong>8</strong></td><td>8</td><td>+4</td><td>13</td><td>87%</td><td>–</td><td>perdido</td></tr><tr><td><strong>9</strong></td><td>9</td><td>+4</td><td>13</td><td>88%</td><td>5º</td><td>perdido</td></tr><tr><td><strong>10</strong></td><td>+1</td><td>+4</td><td>12</td><td>89%</td><td>–</td><td>perdido</td></tr><tr><td><strong>11</strong></td><td>+1</td><td>+5</td><td>12</td><td>90%</td><td>6º</td><td>perdido</td></tr><tr><td><strong>12</strong></td><td>+2</td><td>+5</td><td>12</td><td>91%</td><td>–</td><td>perdido</td></tr><tr><td><strong>13</strong></td><td>+2</td><td>+5</td><td>11</td><td>92%</td><td>7º</td><td>perdido</td></tr><tr><td><strong>14</strong></td><td>+3</td><td>+6</td><td>11</td><td>93%</td><td>–</td><td>perdido</td></tr><tr><td><strong>15</strong></td><td>+3</td><td>+6</td><td>11</td><td>94%</td><td>8º</td><td>perdido</td></tr><tr><td><strong>16</strong></td><td>+4</td><td>+6</td><td>10</td><td>95%</td><td>–</td><td>perdido</td></tr><tr><td><strong>17</strong></td><td>+4</td><td>+7</td><td>10</td><td>96%</td><td>9º</td><td>perdido</td></tr><tr><td><strong>18</strong></td><td>+5</td><td>+7</td><td>10</td><td>97%</td><td>–</td><td>perdido</td></tr><tr><td><strong>19</strong></td><td>+5</td><td>+7</td><td>9</td><td>98%</td><td>10º</td><td>perdido</td></tr><tr><td><strong>20</strong></td><td>+6</td><td>+8</td><td>9</td><td>99%</td><td>–</td><td>perdido</td></tr></tbody></table><p><em>Nada congela nem muda: a tabela é a mesma da classe base.</em></p><blockquote><p>Perde o <strong>Crédito Tecnológico</strong> — o dever de clã rouba o tempo de barganha. Mantém aparatos e feitos: o <strong>Armeiro</strong> de um clã é, em regra, um Técnico.</p></blockquote><p><strong>Progressão do Mandaloriano Sensível</strong> — do 5º ao 20º nível.</p><table><thead><tr><th>Nv</th><th>DV</th><th>BA</th><th>JP</th><th>Alcance</th><th>Grandeza</th><th>Forma de Sabre</th></tr></thead><tbody><tr><td><strong>5</strong></td><td>5</td><td>+2</td><td>13</td><td><strong>6%</strong></td><td>3ª</td><td>até 10º</td></tr><tr><td><strong>6</strong></td><td>6</td><td>+2</td><td>13</td><td><strong>9%</strong></td><td><strong>3ª</strong></td><td>até 10º</td></tr><tr><td><strong>7</strong></td><td>7</td><td>+3</td><td>12</td><td><strong>13%</strong></td><td>4ª</td><td>até 10º</td></tr><tr><td><strong>8</strong></td><td>8</td><td>+3</td><td>12</td><td><strong>17%</strong></td><td><strong>4ª</strong></td><td>até 10º</td></tr><tr><td><strong>9</strong></td><td>9</td><td>+3</td><td>12</td><td><strong>23%</strong></td><td>5ª</td><td>até 10º</td></tr><tr><td><strong>10</strong></td><td>+1</td><td>+4</td><td>11</td><td><strong>28%</strong></td><td><strong>5ª</strong></td><td>até 10º</td></tr><tr><td><strong>11</strong></td><td>+1</td><td>+4</td><td>11</td><td><strong>36%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr><tr><td><strong>12</strong></td><td>+1</td><td>+4</td><td>11</td><td><strong>43%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr><tr><td><strong>13</strong></td><td>+1</td><td>+5</td><td>10</td><td><strong>53%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr><tr><td><strong>14</strong></td><td>+1</td><td>+5</td><td>10</td><td><strong>62%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr><tr><td><strong>15</strong></td><td>+2</td><td>+5</td><td>10</td><td><strong>74%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr><tr><td><strong>16</strong></td><td>+2</td><td>+6</td><td>9</td><td><strong>86%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr><tr><td><strong>17</strong></td><td>—</td><td>+6</td><td>9</td><td><strong>100%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr><tr><td><strong>18</strong></td><td>—</td><td>+6</td><td>9</td><td><strong>115%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr><tr><td><strong>19</strong></td><td>—</td><td>+6</td><td>9</td><td><strong>131%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr><tr><td><strong>20</strong></td><td>—</td><td>+6</td><td>9</td><td><strong>139%</strong></td><td><strong>6ª (teto)</strong></td><td>até 10º</td></tr></tbody></table><p><strong>em negrito</strong> = o valor desta especialização, no lugar do da classe base.</p><blockquote><p>O <strong>Alcance conta como o de um Sensível de um nível abaixo</strong> e o <strong>teto de Grandeza para na 6ª</strong>: ele passou a vida jurando um credo e aprendendo a lutar de armadura, não meditando sobre a natureza da Força. Em troca, mantém BA e JP progredindo até o 20º — o único Sensível que não paga com o corpo — e o clã lhe ensina <strong>uma</strong> Forma de Sabre. Sem Eco da Senda e sem Mudar de Guarda: conhece uma Forma só, e não tem para onde trocar.</p></blockquote>",
+    "Referência de equipamento": "<p>O arsenal Mandaloriano (Lança-Vibro, Mochila de Propulsão, Armadura Beskar/Mandaloriana, Capacete com Visor Tático) está em Equipamentos e Créditos. A <strong>Beskar</strong> é herança de clã ou conquista, sem preço de mercado. O <strong>Sabre Sombrio</strong> — símbolo de liderança de Mandalore e a única lâmina que corta a Beskar — tem regras em Sabre de Luz e Cristais Kyber, casando com o papel <strong>Portador da Herança</strong>.</p><blockquote><p>⚙️ <strong>Nota de design.</strong> O Núcleo segue os marcos do <em>Space Dragon</em> — <strong><code>5º</code> / <code>10º</code> / <code>20º</code></strong>, os níveis em que as especializações abrem degraus. A Senda abre no 5º, no lugar da especialização; <em>Sangue de Beskar</em> e <em>Voo de Combate</em> chegam juntos no 10º. A Origem <em>Filho de Mandalore</em> fica no 1º nível.</p></blockquote>"
+  },
+  "SW-SUP-Ordens-e-Ranks": {
+    "(abertura)": "<blockquote><p>As ordens dão contexto social e dramático aos Sensíveis. <strong>Rank é sobretudo narrativo</strong> — não dá bônus de atributo —, mas destrava privilégios, deveres e ganchos. Os níveis sugeridos seguem a escala nativa <strong>1–20</strong> do Sensível à Força (lembre: a especialização abre no <strong>5º nível</strong>, então virar Cavaleiro/Aprendiz \"pleno\" casa com esse marco).</p></blockquote>",
+    "A Ordem Jedi (Caminho da Luz)": "<p>Guardiões da paz sob um Código de serenidade, desapego e serviço. Treinam desde cedo, constroem o próprio sabre e sobem por Provações.</p><p><strong>O Código:</strong> <em>Não há emoção, há paz. Não há ignorância, há conhecimento. Não há paixão, há serenidade. Não há caos, há harmonia. Não há morte, há a Força.</em></p><h3>Ranks Jedi</h3><table><thead><tr><th>Rank</th><th>Nível sugerido</th><th>Representa / destrava</th></tr></thead><tbody><tr><td><strong>Iniciado</strong></td><td>(antes do jogo)</td><td>Criança treinada no Templo; ainda não é PC pleno.</td></tr><tr><td><strong>Padawan</strong></td><td>1º–4º</td><td>Aprendiz vinculado a um <strong>Mestre</strong>. Montando o próprio sabre e a identidade.</td></tr><tr><td><strong>Cavaleiro Jedi</strong></td><td>5º–11º</td><td>Passou pelas <strong>Provações</strong> e escolheu a Senda (a especialização do 5º). Age com autonomia.</td></tr><tr><td><strong>Mestre Jedi</strong></td><td>12º–17º</td><td>Reconhecido pela sabedoria; <strong>treina um Padawan</strong> e acessa arquivos e artefatos restritos.</td></tr><tr><td><strong>Mestre do Conselho</strong></td><td>18º + feito notável</td><td>Voz da Ordem; influência política e acesso pleno (ferramenta de campanha).</td></tr></tbody></table><p><strong>As Provações (virar Cavaleiro):</strong> por volta do <strong>5º nível</strong> — o mesmo marco em que a Senda se abre —, enfrenta as cinco provações clássicas: <strong>Coragem, Habilidade, Carne</strong> (resistir à dor/perda), <strong>Espírito</strong> (encarar o próprio lado sombrio) e <strong>Insight</strong>. Resolva como um arco, com uma cena de confronto interior (uma tentação de usar a Sombra — ver <em>A Tentação</em> em O Sensível à Força).</p>",
+    "Os Sith — a Regra de Dois (Caminho da Sombra)": "<p>Após se destruírem em guerras internas, os Sith adotaram a <strong>Regra de Dois</strong> de Darth Bane: <strong>sempre dois</strong> — um Mestre, que detém o poder, e um Aprendiz, que o cobiça. Quando o Aprendiz supera o Mestre, ele o <strong>destrói</strong> e toma um novo.</p><h3>Ranks Sith</h3><table><thead><tr><th>Rank</th><th>Nível sugerido</th><th>Representa / destrava</th></tr></thead><tbody><tr><td><strong>Acólito / Servo</strong></td><td>—</td><td>Servo treinado, ainda não o Aprendiz oficial (a Inquisição imperial vive aqui).</td></tr><tr><td><strong>Aprendiz Sith</strong></td><td>1º–11º</td><td>O único aprendiz do Mestre. Recebe poder e segredos, sob ameaça e ambição constantes.</td></tr><tr><td><strong>Lorde Sith (Darth)</strong></td><td>12º–20º</td><td>Assume o título <strong>\"Darth ___\"</strong> após superar (matar) o Mestre. Comanda recursos, acólitos e territórios.</td></tr></tbody></table><p><strong>A tensão da Regra de Dois</strong> é um motor de campanha: Aprendiz PC + Mestre NPC; dois PCs Sith fadados a se enfrentar; ou um Lorde PC caçando o aprendiz traiçoeiro. O <strong>título Darth</strong> costuma ser tomado, não concedido.</p><blockquote><p><strong>A Inquisição Imperial</strong> — caçadores de Jedi remanescentes — encaixa como Sensíveis do <strong>Caminho da Sombra</strong>, tipicamente da Senda <strong>Sentinela</strong> (caçadores versáteis) ou <strong>Guardião</strong> (duelistas), servindo ao Império e a um Lorde Sith <strong>sem serem o Aprendiz da Regra de Dois</strong>. Usam sabres de lâmina dupla giratória (reskin do Sabre de Luz).</p></blockquote>",
+    "Outras tradições (opcionais)": "<ul><li><strong>Bruxas de Dathomir (Nightsisters):</strong> coven da Sombra que canaliza a Força por magia ritual e ichor. Encaixe como <strong>Consulares</strong> ou <strong>Videntes</strong> da Sombra, com foco em ilusão e domínio. Vivem fora da Regra de Dois.</li><li><strong>Ordens Cinzentas / eremitas:</strong> rejeitam tanto o dogma Jedi quanto a ambição Sith — perfeitos para PCs <strong>neutros</strong> (sem Caminho declarado), que transitam entre as correntes sem pertencer a uma instituição. O <strong>Vidente</strong> é o arquétipo natural.</li></ul>",
+    "Rank na prática": "<ul><li><strong>Rank é social, não numérico.</strong> Abre portas (acesso, autoridade, recursos, aliados) e fecha outras (deveres, inimigos, expectativas). Não interfere nas regras de atributo/JP.</li><li><strong>Mestres ganham um aprendiz</strong> como <strong>seguidor</strong> (dentro do limite de seguidores por Comunicação — <em>SD</em>, Tabela 1-6) — bônus de campanha, não de combate.</li><li><strong>Rank ≠ nível obrigatório.</strong> Um contrabandista sensível pode ter poder de Cavaleiro sem nunca ter pisado num Templo; um nobre pode comprar um título que não merece. Use os níveis como <strong>sugestão</strong>, não trava.</li></ul>"
+  },
   "SW-SUP-Forca": {
     "(abertura)": "<blockquote><p>Jedi, Sith, Nightsisters e místicos de fronteira. O Sensível à Força é o <strong>Mentálico</strong> do Space Dragon reskinado — os <strong>Poderes Mentais</strong> viram <strong>Poderes da Força</strong>, e as <strong>Grandezas</strong> (1ª a 10ª) medem o quão poderoso é cada poder. Corpo frágil (<strong>d4</strong>), mas a mente alcança o impossível. Por cima da classe vem o <strong>Caminho</strong> (Luz ou Sombra).</p></blockquote><blockquote><p><strong>A Força é regida por Intelecto.</strong> É o atributo nativo do Mentálico — e é justamente o que o guia OD2 traduz como <strong>Sabedoria</strong>. Então o \"Jedi sábio\" e a regra do livro são a <strong>mesma coisa</strong>: aqui não há adaptação nenhuma, é o Intelecto do SD puro. O <strong>Slicer</strong> (a faísca tecno-mística do Técnico) é o contraponto — ver a nota de divergência em Classes Mundanas.</p></blockquote><blockquote><p><strong>O que este capítulo faz.</strong> Ele <strong>renomeia e reveste</strong> o Mentálico — não o substitui. A tabela vem repetida aqui só para pendurar as habilidades do cenário nos níveis certos; <strong>as regras de Poderes Mentais, Alcance Mental, anulação e Resistência Mental são as do <em>SD</em>, Cap. 3 e Cap. 9.</strong> O que é criação deste cenário — o <strong>Caminho</strong>, a <strong>Corrupção</strong>, as <strong>Sendas</strong> e as <strong>Formas de Sabre</strong> — está marcado no texto.</p></blockquote><p>Referências: Classes Mundanas · Poderes da Força · Sabre de Luz e Cristais Kyber · Ordens e Ranks da Força · Senda Mandaloriana</p>",
     "O Caminho: Luz, Sombra e o meio": "<p>No <strong>1º nível</strong>, o Sensível escolhe um <strong>Caminho</strong>, que fica <em>por cima</em> da especialização e decide <strong>quais listas de poderes</strong> acessa:</p><ul><li><strong>Caminho da Luz</strong> — serenidade, defesa, cura, previdência. Acessa <strong>Universal + Luz</strong>.</li><li><strong>Caminho da Sombra</strong> — paixão, domínio, medo, destruição. Acessa <strong>Universal + Sombra</strong>.</li><li><strong>Neutralidade</strong> — começa <strong>sem Caminho declarado</strong> (só Universal) e escolhe depois.</li><li><strong>Caminho Cinza</strong> — as <strong>três listas</strong>. Não se escolhe no 1º nível: conquista-se (adiante).</li></ul><blockquote><p><strong>Cruzar de lista (a Queda).</strong> Um personagem da Luz pode usar um poder da Sombra em desespero, mas cada uso marca <strong>+1 de Corrupção</strong>. Alguns poderes marcam Corrupção <strong>mesmo para a Sombra</strong> (os que se nutrem de sofrimento — virão marcados com ★ na lista de poderes).</p></blockquote>",
@@ -1797,3 +1819,768 @@ export const PODERES = [
     "nota": "<p><em>O <strong>Tornar-se Um com a Força</strong> é o ápice da Luz — e, pelas regras do livro, cada uso deixa o Sensível mais perto de não voltar. A <strong>Morte pela Força</strong> é o aperto de garganta que não solta.</em></p>"
   }
 ];
+
+// As sete Formas de Sabre de SW-SUP-Sabre-e-Cristais, uma habilidade cada.
+export const FORMAS = [
+  {
+    "nome": "Shii-Cho (I)",
+    "desc": "<p><em>a forma fundamental</em></p><p>Versátil, feita para enfrentar vários oponentes.</p><ul><li><code>5º</code> <strong>Sequência Aberta:</strong> ao derrubar ou errar um inimigo, transfere o ataque a <strong>outro adjacente</strong>; ao acertar, pode <strong>desarmar</strong> sem gastar o ataque.</li><li><code>10º</code> <strong>Domínio do Enxame:</strong> cercado por 2+ inimigos, <strong>+2 no CP</strong> e um <strong>ataque extra</strong> contra um flanqueador.</li><li><code>20º</code> <strong>Mestre Shii-Cho:</strong> distribui os ataques livremente entre adjacentes e <strong>nunca sofre penalidade por estar cercado</strong>.</li></ul>"
+  },
+  {
+    "nome": "Makashi (II)",
+    "desc": "<p><em>o duelo elegante</em></p><ul><li><code>5º</code> <strong>Precisão do Duelista:</strong> marque um oponente — <strong>+1 no ataque e no dano</strong> contra ele; 1×/rodada, <strong>apara</strong> uma lâmina/sabre (teste de ataque) para <strong>reduzir o dano à metade</strong>.</li><li><code>10º</code> <strong>Riposte:</strong> quando o alvo do duelo <strong>erra</strong> você, ganha um <strong>ataque de resposta</strong> imediato.</li><li><code>20º</code> <strong>Mestre Makashi:</strong> no duelo, críticos saem em <strong>1-2 no d20</strong> e o oponente tem desvantagem para anular seus golpes com a Força.</li></ul>"
+  },
+  {
+    "nome": "Soresu (III)",
+    "desc": "<p><em>defesa pura</em></p><ul><li><code>5º</code> <strong>Postura Defensiva:</strong> <strong>+2 no CP</strong> contra ataques à distância e você <strong>deflete disparos de blaster</strong> sem gastar ação; gastando a ação, deflete <strong>todos</strong> os disparos contra você e aliados adjacentes.</li><li><code>10º</code> <strong>Devolver ao Remetente:</strong> ao defletir, pode <strong>redirecionar o disparo ao atirador</strong> com um ataque seu.</li><li><code>20º</code> <strong>Mestre Soresu:</strong> ataques à distância só o acertam num <strong>crítico</strong>.</li></ul>"
+  },
+  {
+    "nome": "Ataru (IV)",
+    "desc": "<p><em>acrobática</em></p><ul><li><code>5º</code> <strong>Ímpeto Acrobático:</strong> se você <strong>se moveu</strong> antes de atacar, <strong>+1 no ataque e no dano</strong>; atacar de cima torna o primeiro golpe <strong>Fácil</strong>.</li><li><code>10º</code> <strong>Turbilhão:</strong> gastando <strong>1% de Alcance</strong>, um <strong>ataque extra</strong> enquanto se reposiciona.</li><li><code>20º</code> <strong>Mestre Ataru:</strong> em terreno aberto, <strong>dois ataques extras</strong> em movimento — mas <strong>−2 no CP</strong> se for <strong>imobilizado</strong>.</li></ul>"
+  },
+  {
+    "nome": "Djem So (V)",
+    "desc": "<p><em>força e contra-ataque</em></p><ul><li><code>5º</code> <strong>Contra-Ataque:</strong> quando um inimigo adjacente <strong>erra</strong> você em corpo a corpo, ganha um <strong>ataque de resposta</strong>; pode trocar precisão (<strong>−2 no ataque</strong>) por <strong>+1d8 de dano</strong>.</li><li><code>10º</code> <strong>Fúria Controlada:</strong> com metade dos PV ou menos, <strong>+2 no ataque e no dano</strong>.</li><li><code>20º</code> <strong>Mestre Djem So:</strong> todo ataque inimigo que você <strong>aparar ou que errar</strong> abre uma resposta.</li></ul>"
+  },
+  {
+    "nome": "Niman (VI)",
+    "desc": "<p><em>o equilíbrio sabre + Força</em></p><ul><li><code>5º</code> <strong>Fluxo Equilibrado:</strong> na rodada em que usa um poder da Força, ainda faz um <strong>ataque de sabre</strong> (ou vice-versa) sem penalidade; empunha a lâmina com a Força para atacar a curta distância ou desarmar telecineticamente.</li><li><code>10º</code> <strong>Golpe Carregado:</strong> ao acertar, gasta <strong>1% de Alcance</strong> para somar ao golpe um poder de <strong>1ª Grandeza</strong>.</li><li><code>20º</code> <strong>Mestre Niman:</strong> 1×/rodada, <strong>um poder da Força e um ataque de sabre</strong> contam como <strong>uma só ação</strong>.</li></ul>"
+  },
+  {
+    "nome": "Juyo / Vaapad (VII)",
+    "desc": "<p><em>a forma feroz</em></p><ul><li><code>5º</code> <strong>Fúria Canalizada:</strong> <strong>+1 no ataque e no dano</strong>, mas usá-la movido pela raiva arrisca <strong>+1 de Corrupção</strong> por combate (a critério do Mestre); inimigos têm desvantagem para aparar/anular seus golpes.</li><li><code>10º</code> <strong>Sede de Batalha:</strong> ao <strong>derrubar</strong> um inimigo, um <strong>ataque extra</strong> imediato.</li><li><code>20º</code> <strong>Mestre Vaapad:</strong> <strong>+1 no dano para cada inimigo que o atacou</strong> na rodada — mas a Sombra cobra.</li></ul>"
+  }
+];
+
+// A Senda Mandaloriana: o Núcleo, a troca de cada classe e as quatro tabelas.
+export const SENDA = {
+  "abertura": "<blockquote><p>Mandaloriano <strong>não é uma espécie, é uma cultura</strong>: há Mandalorianos humanos, Twi'lek, Rodianos e até um raro Sensível à Força. Existe quem <strong>nasce no berço da cultura</strong> (a Origem, no 1º nível) e quem <strong>é adotado no Credo</strong> (a Senda, no 5º nível), trocando parte das habilidades da classe pelo pacote de clã.</p></blockquote>",
+  "intro": "<p>Um personagem de <strong>qualquer classe</strong> aceito num clã pode assumir a Senda <strong>no lugar de sua especialização</strong> (que também abre no 5º nível). Como toda especialização do SD, ele ganha o <strong>Núcleo Mandaloriano</strong> e <strong>troca</strong> parte das habilidades da classe base (Tabela de Trocas). A <strong>tabela de XP continua sendo a da classe</strong> — especializar-se no Space Dragon não muda a progressão de experiência. Se já tinha a Origem, a conversão é imediata; senão, exige um rito de aceitação.</p>",
+  "nucleo": [
+    {
+      "level": 5,
+      "nome": "O Resol'nare",
+      "desc": "<p>adota o código, resumido em <strong>ao menos 3 votos</strong> criados com o Mestre. Enquanto o cumpre, <strong>+1 em JPM</strong>. Quebrá-lo <strong>suspende todas as habilidades da Senda</strong> até uma reparação.</p>"
+    },
+    {
+      "level": 5,
+      "nome": "Treinamento de Clã",
+      "desc": "<p>domina o arsenal Mandaloriano — <strong>+1 no dano</strong> com armas de haste, de arremesso e blasters, e usa livremente jetpack e capacete tático.</p>"
+    },
+    {
+      "level": 10,
+      "nome": "Sangue de Beskar",
+      "desc": "<p>ao vestir Armadura Beskar (ou pesada de clã), a Carga cai uma categoria e <strong>sabres de luz deixam de ignorar seu CP</strong> enquanto a usar.</p>"
+    },
+    {
+      "level": 10,
+      "nome": "Voo de Combate",
+      "desc": "<p>usa a Mochila de Propulsão em combate — o primeiro golpe da rodada vindo de cima leva <strong>+2 no ataque</strong>, ou reposiciona-se verticalmente sem gastar movimento extra.</p>"
+    },
+    {
+      "level": 20,
+      "nome": "Lenda do Clã",
+      "desc": "<p>você virou um nome que ecoa pela galáxia — um exército de um homem só. 1×/combate, desencadeia o <strong>arsenal completo do Beskar'gam</strong> (whistling birds, foguetes de pulso e lança-chamas) num <strong>ataque em área</strong> contra todos os inimigos a curta distância: <strong>5d6 de dano</strong>, uma <strong>JPR</strong> reduz à metade. Tropas comuns <strong>testam Moral</strong> ao entrar em combate contra você (d% ≤ Moral, ou recuam), e sua <strong>Reputação</strong> entre Mandalorianos e Caçadores é excelente.</p>"
+    }
+  ],
+  "trocas": {
+    "Veterano": "<p><strong>Desarmar/Subjugar</strong> para de progredir; mantém <strong>Ataques Múltiplos</strong> e <strong>Pilotar</strong>.</p>",
+    "Operativo": "<p>o <strong>Ataque Furtivo para de progredir</strong> (o guerreiro de honra não apunhala pelas costas); em troca, o clã lhe ensina <strong>Rastrear</strong>.</p>",
+    "Técnico": "<p><strong>perde o Crédito Tecnológico</strong> (o dever de clã rouba o tempo de barganha); mantém aparatos e feitos — o <strong>Armeiro</strong> de um clã é, em regra, um Técnico.</p>",
+    "Sensível à Força": "<p>o <strong>Alcance conta como o de um Sensível de −1 nível</strong> e o <strong>teto de Grandeza para na 6ª</strong>; em troca, o clã lhe ensina <strong>uma Forma de Sabre</strong> (até a técnica <code>10º</code>).</p>"
+  },
+  "tabelas": {
+    "Veterano": {
+      "cabecalho": [
+        "Nv",
+        "DV",
+        "BA",
+        "JP",
+        "Pilotar",
+        "Desarmar",
+        "Crítico"
+      ],
+      "linhas": [
+        [
+          "**5**",
+          "5",
+          "+5",
+          "15",
+          "84%",
+          "⊘ 40%",
+          "×2"
+        ],
+        [
+          "**6**",
+          "6",
+          "+6",
+          "15",
+          "85%",
+          "⊘ 40%",
+          "×3"
+        ],
+        [
+          "**7**",
+          "7",
+          "+7/+1",
+          "14",
+          "86%",
+          "⊘ 40%",
+          "×3"
+        ],
+        [
+          "**8**",
+          "8",
+          "+8/+2",
+          "14",
+          "87%",
+          "⊘ 40%",
+          "×3"
+        ],
+        [
+          "**9**",
+          "9",
+          "+9/+3",
+          "14",
+          "88%",
+          "⊘ 40%",
+          "×3"
+        ],
+        [
+          "**10**",
+          "+2",
+          "+10/+4",
+          "13",
+          "89%",
+          "⊘ 40%",
+          "×3"
+        ],
+        [
+          "**11**",
+          "+2",
+          "+10/+4",
+          "13",
+          "90%",
+          "⊘ 40%",
+          "×3"
+        ],
+        [
+          "**12**",
+          "+4",
+          "+11/+5",
+          "13",
+          "91%",
+          "⊘ 40%",
+          "×4"
+        ],
+        [
+          "**13**",
+          "+4",
+          "+11/+5",
+          "12",
+          "92%",
+          "⊘ 40%",
+          "×4"
+        ],
+        [
+          "**14**",
+          "+5",
+          "+12/+6",
+          "12",
+          "93%",
+          "⊘ 40%",
+          "×4"
+        ],
+        [
+          "**15**",
+          "+5",
+          "+12/+6",
+          "12",
+          "94%",
+          "⊘ 40%",
+          "×4"
+        ],
+        [
+          "**16**",
+          "+6",
+          "+13/+7",
+          "11",
+          "95%",
+          "⊘ 40%",
+          "×4"
+        ],
+        [
+          "**17**",
+          "+6",
+          "+13/+7",
+          "11",
+          "96%",
+          "⊘ 40%",
+          "×4"
+        ],
+        [
+          "**18**",
+          "+7",
+          "+14/+8",
+          "11",
+          "97%",
+          "⊘ 40%",
+          "×5"
+        ],
+        [
+          "**19**",
+          "+7",
+          "+14/+8",
+          "10",
+          "98%",
+          "⊘ 40%",
+          "×5"
+        ],
+        [
+          "**20**",
+          "+8",
+          "+15/+9",
+          "10",
+          "99%",
+          "⊘ 40%",
+          "×5"
+        ]
+      ],
+      "legenda": "⊘ = congelado, repete o valor em que travou.",
+      "nota": "Mantém **Ataques Múltiplos** e **Pilotar** — o guerreiro de clã continua soldado e continua piloto. O que ele abre mão é da manobra de desarme, e da especialização que teria escolhido."
+    },
+    "Operativo": {
+      "cabecalho": [
+        "Nv",
+        "Sabotagem",
+        "Rodadas",
+        "Escalar",
+        "Furtividade",
+        "Furtar",
+        "Percepção",
+        "Atq. Furtivo",
+        "Rastrear"
+      ],
+      "linhas": [
+        [
+          "**5**",
+          "35%",
+          "1d8",
+          "84%",
+          "40%",
+          "40%",
+          "1-3",
+          "⊘ ×2",
+          "1-3"
+        ],
+        [
+          "**6**",
+          "40%",
+          "1d6",
+          "85%",
+          "45%",
+          "45%",
+          "1-3",
+          "⊘ ×2",
+          "1-3"
+        ],
+        [
+          "**7**",
+          "45%",
+          "1d6",
+          "86%",
+          "50%",
+          "50%",
+          "1-3",
+          "⊘ ×2",
+          "1-3"
+        ],
+        [
+          "**8**",
+          "50%",
+          "1d6",
+          "87%",
+          "55%",
+          "55%",
+          "1-3",
+          "⊘ ×2",
+          "1-3"
+        ],
+        [
+          "**9**",
+          "55%",
+          "1d6",
+          "88%",
+          "60%",
+          "60%",
+          "1-3",
+          "⊘ ×2",
+          "1-3"
+        ],
+        [
+          "**10**",
+          "60%",
+          "1d6",
+          "89%",
+          "65%",
+          "65%",
+          "1-4",
+          "⊘ ×2",
+          "1-4"
+        ],
+        [
+          "**11**",
+          "62%",
+          "1d4",
+          "90%",
+          "70%",
+          "70%",
+          "1-4",
+          "⊘ ×2",
+          "1-4"
+        ],
+        [
+          "**12**",
+          "64%",
+          "1d4",
+          "91%",
+          "72%",
+          "72%",
+          "1-4",
+          "⊘ ×2",
+          "1-4"
+        ],
+        [
+          "**13**",
+          "66%",
+          "1d4",
+          "92%",
+          "74%",
+          "74%",
+          "1-4",
+          "⊘ ×2",
+          "1-4"
+        ],
+        [
+          "**14**",
+          "68%",
+          "1d4",
+          "93%",
+          "76%",
+          "76%",
+          "1-4",
+          "⊘ ×2",
+          "1-4"
+        ],
+        [
+          "**15**",
+          "70%",
+          "1d4",
+          "94%",
+          "78%",
+          "78%",
+          "1-4",
+          "⊘ ×2",
+          "1-4"
+        ],
+        [
+          "**16**",
+          "72%",
+          "1d4",
+          "95%",
+          "80%",
+          "80%",
+          "1-5",
+          "⊘ ×2",
+          "1-5"
+        ],
+        [
+          "**17**",
+          "74%",
+          "1d4",
+          "96%",
+          "82%",
+          "82%",
+          "1-5",
+          "⊘ ×2",
+          "1-5"
+        ],
+        [
+          "**18**",
+          "76%",
+          "1d4",
+          "97%",
+          "84%",
+          "84%",
+          "1-5",
+          "⊘ ×2",
+          "1-5"
+        ],
+        [
+          "**19**",
+          "78%",
+          "1d4",
+          "98%",
+          "86%",
+          "86%",
+          "1-5",
+          "⊘ ×2",
+          "1-5"
+        ],
+        [
+          "**20**",
+          "80%",
+          "1d4",
+          "99%",
+          "88%",
+          "88%",
+          "1-5",
+          "⊘ ×2",
+          "1-5"
+        ]
+      ],
+      "legenda": "⊘ = congelado, repete o valor em que travou.",
+      "nota": "O **Ataque Furtivo congela**: o guerreiro de honra não apunhala pelas costas. Em troca o clã lhe ensina a **rastrear**, com a mesma faixa da sua Percepção (1d6)."
+    },
+    "Técnico": {
+      "cabecalho": [
+        "Nv",
+        "DV",
+        "BA",
+        "JP",
+        "Operar Máq.",
+        "NT",
+        "Crédito Tecnológico"
+      ],
+      "linhas": [
+        [
+          "**5**",
+          "5",
+          "+3",
+          "14",
+          "84%",
+          "3º",
+          "perdido"
+        ],
+        [
+          "**6**",
+          "6",
+          "+3",
+          "14",
+          "85%",
+          "–",
+          "perdido"
+        ],
+        [
+          "**7**",
+          "7",
+          "+3",
+          "13",
+          "86%",
+          "4º",
+          "perdido"
+        ],
+        [
+          "**8**",
+          "8",
+          "+4",
+          "13",
+          "87%",
+          "–",
+          "perdido"
+        ],
+        [
+          "**9**",
+          "9",
+          "+4",
+          "13",
+          "88%",
+          "5º",
+          "perdido"
+        ],
+        [
+          "**10**",
+          "+1",
+          "+4",
+          "12",
+          "89%",
+          "–",
+          "perdido"
+        ],
+        [
+          "**11**",
+          "+1",
+          "+5",
+          "12",
+          "90%",
+          "6º",
+          "perdido"
+        ],
+        [
+          "**12**",
+          "+2",
+          "+5",
+          "12",
+          "91%",
+          "–",
+          "perdido"
+        ],
+        [
+          "**13**",
+          "+2",
+          "+5",
+          "11",
+          "92%",
+          "7º",
+          "perdido"
+        ],
+        [
+          "**14**",
+          "+3",
+          "+6",
+          "11",
+          "93%",
+          "–",
+          "perdido"
+        ],
+        [
+          "**15**",
+          "+3",
+          "+6",
+          "11",
+          "94%",
+          "8º",
+          "perdido"
+        ],
+        [
+          "**16**",
+          "+4",
+          "+6",
+          "10",
+          "95%",
+          "–",
+          "perdido"
+        ],
+        [
+          "**17**",
+          "+4",
+          "+7",
+          "10",
+          "96%",
+          "9º",
+          "perdido"
+        ],
+        [
+          "**18**",
+          "+5",
+          "+7",
+          "10",
+          "97%",
+          "–",
+          "perdido"
+        ],
+        [
+          "**19**",
+          "+5",
+          "+7",
+          "9",
+          "98%",
+          "10º",
+          "perdido"
+        ],
+        [
+          "**20**",
+          "+6",
+          "+8",
+          "9",
+          "99%",
+          "–",
+          "perdido"
+        ]
+      ],
+      "legenda": "*Nada congela nem muda: a tabela é a mesma da classe base.*",
+      "nota": "Perde o **Crédito Tecnológico** — o dever de clã rouba o tempo de barganha. Mantém aparatos e feitos: o **Armeiro** de um clã é, em regra, um Técnico."
+    },
+    "Sensível à Força": {
+      "cabecalho": [
+        "Nv",
+        "DV",
+        "BA",
+        "JP",
+        "Alcance",
+        "Grandeza",
+        "Forma de Sabre"
+      ],
+      "linhas": [
+        [
+          "**5**",
+          "5",
+          "+2",
+          "13",
+          "**6%**",
+          "3ª",
+          "até 10º"
+        ],
+        [
+          "**6**",
+          "6",
+          "+2",
+          "13",
+          "**9%**",
+          "**3ª**",
+          "até 10º"
+        ],
+        [
+          "**7**",
+          "7",
+          "+3",
+          "12",
+          "**13%**",
+          "4ª",
+          "até 10º"
+        ],
+        [
+          "**8**",
+          "8",
+          "+3",
+          "12",
+          "**17%**",
+          "**4ª**",
+          "até 10º"
+        ],
+        [
+          "**9**",
+          "9",
+          "+3",
+          "12",
+          "**23%**",
+          "5ª",
+          "até 10º"
+        ],
+        [
+          "**10**",
+          "+1",
+          "+4",
+          "11",
+          "**28%**",
+          "**5ª**",
+          "até 10º"
+        ],
+        [
+          "**11**",
+          "+1",
+          "+4",
+          "11",
+          "**36%**",
+          "**6ª (teto)**",
+          "até 10º"
+        ],
+        [
+          "**12**",
+          "+1",
+          "+4",
+          "11",
+          "**43%**",
+          "**6ª (teto)**",
+          "até 10º"
+        ],
+        [
+          "**13**",
+          "+1",
+          "+5",
+          "10",
+          "**53%**",
+          "**6ª (teto)**",
+          "até 10º"
+        ],
+        [
+          "**14**",
+          "+1",
+          "+5",
+          "10",
+          "**62%**",
+          "**6ª (teto)**",
+          "até 10º"
+        ],
+        [
+          "**15**",
+          "+2",
+          "+5",
+          "10",
+          "**74%**",
+          "**6ª (teto)**",
+          "até 10º"
+        ],
+        [
+          "**16**",
+          "+2",
+          "+6",
+          "9",
+          "**86%**",
+          "**6ª (teto)**",
+          "até 10º"
+        ],
+        [
+          "**17**",
+          "—",
+          "+6",
+          "9",
+          "**100%**",
+          "**6ª (teto)**",
+          "até 10º"
+        ],
+        [
+          "**18**",
+          "—",
+          "+6",
+          "9",
+          "**115%**",
+          "**6ª (teto)**",
+          "até 10º"
+        ],
+        [
+          "**19**",
+          "—",
+          "+6",
+          "9",
+          "**131%**",
+          "**6ª (teto)**",
+          "até 10º"
+        ],
+        [
+          "**20**",
+          "—",
+          "+6",
+          "9",
+          "**139%**",
+          "**6ª (teto)**",
+          "até 10º"
+        ]
+      ],
+      "legenda": "**em negrito** = o valor desta especialização, no lugar do da classe base.",
+      "nota": "O **Alcance conta como o de um Sensível de um nível abaixo** e o **teto de Grandeza para na 6ª**: ele passou a vida jurando um credo e aprendendo a lutar de armadura, não meditando sobre a natureza da Força. Em troca, mantém BA e JP progredindo até o 20º — o único Sensível que não paga com o corpo — e o clã lhe ensina **uma** Forma de Sabre. Sem Eco da Senda e sem Mudar de Guarda: conhece uma Forma só, e não tem para onde trocar."
+    }
+  }
+};
+
+// A Origem Filho de Mandalore.
+export const ORIGEM = {
+  "html": "<p>Uma <strong>Origem</strong> é escolhida na criação, por cima da espécie e da classe, e representa o berço cultural. <em>Filho de Mandalore</em> está disponível a <strong>qualquer espécie e classe</strong>.</p><ul><li><code>1º</code> <strong>Criado na Armadura:</strong> usa a Lança-Vibro Mandaloriana, a Mochila de Propulsão (jetpack) e a armadura de clã <strong>sem penalidade</strong>, mesmo que a classe normalmente não permitisse.</li><li><code>1º</code> <strong>Sangue de Clã:</strong> +1 em testes de reação com Mandalorianos e caçadores que reconheçam sua herança.</li><li><code>1º</code> <strong>Mando'a:</strong> fala o idioma Mandaloriano além dos idiomas iniciais.</li></ul><blockquote><p>A Origem é leve e <strong>não substitui habilidades de classe</strong>. É a <strong>porta de entrada</strong> para a Senda — mas não é obrigatória.</p></blockquote>",
+  "degraus": [
+    {
+      "level": 1,
+      "nome": "Criado na Armadura",
+      "desc": "<p>usa a Lança-Vibro Mandaloriana, a Mochila de Propulsão (jetpack) e a armadura de clã <strong>sem penalidade</strong>, mesmo que a classe normalmente não permitisse.</p>"
+    },
+    {
+      "level": 1,
+      "nome": "Sangue de Clã",
+      "desc": "<p>+1 em testes de reação com Mandalorianos e caçadores que reconheçam sua herança.</p>"
+    },
+    {
+      "level": 1,
+      "nome": "Mando'a",
+      "desc": "<p>fala o idioma Mandaloriano além dos idiomas iniciais.</p>"
+    }
+  ]
+};

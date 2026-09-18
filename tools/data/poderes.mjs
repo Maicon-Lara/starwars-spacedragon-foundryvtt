@@ -76,3 +76,19 @@ export const poderesJournal = {
     { title: "Crédito", content: poderes["Crédito"] },
   ],
 };
+
+// ── Ordens e Ranks ──────────────────────────────────────────────────────────
+//
+// Fonte: SW-SUP-Ordens-e-Ranks.md. Rank é narrativo — não há item a criar,
+// só o texto para o Mestre e os jogadores.
+const ordens = TEXTOS["SW-SUP-Ordens-e-Ranks"];
+
+export const ordensJournal = {
+  title: "Ordens e Ranks da Força",
+  pages: [
+    { title: "A Ordem Jedi", content: ordens["(abertura)"] + ordens["A Ordem Jedi (Caminho da Luz)"] },
+    { title: "Os Sith — a Regra de Dois", content: ordens["Os Sith — a Regra de Dois (Caminho da Sombra)"] },
+    { title: "Outras Tradições", content: ordens["Outras tradições (opcionais)"] },
+    { title: "Rank na Prática", content: ordens["Rank na prática"] },
+  ],
+};

@@ -309,6 +309,103 @@ function poderesDoCofre(texto) {
   return saida;
 }
 
+// ── Subseções e degraus ─────────────────────────────────────────────────────
+
+/** As subseções "### " de uma seção "## ", em markdown: [{ titulo, md }]. A
+ *  primeira, de título nulo, é o texto antes da primeira "### ". */
+function subsecoes(texto, titulo) {
+  const linhas = texto.split("\n");
+  const i = linhas.findIndex((l) => l.trim() === `## ${titulo}`);
+  if (i < 0) throw new Error(`seção não encontrada: ## ${titulo}`);
+  const fim = linhas.findIndex((l, j) => j > i && (/^#{1,2}\s/.test(l) || /^\*Star Wars — suplemento/.test(l)));
+  const partes = [];
+  let atual = { titulo: null, linhas: [] };
+  for (const l of linhas.slice(i + 1, fim < 0 ? undefined : fim)) {
+    if (/^###\s/.test(l)) {
+      partes.push(atual);
+      atual = { titulo: l.replace(/^###\s+/, "").trim(), linhas: [] };
+    } else atual.linhas.push(l);
+  }
+  partes.push(atual);
+  return partes.map((p) => ({ titulo: p.titulo, md: p.linhas.join("\n") }));
+}
+
+/** "- `5º` **Nome:** texto" → { level, nome, desc }. É o formato dos degraus
+ *  no cofre inteiro — Núcleo Mandaloriano, Origem, Formas. */
+function degrausDe(mdTexto) {
+  return mdTexto
+    .split("\n")
+    .map((l) => l.match(/^-\s+`(\d+)º`\s+\*\*(.+?):\*\*\s*(.*)$/))
+    .filter(Boolean)
+    .map((m) => ({ level: Number(m[1]), nome: m[2].trim(), desc: `<p>${md(m[3])}</p>` }));
+}
+
+// ── Formas de Sabre ─────────────────────────────────────────────────────────
+//
+// Cada "### Nome — *subtítulo*" vira uma habilidade inteira, com os três
+// degraus dentro: a Forma é UMA escolha, e partir em três itens faria o
+// jogador arrastar três coisas para a ficha.
+
+function formasDoCofre(texto) {
+  const subs = subsecoes(texto, "As Formas de Sabre (Senda Guardião)").filter((s) => s.titulo);
+  if (subs.length !== 7) throw new Error(`esperava 7 Formas de Sabre, achei ${subs.length}`);
+  return subs.map((s) => {
+    const [nome, sub] = s.titulo.split(/\s+—\s+/);
+    return {
+      nome: nome.trim(),
+      desc: (sub ? `<p>${md(sub)}</p>` : "") + blocos(s.md),
+    };
+  });
+}
+
+// ── Senda Mandaloriana ──────────────────────────────────────────────────────
+
+const SENDA_TITULO = "A Senda Mandaloriana (arquétipo cross-class, 5º nível)";
+const NA_TABELA = { Veterano: "Veterano", Operativo: "Operativo", "Técnico": "Técnico", "Sensível à Força": "Sensível" };
+
+function sendaDoCofre(texto) {
+  const subs = subsecoes(texto, SENDA_TITULO);
+  const nucleo = degrausDe(subs.find((s) => s.titulo === "Núcleo Mandaloriano (todas as classes)").md);
+  if (nucleo.length !== 5) throw new Error(`esperava 5 habilidades no Núcleo Mandaloriano, achei ${nucleo.length}`);
+
+  // A Tabela de Trocas: uma linha por classe-base.
+  const trocasMd = subs.find((s) => s.titulo === "Tabela de Trocas (o que cada classe sacrifica)").md;
+  const tTrocas = tabelaApos(trocasMd, 0);
+  const trocas = {};
+  for (const [classe, troca] of tTrocas.linhas) trocas[classe.replace(/\*\*/g, "").trim()] = `<p>${md(troca)}</p>`;
+
+  // As quatro tabelas de progressão, cada uma com a legenda e a nota.
+  const tabelas = {};
+  for (const [classe, rotulo] of Object.entries(NA_TABELA)) {
+    const marca = `**Progressão do Mandaloriano ${rotulo}**`;
+    const i = texto.indexOf(marca);
+    if (i < 0) throw new Error(`tabela não encontrada: ${marca}`);
+    const t = tabelaApos(texto, i);
+    const depois = texto.slice(texto.indexOf("\n|", i)).split("\n");
+    const fimTabela = depois.findIndex((l, j) => j > 0 && !l.trim().startsWith("|"));
+    const resto = [];
+    for (const l of depois.slice(fimTabela)) {
+      if (l.startsWith("**Progressão") || l.startsWith("<!--")) break;
+      if (l.trim()) resto.push(l);
+    }
+    const legenda = resto.filter((l) => !l.startsWith(">")).join(" ").trim();
+    const nota = resto.filter((l) => l.startsWith(">")).map((l) => l.replace(/^>\s?/, "")).join(" ").trim();
+    if (t.linhas.length !== 16) throw new Error(`Mandaloriano ${rotulo}: ${t.linhas.length} linhas, esperava 16`);
+    tabelas[classe] = { ...t, legenda, nota };
+  }
+  for (const classe of Object.keys(NA_TABELA)) {
+    if (!trocas[classe]) throw new Error(`Tabela de Trocas sem a linha de ${classe}`);
+  }
+  return { abertura: abertura(texto), intro: blocos(subs[0].md), nucleo, trocas, tabelas };
+}
+
+function origemDoCofre(texto) {
+  const md0 = subsecoes(texto, "Origem: Filho de Mandalore (1º nível)")[0].md;
+  const degraus = degrausDe(md0);
+  if (degraus.length !== 3) throw new Error(`esperava 3 degraus na Origem, achei ${degraus.length}`);
+  return { html: blocos(md0), degraus };
+}
+
 // Quais seções de quais notas viram página. Nota nova entra aqui.
 const SECOES = {
   "SW-SUP-Usando-o-Basico": [
@@ -319,6 +416,25 @@ const SECOES = {
   ],
   "SW-SUP-Especies": ["Idiomas da galáxia", "Nota de conversão"],
   "SW-SUP-Poderes-da-Forca": ["Como usar este capítulo", "As três correntes (Caminho)", "Crédito"],
+  "SW-SUP-Sabre-e-Cristais": [
+    "O Cristal Kyber",
+    "Construir o Próprio Sabre",
+    "Sangrar o Cristal (o vermelho Sith)",
+    "O Sabre Sombrio (Darksaber)",
+    "As Formas de Sabre (Senda Guardião)",
+    "Mudar de Guarda — trocar de Forma no meio do duelo",
+  ],
+  "SW-SUP-Senda-Mandaloriana": [
+    "Origem: Filho de Mandalore (1º nível)",
+    SENDA_TITULO,
+    "Referência de equipamento",
+  ],
+  "SW-SUP-Ordens-e-Ranks": [
+    "A Ordem Jedi (Caminho da Luz)",
+    "Os Sith — a Regra de Dois (Caminho da Sombra)",
+    "Outras tradições (opcionais)",
+    "Rank na prática",
+  ],
   "SW-SUP-Forca": [
     "O Caminho: Luz, Sombra e o meio",
     "O Caminho Cinza",
@@ -337,6 +453,9 @@ for (const [nota, titulos] of Object.entries(SECOES)) {
 
 const ESPECIES = especiesDoCofre(ler("SW-SUP-Especies"));
 const PODERES = poderesDoCofre(ler("SW-SUP-Poderes-da-Forca"));
+const FORMAS = formasDoCofre(ler("SW-SUP-Sabre-e-Cristais"));
+const SENDA = sendaDoCofre(ler("SW-SUP-Senda-Mandaloriana"));
+const ORIGEM = origemDoCofre(ler("SW-SUP-Senda-Mandaloriana"));
 
 fs.writeFileSync(
   DESTINO_TEXTOS,
@@ -356,6 +475,15 @@ fs.writeFileSync(
     "// Os Poderes da Força de SW-SUP-Poderes-da-Forca, cada um com o Poder",
     "// Mental nativo que ele é — os números e o texto vêm do módulo Space Dragon.",
     `export const PODERES = ${JSON.stringify(PODERES, null, 2)};`,
+    "",
+    "// As sete Formas de Sabre de SW-SUP-Sabre-e-Cristais, uma habilidade cada.",
+    `export const FORMAS = ${JSON.stringify(FORMAS, null, 2)};`,
+    "",
+    "// A Senda Mandaloriana: o Núcleo, a troca de cada classe e as quatro tabelas.",
+    `export const SENDA = ${JSON.stringify(SENDA, null, 2)};`,
+    "",
+    "// A Origem Filho de Mandalore.",
+    `export const ORIGEM = ${JSON.stringify(ORIGEM, null, 2)};`,
     "",
   ].join("\n"),
   "utf8"

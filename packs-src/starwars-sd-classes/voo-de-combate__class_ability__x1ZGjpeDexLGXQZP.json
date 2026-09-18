@@ -1,0 +1,50 @@
+{
+  "folder": "xZ8H6MGYjdeJr5NK",
+  "name": "Voo de Combate",
+  "type": "class_ability",
+  "_id": "x1ZGjpeDexLGXQZP",
+  "img": "systems/olddragon2e/assets/icons/melee.svg",
+  "system": {
+    "description": "<p>usa a Mochila de Propulsão em combate — o primeiro golpe da rodada vindo de cima leva <strong>+2 no ataque</strong>, ou reposiciona-se verticalmente sem gastar movimento extra.</p>",
+    "level": 10,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 400000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!x1ZGjpeDexLGXQZP"
+}

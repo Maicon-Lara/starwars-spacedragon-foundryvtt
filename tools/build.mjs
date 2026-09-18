@@ -31,13 +31,13 @@ import { classes } from "./data/classes.mjs";
 import { variantes, CAMINHO_E_CORPO } from "./data/variantes.mjs";
 import { BASE, ESPECIALIZACOES } from "./data/progressoes.mjs";
 import { especies, especieAbilitiesAvulsas } from "./data/especies.mjs";
-import { classAbilitiesAvulsas, origensAvulsas } from "./data/avulsas.mjs";
+import { classAbilitiesAvulsas, origensAvulsas, sendaMandaloriana, sendaJournal } from "./data/avulsas.mjs";
 import { categorias } from "./data/equipamentos.mjs";
-import { listasDePoder, poderesJournal } from "./data/poderes.mjs";
+import { listasDePoder, poderesJournal, ordensJournal } from "./data/poderes.mjs";
 import { grupos as gruposBestiario } from "./data/bestiario.mjs";
 import { navesJournal } from "./data/naves.mjs";
 import { bestiarioJournal } from "./data/bestiario-journal.mjs";
-import { equipamentosJournal } from "./data/equipamentos-journal.mjs";
+import { equipamentosJournal, sabreJournal } from "./data/equipamentos-journal.mjs";
 import { feitosJournal } from "./data/feitos-journal.mjs";
 import { mestreJournal } from "./data/mestre-journal.mjs";
 import { criacaoJournal } from "./data/criacao-journal.mjs";
@@ -125,6 +125,7 @@ const paragrafos = (s) => (s ? s.split(/\n\n+/).map((x) => `<p>${md(x)}</p>`).jo
 // forma "Classe — Especialização", a da pasta.
 function buildClassesDocs() {
   const docs = [];
+  const uuidsDaBase = new Map();
   for (const cls of classes) {
     const tabela = BASE[cls.nome];
     if (!tabela) throw new Error(`sem tabela de progressão para ${cls.nome}`);
@@ -134,6 +135,7 @@ function buildClassesDocs() {
     const habsBase = cls.habilidades.map((ab, i) => classAbilityDoc(ab, folder._id, cls.nome, (i + 1) * 100000));
     docs.push(...habsBase);
     const uuidsBase = habsBase.map((h) => itemUuid(CLASSES_PACK, h._id));
+    uuidsDaBase.set(cls.nome, uuidsBase);
 
     const specs = variantes.filter((v) => v.classe === cls.nome);
     const descricaoBase =
@@ -177,8 +179,63 @@ function buildClassesDocs() {
       }, pasta._id, [...uuidsBase, ...habsSpec.map((h) => itemUuid(CLASSES_PACK, h._id))]));
     }
   }
-  // Formas de Sabre e a Senda Mandaloriana: habilidades escolhidas à parte.
+  docs.push(...buildSendaDocs(uuidsDaBase));
+
+  // Formas de Sabre e Mudar de Guarda: habilidades escolhidas à parte.
   agrupaAvulsas(docs, classAbilitiesAvulsas, "classes", classAbilityDoc);
+  return docs;
+}
+
+// ── A Senda Mandaloriana ───────────────────────────────────────────────────
+//
+// Cross-class: a mesma Senda para as quatro classes, no lugar da
+// especialização. Vira uma classe por base — "Mandaloriano — Veterano" —
+// numa pasta própria. As cinco habilidades do Núcleo existem UMA vez e as
+// quatro classes apontam para elas; a troca é uma habilidade por classe.
+function buildSendaDocs(uuidsDaBase) {
+  const s = sendaMandaloriana;
+  const docs = [];
+  const pasta = folderDoc(s.pasta, "Item", "classes");
+  docs.push(pasta);
+
+  const nucleo = s.nucleo.map((n, i) => classAbilityDoc(n, pasta._id, s.pasta, (i + 1) * 100000));
+  docs.push(...nucleo);
+  const uuidsNucleo = nucleo.map((h) => itemUuid(CLASSES_PACK, h._id));
+
+  classes.forEach((cls, j) => {
+    const tabela = s.tabelas[cls.nome];
+    const troca = classAbilityDoc(
+      { nome: `Troca da Senda — ${cls.nome}`, level: 5, desc: s.trocas[cls.nome] },
+      pasta._id, s.pasta, (10 + j) * 100000
+    );
+    docs.push(troca);
+    const seedNome = `${s.pasta} — ${cls.nome}`;
+    docs.push({
+      ...classDoc({
+        ...cls,
+        nome: `Mandaloriano — ${cls.nome}`,
+        seedNome,
+        flavor: "<p><em>Mandaloriano não é uma espécie, é uma cultura.</em></p>",
+        // O Núcleo dá o arsenal do clã por cima do que a classe permitia:
+        // Treinamento de Clã (haste, arremesso, blasters, jetpack) e Sangue
+        // de Beskar. Sem isto a ficha proibiria a própria Beskar da Senda.
+        equipment_restrictions: {
+          ...cls.equipment_restrictions,
+          weapons: `${cls.equipment_restrictions.weapons} E o arsenal do clã: armas de haste, de arremesso e blasters (Treinamento de Clã).`,
+          armors: `${cls.equipment_restrictions.armors} E a Armadura Beskar ou pesada de clã (Sangue de Beskar).`,
+        },
+        descricao:
+          `<p>A <strong>Senda Mandaloriana</strong> para o ${cls.nome}, assumida no <strong>5º nível</strong> ` +
+          "no lugar da especialização. Mantém tudo o que a classe já lhe deu, ganha o Núcleo Mandaloriano " +
+          "e troca o que a tabela abaixo diz.</p>" +
+          `<p><strong>O que troca:</strong></p>${s.trocas[cls.nome]}` +
+          tabelaHTML(`Progressão do Mandaloriano ${cls.nome} — do 5º ao 20º nível`, tabela) +
+          s.intro,
+        levels: levelsDe(BASE[cls.nome], tabela),
+      }, pasta._id, [...uuidsDaBase.get(cls.nome), ...uuidsNucleo, itemUuid(CLASSES_PACK, troca._id)]),
+      sort: (j + 1) * 100000,
+    });
+  });
   return docs;
 }
 
@@ -266,8 +323,8 @@ function buildBestiarioDocs() {
 // no compêndio parece conteúdo perdido.
 function buildJournalDocs() {
   return [
-    criacaoJournal, equipamentosJournal, feitosJournal, poderesJournal,
-    navesJournal, bestiarioJournal, mestreJournal,
+    criacaoJournal, equipamentosJournal, sabreJournal, feitosJournal, poderesJournal,
+    ordensJournal, sendaJournal, navesJournal, bestiarioJournal, mestreJournal,
   ]
     .filter((e) => (e.pages?.length ?? 0) > 0 || e.content)
     .map((e, i) => journalDoc(e, (i + 1) * 100000));

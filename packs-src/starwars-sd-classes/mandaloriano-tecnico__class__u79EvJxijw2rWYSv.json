@@ -1,0 +1,157 @@
+{
+  "folder": "xZ8H6MGYjdeJr5NK",
+  "name": "Mandaloriano — Técnico",
+  "type": "class",
+  "_id": "u79EvJxijw2rWYSv",
+  "img": "systems/olddragon2e/assets/icons/legiao-shield.svg",
+  "system": {
+    "flavor": "<p><em>Mandaloriano não é uma espécie, é uma cultura.</em></p>",
+    "description": "<p>A <strong>Senda Mandaloriana</strong> para o Técnico, assumida no <strong>5º nível</strong> no lugar da especialização. Mantém tudo o que a classe já lhe deu, ganha o Núcleo Mandaloriano e troca o que a tabela abaixo diz.</p><p><strong>O que troca:</strong></p><p><strong>perde o Crédito Tecnológico</strong> (o dever de clã rouba o tempo de barganha); mantém aparatos e feitos — o <strong>Armeiro</strong> de um clã é, em regra, um Técnico.</p><p><strong>Progressão do Mandaloriano Técnico — do 5º ao 20º nível</strong></p><table><thead><tr><th>Nv</th><th>DV</th><th>BA</th><th>JP</th><th>Operar Máq.</th><th>NT</th><th>Crédito Tecnológico</th></tr></thead><tbody><tr><td><strong>5</strong></td><td>5</td><td>+3</td><td>14</td><td>84%</td><td>3º</td><td>perdido</td></tr><tr><td><strong>6</strong></td><td>6</td><td>+3</td><td>14</td><td>85%</td><td>–</td><td>perdido</td></tr><tr><td><strong>7</strong></td><td>7</td><td>+3</td><td>13</td><td>86%</td><td>4º</td><td>perdido</td></tr><tr><td><strong>8</strong></td><td>8</td><td>+4</td><td>13</td><td>87%</td><td>–</td><td>perdido</td></tr><tr><td><strong>9</strong></td><td>9</td><td>+4</td><td>13</td><td>88%</td><td>5º</td><td>perdido</td></tr><tr><td><strong>10</strong></td><td>+1</td><td>+4</td><td>12</td><td>89%</td><td>–</td><td>perdido</td></tr><tr><td><strong>11</strong></td><td>+1</td><td>+5</td><td>12</td><td>90%</td><td>6º</td><td>perdido</td></tr><tr><td><strong>12</strong></td><td>+2</td><td>+5</td><td>12</td><td>91%</td><td>–</td><td>perdido</td></tr><tr><td><strong>13</strong></td><td>+2</td><td>+5</td><td>11</td><td>92%</td><td>7º</td><td>perdido</td></tr><tr><td><strong>14</strong></td><td>+3</td><td>+6</td><td>11</td><td>93%</td><td>–</td><td>perdido</td></tr><tr><td><strong>15</strong></td><td>+3</td><td>+6</td><td>11</td><td>94%</td><td>8º</td><td>perdido</td></tr><tr><td><strong>16</strong></td><td>+4</td><td>+6</td><td>10</td><td>95%</td><td>–</td><td>perdido</td></tr><tr><td><strong>17</strong></td><td>+4</td><td>+7</td><td>10</td><td>96%</td><td>9º</td><td>perdido</td></tr><tr><td><strong>18</strong></td><td>+5</td><td>+7</td><td>10</td><td>97%</td><td>–</td><td>perdido</td></tr><tr><td><strong>19</strong></td><td>+5</td><td>+7</td><td>9</td><td>98%</td><td>10º</td><td>perdido</td></tr><tr><td><strong>20</strong></td><td>+6</td><td>+8</td><td>9</td><td>99%</td><td>–</td><td>perdido</td></tr></tbody></table><p><em><em>Nada congela nem muda: a tabela é a mesma da classe base.</em></em></p><blockquote><p>Perde o <strong>Crédito Tecnológico</strong> — o dever de clã rouba o tempo de barganha. Mantém aparatos e feitos: o <strong>Armeiro</strong> de um clã é, em regra, um Técnico.</p></blockquote><blockquote><p>Mandaloriano <strong>não é uma espécie, é uma cultura</strong>: há Mandalorianos humanos, Twi'lek, Rodianos e até um raro Sensível à Força. Existe quem <strong>nasce no berço da cultura</strong> (a Origem, no 1º nível) e quem <strong>é adotado no Credo</strong> (a Senda, no 5º nível), trocando parte das habilidades da classe pelo pacote de clã.</p></blockquote><p>Um personagem de <strong>qualquer classe</strong> aceito num clã pode assumir a Senda <strong>no lugar de sua especialização</strong> (que também abre no 5º nível). Como toda especialização do SD, ele ganha o <strong>Núcleo Mandaloriano</strong> e <strong>troca</strong> parte das habilidades da classe base (Tabela de Trocas). A <strong>tabela de XP continua sendo a da classe</strong> — especializar-se no Space Dragon não muda a progressão de experiência. Se já tinha a Origem, a conversão é imediata; senão, exige um rito de aceitação.</p>",
+    "hp": 8,
+    "high_level_hp_bonus": null,
+    "equipment_restrictions": {
+      "weapons": "Só armas de fogo de energia (jamais projéteis ou marciais). E o arsenal do clã: armas de haste, de arremesso e blasters (Treinamento de Clã).",
+      "armors": "Qualquer veste, e aparatos defensivos. E a Armadura Beskar ou pesada de clã (Sangue de Beskar).",
+      "magic_items": "Constrói e opera qualquer um (só o Técnico opera ofensivos)."
+    },
+    "restrictions": {
+      "alignments": [],
+      "races": []
+    },
+    "levels": {
+      "1": {
+        "ba": 0,
+        "jp": 15
+      },
+      "2": {
+        "ba": 1,
+        "jp": 15,
+        "xp": 1500
+      },
+      "3": {
+        "ba": 2,
+        "jp": 15,
+        "xp": 3000
+      },
+      "4": {
+        "ba": 2,
+        "jp": 14,
+        "xp": 6000
+      },
+      "5": {
+        "ba": 3,
+        "jp": 14,
+        "xp": 12000
+      },
+      "6": {
+        "ba": 3,
+        "jp": 14,
+        "xp": 24000
+      },
+      "7": {
+        "ba": 3,
+        "jp": 13,
+        "xp": 48000
+      },
+      "8": {
+        "ba": 4,
+        "jp": 13,
+        "xp": 100000
+      },
+      "9": {
+        "ba": 4,
+        "jp": 13,
+        "xp": 200000
+      },
+      "10": {
+        "ba": 4,
+        "jp": 12,
+        "xp": 300000
+      },
+      "11": {
+        "ba": 5,
+        "jp": 12,
+        "xp": 400000
+      },
+      "12": {
+        "ba": 5,
+        "jp": 12,
+        "xp": 500000
+      },
+      "13": {
+        "ba": 5,
+        "jp": 11,
+        "xp": 600000
+      },
+      "14": {
+        "ba": 6,
+        "jp": 11,
+        "xp": 700000
+      },
+      "15": {
+        "ba": 6,
+        "jp": 11,
+        "xp": 800000
+      },
+      "16": {
+        "ba": 6,
+        "jp": 10,
+        "xp": 900000
+      },
+      "17": {
+        "ba": 7,
+        "jp": 10,
+        "xp": 1000000
+      },
+      "18": {
+        "ba": 7,
+        "jp": 10,
+        "xp": 1100000
+      },
+      "19": {
+        "ba": 7,
+        "jp": 9,
+        "xp": 1200000
+      },
+      "20": {
+        "ba": 8,
+        "jp": 9,
+        "xp": 1300000
+      }
+    },
+    "class_abilities": [
+      "Compendium.starwars-sd.starwars-sd-classes.Item.yO4JahxpEO59tMxA",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.dc3b6jLpkSxoB0VI",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.7DONpPDdYd4e6M9q",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.ek0YwOa9jOf3Q7cT",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.DXVGww7Pds0F9Kip",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.iO1T8Cx10TWkl1xJ",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.t9qNfX7RY8gut7GG",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.x1ZGjpeDexLGXQZP",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.Izr8HnFtApHUFyF9",
+      "Compendium.starwars-sd.starwars-sd-classes.Item.NQQXbJOahuhiftn4"
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "spacedragon": {
+      "chassi": "Cientista"
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 300000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!u79EvJxijw2rWYSv"
+}

@@ -1,0 +1,44 @@
+{
+  "folder": "4TJaHI9a2hFfJngF",
+  "name": "Filho de Mandalore",
+  "type": "race_ability",
+  "_id": "9d2uGWiHvl8lRyYy",
+  "img": "systems/olddragon2e/assets/icons/legiao-shield.svg",
+  "system": {
+    "description": "<p>Uma <strong>Origem</strong> é escolhida na criação, por cima da espécie e da classe, e representa o berço cultural. <em>Filho de Mandalore</em> está disponível a <strong>qualquer espécie e classe</strong>.</p><ul><li><code>1º</code> <strong>Criado na Armadura:</strong> usa a Lança-Vibro Mandaloriana, a Mochila de Propulsão (jetpack) e a armadura de clã <strong>sem penalidade</strong>, mesmo que a classe normalmente não permitisse.</li><li><code>1º</code> <strong>Sangue de Clã:</strong> +1 em testes de reação com Mandalorianos e caçadores que reconheçam sua herança.</li><li><code>1º</code> <strong>Mando'a:</strong> fala o idioma Mandaloriano além dos idiomas iniciais.</li></ul><blockquote><p>A Origem é leve e <strong>não substitui habilidades de classe</strong>. É a <strong>porta de entrada</strong> para a Senda — mas não é obrigatória.</p></blockquote>",
+    "xp": null,
+    "jp": {
+      "jpc": false,
+      "jpd": false,
+      "jps": false
+    },
+    "bonus_damage": 0,
+    "bonus_damage_condition": "none",
+    "bonus_damage_condition_2": "none",
+    "rogue_talent": "none",
+    "rogue_talent_2": "none",
+    "daily_uses": 0,
+    "natural_armor": 0,
+    "load_modifier": 0,
+    "max_load_override": 0,
+    "armor_weight_modifier": 0
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!9d2uGWiHvl8lRyYy"
+}

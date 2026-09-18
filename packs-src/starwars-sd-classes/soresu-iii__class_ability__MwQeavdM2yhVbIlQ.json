@@ -1,0 +1,50 @@
+{
+  "folder": "oBtcnSSVf2Dl01Tj",
+  "name": "Soresu (III)",
+  "type": "class_ability",
+  "_id": "MwQeavdM2yhVbIlQ",
+  "img": "systems/olddragon2e/assets/icons/slashing.svg",
+  "system": {
+    "description": "<p><em>defesa pura</em></p><ul><li><code>5º</code> <strong>Postura Defensiva:</strong> <strong>+2 no CP</strong> contra ataques à distância e você <strong>deflete disparos de blaster</strong> sem gastar ação; gastando a ação, deflete <strong>todos</strong> os disparos contra você e aliados adjacentes.</li><li><code>10º</code> <strong>Devolver ao Remetente:</strong> ao defletir, pode <strong>redirecionar o disparo ao atirador</strong> com um ataque seu.</li><li><code>20º</code> <strong>Mestre Soresu:</strong> ataques à distância só o acertam num <strong>crítico</strong>.</li></ul>",
+    "level": 5,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 300000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!MwQeavdM2yhVbIlQ"
+}
