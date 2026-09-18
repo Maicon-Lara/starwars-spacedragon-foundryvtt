@@ -1,0 +1,44 @@
+{
+  "folder": "MMPvGPX5Czf3rPfM",
+  "name": "Construído Adulto",
+  "type": "race_ability",
+  "_id": "UN1wjLiSLiVlOvsC",
+  "img": "systems/olddragon2e/assets/icons/diamond.svg",
+  "system": {
+    "description": "<p>sai da linha já pronto, com <strong>vida útil estimada de 100 anos</strong>, depois da qual o cérebro pode começar a falhar. A morte é relativa: a personalidade está programada no cérebro e pode ser <strong>transplantada</strong> para outro corpo — ou outro cérebro para o dele.</p>",
+    "xp": null,
+    "jp": {
+      "jpc": false,
+      "jpd": false,
+      "jps": false
+    },
+    "bonus_damage": 0,
+    "bonus_damage_condition": "none",
+    "bonus_damage_condition_2": "none",
+    "rogue_talent": "none",
+    "rogue_talent_2": "none",
+    "daily_uses": 0,
+    "natural_armor": 0,
+    "load_modifier": 0,
+    "max_load_override": 0,
+    "armor_weight_modifier": 0
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 500000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!UN1wjLiSLiVlOvsC"
+}

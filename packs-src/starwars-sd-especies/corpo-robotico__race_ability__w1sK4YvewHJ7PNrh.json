@@ -1,0 +1,44 @@
+{
+  "folder": "MMPvGPX5Czf3rPfM",
+  "name": "Corpo Robótico",
+  "type": "race_ability",
+  "_id": "w1sK4YvewHJ7PNrh",
+  "img": "systems/olddragon2e/assets/icons/magic-ring.svg",
+  "system": {
+    "description": "<p>vence <strong>automaticamente</strong> qualquer <strong>JPF</strong>, exceto testes de estabilização (quando está com PV negativos). Não dorme, não come, não respira; <strong>não regenera PV sozinho</strong> — precisa de <strong>reparo por um Técnico</strong> (aparatos/ferramentas). Ainda morre, e é suscetível a paralisia, cegueira, surdez e drenagem de energia.</p>",
+    "xp": null,
+    "jp": {
+      "jpc": false,
+      "jpd": false,
+      "jps": false
+    },
+    "bonus_damage": 0,
+    "bonus_damage_condition": "none",
+    "bonus_damage_condition_2": "none",
+    "rogue_talent": "none",
+    "rogue_talent_2": "none",
+    "daily_uses": 0,
+    "natural_armor": 0,
+    "load_modifier": 0,
+    "max_load_override": 0,
+    "armor_weight_modifier": 0
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!w1sK4YvewHJ7PNrh"
+}

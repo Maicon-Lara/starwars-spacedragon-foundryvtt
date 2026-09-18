@@ -1,0 +1,45 @@
+{
+  "folder": "MMPvGPX5Czf3rPfM",
+  "name": "Droide",
+  "type": "race",
+  "_id": "9xP11s5y99Q5VaQ6",
+  "img": "systems/olddragon2e/assets/icons/alignment.svg",
+  "system": {
+    "flavor": "<p>Construtos programados — trabalhadores, guerreiros, médicos ou companheiros.</p>",
+    "description": "<p>Usa o <strong>molde Androide nativo do SD</strong>.</p><blockquote><p><strong>Restrição importante:</strong> Droides <strong>não são sensíveis à Força</strong> e não podem ser da classe Sensível à Força.</p></blockquote><p><strong>Perguntas ao criar um Droide:</strong> Qual seu propósito original? Sua memória já foi apagada? Ele se considera uma pessoa?</p><table><thead><tr><th>Movimento</th><th>Infravisão</th><th>Alinhamento</th></tr></thead><tbody><tr><td>10 m</td><td>18 m</td><td>Qualquer</td></tr></tbody></table><blockquote><p><strong>Nota de fidelidade.</strong> Como no livro básico, o Corpo Robótico <strong>vence automaticamente</strong> toda JPF — sucesso automático em Física (menos estabilização). Nada de bônus fixo no lugar disso.</p></blockquote>",
+    "movement": 10,
+    "movement_fly": 0,
+    "movement_notes": "",
+    "infravision": 18,
+    "infravision_notes": "Sensores Integrados, permanente.",
+    "alignment_tendency": "none",
+    "alignment_notes": "Qualquer.",
+    "race_abilities": [
+      "Compendium.starwars-sd.starwars-sd-especies.Item.erXPwJK74hithg4D",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.w1sK4YvewHJ7PNrh",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.3JDqIZs9sD2Sic6j",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.cX1ir9gNPvQPV4Zo",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.UN1wjLiSLiVlOvsC",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.9DeBBntFnCpJnYGa",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.ARlyC6At2CG12A2l"
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!9xP11s5y99Q5VaQ6"
+}

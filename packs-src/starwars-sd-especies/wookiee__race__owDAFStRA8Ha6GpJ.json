@@ -1,0 +1,44 @@
+{
+  "folder": "jfHV9Rv3WBsz0Yvu",
+  "name": "Wookiee",
+  "type": "race",
+  "_id": "owDAFStRA8Ha6GpJ",
+  "img": "systems/olddragon2e/assets/icons/alignment.svg",
+  "system": {
+    "flavor": "<p>Guerreiros leais e ferozes das florestas de Kashyyyk.</p>",
+    "description": "<p><strong>Perguntas ao criar um Wookiee:</strong> Que dívida de vida o move? Como lida com a barreira do Shyriiwook? O que o tirou de Kashyyyk?</p><table><thead><tr><th>Movimento</th><th>Infravisão</th><th>Alinhamento</th></tr></thead><tbody><tr><td>10 m</td><td>—</td><td>Neutro</td></tr></tbody></table>",
+    "movement": 10,
+    "movement_fly": 0,
+    "movement_notes": "",
+    "infravision": 0,
+    "infravision_notes": "",
+    "alignment_tendency": "neutro",
+    "alignment_notes": "Neutro.",
+    "race_abilities": [
+      "Compendium.starwars-sd.starwars-sd-especies.Item.mwDqYGDBah5nAGse",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.D7GhJ2o0FErfu2Rq",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.Rbp5XiHyE6Oah1jt",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.oeZCCDNht4skCwwg",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.lCNX0TIvhwtsDVGQ",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.t1JLTFb7Ykd5w05n"
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!owDAFStRA8Ha6GpJ"
+}

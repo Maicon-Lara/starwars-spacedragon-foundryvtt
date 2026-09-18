@@ -1,0 +1,49 @@
+{
+  "folder": "i5oNAJFa609NP0VP",
+  "name": "Garras e Escamas",
+  "type": "race_ability",
+  "_id": "sh5dlo0QA0XlQxeA",
+  "img": "systems/olddragon2e/assets/icons/armor.svg",
+  "system": {
+    "description": "<p>dano desarmado <strong>1d4</strong> (perfurante) e <strong>+1 natural no CP</strong>.</p>",
+    "xp": null,
+    "jp": {
+      "jpc": false,
+      "jpd": false,
+      "jps": false
+    },
+    "bonus_damage": 0,
+    "bonus_damage_condition": "none",
+    "bonus_damage_condition_2": "none",
+    "rogue_talent": "none",
+    "rogue_talent_2": "none",
+    "daily_uses": 0,
+    "natural_armor": 11,
+    "load_modifier": 0,
+    "max_load_override": 0,
+    "armor_weight_modifier": 0,
+    "natural_weapon": {
+      "damage": "1d4",
+      "damage_type": "piercing",
+      "weapon_size": "small"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 300000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!sh5dlo0QA0XlQxeA"
+}

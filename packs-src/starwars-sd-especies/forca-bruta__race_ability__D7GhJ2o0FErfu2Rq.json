@@ -1,0 +1,49 @@
+{
+  "folder": "jfHV9Rv3WBsz0Yvu",
+  "name": "Força Bruta",
+  "type": "race_ability",
+  "_id": "D7GhJ2o0FErfu2Rq",
+  "img": "systems/olddragon2e/assets/icons/unarmed.svg",
+  "system": {
+    "description": "<p>dano desarmado <strong>1d6</strong> (em vez do nocaute padrão).</p>",
+    "xp": null,
+    "jp": {
+      "jpc": false,
+      "jpd": false,
+      "jps": false
+    },
+    "bonus_damage": 0,
+    "bonus_damage_condition": "none",
+    "bonus_damage_condition_2": "none",
+    "rogue_talent": "none",
+    "rogue_talent_2": "none",
+    "daily_uses": 0,
+    "natural_armor": 0,
+    "load_modifier": 0,
+    "max_load_override": 0,
+    "armor_weight_modifier": 0,
+    "natural_weapon": {
+      "damage": "1d6",
+      "damage_type": "bludgeoning",
+      "weapon_size": "medium"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!D7GhJ2o0FErfu2Rq"
+}

@@ -1,0 +1,42 @@
+{
+  "folder": "ThFtVcCXoODtNSW8",
+  "name": "Rodiano",
+  "type": "race",
+  "_id": "KRQGqvSYHjiAC1QA",
+  "img": "systems/olddragon2e/assets/icons/alignment.svg",
+  "system": {
+    "flavor": "<p>Caçadores natos de Rodia, guiados por instinto e tradição.</p>",
+    "description": "<p><strong>Perguntas ao criar um Rodiano:</strong> O que (ou quem) seu Rodiano caça? A honra da caça ainda importa? Como reage ao ser o caçado?</p><table><thead><tr><th>Movimento</th><th>Infravisão</th><th>Alinhamento</th></tr></thead><tbody><tr><td>10 m</td><td>Térmica 18 m</td><td>Caótico</td></tr></tbody></table>",
+    "movement": 10,
+    "movement_fly": 0,
+    "movement_notes": "",
+    "infravision": 18,
+    "infravision_notes": "Térmica: só seres vivos e fontes de calor.",
+    "alignment_tendency": "caotico",
+    "alignment_notes": "Caótico.",
+    "race_abilities": [
+      "Compendium.starwars-sd.starwars-sd-especies.Item.tOO82PZJdsnWWJue",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.Ulec6lDxcTY3gO3h",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.5nAfZ6RNgusKxpzo",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.9INtvAYVZLJ4Yq3O"
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!KRQGqvSYHjiAC1QA"
+}

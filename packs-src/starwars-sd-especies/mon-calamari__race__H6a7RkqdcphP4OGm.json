@@ -1,0 +1,44 @@
+{
+  "folder": "T0TIvONdlrgho6En",
+  "name": "Mon Calamari",
+  "type": "race",
+  "_id": "H6a7RkqdcphP4OGm",
+  "img": "systems/olddragon2e/assets/icons/alignment.svg",
+  "system": {
+    "flavor": "<p>Anfíbios de olhos salientes, líderes serenos e engenheiros natos de Mon Cala.</p>",
+    "description": "<p><strong>Perguntas ao criar um Mon Calamari:</strong> Deixou os oceanos por dever, exílio ou curiosidade? Constrói, lidera, ou ambos? O que a calma esconde quando provocada?</p><table><thead><tr><th>Movimento</th><th>Infravisão</th><th>Alinhamento</th></tr></thead><tbody><tr><td>10 m (nada pleno)</td><td>18 m (submerso/penumbra)</td><td>Qualquer, tende a Leal</td></tr></tbody></table>",
+    "movement": 10,
+    "movement_fly": 0,
+    "movement_notes": "Nada com deslocamento pleno.",
+    "infravision": 18,
+    "infravision_notes": "Submerso ou na penumbra.",
+    "alignment_tendency": "ordeiro",
+    "alignment_notes": "Qualquer, tende a Leal.",
+    "race_abilities": [
+      "Compendium.starwars-sd.starwars-sd-especies.Item.7Q8qgzhjOpFCS3GM",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.00JyBHiBaQruvZI2",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.KDjmR5p0PPRCkePy",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.q6MmgM95MqbWS8cT",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.fvqCXjthV7WMCCnt"
+    ],
+    "movement_swim": 10
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!H6a7RkqdcphP4OGm"
+}

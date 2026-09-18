@@ -1,0 +1,42 @@
+{
+  "folder": "t9KwK2yyxifp4Yp0",
+  "name": "Zabrak",
+  "type": "race",
+  "_id": "0f3aGZV9DXuGNZVz",
+  "img": "systems/olddragon2e/assets/icons/alignment.svg",
+  "system": {
+    "flavor": "<p>Guerreiros de vontade férrea, marcados pelos chifres e pelas tatuagens de clã.</p>",
+    "description": "<p><strong>Perguntas ao criar um Zabrak:</strong> Que mundo (Iridônia, Dathomir) marcou seus chifres? O que sua vontade se recusa a largar? Canaliza a resiliência em disciplina ou em fúria?</p><table><thead><tr><th>Movimento</th><th>Infravisão</th><th>Alinhamento</th></tr></thead><tbody><tr><td>10 m</td><td>—</td><td>Qualquer</td></tr></tbody></table>",
+    "movement": 10,
+    "movement_fly": 0,
+    "movement_notes": "",
+    "infravision": 0,
+    "infravision_notes": "",
+    "alignment_tendency": "none",
+    "alignment_notes": "Qualquer.",
+    "race_abilities": [
+      "Compendium.starwars-sd.starwars-sd-especies.Item.ReYsGfjO6px6VWg7",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.qyDi7JYXlKkLOaVD",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.xxxBpmTfV4HZT4FA",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.MsZyA8psDivcMuCA"
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!0f3aGZV9DXuGNZVz"
+}

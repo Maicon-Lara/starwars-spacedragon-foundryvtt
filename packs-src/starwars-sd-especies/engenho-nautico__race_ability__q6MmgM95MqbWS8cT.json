@@ -1,0 +1,44 @@
+{
+  "folder": "T0TIvONdlrgho6En",
+  "name": "Engenho Náutico",
+  "type": "race_ability",
+  "_id": "q6MmgM95MqbWS8cT",
+  "img": "systems/olddragon2e/assets/icons/movement.svg",
+  "system": {
+    "description": "<p><strong>+1</strong> para construir, reparar e operar máquinas e naves.</p>",
+    "xp": null,
+    "jp": {
+      "jpc": false,
+      "jpd": false,
+      "jps": false
+    },
+    "bonus_damage": 0,
+    "bonus_damage_condition": "none",
+    "bonus_damage_condition_2": "none",
+    "rogue_talent": "none",
+    "rogue_talent_2": "none",
+    "daily_uses": 0,
+    "natural_armor": 0,
+    "load_modifier": 0,
+    "max_load_override": 0,
+    "armor_weight_modifier": 0
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 400000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!q6MmgM95MqbWS8cT"
+}

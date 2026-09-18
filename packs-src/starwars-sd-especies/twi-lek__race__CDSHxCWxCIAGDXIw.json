@@ -1,0 +1,42 @@
+{
+  "folder": "QaMgf2HVDisEyHdw",
+  "name": "Twi'lek",
+  "type": "race",
+  "_id": "CDSHxCWxCIAGDXIw",
+  "img": "systems/olddragon2e/assets/icons/alignment.svg",
+  "system": {
+    "flavor": "<p>Carismáticos habitantes de Ryloth, guiados por seus lekku sensoriais.</p>",
+    "description": "<p><strong>Perguntas ao criar um Twi'lek:</strong> Saiu de Ryloth por escolha ou por pressão? Usa o charme como ferramenta ou escudo? O que seus lekku \"sentem\" que ele preferia não saber?</p><table><thead><tr><th>Movimento</th><th>Infravisão</th><th>Alinhamento</th></tr></thead><tbody><tr><td>10 m</td><td>—</td><td>Neutro</td></tr></tbody></table>",
+    "movement": 10,
+    "movement_fly": 0,
+    "movement_notes": "",
+    "infravision": 0,
+    "infravision_notes": "",
+    "alignment_tendency": "neutro",
+    "alignment_notes": "Neutro.",
+    "race_abilities": [
+      "Compendium.starwars-sd.starwars-sd-especies.Item.HvWQpXHx1nfPIP81",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.81AfjGz3L5tvHzCM",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.5bD7YAjCVg2Uvk6A",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.lwWN8qP4cjbU1k6G"
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!CDSHxCWxCIAGDXIw"
+}

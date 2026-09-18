@@ -1,0 +1,40 @@
+{
+  "folder": "qksDk94jiCb3xzQd",
+  "name": "Humano",
+  "type": "race",
+  "_id": "rCZVrP90yFpIi3by",
+  "img": "systems/olddragon2e/assets/icons/alignment.svg",
+  "system": {
+    "flavor": "<p>Os mais comuns, versáteis e adaptáveis da galáxia.</p>",
+    "description": "<p>Segue o <strong>molde Humano nativo do SD</strong>.</p><p><strong>Perguntas ao criar um Humano:</strong> O que o move pela galáxia? O que defende? O que deseja destruir?</p><table><thead><tr><th>Movimento</th><th>Maturidade</th><th>Expectativa</th><th>Alinhamento</th></tr></thead><tbody><tr><td>10 m</td><td>~16 anos</td><td>~80 anos</td><td>Qualquer</td></tr></tbody></table>",
+    "movement": 10,
+    "movement_fly": 0,
+    "movement_notes": "",
+    "infravision": 0,
+    "infravision_notes": "",
+    "alignment_tendency": "none",
+    "alignment_notes": "Qualquer.",
+    "race_abilities": [
+      "Compendium.starwars-sd.starwars-sd-especies.Item.NW6X4FSBKiWKt8AY",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.af4Zm324ca0tVstj"
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!rCZVrP90yFpIi3by"
+}

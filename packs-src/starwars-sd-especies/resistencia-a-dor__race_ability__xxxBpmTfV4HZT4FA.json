@@ -1,0 +1,44 @@
+{
+  "folder": "t9KwK2yyxifp4Yp0",
+  "name": "Resistência à Dor",
+  "type": "race_ability",
+  "_id": "xxxBpmTfV4HZT4FA",
+  "img": "systems/olddragon2e/assets/icons/shield.svg",
+  "system": {
+    "description": "<p>ao chegar a 0 PV sem morrer, faz <strong>JPF</strong>; se passar, age (cambaleante) até o fim da próxima rodada. 1x por combate.</p>",
+    "xp": null,
+    "jp": {
+      "jpc": false,
+      "jpd": false,
+      "jps": false
+    },
+    "bonus_damage": 0,
+    "bonus_damage_condition": "none",
+    "bonus_damage_condition_2": "none",
+    "rogue_talent": "none",
+    "rogue_talent_2": "none",
+    "daily_uses": 0,
+    "natural_armor": 0,
+    "load_modifier": 0,
+    "max_load_override": 0,
+    "armor_weight_modifier": 0
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 300000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!xxxBpmTfV4HZT4FA"
+}

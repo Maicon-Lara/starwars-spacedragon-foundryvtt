@@ -1,0 +1,43 @@
+{
+  "folder": "O4S7vqCW82h8DIFX",
+  "name": "Chiss",
+  "type": "race",
+  "_id": "r9vmOUh0bNURvpUp",
+  "img": "systems/olddragon2e/assets/icons/alignment.svg",
+  "system": {
+    "flavor": "<p>Estrategistas de pele azul e olhos rubros das Regiões Desconhecidas.</p>",
+    "description": "<p><strong>Perguntas ao criar um Chiss:</strong> O que fez um Chiss deixar a reclusão da Ascendência? O que procura ao ler as pessoas? Sua frieza é armadura, disciplina ou vazio?</p><table><thead><tr><th>Movimento</th><th>Infravisão</th><th>Alinhamento</th></tr></thead><tbody><tr><td>10 m</td><td>18 m</td><td>Qualquer, tende a Leal</td></tr></tbody></table>",
+    "movement": 10,
+    "movement_fly": 0,
+    "movement_notes": "",
+    "infravision": 18,
+    "infravision_notes": "Infravermelha: calor e seres vivos no escuro.",
+    "alignment_tendency": "ordeiro",
+    "alignment_notes": "Qualquer, tende a Leal.",
+    "race_abilities": [
+      "Compendium.starwars-sd.starwars-sd-especies.Item.496lcJsyBhhSmUlv",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.zjewWD3CccJXmSoz",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.YhSlvWjhBQjC57d8",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.iWbQyXixjgG2lFQ4",
+      "Compendium.starwars-sd.starwars-sd-especies.Item.gVmZxLIq3couhQvg"
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!r9vmOUh0bNURvpUp"
+}

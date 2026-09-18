@@ -1,0 +1,44 @@
+{
+  "folder": "MMPvGPX5Czf3rPfM",
+  "name": "Cérebro Positrônico",
+  "type": "race_ability",
+  "_id": "3JDqIZs9sD2Sic6j",
+  "img": "systems/olddragon2e/assets/icons/brain.svg",
+  "system": {
+    "description": "<p>o cérebro emula uma mente humana com 95% de exatidão, e os 5% que faltam dão <strong>Resistência Mental (RM) de 5%</strong> — a cada poder mental dirigido a ele rola-se d%: abaixo de 5, aquele poder <strong>nunca mais</strong> o afeta (e o Alcance do mentálico é gasto de todo jeito). É a mesma falha de emulação que cobra o <strong>−2 em Comunicação</strong>.</p>",
+    "xp": null,
+    "jp": {
+      "jpc": false,
+      "jpd": false,
+      "jps": false
+    },
+    "bonus_damage": 0,
+    "bonus_damage_condition": "none",
+    "bonus_damage_condition_2": "none",
+    "rogue_talent": "none",
+    "rogue_talent_2": "none",
+    "daily_uses": 0,
+    "natural_armor": 0,
+    "load_modifier": 0,
+    "max_load_override": 0,
+    "armor_weight_modifier": 0
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 300000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!3JDqIZs9sD2Sic6j"
+}

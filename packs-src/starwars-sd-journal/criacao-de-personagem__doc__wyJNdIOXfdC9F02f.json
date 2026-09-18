@@ -1,0 +1,283 @@
+{
+  "folder": null,
+  "name": "Criação de Personagem",
+  "_id": "wyJNdIOXfdC9F02f",
+  "pages": [
+    {
+      "sort": 100000,
+      "name": "Usando o Suplemento",
+      "type": "text",
+      "_id": "s4d5ifFbGvpnOB39",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><blockquote><p><strong>Este livro não é um sistema.</strong> É um <strong>cenário</strong> — uma galáxia muito, muito distante montada por cima do <em>Space Dragon</em>. As regras de jogo continuam sendo as do <strong>Módulo Básico do Space Dragon</strong>, e você precisa dele na mesa.</p></blockquote><p>O que você tem em mãos é a <strong>camada de cenário</strong>: os povos, as quatro classes vestidas de Star Wars, a Força, o sabre de luz, as naves, as ordens, o bestiário reinterpretado e a Seção do Mestre. O que <strong>não</strong> está aqui — e não vai estar — são as regras nucleares do sistema: atributos, modificadores, PV, Coeficiente de Proteção, Base de Ataque, Jogadas de Proteção, testes, carga, movimento, XP. Isso é o livro básico, e é onde ele deve ser lido.</p><table><thead><tr><th>Você precisa de…</th><th>Está em…</th></tr></thead><tbody><tr><td>Rolar atributos, modificadores, subatributos</td><td><em>SD</em>, Cap. 1 — <strong>Tabelas 1-1 a 1-6</strong></td></tr><tr><td>PV, Coeficiente de Proteção (CP), Base de Ataque (BA)</td><td><em>SD</em>, Cap. 4 — <strong>Subatributos</strong> (CP por nível na <strong>Tabela 4-1</strong>)</td></tr><tr><td>Jogadas de Proteção (JPR / JPF / JPM)</td><td><em>SD</em>, Cap. 4 — <strong>Subatributos</strong></td></tr><tr><td>Testes de atributo e jogadas resistidas</td><td><em>SD</em>, Cap. 1</td></tr><tr><td>Capacidade de carga e sobrecarga</td><td><em>SD</em>, Cap. 1 (<strong>Tabela 1-1</strong>, Força)</td></tr><tr><td>Movimento, gravidade e terreno</td><td><em>SD</em>, Cap. 6 — <strong>Aventuras Espaciais</strong></td></tr><tr><td>Idiomas falados, ler e escrever</td><td><em>SD</em>, Cap. 4 (regra) e <strong>Tabela 1-6</strong> (Comunicação)</td></tr><tr><td>Progressão de classe, XP, habilidades nativas</td><td><em>SD</em>, Cap. 3</td></tr><tr><td>Talentos do Gatuno (as %)</td><td><em>SD</em>, Cap. 3</td></tr><tr><td>Desativar robôs</td><td><em>SD</em>, <strong>Tabela 3-2</strong></td></tr><tr><td>Combate, iniciativa, dano, morte, cura</td><td><em>SD</em>, Cap. 7 — <strong>Combate e Danos</strong></td></tr><tr><td>Preços, armas, vestes e itens</td><td><em>SD</em>, Cap. 5 — <strong>Créditos e Equipamento</strong> (Tabelas 5-1 a 5-4)</td></tr><tr><td>Criar aparatos e realizar feitos científicos</td><td><em>SD</em>, Cap. 8</td></tr><tr><td>Poderes Mentais — regras de uso e a lista completa</td><td><em>SD</em>, Cap. 9</td></tr><tr><td>Espaçonaves, câmaras, combate espacial</td><td><em>SD</em>, Cap. 10 (<strong>Tabelas 10-1 e 10-2</strong>)</td></tr><tr><td>Criaturas e fichas de monstro</td><td><em>SD</em>, Cap. 11</td></tr></tbody></table><blockquote><p><strong>Por que citamos tabela e capítulo, e não página.</strong> O <em>Space Dragon</em> circula em mais de uma edição, e a numeração de página muda entre elas. Os números de <strong>capítulo</strong> e de <strong>tabela</strong> são estáveis — use-os como endereço.</p></blockquote></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!wyJNdIOXfdC9F02f.s4d5ifFbGvpnOB39"
+    },
+    {
+      "sort": 200000,
+      "name": "Os Nomes dos Atributos",
+      "type": "text",
+      "_id": "KVTa8FZ1AUm2Q5Gr",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>O <em>Space Dragon</em> usa seis atributos: <strong>Força, Destreza, Constituição, Intelecto, Ciência, Comunicação</strong>. Se você chegou aqui vindo do <em>Old Dragon 2</em> (ou do guia <em>Jogando Space Dragon com Old Dragon 2</em>), a tradução é esta:</p><table><thead><tr><th>Space Dragon</th><th>No Old Dragon 2 seria…</th><th>Neste cenário rege…</th></tr></thead><tbody><tr><td><strong>Intelecto</strong></td><td>Sabedoria</td><td><strong>A Força</strong> — o Sensível, a JPM, aprender poderes</td></tr><tr><td><strong>Ciência</strong></td><td>Inteligência</td><td>O Técnico, os aparatos, o Slicer</td></tr><tr><td><strong>Comunicação</strong></td><td>Carisma</td><td>Seguidores, reação, idiomas</td></tr></tbody></table><p>É por isso que, aqui, o <em>\"Jedi sábio\"</em> e a regra do livro são a <strong>mesma coisa</strong>: o Mentálico do <em>SD</em> é regido por <strong>Intelecto</strong>, que é justamente o que o guia OD2 chama de Sabedoria. Não há adaptação nenhuma — é o livro puro.</p></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!wyJNdIOXfdC9F02f.KVTa8FZ1AUm2Q5Gr"
+    },
+    {
+      "sort": 300000,
+      "name": "O que o Suplemento Acrescenta",
+      "type": "text",
+      "_id": "7NLy7R1G5rog2Beu",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><ul><li><strong>Povos da galáxia</strong> (Espécies) — Wookiees, Twi'leks, Rodianos e companhia, escritos sobre os três moldes nativos (Humano, Androide, Mutante).</li><li><strong>As quatro classes vestidas de Star Wars</strong> (Classes Mundanas e O Sensível à Força) — Veterano, Operativo, Técnico e Sensível à Força, com especializações próprias do cenário.</li><li><strong>A Força</strong> (Poderes da Força) — os Poderes Mentais do <em>SD</em> relidos como manifestações da Força, organizados em correntes <strong>Universal / Luz / Sombra</strong>, com Corrupção, Queda e Redenção.</li><li><strong>O arsenal e as engenhocas</strong> (Equipamentos e Créditos, Aparatos e Feitos Científicos) — blasters, vibro-armas, sabre de luz, escudos defletores, jetpacks, medpacs.</li><li><strong>Naves</strong> (Naves e Veículos) — o roster da galáxia mapeado nos oito tipos nativos, mais um módulo tático opcional (Combate Tático de Naves).</li><li><strong>Sabre e cristais, ordens, a Senda Mandaloriana, o bestiário e a Seção do Mestre</strong> — o resto do cenário.</li></ul></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!wyJNdIOXfdC9F02f.7NLy7R1G5rog2Beu"
+    },
+    {
+      "sort": 400000,
+      "name": "Convenções",
+      "type": "text",
+      "_id": "CvPMDYRPACnUqcIM",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><ul><li><strong><code>5º</code>, <code>10º</code>, <code>20º</code></strong> marcam o <strong>nível</strong> em que uma habilidade aparece ou evolui. São os marcos do <em>Space Dragon</em> — é neles que as especializações do livro básico abrem os degraus. Um punhado de poderes do cenário usa um degrau intermediário (<code>15º</code>), como o próprio livro faz com o Psiquista no 17º.</li><li><strong><em>SD</em>, Tabela X-Y</strong> é uma remissão ao Módulo Básico do <em>Space Dragon</em>.</li><li><strong>Nome nativo entre parênteses</strong> — sempre que este livro renomeia algo do <em>SD</em> (uma classe, um poder, uma criatura, um aparato), o nome original vem entre parênteses, para você achar a regra no livro básico sem esforço. Ex.: <em>Sensível à Força (Mentálico)</em>, <em>Empurrão da Força (Telecinesia)</em>.</li><li><strong>Afiliação</strong> — é como o <em>SD</em> chama o alinhamento: <strong>Leal / Neutro / Rebelde</strong>. Não é invenção deste cenário; vem do livro básico. O <em>Old Dragon 2</em> chama o mesmo eixo de Ordeiro / Neutro / Caótico — se sua mesa preferir esses nomes, são intercambiáveis.</li></ul></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!wyJNdIOXfdC9F02f.CvPMDYRPACnUqcIM"
+    },
+    {
+      "sort": 500000,
+      "name": "Os Povos da Galáxia",
+      "type": "text",
+      "_id": "CkWl7leB6uZEuPH9",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><blockquote><p>O Space Dragon nativo trabalha com <strong>três moldes</strong>: <strong>Humano</strong> (<em>Homo sapiens</em>), <strong>Androide</strong> (<em>Homo machina</em>) e <strong>Mutante</strong> (<em>Homo novus</em>). Aqui os povos de Star Wars são construídos sobre eles. Todas as habilidades de espécie valem desde o <strong>1º nível</strong>. <strong>Movimento base: 10 m</strong> (do SD), modificado por gravidade, terreno e carga.</p><p><strong>Salvaguardas:</strong> onde se lê <strong>JPR</strong> (reflexos, mod. de Destreza), <strong>JPF</strong> (física, mod. de Constituição) e <strong>JPM</strong> (mental, mod. de Intelecto) — são as três Jogadas de Proteção nativas do SD.</p><p><strong>Sensível à Força?</strong> Todo povo vivo pode gerar Sensíveis (ver O Sensível à Força); <strong>Droides não</strong> — cérebro positrônico não sonha.</p></blockquote><blockquote><p><strong>Nota — as espécies não-humanas são criações do cenário.</strong> Wookiee, Twi'lek, Rodiano, Zabrak, Mon Calamari, Trandoshano e Chiss <strong>não</strong> rolam na Tabela 2-1 do molde <strong>Mutante</strong> e <strong>não pagam Degeneração</strong>: foram escritas à mão para Star Wars. O molde Mutante segue disponível como <strong>coringa</strong> para criar \"quase-humanos\" exóticos na hora (ver <em>Nota de conversão</em>, no fim). Isto é uma escolha de design do cenário.</p></blockquote></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!wyJNdIOXfdC9F02f.CkWl7leB6uZEuPH9"
+    },
+    {
+      "sort": 600000,
+      "name": "Idiomas da Galáxia",
+      "type": "text",
+      "_id": "bvk0JjyJ65drlSGi",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>Todo personagem começa falando o <strong>idioma do seu povo</strong> e o <strong>Básico Galáctico</strong> (o \"idioma espacial\" do SD). Idiomas <strong>adicionais falados</strong> vêm do <strong>atributo Comunicação</strong> (<em>SD</em>, Tabela 1-6).</p><p><strong>Ler e escrever</strong> é outra coisa: <strong>Comunicação ÷ 6</strong>, arredondando para baixo — o número de idiomas em que é alfabetizado (escolha quais). <strong>Comunicação 6 ou menos = analfabeto</strong>, nem no idioma natal.</p><blockquote><p><strong>Nota de fidelidade.</strong> Tanto os idiomas falados quanto a alfabetização correm pela <strong>Comunicação</strong> (<em>SD</em>, Tabela 1-6) — não pela Ciência. É a regra do livro básico, sem desvio.</p></blockquote><table><thead><tr><th>Idioma</th><th>Quem fala</th><th>Observação</th></tr></thead><tbody><tr><td><strong>Básico Galáctico</strong></td><td>Praticamente todo mundo</td><td>Todos começam com ele</td></tr><tr><td><strong>Shyriiwook</strong></td><td>Wookiees</td><td>Humanos <strong>entendem</strong>, mas não conseguem <strong>falar</strong> (aparelho vocal)</td></tr><tr><td><strong>Ryl</strong></td><td>Twi'leks</td><td>Tem um dialeto silencioso de <strong>lekku</strong>, que só Twi'leks leem</td></tr><tr><td><strong>Rodês</strong></td><td>Rodianos</td><td>—</td></tr><tr><td><strong>Zabraki</strong></td><td>Zabraks</td><td>—</td></tr><tr><td><strong>Mon Calamariano</strong></td><td>Mon Calamari e Quarren</td><td>Difícil de pronunciar fora d'água</td></tr><tr><td><strong>Dosh</strong></td><td>Trandoshanos</td><td>—</td></tr><tr><td><strong>Cheunh</strong></td><td>Chiss</td><td>Raro fora das Regiões Desconhecidas; o Chiss já começa com um idioma extra</td></tr><tr><td><strong>Huttês</strong></td><td>Cartéis, submundo, Tatooine</td><td>O \"idioma do crime\" — vale mais que o Básico em muita doca</td></tr><tr><td><strong>Binário</strong></td><td>Droides</td><td>Não se <em>fala</em>: entende-se. Droides são fluentes por construção</td></tr><tr><td><strong>Ur-Kittât / Sith antigo</strong></td><td>Sith, arqueólogos, holocrons</td><td>Idioma <strong>morto</strong>; ler exige alfabetização e costuma ser gancho de aventura</td></tr></tbody></table></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!wyJNdIOXfdC9F02f.bvk0JjyJ65drlSGi"
+    },
+    {
+      "sort": 700000,
+      "name": "Nota de Conversão das Espécies",
+      "type": "text",
+      "_id": "ahKPclCiEy684WwH",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><ul><li><strong>Molde Mutante (opcional):</strong> para \"quase-humanos\" exóticos não listados (Nautolanos, Cerianos, etc.), use o molde <strong>Mutante</strong> (<em>Homo novus</em>) do SD. É o coringa para criar povos na hora; as espécies acima <strong>não</strong> usam esse molde. Role <strong>2d10</strong> na <strong>Tabela 2-1</strong> (<em>SD</em>, Cap. 2), <strong>um dado por coluna</strong> — o primeiro dá o Aprimoramento, o segundo a Degeneração — e <strong>role os dois de novo</strong> se saírem iguais. Todo o resto é igual ao Humano, <strong>menos duas coisas</strong>: o Mutante <strong>não</strong> recebe o +2/−2 livre <strong>nem</strong> o +1 a cada 4 níveis. O aprimoramento e a degeneração são o que ele tem no lugar disso.</li><li><strong>Alinhamentos:</strong> o SD trabalha com <strong>Afiliação</strong> — <em>Leal / Neutro / Rebelde</em>. É o mesmo eixo que o <em>Old Dragon 2</em> chama de Ordeiro / Neutro / Caótico; se sua mesa tem o hábito de usar os nomes do OD2, são intercambiáveis. É a <strong>Afiliação</strong> que trava as especializações de classe.</li><li><strong>Modificadores fixos das espécies SW</strong> são design do cenário (o molde Humano nativo daria +2/−2 <em>livres</em>; aqui as espécies não-humanas trazem os seus <strong>fixos</strong>, temáticos). Ajuste à vontade se sua mesa preferir os livres.</li></ul></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!wyJNdIOXfdC9F02f.ahKPclCiEy684WwH"
+    }
+  ],
+  "flags": {},
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "_key": "!journal!wyJNdIOXfdC9F02f"
+}

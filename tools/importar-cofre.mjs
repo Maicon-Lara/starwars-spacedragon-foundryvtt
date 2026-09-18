@@ -198,8 +198,69 @@ function secao(texto, titulo) {
   return blocos(linhas.slice(i + 1, fim < 0 ? undefined : fim).join("\n"));
 }
 
+/** O texto entre o título "# " da nota e a primeira seção "## ". */
+function abertura(texto) {
+  const linhas = texto.split("\n");
+  const i = linhas.findIndex((l) => /^#\s/.test(l));
+  const f = linhas.findIndex((l, j) => j > i && /^##\s/.test(l));
+  return blocos(linhas.slice(i + 1, f).join("\n"));
+}
+
+// ── Espécies ────────────────────────────────────────────────────────────────
+//
+// Cada "## Espécie" do cofre vira uma espécie, e cada item da lista
+// "**Habilidades de Espécie**" vira uma habilidade — "- **Nome:** texto".
+// O resto da seção (a frase em itálico, as perguntas, a tabela, as notas) é a
+// descrição. Os campos que o SISTEMA lê — movimento, infravisão, armadura
+// natural — não dá para tirar de prosa com segurança: ficam em especies.mjs.
+
+const NAO_SAO_ESPECIES = ["Idiomas da galáxia", "Nota de conversão"];
+
+function especiesDoCofre(texto) {
+  const partes = texto.split(/\n(?=## )/).slice(1);
+  const saida = [];
+  for (const parte of partes) {
+    const [cab, ...resto] = parte.split("\n");
+    const titulo = cab.replace(/^##\s+/, "").trim();
+    if (NAO_SAO_ESPECIES.includes(titulo)) continue;
+    const nome = titulo.replace(/\s*[—(*].*$/, "").trim();
+    const corpo = resto.join("\n").split(/\n\*Star Wars — suplemento/)[0];
+
+    // A lista de habilidades: do marcador até a primeira linha em branco.
+    const linhas = corpo.split("\n");
+    const iHab = linhas.findIndex((l) => l.trim() === "**Habilidades de Espécie**");
+    if (iHab < 0) throw new Error(`${nome}: sem "**Habilidades de Espécie**"`);
+    let fHab = iHab + 1;
+    while (fHab < linhas.length && linhas[fHab].trim()) fHab++;
+    const habilidades = linhas.slice(iHab + 1, fHab).map((l) => {
+      const m = l.match(/^-\s+\*\*(.+?):\*\*\s*(.*)$/);
+      if (!m) throw new Error(`${nome}: habilidade fora do padrão "- **Nome:** texto": ${l}`);
+      return { nome: m[1].trim(), desc: `<p>${md(m[2])}</p>` };
+    });
+
+    // A primeira linha em itálico é o flavor; a descrição é o resto, sem a
+    // lista de habilidades (que vira itens) e sem a régua final.
+    const semLista = [...linhas.slice(0, iHab), ...linhas.slice(fHab)];
+    const iFlavor = semLista.findIndex((l) => /^\*[^*]/.test(l.trim()));
+    const flavorLinha = iFlavor >= 0 ? semLista[iFlavor].trim() : "";
+    const flavor = flavorLinha.match(/^\*([^*]+)\*/)?.[1] ?? "";
+    const aposFlavor = flavorLinha.replace(/^\*[^*]+\*\s*/, "");
+    if (iFlavor >= 0) semLista[iFlavor] = aposFlavor;
+
+    saida.push({ nome, titulo, flavor: flavor ? `<p>${md(flavor)}</p>` : "", descricao: blocos(semLista.join("\n")), habilidades });
+  }
+  return saida;
+}
+
 // Quais seções de quais notas viram página. Nota nova entra aqui.
 const SECOES = {
+  "SW-SUP-Usando-o-Basico": [
+    "Onde está cada regra no livro básico",
+    "Os nomes dos atributos",
+    "O que este suplemento acrescenta",
+    "Convenções deste livro",
+  ],
+  "SW-SUP-Especies": ["Idiomas da galáxia", "Nota de conversão"],
   "SW-SUP-Forca": [
     "O Caminho: Luz, Sombra e o meio",
     "O Caminho Cinza",
@@ -212,9 +273,11 @@ const SECOES = {
 const TEXTOS = {};
 for (const [nota, titulos] of Object.entries(SECOES)) {
   const texto = ler(nota);
-  TEXTOS[nota] = {};
+  TEXTOS[nota] = { "(abertura)": abertura(texto) };
   for (const t of titulos) TEXTOS[nota][t] = secao(texto, t);
 }
+
+const ESPECIES = especiesDoCofre(ler("SW-SUP-Especies"));
 
 fs.writeFileSync(
   DESTINO_TEXTOS,
@@ -227,8 +290,12 @@ fs.writeFileSync(
     "",
     `export const TEXTOS = ${JSON.stringify(TEXTOS, null, 2)};`,
     "",
+    "// As espécies de SW-SUP-Especies: descrição e habilidades. Os campos",
+    "// mecânicos (movimento, infravisão…) ficam em especies.mjs.",
+    `export const ESPECIES = ${JSON.stringify(ESPECIES, null, 2)};`,
+    "",
   ].join("\n"),
   "utf8"
 );
 const nSecoes = Object.values(TEXTOS).reduce((n, s) => n + Object.keys(s).length, 0);
-console.log(`  ✔ ${nSecoes} seções de ${Object.keys(TEXTOS).length} nota(s) → tools/data/textos-do-cofre.mjs`);
+console.log(`  ✔ ${nSecoes} seções de ${Object.keys(TEXTOS).length} nota(s) e ${ESPECIES.length} espécies → tools/data/textos-do-cofre.mjs`);
