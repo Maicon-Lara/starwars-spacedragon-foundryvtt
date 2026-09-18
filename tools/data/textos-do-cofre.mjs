@@ -72,6 +72,24 @@ export const TEXTOS = {
     "Ajuste de ritmo (leia se o combate ficar estático)": "<p>As faixas padrão (1–3 / 4–6 / 7–9 hexes, teto 180 m) dão às naves mais <strong>alcance</strong> do que <strong>velocidade</strong> — o combate tende a ser mais posicional que um dogfight veloz. <strong>Se a sua mesa achar lento, a correção não é mexer no hex</strong> (mantenha 20 m): <strong>encurte as faixas</strong> para <strong>1 / 2–3 / 4–5 hexes</strong>. Aí a velocidade dos caças passa a valer mais que o alcance, e vira perseguição.</p>",
     "Crédito": "<p>Módulo adaptado do <strong>ED-12 (Estrela Dracônica)</strong>, por sua vez inspirado no <em>X-Wing Miniatures Game</em> (FFG), rodando sobre as naves nativas do <strong>Space Dragon</strong>.</p>"
   },
+  "SW-SUP-Bestiario": {
+    "(abertura)": "<blockquote><p>Este capítulo <strong>não tem fichas de monstro</strong> — elas estão todas no <strong><em>SD</em>, Cap. 11</strong>, e funcionam sem uma vírgula de mudança. O que ele faz é dizer <strong>que fera do livro é que bicho da galáxia</strong>: pegue a criatura do <em>Space Dragon</em>, use os números de lá, e sirva-a na mesa com o nome que ela tem em Star Wars.</p></blockquote><blockquote><p><strong>Lembrete:</strong> o formato do bloco de criatura, as regras de <strong>Moral</strong>, <strong>RM</strong> (Resistência Mental), <strong>RD</strong> (Redução de Dano) e a escala de tamanho estão no livro básico. Uma regra do cenário se soma a elas: <strong>robôs não fogem por Moral</strong> — só saem de combate por <strong>Desativação</strong> (o disruptor do Técnico, Classes Mundanas).</p></blockquote>",
+    "De-para: criaturas do SD → feras de Star Wars": "<table><thead><tr><th>Space Dragon</th><th>Vira, em Star Wars…</th></tr></thead><tbody><tr><td><strong>@UUID[Compendium.spacedragon.spacedragon-journal.JournalEntry.UnhpmI5LblFZJDPX.JournalEntryPage.CqxRs8SgoMBfdSX5]{Dragões}</strong> (9 subespécies, Jovem/Adulto/Ancião)</td><td><strong>Dragões da galáxia</strong>: o <strong>Terraniano</strong> (deserto) = <strong>Dragão Krayt</strong> (Ancião = Krayt Maior); os demais = dragões de mundos extremos (gelo=Plutoniano, lava=Marciano, gás, etc.)</td></tr><tr><td>@UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.H4tdUd7rDnSdLnqS]{Aranha gigante}</td><td>Aranha-de-rocha de Kashyyyk</td></tr><tr><td>@UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.LXMn4wG6fdSBXChp]{Autômato} · @UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.Ob2GjGv4o4H3mwAn]{Humanoide}/@UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.rw9aKOLRRLJVNgPs]{Serviçal}/@UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.q5s8RX1JAjKOUu9z]{Protótipo}/@UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.6fQWxGt0L7gOJFit]{Repetidor}/@UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.BQY45YBf5ydZouJZ]{Sucata Robótica} · @UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.bgCNziGNFEfNdIMu]{Metahumano}</td><td><strong>Droides</strong> de combate, serviço, protocolo, sucata reanimada</td></tr><tr><td>@UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.aNVLKdS8E3MPGCnu]{Metalópode}</td><td>Droide-aranha/centopeia <strong>acerebral</strong> (não desativável)</td></tr><tr><td>@UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.S2aTg7unyUR9sfBC]{Bolha verde} · @UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.xMIv533whAxVsXHu]{Geleia espacial} · @UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.coM9Af67PIXF9Ol2]{Shoggoth}</td><td>Limo espacial / massa devoradora</td></tr><tr><td>@UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.78IY3wTRw3nQFwkL]{Cristaloide}</td><td>Criatura de cristal (tocada por kyber)</td></tr><tr><td>@UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.VNuh67nnrTuz6Ltc]{Crocossauro} · Tentaculoide</td><td><strong>Dianoga</strong> (besta tentacular de esgoto)</td></tr><tr><td>@UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.9CLfQWPjXVoq5irV]{Devorador de mentes} · @UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.VrMslBWGMc9gXY0n]{Vampiro energético}</td><td><strong>Besta do Lado Sombrio</strong> (drena mente/Força)</td></tr><tr><td>@UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.JJKf6tSajdH4Ia5X]{Eletricobra} · @UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.hn8wmckDxS6HzAuy]{Medusa elétrica} · @UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.GmhmNWuXYViNN5q6]{Monstro de energia}</td><td>Serpente/água-viva/elemental de energia</td></tr><tr><td>@UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.Sq84Pda5KDiGptgF]{Escaravelho radioativo} · @UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.zpyrLQ3h7WIiAtTf]{Zangão} · @UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.T5Zo0AtAoJLmvZNA]{Formigácida} · @UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.SnLcJ7NkCydnJMdp]{Xheniano}</td><td>Insetos de colmeia; <strong>Geonosiano</strong> guerreiro (Xheniano = casta mística)</td></tr><tr><td>@UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.3Qip6rPwqXHv7diH]{Gigante de pedra} · @UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.D5sGglGDrpxKx1yq]{Monstro de lava}</td><td>Golem de rocha / criatura de Mustafar</td></tr><tr><td>@UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.3Q5WVxzgUndgSzik]{Gigantossauro} · @UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.6N9EmlX2ZqwPgXVu]{Megassauro} · Tiranossauro</td><td><strong>Rancor</strong> (Megassauro), Zillo/colosso (Gigantossauro)</td></tr><tr><td>@UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.6ZMUB5JxKkX7ZUuA]{Glacioprimata} · @UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.RndrOff02V8Nebxs]{Monstro de gelo}</td><td><strong>Wampa</strong> e bestas de Hoth</td></tr><tr><td>@UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.sVmAMKmhwaBifio7]{Homem lagarto} · @UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.Bp2mVJg8UC538aYE]{Ictihomem} · @UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.n1MxUWCr0LzWOtvu]{Simihomem} · @UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.6Bku0YXT7PH8o7D0]{Pterohomem} · @UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.m9phw2HJJJhlJKRs]{Multiforma}</td><td>Humanoides selvagens; <strong>metamorfo</strong> Clawdite (Multiforma)</td></tr><tr><td>@UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.IoiKKjX1NQlCwD1A]{Lagarto do deserto} · @UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.9gn2fGyDRkC1kK8u]{Raptossauro} · @UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.c9eUjHBDLhwqTO27]{Taurópode}</td><td>Répteis de duna, raptores, <strong>dewback</strong> de carga</td></tr><tr><td>@UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.g2EVgEgwVqm11IfK]{Lobo sônico} · @UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.TrZltCd1WfUESCKY]{Tigre dentes-de-sabre}</td><td><strong>Nexu</strong> / loth-wolf / felino predador</td></tr><tr><td>@UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.yzNSz6Q7DIQSlPmy]{Lula da areia} · @UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.dqi9SstkE5h05nnj]{Planta carnívora}</td><td><strong>Sarlacc</strong> jovem / planta estranguladora</td></tr><tr><td>@UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.wTjCFfpGVP3vf7Ra]{Mastodonte} · @UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.WFkgZ4UszVIparSZ]{Rinoceratops}</td><td><strong>Bantha</strong> / <strong>Reek</strong> (aríete com chifres)</td></tr><tr><td>@UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.HdulJbllBclRw5EW]{Monstro do pântano}</td><td>Besta de Dagobah</td></tr><tr><td>@UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.Y9NQFqOaWzFw43DH]{Pteroave}</td><td>Ave-de-guerra gigante</td></tr><tr><td>@UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.3P7QllgE74DZ75wp]{Verme gigante}</td><td><strong>Exogorth</strong> (space slug) / verme das areias</td></tr><tr><td>@UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.J10gtuZT1ScZWebG]{Zork} · @UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.UONb9uvWHIsBGr8z]{Homenzinho verde}</td><td>Alienígenas menores da fauna local</td></tr></tbody></table>",
+    "As feras do livro, na mesa": "<p>Todas as criaturas listadas acima estão no <strong><em>SD</em>, Cap. 11</strong>, com CP, JP, DV, PV, Moral, ataques e XP. Não reproduza nada: abra o livro no nome nativo, leia a ficha e apresente a criatura pelo nome de Star Wars.</p><blockquote><p><strong>Duas notas de cenário.</strong> (1) Os <strong>Poderes da Força</strong> de uma criatura seguem a Grandeza indicada na ficha dela — o <em>Devorador de Mentes</em> e o <em>Xheniano</em> são, na galáxia, bestas tocadas pelo Lado Sombrio. (2) O <strong>Metalópode</strong> é <strong>acerebral</strong>: nenhum disruptor o desativa. É o droide-aranha que continua vindo.</p></blockquote>",
+    "Os Dragões da Galáxia (Tabela dos Dragões)": "<p>A <strong>@UUID[Compendium.spacedragon.spacedragon-journal.JournalEntry.UnhpmI5LblFZJDPX.JournalEntryPage.CqxRs8SgoMBfdSX5]{Tabela dos Dragões}</strong> do <em>SD</em> (Cap. 11) traz nove subespécies (<em>Draco mithicos</em>), <strong>telúricas</strong> (sem voo) ou <strong>jovianas</strong> (voadoras), em três fases — <strong>Jovem / Adulto / Ancião</strong> — com todos os números. Use-a como está. Presume-se que <strong>todos usem poderes da Força</strong>, especialmente telepatia.</p><p>Nesta galáxia, cada subespécie ganha um mundo e uma reputação:</p><table><thead><tr><th>Dragão</th><th>Bioma SW</th><th>Grandeza mental</th><th>Sopro/especial</th></tr></thead><tbody><tr><td><strong>Terraniano</strong> = <strong>Dragão Krayt</strong></td><td>Desertos (Tatooine)</td><td>2ª</td><td>Baforada de fogo em área</td></tr><tr><td>Marciano</td><td>Vulcões (Mustafar)</td><td>4ª</td><td>Baforada de fogo em área</td></tr><tr><td>Mercuriano</td><td>Desertos áridos</td><td>3ª</td><td>Tempestade de areia</td></tr><tr><td>Plutoniano</td><td>Gelo (Hoth)</td><td>2ª</td><td>Sopro congelante</td></tr><tr><td>Netuniano</td><td>Oceanos/ilhas</td><td>3ª</td><td>Mergulho em turbilhão</td></tr><tr><td>Jupiteriano (voador)</td><td>Qualquer</td><td>4ª</td><td>Descarga elétrica em área</td></tr><tr><td>Saturniano (voador)</td><td>Montanhas</td><td>3ª</td><td>—</td></tr><tr><td>Uraniano (voador)</td><td>Regiões Desconhecidas</td><td>2ª</td><td>Voo rasante</td></tr><tr><td>Venusiano</td><td>Qualquer</td><td>4ª</td><td>Ofuscação prismática</td></tr></tbody></table><blockquote><p><strong>Dragão Krayt</strong> = Terraniano na fase <strong>Adulto</strong>; <strong>Krayt Maior</strong> = Terraniano <strong>Ancião</strong> — um deles no coração de uma tempestade de areia vale uma campanha inteira, e guarda <strong>perlas de dragão</strong> (tesouro cobiçado em toda a Orla Exterior).</p></blockquote>",
+    "Modelos de PNJ (as classes como inimigos)": "<p>As classes de Star Wars são reskins do SD — <strong>Veterano = Cosmonauta</strong>, <strong>Operativo = Gatuno</strong>, <strong>Técnico = Cientista</strong>, <strong>Sensível à Força = Mentálico</strong>. Monte o PNJ pela tabela da classe (Classes Mundanas · O Sensível à Força) no nível desejado.</p><table><thead><tr><th>PNJ Star Wars</th><th>Base</th><th>Referência rápida</th></tr></thead><tbody><tr><td><strong>Stormtrooper / soldado</strong></td><td>Veterano Nº1</td><td>DV 1 · CP 15 (arm.) · rifle blaster 2d8 · Moral 9 · XP ~20</td></tr><tr><td><strong>Oficial / comandante</strong></td><td>Veterano Nº5–10</td><td>comanda tropas; blaster pesado; crítico ×2–3</td></tr><tr><td><strong>Técnico / engenheiro imperial</strong></td><td>Técnico Nº5</td><td>aparatos, desativa droides aliados, disruptor</td></tr><tr><td><strong>Contrabandista / espião</strong></td><td>Operativo Nº5</td><td>Ataque Furtivo, talentos em d%, blaster</td></tr><tr><td><strong>Inquisidor / Sith menor</strong></td><td>Sensível Nº5–7</td><td>sabre 2d10 + poderes da Sombra até 3ª–4ª Grandeza</td></tr><tr><td><strong>Lorde Sith / Mestre Jedi renegado</strong></td><td>Sensível Nº10+</td><td>sabre + poderes até 5ª–6ª Grandeza; Forma de sabre; Moral 12</td></tr></tbody></table><blockquote><p><strong>O vilão também negocia com a Sombra.</strong> Um PNJ Sensível usa <em>A Tentação</em> pelas mesmas regras — <strong>1×/cena</strong>. Dê ao chefe um <strong>número de negociações</strong> igual ao que falta para estourar (de praxe <strong>3</strong> para um Inquisidor, <strong>5</strong> para um Lorde Sith). Gastas todas, ele é <strong>Consumido</strong>: uma última rodada de fúria cega (<strong>+2 no ataque e no dano, −4 no CP</strong>). É uma segunda fase de chefe embutida na regra, de graça.</p></blockquote>",
+    "Crédito": "<p>As fichas de criatura, a Tabela dos Dragões e o formato do bloco são do <strong><em>Space Dragon</strong></em> (Old Dragon Editora), <strong>Cap. 11</strong> — consulte o Módulo Básico. O de-para, o reskin e os modelos de PNJ são adaptação deste cenário.</p>"
+  },
+  "SW-SUP-Secao-do-Mestre": {
+    "(abertura)": "<blockquote><p>Ferramentas para conduzir a mesa: tom, facções, recompensas e tabelas de rolagem para preparar (ou improvisar) aventuras. Nada aqui é obrigatório — pegue o que servir.</p></blockquote>",
+    "O tom da mesa": "<p>Star Wars é <strong>space opera pulp</strong>: heroísmo grande, vilões teatrais, esperança contra a tirania, e uma galáxia viva e suja de contrabandistas, caçadores e impérios. Ritmo rápido, ação cinematográfica, dilemas morais simples na superfície e profundos no fundo. Deixe os dados servirem à história.</p><p><strong>A Força paira sobre tudo:</strong> mesmo numa mesa sem Jedi, ela aparece como sorte estranha, premonições e o peso de escolhas. Use a Corrupção como bússola dramática dos Sensíveis.</p><h3>Escolhendo a era</h3><table><thead><tr><th>Era</th><th>Tom</th><th>O que os PCs fazem</th></tr></thead><tbody><tr><td><strong>Alta República</strong></td><td>Auge Jedi, exploração de fronteira</td><td>Cavaleiros e pioneiros enfrentando ameaças exóticas na orla</td></tr><tr><td><strong>Queda da República / Clônicas</strong></td><td>Guerra em escala, tragédia iminente</td><td>Soldados, agentes e Jedi-generais; a sombra da Ordem 66</td></tr><tr><td><strong>Era Imperial / Guerra Civil</strong></td><td>Tirania × Rebelião (o \"padrão\" dos filmes)</td><td>Rebeldes, contrabandistas e Jedi caçados no submundo</td></tr><tr><td><strong>Nova República / Pós-Império</strong></td><td>Faroeste galáctico, remanescentes</td><td>Mandalorianos, mercenários e caçadores na fronteira sem lei</td></tr></tbody></table>",
+    "As facções": "<p>Cada facção é um <strong>motor de aventura</strong>: dê a ela um objetivo que cruze o dos PCs.</p><ul><li><strong>A Autoridade Tirânica</strong> (Império / Primeira Ordem / sindicato dominante) — ordem pela força. PNJs: stormtroopers, oficiais, agentes do ISB, Moffs, <strong>Inquisidores</strong> (ver Ordens & Ranks). Gera: opressão, checkpoints, caçadas, deserções.</li><li><strong>A Rebelião / Resistência</strong> — os desfavorecidos com uma causa. Gera: sabotagem, resgate, extração, esperança sob fogo.</li><li><strong>O Submundo</strong> (Hutts, Aurora Negra, Alvorada Carmesim) — o crime que move a galáxia. Gera: dívidas, contratos sujos, contrabando, traições.</li><li><strong>A Guilda dos Caçadores de Recompensas</strong> — a lei cinzenta da fronteira. Gera: contratos, rivalidades, alvos que não são o que parecem.</li><li><strong>Os Clãs Mandalorianos</strong> — honra, Beskar e o <strong>Sabre Sombrio</strong> (ver Senda Mandaloriana). Gera: duelos de honra, reunificação de clãs, disputas de liderança.</li><li><strong>Corporações e Cartéis</strong> — a ganância neutra. Gera: exploração de mundos, experimentos proibidos, guerras por recursos (kyber, especiaria, Beskar).</li><li><strong>A Ordem Jedi / os Sith</strong> — ver Ordens e Ranks da Força.</li></ul>",
+    "Recompensas: Créditos e achados": "<ul><li><strong>Créditos (CR)</strong> valem <strong>XP</strong> quando conquistados — a busca por riqueza é combustível de aventura.</li><li><strong>Os \"itens mágicos\" desta galáxia</strong> são <strong>aparatos tecnológicos, cristais kyber, artefatos da Força, armaduras Beskar e sabres únicos</strong>. Distribua-os como recompensas raras e memoráveis, não como loja. Aparatos seguem as regras de Aparatos e Feitos Científicos do Técnico.</li><li>Escale as somas ao perigo, não ao nível fixo: um contrato de fronteira paga alguns milhares de CR; um golpe contra uma corporação, dezenas de milhares. Lembre-se de que a escala <strong>1–20</strong> e os Créditos <strong>×5.000</strong> iniciais pedem curvas de recompensa longas.</li></ul>",
+    "Tabelas de preparação": "<blockquote><p><strong>Sessão relâmpago:</strong> role <strong>1 Gancho + 1 Local + 1 Complicação</strong>, jogue um <strong>PNJ</strong> no meio e deixe os jogadores puxarem o fio.</p></blockquote><h3>Ganchos de aventura (d12)</h3><ol><li>Um cargueiro à deriva emite um sinal de socorro automático — e ninguém responde.</li><li>Uma recompensa foi colocada sobre a cabeça de um dos PCs (justa ou não).</li><li>Um contato pede que transportem uma carga \"que não deve ser inspecionada\".</li><li>Um Holocron perdido surge no mercado negro — e mais de uma facção o quer.</li><li>Uma colônia de fronteira parou de responder às transmissões.</li><li>Um oficial imperial deserta e oferece códigos em troca de extração.</li><li>Um antigo mestre (Jedi ou Sith) reaparece com um pedido — ou uma cobrança.</li><li>Uma dívida com um Hutt venceu, e o cobrador não aceita mais desculpas.</li><li>Ruínas de uma civilização pré-República foram achadas num mundo proibido.</li><li>Um cristal kyber bruto foi localizado — e um Inquisidor está a caminho.</li><li>Uma nave-prisão sofre um motim durante o transporte dos PCs (ou de um aliado).</li><li>Alguém está roubando a identidade de um PC pela galáxia.</li></ol><h3>Contratos / mural de serviços (d10)</h3><ol><li>Escoltar um diplomata nervoso por território hostil.</li><li>Recuperar uma carga roubada de um armazém vigiado.</li><li>Capturar (vivo) um alvo escondido no submundo.</li><li>Sabotar um posto de abastecimento inimigo.</li><li>Contrabandear refugiados para fora de um mundo sitiado.</li><li>Achar, reparar e trazer de volta uma nave abandonada.</li><li>Roubar dados de um cofre corporativo.</li><li>Proteger uma remessa de Beskar de piratas.</li><li>Investigar o sumiço de uma equipe de mineração.</li><li>Entregar uma mensagem que muita gente quer impedir.</li></ol><h3>Complicações (d12) — jogue no meio da cena</h3><ol><li>O contratante mentiu sobre o objetivo real.</li><li>Uma facção rival chega com a mesma missão.</li><li>A nave sofre uma pane no pior momento.</li><li>Um aliado é, na verdade, um informante.</li><li>Uma patrulha aparece para uma \"inspeção de rotina\".</li><li>O alvo é inocente — ou uma criança.</li><li>Um caçador de recompensas segue os PCs.</li><li>O pagamento é em algo mais perigoso que Créditos.</li><li>Um PC reconhece alguém do próprio passado.</li><li>A Força sussurra um aviso (dê uma premonição).</li><li>A saída planejada está bloqueada.</li><li>Alguém do grupo está sendo chantageado.</li></ol><h3>PNJ relâmpago (role os três)</h3><table><thead><tr><th>d8</th><th>Espécie</th><th>Papel</th><th>d10</th><th>Traço marcante</th></tr></thead><tbody><tr><td>1</td><td>Humano</td><td>Mercenário</td><td>1</td><td>Cheio de cicatrizes</td></tr><tr><td>2</td><td>Twi'lek</td><td>Informante</td><td>2</td><td>Ganancioso</td></tr><tr><td>3</td><td>Rodiano</td><td>Comerciante</td><td>3</td><td>Leal até demais</td></tr><tr><td>4</td><td>Wookiee</td><td>Oficial</td><td>4</td><td>Covarde, mas esperto</td></tr><tr><td>5</td><td>Trandoshano</td><td>Criminoso</td><td>5</td><td>Fala pelos cotovelos</td></tr><tr><td>6</td><td>Mon Calamari</td><td>Piloto</td><td>6</td><td>Devendo a alguém perigoso</td></tr><tr><td>7</td><td>Zabrak</td><td>Técnico</td><td>7</td><td>Ex-militar amargurado</td></tr><tr><td>8</td><td>Droide</td><td>Burocrata</td><td>8</td><td>Esconde um segredo grave</td></tr><tr><td>—</td><td>—</td><td>—</td><td>9</td><td>Viciado em apostas</td></tr><tr><td>—</td><td>—</td><td>—</td><td>10</td><td>Secretamente sensível à Força</td></tr></tbody></table><h3>Locais / cenas (d8)</h3><ol><li>Cantina lotada de um spaceport.</li><li>Interior de um cargueiro à deriva.</li><li>Mercado negro subterrâneo.</li><li>Base ou posto avançado imperial.</li><li>Superfície de um mundo extremo (deserto, gelo, selva).</li><li>Estação espacial orbital.</li><li>Palácio de um chefe do crime.</li><li>Ruínas antigas ligadas à Força.</li></ol><h3>Achados / recompensas (d10)</h3><ol><li>Chips de crédito (role 1d6 × 100 CR por grau de perigo).</li><li>Um aparato útil (kit médico, sensor, mira a laser).</li><li>Uma arma de energia melhor que a atual.</li><li>Peças de armadura — talvez um <strong>fragmento de Beskar</strong>.</li><li>Um droide (astromecânico, protocolo ou de combate).</li><li>Dados ou códigos valiosos (vendáveis ou úteis).</li><li>Um <strong>cristal kyber</strong> bruto.</li><li>Um mapa/coordenadas para outro tesouro.</li><li>Um <strong>artefato da Força</strong> (holocron, relíquia).</li><li>Uma nave — ou a escritura de uma (ver Naves e Veículos).</li></ol>",
+    "Relíquias tecnológicas": "<p>Aparato antigo ou de fabricação alienígena achado numa estação abandonada, num casco caído ou na mão de um inimigo. Vale dinheiro e vale risco: qualquer arma, veste ou aparato pode aparecer como relíquia, e também combinações de aparatos, veículos e naves. As regras de uso e de restrição de classe são as mesmas dos aparatos normais — a diferença é que <strong>toda relíquia tem uma instabilidade</strong>, de 10% a 90%.</p><p><strong>As tabelas estão no <em>SD</em>, Cap. 11:</strong> <strong>Tabela 11-3</strong> (relíquia aleatória: tipo, Nível Tecnológico e instabilidade) e <strong>Tabela 11-4</strong> (os dez defeitos, em 1d10).</p><ul><li><strong>Na ativação, rola-se d%.</strong> Abaixo da instabilidade, rola-se <strong>1d10 na Tabela 11-4</strong> e lê-se a linha conforme a relíquia seja ofensiva, defensiva ou utilitária.</li><li><strong>A instabilidade fica em segredo</strong> — mas um Técnico pode estimá-la com um teste de <strong>Ciência</strong>.</li><li>Na coluna de instabilidade, um <strong>10 no dado fica no teto de 90%</strong>: é a faixa que o livro declara.</li></ul><blockquote><p><strong>Na galáxia.</strong> Relíquia é o holocron no fundo de um templo, o droide de guerra de uma era esquecida, o gerador Rakata que ninguém sabe ligar. O Técnico que acha uma quer consertá-la; o Operativo quer vendê-la; e o Mestre sabe a instabilidade que nenhum dos dois sabe.</p></blockquote>",
+    "Perigos do espaço": "<p>Vácuo, descompressão, gravidade zero, radiação e falha de suporte de vida usam as regras do <strong><em>SD</strong></em>, sem alteração. Trate uma nave sendo invadida como uma <strong>masmorra</strong> — corredores, câmaras e sistemas de segurança no lugar de armadilhas.</p><p><strong>Vácuo espacial.</strong> Sem proteção, o personagem <strong>perde a consciência imediatamente</strong> e está <strong>morto em Constituição × 5 segundos</strong>. É uma cena de contagem regressiva, não de combate — a única jogada é a do resgate.</p><p><strong>Falta de oxigênio (dentro da nave).</strong> Prende a respiração por <strong>Constituição × 20 segundos</strong>; depois, <strong>JPF</strong> para se manter consciente. Uma falha o leva a <strong>−1 PV</strong> e, morrendo, ele <strong>falha automaticamente</strong> as JPF seguintes.</p><p><strong>Descompressão:</strong> <strong>JPF</strong> ou desacordado 1d10 minutos. <strong>Radiação:</strong> <strong>JPF</strong> por período de exposição, perdendo Constituição. <strong>Gravidade alterada</strong> muda o Movimento base proporcionalmente (veja o livro básico, Cap. 1).</p><p><em>Equipamento que resolve:</em> Traje Espacial e cilindros de oxigênio (Equipamentos e Créditos).</p>",
+    "Palavra final — um compêndio em aberto": "<p>Esta é a <strong>fundação</strong>: a camada de cenário que faz a galáxia caber no <em>Space Dragon</em>. Com o Módulo Básico ao lado, dá para jogar hoje. Daqui pra frente cresce por camadas — mais povos, blocos de PNJ, aventuras e o módulo de combate tático de naves. Se uma regra parecer incompleta ou um número soar estranho na sua mesa, anote e ajuste: o compêndio evolui pelo uso.</p><p><strong>Que a Força esteja com você e com a sua mesa.</strong></p>"
+  },
   "SW-SUP-Ordens-e-Ranks": {
     "(abertura)": "<blockquote><p>As ordens dão contexto social e dramático aos Sensíveis. <strong>Rank é sobretudo narrativo</strong> — não dá bônus de atributo —, mas destrava privilégios, deveres e ganchos. Os níveis sugeridos seguem a escala nativa <strong>1–20</strong> do Sensível à Força (lembre: a especialização abre no <strong>5º nível</strong>, então virar Cavaleiro/Aprendiz \"pleno\" casa com esse marco).</p></blockquote>",
     "A Ordem Jedi (Caminho da Luz)": "<p>Guardiões da paz sob um Código de serenidade, desapego e serviço. Treinam desde cedo, constroem o próprio sabre e sobem por Provações.</p><p><strong>O Código:</strong> <em>Não há emoção, há paz. Não há ignorância, há conhecimento. Não há paixão, há serenidade. Não há caos, há harmonia. Não há morte, há a Força.</em></p><h3>Ranks Jedi</h3><table><thead><tr><th>Rank</th><th>Nível sugerido</th><th>Representa / destrava</th></tr></thead><tbody><tr><td><strong>Iniciado</strong></td><td>(antes do jogo)</td><td>Criança treinada no Templo; ainda não é PC pleno.</td></tr><tr><td><strong>Padawan</strong></td><td>1º–4º</td><td>Aprendiz vinculado a um <strong>Mestre</strong>. Montando o próprio sabre e a identidade.</td></tr><tr><td><strong>Cavaleiro Jedi</strong></td><td>5º–11º</td><td>Passou pelas <strong>Provações</strong> e escolheu a Senda (a especialização do 5º). Age com autonomia.</td></tr><tr><td><strong>Mestre Jedi</strong></td><td>12º–17º</td><td>Reconhecido pela sabedoria; <strong>treina um Padawan</strong> e acessa arquivos e artefatos restritos.</td></tr><tr><td><strong>Mestre do Conselho</strong></td><td>18º + feito notável</td><td>Voz da Ordem; influência política e acesso pleno (ferramenta de campanha).</td></tr></tbody></table><p><strong>As Provações (virar Cavaleiro):</strong> por volta do <strong>5º nível</strong> — o mesmo marco em que a Senda se abre —, enfrenta as cinco provações clássicas: <strong>Coragem, Habilidade, Carne</strong> (resistir à dor/perda), <strong>Espírito</strong> (encarar o próprio lado sombrio) e <strong>Insight</strong>. Resolva como um arco, com uma cena de confronto interior (uma tentação de usar a Sombra — ver <em>A Tentação</em> em O Sensível à Força).</p>",
@@ -85,7 +103,12 @@ export const TEXTOS = {
     "O Caminho Cinza": "<p><em>\"Eu sou o meio.\"</em></p><p>O Cinza usa <strong>as três listas</strong> — Universal, Luz e Sombra — e não cai. Não porque seja mais forte que os outros, mas porque aprendeu onde fica a borda: <strong>ele já esteve lá</strong>.</p><blockquote><p><strong>Não se escolhe o Cinza no 1º nível.</strong> Ele não é uma opção de ficha, é um lugar aonde se chega. Quem começa sem Caminho declarado é só um <strong>neutro</strong> — acessa apenas a lista Universal, e escolhe um lado quando quiser.</p></blockquote><h3>Como se entra</h3><p>Duas coisas, nesta ordem, e nenhuma delas se compra:</p><ol><li><strong>Chegar à Corrupção 6 ou mais</strong> — o estado <em>Tomado</em>. Você viu o que há do outro lado, e não foi de longe.</li><li><strong>Voltar a 2 ou menos</strong> — o estado <em>Sereno</em>, pelo caminho normal: compaixão, sacrifício, recusar o atalho quando ele custa caro.</li></ol><p>No momento em que a Corrupção desce a 2, e <strong>só nesse momento</strong>, o jogador pode declarar que não está voltando para a Luz — está parando no meio. A Corrupção é então <strong>fixada em 3</strong>, e daí em diante você anda no Cinza.</p><h3>O que muda</h3><table><tbody><tr><td><strong>Ganha</strong></td><td>acesso às <strong>três listas</strong> de poderes — Universal, Luz e Sombra. Usar um poder da Sombra <strong>não é mais uma queda</strong>; é o seu ofício.</td></tr><tr><td><strong>Custa</strong></td><td><strong>toda Corrupção conta em dobro.</strong> Um poder da Sombra marca <strong>+2</strong>. Um poder ★ marca <strong>+2</strong>. <em>Insistir</em> na Tentão custa <strong>2</strong>, <em>Arrancar</em> custa <strong>4</strong>.</td></tr><tr><td><strong>Piso 3</strong></td><td>se a Corrupção cair <strong>abaixo de 3</strong>, você <strong>retorna ao Caminho da Luz</strong> e perde a lista Sombra. Não é castigo: é a serenidade reabsorvendo você. Um Cinza que só faz o bem vira Jedi, e está tudo certo.</td></tr><tr><td><strong>Teto 10</strong></td><td>a <strong>Queda</strong> funciona como para todo mundo — mas você chega lá com <strong>metade dos usos</strong>. Caiu, vira <strong>Sombra</strong> e a Corrupção volta a 7.</td></tr></tbody></table><p>Na prática você vive numa janela de <strong>3 a 9</strong>, e ela não se mantém sozinha: subir é fácil (dobrado) e descer dá trabalho. O Cinza é o único Caminho em que o jogador tem de fazer alguma coisa <strong>toda sessão</strong> para continuar sendo o que é. Essa é a graça.</p><blockquote><p><strong>E as colunas do corpo?</strong> Você <strong>mantém a ordem</strong> que o seu Caminho de origem já definiu (ver <em>O Caminho decide o que você perde</em>). Entrar no Cinza não devolve o que a carne já pagou — a BA ou a JP que congelou continua congelada.</p></blockquote><blockquote><p><strong>Na galáxia.</strong> O <strong>Bendu</strong>, que se diz o meio entre a luz e a sombra. Os <strong>Je'daii</strong> de Tython, a ordem antiga que buscava equilíbrio entre as duas luas — Ashla e Bogan — e exilava quem pendesse demais para um lado. <strong>Ahsoka</strong>, que saiu da Ordem e não virou Sith. Todos começaram em algum lugar e pararam no meio de propósito.</p></blockquote>",
     "Corrupção — Queda e Redenção": "<p>A Corrupção é uma trilha de <strong>0 a 10</strong> que mede o quanto a Sombra já enraizou.</p><table><thead><tr><th>Corrupção</th><th>Estado</th></tr></thead><tbody><tr><td>0–2</td><td>Sereno. Sem penalidade.</td></tr><tr><td>3–5</td><td>Marcado. Olhos amarelam sob esforço; testes sociais com não-corrompidos ficam Difíceis quando a Força é usada à vista.</td></tr><tr><td>6–8</td><td>Tomado. Surtos de fúria; em estresse extremo o Mestre pode assumir uma ação.</td></tr><tr><td>9</td><td>À beira. Todas as penalidades de <em>Tomado</em> — e a Sombra passa a <strong>oferecer</strong> (a Tentação).</td></tr><tr><td>10</td><td><strong>Queda</strong> (Luz/neutro → Sombra, volta a 7) ou <strong>Consumido</strong> (quem já é da Sombra vira NPC do Mestre).</td></tr></tbody></table><ul><li><strong>Ganhar (+1):</strong> usar poder da lista <strong>Sombra</strong>, crueldade deliberada, ceder ao ódio numa cena-chave.</li><li><strong>Perder (−1):</strong> atos definidores de compaixão e sacrifício, meditação orientada, recusar o caminho fácil quando custa caro.</li><li><strong>A Redenção:</strong> reduzir a Corrupção a <strong>menos de 3</strong> <em>e</em> um <strong>sacrifício definidor</strong> (a vida, o poder, tudo o que ama) — no momento do sacrifício, retorna ao Caminho da Luz.</li></ul>",
     "A Tentação — a Corrupção como moeda": "<p>Na galáxia, a Sombra não multa ninguém: ela <strong>oferece</strong>. É mais rápida, é mais fácil, e funciona.</p><p><strong>A Tentação.</strong> Quando você <strong>falha numa rolagem decisiva</strong> — ou quando um golpe seu acerta e você quer que ele <em>termine</em> a questão —, a Força propõe um negócio. Aceitar custa <strong>Corrupção</strong>:</p><ul><li><strong>Insistir — +1 de Corrupção.</strong> Você <strong>rerrola</strong> a jogada falha e fica com o <strong>segundo resultado, seja ele qual for</strong>.</li><li><strong>Arrancar — +2 de Corrupção.</strong> Você <strong>rerrola</strong> e fica com o <strong>melhor dos dois</strong>. Custa o dobro porque a certeza é o que a Sombra vende mais caro.</li><li><strong>Sentenciar — +1 de Corrupção.</strong> Um ataque que <strong>já acertou</strong> vira <strong>crítico</strong>, ou um poder que <strong>já passou</strong> tem dano/duração/alvos <strong>dobrados</strong>.</li></ul><p><strong>\"Rolagem decisiva\"</strong> é aquela cuja falha <strong>fecha um caminho</strong> (o Duelo que decide a sala, o teste que impede a nave de cair). <strong>Não</strong> vale para rotina, iniciativa ou dano avulso. Quem decide é o <strong>Mestre</strong>, e <strong>antes</strong> de você rolar.</p><p><strong>A trava:</strong> <strong>1×/cena</strong> e no máximo <strong>3×/dia de jogo</strong>. Sem ela, um Padawan sereno viraria Lorde Sith na segunda sessão — a Sombra tem de ganhar terreno <strong>devagar, e sempre porque você deixou</strong>.</p><p><strong>Vale igual para Luz e Sombra:</strong> o preço é o mesmo; muda só a paisagem da descida (para a Luz, empurra à <strong>Queda</strong>; para a Sombra, ao <strong>Consumido</strong>). <strong>Com poderes ★, os custos somam.</strong> Em <strong>Corrupção 9</strong>, a Sombra oferece <strong>sozinha</strong> — o Mestre descreve a oferta e o preço em voz alta; aceitar leva a 10. <strong>Recusar nunca exige rolagem nem penalidade</strong> — Corrupção pega sem escolha não é tentação, é imposto.</p>",
-    "Eco da Senda — o Alcance que volta": "<p>Chega um ponto em que a Força para de ser esforço — <strong>só naquilo que é o seu ofício</strong>. Cada Senda tem um <strong>Domínio</strong>, a família de efeitos que ela pratica até virar hábito:</p><table><thead><tr><th>Senda</th><th>Domínio</th></tr></thead><tbody><tr><td><strong>Guardião</strong></td><td><strong>O Corpo e a Lâmina</strong> — a Força que empurra, sustenta, apara e golpeia matéria.</td></tr><tr><td><strong>Consular</strong></td><td><strong>A Mente e o Domínio</strong> — a Força que fala, convence, dobra e escraviza vontades.</td></tr><tr><td><strong>Sentinela</strong></td><td><strong>O Rastro e o Véu</strong> — a Força que procura, revela e esconde.</td></tr><tr><td><strong>Vidente</strong></td><td><strong>A Vida e a Presciência</strong> — a Força que corre nos vivos e no tempo.</td></tr></tbody></table><ul><li><code>10º</code> <strong>Eco.</strong> Sempre que gastar Alcance num <strong>poder da sua Senda</strong> (do Domínio dela, de qualquer corrente), role <strong>1d10</strong> depois de resolver o poder: num <strong>1</strong>, o <strong>% de Alcance gasto volta</strong>.</li><li><code>15º</code> <strong>Eco Maior.</strong> A rolagem passa a ser <strong>1d4</strong> (num 1, volta); além disso, os <strong>poderes de 1ª Grandeza da sua Senda não custam mais Alcance</strong> — de graça, no máximo <strong>um por rodada</strong>.</li></ul><blockquote><p><strong>Um poder cabe no Domínio de uma Senda só por personagem.</strong> Na dúvida, o Mestre decide <strong>antes da rolagem</strong>. Quem trilhou a Senda Mandaloriana abriu mão da especialização — e do Domínio: <strong>não tem Eco da Senda</strong>.</p></blockquote>"
+    "Eco da Senda — o Alcance que volta": "<p>Chega um ponto em que a Força para de ser esforço — <strong>só naquilo que é o seu ofício</strong>. Cada Senda tem um <strong>Domínio</strong>, a família de efeitos que ela pratica até virar hábito:</p><table><thead><tr><th>Senda</th><th>Domínio</th></tr></thead><tbody><tr><td><strong>Guardião</strong></td><td><strong>O Corpo e a Lâmina</strong> — a Força que empurra, sustenta, apara e golpeia matéria.</td></tr><tr><td><strong>Consular</strong></td><td><strong>A Mente e o Domínio</strong> — a Força que fala, convence, dobra e escraviza vontades.</td></tr><tr><td><strong>Sentinela</strong></td><td><strong>O Rastro e o Véu</strong> — a Força que procura, revela e esconde.</td></tr><tr><td><strong>Vidente</strong></td><td><strong>A Vida e a Presciência</strong> — a Força que corre nos vivos e no tempo.</td></tr></tbody></table><ul><li><code>10º</code> <strong>Eco.</strong> Sempre que gastar Alcance num <strong>poder da sua Senda</strong> (do Domínio dela, de qualquer corrente), role <strong>1d10</strong> depois de resolver o poder: num <strong>1</strong>, o <strong>% de Alcance gasto volta</strong>.</li><li><code>15º</code> <strong>Eco Maior.</strong> A rolagem passa a ser <strong>1d4</strong> (num 1, volta); além disso, os <strong>poderes de 1ª Grandeza da sua Senda não custam mais Alcance</strong> — de graça, no máximo <strong>um por rodada</strong>.</li></ul><blockquote><p><strong>Um poder cabe no Domínio de uma Senda só por personagem.</strong> Na dúvida, o Mestre decide <strong>antes da rolagem</strong>. Quem trilhou a Senda Mandaloriana abriu mão da especialização — e do Domínio: <strong>não tem Eco da Senda</strong>.</p></blockquote>",
+    "Nota de estrutura": "<p>O Sensível à Força é o <strong>Mentálico do Space Dragon</strong> reskinado: os Poderes Mentais viram Poderes da Força (Grandezas 1ª–10ª), o <strong>alcance mental %</strong> é a economia, e o <strong>Intelecto</strong> rege tudo. As especializações são os arquétipos clássicos — <strong>Guardião</strong> (sabre), <strong>Consular</strong> (poderes), <strong>Sentinela</strong> (equilíbrio) e <strong>Vidente</strong> (o Radiestésico, o místico sem Ordem). Luz/Sombra e Corrupção correm por cima. A Tentação e o Eco da Senda são <strong>criações da casa</strong> (inspiradas no suplemento <em>Jedi e Sith para Space Dragon</em>, de Jonas Picholaro).</p>"
+  },
+  "SW-SUP-Classes": {
+    "(abertura)": "<blockquote><p>As três classes não-sensitivas do <em>Space Dragon</em>, vestidas de Star Wars: <strong>Veterano</strong> (chassi <em>Cosmonauta</em>), <strong>Operativo</strong> (chassi <em>Gatuno</em>) e <strong>Técnico</strong> (chassi <em>Cientista</em>). A classe da Força tem arquivo próprio (O Sensível à Força).</p><p><strong>O que este capítulo faz.</strong> Ele <strong>renomeia e reveste</strong> as três classes do livro básico — não as substitui. A progressão vem repetida aqui só para você pendurar as habilidades do cenário nos níveis certos; <strong>tudo o que não estiver descrito neste capítulo continua valendo como está no <em>SD</em>, Cap. 3.</strong> Nível <strong>1 a 20</strong>, <strong>especializações no 5º nível</strong>, presas a uma <strong>Afiliação</strong> (Leal / Neutro / Rebelde — o Ordeiro/Neutro/Caótico do livro).</p></blockquote>",
+    "Resumo": "<table><thead><tr><th>Classe SW</th><th>Chassi SD</th><th>DV</th><th>Créditos iniciais</th><th>Afiliação das specs</th></tr></thead><tbody><tr><td><strong>Veterano</strong></td><td>Cosmonauta</td><td>d10</td><td>2d10 × 5.000</td><td>Emissário (Leal) · Mercenário (Neutro) · Caçador de Recompensas (Rebelde)</td></tr><tr><td><strong>Operativo</strong></td><td>Gatuno</td><td>d6</td><td>2d6 × 5.000</td><td>Espião (Leal) · Sabotador/Assassino (Neutro) · Contrabandista (Rebelde)</td></tr><tr><td><strong>Técnico</strong></td><td>Cientista</td><td>d8</td><td>1d8 × 5.000</td><td>Médico de Campo (Leal) · Engenheiro (Neutro) · Slicer (Rebelde)</td></tr><tr><td><strong>Sensível à Força</strong></td><td>Mentálico</td><td>d4</td><td>1d6 × 5.000</td><td>ver O Sensível à Força</td></tr></tbody></table>"
   }
 };
 
@@ -4173,3 +4196,606 @@ export const APARATOS = [
     }
   }
 ];
+
+// As tabelas roláveis da Seção do Mestre.
+export const TABELAS_MESTRE = [
+  {
+    "nome": "Ganchos de aventura",
+    "formula": "1d12",
+    "resultados": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "Um cargueiro à deriva emite um sinal de socorro automático — e ninguém responde."
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Uma recompensa foi colocada sobre a cabeça de um dos PCs (justa ou não)."
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Um contato pede que transportem uma carga \"que não deve ser inspecionada\"."
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Um Holocron perdido surge no mercado negro — e mais de uma facção o quer."
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Uma colônia de fronteira parou de responder às transmissões."
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Um oficial imperial deserta e oferece códigos em troca de extração."
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "text": "Um antigo mestre (Jedi ou Sith) reaparece com um pedido — ou uma cobrança."
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "text": "Uma dívida com um Hutt venceu, e o cobrador não aceita mais desculpas."
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "text": "Ruínas de uma civilização pré-República foram achadas num mundo proibido."
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "text": "Um cristal kyber bruto foi localizado — e um Inquisidor está a caminho."
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "Uma nave-prisão sofre um motim durante o transporte dos PCs (ou de um aliado)."
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "Alguém está roubando a identidade de um PC pela galáxia."
+      }
+    ]
+  },
+  {
+    "nome": "Contratos / mural de serviços",
+    "formula": "1d10",
+    "resultados": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "Escoltar um diplomata nervoso por território hostil."
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Recuperar uma carga roubada de um armazém vigiado."
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Capturar (vivo) um alvo escondido no submundo."
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Sabotar um posto de abastecimento inimigo."
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Contrabandear refugiados para fora de um mundo sitiado."
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Achar, reparar e trazer de volta uma nave abandonada."
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "text": "Roubar dados de um cofre corporativo."
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "text": "Proteger uma remessa de Beskar de piratas."
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "text": "Investigar o sumiço de uma equipe de mineração."
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "text": "Entregar uma mensagem que muita gente quer impedir."
+      }
+    ]
+  },
+  {
+    "nome": "Complicações",
+    "formula": "1d12",
+    "resultados": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "O contratante mentiu sobre o objetivo real."
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Uma facção rival chega com a mesma missão."
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "A nave sofre uma pane no pior momento."
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Um aliado é, na verdade, um informante."
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Uma patrulha aparece para uma \"inspeção de rotina\"."
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "O alvo é inocente — ou uma criança."
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "text": "Um caçador de recompensas segue os PCs."
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "text": "O pagamento é em algo mais perigoso que Créditos."
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "text": "Um PC reconhece alguém do próprio passado."
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "text": "A Força sussurra um aviso (dê uma premonição)."
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "text": "A saída planejada está bloqueada."
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "text": "Alguém do grupo está sendo chantageado."
+      }
+    ]
+  },
+  {
+    "nome": "PNJ relâmpago — Espécie",
+    "formula": "1d8",
+    "resultados": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "Humano"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Twi'lek"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Rodiano"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Wookiee"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Trandoshano"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Mon Calamari"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "text": "Zabrak"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "text": "Droide"
+      }
+    ]
+  },
+  {
+    "nome": "PNJ relâmpago — Papel",
+    "formula": "1d8",
+    "resultados": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "Mercenário"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Informante"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Comerciante"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Oficial"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Criminoso"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Piloto"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "text": "Técnico"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "text": "Burocrata"
+      }
+    ]
+  },
+  {
+    "nome": "PNJ relâmpago — Traço marcante",
+    "formula": "1d10",
+    "resultados": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "Cheio de cicatrizes"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Ganancioso"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Leal até demais"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Covarde, mas esperto"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Fala pelos cotovelos"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Devendo a alguém perigoso"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "text": "Ex-militar amargurado"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "text": "Esconde um segredo grave"
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "text": "Viciado em apostas"
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "text": "Secretamente sensível à Força"
+      }
+    ]
+  },
+  {
+    "nome": "Locais / cenas",
+    "formula": "1d8",
+    "resultados": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "Cantina lotada de um spaceport."
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Interior de um cargueiro à deriva."
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Mercado negro subterrâneo."
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Base ou posto avançado imperial."
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Superfície de um mundo extremo (deserto, gelo, selva)."
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Estação espacial orbital."
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "text": "Palácio de um chefe do crime."
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "text": "Ruínas antigas ligadas à Força."
+      }
+    ]
+  },
+  {
+    "nome": "Achados / recompensas",
+    "formula": "1d10",
+    "resultados": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "text": "Chips de crédito (role 1d6 × 100 CR por grau de perigo)."
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "text": "Um aparato útil (kit médico, sensor, mira a laser)."
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "text": "Uma arma de energia melhor que a atual."
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "text": "Peças de armadura — talvez um <strong>fragmento de Beskar</strong>."
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "text": "Um droide (astromecânico, protocolo ou de combate)."
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "text": "Dados ou códigos valiosos (vendáveis ou úteis)."
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "text": "Um <strong>cristal kyber</strong> bruto."
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "text": "Um mapa/coordenadas para outro tesouro."
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "text": "Um <strong>artefato da Força</strong> (holocron, relíquia)."
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "text": "Uma nave — ou a escritura de uma (ver Naves e Veículos)."
+      }
+    ]
+  }
+];
+
+// Links para páginas do journal do módulo Space Dragon.
+export const LINKS_SD = {
+  "reliquias": "@UUID[Compendium.spacedragon.spacedragon-journal.JournalEntry.UnhpmI5LblFZJDPX.JournalEntryPage.8LEHwi47PCqw6z2b]"
+};

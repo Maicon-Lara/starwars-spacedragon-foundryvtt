@@ -1,0 +1,221 @@
+{
+  "folder": "DoiRLymY6D6jlUDD",
+  "name": "Complicações",
+  "_id": "BZfdgAmJnDIvYgx7",
+  "img": "systems/olddragon2e/assets/icons/d6.svg",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "_id": "mPbBEEsG1ysu5unW",
+      "name": "",
+      "description": "O contratante mentiu sobre o objetivo real.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!BZfdgAmJnDIvYgx7.mPbBEEsG1ysu5unW"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "_id": "nwxT4EdJq9TFfGHj",
+      "name": "",
+      "description": "Uma facção rival chega com a mesma missão.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!BZfdgAmJnDIvYgx7.nwxT4EdJq9TFfGHj"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "_id": "6Ki34KLqJr1FoDdw",
+      "name": "",
+      "description": "A nave sofre uma pane no pior momento.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!BZfdgAmJnDIvYgx7.6Ki34KLqJr1FoDdw"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "_id": "7nlIUHWBL0NNJHLD",
+      "name": "",
+      "description": "Um aliado é, na verdade, um informante.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!BZfdgAmJnDIvYgx7.7nlIUHWBL0NNJHLD"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "_id": "jZpWrPLs20lEQFny",
+      "name": "",
+      "description": "Uma patrulha aparece para uma \"inspeção de rotina\".",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!BZfdgAmJnDIvYgx7.jZpWrPLs20lEQFny"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "_id": "iRvBPNHjDZkSBhUh",
+      "name": "",
+      "description": "O alvo é inocente — ou uma criança.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!BZfdgAmJnDIvYgx7.iRvBPNHjDZkSBhUh"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "drawn": false,
+      "_id": "G8gqamUZE6o0hZj3",
+      "name": "",
+      "description": "Um caçador de recompensas segue os PCs.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!BZfdgAmJnDIvYgx7.G8gqamUZE6o0hZj3"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "drawn": false,
+      "_id": "7oylU1TnKolOZFGU",
+      "name": "",
+      "description": "O pagamento é em algo mais perigoso que Créditos.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!BZfdgAmJnDIvYgx7.7oylU1TnKolOZFGU"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        9,
+        9
+      ],
+      "drawn": false,
+      "_id": "hdI8caM3jL5NDp37",
+      "name": "",
+      "description": "Um PC reconhece alguém do próprio passado.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!BZfdgAmJnDIvYgx7.hdI8caM3jL5NDp37"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        10,
+        10
+      ],
+      "drawn": false,
+      "_id": "aeN36ATmBpzahBTt",
+      "name": "",
+      "description": "A Força sussurra um aviso (dê uma premonição).",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!BZfdgAmJnDIvYgx7.aeN36ATmBpzahBTt"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        11,
+        11
+      ],
+      "drawn": false,
+      "_id": "iz6LzjQ6tcwdi999",
+      "name": "",
+      "description": "A saída planejada está bloqueada.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!BZfdgAmJnDIvYgx7.iz6LzjQ6tcwdi999"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        12,
+        12
+      ],
+      "drawn": false,
+      "_id": "ZAX0EjXFf5QRBSdk",
+      "name": "",
+      "description": "Alguém do grupo está sendo chantageado.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!BZfdgAmJnDIvYgx7.ZAX0EjXFf5QRBSdk"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "formula": "1d12",
+  "sort": 300000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!tables!BZfdgAmJnDIvYgx7"
+}

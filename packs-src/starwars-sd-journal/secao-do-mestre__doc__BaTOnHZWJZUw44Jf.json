@@ -1,0 +1,283 @@
+{
+  "folder": null,
+  "name": "Seção do Mestre",
+  "_id": "BaTOnHZWJZUw44Jf",
+  "pages": [
+    {
+      "sort": 100000,
+      "name": "O Tom da Mesa",
+      "type": "text",
+      "_id": "vIFzaCtX2rUF3ape",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><blockquote><p>Ferramentas para conduzir a mesa: tom, facções, recompensas e tabelas de rolagem para preparar (ou improvisar) aventuras. Nada aqui é obrigatório — pegue o que servir.</p></blockquote><p>Star Wars é <strong>space opera pulp</strong>: heroísmo grande, vilões teatrais, esperança contra a tirania, e uma galáxia viva e suja de contrabandistas, caçadores e impérios. Ritmo rápido, ação cinematográfica, dilemas morais simples na superfície e profundos no fundo. Deixe os dados servirem à história.</p><p><strong>A Força paira sobre tudo:</strong> mesmo numa mesa sem Jedi, ela aparece como sorte estranha, premonições e o peso de escolhas. Use a Corrupção como bússola dramática dos Sensíveis.</p><h3>Escolhendo a era</h3><table><thead><tr><th>Era</th><th>Tom</th><th>O que os PCs fazem</th></tr></thead><tbody><tr><td><strong>Alta República</strong></td><td>Auge Jedi, exploração de fronteira</td><td>Cavaleiros e pioneiros enfrentando ameaças exóticas na orla</td></tr><tr><td><strong>Queda da República / Clônicas</strong></td><td>Guerra em escala, tragédia iminente</td><td>Soldados, agentes e Jedi-generais; a sombra da Ordem 66</td></tr><tr><td><strong>Era Imperial / Guerra Civil</strong></td><td>Tirania × Rebelião (o \"padrão\" dos filmes)</td><td>Rebeldes, contrabandistas e Jedi caçados no submundo</td></tr><tr><td><strong>Nova República / Pós-Império</strong></td><td>Faroeste galáctico, remanescentes</td><td>Mandalorianos, mercenários e caçadores na fronteira sem lei</td></tr></tbody></table></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!BaTOnHZWJZUw44Jf.vIFzaCtX2rUF3ape"
+    },
+    {
+      "sort": 200000,
+      "name": "As Facções",
+      "type": "text",
+      "_id": "HdV5MX7e9bUSBXPe",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>Cada facção é um <strong>motor de aventura</strong>: dê a ela um objetivo que cruze o dos PCs.</p><ul><li><strong>A Autoridade Tirânica</strong> (Império / Primeira Ordem / sindicato dominante) — ordem pela força. PNJs: stormtroopers, oficiais, agentes do ISB, Moffs, <strong>Inquisidores</strong> (ver Ordens & Ranks). Gera: opressão, checkpoints, caçadas, deserções.</li><li><strong>A Rebelião / Resistência</strong> — os desfavorecidos com uma causa. Gera: sabotagem, resgate, extração, esperança sob fogo.</li><li><strong>O Submundo</strong> (Hutts, Aurora Negra, Alvorada Carmesim) — o crime que move a galáxia. Gera: dívidas, contratos sujos, contrabando, traições.</li><li><strong>A Guilda dos Caçadores de Recompensas</strong> — a lei cinzenta da fronteira. Gera: contratos, rivalidades, alvos que não são o que parecem.</li><li><strong>Os Clãs Mandalorianos</strong> — honra, Beskar e o <strong>Sabre Sombrio</strong> (ver Senda Mandaloriana). Gera: duelos de honra, reunificação de clãs, disputas de liderança.</li><li><strong>Corporações e Cartéis</strong> — a ganância neutra. Gera: exploração de mundos, experimentos proibidos, guerras por recursos (kyber, especiaria, Beskar).</li><li><strong>A Ordem Jedi / os Sith</strong> — ver Ordens e Ranks da Força.</li></ul></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!BaTOnHZWJZUw44Jf.HdV5MX7e9bUSBXPe"
+    },
+    {
+      "sort": 300000,
+      "name": "Recompensas",
+      "type": "text",
+      "_id": "3CvCTGntnPFMxwEy",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><ul><li><strong>Créditos (CR)</strong> valem <strong>XP</strong> quando conquistados — a busca por riqueza é combustível de aventura.</li><li><strong>Os \"itens mágicos\" desta galáxia</strong> são <strong>aparatos tecnológicos, cristais kyber, artefatos da Força, armaduras Beskar e sabres únicos</strong>. Distribua-os como recompensas raras e memoráveis, não como loja. Aparatos seguem as regras de Aparatos e Feitos Científicos do Técnico.</li><li>Escale as somas ao perigo, não ao nível fixo: um contrato de fronteira paga alguns milhares de CR; um golpe contra uma corporação, dezenas de milhares. Lembre-se de que a escala <strong>1–20</strong> e os Créditos <strong>×5.000</strong> iniciais pedem curvas de recompensa longas.</li></ul></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!BaTOnHZWJZUw44Jf.3CvCTGntnPFMxwEy"
+    },
+    {
+      "sort": 400000,
+      "name": "Tabelas de Preparação",
+      "type": "text",
+      "_id": "CpemkbIreAAtRkPc",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><blockquote><p><strong>Sessão relâmpago:</strong> role <strong>1 Gancho + 1 Local + 1 Complicação</strong>, jogue um <strong>PNJ</strong> no meio e deixe os jogadores puxarem o fio.</p></blockquote><h3>Ganchos de aventura (d12)</h3><ol><li>Um cargueiro à deriva emite um sinal de socorro automático — e ninguém responde.</li><li>Uma recompensa foi colocada sobre a cabeça de um dos PCs (justa ou não).</li><li>Um contato pede que transportem uma carga \"que não deve ser inspecionada\".</li><li>Um Holocron perdido surge no mercado negro — e mais de uma facção o quer.</li><li>Uma colônia de fronteira parou de responder às transmissões.</li><li>Um oficial imperial deserta e oferece códigos em troca de extração.</li><li>Um antigo mestre (Jedi ou Sith) reaparece com um pedido — ou uma cobrança.</li><li>Uma dívida com um Hutt venceu, e o cobrador não aceita mais desculpas.</li><li>Ruínas de uma civilização pré-República foram achadas num mundo proibido.</li><li>Um cristal kyber bruto foi localizado — e um Inquisidor está a caminho.</li><li>Uma nave-prisão sofre um motim durante o transporte dos PCs (ou de um aliado).</li><li>Alguém está roubando a identidade de um PC pela galáxia.</li></ol><h3>Contratos / mural de serviços (d10)</h3><ol><li>Escoltar um diplomata nervoso por território hostil.</li><li>Recuperar uma carga roubada de um armazém vigiado.</li><li>Capturar (vivo) um alvo escondido no submundo.</li><li>Sabotar um posto de abastecimento inimigo.</li><li>Contrabandear refugiados para fora de um mundo sitiado.</li><li>Achar, reparar e trazer de volta uma nave abandonada.</li><li>Roubar dados de um cofre corporativo.</li><li>Proteger uma remessa de Beskar de piratas.</li><li>Investigar o sumiço de uma equipe de mineração.</li><li>Entregar uma mensagem que muita gente quer impedir.</li></ol><h3>Complicações (d12) — jogue no meio da cena</h3><ol><li>O contratante mentiu sobre o objetivo real.</li><li>Uma facção rival chega com a mesma missão.</li><li>A nave sofre uma pane no pior momento.</li><li>Um aliado é, na verdade, um informante.</li><li>Uma patrulha aparece para uma \"inspeção de rotina\".</li><li>O alvo é inocente — ou uma criança.</li><li>Um caçador de recompensas segue os PCs.</li><li>O pagamento é em algo mais perigoso que Créditos.</li><li>Um PC reconhece alguém do próprio passado.</li><li>A Força sussurra um aviso (dê uma premonição).</li><li>A saída planejada está bloqueada.</li><li>Alguém do grupo está sendo chantageado.</li></ol><h3>PNJ relâmpago (role os três)</h3><table><thead><tr><th>d8</th><th>Espécie</th><th>Papel</th><th>d10</th><th>Traço marcante</th></tr></thead><tbody><tr><td>1</td><td>Humano</td><td>Mercenário</td><td>1</td><td>Cheio de cicatrizes</td></tr><tr><td>2</td><td>Twi'lek</td><td>Informante</td><td>2</td><td>Ganancioso</td></tr><tr><td>3</td><td>Rodiano</td><td>Comerciante</td><td>3</td><td>Leal até demais</td></tr><tr><td>4</td><td>Wookiee</td><td>Oficial</td><td>4</td><td>Covarde, mas esperto</td></tr><tr><td>5</td><td>Trandoshano</td><td>Criminoso</td><td>5</td><td>Fala pelos cotovelos</td></tr><tr><td>6</td><td>Mon Calamari</td><td>Piloto</td><td>6</td><td>Devendo a alguém perigoso</td></tr><tr><td>7</td><td>Zabrak</td><td>Técnico</td><td>7</td><td>Ex-militar amargurado</td></tr><tr><td>8</td><td>Droide</td><td>Burocrata</td><td>8</td><td>Esconde um segredo grave</td></tr><tr><td>—</td><td>—</td><td>—</td><td>9</td><td>Viciado em apostas</td></tr><tr><td>—</td><td>—</td><td>—</td><td>10</td><td>Secretamente sensível à Força</td></tr></tbody></table><h3>Locais / cenas (d8)</h3><ol><li>Cantina lotada de um spaceport.</li><li>Interior de um cargueiro à deriva.</li><li>Mercado negro subterrâneo.</li><li>Base ou posto avançado imperial.</li><li>Superfície de um mundo extremo (deserto, gelo, selva).</li><li>Estação espacial orbital.</li><li>Palácio de um chefe do crime.</li><li>Ruínas antigas ligadas à Força.</li></ol><h3>Achados / recompensas (d10)</h3><ol><li>Chips de crédito (role 1d6 × 100 CR por grau de perigo).</li><li>Um aparato útil (kit médico, sensor, mira a laser).</li><li>Uma arma de energia melhor que a atual.</li><li>Peças de armadura — talvez um <strong>fragmento de Beskar</strong>.</li><li>Um droide (astromecânico, protocolo ou de combate).</li><li>Dados ou códigos valiosos (vendáveis ou úteis).</li><li>Um <strong>cristal kyber</strong> bruto.</li><li>Um mapa/coordenadas para outro tesouro.</li><li>Um <strong>artefato da Força</strong> (holocron, relíquia).</li><li>Uma nave — ou a escritura de uma (ver Naves e Veículos).</li></ol></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!BaTOnHZWJZUw44Jf.CpemkbIreAAtRkPc"
+    },
+    {
+      "sort": 500000,
+      "name": "Relíquias Tecnológicas",
+      "type": "text",
+      "_id": "qKffpcjjYuqFKgON",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>Aparato antigo ou de fabricação alienígena achado numa estação abandonada, num casco caído ou na mão de um inimigo. Vale dinheiro e vale risco: qualquer arma, veste ou aparato pode aparecer como relíquia, e também combinações de aparatos, veículos e naves. As regras de uso e de restrição de classe são as mesmas dos aparatos normais — a diferença é que <strong>toda relíquia tem uma instabilidade</strong>, de 10% a 90%.</p><p><strong>As tabelas estão no <em>SD</em>, Cap. 11:</strong> <strong>Tabela 11-3</strong> (relíquia aleatória: tipo, Nível Tecnológico e instabilidade) e <strong>Tabela 11-4</strong> (os dez defeitos, em 1d10).</p><ul><li><strong>Na ativação, rola-se d%.</strong> Abaixo da instabilidade, rola-se <strong>1d10 na Tabela 11-4</strong> e lê-se a linha conforme a relíquia seja ofensiva, defensiva ou utilitária.</li><li><strong>A instabilidade fica em segredo</strong> — mas um Técnico pode estimá-la com um teste de <strong>Ciência</strong>.</li><li>Na coluna de instabilidade, um <strong>10 no dado fica no teto de 90%</strong>: é a faixa que o livro declara.</li></ul><blockquote><p><strong>Na galáxia.</strong> Relíquia é o holocron no fundo de um templo, o droide de guerra de uma era esquecida, o gerador Rakata que ninguém sabe ligar. O Técnico que acha uma quer consertá-la; o Operativo quer vendê-la; e o Mestre sabe a instabilidade que nenhum dos dois sabe.</p></blockquote></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!BaTOnHZWJZUw44Jf.qKffpcjjYuqFKgON"
+    },
+    {
+      "sort": 600000,
+      "name": "Perigos do Espaço",
+      "type": "text",
+      "_id": "sDiuICBehaIk9sHM",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>Vácuo, descompressão, gravidade zero, radiação e falha de suporte de vida usam as regras do <strong><em>SD</strong></em>, sem alteração. Trate uma nave sendo invadida como uma <strong>masmorra</strong> — corredores, câmaras e sistemas de segurança no lugar de armadilhas.</p><p><strong>Vácuo espacial.</strong> Sem proteção, o personagem <strong>perde a consciência imediatamente</strong> e está <strong>morto em Constituição × 5 segundos</strong>. É uma cena de contagem regressiva, não de combate — a única jogada é a do resgate.</p><p><strong>Falta de oxigênio (dentro da nave).</strong> Prende a respiração por <strong>Constituição × 20 segundos</strong>; depois, <strong>JPF</strong> para se manter consciente. Uma falha o leva a <strong>−1 PV</strong> e, morrendo, ele <strong>falha automaticamente</strong> as JPF seguintes.</p><p><strong>Descompressão:</strong> <strong>JPF</strong> ou desacordado 1d10 minutos. <strong>Radiação:</strong> <strong>JPF</strong> por período de exposição, perdendo Constituição. <strong>Gravidade alterada</strong> muda o Movimento base proporcionalmente (veja o livro básico, Cap. 1).</p><p><em>Equipamento que resolve:</em> Traje Espacial e cilindros de oxigênio (Equipamentos e Créditos).</p></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!BaTOnHZWJZUw44Jf.sDiuICBehaIk9sHM"
+    },
+    {
+      "sort": 700000,
+      "name": "Palavra Final",
+      "type": "text",
+      "_id": "CQE75lZBMRMW2xXa",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>Esta é a <strong>fundação</strong>: a camada de cenário que faz a galáxia caber no <em>Space Dragon</em>. Com o Módulo Básico ao lado, dá para jogar hoje. Daqui pra frente cresce por camadas — mais povos, blocos de PNJ, aventuras e o módulo de combate tático de naves. Se uma regra parecer incompleta ou um número soar estranho na sua mesa, anote e ajuste: o compêndio evolui pelo uso.</p><p><strong>Que a Força esteja com você e com a sua mesa.</strong></p></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!BaTOnHZWJZUw44Jf.CQE75lZBMRMW2xXa"
+    }
+  ],
+  "flags": {},
+  "sort": 1000000,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "_key": "!journal!BaTOnHZWJZUw44Jf"
+}

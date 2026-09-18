@@ -1,0 +1,22 @@
+{
+  "name": "Preparação de Aventura",
+  "sorting": "m",
+  "folder": null,
+  "type": "RollTable",
+  "_id": "DoiRLymY6D6jlUDD",
+  "description": "",
+  "sort": 0,
+  "color": "#42679c",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1"
+  },
+  "_key": "!folders!DoiRLymY6D6jlUDD"
+}

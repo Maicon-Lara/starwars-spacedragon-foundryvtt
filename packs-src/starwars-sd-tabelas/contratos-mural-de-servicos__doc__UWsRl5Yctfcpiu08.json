@@ -1,0 +1,189 @@
+{
+  "folder": "DoiRLymY6D6jlUDD",
+  "name": "Contratos / mural de serviços",
+  "_id": "UWsRl5Yctfcpiu08",
+  "img": "systems/olddragon2e/assets/icons/d6.svg",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "_id": "V1xK8zzxIAzXNBpO",
+      "name": "",
+      "description": "Escoltar um diplomata nervoso por território hostil.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!UWsRl5Yctfcpiu08.V1xK8zzxIAzXNBpO"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "_id": "lUHWeZNI9EIMcY6b",
+      "name": "",
+      "description": "Recuperar uma carga roubada de um armazém vigiado.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!UWsRl5Yctfcpiu08.lUHWeZNI9EIMcY6b"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "_id": "KA79K7XmjqqCfRf5",
+      "name": "",
+      "description": "Capturar (vivo) um alvo escondido no submundo.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!UWsRl5Yctfcpiu08.KA79K7XmjqqCfRf5"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "_id": "MhyQ1DoBS5VIUpE6",
+      "name": "",
+      "description": "Sabotar um posto de abastecimento inimigo.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!UWsRl5Yctfcpiu08.MhyQ1DoBS5VIUpE6"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "_id": "XjSOiUA3DBUZ6TyM",
+      "name": "",
+      "description": "Contrabandear refugiados para fora de um mundo sitiado.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!UWsRl5Yctfcpiu08.XjSOiUA3DBUZ6TyM"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "_id": "pJgU7Rt8PiA7HLRj",
+      "name": "",
+      "description": "Achar, reparar e trazer de volta uma nave abandonada.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!UWsRl5Yctfcpiu08.pJgU7Rt8PiA7HLRj"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "drawn": false,
+      "_id": "2c1szCfPCvMRFjth",
+      "name": "",
+      "description": "Roubar dados de um cofre corporativo.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!UWsRl5Yctfcpiu08.2c1szCfPCvMRFjth"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "drawn": false,
+      "_id": "dBWcnXGLHvbiKTq4",
+      "name": "",
+      "description": "Proteger uma remessa de Beskar de piratas.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!UWsRl5Yctfcpiu08.dBWcnXGLHvbiKTq4"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        9,
+        9
+      ],
+      "drawn": false,
+      "_id": "ght2wRVTZ3UJU5J1",
+      "name": "",
+      "description": "Investigar o sumiço de uma equipe de mineração.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!UWsRl5Yctfcpiu08.ght2wRVTZ3UJU5J1"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        10,
+        10
+      ],
+      "drawn": false,
+      "_id": "muFOXFRqJ5axN0Vm",
+      "name": "",
+      "description": "Entregar uma mensagem que muita gente quer impedir.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!UWsRl5Yctfcpiu08.muFOXFRqJ5axN0Vm"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "formula": "1d10",
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!tables!UWsRl5Yctfcpiu08"
+}

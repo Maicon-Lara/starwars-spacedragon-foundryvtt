@@ -1,0 +1,157 @@
+{
+  "folder": "DoiRLymY6D6jlUDD",
+  "name": "Locais / cenas",
+  "_id": "jtkHFf1rAvv1lYHF",
+  "img": "systems/olddragon2e/assets/icons/d6.svg",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "_id": "48oWsh8zuyiCPCBs",
+      "name": "",
+      "description": "Cantina lotada de um spaceport.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!jtkHFf1rAvv1lYHF.48oWsh8zuyiCPCBs"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "_id": "HoYjQkSW6HvMvvTF",
+      "name": "",
+      "description": "Interior de um cargueiro à deriva.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!jtkHFf1rAvv1lYHF.HoYjQkSW6HvMvvTF"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "_id": "MAAsmu0lFbY5iZt9",
+      "name": "",
+      "description": "Mercado negro subterrâneo.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!jtkHFf1rAvv1lYHF.MAAsmu0lFbY5iZt9"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "_id": "opgYHUqBoedjz8wO",
+      "name": "",
+      "description": "Base ou posto avançado imperial.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!jtkHFf1rAvv1lYHF.opgYHUqBoedjz8wO"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "_id": "ihtDz28yrDpcHyXL",
+      "name": "",
+      "description": "Superfície de um mundo extremo (deserto, gelo, selva).",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!jtkHFf1rAvv1lYHF.ihtDz28yrDpcHyXL"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "_id": "t294vzEFF9DNAXkC",
+      "name": "",
+      "description": "Estação espacial orbital.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!jtkHFf1rAvv1lYHF.t294vzEFF9DNAXkC"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "drawn": false,
+      "_id": "a5gOOxSUKHMKvcea",
+      "name": "",
+      "description": "Palácio de um chefe do crime.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!jtkHFf1rAvv1lYHF.a5gOOxSUKHMKvcea"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "drawn": false,
+      "_id": "1sW32RoZOrjIEaqa",
+      "name": "",
+      "description": "Ruínas antigas ligadas à Força.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!jtkHFf1rAvv1lYHF.1sW32RoZOrjIEaqa"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "formula": "1d8",
+  "sort": 700000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!tables!jtkHFf1rAvv1lYHF"
+}

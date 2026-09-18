@@ -73,6 +73,7 @@ export const poderesJournal = {
     { title: "Corrupção — Queda e Redenção", content: forca["Corrupção — Queda e Redenção"] },
     { title: "A Tentação", content: forca["A Tentação — a Corrupção como moeda"] },
     { title: "Eco da Senda", content: forca["Eco da Senda — o Alcance que volta"] },
+    { title: "Nota de Estrutura", content: forca["Nota de estrutura"] },
     { title: "Crédito", content: poderes["Crédito"] },
   ],
 };

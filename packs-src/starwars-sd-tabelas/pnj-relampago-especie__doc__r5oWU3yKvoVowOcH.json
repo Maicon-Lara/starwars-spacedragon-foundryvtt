@@ -1,0 +1,157 @@
+{
+  "folder": "HG1iDEoNoSy8sPzV",
+  "name": "PNJ relâmpago — Espécie",
+  "_id": "r5oWU3yKvoVowOcH",
+  "img": "systems/olddragon2e/assets/icons/d6.svg",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "_id": "bypBsyw6xfs5JQNl",
+      "name": "",
+      "description": "Humano",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!r5oWU3yKvoVowOcH.bypBsyw6xfs5JQNl"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "_id": "Svoev8zsASDvZr1V",
+      "name": "",
+      "description": "Twi'lek",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!r5oWU3yKvoVowOcH.Svoev8zsASDvZr1V"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "_id": "nXCUU8cCr99coCvq",
+      "name": "",
+      "description": "Rodiano",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!r5oWU3yKvoVowOcH.nXCUU8cCr99coCvq"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "_id": "t6ZMix9xvXBtTCui",
+      "name": "",
+      "description": "Wookiee",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!r5oWU3yKvoVowOcH.t6ZMix9xvXBtTCui"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "_id": "i7yIimRHhTutxDql",
+      "name": "",
+      "description": "Trandoshano",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!r5oWU3yKvoVowOcH.i7yIimRHhTutxDql"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "_id": "Cfo7kDbATow0ps8B",
+      "name": "",
+      "description": "Mon Calamari",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!r5oWU3yKvoVowOcH.Cfo7kDbATow0ps8B"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "drawn": false,
+      "_id": "MI6mwPiOEbZMa4b6",
+      "name": "",
+      "description": "Zabrak",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!r5oWU3yKvoVowOcH.MI6mwPiOEbZMa4b6"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "drawn": false,
+      "_id": "tc4WUmbJd1lpbriz",
+      "name": "",
+      "description": "Droide",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!r5oWU3yKvoVowOcH.tc4WUmbJd1lpbriz"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "formula": "1d8",
+  "sort": 400000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!tables!r5oWU3yKvoVowOcH"
+}

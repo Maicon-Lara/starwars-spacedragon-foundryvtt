@@ -198,11 +198,13 @@ function secao(texto, titulo) {
   return blocos(linhas.slice(i + 1, fim < 0 ? undefined : fim).join("\n"));
 }
 
-/** O texto entre o título "# " da nota e a primeira seção "## ". */
+/** O texto entre o título "# " da nota e a primeira seção "## " — ou o
+ *  próximo "# ", porque a nota de Classes abre um "# " por classe, e sem isso
+ *  a abertura engolia o Veterano inteiro. */
 function abertura(texto) {
   const linhas = texto.split("\n");
   const i = linhas.findIndex((l) => /^#\s/.test(l));
-  const f = linhas.findIndex((l, j) => j > i && /^##\s/.test(l));
+  const f = linhas.findIndex((l, j) => j > i && /^#{1,2}\s/.test(l));
   return blocos(linhas.slice(i + 1, f).join("\n"));
 }
 
@@ -467,6 +469,117 @@ function aparatosDoCofre(texto) {
   return saida;
 }
 
+// ── Bestiário ───────────────────────────────────────────────────────────────
+//
+// O cofre diz "não reproduza nada: abra o livro no nome nativo". No Foundry, o
+// livro é o compêndio de Bestiário do módulo Space Dragon — então o nome
+// nativo, na coluna da esquerda do de-para, vira LINK para a criatura de lá.
+// Os nomes lá às vezes têm sufixo ("Zangão Gigante", "Humanoide Robótico"),
+// e por isso a busca aceita começo de nome. Os dragões apontam para a página
+// "Dragões" do journal do Mestre de lá, onde está a tabela.
+//
+// Criatura sem par fica como texto, e o importador lista quais.
+
+const SD_BESTIARIO = path.join(ROOT, "..", "space-dragon-foundryvtt", "packs-src", "spacedragon-bestiario");
+const SD_JOURNAL = path.join(ROOT, "..", "space-dragon-foundryvtt", "packs-src", "spacedragon-journal");
+const semLink = [];
+
+function linkarBestiario(texto) {
+  const criaturas = fs.readdirSync(SD_BESTIARIO)
+    .map((f) => JSON.parse(fs.readFileSync(path.join(SD_BESTIARIO, f), "utf8")))
+    .filter((d) => d.type === "monster");
+  const achar = (nome) => {
+    const k = chaveDeNome(nome);
+    return criaturas.find((c) => chaveDeNome(c.name) === k) ?? criaturas.find((c) => chaveDeNome(c.name).startsWith(k + " "));
+  };
+  const link = (c, rotulo) => `@UUID[Compendium.spacedragon.spacedragon-bestiario.Actor.${c._id}]{${rotulo}}`;
+
+  // A página "Dragões" do journal do Mestre do Space Dragon.
+  let dragoes = null;
+  for (const f of fs.readdirSync(SD_JOURNAL)) {
+    const j = JSON.parse(fs.readFileSync(path.join(SD_JOURNAL, f), "utf8"));
+    const p = (j.pages ?? []).find((x) => x.name === "Dragões");
+    if (p) dragoes = `@UUID[Compendium.spacedragon.spacedragon-journal.JournalEntry.${j._id}.JournalEntryPage.${p._id}]`;
+  }
+  if (!dragoes) throw new Error('a página "Dragões" não está no journal do módulo Space Dragon');
+
+  const linhas = texto.split("\n");
+  const i = linhas.findIndex((l) => l.trim() === "## De-para: criaturas do SD → feras de Star Wars");
+  for (let j = i + 1; j < linhas.length && !/^##\s/.test(linhas[j]); j++) {
+    const l = linhas[j];
+    if (!l.startsWith("| ") || l.startsWith("| Space Dragon") || l.startsWith("|---")) continue;
+    const [, esquerda, ...resto] = l.split("|");
+    let nova;
+    if (/Dragões/.test(esquerda)) {
+      nova = esquerda.replace("**Dragões**", `**${dragoes}{Dragões}**`);
+    } else {
+      // "Autômato · Humanoide/Serviçal/…" — separa por · e por /, e troca cada
+      // nome pelo link, mantendo os separadores.
+      nova = esquerda.replace(/[^·/|]+/g, (pedaco) => {
+        const nome = pedaco.replace(/\*\*/g, "").trim();
+        if (!nome) return pedaco;
+        const c = achar(nome);
+        if (!c) { semLink.push(nome); return pedaco; }
+        return pedaco.replace(nome, link(c, nome));
+      });
+    }
+    linhas[j] = ["", nova, ...resto].join("|");
+  }
+
+  // Na Tabela dos Dragões, o nome da tabela vira o link.
+  return linhas.join("\n").replace(
+    "A **Tabela dos Dragões** do *SD* (Cap. 11)",
+    `A **${dragoes}{Tabela dos Dragões}** do *SD* (Cap. 11)`
+  );
+}
+
+/** O link para uma página do journal do módulo Space Dragon, pelo nome dela. */
+function paginaDoSD(nome) {
+  for (const f of fs.readdirSync(SD_JOURNAL)) {
+    const j = JSON.parse(fs.readFileSync(path.join(SD_JOURNAL, f), "utf8"));
+    const p = (j.pages ?? []).find((x) => x.name === nome);
+    if (p) return `@UUID[Compendium.spacedragon.spacedragon-journal.JournalEntry.${j._id}.JournalEntryPage.${p._id}]`;
+  }
+  throw new Error(`a página "${nome}" não está no journal do módulo Space Dragon`);
+}
+
+// ── Tabelas roláveis da Seção do Mestre ─────────────────────────────────────
+//
+// Cada "### Nome (dN)" seguido de lista numerada vira uma tabela de 1dN, com
+// um resultado por item. O PNJ relâmpago é outra forma: uma tabela só no
+// cofre com três colunas para rolar (espécie d8, papel d8, traço d10), e vira
+// três tabelas — é assim que se rola no Foundry.
+
+function tabelasDoMestre(texto) {
+  const subs = subsecoes(texto, "Tabelas de preparação").filter((s) => s.titulo);
+  const saida = [];
+  for (const s of subs) {
+    const dado = s.titulo.match(/\(d(\d+)\)/);
+    if (dado) {
+      const itens = s.md.split("\n").map((l) => l.match(/^(\d+)\.\s+(.*)$/)).filter(Boolean);
+      const faces = Number(dado[1]);
+      if (itens.length !== faces) throw new Error(`${s.titulo}: ${itens.length} itens para um d${faces}`);
+      saida.push({
+        nome: s.titulo.replace(/\s*\(d\d+\).*$/, "").trim(),
+        formula: `1d${faces}`,
+        resultados: itens.map((m) => ({ range: [Number(m[1]), Number(m[1])], text: md(m[2]) })),
+      });
+      continue;
+    }
+    if (/PNJ relâmpago/.test(s.titulo)) {
+      const t = tabelaApos(s.md, 0);
+      // | d8 | Espécie | Papel | d10 | Traço marcante |
+      const coluna = (iDado, iTexto) =>
+        t.linhas.filter((l) => /^\d+$/.test(l[iDado])).map((l) => ({ range: [Number(l[iDado]), Number(l[iDado])], text: md(l[iTexto]) }));
+      const esp = coluna(0, 1), papel = coluna(0, 2), traco = coluna(3, 4);
+      saida.push({ nome: "PNJ relâmpago — Espécie", formula: `1d${esp.length}`, resultados: esp });
+      saida.push({ nome: "PNJ relâmpago — Papel", formula: `1d${papel.length}`, resultados: papel });
+      saida.push({ nome: "PNJ relâmpago — Traço marcante", formula: `1d${traco.length}`, resultados: traco });
+    }
+  }
+  return saida;
+}
+
 // Quais seções de quais notas viram página. Nota nova entra aqui.
 const SECOES = {
   "SW-SUP-Usando-o-Basico": [
@@ -520,6 +633,22 @@ const SECOES = {
     "Ajuste de ritmo (leia se o combate ficar estático)",
     "Crédito",
   ],
+  "SW-SUP-Bestiario": [
+    "De-para: criaturas do SD → feras de Star Wars",
+    "As feras do livro, na mesa",
+    "Os Dragões da Galáxia (Tabela dos Dragões)",
+    "Modelos de PNJ (as classes como inimigos)",
+    "Crédito",
+  ],
+  "SW-SUP-Secao-do-Mestre": [
+    "O tom da mesa",
+    "As facções",
+    "Recompensas: Créditos e achados",
+    "Tabelas de preparação",
+    "Relíquias tecnológicas",
+    "Perigos do espaço",
+    "Palavra final — um compêndio em aberto",
+  ],
   "SW-SUP-Ordens-e-Ranks": [
     "A Ordem Jedi (Caminho da Luz)",
     "Os Sith — a Regra de Dois (Caminho da Sombra)",
@@ -532,12 +661,14 @@ const SECOES = {
     "Corrupção — Queda e Redenção",
     "A Tentação — a Corrupção como moeda",
     "Eco da Senda — o Alcance que volta",
+    "Nota de estrutura",
   ],
+  "SW-SUP-Classes": ["Resumo"],
 };
 
 const TEXTOS = {};
 for (const [nota, titulos] of Object.entries(SECOES)) {
-  const texto = ler(nota);
+  const texto = nota === "SW-SUP-Bestiario" ? linkarBestiario(ler(nota)) : ler(nota);
   TEXTOS[nota] = { "(abertura)": abertura(texto) };
   for (const t of titulos) TEXTOS[nota][t] = secao(texto, t);
 }
@@ -549,6 +680,9 @@ const SENDA = sendaDoCofre(ler("SW-SUP-Senda-Mandaloriana"));
 const ORIGEM = origemDoCofre(ler("SW-SUP-Senda-Mandaloriana"));
 const EQUIPAMENTOS = tabelasDaNota(ler("SW-SUP-Equipamentos"));
 const APARATOS = aparatosDoCofre(ler("SW-SUP-Aparatos-e-Feitos"));
+const TABELAS_MESTRE = tabelasDoMestre(ler("SW-SUP-Secao-do-Mestre"));
+// Páginas do journal do Space Dragon para onde o Suplemento manda o leitor.
+const LINKS_SD = { reliquias: paginaDoSD("Relíquias tecnológicas") };
 
 fs.writeFileSync(
   DESTINO_TEXTOS,
@@ -584,6 +718,12 @@ fs.writeFileSync(
     "// O catálogo de aparatos de SW-SUP-Aparatos-e-Feitos, cada um com o nativo.",
     `export const APARATOS = ${JSON.stringify(APARATOS, null, 2)};`,
     "",
+    "// As tabelas roláveis da Seção do Mestre.",
+    `export const TABELAS_MESTRE = ${JSON.stringify(TABELAS_MESTRE, null, 2)};`,
+    "",
+    "// Links para páginas do journal do módulo Space Dragon.",
+    `export const LINKS_SD = ${JSON.stringify(LINKS_SD, null, 2)};`,
+    "",
   ].join("\n"),
   "utf8"
 );
@@ -592,3 +732,5 @@ console.log(
   `  ✔ ${nSecoes} seções de ${Object.keys(TEXTOS).length} nota(s), ${ESPECIES.length} espécies e ` +
   `${PODERES.length} poderes → tools/data/textos-do-cofre.mjs`
 );
+
+if (semLink.length) console.log(`  ▲ criaturas do de-para sem ficha no módulo Space Dragon: ${semLink.join(", ")}`);

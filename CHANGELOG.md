@@ -1,5 +1,29 @@
 # Changelog
 
+## 1.0.0 — o Suplemento inteiro
+
+As 14 notas do cofre estão no módulo.
+
+- **Equipamentos:** 162 itens — armas corpo a corpo, sabres (com o Sabre
+  Sombrio), blasters, granadas e explosivos, vestes, aparelhos, medicina e 52
+  aparatos por NT, com o custo e o texto do aparato nativo. O CP das vestes
+  entra como bônus CP − 10, e a ficha chega ao CP do livro sozinha. O Soro
+  reanimador fica de fora: só existe na edição antiga do livro básico.
+- **Ficha de Nave:** tipo de ator próprio que roda o Combate Tático do
+  Suplemento — CP de Casco da Tabela 10-1 por tipo, dial único em 60°,
+  Sobrecarga, Esquiva antes do dano, crítico com a tabela de avarias, postos
+  e iniciativa. O esqueleto veio do Star Dragon; a regra é a do cofre.
+- **Bestiário:** journal com o de-para, e o nome nativo de cada criatura é um
+  link para a ficha dela no módulo Space Dragon — o cofre manda "não
+  reproduzir nada".
+- **Seção do Mestre:** journal e oito tabelas roláveis (ganchos, contratos,
+  complicações, locais, achados e o PNJ relâmpago em três colunas).
+- **Journals novos:** Equipamentos & Créditos, Aparatos e Feitos, Naves &
+  Veículos, Bestiário e Seção do Mestre; Resumo das Classes e Nota de
+  Estrutura.
+- Compêndio vazio não é declarado: Bestiário e Macros saíram do module.json,
+  e o build confere as duas pontas.
+
 ## 0.3.0 — Sabre, Senda Mandaloriana e Ordens
 
 - **Formas de Sabre:** as sete, uma habilidade cada com os degraus 5º/10º/20º

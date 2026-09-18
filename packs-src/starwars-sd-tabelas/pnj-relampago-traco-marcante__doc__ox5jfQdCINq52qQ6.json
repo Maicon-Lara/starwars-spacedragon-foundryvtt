@@ -1,0 +1,189 @@
+{
+  "folder": "HG1iDEoNoSy8sPzV",
+  "name": "PNJ relâmpago — Traço marcante",
+  "_id": "ox5jfQdCINq52qQ6",
+  "img": "systems/olddragon2e/assets/icons/d6.svg",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "_id": "CyibxymYg2jje6HB",
+      "name": "",
+      "description": "Cheio de cicatrizes",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!ox5jfQdCINq52qQ6.CyibxymYg2jje6HB"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "_id": "sm0zBTC0i5eIzSMJ",
+      "name": "",
+      "description": "Ganancioso",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!ox5jfQdCINq52qQ6.sm0zBTC0i5eIzSMJ"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "_id": "bUJHEDUAVK2yqAaW",
+      "name": "",
+      "description": "Leal até demais",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!ox5jfQdCINq52qQ6.bUJHEDUAVK2yqAaW"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "_id": "enMoy03HfXTvptdd",
+      "name": "",
+      "description": "Covarde, mas esperto",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!ox5jfQdCINq52qQ6.enMoy03HfXTvptdd"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "_id": "lSuSkeouXd1AWHZj",
+      "name": "",
+      "description": "Fala pelos cotovelos",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!ox5jfQdCINq52qQ6.lSuSkeouXd1AWHZj"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "_id": "mnHPpQ7ndWagIZ1l",
+      "name": "",
+      "description": "Devendo a alguém perigoso",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!ox5jfQdCINq52qQ6.mnHPpQ7ndWagIZ1l"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "drawn": false,
+      "_id": "EIpIXZnUq8DzLz7A",
+      "name": "",
+      "description": "Ex-militar amargurado",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!ox5jfQdCINq52qQ6.EIpIXZnUq8DzLz7A"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "drawn": false,
+      "_id": "xSoAl53GPEyyyTqL",
+      "name": "",
+      "description": "Esconde um segredo grave",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!ox5jfQdCINq52qQ6.xSoAl53GPEyyyTqL"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        9,
+        9
+      ],
+      "drawn": false,
+      "_id": "nqBdBGfzz0iRqe4M",
+      "name": "",
+      "description": "Viciado em apostas",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!ox5jfQdCINq52qQ6.nqBdBGfzz0iRqe4M"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        10,
+        10
+      ],
+      "drawn": false,
+      "_id": "AhEODibEsyoBQTmF",
+      "name": "",
+      "description": "Secretamente sensível à Força",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!ox5jfQdCINq52qQ6.AhEODibEsyoBQTmF"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "formula": "1d10",
+  "sort": 600000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!tables!ox5jfQdCINq52qQ6"
+}

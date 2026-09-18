@@ -11,6 +11,7 @@ import { TEXTOS } from "./textos-do-cofre.mjs";
 
 const usando = TEXTOS["SW-SUP-Usando-o-Basico"];
 const especies = TEXTOS["SW-SUP-Especies"];
+const classes = TEXTOS["SW-SUP-Classes"];
 
 // O Suplemento aponta para o livro básico. No Foundry, o livro básico é o
 // módulo Space Dragon — dizer isso uma vez, no topo, poupa a procura.
@@ -27,6 +28,7 @@ export const criacaoJournal = {
     { title: "Os Nomes dos Atributos", content: usando["Os nomes dos atributos"] },
     { title: "O que o Suplemento Acrescenta", content: usando["O que este suplemento acrescenta"] },
     { title: "Convenções", content: usando["Convenções deste livro"] },
+    { title: "Resumo das Classes", content: classes["(abertura)"] + classes["Resumo"] },
     { title: "Os Povos da Galáxia", content: especies["(abertura)"] },
     { title: "Idiomas da Galáxia", content: especies["Idiomas da galáxia"] },
     { title: "Nota de Conversão das Espécies", content: especies["Nota de conversão"] },

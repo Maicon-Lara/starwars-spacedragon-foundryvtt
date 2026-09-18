@@ -58,6 +58,7 @@ export const CORES_DE_PASTA = {
   "Cristais Kyber": "#366f69", // e o que a alimenta
   "Armaduras e Escudos": "#51687f",
   "Armaduras e Vestes": "#51687f",
+  "Preparação de Aventura": "#42679c",
   "Granadas e Explosivos": "#a14e43", // mesma família das armas
   "Aparelhos e Kits": "#62666c",
   "Medicina": "#4f6e4e",

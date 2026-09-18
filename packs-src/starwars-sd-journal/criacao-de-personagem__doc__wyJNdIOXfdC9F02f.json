@@ -153,9 +153,46 @@
     },
     {
       "sort": 500000,
+      "name": "Resumo das Classes",
+      "type": "text",
+      "_id": "hCUmeVDTL9LJPLX0",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><blockquote><p>As três classes não-sensitivas do <em>Space Dragon</em>, vestidas de Star Wars: <strong>Veterano</strong> (chassi <em>Cosmonauta</em>), <strong>Operativo</strong> (chassi <em>Gatuno</em>) e <strong>Técnico</strong> (chassi <em>Cientista</em>). A classe da Força tem arquivo próprio (O Sensível à Força).</p><p><strong>O que este capítulo faz.</strong> Ele <strong>renomeia e reveste</strong> as três classes do livro básico — não as substitui. A progressão vem repetida aqui só para você pendurar as habilidades do cenário nos níveis certos; <strong>tudo o que não estiver descrito neste capítulo continua valendo como está no <em>SD</em>, Cap. 3.</strong> Nível <strong>1 a 20</strong>, <strong>especializações no 5º nível</strong>, presas a uma <strong>Afiliação</strong> (Leal / Neutro / Rebelde — o Ordeiro/Neutro/Caótico do livro).</p></blockquote><table><thead><tr><th>Classe SW</th><th>Chassi SD</th><th>DV</th><th>Créditos iniciais</th><th>Afiliação das specs</th></tr></thead><tbody><tr><td><strong>Veterano</strong></td><td>Cosmonauta</td><td>d10</td><td>2d10 × 5.000</td><td>Emissário (Leal) · Mercenário (Neutro) · Caçador de Recompensas (Rebelde)</td></tr><tr><td><strong>Operativo</strong></td><td>Gatuno</td><td>d6</td><td>2d6 × 5.000</td><td>Espião (Leal) · Sabotador/Assassino (Neutro) · Contrabandista (Rebelde)</td></tr><tr><td><strong>Técnico</strong></td><td>Cientista</td><td>d8</td><td>1d8 × 5.000</td><td>Médico de Campo (Leal) · Engenheiro (Neutro) · Slicer (Rebelde)</td></tr><tr><td><strong>Sensível à Força</strong></td><td>Mentálico</td><td>d4</td><td>1d6 × 5.000</td><td>ver O Sensível à Força</td></tr></tbody></table></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!wyJNdIOXfdC9F02f.hCUmeVDTL9LJPLX0"
+    },
+    {
+      "sort": 600000,
       "name": "Os Povos da Galáxia",
       "type": "text",
-      "_id": "CkWl7leB6uZEuPH9",
+      "_id": "9WWWUWWfrr6pQq5A",
       "title": {
         "show": true,
         "level": 1
@@ -186,13 +223,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!wyJNdIOXfdC9F02f.CkWl7leB6uZEuPH9"
+      "_key": "!journal.pages!wyJNdIOXfdC9F02f.9WWWUWWfrr6pQq5A"
     },
     {
-      "sort": 600000,
+      "sort": 700000,
       "name": "Idiomas da Galáxia",
       "type": "text",
-      "_id": "bvk0JjyJ65drlSGi",
+      "_id": "yGA3pRa2mCB8SRrg",
       "title": {
         "show": true,
         "level": 1
@@ -223,13 +260,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!wyJNdIOXfdC9F02f.bvk0JjyJ65drlSGi"
+      "_key": "!journal.pages!wyJNdIOXfdC9F02f.yGA3pRa2mCB8SRrg"
     },
     {
-      "sort": 700000,
+      "sort": 800000,
       "name": "Nota de Conversão das Espécies",
       "type": "text",
-      "_id": "ahKPclCiEy684WwH",
+      "_id": "pu7D7J8EcmcJhxHH",
       "title": {
         "show": true,
         "level": 1
@@ -260,7 +297,7 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!wyJNdIOXfdC9F02f.ahKPclCiEy684WwH"
+      "_key": "!journal.pages!wyJNdIOXfdC9F02f.pu7D7J8EcmcJhxHH"
     }
   ],
   "flags": {},

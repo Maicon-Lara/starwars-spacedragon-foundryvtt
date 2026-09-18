@@ -264,9 +264,46 @@
     },
     {
       "sort": 800000,
+      "name": "Nota de Estrutura",
+      "type": "text",
+      "_id": "3YFNp8arBZHi2xbu",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>O Sensível à Força é o <strong>Mentálico do Space Dragon</strong> reskinado: os Poderes Mentais viram Poderes da Força (Grandezas 1ª–10ª), o <strong>alcance mental %</strong> é a economia, e o <strong>Intelecto</strong> rege tudo. As especializações são os arquétipos clássicos — <strong>Guardião</strong> (sabre), <strong>Consular</strong> (poderes), <strong>Sentinela</strong> (equilíbrio) e <strong>Vidente</strong> (o Radiestésico, o místico sem Ordem). Luz/Sombra e Corrupção correm por cima. A Tentação e o Eco da Senda são <strong>criações da casa</strong> (inspiradas no suplemento <em>Jedi e Sith para Space Dragon</em>, de Jonas Picholaro).</p></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!1JlIv8a86qnKAzzz.3YFNp8arBZHi2xbu"
+    },
+    {
+      "sort": 900000,
       "name": "Crédito",
       "type": "text",
-      "_id": "Ckt3tHGruQ1tXyAN",
+      "_id": "OOBb7mPO7BLynrpz",
       "title": {
         "show": true,
         "level": 1
@@ -297,7 +334,7 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!1JlIv8a86qnKAzzz.Ckt3tHGruQ1tXyAN"
+      "_key": "!journal.pages!1JlIv8a86qnKAzzz.OOBb7mPO7BLynrpz"
     }
   ],
   "flags": {},

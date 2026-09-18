@@ -1,0 +1,189 @@
+{
+  "folder": "DoiRLymY6D6jlUDD",
+  "name": "Achados / recompensas",
+  "_id": "hBDl8K4ibg2jcKuf",
+  "img": "systems/olddragon2e/assets/icons/d6.svg",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "_id": "zz3yZpOKHkg4cXPo",
+      "name": "",
+      "description": "Chips de crédito (role 1d6 × 100 CR por grau de perigo).",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!hBDl8K4ibg2jcKuf.zz3yZpOKHkg4cXPo"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "_id": "91KfCKNpGWzrqALm",
+      "name": "",
+      "description": "Um aparato útil (kit médico, sensor, mira a laser).",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!hBDl8K4ibg2jcKuf.91KfCKNpGWzrqALm"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "_id": "ALNEnHuhA8lOklWz",
+      "name": "",
+      "description": "Uma arma de energia melhor que a atual.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!hBDl8K4ibg2jcKuf.ALNEnHuhA8lOklWz"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "_id": "aFpgEhE8ts18azHN",
+      "name": "",
+      "description": "Peças de armadura — talvez um <strong>fragmento de Beskar</strong>.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!hBDl8K4ibg2jcKuf.aFpgEhE8ts18azHN"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "_id": "yiWwZJrBBIlSwHXm",
+      "name": "",
+      "description": "Um droide (astromecânico, protocolo ou de combate).",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!hBDl8K4ibg2jcKuf.yiWwZJrBBIlSwHXm"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "_id": "P4IB9a6wDljnXzED",
+      "name": "",
+      "description": "Dados ou códigos valiosos (vendáveis ou úteis).",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!hBDl8K4ibg2jcKuf.P4IB9a6wDljnXzED"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "drawn": false,
+      "_id": "EBjtfYqZCpIEwTCP",
+      "name": "",
+      "description": "Um <strong>cristal kyber</strong> bruto.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!hBDl8K4ibg2jcKuf.EBjtfYqZCpIEwTCP"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "drawn": false,
+      "_id": "v3I07npRb4Ojdb0y",
+      "name": "",
+      "description": "Um mapa/coordenadas para outro tesouro.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!hBDl8K4ibg2jcKuf.v3I07npRb4Ojdb0y"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        9,
+        9
+      ],
+      "drawn": false,
+      "_id": "cnkL2rEsR0wIQ68K",
+      "name": "",
+      "description": "Um <strong>artefato da Força</strong> (holocron, relíquia).",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!hBDl8K4ibg2jcKuf.cnkL2rEsR0wIQ68K"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        10,
+        10
+      ],
+      "drawn": false,
+      "_id": "MwDqwuKpzVH4TOw1",
+      "name": "",
+      "description": "Uma nave — ou a escritura de uma (ver Naves e Veículos).",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!hBDl8K4ibg2jcKuf.MwDqwuKpzVH4TOw1"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "formula": "1d10",
+  "sort": 800000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!tables!hBDl8K4ibg2jcKuf"
+}

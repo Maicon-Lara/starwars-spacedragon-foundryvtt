@@ -2,7 +2,7 @@
   "id": "starwars-sd",
   "title": "Star Wars — Suplemento para Space Dragon",
   "description": "Star Wars como suplemento de cenário para Space Dragon: as quatro classes (Veterano, Operativo, Técnico e Sensível à Força) sobre os chassis do Space Dragon, nível 1 a 20, com espécies da galáxia, os Poderes da Força em três correntes, sabre e cristais kyber, a Senda Mandaloriana, naves, bestiário e a Seção do Mestre. Não repete as regras: depende do módulo Space Dragon, que é o livro básico. Obra de fã, não oficial e sem fins lucrativos.",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "compatibility": {
     "minimum": "13",
     "verified": "13"
@@ -87,31 +87,12 @@
       "banner": "modules/starwars-sd/assets/banners/poderes.svg"
     },
     {
-      "name": "starwars-sd-bestiario",
-      "label": "Star Wars SD: Bestiário",
-      "path": "packs/starwars-sd-bestiario",
-      "type": "Actor",
-      "system": "olddragon2e",
-      "banner": "modules/starwars-sd/assets/banners/bestiario.svg"
-    },
-    {
       "name": "starwars-sd-journal",
       "label": "Star Wars SD: Referência do Mestre",
       "path": "packs/starwars-sd-journal",
       "type": "JournalEntry",
       "system": "olddragon2e",
       "banner": "modules/starwars-sd/assets/banners/journal.svg"
-    },
-    {
-      "name": "starwars-sd-macros",
-      "label": "Star Wars SD: Macros",
-      "path": "packs/starwars-sd-macros",
-      "type": "Macro",
-      "system": "olddragon2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      }
     },
     {
       "name": "starwars-sd-tabelas",
@@ -135,9 +116,7 @@
         "starwars-sd-classes",
         "starwars-sd-equipamentos",
         "starwars-sd-poderes",
-        "starwars-sd-bestiario",
         "starwars-sd-journal",
-        "starwars-sd-macros",
         "starwars-sd-tabelas"
       ]
     }

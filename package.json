@@ -1,6 +1,6 @@
 {
   "name": "starwars-spacedragon-foundryvtt",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "Módulo de conteúdo \"Star Wars — Suplemento para Space Dragon\" (Foundry VTT, sistema Old Dragon 2e, sobre o módulo Space Dragon).",
   "private": true,
   "type": "module",

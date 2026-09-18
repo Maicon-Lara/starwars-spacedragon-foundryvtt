@@ -1,0 +1,221 @@
+{
+  "folder": "DoiRLymY6D6jlUDD",
+  "name": "Ganchos de aventura",
+  "_id": "zuxJcLuoLQ1wahOm",
+  "img": "systems/olddragon2e/assets/icons/d6.svg",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "_id": "DPv9twO8Eo9k7er1",
+      "name": "",
+      "description": "Um cargueiro à deriva emite um sinal de socorro automático — e ninguém responde.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!zuxJcLuoLQ1wahOm.DPv9twO8Eo9k7er1"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "_id": "QTgeQgx2OEQ4iUKa",
+      "name": "",
+      "description": "Uma recompensa foi colocada sobre a cabeça de um dos PCs (justa ou não).",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!zuxJcLuoLQ1wahOm.QTgeQgx2OEQ4iUKa"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "_id": "g6spnDSmBcSiTSj8",
+      "name": "",
+      "description": "Um contato pede que transportem uma carga \"que não deve ser inspecionada\".",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!zuxJcLuoLQ1wahOm.g6spnDSmBcSiTSj8"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "_id": "jjmU33FZqumdPQHK",
+      "name": "",
+      "description": "Um Holocron perdido surge no mercado negro — e mais de uma facção o quer.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!zuxJcLuoLQ1wahOm.jjmU33FZqumdPQHK"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "_id": "ROY8x33JmQexXCw6",
+      "name": "",
+      "description": "Uma colônia de fronteira parou de responder às transmissões.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!zuxJcLuoLQ1wahOm.ROY8x33JmQexXCw6"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "_id": "JzGFngAXreC99lm3",
+      "name": "",
+      "description": "Um oficial imperial deserta e oferece códigos em troca de extração.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!zuxJcLuoLQ1wahOm.JzGFngAXreC99lm3"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "drawn": false,
+      "_id": "RfumZDeS7pwct5w6",
+      "name": "",
+      "description": "Um antigo mestre (Jedi ou Sith) reaparece com um pedido — ou uma cobrança.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!zuxJcLuoLQ1wahOm.RfumZDeS7pwct5w6"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "drawn": false,
+      "_id": "TlNqAvpMekndlmqY",
+      "name": "",
+      "description": "Uma dívida com um Hutt venceu, e o cobrador não aceita mais desculpas.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!zuxJcLuoLQ1wahOm.TlNqAvpMekndlmqY"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        9,
+        9
+      ],
+      "drawn": false,
+      "_id": "MvlTfER48GJw2OLQ",
+      "name": "",
+      "description": "Ruínas de uma civilização pré-República foram achadas num mundo proibido.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!zuxJcLuoLQ1wahOm.MvlTfER48GJw2OLQ"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        10,
+        10
+      ],
+      "drawn": false,
+      "_id": "Iyl4BHFGDwl6O56Y",
+      "name": "",
+      "description": "Um cristal kyber bruto foi localizado — e um Inquisidor está a caminho.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!zuxJcLuoLQ1wahOm.Iyl4BHFGDwl6O56Y"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        11,
+        11
+      ],
+      "drawn": false,
+      "_id": "UE4oIFFcGJYTMprp",
+      "name": "",
+      "description": "Uma nave-prisão sofre um motim durante o transporte dos PCs (ou de um aliado).",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!zuxJcLuoLQ1wahOm.UE4oIFFcGJYTMprp"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        12,
+        12
+      ],
+      "drawn": false,
+      "_id": "XlazsKgJNQHoHoa4",
+      "name": "",
+      "description": "Alguém está roubando a identidade de um PC pela galáxia.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!zuxJcLuoLQ1wahOm.XlazsKgJNQHoHoa4"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "formula": "1d12",
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!tables!zuxJcLuoLQ1wahOm"
+}

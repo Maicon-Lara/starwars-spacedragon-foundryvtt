@@ -368,9 +368,24 @@ function buildMacrosDocs() {
   return macros.map((m, i) => macroDoc(m, null, (i + 1) * 100000));
 }
 
+// Os packs que o module.json declara. Pack sem documento NÃO é declarado —
+// um compêndio vazio na barra lateral parece conteúdo perdido — e o build
+// confere as duas pontas: não declara vazio, nem deixa de declarar cheio.
+const DECLARADOS = new Set(
+  JSON.parse(fs.readFileSync(path.join(ROOT, "starwars-sd-module", "module.json"), "utf8")).packs.map((p) => p.name)
+);
+
 async function compile(packName, docs) {
   const srcDir = path.join(SRC, packName);
   const outDir = path.join(OUT, packName);
+  if (!docs.length) {
+    if (DECLARADOS.has(packName)) throw new Error(`${packName} está vazio e declarado no module.json — tire a declaração`);
+    fs.rmSync(srcDir, { recursive: true, force: true });
+    fs.rmSync(outDir, { recursive: true, force: true });
+    console.log(`  · ${packName}: vazio, não compilado`);
+    return;
+  }
+  if (!DECLARADOS.has(packName)) throw new Error(`${packName} tem ${docs.length} documentos e não está no module.json`);
   // Converte a hierarquia dos NOMES ("Sensível à Força — Guardião") em pastas
   // aninhadas de verdade. Vale para todos os packs, por isso mora aqui.
   const arvore = aninhaPastas(docs);

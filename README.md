@@ -30,8 +30,8 @@ Cada nota vira um arquivo em `tools/data/`:
 | SW-SUP-Aparatos-e-Feitos | `equipamentos.mjs`, `feitos-journal.mjs` | Equipamentos |
 | SW-SUP-Poderes-da-Forca | `poderes.mjs` | Poderes da Força |
 | SW-SUP-Forca, SW-SUP-Ordens-e-Ranks | `poderes.mjs` (journal) | Referência do Mestre |
-| SW-SUP-Naves, SW-SUP-Combate-Tatico-de-Naves | `naves.mjs` | Referência do Mestre |
-| SW-SUP-Bestiario | `bestiario.mjs`, `bestiario-journal.mjs` | Bestiário |
+| SW-SUP-Naves, SW-SUP-Combate-Tatico-de-Naves | `naves.mjs` e a ficha de Nave (`module/nave-*.js`) | Referência do Mestre |
+| SW-SUP-Bestiario | `bestiario-journal.mjs` (links para o Bestiário do Space Dragon) | Referência do Mestre |
 | SW-SUP-Secao-do-Mestre | `mestre-journal.mjs`, `tabelas.mjs` | Referência do Mestre / Tabelas |
 
 O cofre é **só leitura**: o módulo copia dele, nunca escreve nele.
@@ -54,16 +54,18 @@ A mesma do Star Dragon, para quem mexe num achar as coisas no outro:
 starwars-sd-module/       o que vai para o Foundry
   module.json
   module/starwars-sd.js   só o que é do cenário (game.starwarsSD)
+  module/nave-*.js        a ficha de Nave: modelo, ficha e movimento no hex
   styles/starwars-sd.css  só os journals; a ficha é a do Space Dragon
   lang/                   só chaves "starwars-sd.*", nada global
   assets/banners/         capas dos compêndios (geradas)
-  templates/
+  templates/nave.hbs      o template da ficha de Nave
   packs/                  LevelDB (gerado)
 packs-src/                fonte JSON dos compêndios (gerada, versionada)
 tools/
   build.mjs               tools/data → packs-src → packs
   lib.mjs, lib-actors.mjs construtores de documento
   validar.mjs             pega o que compila mas quebra na mesa
+  teste-nave.mjs          a regra da Nave, com um Foundry simulado
   make-zip.py             starwars-sd.zip
   make-banners.mjs        capas
   importar-cofre.mjs      cofre (e poderes do Space Dragon) → tools/data/
@@ -76,7 +78,7 @@ tools/
 ```
 npm install          # uma vez: instala o foundryvtt-cli
 npm run build        # gera os compêndios
-npm run validar      # build + validação
+npm run validar      # build + validação + teste da Nave
 npm run banners      # regera as capas
 npm run empacotar    # gera starwars-sd.zip
 ```

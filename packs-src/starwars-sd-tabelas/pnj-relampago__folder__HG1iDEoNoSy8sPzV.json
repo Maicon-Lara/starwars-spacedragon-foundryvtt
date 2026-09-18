@@ -1,0 +1,22 @@
+{
+  "name": "PNJ Relâmpago",
+  "sorting": "m",
+  "folder": "DoiRLymY6D6jlUDD",
+  "type": "RollTable",
+  "_id": "HG1iDEoNoSy8sPzV",
+  "description": "",
+  "sort": 0,
+  "color": "#42679c",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1"
+  },
+  "_key": "!folders!HG1iDEoNoSy8sPzV"
+}
