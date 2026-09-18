@@ -1,0 +1,116 @@
+/* Star Wars — Suplemento para Space Dragon
+ *
+ * Uma camada só: .starwars-sd-doc, o conteúdo dos journals deste módulo
+ * (container posto por journalDoc()). Sem esse escopo, estilizar tabela e
+ * título vazaria para os journals do sistema e de outros módulos.
+ *
+ * Não há tema de ficha aqui, e é de propósito: a ficha é a do módulo Space
+ * Dragon, com o tema dele. Dois temas brigando na mesma janela é o que o
+ * Star Dragon e o Space Dragon tiveram de desembaraçar na 1.5.0.
+ *
+ * As regras abaixo são as do journal do Star Dragon, com as cores trocadas
+ * pelas das capas deste módulo (brasa e o amarelo do letreiro). Toda cor mora
+ * no bloco :root.
+ */
+
+:root {
+  --starwars-sd-titulo: #3b1d10;       /* títulos e cabeçalho de tabela */
+  --starwars-sd-texto-claro: #f5efe6;  /* sobre o cabeçalho de tabela   */
+  --starwars-sd-ouro: #a8801c;         /* fio de destaque               */
+  --starwars-sd-acento: #8a3f1c;       /* subtítulos e marcadores       */
+  --starwars-sd-linha: rgba(59, 29, 16, 0.25);
+  --starwars-sd-zebra: rgba(59, 29, 16, 0.06);
+  --starwars-sd-aviso-fundo: rgba(232, 197, 71, 0.14);
+}
+
+/* ── Títulos ───────────────────────────────────────────────────────────── */
+
+.starwars-sd-doc h2 {
+  margin: 1.4em 0 0.5em;
+  padding-bottom: 0.2em;
+  border-bottom: 2px solid var(--starwars-sd-titulo);
+  color: var(--starwars-sd-titulo);
+  font-variant: small-caps;
+  letter-spacing: 0.02em;
+}
+
+.starwars-sd-doc h3 {
+  margin: 1.1em 0 0.4em;
+  color: var(--starwars-sd-acento);
+}
+
+/* ── Tabelas ───────────────────────────────────────────────────────────── */
+
+.starwars-sd-doc table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.8em 0;
+  font-size: 0.95em;
+}
+
+.starwars-sd-doc thead th {
+  background: var(--starwars-sd-titulo);
+  color: var(--starwars-sd-texto-claro);
+  text-align: left;
+  font-variant: small-caps;
+  letter-spacing: 0.03em;
+}
+
+.starwars-sd-doc th,
+.starwars-sd-doc td {
+  padding: 0.35em 0.6em;
+  border: 1px solid var(--starwars-sd-linha);
+  vertical-align: top;
+}
+
+.starwars-sd-doc tbody tr:nth-child(even) {
+  background: var(--starwars-sd-zebra);
+}
+
+/* A primeira coluna quase sempre é o rótulo da linha (tipo de nave, faixa de
+   teste, classe de equivalência) — destacá-la faz a tabela ser lida em L. */
+.starwars-sd-doc tbody td:first-child {
+  font-weight: 600;
+  color: var(--starwars-sd-acento);
+}
+
+/* Tabela larga não pode empurrar a página: rola dentro do próprio bloco. */
+.starwars-sd-doc table {
+  display: block;
+  overflow-x: auto;
+}
+
+/* ── Avisos ────────────────────────────────────────────────────────────── */
+
+.starwars-sd-doc .starwars-sd-aviso {
+  margin: 0.8em 0;
+  padding: 0.6em 0.8em;
+  border-left: 4px solid var(--starwars-sd-ouro);
+  background: var(--starwars-sd-aviso-fundo);
+  border-radius: 0 3px 3px 0;
+}
+
+/* ── Listas e ênfase ───────────────────────────────────────────────────── */
+
+.starwars-sd-doc ul,
+.starwars-sd-doc ol {
+  margin: 0.6em 0;
+  padding-left: 1.4em;
+}
+
+.starwars-sd-doc li {
+  margin: 0.25em 0;
+}
+
+.starwars-sd-doc li > strong:first-child {
+  color: var(--starwars-sd-acento);
+}
+
+/* Nota autoral em itálico solto no fim da seção: recua e esmaece um pouco,
+   para separar comentário de regra. */
+.starwars-sd-doc p > em:only-child {
+  display: inline-block;
+  padding-left: 0.6em;
+  border-left: 2px solid var(--starwars-sd-linha);
+  opacity: 0.85;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "starwars-spacedragon-foundryvtt",
+  "version": "0.1.0",
+  "description": "Módulo de conteúdo \"Star Wars — Suplemento para Space Dragon\" (Foundry VTT, sistema Old Dragon 2e, sobre o módulo Space Dragon).",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "validar": "node tools/build.mjs && node tools/validar.mjs",
+    "banners": "node tools/make-banners.mjs",
+    "empacotar": "python tools/make-zip.py",
+    "extract": "node tools/extract.mjs"
+  },
+  "author": "Maicon Lara",
+  "license": "MIT",
+  "devDependencies": {
+    "@foundryvtt/foundryvtt-cli": "^3.0.3"
+  }
+}

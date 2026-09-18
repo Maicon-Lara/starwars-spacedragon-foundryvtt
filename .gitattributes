@@ -1,0 +1,4 @@
+# Os compêndios são bancos LevelDB: arquivos binários que NÃO podem sofrer
+# conversão de fim de linha (LF<->CRLF), sob pena de corromper os packs.
+starwars-sd-module/packs/** -text -diff
+*.zip -text -diff

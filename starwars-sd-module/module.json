@@ -1,0 +1,149 @@
+{
+  "id": "starwars-sd",
+  "title": "Star Wars — Suplemento para Space Dragon",
+  "description": "Star Wars como suplemento de cenário para Space Dragon: as quatro classes (Veterano, Operativo, Técnico e Sensível à Força) sobre os chassis do Space Dragon, nível 1 a 20, com espécies da galáxia, os Poderes da Força em três correntes, sabre e cristais kyber, a Senda Mandaloriana, naves, bestiário e a Seção do Mestre. Não repete as regras: depende do módulo Space Dragon, que é o livro básico. Obra de fã, não oficial e sem fins lucrativos.",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "esmodules": [
+    "module/starwars-sd.js"
+  ],
+  "styles": [
+    "styles/starwars-sd.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Maicon Lara"
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "olddragon2e",
+        "type": "system",
+        "manifest": "https://github.com/olddragoneditora/olddragon2e-foundryvtt/releases/latest/download/olddragon2e.json",
+        "compatibility": {
+          "minimum": "2.0.0",
+          "verified": "2.6.0"
+        }
+      }
+    ],
+    "requires": [
+      {
+        "id": "spacedragon",
+        "type": "module",
+        "manifest": "https://github.com/Maicon-Lara/space-dragon-foundryvtt/releases/latest/download/module.json",
+        "compatibility": {
+          "minimum": "1.5.0"
+        }
+      }
+    ]
+  },
+  "packs": [
+    {
+      "name": "starwars-sd-especies",
+      "label": "Star Wars SD: Espécies",
+      "path": "packs/starwars-sd-especies",
+      "type": "Item",
+      "system": "olddragon2e",
+      "banner": "modules/starwars-sd/assets/banners/especies.svg"
+    },
+    {
+      "name": "starwars-sd-classes",
+      "label": "Star Wars SD: Classes",
+      "path": "packs/starwars-sd-classes",
+      "type": "Item",
+      "system": "olddragon2e",
+      "banner": "modules/starwars-sd/assets/banners/classes.svg"
+    },
+    {
+      "name": "starwars-sd-equipamentos",
+      "label": "Star Wars SD: Equipamentos",
+      "path": "packs/starwars-sd-equipamentos",
+      "type": "Item",
+      "system": "olddragon2e",
+      "banner": "modules/starwars-sd/assets/banners/equipamentos.svg"
+    },
+    {
+      "name": "starwars-sd-poderes",
+      "label": "Star Wars SD: Poderes da Força",
+      "path": "packs/starwars-sd-poderes",
+      "type": "Item",
+      "system": "olddragon2e",
+      "banner": "modules/starwars-sd/assets/banners/poderes.svg"
+    },
+    {
+      "name": "starwars-sd-bestiario",
+      "label": "Star Wars SD: Bestiário",
+      "path": "packs/starwars-sd-bestiario",
+      "type": "Actor",
+      "system": "olddragon2e",
+      "banner": "modules/starwars-sd/assets/banners/bestiario.svg"
+    },
+    {
+      "name": "starwars-sd-journal",
+      "label": "Star Wars SD: Referência do Mestre",
+      "path": "packs/starwars-sd-journal",
+      "type": "JournalEntry",
+      "system": "olddragon2e",
+      "banner": "modules/starwars-sd/assets/banners/journal.svg"
+    },
+    {
+      "name": "starwars-sd-macros",
+      "label": "Star Wars SD: Macros",
+      "path": "packs/starwars-sd-macros",
+      "type": "Macro",
+      "system": "olddragon2e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "starwars-sd-tabelas",
+      "label": "Star Wars SD: Tabelas",
+      "path": "packs/starwars-sd-tabelas",
+      "type": "RollTable",
+      "system": "olddragon2e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "Star Wars (Space Dragon)",
+      "sorting": "m",
+      "color": "#6b2f17",
+      "packs": [
+        "starwars-sd-especies",
+        "starwars-sd-classes",
+        "starwars-sd-equipamentos",
+        "starwars-sd-poderes",
+        "starwars-sd-bestiario",
+        "starwars-sd-journal",
+        "starwars-sd-macros",
+        "starwars-sd-tabelas"
+      ]
+    }
+  ],
+  "url": "https://github.com/Maicon-Lara/starwars-spacedragon-foundryvtt",
+  "manifest": "https://github.com/Maicon-Lara/starwars-spacedragon-foundryvtt/releases/latest/download/module.json",
+  "download": "https://github.com/Maicon-Lara/starwars-spacedragon-foundryvtt/releases/latest/download/starwars-sd.zip",
+  "changelog": "https://github.com/Maicon-Lara/starwars-spacedragon-foundryvtt/blob/main/CHANGELOG.md"
+}
