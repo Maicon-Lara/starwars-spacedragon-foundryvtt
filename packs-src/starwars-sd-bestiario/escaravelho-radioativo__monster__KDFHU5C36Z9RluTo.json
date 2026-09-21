@@ -1,0 +1,163 @@
+{
+  "name": "Escaravelho radioativo",
+  "type": "monster",
+  "_id": "KDFHU5C36Z9RluTo",
+  "img": "systems/olddragon2e/assets/monsters-concepts/inseto-grande.webp",
+  "system": {
+    "odo_id": "escaravelho-radioativo",
+    "concept": "Inseto",
+    "size": "grande",
+    "description": "<p><em>Ficha do <strong>Space Dragon</strong>, Cap. 11, apresentada com o nome da galáxia.</em></p>",
+    "alignment": "neutro",
+    "mv": "6",
+    "mvv": "4",
+    "dv": "5",
+    "dv_bonus": "+2",
+    "hp": {
+      "value": 42,
+      "max": 42
+    },
+    "ca": "14",
+    "jp": "16",
+    "mo": "60%",
+    "xp": "405"
+  },
+  "prototypeToken": {
+    "name": "Escaravelho radioativo",
+    "displayName": 20,
+    "actorLink": false,
+    "appendNumber": false,
+    "prependAdjective": false,
+    "texture": {
+      "src": "systems/olddragon2e/assets/monsters-concepts/inseto-grande.webp",
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 0,
+      "offsetY": 0,
+      "rotation": 0
+    },
+    "width": 2,
+    "height": 2,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 40,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "color": null,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [
+    {
+      "_id": "UmprrpBSIB7HSStI",
+      "name": "1 × pinça +6 (1d6+4 + radiação 15%)",
+      "type": "monster_attack",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "times": 1,
+        "ba": 6,
+        "damage_bonus": 4,
+        "weapon": false,
+        "description": "pinça",
+        "damage_description": "1d6+4 + radiação 15%",
+        "damage": "1d6"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 100000,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!actors.items!KDFHU5C36Z9RluTo.UmprrpBSIB7HSStI"
+    }
+  ],
+  "effects": [],
+  "folder": "Bzm05R2P1gMjKefn",
+  "flags": {
+    "core": {
+      "sheetClass": "spacedragon.SDMonsterSheet"
+    },
+    "spacedragon": {
+      "ameaca": {
+        "cientifico": "",
+        "atributos": {
+          "FOR": 12,
+          "DES": 10,
+          "CON": 14,
+          "INT": 2,
+          "CIE": 0,
+          "COM": 0
+        },
+        "rm": "",
+        "rd": ""
+      }
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 800000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!actors!KDFHU5C36Z9RluTo"
+}

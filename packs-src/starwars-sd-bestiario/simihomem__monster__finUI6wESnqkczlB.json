@@ -1,0 +1,196 @@
+{
+  "name": "Simihomem",
+  "type": "monster",
+  "_id": "finUI6wESnqkczlB",
+  "img": "systems/olddragon2e/assets/monsters-concepts/humanoide-medio.webp",
+  "system": {
+    "odo_id": "simihomem",
+    "concept": "Humanoide",
+    "size": "medio",
+    "description": "<p><strong>Resistência mental</strong> 5%</p><p><em>Ficha do <strong>Space Dragon</strong>, Cap. 11, apresentada com o nome da galáxia.</em></p>",
+    "alignment": "neutro",
+    "mv": "9",
+    "dv": "5",
+    "dv_bonus": "+2",
+    "hp": {
+      "value": 42,
+      "max": 42
+    },
+    "ca": "14",
+    "jp": "14",
+    "mo": "80%",
+    "xp": "450"
+  },
+  "prototypeToken": {
+    "name": "Simihomem",
+    "displayName": 20,
+    "actorLink": false,
+    "appendNumber": false,
+    "prependAdjective": false,
+    "texture": {
+      "src": "systems/olddragon2e/assets/monsters-concepts/humanoide-medio.webp",
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 0,
+      "offsetY": 0,
+      "rotation": 0
+    },
+    "width": 1,
+    "height": 1,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 40,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "color": null,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [
+    {
+      "_id": "q3SGnAdObOnJ0CC6",
+      "name": "1 × espada +6 (1d8+4)",
+      "type": "monster_attack",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "times": 1,
+        "ba": 6,
+        "damage_bonus": 4,
+        "weapon": false,
+        "description": "espada",
+        "damage_description": "1d8+4",
+        "damage": "1d8"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 100000,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!actors.items!finUI6wESnqkczlB.q3SGnAdObOnJ0CC6"
+    },
+    {
+      "_id": "bVNM7bge0yMnWuXz",
+      "name": "1 × zarabatana +3 (1d4 + veneno)",
+      "type": "monster_attack",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "times": 1,
+        "ba": 3,
+        "damage_bonus": 0,
+        "weapon": false,
+        "description": "zarabatana",
+        "damage_description": "1d4 + veneno",
+        "damage": "1d4"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 200000,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!actors.items!finUI6wESnqkczlB.bVNM7bge0yMnWuXz"
+    }
+  ],
+  "effects": [],
+  "folder": "Bzm05R2P1gMjKefn",
+  "flags": {
+    "core": {
+      "sheetClass": "spacedragon.SDMonsterSheet"
+    },
+    "spacedragon": {
+      "ameaca": {
+        "cientifico": "",
+        "atributos": {
+          "FOR": 18,
+          "DES": 14,
+          "CON": 14,
+          "INT": 11,
+          "CIE": 5,
+          "COM": 12
+        },
+        "rm": "5%",
+        "rd": ""
+      }
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 3700000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!actors!finUI6wESnqkczlB"
+}

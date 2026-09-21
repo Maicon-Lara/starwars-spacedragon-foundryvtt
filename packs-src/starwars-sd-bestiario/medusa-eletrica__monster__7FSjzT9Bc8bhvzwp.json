@@ -1,0 +1,160 @@
+{
+  "name": "Medusa elétrica",
+  "type": "monster",
+  "_id": "7FSjzT9Bc8bhvzwp",
+  "img": "systems/olddragon2e/assets/monsters-concepts/inseto-pequeno.webp",
+  "system": {
+    "odo_id": "medusa-eletrica",
+    "concept": "Inseto",
+    "size": "pequeno",
+    "description": "<p><em>Ficha do <strong>Space Dragon</strong>, Cap. 11, apresentada com o nome da galáxia.</em></p>\n<ul>\n  <li><p><strong>sem cérebro</strong></p></li>\n</ul>\n<p>1 ponto de vida, sem dado de vida.</p>",
+    "alignment": "neutro",
+    "mv": "6",
+    "hp": {
+      "value": 1,
+      "max": 1
+    },
+    "ca": "11",
+    "jp": "19",
+    "mo": "100%",
+    "xp": "10"
+  },
+  "prototypeToken": {
+    "name": "Medusa elétrica",
+    "displayName": 20,
+    "actorLink": false,
+    "appendNumber": false,
+    "prependAdjective": false,
+    "texture": {
+      "src": "systems/olddragon2e/assets/monsters-concepts/inseto-pequeno.webp",
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 0,
+      "offsetY": 0,
+      "rotation": 0
+    },
+    "width": 1,
+    "height": 1,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 40,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "color": null,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [
+    {
+      "_id": "ar6ZNfDwKrLXHDkj",
+      "name": "1 × tentáculo +0 (1d4 elétrico)",
+      "type": "monster_attack",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "times": 1,
+        "ba": 0,
+        "damage_bonus": 0,
+        "weapon": false,
+        "description": "tentáculo",
+        "damage_description": "1d4 elétrico",
+        "damage": "1d4"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 100000,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!actors.items!7FSjzT9Bc8bhvzwp.ar6ZNfDwKrLXHDkj"
+    }
+  ],
+  "effects": [],
+  "folder": "Bzm05R2P1gMjKefn",
+  "flags": {
+    "core": {
+      "sheetClass": "spacedragon.SDMonsterSheet"
+    },
+    "spacedragon": {
+      "ameaca": {
+        "cientifico": "",
+        "atributos": {
+          "FOR": 2,
+          "DES": 12,
+          "CON": 2,
+          "INT": 0,
+          "CIE": 0,
+          "COM": 0
+        },
+        "rm": "",
+        "rd": ""
+      }
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 2400000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!actors!7FSjzT9Bc8bhvzwp"
+}

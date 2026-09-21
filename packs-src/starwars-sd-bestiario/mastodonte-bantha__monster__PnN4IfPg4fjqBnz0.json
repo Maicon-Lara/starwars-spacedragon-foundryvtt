@@ -1,0 +1,162 @@
+{
+  "name": "Mastodonte (Bantha)",
+  "type": "monster",
+  "_id": "PnN4IfPg4fjqBnz0",
+  "img": "systems/olddragon2e/assets/monsters-concepts/besta-imenso.webp",
+  "system": {
+    "odo_id": "mastodonte-bantha",
+    "concept": "Besta",
+    "size": "imenso",
+    "description": "<p><em>Ficha do <strong>Space Dragon</strong>, Cap. 11, apresentada com o nome da galáxia.</em></p>\n<ul>\n  <li><p><strong>atropelar</strong></p></li>\n</ul>\n<p>Movimento: estouro 15.</p>",
+    "alignment": "neutro",
+    "mv": "10",
+    "dv": "12",
+    "dv_bonus": "+5",
+    "hp": {
+      "value": 101,
+      "max": 101
+    },
+    "ca": "15",
+    "jp": "11",
+    "mo": "80%",
+    "xp": "2.075"
+  },
+  "prototypeToken": {
+    "name": "Mastodonte (Bantha)",
+    "displayName": 20,
+    "actorLink": false,
+    "appendNumber": false,
+    "prependAdjective": false,
+    "texture": {
+      "src": "systems/olddragon2e/assets/monsters-concepts/besta-imenso.webp",
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 0,
+      "offsetY": 0,
+      "rotation": 0
+    },
+    "width": 3,
+    "height": 3,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 40,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "color": null,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [
+    {
+      "_id": "qJZ3JHTErjWhJW46",
+      "name": "1 × presas +14 (2d8+8 + arremesso)",
+      "type": "monster_attack",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "times": 1,
+        "ba": 14,
+        "damage_bonus": 8,
+        "weapon": false,
+        "description": "presas",
+        "damage_description": "2d8+8 + arremesso",
+        "damage": "2d8"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 100000,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!actors.items!PnN4IfPg4fjqBnz0.qJZ3JHTErjWhJW46"
+    }
+  ],
+  "effects": [],
+  "folder": "Bzm05R2P1gMjKefn",
+  "flags": {
+    "core": {
+      "sheetClass": "spacedragon.SDMonsterSheet"
+    },
+    "spacedragon": {
+      "ameaca": {
+        "cientifico": "",
+        "atributos": {
+          "FOR": 26,
+          "DES": 14,
+          "CON": 20,
+          "INT": 4,
+          "CIE": 0,
+          "COM": 4
+        },
+        "rm": "",
+        "rd": ""
+      }
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 2100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!actors!PnN4IfPg4fjqBnz0"
+}

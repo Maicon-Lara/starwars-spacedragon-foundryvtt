@@ -1,0 +1,126 @@
+{
+  "name": "Devorador de mentes",
+  "type": "monster",
+  "_id": "jRHrNKeP9ltJa08w",
+  "img": "systems/olddragon2e/assets/monsters-concepts/humanoide_monstruoso-pequeno.webp",
+  "system": {
+    "odo_id": "devorador-de-mentes",
+    "concept": "Humanoide Monstruoso",
+    "size": "pequeno",
+    "description": "<p><em>Ficha do <strong>Space Dragon</strong>, Cap. 11, apresentada com o nome da galáxia.</em></p>\n<ul>\n  <li><p><strong>poderes da Força até 3ª Grandeza</strong></p></li>\n  <li><p><strong>levita</strong></p></li>\n</ul>",
+    "alignment": "caotico",
+    "mv": "9",
+    "dv": "3",
+    "hp": {
+      "value": 24,
+      "max": 24
+    },
+    "ca": "12",
+    "jp": "17",
+    "mo": "80%",
+    "xp": "175"
+  },
+  "prototypeToken": {
+    "name": "Devorador de mentes",
+    "displayName": 20,
+    "actorLink": false,
+    "appendNumber": false,
+    "prependAdjective": false,
+    "texture": {
+      "src": "systems/olddragon2e/assets/monsters-concepts/humanoide_monstruoso-pequeno.webp",
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 0,
+      "offsetY": 0,
+      "rotation": 0
+    },
+    "width": 1,
+    "height": 1,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 40,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "color": null,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [],
+  "effects": [],
+  "folder": "Bzm05R2P1gMjKefn",
+  "flags": {
+    "core": {
+      "sheetClass": "spacedragon.SDMonsterSheet"
+    },
+    "spacedragon": {
+      "ameaca": {
+        "cientifico": "",
+        "atributos": {
+          "FOR": 5,
+          "DES": 10,
+          "CON": 4,
+          "INT": 16,
+          "CIE": 14,
+          "COM": 12
+        },
+        "rm": "",
+        "rd": ""
+      }
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 500000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!actors!jRHrNKeP9ltJa08w"
+}

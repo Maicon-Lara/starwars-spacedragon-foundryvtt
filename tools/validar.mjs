@@ -493,6 +493,51 @@ prosaSolta();
   }
 }
 
+// ── Bestiário: os números são os do livro ──────────────────────────────────
+//
+// O roster do cofre é o Cap. 11 vestido de Star Wars, e a conferência é contra
+// o livro, lido à mão. Se o cofre mudar um número por engano, o build para
+// aqui — é o único lugar onde esse erro apareceria antes da mesa.
+{
+  const criaturas = docs.filter((d) => d.type === "monster");
+  const por = new Map(criaturas.map((c) => [c.name, c]));
+  const CASOS = [
+    ["Glacioprimata (Wampa)", { ca: "14", jp: "13", mo: "80%", xp: "875", dv: "8", dv_bonus: "+3" }, 67, 2],
+    ["Megassauro (Rancor)", { ca: "16", jp: "12", mo: "90%", xp: "1.975" }, 102, 2],
+    ["Tiranossauro", { ca: "15", jp: "11", mo: "90%", xp: "2.615" }, 116, 2],
+    ["Zork", { ca: "15", jp: "16", mo: "70%", xp: "37" }, 9, 2],
+    ["Medusa elétrica", { ca: "11", jp: "19", mo: "100%", xp: "10" }, 1, 1],
+  ];
+  for (const [nome, campos, pv, ataques] of CASOS) {
+    const c = por.get(nome);
+    if (!c) { erro("bestiario-incompleto", { name: nome }, `${nome} não está no bestiário`); continue; }
+    for (const [campo, esperado] of Object.entries(campos)) {
+      if (String(c.system[campo] ?? "") !== esperado) {
+        erro("bestiario-valor", c, `${campo} é "${c.system[campo]}", o livro diz "${esperado}"`);
+      }
+    }
+    if (c.system.hp?.max !== pv) erro("bestiario-valor", c, `${c.system.hp?.max} PV, o livro diz ${pv}`);
+    if (c.items.length !== ataques) erro("bestiario-ataques", c, `${c.items.length} ataques, esperava ${ataques}`);
+  }
+
+  for (const c of criaturas) {
+    const ameaca = c.flags?.spacedragon?.ameaca;
+    if (!ameaca?.atributos) { erro("bestiario-atributos", c, "não traz os seis atributos"); continue; }
+    const faltam = ["FOR", "DES", "CON", "INT", "CIE", "COM"].filter((k) => !Number.isFinite(ameaca.atributos[k]));
+    if (faltam.length) erro("bestiario-atributos", c, `sem ${faltam.join(", ")}`);
+    if (c.flags?.core?.sheetClass !== "spacedragon.SDMonsterSheet") {
+      erro("bestiario-ficha", c, "não abre na Ficha de Ameaça");
+    }
+    // Ataque com botão de dano precisa de fórmula; o que não tem dado ("dreno:
+    // −1d4 DV") fica sem, de propósito, e o texto conta a regra.
+    for (const it of c.items) {
+      const d = it.system.damage;
+      if (d && !/^\d*d\d+$/.test(d)) erro("bestiario-dano", c, `${it.name}: dano "${d}" não é fórmula`);
+      if (!it.system.description) erro("bestiario-dano", c, `${it.name}: ataque sem nome`);
+    }
+  }
+}
+
 // ── Relatório ───────────────────────────────────────────────────────────────
 const erros = problemas.filter((p) => p.nivel === "erro");
 const avisos = problemas.filter((p) => p.nivel === "aviso");

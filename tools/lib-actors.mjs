@@ -184,7 +184,11 @@ function parseDamage(dano) {
 function attackItem(atk, actorId, seedPrefix, nome, i) {
   const id = makeId(`monster_attack:${seedPrefix}:${nome}:${atk.nome}:${i}`);
   const qtd = atk.qtd ?? 1;
-  const dmg = parseDamage(atk.dano);
+  // Ataque cujo efeito não é dado de dano ("dreno: −1d4 DV") não ganha
+  // fórmula: o botão de dano rolaria um dado que a regra não manda rolar.
+  const dmg = atk.semDado
+    ? { damage: "", damage_bonus: 0, damage_description: String(atk.dano ?? "") }
+    : parseDamage(atk.dano);
   const bonus = atk.bonus != null ? ` +${atk.bonus}` : "";
   const dano = dmg.damage_description ? ` (${dmg.damage_description})` : "";
   return {
@@ -307,7 +311,9 @@ export function monsterDoc(monstro, folderId, seedPrefix, sort) {
     if (a) system.alignment = a;
   }
   if (monstro.variante) system.variant = true;
-  Object.assign(system, movement(monstro.movimento));
+  // `movimentos` já vem separado por campo, do importador do cofre;
+  // `movimento` é a forma em texto, de quem escreve a criatura à mão.
+  Object.assign(system, movement(monstro.movimento), monstro.movimentos ?? {});
   if (monstro.dv != null) {
     const { dv, bonus } = splitDv(monstro.dv);
     system.dv = dv;
@@ -337,7 +343,9 @@ export function monsterDoc(monstro, folderId, seedPrefix, sort) {
     items,
     effects: [],
     folder: folderId,
-    flags: {},
+    // A criatura pode declarar a ficha que abre e o que o módulo Space Dragon
+    // guarda fora de `system` (atributos, RM, RD). Ver data/bestiario.mjs.
+    flags: monstro.flags ?? {},
     _stats: stats(),
     sort,
     ownership: { default: 0 },

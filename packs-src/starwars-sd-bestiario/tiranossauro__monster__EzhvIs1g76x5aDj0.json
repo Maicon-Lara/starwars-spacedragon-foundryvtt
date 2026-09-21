@@ -1,0 +1,196 @@
+{
+  "name": "Tiranossauro",
+  "type": "monster",
+  "_id": "EzhvIs1g76x5aDj0",
+  "img": "systems/olddragon2e/assets/monsters-concepts/besta-imenso.webp",
+  "system": {
+    "odo_id": "tiranossauro",
+    "concept": "Besta",
+    "size": "imenso",
+    "description": "<p><em>Ficha do <strong>Space Dragon</strong>, Cap. 11, apresentada com o nome da galáxia.</em></p>",
+    "alignment": "caotico",
+    "mv": "10",
+    "dv": "14",
+    "dv_bonus": "+4",
+    "hp": {
+      "value": 116,
+      "max": 116
+    },
+    "ca": "15",
+    "jp": "11",
+    "mo": "90%",
+    "xp": "2.615"
+  },
+  "prototypeToken": {
+    "name": "Tiranossauro",
+    "displayName": 20,
+    "actorLink": false,
+    "appendNumber": false,
+    "prependAdjective": false,
+    "texture": {
+      "src": "systems/olddragon2e/assets/monsters-concepts/besta-imenso.webp",
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 0,
+      "offsetY": 0,
+      "rotation": 0
+    },
+    "width": 3,
+    "height": 3,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 40,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "color": null,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [
+    {
+      "_id": "6oGfArdORtKRblW2",
+      "name": "1 × mordida +16 (3d8+6 + engolir)",
+      "type": "monster_attack",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "times": 1,
+        "ba": 16,
+        "damage_bonus": 6,
+        "weapon": false,
+        "description": "mordida",
+        "damage_description": "3d8+6 + engolir",
+        "damage": "3d8"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 100000,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!actors.items!EzhvIs1g76x5aDj0.6oGfArdORtKRblW2"
+    },
+    {
+      "_id": "RfAkH6K2MagMveBm",
+      "name": "1 × cauda +10 (2d6+2)",
+      "type": "monster_attack",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "times": 1,
+        "ba": 10,
+        "damage_bonus": 2,
+        "weapon": false,
+        "description": "cauda",
+        "damage_description": "2d6+2",
+        "damage": "2d6"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 200000,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!actors.items!EzhvIs1g76x5aDj0.RfAkH6K2MagMveBm"
+    }
+  ],
+  "effects": [],
+  "folder": "Bzm05R2P1gMjKefn",
+  "flags": {
+    "core": {
+      "sheetClass": "spacedragon.SDMonsterSheet"
+    },
+    "spacedragon": {
+      "ameaca": {
+        "cientifico": "",
+        "atributos": {
+          "FOR": 22,
+          "DES": 14,
+          "CON": 18,
+          "INT": 2,
+          "CIE": 0,
+          "COM": 1
+        },
+        "rm": "",
+        "rd": ""
+      }
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 4000000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!actors!EzhvIs1g76x5aDj0"
+}

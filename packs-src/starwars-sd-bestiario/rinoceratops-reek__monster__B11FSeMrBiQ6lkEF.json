@@ -1,0 +1,196 @@
+{
+  "name": "Rinoceratops (Reek)",
+  "type": "monster",
+  "_id": "B11FSeMrBiQ6lkEF",
+  "img": "systems/olddragon2e/assets/monsters-concepts/besta-imenso.webp",
+  "system": {
+    "odo_id": "rinoceratops-reek",
+    "concept": "Besta",
+    "size": "imenso",
+    "description": "<p><em>Ficha do <strong>Space Dragon</strong>, Cap. 11, apresentada com o nome da galáxia.</em></p>",
+    "alignment": "caotico",
+    "mv": "12",
+    "dv": "10",
+    "dv_bonus": "+5",
+    "hp": {
+      "value": 85,
+      "max": 85
+    },
+    "ca": "17",
+    "jp": "12",
+    "mo": "90%",
+    "xp": "1.390"
+  },
+  "prototypeToken": {
+    "name": "Rinoceratops (Reek)",
+    "displayName": 20,
+    "actorLink": false,
+    "appendNumber": false,
+    "prependAdjective": false,
+    "texture": {
+      "src": "systems/olddragon2e/assets/monsters-concepts/besta-imenso.webp",
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 0,
+      "offsetY": 0,
+      "rotation": 0
+    },
+    "width": 3,
+    "height": 3,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 40,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "color": null,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [
+    {
+      "_id": "Oey1UGdbIhU3kyXP",
+      "name": "1 × chifrada +15 (2d10+8 + arremesso)",
+      "type": "monster_attack",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "times": 1,
+        "ba": 15,
+        "damage_bonus": 8,
+        "weapon": false,
+        "description": "chifrada",
+        "damage_description": "2d10+8 + arremesso",
+        "damage": "2d10"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 100000,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!actors.items!B11FSeMrBiQ6lkEF.Oey1UGdbIhU3kyXP"
+    },
+    {
+      "_id": "6zkKQ9Z0yKousnzc",
+      "name": "1 × cabeçada +8 (1d10+6)",
+      "type": "monster_attack",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "times": 1,
+        "ba": 8,
+        "damage_bonus": 6,
+        "weapon": false,
+        "description": "cabeçada",
+        "damage_description": "1d10+6",
+        "damage": "1d10"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 200000,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!actors.items!B11FSeMrBiQ6lkEF.6zkKQ9Z0yKousnzc"
+    }
+  ],
+  "effects": [],
+  "folder": "Bzm05R2P1gMjKefn",
+  "flags": {
+    "core": {
+      "sheetClass": "spacedragon.SDMonsterSheet"
+    },
+    "spacedragon": {
+      "ameaca": {
+        "cientifico": "",
+        "atributos": {
+          "FOR": 25,
+          "DES": 16,
+          "CON": 20,
+          "INT": 2,
+          "CIE": 0,
+          "COM": 2
+        },
+        "rm": "",
+        "rd": ""
+      }
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 3600000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!actors!B11FSeMrBiQ6lkEF"
+}

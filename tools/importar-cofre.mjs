@@ -28,6 +28,7 @@ const ROOT = path.resolve(fileURLToPath(import.meta.url), "../..");
 const COFRE = path.join(os.homedir(), "Documents", "Ekhoria", "20 Space Dragon", "Space Dragon Suplemento");
 const DESTINO = path.join(ROOT, "tools", "data", "progressoes.mjs");
 const DESTINO_TEXTOS = path.join(ROOT, "tools", "data", "textos-do-cofre.mjs");
+const DESTINO_BESTIARIO = path.join(ROOT, "tools", "data", "bestiario-do-cofre.mjs");
 
 const ler = (nota) => fs.readFileSync(path.join(COFRE, `${nota}.md`), "utf8").replace(/\r\n/g, "\n");
 
@@ -724,6 +725,199 @@ for (const [nota, titulos] of Object.entries(SECOES)) {
   TEXTOS[nota] = { "(abertura)": abertura(texto) };
   for (const t of titulos) TEXTOS[nota][t] = secao(texto, t);
 }
+
+// ── Bestiário: o roster do Nativo vira criaturas do compêndio ───────────────
+//
+// O Suplemento manda NÃO reproduzir ficha: "abra o livro no nome nativo, leia a
+// ficha e apresente a criatura pelo nome de Star Wars". Isso serve para quem
+// joga com o livro na mão — na mesa virtual, abrir o compêndio do Space Dragon
+// e traduzir o nome de cabeça é atrito puro.
+//
+// A nota do NATIVO (SW-SDN-Bestiario) publica o roster inteiro, e os números
+// são os mesmos do livro — conferidos contra o módulo Space Dragon: Tiranossauro
+// 2.615 XP, Gigantossauro 7.250, Glacioprimata 875. Então a criatura entra com
+// o nome como o cofre escreve, "Glacioprimata (Wampa)", que acha pelos dois.
+//
+// Os atributos vêm da segunda tabela da nota, e RM e RD saem de dentro da
+// coluna de ataques, onde o cofre os escreve em negrito.
+
+const TAMANHO = { peq: "pequeno", "med": "medio", gd: "grande", imenso: "imenso", colossal: "colossal", miudo: "miudo" };
+const AFILIACAO = { a: "ordeiro", n: "neutro", r: "caotico" };
+const MOVIMENTO = [
+  [/escala|escalada/, "mve"], [/nada|nado/, "mvn"], [/voo|voa/, "mvv"], [/escava|cava/, "mvo"],
+];
+
+const semAcento = (s) => String(s ?? "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
+const limpaCelula = (s) => String(s ?? "").replace(/\*\*/g, "").replace(/\*/g, "").replace(/`/g, "").trim();
+
+/** As linhas de uma tabela markdown que vem logo abaixo de um título. */
+function tabelaDaSecao(texto, titulo) {
+  const i = texto.indexOf(`## ${titulo}`);
+  if (i < 0) throw new Error(`bestiário: seção "${titulo}" não encontrada`);
+  const linhas = texto.slice(i).split("\n");
+  const saida = [];
+  let dentro = false;
+  for (const l of linhas.slice(1)) {
+    if (!l.trim().startsWith("|")) { if (dentro) break; continue; }
+    if (/^\|[\s|:-]+\|$/.test(l.trim())) { dentro = true; continue; }
+    const celulas = l.trim().replace(/^\||\|$/g, "").split("|").map(limpaCelula);
+    if (dentro) saida.push(celulas);
+  }
+  return saida;
+}
+
+/** "Gd / R" → tamanho e afiliação do sistema. */
+function tamanhoEAfiliacao(celula) {
+  const [tam, afil] = String(celula).split("/").map((x) => semAcento(x));
+  return {
+    tamanho: TAMANHO[tam?.slice(0, 3)] ?? TAMANHO[tam] ?? "medio",
+    alinhamento: AFILIACAO[afil] ?? "neutro",
+  };
+}
+
+/** "10, escala 6" → { mv: "10", mve: "6" }. O que não é modo de movimento vira nota. */
+function movimentoDoCofre(celula) {
+  const campos = {};
+  const sobra = [];
+  for (const trecho of String(celula).split(",")) {
+    const t = semAcento(trecho);
+    const numero = t.match(/(\d+)/)?.[1];
+    const modo = MOVIMENTO.find(([re]) => re.test(t))?.[1];
+    if (!numero) { if (t) sobra.push(trecho.trim()); continue; }
+    if (modo) campos[modo] = numero;
+    else if (!campos.mv) campos.mv = numero;
+    else sobra.push(trecho.trim());
+  }
+  return { campos, sobra };
+}
+
+/** "3+1 (25)" → DV e PV; "1 PV" é uma criatura de um ponto de vida só. */
+function dadoDeVida(celula) {
+  const so = String(celula).match(/^(\d+)\s*PV$/i);
+  if (so) return { dv: null, pv: Number(so[1]), nota: `${so[1]} ponto de vida, sem dado de vida.` };
+  const m = String(celula).match(/^([\d+\s-]+?)\s*(?:\((\d+)\))?$/);
+  if (!m) return { dv: null, pv: null };
+  return { dv: m[1].replace(/\s/g, ""), pv: m[2] ? Number(m[2]) : null };
+}
+
+/**
+ * A coluna de ataques traz três coisas: ataques com dano, defesas em negrito
+ * (RM e RD) e habilidades sem rolagem ("envolver [especial]"). Cada uma vai
+ * para o seu lugar — quem tem bônus e dado vira botão na ficha.
+ */
+/**
+ * Separa por ponto e vírgula, mas só FORA de parênteses e colchetes: a Planta
+ * carnívora escreve "agarrar (1d4/rod.; engolida 1d6 ácido/rod.)", e partir ali
+ * quebrava a habilidade no meio.
+ */
+function separaAtaques(celula) {
+  const partes = [];
+  let atual = "";
+  let nivel = 0;
+  for (const ch of String(celula)) {
+    if (ch === "(" || ch === "[") nivel += 1;
+    if (ch === ")" || ch === "]") nivel = Math.max(0, nivel - 1);
+    // O cofre usa ";" e "·" para separar itens da mesma célula.
+    if ((ch === ";" || ch === "·") && nivel === 0) { partes.push(atual); atual = ""; continue; }
+    atual += ch;
+  }
+  partes.push(atual);
+  return partes;
+}
+
+function ataquesDoCofre(celula) {
+  const ataques = [];
+  const habilidades = [];
+  let rm = null;
+  let rd = null;
+  for (const bruto of separaAtaques(celula)) {
+    const parte = bruto.trim();
+    if (!parte) continue;
+    const defesaRM = parte.match(/^RM\s+([\d]+%)$/i);
+    const defesaRD = parte.match(/^RD\s+(.+)$/i);
+    if (defesaRM) { rm = defesaRM[1]; continue; }
+    if (defesaRD) { rd = defesaRD[1].trim(); continue; }
+    const m = parte.match(/^(?:(\d+)\s+)?(.+?)\s*\+(\d+)\s*\(([^)]*)\)\s*(.*)$/);
+    if (m) {
+      const dentro = m[4].trim();
+      // "toque +4 (dreno: −1d4 DV…)" não é dano: o botão rolaria 1d4 onde a
+      // regra drena dado de vida. Só vira fórmula o que COMEÇA em dado.
+      const semDado = !/^\d*d\d+/i.test(dentro);
+      ataques.push({
+        qtd: Number(m[1]) || 1,
+        nome: m[2].trim(),
+        bonus: Number(m[3]),
+        dano: dentro,
+        ...(semDado ? { semDado: true } : {}),
+        ...(m[5].trim() ? { nota: m[5].trim() } : {}),
+      });
+      continue;
+    }
+    // "tentáculo +0 (1d4 elétrico)" já casou acima; o que sobra não tem rolagem.
+    habilidades.push({ nome: parte });
+  }
+  return { ataques, habilidades, rm, rd };
+}
+
+function bestiarioDoCofre() {
+  const texto = fs.readFileSync(path.join(COFRE_NATIVO, "SW-SDN-Bestiario.md"), "utf8").replace(/\r\n/g, "\n");
+  const roster = tabelaDaSecao(texto, "Roster nativo (stats por inteiro)");
+  const atributos = new Map(
+    tabelaDaSecao(texto, "Atributos das criaturas").map((l) => [
+      l[0],
+      Object.fromEntries(["FOR", "DES", "CON", "INT", "CIE", "COM"].map((k, i) => [k, Number(l[i + 1])])),
+    ])
+  );
+
+  const criaturas = roster.map((l) => {
+    const [nome, tamAfil, mov, cp, jp, dvPv, moral, ataquesTexto, xp] = l;
+    const { tamanho, alinhamento } = tamanhoEAfiliacao(tamAfil);
+    const { campos, sobra } = movimentoDoCofre(mov);
+    const { dv, pv, nota } = dadoDeVida(dvPv);
+    const { ataques, habilidades, rm, rd } = ataquesDoCofre(ataquesTexto);
+    const at = atributos.get(nome) ?? null;
+    if (!at) throw new Error(`bestiário: "${nome}" está no roster e não na tabela de atributos`);
+
+    const notas = [nota, sobra.length ? `Movimento: ${sobra.join(", ")}.` : null].filter(Boolean);
+    return {
+      nome,
+      tamanho,
+      alinhamento,
+      movimentos: campos,
+      ...(dv ? { dv } : {}),
+      ...(pv != null ? { pv } : {}),
+      ca: cp,
+      jp,
+      moral,
+      xp,
+      ataques,
+      habilidades,
+      ...(notas.length ? { nota: notas.join(" ") } : {}),
+      atributos: at,
+      ...(rm ? { rm } : {}),
+      ...(rd ? { rd } : {}),
+    };
+  });
+
+  if (criaturas.length !== atributos.size) {
+    throw new Error(`bestiário: ${criaturas.length} no roster e ${atributos.size} na tabela de atributos`);
+  }
+  return criaturas;
+}
+
+const CRIATURAS = bestiarioDoCofre();
+fs.writeFileSync(DESTINO_BESTIARIO, [
+  "// GERADO POR tools/importar-cofre.mjs — NÃO EDITE À MÃO.",
+  "// Fonte: o cofre, Documents\\Ekhoria\\20 Space Dragon\\Space Dragon Nativo\\",
+  "//   SW-SDN-Bestiario.md — o roster e a tabela de atributos.",
+  "//",
+  "// Os números são os do livro básico, com o nome como o cofre o escreve:",
+  "// \"Glacioprimata (Wampa)\" acha pelos dois lados.",
+  "",
+  `export const CRIATURAS = ${JSON.stringify(CRIATURAS, null, 2)};`,
+  "",
+].join("\n"), "utf8");
+console.log(`  ✔ ${CRIATURAS.length} criaturas do bestiário nativo → tools/data/bestiario-do-cofre.mjs`);
 
 const ESPECIES = especiesDoCofre(ler("SW-SUP-Especies"));
 const PODERES = poderesDoCofre(ler("SW-SUP-Poderes-da-Forca"));

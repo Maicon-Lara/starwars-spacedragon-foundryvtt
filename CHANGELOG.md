@@ -1,5 +1,24 @@
 # Changelog
 
+## 1.4.0 — o bestiário da galáxia
+
+- **46 criaturas** no compêndio novo *Star Wars SD: Bestiário*, lidas do
+  roster do cofre: Wampa, Rancor, Nexu, Dianoga, Bantha, Reek, Sarlacc,
+  Exogorth, Zillo, Clawdite e o resto do Cap. 11 vestido de Star Wars.
+- O nome fica como o cofre escreve — **"Glacioprimata (Wampa)"** —, e acha
+  pelos dois lados.
+- Cada criatura vem com **os seis atributos, RM e RD** nos flags que o módulo
+  Space Dragon lê, e já abre na **Ficha de Ameaça**, com JP e Moral pela regra
+  do livro. Os ataques viram **botões de ataque e dano** (63 no total).
+- Ataque cujo efeito não é dado de dano — o dreno do Vampiro energético — fica
+  sem fórmula de propósito: o botão rolaria um dado que a regra não manda rolar.
+- Quatro criaturas não têm ataque para clicar, porque no livro elas não têm:
+  Bolha verde, Devorador de mentes, Geleia espacial e Planta carnívora. O que
+  elas fazem está escrito na descrição.
+- A conferência do build passa a comparar os números do bestiário com o livro.
+- A seção **Modelos de PNJ** do journal traz a tabela nova das quatro classes
+  como PNJ, do cofre.
+
 ## 1.3.0 — a especialização entra na conta
 
 - A tabela de cada especialização e de cada Senda Mandaloriana vai no item

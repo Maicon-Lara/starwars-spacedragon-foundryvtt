@@ -1,0 +1,162 @@
+{
+  "name": "Tentaculoide (Dianoga colossal)",
+  "type": "monster",
+  "_id": "kd3qqCWlGmYCP8qX",
+  "img": "systems/olddragon2e/assets/monsters-concepts/inseto-imenso.webp",
+  "system": {
+    "odo_id": "tentaculoide-dianoga-colossal",
+    "concept": "Inseto",
+    "size": "imenso",
+    "description": "<p><em>Ficha do <strong>Space Dragon</strong>, Cap. 11, apresentada com o nome da galáxia.</em></p>\n<ul>\n  <li><p><strong>jato ácido (1d6, mancha 10 m²)</strong></p></li>\n</ul>",
+    "alignment": "caotico",
+    "mv": "12",
+    "dv": "12",
+    "dv_bonus": "+3",
+    "hp": {
+      "value": 99,
+      "max": 99
+    },
+    "ca": "15",
+    "jp": "12",
+    "mo": "80%",
+    "xp": "2.075"
+  },
+  "prototypeToken": {
+    "name": "Tentaculoide (Dianoga colossal)",
+    "displayName": 20,
+    "actorLink": false,
+    "appendNumber": false,
+    "prependAdjective": false,
+    "texture": {
+      "src": "systems/olddragon2e/assets/monsters-concepts/inseto-imenso.webp",
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 0,
+      "offsetY": 0,
+      "rotation": 0
+    },
+    "width": 3,
+    "height": 3,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 40,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "color": null,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [
+    {
+      "_id": "dwYEOdyyczpmZ9kq",
+      "name": "2 × tentáculos +12 (2d6+2 + agarrar)",
+      "type": "monster_attack",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "times": 2,
+        "ba": 12,
+        "damage_bonus": 2,
+        "weapon": false,
+        "description": "tentáculos",
+        "damage_description": "2d6+2 + agarrar",
+        "damage": "2d6"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 100000,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!actors.items!kd3qqCWlGmYCP8qX.dwYEOdyyczpmZ9kq"
+    }
+  ],
+  "effects": [],
+  "folder": "Bzm05R2P1gMjKefn",
+  "flags": {
+    "core": {
+      "sheetClass": "spacedragon.SDMonsterSheet"
+    },
+    "spacedragon": {
+      "ameaca": {
+        "cientifico": "",
+        "atributos": {
+          "FOR": 20,
+          "DES": 16,
+          "CON": 16,
+          "INT": 2,
+          "CIE": 0,
+          "COM": 1
+        },
+        "rm": "",
+        "rd": ""
+      }
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 3800000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!actors!kd3qqCWlGmYCP8qX"
+}
