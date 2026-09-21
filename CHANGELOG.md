@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.4.1 — exige o Space Dragon 1.16.1, e abre espaço para as relíquias
+
+- A dependência subiu de 1.12.0 para **1.16.1**: é dela que vêm os rótulos do
+  Space Dragon na Ficha de Ameaça (Afiliação, Relíquias, Prêmio), o painel de
+  atributos e o gerador de relíquias. Com a 1.12 o bestiário abria com os
+  rótulos de fantasia.
+- O importador passa a ler uma coluna **Relíquias** no roster do cofre, com as
+  iniciais O, D e U. Enquanto ela não existir, a criatura entra sem letra e o
+  botão "Gerar" diz que ela não carrega nada.
+- As colunas do roster passam a ser lidas pelo NOME, e não pela posição: uma
+  coluna a mais não desloca as outras.
+
 ## 1.4.0 — o bestiário da galáxia
 
 - **46 criaturas** no compêndio novo *Star Wars SD: Bestiário*, lidas do

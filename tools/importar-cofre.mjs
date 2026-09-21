@@ -756,13 +756,22 @@ function tabelaDaSecao(texto, titulo) {
   if (i < 0) throw new Error(`bestiário: seção "${titulo}" não encontrada`);
   const linhas = texto.slice(i).split("\n");
   const saida = [];
+  let cabecalho = [];
   let dentro = false;
   for (const l of linhas.slice(1)) {
     if (!l.trim().startsWith("|")) { if (dentro) break; continue; }
-    if (/^\|[\s|:-]+\|$/.test(l.trim())) { dentro = true; continue; }
     const celulas = l.trim().replace(/^\||\|$/g, "").split("|").map(limpaCelula);
+    if (/^\|[\s|:-]+\|$/.test(l.trim())) { dentro = true; continue; }
     if (dentro) saida.push(celulas);
+    else cabecalho = celulas;
   }
+  // As colunas são lidas pelo NOME, não pela posição: o cofre ainda vai ganhar
+  // a coluna de relíquias, e uma coluna a mais não pode deslocar as outras.
+  saida.cabecalho = cabecalho;
+  saida.coluna = (...nomes) => {
+    const alvos = nomes.map(semAcento);
+    return cabecalho.findIndex((c) => alvos.includes(semAcento(c)));
+  };
   return saida;
 }
 
@@ -869,8 +878,24 @@ function bestiarioDoCofre() {
     ])
   );
 
+  // A coluna de relíquias é OPCIONAL: enquanto o cofre não a tiver, a criatura
+  // entra sem letra e o gerador de relíquias do Space Dragon diz que ela não
+  // carrega nada. As iniciais são O, D e U — ofensiva, defensiva, utilitária.
+  const iReliquias = roster.coluna("Relíquias", "Relíquia", "Prêmios");
+  const col = {
+    nome: roster.coluna("Criatura"), tamAfil: roster.coluna("Tam./Afil.", "Tam./Afil"),
+    mov: roster.coluna("Mov."), cp: roster.coluna("CP"), jp: roster.coluna("JP"),
+    dv: roster.coluna("DV (PV)"), moral: roster.coluna("Moral"),
+    ataques: roster.coluna("Ataques"), xp: roster.coluna("XP"),
+  };
+  for (const [campo, i] of Object.entries(col)) {
+    if (i < 0) throw new Error(`bestiário: o roster não tem a coluna de ${campo}`);
+  }
+
   const criaturas = roster.map((l) => {
-    const [nome, tamAfil, mov, cp, jp, dvPv, moral, ataquesTexto, xp] = l;
+    const [nome, tamAfil, mov, cp, jp, dvPv, moral, ataquesTexto, xp] =
+      [col.nome, col.tamAfil, col.mov, col.cp, col.jp, col.dv, col.moral, col.ataques, col.xp].map((i) => l[i]);
+    const reliquias = iReliquias >= 0 ? String(l[iReliquias] ?? "").toUpperCase().replace(/[^ODU]/g, "").split("").join(", ") : "";
     const { tamanho, alinhamento } = tamanhoEAfiliacao(tamAfil);
     const { campos, sobra } = movimentoDoCofre(mov);
     const { dv, pv, nota } = dadoDeVida(dvPv);
@@ -890,6 +915,7 @@ function bestiarioDoCofre() {
       jp,
       moral,
       xp,
+      ...(reliquias ? { tesouro: reliquias } : {}),
       ataques,
       habilidades,
       ...(notas.length ? { nota: notas.join(" ") } : {}),
