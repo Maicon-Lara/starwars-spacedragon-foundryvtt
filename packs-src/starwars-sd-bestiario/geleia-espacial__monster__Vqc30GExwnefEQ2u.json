@@ -18,7 +18,8 @@
     "ca": "10",
     "jp": "15",
     "mo": "100%",
-    "xp": "320"
+    "xp": "320",
+    "treasure": "O, D, U"
   },
   "prototypeToken": {
     "name": "Geleia espacial",

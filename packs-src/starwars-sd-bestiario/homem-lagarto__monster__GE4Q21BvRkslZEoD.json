@@ -19,7 +19,8 @@
     "ca": "14",
     "jp": "16",
     "mo": "60%",
-    "xp": "280"
+    "xp": "280",
+    "treasure": "O, D"
   },
   "prototypeToken": {
     "name": "Homem lagarto",

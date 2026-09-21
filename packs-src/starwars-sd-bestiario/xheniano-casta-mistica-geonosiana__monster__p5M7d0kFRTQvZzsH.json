@@ -18,7 +18,8 @@
     "ca": "12",
     "jp": "14",
     "mo": "80%",
-    "xp": "610"
+    "xp": "610",
+    "treasure": "O, D, U"
   },
   "prototypeToken": {
     "name": "Xheniano (casta mística Geonosiana)",

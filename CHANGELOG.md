@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.4.2 — as relíquias das criaturas
+
+- O cofre ganhou a coluna **Relíquias** no roster, e as 15 criaturas que
+  carregam alguma entram com as iniciais do livro: o Zork com O e D, o
+  Xheniano com O, D e U, o Simihomem só com U.
+- Com isso o botão **Gerar** da Ficha de Ameaça passa a funcionar também no
+  bestiário de Star Wars: uma relíquia por letra, pela T11-3.
+- A conferência do build checa as letras e o total de 15.
+
 ## 1.4.1 — exige o Space Dragon 1.16.1, e abre espaço para as relíquias
 
 - A dependência subiu de 1.12.0 para **1.16.1**: é dela que vêm os rótulos do

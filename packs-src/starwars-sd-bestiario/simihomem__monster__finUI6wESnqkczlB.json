@@ -19,7 +19,8 @@
     "ca": "14",
     "jp": "14",
     "mo": "80%",
-    "xp": "450"
+    "xp": "450",
+    "treasure": "U"
   },
   "prototypeToken": {
     "name": "Simihomem",

@@ -57,6 +57,7 @@ export const CRIATURAS = [
     "jp": "15",
     "moral": "100%",
     "xp": "245",
+    "tesouro": "O",
     "ataques": [
       {
         "qtd": 1,
@@ -156,6 +157,7 @@ export const CRIATURAS = [
     "jp": "17",
     "moral": "80%",
     "xp": "175",
+    "tesouro": "D",
     "ataques": [],
     "habilidades": [
       {
@@ -333,6 +335,7 @@ export const CRIATURAS = [
     "jp": "15",
     "moral": "100%",
     "xp": "320",
+    "tesouro": "O, D, U",
     "ataques": [],
     "habilidades": [
       {
@@ -476,6 +479,7 @@ export const CRIATURAS = [
     "jp": "16",
     "moral": "60%",
     "xp": "280",
+    "tesouro": "O, D",
     "ataques": [
       {
         "qtd": 1,
@@ -557,6 +561,7 @@ export const CRIATURAS = [
     "jp": "18",
     "moral": "70%",
     "xp": "37",
+    "tesouro": "O, D, U",
     "ataques": [
       {
         "qtd": 1,
@@ -594,6 +599,7 @@ export const CRIATURAS = [
     "jp": "14",
     "moral": "70%",
     "xp": "555",
+    "tesouro": "O, D",
     "ataques": [
       {
         "qtd": 1,
@@ -630,6 +636,7 @@ export const CRIATURAS = [
     "jp": "12",
     "moral": "100%",
     "xp": "1.075",
+    "tesouro": "O, D, U",
     "ataques": [
       {
         "qtd": 1,
@@ -886,6 +893,7 @@ export const CRIATURAS = [
     "jp": "14",
     "moral": "100%",
     "xp": "1.150",
+    "tesouro": "O, D",
     "ataques": [
       {
         "qtd": 1,
@@ -921,6 +929,7 @@ export const CRIATURAS = [
     "jp": "11",
     "moral": "80%",
     "xp": "1.975",
+    "tesouro": "O, D, U",
     "ataques": [
       {
         "qtd": 1,
@@ -963,6 +972,7 @@ export const CRIATURAS = [
     "jp": "16",
     "moral": "70%",
     "xp": "205",
+    "tesouro": "O, D, U",
     "ataques": [
       {
         "qtd": 1,
@@ -1139,6 +1149,7 @@ export const CRIATURAS = [
     "jp": "18",
     "moral": "100%",
     "xp": "37",
+    "tesouro": "O, D, U",
     "ataques": [],
     "habilidades": [
       {
@@ -1169,6 +1180,7 @@ export const CRIATURAS = [
     "jp": "17",
     "moral": "80%",
     "xp": "175",
+    "tesouro": "O",
     "ataques": [
       {
         "qtd": 1,
@@ -1323,6 +1335,7 @@ export const CRIATURAS = [
     "jp": "14",
     "moral": "80%",
     "xp": "450",
+    "tesouro": "U",
     "ataques": [
       {
         "qtd": 1,
@@ -1609,6 +1622,7 @@ export const CRIATURAS = [
     "jp": "14",
     "moral": "80%",
     "xp": "610",
+    "tesouro": "O, D, U",
     "ataques": [
       {
         "qtd": 2,
@@ -1645,6 +1659,7 @@ export const CRIATURAS = [
     "jp": "16",
     "moral": "70%",
     "xp": "37",
+    "tesouro": "O, D",
     "ataques": [
       {
         "qtd": 1,

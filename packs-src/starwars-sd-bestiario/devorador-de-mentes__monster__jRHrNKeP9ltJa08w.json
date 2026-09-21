@@ -18,7 +18,8 @@
     "ca": "12",
     "jp": "17",
     "mo": "80%",
-    "xp": "175"
+    "xp": "175",
+    "treasure": "D"
   },
   "prototypeToken": {
     "name": "Devorador de mentes",

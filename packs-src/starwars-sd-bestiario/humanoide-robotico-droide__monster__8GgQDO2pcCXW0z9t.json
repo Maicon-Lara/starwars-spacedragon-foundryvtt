@@ -19,7 +19,8 @@
     "ca": "15",
     "jp": "12",
     "mo": "100%",
-    "xp": "1.075"
+    "xp": "1.075",
+    "treasure": "O, D, U"
   },
   "prototypeToken": {
     "name": "Humanoide robótico (droide)",

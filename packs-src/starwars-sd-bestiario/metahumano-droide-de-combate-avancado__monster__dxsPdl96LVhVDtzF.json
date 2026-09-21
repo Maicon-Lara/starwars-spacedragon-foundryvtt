@@ -19,7 +19,8 @@
     "ca": "16",
     "jp": "11",
     "mo": "80%",
-    "xp": "1.975"
+    "xp": "1.975",
+    "treasure": "O, D, U"
   },
   "prototypeToken": {
     "name": "Metahumano (droide de combate avançado)",

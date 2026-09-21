@@ -19,7 +19,8 @@
     "ca": "15",
     "jp": "14",
     "mo": "70%",
-    "xp": "555"
+    "xp": "555",
+    "treasure": "O, D"
   },
   "prototypeToken": {
     "name": "Ictihomem",

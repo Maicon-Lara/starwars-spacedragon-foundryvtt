@@ -520,6 +520,23 @@ prosaSolta();
     if (c.items.length !== ataques) erro("bestiario-ataques", c, `${c.items.length} ataques, esperava ${ataques}`);
   }
 
+  // As relíquias que a criatura carrega, do bloco do livro: são as iniciais
+  // O, D e U que o gerador do Space Dragon lê. 15 das 46 carregam alguma.
+  const RELIQUIAS = [
+    ["Zork", "O, D"], ["Simihomem", "U"], ["Devorador de mentes", "D"],
+    ["Homem lagarto", "O, D"], ["Xheniano (casta mística Geonosiana)", "O, D, U"],
+  ];
+  for (const [nome, esperado] of RELIQUIAS) {
+    const c = por.get(nome);
+    if (c && String(c.system.treasure ?? "") !== esperado) {
+      erro("bestiario-reliquias", c, `relíquias "${c.system.treasure}", o livro diz "${esperado}"`);
+    }
+  }
+  const comReliquia = criaturas.filter((c) => c.system.treasure).length;
+  if (comReliquia !== 15) {
+    erro("bestiario-reliquias", { name: "bestiário" }, `${comReliquia} criaturas com relíquia, o livro dá 15`);
+  }
+
   for (const c of criaturas) {
     const ameaca = c.flags?.spacedragon?.ameaca;
     if (!ameaca?.atributos) { erro("bestiario-atributos", c, "não traz os seis atributos"); continue; }

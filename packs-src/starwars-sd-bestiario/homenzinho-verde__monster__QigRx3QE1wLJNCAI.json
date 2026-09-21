@@ -18,7 +18,8 @@
     "ca": "13",
     "jp": "18",
     "mo": "70%",
-    "xp": "37"
+    "xp": "37",
+    "treasure": "O, D, U"
   },
   "prototypeToken": {
     "name": "Homenzinho verde",

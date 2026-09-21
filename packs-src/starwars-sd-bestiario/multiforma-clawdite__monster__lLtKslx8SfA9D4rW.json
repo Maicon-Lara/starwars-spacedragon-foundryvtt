@@ -19,7 +19,8 @@
     "ca": "14",
     "jp": "16",
     "mo": "70%",
-    "xp": "205"
+    "xp": "205",
+    "treasure": "O, D, U"
   },
   "prototypeToken": {
     "name": "Multiforma (Clawdite)",
