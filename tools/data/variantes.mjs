@@ -40,10 +40,13 @@ const eco = (dominio) => ({
   desc:
     p(`Chega um ponto em que a Força para de ser esforço — **só naquilo que é o seu ofício**. O Domínio desta Senda é **${dominio}**.`) +
     lista([
-      "`10º` **Eco.** Sempre que gastar Alcance num **poder da sua Senda** (do Domínio dela, de qualquer corrente), role **1d10** depois de resolver o poder: num **1**, o **% de Alcance gasto volta**.",
-      "`15º` **Eco Maior.** A rolagem passa a ser **1d4** (num 1, volta); além disso, os **poderes de 1ª Grandeza da sua Senda não custam mais Alcance** — de graça, no máximo **um por rodada**.",
+      "`10º` **Eco.** Sempre que gastar Alcance num **poder do seu Domínio**, role **1d10** depois de resolver o poder: num **1**, o **% de Alcance gasto volta**.",
+      "`15º` **Eco Maior.** A rolagem passa a ser **1d4** (num 1, volta); além disso, os **poderes de 1ª Grandeza do seu Domínio não custam mais Alcance** — de graça, no máximo **um por rodada**.",
     ]) +
-    citacao("**Um poder cabe no Domínio de uma Senda só por personagem.** Na dúvida, o Mestre decide **antes da rolagem**. Quem trilhou a [[SW-SUP-Senda-Mandaloriana]] abriu mão da especialização — e do Domínio: **não tem Eco da Senda**."),
+    // o Domínio é lista fechada de propósito: sem isso, o Mestre tinha de
+    // decidir caso a caso, antes de cada rolagem, se o poder contava
+    citacao("O Domínio é uma **lista fechada** de poderes, no journal **A Força** → *Eco da Senda*: o poder está na lista ou não está, sem arbitragem na mesa. Um mesmo poder pode constar em dois Domínios — cada personagem tem **uma** Senda, então nunca há conflito. Quem trilhou a Senda Mandaloriana abriu mão da especialização — e do Domínio: **não tem Eco da Senda**.") +
+    citacao("**Módulo opcional.** A classe funciona sem ele."),
 });
 
 export const variantes = [
@@ -279,6 +282,7 @@ export const variantes = [
         desc: p("**Carne Compensada:** você nunca alcança a plenitude mental do 16º, e o corpo cobre a lacuna: **+2 PV por nível** daí em diante.") },
       { nome: "O Preço da Lente", level: 20,
         desc: p("**O Preço da Lente:** usa aparatos como um Técnico de **nível igual** e os **cria** como um Técnico de metade. Mas você já desaprendeu a sentir: **todo** poder da Força passa a exigir uma rolagem percentual para funcionar.") },
+      eco("A Matéria e o Cristal — a Força que lê, molda e desperta objetos, e a que mexe na engenharia dos próprios poderes"),
     ],
   },
 ];

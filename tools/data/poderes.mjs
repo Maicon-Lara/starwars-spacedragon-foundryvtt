@@ -76,6 +76,9 @@ export const poderesJournal = {
   title: "A Força",
   pages: [
     { title: "Poderes da Força", content: poderes["(abertura)"] + poderes["Como usar este capítulo"] },
+    // vem antes dos módulos em si: diz o que é regra e o que a mesa pode deixar
+    // desligado, para o jogador não achar que tudo abaixo é obrigatório
+    { title: "Núcleo e módulos", content: forca["Núcleo e módulos"] },
     { title: "As Três Correntes", content: poderes["As três correntes (Caminho)"] },
     { title: "O Caminho: Luz, Sombra e o meio", content: forca["O Caminho: Luz, Sombra e o meio"] },
     { title: "O Caminho Cinza", content: forca["O Caminho Cinza"] },

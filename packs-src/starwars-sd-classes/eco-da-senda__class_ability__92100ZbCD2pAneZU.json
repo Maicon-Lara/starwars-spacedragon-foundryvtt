@@ -1,0 +1,50 @@
+{
+  "folder": "OpD2tXVVJYCbs8Y6",
+  "name": "Eco da Senda",
+  "type": "class_ability",
+  "_id": "92100ZbCD2pAneZU",
+  "img": "systems/olddragon2e/assets/icons/legiao-shield.svg",
+  "system": {
+    "description": "<p>Chega um ponto em que a Força para de ser esforço — <strong>só naquilo que é o seu ofício</strong>. O Domínio desta Senda é <strong>A Matéria e o Cristal — a Força que lê, molda e desperta objetos, e a que mexe na engenharia dos próprios poderes</strong>.</p><ul><li><code>10º</code> <strong>Eco.</strong> Sempre que gastar Alcance num <strong>poder do seu Domínio</strong>, role <strong>1d10</strong> depois de resolver o poder: num <strong>1</strong>, o <strong>% de Alcance gasto volta</strong>.</li><li><code>15º</code> <strong>Eco Maior.</strong> A rolagem passa a ser <strong>1d4</strong> (num 1, volta); além disso, os <strong>poderes de 1ª Grandeza do seu Domínio não custam mais Alcance</strong> — de graça, no máximo <strong>um por rodada</strong>.</li></ul><blockquote><p>O Domínio é uma <strong>lista fechada</strong> de poderes, no journal <strong>A Força</strong> → <em>Eco da Senda</em>: o poder está na lista ou não está, sem arbitragem na mesa. Um mesmo poder pode constar em dois Domínios — cada personagem tem <strong>uma</strong> Senda, então nunca há conflito. Quem trilhou a Senda Mandaloriana abriu mão da especialização — e do Domínio: <strong>não tem Eco da Senda</strong>.</p></blockquote><blockquote><p><strong>Módulo opcional.</strong> A classe funciona sem ele.</p></blockquote>",
+    "level": 10,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 500000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!92100ZbCD2pAneZU"
+}

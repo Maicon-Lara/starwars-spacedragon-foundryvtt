@@ -709,6 +709,9 @@ const SECOES = {
     "Rank na prática",
   ],
   "SW-SUP-Forca": [
+    // vem primeiro de propósito: diz o que é regra e o que a mesa pode deixar
+    // desligado, antes de o jogador ler os módulos em si
+    "Núcleo e módulos",
     "O Caminho: Luz, Sombra e o meio",
     "O Caminho Cinza",
     "Corrupção — Queda e Redenção",

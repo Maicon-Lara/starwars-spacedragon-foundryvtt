@@ -943,7 +943,7 @@ export const ESPECIALIZACOES = {
         "84%",
         "⊘ 40%",
         "×2",
-        "40% + CT",
+        "40% + AT",
         "—"
       ],
       [
@@ -954,7 +954,7 @@ export const ESPECIALIZACOES = {
         "85%",
         "⊘ 40%",
         "×3",
-        "45% + CT",
+        "45% + AT",
         "—"
       ],
       [
@@ -965,7 +965,7 @@ export const ESPECIALIZACOES = {
         "86%",
         "⊘ 40%",
         "×3",
-        "50% + CT",
+        "50% + AT",
         "—"
       ],
       [
@@ -976,7 +976,7 @@ export const ESPECIALIZACOES = {
         "87%",
         "⊘ 40%",
         "×3",
-        "55% + CT",
+        "55% + AT",
         "—"
       ],
       [
@@ -987,7 +987,7 @@ export const ESPECIALIZACOES = {
         "88%",
         "⊘ 40%",
         "×3",
-        "60% + CT",
+        "60% + AT",
         "—"
       ],
       [
@@ -998,7 +998,7 @@ export const ESPECIALIZACOES = {
         "89%",
         "⊘ 40%",
         "×3",
-        "65% + CT",
+        "65% + AT",
         "3, com teste"
       ],
       [
@@ -1009,7 +1009,7 @@ export const ESPECIALIZACOES = {
         "90%",
         "⊘ 40%",
         "×3",
-        "70% + CT",
+        "70% + AT",
         "3, com teste"
       ],
       [
@@ -1020,7 +1020,7 @@ export const ESPECIALIZACOES = {
         "91%",
         "⊘ 40%",
         "×4",
-        "72% + CT",
+        "72% + AT",
         "3, com teste"
       ],
       [
@@ -1031,7 +1031,7 @@ export const ESPECIALIZACOES = {
         "92%",
         "⊘ 40%",
         "×4",
-        "74% + CT",
+        "74% + AT",
         "3, com teste"
       ],
       [
@@ -1042,7 +1042,7 @@ export const ESPECIALIZACOES = {
         "93%",
         "⊘ 40%",
         "×4",
-        "76% + CT",
+        "76% + AT",
         "3, com teste"
       ],
       [
@@ -1053,7 +1053,7 @@ export const ESPECIALIZACOES = {
         "94%",
         "⊘ 40%",
         "×4",
-        "78% + CT",
+        "78% + AT",
         "3, com teste"
       ],
       [
@@ -1064,7 +1064,7 @@ export const ESPECIALIZACOES = {
         "95%",
         "⊘ 40%",
         "×4",
-        "80% + CT",
+        "80% + AT",
         "3, com teste"
       ],
       [
@@ -1075,7 +1075,7 @@ export const ESPECIALIZACOES = {
         "96%",
         "⊘ 40%",
         "×4",
-        "82% + CT",
+        "82% + AT",
         "3, com teste"
       ],
       [
@@ -1086,7 +1086,7 @@ export const ESPECIALIZACOES = {
         "97%",
         "⊘ 40%",
         "×5",
-        "84% + CT",
+        "84% + AT",
         "3, com teste"
       ],
       [
@@ -1097,7 +1097,7 @@ export const ESPECIALIZACOES = {
         "98%",
         "⊘ 40%",
         "×5",
-        "86% + CT",
+        "86% + AT",
         "3, com teste"
       ],
       [
@@ -1108,12 +1108,12 @@ export const ESPECIALIZACOES = {
         "99%",
         "⊘ 40%",
         "×5",
-        "88% + CT",
+        "88% + AT",
         "3, sempre"
       ]
     ],
     "legenda": "⊘ = congelado, repete o valor em que travou.",
-    "nota": "A coluna Desarmar congela no 5º — e é com esse número que se rola o ataque extra do 10º. A progressão segue em Aparatos e máquinas, somada ao Crédito Tecnológico (CT) da sua Ciência. No teste do ataque extra, a falha tira o resto do turno."
+    "nota": "A coluna Desarmar congela no 5º — e é com esse número que se rola o ataque extra do 10º. A progressão segue em Aparatos e máquinas, somada à Aptidão Tecnológica (AT) da sua Ciência. No teste do ataque extra, a falha tira o resto do turno."
   },
   "Emissário": {
     "classe": "Veterano",
@@ -2226,7 +2226,7 @@ export const ESPECIALIZACOES = {
       ]
     ],
     "legenda": "⊘ = congelado, repete o valor em que travou.",
-    "nota": "A coluna é o que ele SOMA ao Crédito Tecnológico que já vem da Ciência. Do 10º em diante os aparatos dele contam 2 NT acima, o que o limita a criar até o 8º NT. No 20º o livro fixa o Crédito em 100%."
+    "nota": "A coluna é o que ele SOMA à Aptidão Tecnológica que já vem da Ciência. Do 10º em diante os aparatos dele contam 2 NT acima, o que o limita a criar até o 8º NT. No 20º o livro fixa o Crédito em 100%."
   },
   "Engenheiro": {
     "classe": "Técnico",
@@ -2386,7 +2386,7 @@ export const ESPECIALIZACOES = {
       ]
     ],
     "legenda": "**em negrito** = o valor desta especialização, no lugar do da classe base.",
-    "nota": "Salta para o 4º NT no 5º nível e ganha +1 a cada 2 níveis, chegando ao 10º NT no 17º. O Crédito Tecnológico vira custo: inventar sai mais caro que comprar."
+    "nota": "Salta para o 4º NT no 5º nível e ganha +1 a cada 2 níveis, chegando ao 10º NT no 17º. A Aptidão Tecnológica vira custo: inventar sai mais caro que comprar."
   },
   "Slicer": {
     "classe": "Técnico",

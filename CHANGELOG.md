@@ -1,5 +1,28 @@
 # Changelog
 
+## 1.5.0 — a camada da Força enxuga, e o nome do livro volta
+
+Este módulo passa a ser o **único** de Star Wars para Space Dragon: o
+`sw-spacedragon-nativo`, que fazia o mesmo sobre o Custom System Builder,
+foi arquivado.
+
+- **Núcleo e módulos** — página nova no journal *A Força*, antes de tudo o
+  mais: só a tabela, o Alcance, a Grandeza-Limite, conhecidos x
+  desconhecidos, o Duelo da Força, a Senda e a Corrupção são regra. A
+  Tentação, o Eco da Senda, o Caminho Cinza e as Formas de Sabre são
+  **opcionais**, e a classe funciona inteira sem eles.
+- **A Tentação** perdeu uma opção e um julgamento. O *Arrancar* saiu (era
+  o *Insistir* com aritmética a mais) e o critério "rolagem decisiva"
+  também: a trava de 1x/cena e 3x/dia já impede o abuso, sem o Mestre ter
+  de decidir no meio da cena se aquela rolagem contava.
+- **Eco da Senda** — os Domínios agora são **listas fechadas** de poderes,
+  por Grandeza. O poder está na lista ou não está; acabou a arbitragem
+  antes da rolagem.
+- **O Artífice ganhou Eco**, que faltava: *A Matéria e o Cristal*.
+- **Crédito Tecnológico** virou **Aptidão Tecnológica**, que é como a
+  Tabela 1-5 do livro chama. O nome antigo era da casa e ambíguo —
+  Crédito também é a moeda do jogo. A sigla CT virou AT.
+
 ## 1.4.2 — as relíquias das criaturas
 
 - O cofre ganhou a coluna **Relíquias** no roster, e as 15 criaturas que
