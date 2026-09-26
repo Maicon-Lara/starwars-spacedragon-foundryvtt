@@ -122,7 +122,16 @@
  * acompanhar o tema claro e o escuro sem duas paletas.
  */
 
-.starwars-sd.nave-ficha .starwars-sd-nave { display: flex; flex-direction: column; gap: 10px; padding: 6px 4px; }
+/* A ficha inteira rola: sem overflow-y + min-height aqui, o flex-column
+   deixa o conteúdo (armamento, dial de manobras) vazar por baixo da janela
+   em vez de rolar — é o container que o nave-ficha.js já marca como
+   `scrollable` no PARTS, então isso completa o que falta no CSS. */
+.starwars-sd.nave-ficha .starwars-sd-nave {
+  display: flex; flex-direction: column; gap: 10px; padding: 6px 4px 12px;
+  overflow-y: auto;
+  min-height: 0;
+  max-height: 100%;
+}
 .starwars-sd.nave-ficha h3 {
   font-size: 12px; text-transform: uppercase; letter-spacing: .09em;
   opacity: .65; margin: 0 0 6px; border-bottom: 1px solid var(--color-border-light-tertiary, #6663); padding-bottom: 3px;
