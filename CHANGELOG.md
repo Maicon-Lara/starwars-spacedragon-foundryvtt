@@ -1,5 +1,35 @@
 # Changelog
 
+## 1.6.0 — a mesa escolhe a regra de combate de nave
+
+A ficha de Nave passa a atender **duas** regras, e a escolha é uma opção de
+mundo em *Configurações do Módulo → Regras de combate de naves*.
+
+- **Tático** (padrão) é o que já existia: o Combate Tático do Suplemento,
+  desenhado sobre o **X-Wing Miniatures Game** da FFG — dial de manobras,
+  manobra planejada em segredo, Sobrecarga e dados de defesa que cancelam
+  dados de dano inteiros. **Não mudou nada nele.**
+- **Livro** é o **§10.6** do *Livro Básico Aprimorado*: sem grid e sem dial. O
+  disparo soma o BA da nave **e** o BA à distância de quem opera a arma; a
+  defesa é o CP, e só nave **pequena** troca o CP por uma **JP**, com a manobra
+  evasiva, uma vez a cada 5 rodadas. A JP não tem atributo: o modificador vem
+  de um teste de pilotagem, pela **T10-5**. O 20 natural rola a T10-6 de
+  acertos críticos (dano ×2 nos 1–4, ataque extra no 5, pane no 6) e o 1
+  natural rola a de **falhas críticas**, que o Tático não tem — inclusive o
+  fogo amigo. A 0 PV a nave se destrói sem teste, em 1 segundo por PV do total.
+
+No modo Livro a ficha esconde o dial, o planejar/revelar e a Sobrecarga, que
+são do X-Wing e não existem no capítulo 10; *iniciativa* vira **ordem de ação**
+(o valor é a própria ação, e o menor age primeiro) e *esquivar* vira **manobra
+evasiva**.
+
+É opção de mundo, e não por nave, porque combate é coletivo: com metade das
+naves cancelando dados em d6 e a outra metade trocando o CP por uma JP, a cena
+não fecha.
+
+O teste da nave passou a cobrir as tabelas do livro — os seis acertos e as seis
+falhas críticas, as seis faixas da T10-5 e o limite de tamanho da evasiva.
+
 ## 1.5.2 — a ficha de nave rola, guarda o tipo e veste as cores do Space Dragon
 
 Três coisas, e duas delas eram o **mesmo defeito**: o template abria um

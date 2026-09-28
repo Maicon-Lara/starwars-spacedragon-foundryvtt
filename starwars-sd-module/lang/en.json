@@ -1,4 +1,8 @@
 {
   "starwars-sd.aviso.semSpaceDragon": "Star Wars SD: the Space Dragon module is disabled. This supplement's classes and powers use its rules — enable it in Manage Modules.",
-  "TYPES.Actor.starwars-sd.nave": "Starship"
+  "TYPES.Actor.starwars-sd.nave": "Starship",
+  "starwars-sd.settings.regrasDeNave.nome": "Starship combat rules",
+  "starwars-sd.settings.regrasDeNave.dica": "Tactical: the Supplement's tactical combat, with a maneuver dial, secretly planned maneuvers, Overload and defence dice that cancel damage dice. Book: Space Dragon §10.6, with no grid and no dial — defence is the CP, and only small ships trade the CP for a saving throw via evasive maneuvers. World-wide, because combat is collective.",
+  "starwars-sd.settings.regrasDeNave.tatico": "Tactical (Supplement)",
+  "starwars-sd.settings.regrasDeNave.livro": "Book (Space Dragon §10.6)"
 }

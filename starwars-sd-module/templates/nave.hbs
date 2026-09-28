@@ -51,12 +51,20 @@
   <section class="estado">
     <h3>Estado da rodada</h3>
     <div class="linha-estado">
+      {{#if tatico}}
       <div class="sobrecarga" title="Manobra vermelha dá 1. Com Sobrecarga, nada de vermelha; uma verde tira 1.">
         <label>Sobrecarga</label>
         <button type="button" data-action="sobrecarga" data-delta="-1">−</button>
         <strong>{{s.sobrecarga}}</strong>
         <button type="button" data-action="sobrecarga" data-delta="1">+</button>
       </div>
+      {{/if}}
+      {{#if livro}}
+      <div class="sobrecarga" title="§10.6: só nave pequena, e uma vez a cada 5 rodadas. Passando no teste de pilotagem, ataques contra ela são evitados por JP em vez do CP.">
+        <label>Evasiva</label>
+        <strong>{{#if s.evasiva.ativa}}ativa ({{#if s.evasiva.mod}}{{s.evasiva.mod}}{{else}}0{{/if}}){{else}}—{{/if}}</strong>
+      </div>
+      {{/if}}
       <button type="button" class="ficha trava {{#if s.trava}}ligada{{/if}}" data-action="trava"
               title="Sensores: +2 no próximo ataque aliado contra o alvo travado">
         Trava{{#if s.trava}} → {{s.trava}}{{/if}}
@@ -68,8 +76,14 @@
       {{/each}}
     </div>
     <div class="botoes">
+      {{#if tatico}}
       <button type="button" data-action="iniciativa" title="1d20 + Destreza do piloto — a ordem dos tiros">iniciativa</button>
       <button type="button" data-action="esquivar" title="Rola a Esquiva desta nave: cada 5–6 cancela um dado de dano">esquivar</button>
+      {{else}}
+      <button type="button" data-action="iniciativa" title="T10-6: o valor é a própria ação, e o menor age primeiro">ordem de ação</button>
+      <button type="button" data-action="esquivar" {{#unless podeEvadir}}disabled{{/unless}}
+              title="{{#if podeEvadir}}Teste de pilotagem; passando, ataques são evitados por JP em vez do CP{{else}}Só naves pequenas fazem manobras evasivas (§10.6){{/if}}">manobra evasiva</button>
+      {{/if}}
       <button type="button" data-action="reparar" title="Engenharia: remove uma avaria, recupera 1d10 PV ou tira 1 Sobrecarga">reparar</button>
       <button type="button" data-action="fimDaRodada" title="Limpa a manobra e as avarias de uma rodada (Leme, Tripulação)">fim da rodada</button>
     </div>
@@ -77,6 +91,17 @@
 
   {{!-- Dial de manobras. A escolha é SECRETA: fica gravada e só sai no chat
         no Mover, que também move o token e aplica a Sobrecarga. --}}
+  {{#if livro}}
+  <section class="dial">
+    <h3>Regras do livro <span class="dica">Space Dragon §10.6</span></h3>
+    <p class="tabela">Sem grid e sem dial: o combate segue a sequência do combate entre personagens. O disparo
+      soma o BA da nave <em>e</em> o BA à distância de quem opera a arma, e uma arma atira por vez, desde que
+      haja um tripulante em cada. A defesa é o CP; só nave pequena troca o CP por uma JP, com a manobra evasiva.
+      O 20 natural e o 1 natural rolam as tabelas T10-6.</p>
+  </section>
+  {{/if}}
+
+  {{#if tatico}}
   <section class="dial">
     <h3>Manobra <span class="dica">planeje em segredo · mova na ordem crescente de Velocidade</span></h3>
     {{#unless escala.ok}}<p class="aviso-escala">{{{escala.motivo}}} O token não será movido.</p>{{/unless}}
@@ -97,6 +122,7 @@
       <button type="button" data-action="revelar">mover</button>
     </div>
   </section>
+  {{/if}}
 
   <section class="armamento">
     <h3>Armamento <span class="dica">marque o alvo (T) antes de atirar</span>

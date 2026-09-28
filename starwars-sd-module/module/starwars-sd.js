@@ -43,6 +43,40 @@ Hooks.once("init", () => {
     label: "Nave (Star Wars SD)",
     makeDefault: true,
   });
+
+  // ── Qual regra de combate de nave a mesa usa ──
+  //
+  // São duas, e de origens diferentes:
+  //
+  //   TÁTICO  o Combate Tático do Suplemento, desenhado sobre o X-Wing
+  //           Miniatures Game da FFG — dial de manobras, manobra planejada em
+  //           segredo, Sobrecarga (o stress) e dados de defesa que cancelam
+  //           dados de dano. Tem tabela de crítico própria.
+  //   LIVRO   o §10.6 do Livro Básico Aprimorado: sem grid e sem dial, defesa
+  //           no CP, manobra evasiva trocando o CP por uma JP, e as tabelas
+  //           T10-5 e T10-6.
+  //
+  // É opção de MUNDO, e não de nave nem de jogador, porque combate é coletivo:
+  // com metade das naves cancelando dados em d6 e a outra metade fazendo JP, a
+  // cena não fecha.
+  game.settings.register(ID, "regrasDeNave", {
+    name: "starwars-sd.settings.regrasDeNave.nome",
+    hint: "starwars-sd.settings.regrasDeNave.dica",
+    scope: "world",
+    config: true,
+    type: String,
+    choices: {
+      tatico: "starwars-sd.settings.regrasDeNave.tatico",
+      livro: "starwars-sd.settings.regrasDeNave.livro",
+    },
+    default: "tatico",
+    // o que a ficha mostra muda por completo, então as abertas se redesenham
+    onChange: () => {
+      for (const app of foundry.applications?.instances?.values?.() ?? []) {
+        if (app instanceof NaveFicha) app.render();
+      }
+    },
+  });
 });
 
 Hooks.once("ready", () => {

@@ -1,4 +1,8 @@
 {
   "starwars-sd.aviso.semSpaceDragon": "Star Wars SD: o módulo Space Dragon está desligado. As classes e poderes deste suplemento usam as regras dele — ligue-o em Gerenciar Módulos.",
-  "TYPES.Actor.starwars-sd.nave": "Nave"
+  "TYPES.Actor.starwars-sd.nave": "Nave",
+  "starwars-sd.settings.regrasDeNave.nome": "Regras de combate de naves",
+  "starwars-sd.settings.regrasDeNave.dica": "Tático: o Combate Tático do Suplemento, com dial de manobras, manobra planejada em segredo, Sobrecarga e dados de defesa que cancelam dados de dano. Livro: o §10.6 do Livro Básico Aprimorado, sem grid nem dial — a defesa é o CP, e só naves pequenas trocam o CP por uma JP com a manobra evasiva. Vale para o mundo inteiro, porque combate é coletivo.",
+  "starwars-sd.settings.regrasDeNave.tatico": "Tático (Suplemento)",
+  "starwars-sd.settings.regrasDeNave.livro": "Livro (Space Dragon §10.6)"
 }

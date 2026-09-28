@@ -46,6 +46,28 @@ Os Poderes da Força trazem os números do Poder Mental nativo, lidos do
 `packs-src` do módulo Space Dragon (`../space-dragon-foundryvtt`) pelo mesmo
 importador.
 
+## As duas regras de combate de nave
+
+A ficha de Nave atende **duas** regras, e a mesa escolhe qual vale em
+*Configurações do Módulo → Regras de combate de naves*. É opção de **mundo**,
+não de nave: combate é coletivo, e com metade das naves cancelando dados em d6
+e a outra metade fazendo JP a cena não fecha.
+
+| | **Tático** (padrão) | **Livro** |
+|---|---|---|
+| Fonte | o Combate Tático do Suplemento, desenhado sobre o **X-Wing Miniatures Game** da FFG | *Space Dragon*, **§10.6** |
+| Movimento | dial de manobras no hex, giros de 60°, planejado em segredo | sem grid nem dial |
+| Iniciativa | `1d20 + Destreza` do piloto | a **ação** é o valor (T10-6), e o menor age primeiro |
+| Disparo | `1d20 + BA de casco`, com faixa de alcance | `1d20 + BA da nave + BA à distância do artilheiro` |
+| Defesa | CP, e dados de Esquiva cancelam dados de dano inteiros | CP; só nave **pequena** troca por **JP**, na manobra evasiva (1× a cada 5 rodadas) |
+| Estado de rodada | Sobrecarga (o *stress*) e Trava dos Sensores | a manobra evasiva ativa |
+| 20 natural | soma um dado e rola avaria; a Brecha dobra | T10-6: dano ×2 nos 1–4, ataque extra no 5, pane no 6 |
+| 1 natural | — | T10-6 de **falhas críticas**, inclusive o fogo amigo |
+
+No modo Livro a ficha esconde o dial, o planejar/revelar e a Sobrecarga, e os
+dois botões mudam de nome: *iniciativa* vira **ordem de ação** e *esquivar* vira
+**manobra evasiva**.
+
 ## Estrutura
 
 A mesma do Star Dragon, para quem mexe num achar as coisas no outro:

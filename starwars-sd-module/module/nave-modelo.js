@@ -86,6 +86,72 @@ export const AVARIAS = {
 /** As avarias que duram só a próxima rodada saem no fim dela. */
 export const AVARIAS_DE_UMA_RODADA = ["leme", "tripulacao"];
 
+/* ── AS REGRAS DO LIVRO (SD, §10.6) ───────────────────────────────────────────
+ *
+ * O outro modo de combate de nave, para quem prefere o capítulo 10 ao Combate
+ * Tático do Suplemento. Não é uma variante do dial: é outro jogo.
+ *
+ *   · não há grid, dial, Sobrecarga nem Esquiva em d6;
+ *   · o disparo soma o BA da nave E o BA à distância de quem opera a arma;
+ *   · a defesa é o CP — só naves PEQUENAS podem trocá-lo por uma JP, com a
+ *     manobra evasiva, e apenas uma vez a cada 5 rodadas;
+ *   · a JP da nave não tem atributo: o modificador vem de um teste de
+ *     pilotagem (T10-5);
+ *   · o 20 e o 1 naturais têm tabelas próprias, em 1d6.
+ */
+
+/** T10-5: o teste de pilotagem vira o modificador da JP da nave. */
+export const PILOTAGEM_JP = [
+  { chave: "falhaCritica", rotulo: "Falha crítica (100)", mod: -8 },
+  { chave: "falhaAlta", rotulo: "Falha (acima de 80)", mod: -4 },
+  { chave: "falha", rotulo: "Falha", mod: -2 },
+  { chave: "sucesso", rotulo: "Sucesso", mod: 2 },
+  { chave: "sucessoBaixo", rotulo: "Sucesso (abaixo de 20)", mod: 4 },
+  { chave: "sucessoCritico", rotulo: "Sucesso crítico (1)", mod: 8 },
+];
+
+/** Em que faixa da T10-5 caiu um d% de pilotagem contra a chance do piloto. */
+export function faixaDePilotagem(rolado, chance) {
+  if (rolado === 100) return PILOTAGEM_JP[0];
+  if (rolado === 1) return PILOTAGEM_JP[5];
+  if (rolado > chance) return rolado > 80 ? PILOTAGEM_JP[1] : PILOTAGEM_JP[2];
+  return rolado < 20 ? PILOTAGEM_JP[4] : PILOTAGEM_JP[3];
+}
+
+/** T10-6, acertos críticos (1d6). `dobra` é o "dano x2" do livro. */
+export const CRITICOS_LIVRO = {
+  1: { rotulo: "Área crítica", efeito: "Dano ×2.", dobra: true, chave: null },
+  2: { rotulo: "Avaria na propulsão", efeito: "Dano ×2, e a movimentação cai à metade.", dobra: true, chave: "motor" },
+  3: { rotulo: "Avaria nas armas", efeito: "Dano ×2, e −5 nos ataques da nave alvo.", dobra: true, chave: "armas" },
+  4: { rotulo: "Casco avariado", efeito: "Dano ×2, e −5 no CP.", dobra: true, chave: null },
+  5: { rotulo: "Ataque extra", efeito: "Um ataque extra contra outra nave ao alcance.", dobra: false, chave: null },
+  6: { rotulo: "Pane geral", efeito: "Pane geral na espaçonave.", dobra: false, chave: null },
+};
+
+/** T10-6, falhas críticas (1d6) — o 1 natural, que o Tático não tem. */
+export const FALHAS_LIVRO = {
+  1: { rotulo: "Armas travadas", efeito: "As armas param de funcionar." },
+  2: { rotulo: "Perda de controle momentânea", efeito: "−5 no CP até o próximo turno." },
+  3: { rotulo: "Arma danificada", efeito: "Uma arma fica temporariamente danificada." },
+  4: { rotulo: "Arma destruída", efeito: "Uma arma fica permanentemente danificada." },
+  5: { rotulo: "Fogo amigo", efeito: "O tiro atinge uma nave aliada próxima ao alvo." },
+  6: { rotulo: "Perda de controle brusca", efeito: "−10 no CP." },
+};
+
+/**
+ * T10-6, ordem de ação: o valor depende da AÇÃO escolhida, e no Space Dragon
+ * quem tem o MENOR valor age primeiro.
+ */
+export const ORDEM_LIVRO = {
+  disparo: { rotulo: "Disparo de armas", de: "os dados de dano da arma" },
+  equipamento: { rotulo: "Ativar equipamento", de: "o bônus de ataque" },
+  evasiva: { rotulo: "Manobra evasiva ou movimento duplo", de: "a jogada de proteção" },
+};
+
+/** A manobra evasiva é só de nave pequena, uma vez a cada 5 rodadas. */
+export const EVASIVA_INTERVALO = 5;
+export const evasivaPermitida = (tipo) => TIPOS[tipo]?.tamanho === "Pequena";
+
 /** Os postos do Modo Tripulação. */
 export const POSTOS = {
   leme: { rotulo: "Leme", quem: "Veterano / Contrabandista", acao: "Escolhe e executa a manobra; rola Pilotar em situações-limite." },
@@ -119,6 +185,15 @@ export class NaveDataModel extends foundry.abstract.TypeDataModel {
 
       sobrecarga: num(0),
       trava: txt(""), // nome do alvo travado pelos Sensores
+
+      // Só no modo Livro (§10.6): a manobra evasiva troca o CP por uma JP
+      // durante a rodada. `mod` é o que o teste de pilotagem deu na T10-5, e
+      // `rodada` guarda quando foi, para valer o intervalo de 5 rodadas.
+      evasiva: new fields.SchemaField({
+        ativa: sim(),
+        mod: num(0),
+        rodada: num(0),
+      }),
       avarias: new fields.SchemaField({
         motor: sim(), leme: sim(), armas: sim(), sensores: sim(), tripulacao: sim(),
       }),

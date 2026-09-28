@@ -19,10 +19,32 @@
  *            tabela de avarias. A Brecha no casco (6) dobra o dano DESTE tiro.
  */
 
-import { TIPOS, MANOBRAS, MANOBRAS_DE_COLOSSO, FAIXAS, AVARIAS, AVARIAS_DE_UMA_RODADA, POSTOS } from "./nave-modelo.js";
+import {
+  TIPOS, MANOBRAS, MANOBRAS_DE_COLOSSO, FAIXAS, AVARIAS, AVARIAS_DE_UMA_RODADA, POSTOS,
+  CRITICOS_LIVRO, FALHAS_LIVRO, ORDEM_LIVRO, faixaDePilotagem,
+  EVASIVA_INTERVALO, evasivaPermitida,
+} from "./nave-modelo.js";
 import { moverNave, conferirEscala, casasDaManobra } from "./nave-movimento.js";
 
 export const TIPO_NAVE = "starwars-sd.nave";
+
+/**
+ * Qual regra de combate de nave a mesa escolheu, na opção de mundo.
+ *
+ * "tatico" é o Combate Tático do Suplemento, desenhado sobre o X-Wing
+ * Miniatures Game da FFG — dial, manobra em segredo, Sobrecarga (o stress) e
+ * dados de defesa que cancelam dados de dano. "livro" é o §10.6 do Livro
+ * Básico Aprimorado. Fora do Foundry — no teste de fumaça — não há settings, e
+ * o padrão é o Tático.
+ */
+export function regraDeNave() {
+  try {
+    return globalThis.game?.settings?.get?.("starwars-sd", "regrasDeNave") ?? "tatico";
+  } catch {
+    return "tatico";
+  }
+}
+const ehLivro = () => regraDeNave() === "livro";
 
 const { ActorSheetV2 } = foundry.applications.sheets;
 const { HandlebarsApplicationMixin } = foundry.applications.api;
@@ -132,6 +154,12 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
           (m.lado ? (m.lado === "esq" ? " à esquerda" : " à direita") : "") +
           (m.velocidade ? ` ${m.velocidade}` : "")
         : "",
+      // Qual regra está valendo: o template esconde o dial, o planejar/revelar
+      // e a Sobrecarga no modo Livro, porque o capítulo 10 não os tem.
+      livro: ehLivro(),
+      tatico: !ehLivro(),
+      podeEvadir: evasivaPermitida(s.tipo),
+      ordemLivro: Object.values(ORDEM_LIVRO),
       escala: canvas?.scene ? conferirEscala(canvas.scene) : { ok: true },
       pctPV: s.pv.max ? Math.max(0, Math.min(100, Math.round((s.pv.value / s.pv.max) * 100))) : 0,
       descricao: await foundry.applications.ux.TextEditor.implementation.enrichHTML(s.descricao, { async: true }),
@@ -171,6 +199,9 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
 
   // ── Ataque ────────────────────────────────────────────────────────────────
   static async #atacar(event, botao) {
+    // O §10.6 resolve o tiro de outro jeito: sem faixas de hex, sem dados de
+    // defesa, e com as tabelas T10-6 no 20 e no 1 naturais.
+    if (ehLivro()) return NaveFicha.#atacarPeloLivro.call(this, event, botao);
     const arma = this.actor.system.armas[Number(botao.dataset.idx)];
     if (!arma) return;
     const s = this.actor.system;
@@ -279,8 +310,196 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
     await card(this.actor, "Ataque de nave", corpo, rolls);
   }
 
+  /**
+   * O disparo pelo §10.6 do livro.
+   *
+   * Difere do Tático em quatro pontos, e todos vêm do capítulo 10:
+   *
+   *   · soma o BA da nave E o BA à distância de quem opera a arma;
+   *   · não há faixas de alcance nem dados de defesa — o dano sai cheio;
+   *   · se o alvo declarou MANOBRA EVASIVA, ele evita o tiro com uma JP em vez
+   *     de opor o CP (e a JP leva o modificador que o teste de pilotagem deu);
+   *   · o 20 natural rola a T10-6 de acertos críticos, e o 1 natural rola a de
+   *     falhas críticas — que o Tático não tem.
+   */
+  static async #atacarPeloLivro(event, botao) {
+    const arma = this.actor.system.armas[Number(botao.dataset.idx)];
+    if (!arma) return;
+    const s = this.actor.system;
+    const dano = lerDano(arma.dano);
+    if (!dano) return ui.notifications.warn(`O dano "${arma.dano}" não está no formato NdX (ex.: 4d8).`);
+
+    const alvoTok = [...(game.user?.targets ?? [])][0];
+    const alvo = alvoTok?.actor;
+    const alvoNave = alvo?.type === TIPO_NAVE ? alvo : null;
+    const podeAplicar = !!alvoNave && alvoNave.isOwner;
+    const evasiva = alvoNave?.system.evasiva?.ativa ? alvoNave.system.evasiva : null;
+
+    const r = await pergunta({
+      titulo: `${arma.nome} — ${this.actor.name}`,
+      conteudo:
+        `<div class="starwars-sd-nave-dialogo">` +
+        `<p><strong>1d20 + ${s.ba}</strong> (BA da nave) <strong>+ o BA à distância do artilheiro</strong>` +
+        (alvoNave
+          ? `, contra o CP de <strong>${alvoNave.name}</strong> (${alvoNave.system.cp}).`
+          : ", contra o CP do alvo.") + `</p>` +
+        (evasiva
+          ? `<p><em>${alvoNave.name} está em manobra evasiva: em vez do CP, ela faz uma JP ` +
+            `(alvo ${alvoNave.system.jp}, modificador ${evasiva.mod >= 0 ? "+" : ""}${evasiva.mod}) para evitar o tiro.</em></p>`
+          : "") +
+        `<div class="linha"><label>BA à distância do artilheiro</label><input type="number" name="artilheiro" value="0"></div>` +
+        (alvoNave ? "" :
+          `<div class="linha"><label>CP do alvo</label><input type="number" name="cp" value="28"></div>`) +
+        `<div class="linha"><label>Outro modificador</label><input type="number" name="extra" value="0"></div>` +
+        (podeAplicar ? `<div class="linha"><label>Aplicar o dano em ${alvoNave.name}</label><input type="checkbox" name="aplicar" checked></div>` : "") +
+        `</div>`,
+      botoes: [{ chave: "rolar", rotulo: "Atirar", padrao: true }, { chave: "cancelar", rotulo: "Cancelar" }],
+    });
+    if (!r || r.acao !== "rolar") return;
+    const d = r.dados;
+
+    const cp = alvoNave ? alvoNave.system.cp : Number(d.cp) || 0;
+    const partes = [
+      ["BA da nave", s.ba],
+      ["artilheiro", Number(d.artilheiro) || 0],
+      ["extra", Number(d.extra) || 0],
+    ].filter(([, v]) => v);
+    const total = partes.reduce((a, [, v]) => a + v, 0);
+    const ataque = await new Roll(`1d20 + ${total}`).evaluate();
+    const natural = ataque.dice[0].results[0].result;
+    const rolls = [ataque];
+
+    let corpo =
+      `<p><strong>${arma.nome}</strong> · ${arma.dano} · <em>regras do livro (§10.6)</em></p>` +
+      `<p class="result">${partes.map(([n, v]) => `${n} ${v > 0 ? "+" : ""}${v}`).join(" · ")}</p>`;
+
+    // O 1 natural: falha crítica na T10-6, e o tiro não acerta.
+    if (natural === 1) {
+      const rF = await new Roll("1d6").evaluate();
+      rolls.push(rF);
+      const f = FALHAS_LIVRO[rF.total];
+      corpo +=
+        `<p class="result"><strong class="failure">Falha crítica — 1 natural</strong></p>` +
+        `<p class="result"><strong>(${rF.total}) ${f.rotulo}</strong> — ${f.efeito}</p>`;
+      return void await card(this.actor, "Ataque de nave", corpo, rolls);
+    }
+
+    const critico = natural === 20;
+
+    // A manobra evasiva do alvo substitui o CP por uma JP dele.
+    let acertou;
+    if (evasiva) {
+      const jp = await new Roll(`1d20 + ${evasiva.mod}`).evaluate();
+      rolls.push(jp);
+      const evitou = jp.total >= alvoNave.system.jp;
+      acertou = critico || !evitou;
+      corpo +=
+        `<p class="result">Manobra evasiva de ${alvoNave.name}: <strong>${jp.total}</strong>` +
+        ` contra JP ${alvoNave.system.jp} — <strong class="${evitou ? "success" : "failure"}">` +
+        `${evitou ? "evitou" : "não evitou"}</strong></p>` +
+        (critico && evitou ? `<p><em>O 20 natural acerta de todo jeito.</em></p>` : "");
+    } else {
+      acertou = critico || ataque.total >= cp;
+      corpo += `<p class="result"><strong>${ataque.total}</strong> contra CP ${cp}` +
+        (alvoNave ? ` (${alvoNave.name})` : "") + `</p>`;
+    }
+
+    corpo += `<p class="result"><strong class="${acertou ? "success" : "failure"}">${acertou ? "Acertou" : "Errou"}</strong></p>`;
+
+    if (acertou) {
+      let efeito = null;
+      if (critico) {
+        const rC = await new Roll("1d6").evaluate();
+        rolls.push(rC);
+        efeito = CRITICOS_LIVRO[rC.total];
+        corpo +=
+          `<p class="result"><strong class="success">Crítico — 20 natural</strong></p>` +
+          `<p class="result"><strong>(${rC.total}) ${efeito.rotulo}</strong> — ${efeito.efeito}</p>`;
+      }
+
+      // Dano cheio: no livro não há dado cancelado.
+      const rDano = await new Roll(`${dano.n}d${dano.faces}${dano.resto}`).evaluate();
+      rolls.push(rDano);
+      const pv = rDano.total * (efeito?.dobra ? 2 : 1);
+      corpo += `<p class="result">Dano: <strong>${pv}</strong> (${arma.dano}` +
+        (efeito?.dobra ? ", dobrado pelo crítico" : "") + `)</p>`;
+
+      if (d.aplicar && alvoNave) {
+        const restante = alvoNave.system.pv.value - pv;
+        const updAlvo = { "system.pv.value": restante };
+        if (efeito?.chave) updAlvo[`system.avarias.${efeito.chave}`] = true;
+        await alvoNave.update(updAlvo);
+        corpo += `<p><em>Aplicado em ${alvoNave.name}: PV ${restante}/${alvoNave.system.pv.max}` +
+          (efeito?.chave ? `, avaria de ${efeito.rotulo}` : "") + `.</em></p>`;
+        // "não há testes a serem realizados para evitar esse evento"
+        if (restante <= 0) {
+          corpo += `<p class="result"><strong>${alvoNave.name} entra em processo de destruição</strong>` +
+            ` — 1 segundo por PV do total (${alvoNave.system.pv.max} s).</p>`;
+        }
+      }
+    }
+
+    await card(this.actor, "Ataque de nave", corpo, rolls);
+  }
+
+  /**
+   * A MANOBRA EVASIVA do §10.6 — o que o botão de Esquiva faz no modo Livro.
+   *
+   * Só nave PEQUENA pode; exige um teste de pilotagem, e o resultado dele dá
+   * o modificador da JP pela T10-5. Falhar no teste não impede a manobra de ser
+   * declarada, mas o livro é explícito: "uma falha não permite que a JP seja
+   * feita para evitar ataques" — então a manobra não fica ativa.
+   */
+  static async #manobraEvasiva() {
+    const s = this.actor.system;
+    const nome = TIPOS[s.tipo]?.rotulo ?? s.tipo;
+    if (!evasivaPermitida(s.tipo)) {
+      return ui.notifications.info(
+        `${this.actor.name} é ${nome}: só naves pequenas fazem manobras evasivas (§10.6).`);
+    }
+
+    const rodada = game.combat?.round ?? 0;
+    const ultima = s.evasiva?.rodada ?? 0;
+    const falta = EVASIVA_INTERVALO - (rodada - ultima);
+    if (rodada && ultima && falta > 0) {
+      return ui.notifications.warn(
+        `Manobra evasiva é uma vez a cada ${EVASIVA_INTERVALO} rodadas: faltam ${falta}.`);
+    }
+
+    const r = await pergunta({
+      titulo: `Manobra evasiva — ${this.actor.name}`,
+      conteudo:
+        `<div class="starwars-sd-nave-dialogo">` +
+        `<p>Um teste de <strong>pilotagem</strong>, e o resultado dá o modificador da JP (T10-5).</p>` +
+        `<div class="linha"><label>Pilotar naves (%)</label><input type="number" name="chance" value="80" min="0" max="100"></div>` +
+        `</div>`,
+      botoes: [{ chave: "rolar", rotulo: "Pilotar", padrao: true }, { chave: "cancelar", rotulo: "Cancelar" }],
+    });
+    if (!r || r.acao !== "rolar") return;
+
+    const chance = Math.max(0, Math.min(100, Number(r.dados.chance) || 0));
+    const roll = await new Roll("1d100").evaluate();
+    const faixa = faixaDePilotagem(roll.total, chance);
+    const passou = faixa.mod > 0;
+
+    await this.actor.update({
+      "system.evasiva.ativa": passou,
+      "system.evasiva.mod": faixa.mod,
+      "system.evasiva.rodada": game.combat?.round ?? 0,
+    });
+
+    await card(this.actor, "Manobra evasiva",
+      `<p class="result"><strong>${roll.total}</strong> contra ${chance}% — ${faixa.rotulo}</p>` +
+      `<p class="result">Modificador da JP: <strong>${faixa.mod >= 0 ? "+" : ""}${faixa.mod}</strong></p>` +
+      (passou
+        ? `<p class="result"><strong class="success">Em manobra evasiva</strong> — ataques contra ela são evitados com uma JP (alvo ${s.jp}), não pelo CP.</p>`
+        : `<p class="result"><strong class="failure">Falhou</strong> — a JP não pode ser feita para evitar ataques nesta rodada.</p>`),
+      [roll]);
+  }
+
   /** Esquiva avulsa, para quando o atacante não marcou esta nave como alvo. */
   static async #esquivar() {
+    if (ehLivro()) return NaveFicha.#manobraEvasiva.call(this);
     const s = this.actor.system;
     if (s.esquiva <= 0)
       return ui.notifications.info(`${this.actor.name} é colossal: não esquiva — é atingida e absorve no PV.`);
@@ -293,6 +512,7 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
 
   /** Iniciativa deste módulo: 1d20 + Destreza do piloto. */
   static async #iniciativa() {
+    if (ehLivro()) return NaveFicha.#ordemDeAcao.call(this);
     const s = this.actor.system;
     const roll = await new Roll(`1d20 + ${s.iniciativa}`).evaluate();
     // Se a nave está num combate, grava lá — é a ordem de tiro da rodada.
@@ -303,6 +523,48 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
       `<p class="result"><strong>${roll.total}</strong> (1d20 + ${s.iniciativa})</p>` +
       `<p><em>Os tiros saem na ordem de Iniciativa; o movimento, na ordem crescente de Velocidade.</em></p>`,
       [roll]);
+  }
+
+  /**
+   * A ORDEM DE AÇÃO do §10.6 (T10-6) — o que o botão de Iniciativa faz no modo
+   * Livro.
+   *
+   * Não se rola nada: o valor É a ação escolhida — os dados de dano da arma
+   * para disparar, o bônus de ataque para ativar equipamento, a jogada de
+   * proteção para manobra evasiva ou movimento duplo. Como em todo o Space
+   * Dragon, o MENOR valor age primeiro.
+   */
+  static async #ordemDeAcao() {
+    const s = this.actor.system;
+    const arma = s.armas[0];
+    const dadosDeDano = arma ? (lerDano(arma.dano)?.n ?? 0) : 0;
+
+    const opcoes = [
+      { chave: "disparo", rotulo: `${ORDEM_LIVRO.disparo.rotulo} — ${dadosDeDano || "?"}`, valor: dadosDeDano },
+      { chave: "equipamento", rotulo: `${ORDEM_LIVRO.equipamento.rotulo} — ${s.ba}`, valor: s.ba },
+      { chave: "evasiva", rotulo: `${ORDEM_LIVRO.evasiva.rotulo} — ${s.jp}`, valor: s.jp },
+    ];
+
+    const r = await pergunta({
+      titulo: `Ordem de ação — ${this.actor.name}`,
+      conteudo:
+        `<div class="starwars-sd-nave-dialogo">` +
+        `<p>Na T10-6 o valor é a própria <strong>ação</strong>, e o <strong>menor age primeiro</strong>.</p>` +
+        `<div class="linha"><label>Ação desta rodada</label><select name="acao">` +
+        opcoes.map((o) => `<option value="${o.chave}">${o.rotulo}</option>`).join("") +
+        `</select></div></div>`,
+      botoes: [{ chave: "ok", rotulo: "Entrar na ordem", padrao: true }, { chave: "cancelar", rotulo: "Cancelar" }],
+    });
+    if (!r || r.acao !== "ok") return;
+
+    const escolha = opcoes.find((o) => o.chave === r.dados.acao) ?? opcoes[0];
+    const tok = this.actor.getActiveTokens?.()[0]?.document;
+    const c = tok && game.combat?.getCombatantByToken?.(tok.id);
+    if (c) await game.combat.setInitiative(c.id, escolha.valor);
+
+    await card(this.actor, "Ordem de ação",
+      `<p class="result"><strong>${escolha.valor}</strong> — ${escolha.rotulo.split(" — ")[0]}</p>` +
+      `<p><em>Menor age primeiro (§10.6, T10-6).</em></p>`);
   }
 
   /** Engenharia: remove uma avaria, recupera 1d10 PV ou tira 1 Sobrecarga. */
@@ -368,10 +630,16 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
   static async #fimDaRodada() {
     const upd = { "system.manobra.tipo": "", "system.manobra.revelada": false };
     for (const a of AVARIAS_DE_UMA_RODADA) upd[`system.avarias.${a}`] = false;
+    // A manobra evasiva vale pela rodada em que foi declarada; a rodada em que
+    // ela aconteceu FICA gravada, para valer o intervalo de 5.
+    if (this.actor.system.evasiva?.ativa) upd["system.evasiva.ativa"] = false;
     await this.actor.update(upd);
     await card(this.actor, "Fim da rodada",
-      `<p>Manobra limpa para o próximo planejamento. As avarias de <strong>Leme</strong> e <strong>Tripulação</strong>, ` +
-      `que valem por uma rodada, saíram. Motor, Armas e Sensores ficam até o reparo.</p>`);
+      ehLivro()
+        ? `<p>A <strong>manobra evasiva</strong> saiu: ataques voltam a ser opostos pelo CP. ` +
+          `A rodada dela fica registrada — são ${EVASIVA_INTERVALO} rodadas até a próxima.</p>`
+        : `<p>Manobra limpa para o próximo planejamento. As avarias de <strong>Leme</strong> e <strong>Tripulação</strong>, ` +
+          `que valem por uma rodada, saíram. Motor, Armas e Sensores ficam até o reparo.</p>`);
   }
 
   // ── Preenchimento pelo tipo ───────────────────────────────────────────────

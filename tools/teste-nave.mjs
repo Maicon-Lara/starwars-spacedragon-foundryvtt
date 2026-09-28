@@ -150,6 +150,56 @@ const marcacao = hbs.replace(/\{\{!--[\s\S]*?--\}\}/g, "");
 confere(!/<form[\s>]/.test(marcacao), "nave.hbs não pode abrir <form>: a raiz da ficha já é um");
 confere(/class="starwars-sd-nave"/.test(hbs), "nave.hbs precisa do container .starwars-sd-nave");
 
+// ── O template fecha o que abre, com os dois modos ──────────────────────────
+{
+  const limpo = marcacao;
+  const abre = (limpo.match(/\{\{#(if|unless|each)/g) ?? []).length;
+  const fecha = (limpo.match(/\{\{\/(if|unless|each)\}\}/g) ?? []).length;
+  confere(abre === fecha, `nave.hbs: ${abre} blocos abertos e ${fecha} fechados`);
+  for (const tag of ["section", "div"]) {
+    const a = (limpo.match(new RegExp(`<${tag}[\\s>]`, "g")) ?? []).length;
+    const f = (limpo.match(new RegExp(`</${tag}>`, "g")) ?? []).length;
+    confere(a === f, `nave.hbs: <${tag}> abre ${a} e fecha ${f}`);
+  }
+  // o dial e a Sobrecarga são do X-Wing, e o §10.6 não os tem
+  confere(/\{\{#if tatico\}\}/.test(limpo) && /\{\{#if livro\}\}/.test(limpo),
+    "nave.hbs precisa dos dois modos: {{#if tatico}} e {{#if livro}}");
+}
+
+// ── As tabelas do livro (§10.6) ─────────────────────────────────────────────
+{
+  const { CRITICOS_LIVRO, FALHAS_LIVRO, faixaDePilotagem, evasivaPermitida } =
+    await import("../starwars-sd-module/module/nave-modelo.js");
+
+  confere(Object.keys(CRITICOS_LIVRO).length === 6, "T10-6: 6 acertos críticos");
+  confere(Object.keys(FALHAS_LIVRO).length === 6, "T10-6: 6 falhas críticas");
+  // "dano x2" nos quatro primeiros; o 5 é ataque extra e o 6 é pane
+  const dobram = Object.entries(CRITICOS_LIVRO).filter(([, v]) => v.dobra).map(([k]) => Number(k));
+  confere(String(dobram) === "1,2,3,4", `dobram o dano os 1–4, não [${dobram}]`);
+
+  // T10-5: o teste de pilotagem dá o modificador da JP
+  const casos = [
+    [100, 80, -8, "falha crítica é o 100, sempre"],
+    [1, 80, 8, "sucesso crítico é o 1, sempre"],
+    [95, 80, -4, "falhou e passou de 80"],
+    [82, 90, 2, "82 contra 90% é SUCESSO, apesar de passar de 80"],
+    [85, 80, -4, "falhou e passou de 80"],
+    [50, 80, 2, "sucesso comum"],
+    [10, 80, 4, "sucesso abaixo de 20"],
+    [19, 20, 4, "19 contra 20% é sucesso abaixo de 20"],
+  ];
+  for (const [rolado, chance, esperado, nome] of casos) {
+    const f = faixaDePilotagem(rolado, chance);
+    confere(f.mod === esperado,
+      `T10-5 (${nome}): ${rolado} contra ${chance}% deu ${f.mod}, esperava ${esperado}`);
+  }
+
+  // manobra evasiva é só de nave pequena
+  confere(evasivaPermitida("caca"), "o Caça é pequeno e pode evadir");
+  confere(!evasivaPermitida("cruzador"), "o Cruzador é colossal e não evade");
+  confere(!evasivaPermitida("cargueiro"), "o Cargueiro é gigantesco e não evade");
+}
+
 // ── O seletor de tipo marca o tipo salvo ────────────────────────────────────
 for (const salvo of Object.keys(TIPOS)) {
   const marcados = Object.entries(TIPOS)
@@ -163,4 +213,4 @@ if (problemas.length) {
   for (const p of problemas) console.error(`  ✘ ${p}`);
   process.exit(1);
 }
-console.log("  ✔ nave: dial (Sobrecarga, Leme, colosso, curva pela metade), ataque (X-wing, crítico e Brecha), template sem <form> aninhado e seletor de tipo");
+console.log("  ✔ nave: dial (Sobrecarga, Leme, colosso, curva pela metade), ataque (X-wing, crítico e Brecha), template sem <form> aninhado, seletor de tipo, e as tabelas do livro (T10-5, T10-6, evasiva)");
