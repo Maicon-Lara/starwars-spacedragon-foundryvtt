@@ -4,5 +4,10 @@
   "starwars-sd.settings.regrasDeNave.nome": "Regras de combate de naves",
   "starwars-sd.settings.regrasDeNave.dica": "Tático: o Combate Tático do Suplemento, com dial de manobras, manobra planejada em segredo, Sobrecarga e dados de defesa que cancelam dados de dano. Livro: o §10.6 do Livro Básico Aprimorado, sem grid nem dial — a defesa é o CP, e só naves pequenas trocam o CP por uma JP com a manobra evasiva. Vale para o mundo inteiro, porque combate é coletivo.",
   "starwars-sd.settings.regrasDeNave.tatico": "Tático (Suplemento)",
-  "starwars-sd.settings.regrasDeNave.livro": "Livro (Space Dragon §10.6)"
+  "starwars-sd.settings.regrasDeNave.livro": "Livro (Space Dragon §10.6)",
+  "starwars-sd.settings.temaDaNave.nome": "Ficha de nave: claro ou escuro",
+  "starwars-sd.settings.temaDaNave.dica": "A ficha de nave tem paleta própria e não acompanha sozinha um módulo de modo escuro. No automático ela segue a página (a classe theme-dark, que o Foundry e a maioria desses módulos usam) e, na falta dela, a preferência do sistema operacional. Preferência de quem olha: vale só para você.",
+  "starwars-sd.settings.temaDaNave.auto": "Automático (segue o Foundry)",
+  "starwars-sd.settings.temaDaNave.claro": "Sempre claro",
+  "starwars-sd.settings.temaDaNave.escuro": "Sempre escuro"
 }

@@ -4,5 +4,10 @@
   "starwars-sd.settings.regrasDeNave.nome": "Starship combat rules",
   "starwars-sd.settings.regrasDeNave.dica": "Tactical: the Supplement's tactical combat, with a maneuver dial, secretly planned maneuvers, Overload and defence dice that cancel damage dice. Book: Space Dragon §10.6, with no grid and no dial — defence is the CP, and only small ships trade the CP for a saving throw via evasive maneuvers. World-wide, because combat is collective.",
   "starwars-sd.settings.regrasDeNave.tatico": "Tactical (Supplement)",
-  "starwars-sd.settings.regrasDeNave.livro": "Book (Space Dragon §10.6)"
+  "starwars-sd.settings.regrasDeNave.livro": "Book (Space Dragon §10.6)",
+  "starwars-sd.settings.temaDaNave.nome": "Ship sheet: light or dark",
+  "starwars-sd.settings.temaDaNave.dica": "The ship sheet has its own palette and does not follow a dark-mode module on its own. On automatic it follows the page (the theme-dark class, used by Foundry and by most such modules) and, failing that, the operating system preference. A per-viewer preference: it applies only to you.",
+  "starwars-sd.settings.temaDaNave.auto": "Automatic (follow Foundry)",
+  "starwars-sd.settings.temaDaNave.claro": "Always light",
+  "starwars-sd.settings.temaDaNave.escuro": "Always dark"
 }

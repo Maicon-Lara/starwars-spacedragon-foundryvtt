@@ -46,6 +46,23 @@ export function regraDeNave() {
 }
 const ehLivro = () => regraDeNave() === "livro";
 
+/**
+ * A classe de tema da ficha: "tema-auto", "tema-claro" ou "tema-escuro".
+ *
+ * A ficha tem paleta própria e não acompanha sozinha um módulo de modo escuro.
+ * No automático quem decide é o CSS, pela classe `theme-dark` da página ou pela
+ * preferência do sistema.
+ */
+function classeDeTema() {
+  let escolha = "auto";
+  try {
+    escolha = globalThis.game?.settings?.get?.("starwars-sd", "temaDaNave") ?? "auto";
+  } catch {
+    escolha = "auto";
+  }
+  return `tema-${escolha}`;
+}
+
 const { ActorSheetV2 } = foundry.applications.sheets;
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 
@@ -112,7 +129,7 @@ const legendaEsquiva = (faces) =>
 
 export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
   static DEFAULT_OPTIONS = {
-    classes: ["starwars-sd", "nave-ficha"],
+    classes: ["starwars-sd", "nave-ficha"],  // a de tema entra em _onRender
     position: { width: 580, height: 780 },
     window: { resizable: true, icon: "fa-solid fa-rocket" },
     form: { submitOnChange: true, closeOnSubmit: false },
@@ -135,6 +152,19 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
   };
 
   static PARTS = { corpo: { template: "modules/starwars-sd/templates/nave.hbs", scrollable: [""] } };
+
+  /**
+   * A classe de tema no elemento da ficha.
+   *
+   * Vai aqui, e não em DEFAULT_OPTIONS, porque a opção muda em tempo de
+   * execução: fixá-la na definição da classe congelaria a escolha do primeiro
+   * render. As três são mutuamente exclusivas.
+   */
+  _onRender(contexto, opcoes) {
+    super._onRender?.(contexto, opcoes);
+    this.element?.classList.remove("tema-auto", "tema-claro", "tema-escuro");
+    this.element?.classList.add(classeDeTema());
+  }
 
   async _prepareContext() {
     const s = this.actor.system;

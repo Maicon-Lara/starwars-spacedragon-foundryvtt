@@ -77,6 +77,34 @@ Hooks.once("init", () => {
       }
     },
   });
+
+  // ── Claro ou escuro na ficha de nave ──
+  //
+  // A ficha tem paleta própria, e por isso não acompanha sozinha um módulo de
+  // modo escuro — cada um marca a página de um jeito. No "automático" ela segue
+  // os dois sinais que existem na prática: a classe `theme-dark` no corpo da
+  // página, que o Foundry v13 e a maioria desses módulos põem, e a preferência
+  // do sistema operacional. Quem quiser fixar, fixa.
+  //
+  // É opção de CLIENTE: tema é preferência de quem olha, não da mesa.
+  game.settings.register(ID, "temaDaNave", {
+    name: "starwars-sd.settings.temaDaNave.nome",
+    hint: "starwars-sd.settings.temaDaNave.dica",
+    scope: "client",
+    config: true,
+    type: String,
+    choices: {
+      auto: "starwars-sd.settings.temaDaNave.auto",
+      claro: "starwars-sd.settings.temaDaNave.claro",
+      escuro: "starwars-sd.settings.temaDaNave.escuro",
+    },
+    default: "auto",
+    onChange: () => {
+      for (const app of foundry.applications?.instances?.values?.() ?? []) {
+        if (app instanceof NaveFicha) app.render();
+      }
+    },
+  });
 });
 
 Hooks.once("ready", () => {

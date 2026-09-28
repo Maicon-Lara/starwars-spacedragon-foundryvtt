@@ -138,7 +138,62 @@
  * fallback. O vermelho de perigo não está na paleta e é local.
  */
 
+/* ── O MODO ESCURO ────────────────────────────────────────────────────────
+ *
+ * A paleta do Space Dragon é clara por natureza: fundo quase branco, barra azul
+ * escura. No escuro ela se INVERTE — o que era fundo vira tinta e vice-versa —,
+ * e como todas as regras da ficha usam as mesmas cinco variáveis, trocar os
+ * valores aqui repinta a ficha inteira sem tocar em mais nada.
+ *
+ * `--nave-linha` e `--nave-secundario` derivam dessas cinco por `color-mix`, e
+ * por isso se ajustam sozinhas.
+ *
+ * QUANDO ELE LIGA. A opção do módulo (claro / escuro / automático) põe a classe
+ * na ficha. No automático valem os dois sinais que existem na prática: a classe
+ * `theme-dark`, que o Foundry v13 e a maioria dos módulos de modo escuro põem no
+ * corpo da página, e a preferência do sistema operacional.
+ */
+.starwars-sd.nave-ficha.tema-escuro,
+body.theme-dark .starwars-sd.nave-ficha.tema-auto,
+.theme-dark .starwars-sd.nave-ficha.tema-auto {
+  --sd-fundo: #11162a;    /* o fundo da ficha */
+  --sd-caixa: #29325a;    /* a caixa preenchida */
+  --sd-barra: #c3cdf2;    /* títulos, e o fundo do que está ligado */
+  --sd-tinta: #e8ebf7;    /* o texto */
+  --sd-brilho: #4fd0be;   /* o verde-água, clareado para o fundo escuro */
+  --nave-perigo: #ff8a84; /* o vermelho do OD2, clareado pelo mesmo motivo */
+  --nave-campo: #1b2340;  /* o fundo dos campos de digitação */
+  --nave-campo-esquema: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  .starwars-sd.nave-ficha.tema-auto {
+    --sd-fundo: #11162a;
+    --sd-caixa: #29325a;
+    --sd-barra: #c3cdf2;
+    --sd-tinta: #e8ebf7;
+    --sd-brilho: #4fd0be;
+    --nave-perigo: #ff8a84;
+    --nave-campo: #1b2340;
+    --nave-campo-esquema: dark;
+  }
+}
+/* O claro explícito vence os dois sinais acima: quem escolhe "claro" na opção
+   quer claro mesmo com o Foundry no escuro. */
+.starwars-sd.nave-ficha.tema-claro {
+  --sd-fundo: #eef0f8;
+  --sd-caixa: #ccd3f0;
+  --sd-barra: #1b2340;
+  --sd-tinta: #10162c;
+  --sd-brilho: #2f9e8f;
+  --nave-perigo: #9e1510;
+  --nave-campo: #fff;
+  --nave-campo-esquema: light;
+}
+
 .starwars-sd.nave-ficha {
+  --nave-campo: #fff;
+  --nave-campo-esquema: light;
   --nave-linha: color-mix(in srgb, var(--sd-barra, #1b2340) 28%, transparent);
   --nave-perigo: #9e1510;  /* o vermelho do OD2, para avaria e manobra vermelha */
   /* texto de apoio: rótulo, dica, nota. É COR, e não opacity sobre uma cor
@@ -173,7 +228,7 @@
   font-size: 12px; text-transform: uppercase; letter-spacing: .09em;
   /* cor explícita: sem isto o h3 herda o carmim do sistema, que sobre o fundo
      claro do Space Dragon fica ilegível */
-  color: var(--sd-barra, #1b2340); font-weight: normal;
+  color: var(--sd-barra, #1b2340); font-weight: 700;
   margin: 0 0 6px; border-bottom: 1px solid var(--nave-linha); padding-bottom: 3px;
   display: flex; align-items: center; gap: 8px;
 }
@@ -192,8 +247,8 @@
 .starwars-sd.nave-ficha input[type="number"],
 .starwars-sd.nave-ficha select,
 .starwars-sd.nave-ficha textarea {
-  color-scheme: light;
-  background: #fff;
+  color-scheme: var(--nave-campo-esquema, light);
+  background: var(--nave-campo, #fff);
   color: var(--sd-tinta, #10162c);
   border: 1px solid var(--nave-linha);
   border-radius: 3px;

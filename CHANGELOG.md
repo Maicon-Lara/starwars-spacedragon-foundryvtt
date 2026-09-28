@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.6.4 — modo escuro na ficha de nave, e os títulos de volta ao negrito
+
+- **Modo escuro.** A ficha tem paleta própria e não acompanhava sozinha um
+  módulo de modo escuro — daí as caixas pretas de campo sobre a página clara.
+  Agora há uma opção *Ficha de nave: claro ou escuro*, com **automático**,
+  **sempre claro** e **sempre escuro**. No automático ela segue os dois sinais
+  que existem na prática: a classe `theme-dark` no corpo da página, que o
+  Foundry v13 e a maioria desses módulos usam, e a preferência do sistema
+  operacional.
+- A paleta escura é a do Space Dragon **invertida** — o que era fundo vira
+  tinta. Como todas as regras da ficha usam as mesmas cinco variáveis, trocar os
+  valores repinta tudo; o verde-água e o vermelho de perigo são clareados, para
+  manter contraste no escuro.
+- É opção **de cliente**: tema é preferência de quem olha, não da mesa.
+- **Os títulos de seção voltaram ao negrito.**
+
 ## 1.6.3 — os campos deixam de ficar escuros com o modo escuro ligado
 
 - **Os campos de digitação** (nome, fórmula de PV, postos, armas) declaram fundo,
