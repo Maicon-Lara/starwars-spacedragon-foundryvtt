@@ -1,5 +1,24 @@
 # Changelog
 
+## 1.6.1 — a licença e a OGL vão dentro do zip
+
+Conformidade de licença. Nenhuma mudança de regra, conteúdo ou ficha.
+
+- O módulo **não declarava licença nenhuma** — nem arquivo, nem campo no
+  manifesto. Derivando do *Space Dragon*, que é CC BY-SA 3.0, ele é obrigado ao
+  *share-alike*: agora está declarado.
+- `OGL.txt` com a Open Game License 1.0a e a seção 15 atualizada, e `LICENSE.md`
+  com o que é Open Game Content, o que é marca de terceiro e o que fica fora.
+- Os dois **entram no zip**, que é o que se instala — a cláusula 10 fala de cada
+  cópia distribuída, não do repositório.
+- Fica dito com clareza o que nenhuma licença de jogo resolve: **Star Wars é da
+  Lucasfilm**, não está licenciado e não poderia estar. O que a CC BY-SA cobre é
+  a camada de regras.
+- O **X-Wing Miniatures Game** da FFG passa a ser creditado como origem do
+  desenho do Combate Tático de Naves — a ideia do dial, da manobra planejada em
+  segredo e dos dados de defesa. Nenhum texto, valor ou componente daquele jogo
+  é reproduzido.
+
 ## 1.6.0 — a mesa escolhe a regra de combate de nave
 
 A ficha de Nave passa a atender **duas** regras, e a escolha é uma opção de
