@@ -1,5 +1,29 @@
 # Changelog
 
+## 1.6.2 — a ficha de nave voltou a ser legível
+
+A 1.5.2 trocou os fundos e as bordas para a paleta do Space Dragon, mas deixou o
+**texto herdando cor do sistema Old Dragon 2** — que pinta os títulos de seção em
+carmim e os valores em dourado, cores feitas para o fundo pergaminho dele. Sobre
+o fundo claro e azulado do Space Dragon, e com `opacity` por cima, o texto sumia:
+*Estado da rodada*, *Manobra*, *Armamento* e *Postos* ficavam num rosa quase
+invisível, e os valores de BA, CP, JP e Velocidade, num bege apagado.
+
+Agora **todo texto da ficha tem cor explícita**, e o que era `opacity` sobre cor
+herdada virou uma cor de verdade (`--nave-secundario`, derivada da tinta da
+paleta). Mudaram, por isso:
+
+- os títulos de seção, que passam a ser o azul escuro da paleta, em negrito;
+- os valores do perfil e os rótulos deles;
+- as fichas de avaria e a Trava, que apagadas a 55% de opacidade não se liam;
+- os botões do dial — a manobra branca não tinha cor própria e herdava a do
+  sistema;
+- os botões comuns (aplicar tipo, rolar, iniciativa, esquivar…), que ficavam
+  cinza sobre cinza.
+
+As opacidades que sobraram são as intencionais: a manobra bloqueada, que é
+riscada de propósito, e os valores não editáveis.
+
 ## 1.6.1 — a licença e a OGL vão dentro do zip
 
 Conformidade de licença. Nenhuma mudança de regra, conteúdo ou ficha.
