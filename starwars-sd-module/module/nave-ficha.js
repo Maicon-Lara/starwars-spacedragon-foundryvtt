@@ -23,7 +23,7 @@ import {
   TIPOS, MANOBRAS, MANOBRAS_DE_COLOSSO, FAIXAS, AVARIAS, AVARIAS_DE_UMA_RODADA, POSTOS,
   CRITICOS_LIVRO, FALHAS_LIVRO, ORDEM_LIVRO, faixaDePilotagem,
   EVASIVA_INTERVALO, evasivaPermitida,
-  CAMARAS, ESTADOS_DE_CAMARA, camaraOperacional,
+  CAMARAS, ESTADOS_DE_CAMARA, camaraOperacional, ETAPAS_DO_SALTO, TRANCA_DO_ARSENAL,
 } from "./nave-modelo.js";
 import { moverNave, conferirEscala, casasDaManobra } from "./nave-movimento.js";
 
@@ -150,6 +150,8 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
       planejar: NaveFicha.#planejar,
       revelar: NaveFicha.#revelar,
       camara: NaveFicha.#camara,
+      salto: NaveFicha.#salto,
+      arsenal: NaveFicha.#arsenal,
     },
   };
 
@@ -706,6 +708,92 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
     const atual = this.actor.system.camaras?.[chave] ?? "instalada";
     const proximo = ESTADOS_DE_CAMARA[(ESTADOS_DE_CAMARA.indexOf(atual) + 1) % ESTADOS_DE_CAMARA.length];
     await this.actor.update({ [`system.camaras.${chave}`]: proximo });
+  }
+
+  /**
+   * O SALTO HIPERESPACIAL: três testes de Pilotar, na ordem.
+   *
+   * Rola-se na Ponte — é o que a regra das câmaras diz, e é por isso que o
+   * teste mora na ficha da nave e não na do piloto: o que se testa é a nave
+   * saltando, com os instrumentos dela.
+   *
+   * A sequência não pode ser abortada no meio, então os três saem de uma vez.
+   */
+  static async #salto() {
+    if (!camaraOperacional(this.actor.system, "ponte")) {
+      return ui.notifications.warn(
+        `${this.actor.name}: o salto se rola na Ponte de Comando, e ela não está operacional.`);
+    }
+
+    const r = await pergunta({
+      titulo: `Salto hiperespacial — ${this.actor.name}`,
+      conteudo:
+        `<div class="starwars-sd-nave-dialogo">` +
+        `<p>Três testes de <strong>Pilotar</strong>, nesta ordem: <em>Distância</em>, ` +
+        `<em>Direção</em> e <em>Execução</em>. A sequência não pode ser abortada no meio.</p>` +
+        `<div class="linha"><label>Pilotar naves (%)</label><input type="number" name="chance" value="80" min="0" max="100"></div>` +
+        `<div class="linha"><label>Modificador</label><input type="number" name="mod" value="0"></div>` +
+        `</div>`,
+      botoes: [{ chave: "rolar", rotulo: "Saltar", padrao: true }, { chave: "cancelar", rotulo: "Cancelar" }],
+    });
+    if (!r || r.acao !== "rolar") return;
+
+    const chance = Math.max(0, Math.min(100, (Number(r.dados.chance) || 0) + (Number(r.dados.mod) || 0)));
+    const rolls = [];
+    const linhas = [];
+    const falhas = [];
+    for (const etapa of ETAPAS_DO_SALTO) {
+      const roll = await new Roll("1d100").evaluate();
+      rolls.push(roll);
+      const passou = roll.total <= chance;
+      if (!passou) falhas.push(etapa);
+      linhas.push(
+        `<p class="result"><strong>${etapa.rotulo}:</strong> ${roll.total} contra ${chance}% — ` +
+        `<strong class="${passou ? "success" : "failure"}">${passou ? "passou" : "falhou"}</strong></p>`);
+    }
+
+    const execucaoFalhou = falhas.some((f) => f.chave === "execucao");
+    const desfecho = execucaoFalhou
+      ? `<p class="result"><strong class="failure">O salto não acontece.</strong> ${ETAPAS_DO_SALTO[2].erro}</p>`
+      : falhas.length
+        ? `<p class="result"><strong>A nave salta, e chega errado.</strong></p>` +
+          falhas.map((f) => `<p><em>${f.rotulo}: ${f.erro}</em></p>`).join("")
+        : `<p class="result"><strong class="success">Salto limpo</strong> — a nave chega onde queria.</p>`;
+
+    await card(this.actor, "Salto hiperespacial", linhas.join("") + desfecho, rolls);
+  }
+
+  /**
+   * A TRANCA DO ARSENAL: invadir exige Sabotagem com −20%.
+   *
+   * O teste é de quem invade, mas a dificuldade é da nave — a tranca é dela —,
+   * e por isso fica aqui.
+   */
+  static async #arsenal() {
+    if (!camaraOperacional(this.actor.system, "arsenal")) {
+      return ui.notifications.info(
+        `${this.actor.name}: sem Arsenal operacional não há tranca a forçar — o material está solto pela nave.`);
+    }
+    const r = await pergunta({
+      titulo: `Forçar o Arsenal — ${this.actor.name}`,
+      conteudo:
+        `<div class="starwars-sd-nave-dialogo">` +
+        `<p>As trancas digitais do Arsenal impõem <strong>${TRANCA_DO_ARSENAL}%</strong> a quem tenta ` +
+        `invadi-lo sem autorização.</p>` +
+        `<div class="linha"><label>Sabotagem do invasor (%)</label><input type="number" name="chance" value="30" min="0" max="100"></div>` +
+        `</div>`,
+      botoes: [{ chave: "rolar", rotulo: "Forçar", padrao: true }, { chave: "cancelar", rotulo: "Cancelar" }],
+    });
+    if (!r || r.acao !== "rolar") return;
+
+    const bruta = Math.max(0, Math.min(100, Number(r.dados.chance) || 0));
+    const alvo = Math.max(0, bruta + TRANCA_DO_ARSENAL);
+    const roll = await new Roll("1d100").evaluate();
+    const passou = roll.total <= alvo;
+    await card(this.actor, "Trancas do Arsenal",
+      `<p class="result">Sabotagem ${bruta}% ${TRANCA_DO_ARSENAL}% = <strong>${alvo}%</strong></p>` +
+      `<p class="result"><strong>${roll.total}</strong> — <strong class="${passou ? "success" : "failure"}">` +
+      `${passou ? "a tranca cede" : "a tranca aguenta"}</strong></p>`, [roll]);
   }
 
   // ── Preenchimento pelo tipo ───────────────────────────────────────────────

@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.8.0 — os testes que são da nave, e os Aposentos sem a multa
+
+**Dois testes passam a rolar na ficha da nave**, porque o instrumento e a
+dificuldade são dela, mesmo que quem role seja um personagem:
+
+- **Salto hiperespacial** — os três testes de Pilotar, na ordem: *Distância*,
+  *Direção* e *Execução*. Saem de uma vez, porque a sequência não pode ser
+  abortada no meio, e cada um falha de um jeito próprio: os dois primeiros põem
+  a nave no lugar errado, o terceiro cancela o salto. Rola-se na **Ponte**, e
+  sem ela operacional o botão recusa.
+- **Forçar o Arsenal** — as trancas digitais impõem **−20%** em Sabotagem a quem
+  invade. Sem Arsenal operacional não há tranca: o material está solto pela nave.
+
+**Os Aposentos perderam a penalidade.** A regra da casa passa a ser só o ganho:
+eles dão a recuperação de PV e de Alcance da Força em viagem, e sem eles a
+viagem não recupera nada — sem −1 em teste nenhum.
+
 ## 1.7.1 — os efeitos das câmaras, completos
 
 A 1.7.0 tirou os textos de um DOCX cuja extração vinha com parágrafos cortados

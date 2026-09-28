@@ -178,7 +178,7 @@ export const CAMARAS = {
   },
   aposentos: {
     rotulo: "Aposentos da Tripulação", obra: 40000, prazo: "1 semana",
-    efeito: "Recuperação natural de PV e de Alcance da Força para a tripulação orgânica durante viagens no hiperespaço. Sem aposentos adequados, os tripulantes sofrem −1 em todos os testes de atributo após 3 dias de viagem contínua, por fadiga.",
+    efeito: "Recuperação natural de PV e de Alcance da Força para a tripulação orgânica durante viagens no hiperespaço. Sem aposentos, a viagem simplesmente não recupera nada.",
   },
   maquinas: {
     rotulo: "Sala de Máquinas", obra: 200000, prazo: "3 semanas",
@@ -223,6 +223,22 @@ export const CAMARAS = {
     salvaA0PV: true,
   },
 };
+
+/**
+ * O salto hiperespacial: três testes de Pilotar, na ordem, e cada um falha de
+ * um jeito diferente. Rola-se na Ponte, e é ela que tem os instrumentos.
+ *
+ * "Falhas nos dois primeiros causam erros de navegação; falhas no terceiro
+ * cancelam o salto."
+ */
+export const ETAPAS_DO_SALTO = [
+  { chave: "distancia", rotulo: "Distância", erro: "a nave sai do hiperespaço longe demais, ou perto demais, do destino." },
+  { chave: "direcao", rotulo: "Direção", erro: "a nave sai do hiperespaço na direção errada — outro sistema, outro setor." },
+  { chave: "execucao", rotulo: "Execução", erro: "o salto não acontece: a nave fica onde está, e a sequência não pode ser abortada no meio." },
+];
+
+/** A tranca do Arsenal: invadir exige Sabotagem com esta penalidade. */
+export const TRANCA_DO_ARSENAL = -20;
 
 /** Reparar custa 25% da obra e leva metade do tempo (a régua do Cap. 8). */
 export const REPARO_DE_CAMARA = 0.25;

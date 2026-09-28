@@ -53,7 +53,8 @@ globalThis.ui = { notifications: { warn: () => {}, info: () => {} } };
 globalThis.canvas = null;
 
 const { NaveFicha, TIPO_NAVE } = await import("../starwars-sd-module/module/nave-ficha.js");
-const { TIPOS, CAMARAS, camaraOperacional } = await import("../starwars-sd-module/module/nave-modelo.js");
+const { TIPOS, CAMARAS, camaraOperacional, ETAPAS_DO_SALTO, TRANCA_DO_ARSENAL } =
+  await import("../starwars-sd-module/module/nave-modelo.js");
 
 /** Uma nave inteira: as 12 câmaras instaladas, como nasce no schema. */
 const camarasInteiras = () =>
@@ -166,6 +167,27 @@ await atacar.call(ficha, {}, { dataset: { idx: "0" } });
 confere(mensagens.length === antes, "sem Ponte operacional o ataque não devia sair");
 xwing.system.camaras.ponte = "instalada";
 
+// ── Os testes que são DA NAVE ───────────────────────────────────────────────
+confere(ETAPAS_DO_SALTO.length === 3, "o salto tem três testes de Pilotar");
+confere(ETAPAS_DO_SALTO.map((e) => e.chave).join(",") === "distancia,direcao,execucao",
+  "a ordem do salto é Distância, Direção, Execução");
+confere(ETAPAS_DO_SALTO.every((e) => !!e.erro), "cada etapa do salto diz como ela falha");
+confere(TRANCA_DO_ARSENAL === -20, "a tranca do Arsenal impõe −20%");
+
+// o salto sai na Ponte; sem ela, não sai
+const salto = NaveFicha.acoesDeTeste?.salto;
+if (salto) {
+  const antesSalto = mensagens.length;
+  xwing.system.camaras.ponte = "danificada";
+  await salto.call(ficha);
+  confere(mensagens.length === antesSalto, "sem Ponte operacional o salto não devia rolar");
+  xwing.system.camaras.ponte = "instalada";
+}
+
+// a penalidade dos Aposentos foi retirada da regra da casa
+confere(!/−1|-1 em/.test(CAMARAS.aposentos.efeito),
+  "os Aposentos não impõem mais o −1: a regra da casa ficou só com a recuperação");
+
 // ── O template não pode abrir um <form> ─────────────────────────────────────
 //
 // A raiz da ficha em ApplicationV2 JÁ é um <form>, e o parser HTML descarta um
@@ -244,4 +266,4 @@ if (problemas.length) {
   for (const p of problemas) console.error(`  ✘ ${p}`);
   process.exit(1);
 }
-console.log("  ✔ nave: dial (Sobrecarga, Leme, colosso, curva pela metade), ataque (X-wing, crítico e Brecha), template sem <form> aninhado, seletor de tipo, as tabelas do livro (T10-5, T10-6, evasiva) e as 12 câmaras");
+console.log("  ✔ nave: dial (Sobrecarga, Leme, colosso, curva pela metade), ataque (X-wing, crítico e Brecha), template sem <form> aninhado, seletor de tipo, as tabelas do livro (T10-5, T10-6, evasiva) as 12 câmaras, o salto hiperespacial e a tranca do Arsenal");

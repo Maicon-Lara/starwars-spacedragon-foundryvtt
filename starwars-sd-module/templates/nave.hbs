@@ -161,6 +161,15 @@
               title="{{rotulo}} — {{efeito}}&#10;&#10;Obra: {{obra}} CR · {{prazo}} (reparo: 25% e metade do tempo)&#10;Estado: {{estado}}">{{rotulo}}</button>
       {{/each}}
     </div>
+    {{!-- Os testes que são DA NAVE: o salto rola na Ponte, e a tranca que se
+          força é a do Arsenal. Quem rola é um personagem, mas o instrumento e a
+          dificuldade são da nave. --}}
+    <div class="botoes">
+      <button type="button" data-action="salto"
+              title="Os 3 testes de Pilotar do salto: Distância, Direção e Execução. Rola-se na Ponte de Comando.">salto hiperespacial</button>
+      <button type="button" data-action="arsenal"
+              title="Forçar as trancas do Arsenal: Sabotagem com −20%">forçar o arsenal</button>
+    </div>
   </section>
 
   <section class="postos">
