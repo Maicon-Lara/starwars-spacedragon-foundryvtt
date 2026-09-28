@@ -1,5 +1,27 @@
 # Changelog
 
+## 1.11.0 — a reserva de Pontos de Força passa a acompanhar o dado
+
+A progressão era `5 + (nível ÷ 2)`, subindo de um em um nos níveis pares: onze
+degraus a decorar, **desencontrados** dos três degraus do dado. A tabela ficava
+difícil de ler sem ganhar nada com isso.
+
+Agora são os mesmos três degraus:
+
+| Nível | Reserva | O dado |
+|---|---:|---|
+| 1º ao 7º | **5 PF** | 1d6 |
+| 8º ao 14º | **10 PF** | 2d6, o maior |
+| 15º ao 20º | **15 PF** | 3d6, o maior |
+
+**A reserva muda exatamente onde o dado muda** — são a mesma regra vista de dois
+lados, e quem sabe o próprio dado sabe a própria reserva. No código, a fórmula é
+literalmente `5 × os dados da faixa`, e o teste confere que as duas nunca se
+desencontrem.
+
+Subir de faixa passou a ser um evento: do 7º para o 8º a reserva **dobra** e
+ganha um dado.
+
 ## 1.10.1 — os Pontos de Força, conferidos contra a fonte
 
 A regra veio dos **Pontos de Força** do RPG de Star Wars, no desenho da *Saga

@@ -24,8 +24,10 @@ const { dadoDaFaixa, reservaDoNivel, reservaDoAtor, pontosAtuais, rolarPonto } =
 const problemas = [];
 const confere = (ok, msg) => { if (!ok) problemas.push(msg); };
 
-// ── A reserva: 5 + (nível ÷ 2), para baixo ─────────────────────────────────
-const esperado = { 1: 5, 2: 6, 3: 6, 4: 7, 5: 7, 10: 10, 11: 10, 15: 12, 20: 15 };
+// ── A reserva: 5 por dado da faixa ─────────────────────────────────────────
+//
+// A reserva muda exatamente onde o dado muda: 5 · 10 · 15 nos três degraus.
+const esperado = { 1: 5, 7: 5, 8: 10, 14: 10, 15: 15, 20: 15 };
 for (const [nivel, pf] of Object.entries(esperado)) {
   confere(reservaDoNivel(Number(nivel)) === pf,
     `reserva do ${nivel}º devia ser ${pf}, deu ${reservaDoNivel(Number(nivel))}`);
@@ -58,11 +60,11 @@ const ator = (nivel, flag, heroico = true) => ({
   hasPlayerOwner: heroico,
   getFlag: (_id, chave) => (chave === "heroico" ? false : flag),
 });
-confere(pontosAtuais(ator(3, null)) === 6, "sem flag, a reserva é a cheia do nível");
+confere(pontosAtuais(ator(3, null)) === 5, "sem flag, a reserva é a cheia do nível");
 confere(pontosAtuais(ator(3, { nivel: 3, valor: 2 })) === 2, "com flag do mesmo nível, vale o guardado");
-confere(pontosAtuais(ator(4, { nivel: 3, valor: 0 })) === 7,
-  "subir de nível devia zerar o gasto e reencher: do 3º com 0 para o 4º cheio (7)");
-confere(pontosAtuais(ator(3, { nivel: 3, valor: 99 })) === 6, "o guardado não passa do limite do nível");
+confere(pontosAtuais(ator(8, { nivel: 7, valor: 0 })) === 10,
+  "subir de faixa devia zerar o gasto e reencher: do 7º com 0 para o 8º cheio (10)");
+confere(pontosAtuais(ator(3, { nivel: 3, valor: 99 })) === 5, "o guardado não passa do limite do nível");
 confere(pontosAtuais(ator(3, { nivel: 3, valor: -5 })) === 0, "o guardado não fica negativo");
 
 // ── A reserva cheia é de protagonista ──────────────────────────────────────
@@ -71,11 +73,17 @@ confere(pontosAtuais(ator(3, { nivel: 3, valor: -5 })) === 0, "o guardado não f
 // capanga, e o que devia ser um instante vira contabilidade.
 confere(reservaDoAtor({ system: { level: 10 }, hasPlayerOwner: true }) === 10,
   "personagem de jogador tem a reserva do nível");
+// a reserva e o dado andam juntos: é o ponto da regra
+for (const n of [1, 5, 7, 8, 12, 14, 15, 20]) {
+  confere(reservaDoNivel(n) === 5 * dadoDaFaixa(n).dados,
+    `no ${n}º a reserva devia ser 5 x os dados da faixa`);
+}
 confere(reservaDoAtor({ system: { level: 10 }, hasPlayerOwner: false, getFlag: () => false }) === 1,
   "PNJ comum tem 1 ponto, não a reserva cheia");
 confere(reservaDoAtor({ system: { level: 10 }, hasPlayerOwner: false, getFlag: (_i, c) => c === "heroico" }) === 10,
   "PNJ marcado como heroico tem a reserva cheia");
 confere(pontosAtuais(ator(10, null, false)) === 1, "e o painel do PNJ comum mostra 1");
+confere(reservaDoAtor({ system: { level: 20 }, hasPlayerOwner: true }) === 15, "no 20º são 15");
 
 if (problemas.length) {
   for (const p of problemas) console.error(`  ✘ ${p}`);

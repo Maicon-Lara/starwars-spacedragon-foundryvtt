@@ -40,8 +40,19 @@ export function dadoDaFaixa(nivel) {
   return { dados: 1, rotulo: "1d6" };
 }
 
-/** A reserva do nível: 5 + (nível ÷ 2), arredondado para baixo. */
-export const reservaDoNivel = (nivel) => 5 + Math.floor(Math.max(1, nivel) / 2);
+/**
+ * A reserva do nível: **5 por dado da faixa**.
+ *
+ *   1º ao 7º    1d6            5 PF
+ *   8º ao 14º   2d6, o maior  10 PF
+ *   15º ao 20º  3d6, o maior  15 PF
+ *
+ * A reserva muda exatamente onde o dado muda, e por isso as duas regras viram
+ * uma só: quem sabe o próprio dado sabe a própria reserva. A fórmula anterior,
+ * `5 + (nível ÷ 2)`, subia de um em um nos pares e deixava onze degraus para
+ * decorar, desencontrados dos três do dado.
+ */
+export const reservaDoNivel = (nivel) => 5 * dadoDaFaixa(Math.max(1, nivel)).dados;
 
 /**
  * A reserva cheia é de PROTAGONISTA. Um PNJ comum tem 1 ponto — o bastante
