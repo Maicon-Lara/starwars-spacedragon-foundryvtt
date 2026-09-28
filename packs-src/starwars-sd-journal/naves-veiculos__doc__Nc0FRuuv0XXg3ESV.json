@@ -153,9 +153,46 @@
     },
     {
       "sort": 500000,
+      "name": "A Nave como Base de Operações",
+      "type": "text",
+      "_id": "slKcFZGBNQWHRKPJ",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc\"><p>Uma nave deixa de ser transporte e vira <strong>base de operações</strong> quando o grupo assume as câmaras dela: repara as danificadas, constrói as que faltam, reforma as que tem. Cada uma custa créditos e tempo de obra, e devolve um efeito concreto.</p><table><thead><tr><th>Câmara</th><th style='text-align:right'>Obra (CR)</th><th>Prazo</th><th>O que ela dá</th></tr></thead><tbody><tr><td><strong>Ponte de Comando</strong></td><td style=\"text-align:right\">120.000</td><td>2 semanas</td><td>Controle central. Abriga o Computador Balístico (+2 nos ataques da nave) e o piloto automático; é onde se rolam os 3 testes de Pilotar do salto hiperespacial. Sem ela operacional, a nave não pode ser pilotada nem operar escudos ou armas.</td></tr><tr><td><strong>Aposentos da Tripulação</strong></td><td style=\"text-align:right\">40.000</td><td>1 semana</td><td>Recuperação natural de PV e de Alcance da Força para a tripulação orgânica durante viagens no hiperespaço. Sem aposentos, a viagem simplesmente não recupera nada.</td></tr><tr><td><strong>Sala de Máquinas</strong></td><td style=\"text-align:right\">200.000</td><td>3 semanas</td><td>Propulsão e geradores primários. É o que permite ao Técnico testar Operar e Consertar Máquinas para reativar a energia ou reparar a nave em combate. Espaço obrigatório do acelerador hiperespacial, e onde se gerenciam os tanques de combustível.</td></tr><tr><td><strong>Depósito</strong></td><td style=\"text-align:right\">30.000</td><td>3 dias</td><td>Carga comercial, suprimentos, peças sobressalentes e pilhagem. Guarda veículos de apoio leves, como swoop bikes ou trajes de combate pesados. Indispensável para transporte de bens e contrabando.</td></tr><tr><td><strong>Refeitório</strong></td><td style=\"text-align:right\">25.000</td><td>3 dias</td><td>Prepara rações para expedições longas, mantém o moral e reduz o custo de suprimentos em travessias.</td></tr><tr><td><strong>Arsenal</strong></td><td style=\"text-align:right\">80.000</td><td>1 semana</td><td>Estoque seguro das armas, munições e vestes reserva do grupo. Trancas digitais reforçadas: invadir exige Sabotagem com −20%. Permite recarga rápida de baterias energéticas antes das missões.</td></tr><tr><td><strong>Ala Hospitalar</strong></td><td style=\"text-align:right\">120.000</td><td>2 semanas</td><td>Habilita os feitos de Operação Cirúrgica, Curar Doença e Diagnosticar Doença, e dobra a recuperação natural de PV em viagem.</td></tr><tr><td><strong>Laboratório</strong></td><td style=\"text-align:right\">150.000</td><td>2 semanas</td><td>Instalação obrigatória para o Técnico construir aparatos (com o desconto da Aptidão Tecnológica) e fazer Reparos Robóticos em droides. Sem ele, criar aparatos exige alugar oficina externa.</td></tr><tr><td><strong>Câmara de Acoplagem</strong></td><td style=\"text-align:right\">100.000</td><td>1,5 semana</td><td>Conecta a nave a estações ou a outras naves no vácuo: abordagem tática, transferência de passageiros e embarque de carga.</td></tr><tr><td><strong>Câmara de Despressurização</strong></td><td style=\"text-align:right\">60.000</td><td>1 semana</td><td>Saída segura para atividade extraveicular no vácuo ou em superfícies tóxicas, sem perder pressão nem contaminar a nave.</td></tr><tr><td><strong>Corredores</strong></td><td style=\"text-align:right\">20.000</td><td>3 dias</td><td>Ligam as câmaras. As portas blindadas podem ser seladas numa invasão, exigindo Sabotagem ou um cortador laser para abrir.</td></tr><tr><td><strong>Saída de Emergência</strong></td><td style=\"text-align:right\">90.000</td><td>1 semana</td><td>As cápsulas de evacuação, com suporte de vida independente. A 0 PV, durante a contagem regressiva para a explosão — 1 segundo por PV do total —, é por ela que a tripulação escapa.</td></tr></tbody></table><h3>As três que a ficha lê</h3><p>As doze valem na mesa, mas três delas a <strong>ficha de Nave</strong> aplica sozinha:</p><ul><li><strong>Ponte de Comando</strong> — dá <strong>+2 nos ataques</strong> da nave (o Computador Balístico), e o modificador aparece na conta do cartão. Sem ela operacional, o botão de atirar recusa: a nave não opera armas. É nela também que rola o <strong>salto hiperespacial</strong>.</li><li><strong>Sala de Máquinas</strong> — é dela que se repara em combate; sem ela, o botão <em>reparar</em> recusa.</li><li><strong>Saída de Emergência</strong> — é por ela que a tripulação escapa a 0 PV, durante a contagem regressiva.</li></ul><h3>O salto hiperespacial</h3><p>Três testes de <strong>Pilotar</strong>, nesta ordem, e a sequência não pode ser abortada no meio:</p><ol><li><strong>Distância</strong> — falhando, a nave sai do hiperespaço longe demais, ou perto demais, do destino.</li><li><strong>Direção</strong> — falhando, a nave sai do hiperespaço na direção errada — outro sistema, outro setor.</li><li><strong>Execução</strong> — falhando, o salto não acontece: a nave fica onde está, e a sequência não pode ser abortada no meio.</li></ol><p>Os dois primeiros erram o destino, mas a nave salta; o terceiro cancela o salto.</p><h3>As obras, e o Técnico</h3><ul><li><strong>Desconto no material.</strong> O Técnico aplica a porcentagem de <strong>Aptidão Tecnológica</strong> (pela Ciência dele) como desconto direto sobre o custo dos componentes.</li><li><strong>Mão de obra própria em viagem.</strong> Durante um salto, ele pode tocar a reforma com <strong>Operar e Consertar Máquinas</strong>, dispensando estaleiro.</li><li><strong>Reparo em campo.</strong> Consertar uma câmara danificada custa <strong>25%</strong> do valor dela e leva <strong>metade</strong> do prazo — a mesma régua do conserto de aparatos do capítulo 8.</li><li><strong>A tranca do Arsenal.</strong> Invadi-lo sem autorização exige Sabotagem com <strong>-20%</strong>.</li></ul></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!Nc0FRuuv0XXg3ESV.slKcFZGBNQWHRKPJ"
+    },
+    {
+      "sort": 600000,
       "name": "Combate Tático: Preparação",
       "type": "text",
-      "_id": "FyHvp2uclBvR6qZT",
+      "_id": "5dhs0gpeBBbex1Zf",
       "title": {
         "show": true,
         "level": 1
@@ -186,13 +223,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!Nc0FRuuv0XXg3ESV.FyHvp2uclBvR6qZT"
+      "_key": "!journal.pages!Nc0FRuuv0XXg3ESV.5dhs0gpeBBbex1Zf"
     },
     {
-      "sort": 600000,
+      "sort": 700000,
       "name": "Combate Tático: a Rodada",
       "type": "text",
-      "_id": "tGyjYqGCEG1YLC9d",
+      "_id": "KUhCJHDd7OFADs6G",
       "title": {
         "show": true,
         "level": 1
@@ -223,13 +260,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!Nc0FRuuv0XXg3ESV.tGyjYqGCEG1YLC9d"
+      "_key": "!journal.pages!Nc0FRuuv0XXg3ESV.KUhCJHDd7OFADs6G"
     },
     {
-      "sort": 700000,
+      "sort": 800000,
       "name": "Combate Tático: Atacar",
       "type": "text",
-      "_id": "FQbXDY34bzGRLIYk",
+      "_id": "g0eWW4EmduVtBmlB",
       "title": {
         "show": true,
         "level": 1
@@ -260,13 +297,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!Nc0FRuuv0XXg3ESV.FQbXDY34bzGRLIYk"
+      "_key": "!journal.pages!Nc0FRuuv0XXg3ESV.g0eWW4EmduVtBmlB"
     },
     {
-      "sort": 800000,
+      "sort": 900000,
       "name": "Combate Tático: os Dois Modos",
       "type": "text",
-      "_id": "VT4SACOaxSl4WGK7",
+      "_id": "eKh1nCfPoTECRD32",
       "title": {
         "show": true,
         "level": 1
@@ -297,13 +334,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!Nc0FRuuv0XXg3ESV.VT4SACOaxSl4WGK7"
+      "_key": "!journal.pages!Nc0FRuuv0XXg3ESV.eKh1nCfPoTECRD32"
     },
     {
-      "sort": 900000,
+      "sort": 1000000,
       "name": "Combate Tático: Ajuste de Ritmo",
       "type": "text",
-      "_id": "gGbd3HxaHq6Iyspr",
+      "_id": "wqrJ7q5pJ3u80cS5",
       "title": {
         "show": true,
         "level": 1
@@ -334,13 +371,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!Nc0FRuuv0XXg3ESV.gGbd3HxaHq6Iyspr"
+      "_key": "!journal.pages!Nc0FRuuv0XXg3ESV.wqrJ7q5pJ3u80cS5"
     },
     {
-      "sort": 1000000,
+      "sort": 1100000,
       "name": "A Ficha de Nave",
       "type": "text",
-      "_id": "VesDOw30xlg5BMoR",
+      "_id": "I2IsCiCe43zx1TLm",
       "title": {
         "show": true,
         "level": 1
@@ -371,13 +408,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!Nc0FRuuv0XXg3ESV.VesDOw30xlg5BMoR"
+      "_key": "!journal.pages!Nc0FRuuv0XXg3ESV.I2IsCiCe43zx1TLm"
     },
     {
-      "sort": 1100000,
+      "sort": 1200000,
       "name": "Crédito",
       "type": "text",
-      "_id": "KeB6teoNPa35pzop",
+      "_id": "xy3s2qL7l4dLlBuT",
       "title": {
         "show": true,
         "level": 1
@@ -408,7 +445,7 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!Nc0FRuuv0XXg3ESV.KeB6teoNPa35pzop"
+      "_key": "!journal.pages!Nc0FRuuv0XXg3ESV.xy3s2qL7l4dLlBuT"
     }
   ],
   "flags": {},

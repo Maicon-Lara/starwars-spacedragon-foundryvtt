@@ -1,5 +1,24 @@
 # Changelog
 
+## 1.8.1 — a tabela das câmaras no journal, gerada da mesma fonte
+
+A tabela de **custo, prazo e efeito** das doze câmaras só existia nas dicas dos
+botões da ficha, que servem para lembrar e são péssimas para consultar. Agora há
+uma página **A Nave como Base de Operações**, no journal *Naves & Veículos*, com:
+
+- a **tabela das doze** — câmara, obra em créditos, prazo e o que ela dá;
+- as **três que a ficha aplica sozinha**, e o que cada uma bloqueia quando não
+  está operacional;
+- o **salto hiperespacial**, com as três etapas e como cada uma falha;
+- as **obras e o Técnico** — o desconto da Aptidão Tecnológica, a mão de obra
+  própria durante o salto, o reparo a 25% e metade do prazo, e a tranca do
+  Arsenal.
+
+A página é **gerada** de `module/camaras.js`, o mesmo arquivo que a ficha lê.
+Mudar o custo de uma câmara muda a ficha e a tabela de uma vez — elas não podem
+divergir. Para isso as câmaras saíram de `nave-modelo.js`, que só carrega dentro
+do Foundry, e foram para um arquivo de dado puro que o build também lê.
+
 ## 1.8.0 — os testes que são da nave, e os Aposentos sem a multa
 
 **Dois testes passam a rolar na ficha da nave**, porque o instrumento e a

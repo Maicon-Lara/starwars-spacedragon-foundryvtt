@@ -9,6 +9,8 @@
 // de Nave" diz o que ela faz sozinha e o que fica com a mesa.
 
 import { TEXTOS } from "./textos-do-cofre.mjs";
+import { CAMARAS, REPARO_DE_CAMARA, TRANCA_DO_ARSENAL, ETAPAS_DO_SALTO }
+  from "../../starwars-sd-module/module/camaras.js";
 
 const naves = TEXTOS["SW-SUP-Naves"];
 const tatico = TEXTOS["SW-SUP-Combate-Tatico-de-Naves"];
@@ -27,6 +29,48 @@ const FICHA =
   "<li>O teste de Operar Máquinas antes do reparo e o de Pilotar nas situações-limite: são da ficha do personagem.</li>" +
   "</ul><p class='nota-casa'><em>A cena precisa estar em 1 hex = 20 m. Em outra escala, a ficha avisa e não move o token.</em></p>";
 
+
+// ── A nave como base de operações ───────────────────────────────────────────
+//
+// Regra da casa sobre a T10-2. A tabela é GERADA das mesmas câmaras que a ficha
+// lê (module/camaras.js): mudar o custo de uma câmara muda a ficha e esta
+// página de uma vez, e elas não podem divergir.
+const cr = (n) => n.toLocaleString("pt-BR");
+
+const BASE_DE_OPERACOES =
+  "<p>Uma nave deixa de ser transporte e vira <strong>base de operações</strong> quando o grupo " +
+  "assume as câmaras dela: repara as danificadas, constrói as que faltam, reforma as que tem. " +
+  "Cada uma custa créditos e tempo de obra, e devolve um efeito concreto.</p>" +
+  "<table><thead><tr><th>Câmara</th><th style='text-align:right'>Obra (CR)</th><th>Prazo</th><th>O que ela dá</th></tr></thead><tbody>" +
+  Object.values(CAMARAS).map((c) =>
+    `<tr><td><strong>${c.rotulo}</strong></td><td style="text-align:right">${cr(c.obra)}</td>` +
+    `<td>${c.prazo}</td><td>${c.efeito}</td></tr>`).join("") +
+  "</tbody></table>" +
+
+  "<h3>As três que a ficha lê</h3>" +
+  "<p>As doze valem na mesa, mas três delas a <strong>ficha de Nave</strong> aplica sozinha:</p><ul>" +
+  `<li><strong>Ponte de Comando</strong> — dá <strong>+${CAMARAS.ponte.ataque} nos ataques</strong> da nave (o Computador Balístico), ` +
+  "e o modificador aparece na conta do cartão. Sem ela operacional, o botão de atirar recusa: a nave não opera armas. " +
+  "É nela também que rola o <strong>salto hiperespacial</strong>.</li>" +
+  "<li><strong>Sala de Máquinas</strong> — é dela que se repara em combate; sem ela, o botão <em>reparar</em> recusa.</li>" +
+  "<li><strong>Saída de Emergência</strong> — é por ela que a tripulação escapa a 0 PV, durante a contagem regressiva.</li>" +
+  "</ul>" +
+
+  "<h3>O salto hiperespacial</h3>" +
+  "<p>Três testes de <strong>Pilotar</strong>, nesta ordem, e a sequência não pode ser abortada no meio:</p><ol>" +
+  ETAPAS_DO_SALTO.map((e) => `<li><strong>${e.rotulo}</strong> — falhando, ${e.erro}</li>`).join("") +
+  "</ol><p>Os dois primeiros erram o destino, mas a nave salta; o terceiro cancela o salto.</p>" +
+
+  "<h3>As obras, e o Técnico</h3><ul>" +
+  "<li><strong>Desconto no material.</strong> O Técnico aplica a porcentagem de <strong>Aptidão Tecnológica</strong> " +
+  "(pela Ciência dele) como desconto direto sobre o custo dos componentes.</li>" +
+  "<li><strong>Mão de obra própria em viagem.</strong> Durante um salto, ele pode tocar a reforma com " +
+  "<strong>Operar e Consertar Máquinas</strong>, dispensando estaleiro.</li>" +
+  `<li><strong>Reparo em campo.</strong> Consertar uma câmara danificada custa <strong>${Math.round(REPARO_DE_CAMARA * 100)}%</strong> ` +
+  "do valor dela e leva <strong>metade</strong> do prazo — a mesma régua do conserto de aparatos do capítulo 8.</li>" +
+  `<li><strong>A tranca do Arsenal.</strong> Invadi-lo sem autorização exige Sabotagem com <strong>${TRANCA_DO_ARSENAL}%</strong>.</li>` +
+  "</ul>";
+
 export const navesJournal = {
   title: "Naves & Veículos",
   pages: [
@@ -34,6 +78,7 @@ export const navesJournal = {
     { title: "Os Oito Tipos de Espaçonave", content: naves["Os oito tipos de espaçonave"] },
     { title: "De-para: as Naves da Galáxia", content: naves["De-para — as naves da galáxia"] },
     { title: "Câmaras da Nave", content: naves["Câmaras da nave"] },
+    { title: "A Nave como Base de Operações", content: BASE_DE_OPERACOES },
     { title: "Combate Tático: Preparação", content: tatico["(abertura)"] + tatico["Preparação"] + tatico["Perfil tático da nave"] },
     { title: "Combate Tático: a Rodada", content: tatico["A rodada"] },
     { title: "Combate Tático: Atacar", content: tatico["Atacar"] },
