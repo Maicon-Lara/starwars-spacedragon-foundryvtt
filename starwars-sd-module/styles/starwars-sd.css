@@ -143,17 +143,29 @@
   --nave-perigo: #9e1510;  /* o vermelho do OD2, para avaria e manobra vermelha */
 }
 
-/* A ROLAGEM: a raiz da app é o <form>, e é ela que precisa rolar. O part
- * declara `scrollable: [""]`, que só guarda a posição — quem cria a barra é
- * este overflow. Sem isto a ficha crescia além da janela e cortava o fim. */
+/* A ROLAGEM.
+ *
+ * O `overflow-y` fica no container interno, como a correção de 26/09 deste
+ * arquivo já pedia — é ele que o `PARTS.scrollable` marca, e rolar aqui
+ * preserva o cabeçalho da janela. O que faltava era o container EXISTIR: o
+ * template abria um <form>, e como a raiz da ficha em ApplicationV2 já é um
+ * <form>, o parser HTML descartava a tag aninhada e com ela a classe. Agora o
+ * template usa um <div>, e estas regras alcançam algo.
+ *
+ * O `.window-content` fica com overflow: hidden de propósito — sem isso a
+ * janela e o container rolariam os dois, e apareceriam duas barras. */
 .starwars-sd.nave-ficha .window-content {
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
   background: var(--sd-fundo, #eef0f8);
   color: var(--sd-tinta, #10162c);
 }
 
-.starwars-sd.nave-ficha .starwars-sd-nave { display: flex; flex-direction: column; gap: 10px; padding: 6px 4px; }
+.starwars-sd.nave-ficha .starwars-sd-nave {
+  display: flex; flex-direction: column; gap: 10px; padding: 6px 4px 12px;
+  overflow-y: auto;
+  min-height: 0;
+  max-height: 100%;
+}
 .starwars-sd.nave-ficha h3 {
   font-size: 12px; text-transform: uppercase; letter-spacing: .09em;
   opacity: .65; margin: 0 0 6px; border-bottom: 1px solid var(--nave-linha); padding-bottom: 3px;
