@@ -1,5 +1,28 @@
 # Changelog
 
+## 1.5.1 — a ficha de nave rola, guarda o tipo e veste as cores do Space Dragon
+
+Três coisas, e duas delas eram o **mesmo defeito**: o template abria um
+`<form>`, mas em ApplicationV2 a raiz da ficha já é um `<form>`, e o parser
+HTML descarta um `<form>` aninhado. A tag desaparecia, e levava duas coisas:
+
+- **A ficha não rolava.** A classe `.starwars-sd-nave`, que carrega o layout,
+  ia embora com a tag. Agora é um `<div>`, e a rolagem vem de um
+  `overflow-y: auto` no `.window-content` — que faltava de todo jeito.
+- **O tipo de nave não era guardado.** Sem o `<form>` do template, os campos
+  ficavam sem dono e o submit não gravava `system.tipo`; ao reabrir, a ficha
+  voltava para "Caça", que é o `initial` do schema. Os números continuavam
+  certos porque quem grava BA, CP, JP e Velocidade é o botão *aplicar tipo*,
+  por `actor.update()`, e não o formulário.
+- **As cores agora são as do Space Dragon.** A ficha usa as mesmas cinco
+  variáveis do tema daquele módulo (`--sd-fundo`, `--sd-caixa`, `--sd-barra`,
+  `--sd-tinta`, `--sd-brilho`), cada uma com o valor de fallback, para ficar
+  igual com o tema ligado ou desligado. Saíram os azuis e vermelhos próprios;
+  o vermelho de perigo virou o do OD2, numa variável só.
+
+O teste da nave passou a conferir que o template não abre `<form>` e que o
+seletor marca o tipo salvo, para o defeito não voltar sem avisar.
+
 ## 1.5.0 — a camada da Força enxuga, e o nome do livro volta
 
 Este módulo passa a ser o **único** de Star Wars para Space Dragon: o

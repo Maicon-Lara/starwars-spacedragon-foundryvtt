@@ -1,7 +1,10 @@
 {{!-- Ficha da Nave — Star Wars para Space Dragon. A ordem segue a da rodada
       do Combate Tático: perfil, estado, dial (planejar e mover), armamento
       (atirar), postos. --}}
-<form class="starwars-sd-nave" autocomplete="off">
+{{!-- Um <div>, e NÃO um <form>: em ApplicationV2 a raiz da ficha já é um
+      <form>, e o parser HTML descarta um <form> aninhado — a tag desaparecia,
+      e com ela a classe .starwars-sd-nave que carrega o layout e a rolagem. --}}
+<div class="starwars-sd-nave">
 
   <header class="cabecalho">
     <img class="retrato" src="{{ator.img}}" data-edit="img" alt="{{ator.name}}">
@@ -136,4 +139,4 @@
     {{formInput (lookup s "descricao") name="system.descricao" type="editorHTML" enriched=descricao toggled=true}}
   </section>
 
-</form>
+</div>

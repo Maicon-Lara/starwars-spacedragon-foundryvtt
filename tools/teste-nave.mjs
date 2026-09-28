@@ -9,7 +9,11 @@
 //     dá 5, 2, 6, dois êxitos, "sobram 2d8" — com os dados fixados;
 //   · o crítico soma um dado, e a Brecha dobra o dano do tiro.
 //
+//   · o template não abre um <form>, e o seletor de tipo marca o tipo salvo.
+//
 // Uso: node tools/teste-nave.mjs
+
+import fs from "node:fs";
 
 // ── O mínimo do Foundry ─────────────────────────────────────────────────────
 class Campo { constructor(...a) { this.a = a; } }
@@ -131,8 +135,32 @@ fila = [[2]];
 await atacar.call(ficha, {}, { dataset: { idx: "0" } });
 confere(/Errou/.test(mensagens.at(-1).content), "2 + 16 = 18 contra CP 28 devia errar");
 
+// ── O template não pode abrir um <form> ─────────────────────────────────────
+//
+// A raiz da ficha em ApplicationV2 JÁ é um <form>, e o parser HTML descarta um
+// <form> aninhado. Isso levava embora duas coisas de uma vez: a classe
+// .starwars-sd-nave, que carrega o layout e a rolagem, e o dono dos campos —
+// por isso o tipo escolhido no seletor não persistia e a ficha reabria em
+// "Caça", que é o `initial` do schema.
+const hbs = fs.readFileSync(
+  new URL("../starwars-sd-module/templates/nave.hbs", import.meta.url), "utf8");
+// sem os comentários {{!-- --}}, que falam de <form> justamente para explicar
+// por que ele não pode estar aqui
+const marcacao = hbs.replace(/\{\{!--[\s\S]*?--\}\}/g, "");
+confere(!/<form[\s>]/.test(marcacao), "nave.hbs não pode abrir <form>: a raiz da ficha já é um");
+confere(/class="starwars-sd-nave"/.test(hbs), "nave.hbs precisa do container .starwars-sd-nave");
+
+// ── O seletor de tipo marca o tipo salvo ────────────────────────────────────
+for (const salvo of Object.keys(TIPOS)) {
+  const marcados = Object.entries(TIPOS)
+    .map(([k, v]) => ({ k, ...v, sel: k === salvo }))
+    .filter((t) => t.sel).map((t) => t.k);
+  confere(marcados.length === 1 && marcados[0] === salvo,
+    `o seletor devia marcar só ${salvo}, marcou [${marcados}]`);
+}
+
 if (problemas.length) {
   for (const p of problemas) console.error(`  ✘ ${p}`);
   process.exit(1);
 }
-console.log("  ✔ nave: dial (Sobrecarga, Leme, colosso, curva pela metade) e ataque (o exemplo do X-wing, crítico e Brecha)");
+console.log("  ✔ nave: dial (Sobrecarga, Leme, colosso, curva pela metade), ataque (X-wing, crítico e Brecha), template sem <form> aninhado e seletor de tipo");
