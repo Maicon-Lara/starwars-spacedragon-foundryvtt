@@ -9,7 +9,7 @@
 // de Nave" diz o que ela faz sozinha e o que fica com a mesa.
 
 import { TEXTOS } from "./textos-do-cofre.mjs";
-import { CAMARAS, REPARO_DE_CAMARA, TRANCA_DO_ARSENAL, ETAPAS_DO_SALTO }
+import { CAMARAS, REPARO_DE_CAMARA, TRANCA_DO_ARSENAL, ETAPAS_DO_SALTO, AVARIA_VIRA_CAMARA }
   from "../../starwars-sd-module/module/camaras.js";
 
 const naves = TEXTOS["SW-SUP-Naves"];
@@ -55,6 +55,20 @@ const BASE_DE_OPERACOES =
   "<li><strong>Sala de Máquinas</strong> — é dela que se repara em combate; sem ela, o botão <em>reparar</em> recusa.</li>" +
   "<li><strong>Saída de Emergência</strong> — é por ela que a tripulação escapa a 0 PV, durante a contagem regressiva.</li>" +
   "</ul>" +
+
+  "<h3>Como isto conversa com o Combate Tático</h3>" +
+  "<p>O crítico do dial causa uma <strong>avaria</strong>: dano de cena, que o Engenheiro " +
+  "repara em combate. A câmara é outra coisa — é dano <strong>estrutural</strong>, e só a obra " +
+  "conserta. Os dois se encontram no <strong>fim da rodada</strong>: a avaria que ninguém " +
+  "reparou deixa de ser susto e vira câmara danificada.</p>" +
+  "<table><thead><tr><th>Avaria do crítico</th><th>Vira</th></tr></thead><tbody>" +
+  Object.entries(AVARIA_VIRA_CAMARA).map(([a, c]) =>
+    `<tr><td>${a[0].toUpperCase() + a.slice(1)}</td><td><strong>${CAMARAS[c].rotulo}</strong> danificada</td></tr>`).join("") +
+  "</tbody></table>" +
+  "<p>O <strong>Leme</strong> e a <strong>Tripulação</strong> ficam de fora de propósito: elas " +
+  "saem sozinhas no fim da rodada, porque são sustos e não estrago. O efeito prático é que o " +
+  "combate não trava no meio — a nave continua lutando —, mas a conta chega depois, e o posto de " +
+  "Engenharia ganha urgência: reparar naquela rodada evita a obra.</p>" +
 
   "<h3>O salto hiperespacial</h3>" +
   "<p>Três testes de <strong>Pilotar</strong>, nesta ordem, e a sequência não pode ser abortada no meio:</p><ol>" +

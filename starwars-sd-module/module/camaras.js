@@ -94,6 +94,27 @@ export const ETAPAS_DO_SALTO = [
 /** A tranca do Arsenal: invadir exige Sabotagem com esta penalidade. */
 export const TRANCA_DO_ARSENAL = -20;
 
+/**
+ * A PONTE ENTRE O COMBATE TÁTICO E AS CÂMARAS.
+ *
+ * O crítico do dial causa uma avaria; a avaria é dano de cena, e o Engenheiro a
+ * repara em combate. O que ela NÃO é, é dano estrutural — isso é a câmara.
+ *
+ * A conversa entre os dois acontece no fim da rodada: a avaria que o Engenheiro
+ * não reparou deixa de ser susto e vira **câmara danificada**, que só a obra
+ * conserta (25% do custo, metade do prazo). Assim o combate não trava no meio —
+ * a nave continua lutando — mas a conta chega, e o posto de Engenharia ganha
+ * urgência: reparar naquela rodada evita a obra.
+ *
+ * Só as avarias DURADOURAS entram. O Leme e a Tripulação saem sozinhos no fim
+ * da rodada, e é de propósito: são sustos, não estrago.
+ */
+export const AVARIA_VIRA_CAMARA = {
+  motor: "maquinas",    // a propulsão é a Sala de Máquinas
+  armas: "arsenal",     // o armamento e a munição são o Arsenal
+  sensores: "ponte",    // o radar fica na Ponte de Comando
+};
+
 /** Reparar custa 25% da obra e leva metade do tempo (a régua do Cap. 8). */
 export const REPARO_DE_CAMARA = 0.25;
 

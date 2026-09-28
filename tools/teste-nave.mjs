@@ -53,7 +53,7 @@ globalThis.ui = { notifications: { warn: () => {}, info: () => {} } };
 globalThis.canvas = null;
 
 const { NaveFicha, TIPO_NAVE } = await import("../starwars-sd-module/module/nave-ficha.js");
-const { TIPOS, CAMARAS, camaraOperacional, ETAPAS_DO_SALTO, TRANCA_DO_ARSENAL } =
+const { TIPOS, CAMARAS, camaraOperacional, ETAPAS_DO_SALTO, TRANCA_DO_ARSENAL, AVARIA_VIRA_CAMARA } =
   await import("../starwars-sd-module/module/nave-modelo.js");
 
 /** Uma nave inteira: as 12 câmaras instaladas, como nasce no schema. */
@@ -71,7 +71,11 @@ const sistema = (tipo, extra = {}) => {
     esquiva: p.esquiva, iniciativa: 0, perfil: p, colosso: !!p.colosso, sobrecarga: 0, trava: "",
     avarias: { motor: false, leme: false, armas: false, sensores: false, tripulacao: false },
     armas: [], pv: { value: 50, max: 50, formula: p.pv },
-    camaras: camarasInteiras(), ...extra,
+    camaras: camarasInteiras(),
+    // o schema tem os dois, e a ficha grava neles no fim da rodada
+    manobra: { tipo: "", velocidade: 0, lado: "", revelada: false },
+    evasiva: { ativa: false, mod: 0, rodada: 0 },
+    ...extra,
   };
 };
 
@@ -105,7 +109,9 @@ globalThis.game = { user: { targets: new Set([{ actor: tie, name: "TIE" }]) }, c
 const xwing = {
   name: "X-wing", type: TIPO_NAVE,
   system: sistema("caca", { armas: [{ nome: "Canhões laser", dano: "4d8", arco: "frontal" }] }),
-  async update() {},
+  // aplica caminhos com ponto, como o do alvo: sem isto, o que a ficha grava
+  // no próprio ator não chega a lugar nenhum e o teste não vê nada
+  async update(u) { for (const [k, v] of Object.entries(u)) { const ch = k.split("."); let o = this; for (const c of ch.slice(0, -1)) o = o[c]; o[ch.at(-1)] = v; } },
   getActiveTokens: () => [],
 };
 const ficha = { actor: xwing };
@@ -175,18 +181,53 @@ confere(ETAPAS_DO_SALTO.every((e) => !!e.erro), "cada etapa do salto diz como el
 confere(TRANCA_DO_ARSENAL === -20, "a tranca do Arsenal impõe −20%");
 
 // o salto sai na Ponte; sem ela, não sai
-const salto = NaveFicha.acoesDeTeste?.salto;
-if (salto) {
-  const antesSalto = mensagens.length;
-  xwing.system.camaras.ponte = "danificada";
-  await salto.call(ficha);
-  confere(mensagens.length === antesSalto, "sem Ponte operacional o salto não devia rolar");
-  xwing.system.camaras.ponte = "instalada";
-}
+const salto = NaveFicha.DEFAULT_OPTIONS.actions.salto;
+const antesSalto = mensagens.length;
+xwing.system.camaras.ponte = "danificada";
+await salto.call(ficha);
+confere(mensagens.length === antesSalto, "sem Ponte operacional o salto não devia rolar");
+xwing.system.camaras.ponte = "instalada";
 
 // a penalidade dos Aposentos foi retirada da regra da casa
 confere(!/−1|-1 em/.test(CAMARAS.aposentos.efeito),
   "os Aposentos não impõem mais o −1: a regra da casa ficou só com a recuperação");
+
+// ── A ponte entre o Combate Tático e as câmaras ─────────────────────────────
+//
+// A avaria que o Engenheiro não reparou vira dano estrutural no fim da rodada.
+const fimDaRodada = NaveFicha.DEFAULT_OPTIONS.actions.fimDaRodada;
+confere(AVARIA_VIRA_CAMARA.motor === "maquinas", "Motor é a Sala de Máquinas");
+confere(AVARIA_VIRA_CAMARA.armas === "arsenal", "Armas é o Arsenal");
+confere(AVARIA_VIRA_CAMARA.sensores === "ponte", "Sensores é a Ponte");
+for (const passageira of ["leme", "tripulacao"]) {
+  confere(!(passageira in AVARIA_VIRA_CAMARA),
+    `${passageira} sai sozinha no fim da rodada e NÃO devia virar dano estrutural`);
+}
+
+// motor avariado + fim da rodada = Sala de Máquinas danificada
+xwing.system.avarias.motor = true;
+xwing.system.camaras.maquinas = "instalada";
+await fimDaRodada.call(ficha);
+confere(xwing.system.camaras.maquinas === "danificada",
+  "a avaria de Motor não reparada devia danificar a Sala de Máquinas");
+confere(/Dano estrutural/.test(mensagens.at(-1).content),
+  "o cartão do fim da rodada devia anunciar o dano estrutural");
+
+// a de Leme sai antes, e não deixa marca
+xwing.system.avarias = { motor: false, leme: true, armas: false, sensores: false, tripulacao: false };
+xwing.system.camaras.ponte = "instalada";
+await fimDaRodada.call(ficha);
+confere(xwing.system.camaras.ponte === "instalada",
+  "a avaria de Leme é passageira e não devia virar dano estrutural");
+
+// e uma câmara já danificada não é reanunciada
+xwing.system.avarias.motor = true;
+const antesRepetir = mensagens.length;
+await fimDaRodada.call(ficha);
+confere(/Dano estrutural/.test(mensagens.at(-1).content) === false || mensagens.length > antesRepetir,
+  "o fim da rodada deve sempre emitir um cartão");
+xwing.system.avarias = { motor: false, leme: false, armas: false, sensores: false, tripulacao: false };
+xwing.system.camaras.maquinas = "instalada";
 
 // ── O template não pode abrir um <form> ─────────────────────────────────────
 //
@@ -266,4 +307,4 @@ if (problemas.length) {
   for (const p of problemas) console.error(`  ✘ ${p}`);
   process.exit(1);
 }
-console.log("  ✔ nave: dial (Sobrecarga, Leme, colosso, curva pela metade), ataque (X-wing, crítico e Brecha), template sem <form> aninhado, seletor de tipo, as tabelas do livro (T10-5, T10-6, evasiva) as 12 câmaras, o salto hiperespacial e a tranca do Arsenal");
+console.log("  ✔ nave: dial (Sobrecarga, Leme, colosso, curva pela metade), ataque (X-wing, crítico e Brecha), template sem <form> aninhado, seletor de tipo, as tabelas do livro (T10-5, T10-6, evasiva) as 12 câmaras, o salto, a tranca do Arsenal e a avaria que vira obra");

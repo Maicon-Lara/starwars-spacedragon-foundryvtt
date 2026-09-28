@@ -24,6 +24,7 @@ import {
   CRITICOS_LIVRO, FALHAS_LIVRO, ORDEM_LIVRO, faixaDePilotagem,
   EVASIVA_INTERVALO, evasivaPermitida,
   CAMARAS, ESTADOS_DE_CAMARA, camaraOperacional, ETAPAS_DO_SALTO, TRANCA_DO_ARSENAL,
+  AVARIA_VIRA_CAMARA, REPARO_DE_CAMARA,
 } from "./nave-modelo.js";
 import { moverNave, conferirEscala, casasDaManobra } from "./nave-movimento.js";
 
@@ -681,18 +682,44 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
   }
 
   static async #fimDaRodada() {
+    const s = this.actor.system;
     const upd = { "system.manobra.tipo": "", "system.manobra.revelada": false };
     for (const a of AVARIAS_DE_UMA_RODADA) upd[`system.avarias.${a}`] = false;
     // A manobra evasiva vale pela rodada em que foi declarada; a rodada em que
     // ela aconteceu FICA gravada, para valer o intervalo de 5.
-    if (this.actor.system.evasiva?.ativa) upd["system.evasiva.ativa"] = false;
+    if (s.evasiva?.ativa) upd["system.evasiva.ativa"] = false;
+
+    // ── A avaria não reparada vira dano estrutural ──
+    //
+    // Aqui é onde o Combate Tático e as câmaras se encostam: o que o Engenheiro
+    // não consertou nesta rodada deixa de ser susto e vira obra. Só as avarias
+    // duradouras — o Leme e a Tripulação saem sozinhos, de propósito.
+    const viraram = [];
+    for (const [avaria, camara] of Object.entries(AVARIA_VIRA_CAMARA)) {
+      if (s.avarias[avaria] && s.camaras?.[camara] === "instalada") {
+        upd[`system.camaras.${camara}`] = "danificada";
+        viraram.push({ avaria, camara: CAMARAS[camara] });
+      }
+    }
     await this.actor.update(upd);
-    await card(this.actor, "Fim da rodada",
-      ehLivro()
-        ? `<p>A <strong>manobra evasiva</strong> saiu: ataques voltam a ser opostos pelo CP. ` +
-          `A rodada dela fica registrada — são ${EVASIVA_INTERVALO} rodadas até a próxima.</p>`
-        : `<p>Manobra limpa para o próximo planejamento. As avarias de <strong>Leme</strong> e <strong>Tripulação</strong>, ` +
-          `que valem por uma rodada, saíram. Motor, Armas e Sensores ficam até o reparo.</p>`);
+
+    const estrutural = viraram.length
+      ? `<p class="result"><strong>Dano estrutural</strong> — a avaria que ficou virou obra:</p><ul>` +
+        viraram.map(({ avaria, camara }) =>
+          `<li><strong>${AVARIAS[Object.keys(AVARIAS).find((k) => AVARIAS[k].chave === avaria)].rotulo}</strong>` +
+          ` → <strong>${camara.rotulo}</strong> danificada` +
+          ` (reparo: ${Math.round(camara.obra * REPARO_DE_CAMARA).toLocaleString("pt-BR")} CR, metade de ${camara.prazo})</li>`).join("") +
+        `</ul>`
+      : "";
+
+    // os parênteses importam: sem eles a concatenação vem antes do ternário e o
+    // cartão sai sempre com o texto do modo Livro, mesmo no Tático
+    const fecho = ehLivro()
+      ? `<p>A <strong>manobra evasiva</strong> saiu: ataques voltam a ser opostos pelo CP. ` +
+        `A rodada dela fica registrada — são ${EVASIVA_INTERVALO} rodadas até a próxima.</p>`
+      : `<p>Manobra limpa para o próximo planejamento. As avarias de <strong>Leme</strong> e <strong>Tripulação</strong>, ` +
+        `que valem por uma rodada, saíram. Motor, Armas e Sensores ficam até o reparo.</p>`;
+    await card(this.actor, "Fim da rodada", estrutural + fecho);
   }
 
   /**

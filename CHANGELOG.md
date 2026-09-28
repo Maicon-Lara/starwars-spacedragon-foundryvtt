@@ -1,5 +1,39 @@
 # Changelog
 
+## 1.9.0 — as câmaras conversam com o Combate Tático
+
+As câmaras entraram na 1.7.0 como camada sobre o capítulo 10. Elas são, na
+verdade, para rodar **junto do Combate Tático** — e agora rodam.
+
+**A avaria que ninguém reparou vira obra.** O crítico do dial causa uma avaria:
+dano de cena, que o Engenheiro conserta em combate. A câmara é dano
+**estrutural**, e só a obra conserta. Os dois se encontram no **fim da rodada**:
+
+| Avaria do crítico | Vira |
+|---|---|
+| Motor | Sala de Máquinas danificada |
+| Armas | Arsenal danificado |
+| Sensores | Ponte de Comando danificada |
+
+O **Leme** e a **Tripulação** ficam de fora de propósito — saem sozinhos no fim
+da rodada, porque são sustos e não estrago.
+
+O combate não trava no meio: a nave continua lutando com a penalidade da avaria,
+e a conta chega depois, em créditos e semanas. O posto de **Engenharia** ganha
+urgência de verdade — reparar naquela rodada é o que evita a obra.
+
+O journal e a nota do cofre ganharam a tabela dessa conversa, com o aviso da
+espiral: Sensores viram Ponte, e a Ponte danificada tira o +2 **e** impede a
+nave de operar armas.
+
+### Corrigido de passagem
+
+- **O cartão do fim da rodada saía com o texto do modo Livro mesmo no Tático.**
+  Faltavam parênteses no ternário, e a concatenação vinha antes.
+- No teste, o ator que dispara as ações tinha `update()` vazio: nada do que a
+  ficha gravava nele era verificável, e o mock não tinha `manobra` nem
+  `evasiva`. Dois testes que eu julgava ativos nunca chegavam a rodar.
+
 ## 1.8.1 — a tabela das câmaras no journal, gerada da mesma fonte
 
 A tabela de **custo, prazo e efeito** das doze câmaras só existia nas dicas dos

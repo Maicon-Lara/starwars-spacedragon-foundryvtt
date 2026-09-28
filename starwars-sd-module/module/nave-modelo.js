@@ -156,7 +156,7 @@ export const evasivaPermitida = (tipo) => TIPOS[tipo]?.tamanho === "Pequena";
 /* As câmaras vivem em camaras.js, que é dado puro e o build também lê. */
 export {
   CAMARAS, ESTADOS_DE_CAMARA, camaraOperacional,
-  ETAPAS_DO_SALTO, TRANCA_DO_ARSENAL, REPARO_DE_CAMARA,
+  ETAPAS_DO_SALTO, TRANCA_DO_ARSENAL, REPARO_DE_CAMARA, AVARIA_VIRA_CAMARA,
 } from "./camaras.js";
 import { CAMARAS, ESTADOS_DE_CAMARA } from "./camaras.js";
 
