@@ -147,6 +147,22 @@
     {{/if}}
   </section>
 
+  {{!-- As 12 câmaras da T10-2: a nave como base de operações. Um clique gira
+        instalada → danificada → ausente. Três delas a ficha lê de verdade — a
+        Ponte, a Sala de Máquinas e a Saída de Emergência. --}}
+  <section class="camaras">
+    <h3>Câmaras <span class="dica">clique para trocar o estado · reparar custa 25% e leva metade do tempo</span></h3>
+    {{#if semPonte}}
+    <p class="aviso-escala">Sem a <strong>Ponte de Comando</strong> operacional, a nave não pode ser pilotada nem operar armas.</p>
+    {{/if}}
+    <div class="avarias">
+      {{#each camaras}}
+      <button type="button" class="ficha camara estado-{{estado}}" data-action="camara" data-chave="{{chave}}"
+              title="{{rotulo}} — {{efeito}}&#10;&#10;Obra: {{obra}} CR · {{prazo}} (reparo: 25% e metade do tempo)&#10;Estado: {{estado}}">{{rotulo}}</button>
+      {{/each}}
+    </div>
+  </section>
+
   <section class="postos">
     <h3>Postos <span class="dica">Modo Tripulação — cada posto é a ação daquele personagem</span></h3>
     <div class="grade">

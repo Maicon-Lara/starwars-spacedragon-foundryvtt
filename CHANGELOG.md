@@ -1,5 +1,27 @@
 # Changelog
 
+## 1.7.0 — a nave como base de operações: as 12 câmaras
+
+Do guia *Espaçonaves como Base de Operações*, regra da casa sobre a Tabela
+T10-2. A ficha ganha uma seção **Câmaras** com as doze, e cada uma gira num
+clique entre **instalada**, **danificada** e **ausente**.
+
+Três delas a ficha **lê de verdade**, em vez de só listar:
+
+- **Ponte de Comando** — dá **+2 nos ataques** da nave, o Computador Balístico,
+  e o modificador aparece na conta do cartão. Sem ela operacional, *"a nave não
+  pode ser pilotada nem operar armas"*: o botão de atirar recusa e diz por quê.
+- **Sala de Máquinas** — é dela que se repara em combate; sem ela, o botão
+  *reparar* recusa.
+- **Saída de Emergência** — é por ela que a tripulação abandona a nave a 0 PV.
+
+As outras nove trazem o efeito escrito na dica do botão, junto do custo da obra
+e do prazo, com a lembrança de que reparar custa **25% e leva metade do tempo** —
+a mesma régua do conserto de aparatos do capítulo 8.
+
+As naves nascem com as doze instaladas, que é o estado de uma nave que voa; quem
+tiver perdido alguma marca na ficha.
+
 ## 1.6.4 — modo escuro na ficha de nave, e os títulos de volta ao negrito
 
 - **Modo escuro.** A ficha tem paleta própria e não acompanhava sozinha um

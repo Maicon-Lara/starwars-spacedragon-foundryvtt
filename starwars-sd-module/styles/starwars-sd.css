@@ -349,6 +349,18 @@ body.theme-dark .starwars-sd.nave-ficha.tema-auto,
 .starwars-sd.nave-ficha .posto label { flex: 0 0 5.4em; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: var(--nave-secundario); }
 .starwars-sd.nave-ficha .posto input { flex: 1; min-width: 0; }
 
+
+/* As câmaras: reusam a ficha arredondada, com o estado na cor. Instalada é o
+   normal; danificada puxa o vermelho de perigo; ausente fica riscada. */
+.starwars-sd.nave-ficha .camara.estado-instalada {
+  opacity: 1; border-color: var(--sd-brilho, #2f9e8f);
+  color: color-mix(in srgb, var(--sd-brilho, #2f9e8f) 75%, black);
+}
+.starwars-sd.nave-ficha .camara.estado-danificada {
+  opacity: 1; border-color: var(--nave-perigo); color: var(--nave-perigo);
+}
+.starwars-sd.nave-ficha .camara.estado-ausente { text-decoration: line-through; }
+
 /* Diálogos de ataque e esquiva */
 .starwars-sd-nave-dialogo .linha { display: flex; align-items: center; gap: 8px; margin: 5px 0; }
 .starwars-sd-nave-dialogo .linha label { flex: 1; }

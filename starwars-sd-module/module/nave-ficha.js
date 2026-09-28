@@ -23,6 +23,7 @@ import {
   TIPOS, MANOBRAS, MANOBRAS_DE_COLOSSO, FAIXAS, AVARIAS, AVARIAS_DE_UMA_RODADA, POSTOS,
   CRITICOS_LIVRO, FALHAS_LIVRO, ORDEM_LIVRO, faixaDePilotagem,
   EVASIVA_INTERVALO, evasivaPermitida,
+  CAMARAS, ESTADOS_DE_CAMARA, camaraOperacional,
 } from "./nave-modelo.js";
 import { moverNave, conferirEscala, casasDaManobra } from "./nave-movimento.js";
 
@@ -148,6 +149,7 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
       delArma: NaveFicha.#delArma,
       planejar: NaveFicha.#planejar,
       revelar: NaveFicha.#revelar,
+      camara: NaveFicha.#camara,
     },
   };
 
@@ -189,6 +191,11 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
       livro: ehLivro(),
       tatico: !ehLivro(),
       podeEvadir: evasivaPermitida(s.tipo),
+      camaras: Object.entries(CAMARAS).map(([k, c]) => ({
+        chave: k, ...c, estado: s.camaras?.[k] ?? "instalada",
+        ok: s.camaras?.[k] === "instalada",
+      })),
+      semPonte: !camaraOperacional(s, "ponte"),
       ordemLivro: Object.values(ORDEM_LIVRO),
       escala: canvas?.scene ? conferirEscala(canvas.scene) : { ok: true },
       pctPV: s.pv.max ? Math.max(0, Math.min(100, Math.round((s.pv.value / s.pv.max) * 100))) : 0,
@@ -229,6 +236,12 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
 
   // ── Ataque ────────────────────────────────────────────────────────────────
   static async #atacar(event, botao) {
+    // "Sem a Ponte de Comando operacional, a nave não pode ser pilotada nem
+    // operar escudos ou armas acopladas."
+    if (!camaraOperacional(this.actor.system, "ponte")) {
+      return ui.notifications.warn(
+        `${this.actor.name}: sem a Ponte de Comando operacional a nave não opera armas.`);
+    }
     // O §10.6 resolve o tiro de outro jeito: sem faixas de hex, sem dados de
     // defesa, e com as tabelas T10-6 no 20 e no 1 naturais.
     if (ehLivro()) return NaveFicha.#atacarPeloLivro.call(this, event, botao);
@@ -272,6 +285,8 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
 
     const partes = [
       ["BA", s.ba], ["faixa", faixa.mod], ["Trava", d.trava ? 2 : 0],
+      // o Computador Balístico mora na Ponte: sem ela operacional, não há +2
+      ["Computador Balístico", camaraOperacional(s, "ponte") ? CAMARAS.ponte.ataque : 0],
       ["Sensores avariados", s.avarias.sensores ? -2 : 0], ["extra", Number(d.extra) || 0],
     ].filter(([, v]) => v);
     const total = partes.reduce((a, [, v]) => a + v, 0);
@@ -392,6 +407,7 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
     const partes = [
       ["BA da nave", s.ba],
       ["artilheiro", Number(d.artilheiro) || 0],
+      ["Computador Balístico", camaraOperacional(s, "ponte") ? CAMARAS.ponte.ataque : 0],
       ["extra", Number(d.extra) || 0],
     ].filter(([, v]) => v);
     const total = partes.reduce((a, [, v]) => a + v, 0);
@@ -600,6 +616,11 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
   /** Engenharia: remove uma avaria, recupera 1d10 PV ou tira 1 Sobrecarga. */
   static async #reparar() {
     const s = this.actor.system;
+    // É da Sala de Máquinas que se repara a nave em combate.
+    if (!camaraOperacional(s, "maquinas")) {
+      return ui.notifications.warn(
+        `${this.actor.name}: sem a Sala de Máquinas operacional não há como reparar em combate.`);
+    }
     const ativas = Object.values(AVARIAS).filter((a) => a.chave && s.avarias[a.chave]);
     const r = await pergunta({
       titulo: `Engenharia — ${this.actor.name}`,
@@ -670,6 +691,21 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
           `A rodada dela fica registrada — são ${EVASIVA_INTERVALO} rodadas até a próxima.</p>`
         : `<p>Manobra limpa para o próximo planejamento. As avarias de <strong>Leme</strong> e <strong>Tripulação</strong>, ` +
           `que valem por uma rodada, saíram. Motor, Armas e Sensores ficam até o reparo.</p>`);
+  }
+
+  /**
+   * Gira o estado de uma câmara: instalada → danificada → ausente → instalada.
+   *
+   * Um clique só, porque na mesa isso muda no meio da cena — a Ponte leva um
+   * tiro e as armas param. O custo do reparo aparece no título do botão, pela
+   * régua de 25% do Cap. 8.
+   */
+  static async #camara(event, botao) {
+    const chave = botao.dataset.chave;
+    if (!CAMARAS[chave]) return;
+    const atual = this.actor.system.camaras?.[chave] ?? "instalada";
+    const proximo = ESTADOS_DE_CAMARA[(ESTADOS_DE_CAMARA.indexOf(atual) + 1) % ESTADOS_DE_CAMARA.length];
+    await this.actor.update({ [`system.camaras.${chave}`]: proximo });
   }
 
   // ── Preenchimento pelo tipo ───────────────────────────────────────────────

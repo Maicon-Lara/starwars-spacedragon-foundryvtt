@@ -152,6 +152,84 @@ export const ORDEM_LIVRO = {
 export const EVASIVA_INTERVALO = 5;
 export const evasivaPermitida = (tipo) => TIPOS[tipo]?.tamanho === "Pequena";
 
+
+/* ── AS 12 CÂMARAS (T10-2), A NAVE COMO BASE DE OPERAÇÕES ────────────────────
+ *
+ * Regra da casa, do guia "Espaçonaves como Base de Operações". Cada câmara tem
+ * custo, tempo de obra e um efeito; três delas mexem no que esta ficha já faz,
+ * e por isso a ficha as lê em vez de só listá-las:
+ *
+ *   ponte     dá +2 no ataque (o Computador Balístico) e, sem ela operacional,
+ *             a nave não pilota nem opera armas;
+ *   maquinas  é o que permite reparar em combate;
+ *   emergencia é o que permite abandonar a nave a 0 PV.
+ *
+ * `obra` é o custo em créditos; `prazo`, o tempo da obra. Reparar uma câmara
+ * danificada custa 25% e leva metade do tempo — a mesma régua do conserto de
+ * aparatos do capítulo 8.
+ */
+export const ESTADOS_DE_CAMARA = ["instalada", "danificada", "ausente"];
+
+export const CAMARAS = {
+  ponte: {
+    rotulo: "Ponte de Comando", obra: 120000, prazo: "2 semanas",
+    efeito: "Controle central. Abriga o Computador Balístico (+2 nos ataques da nave) e o piloto automático; é onde se rolam os 3 testes de Pilotar do salto hiperespacial. Sem ela operacional, a nave não pode ser pilotada nem operar escudos ou armas.",
+    ataque: 2, exigeParaAtacar: true, exigeParaPilotar: true,
+  },
+  aposentos: {
+    rotulo: "Aposentos da Tripulação", obra: 40000, prazo: "1 semana",
+    efeito: "Recuperação natural de PV e de Alcance da Força em viagem. Sem aposentos adequados, a tripulação sofre −1 em todos os testes de atributo.",
+  },
+  maquinas: {
+    rotulo: "Sala de Máquinas", obra: 200000, prazo: "3 semanas",
+    efeito: "Propulsão e geradores. É o que permite ao Técnico testar Operar Máquinas para restabelecer energia ou reparar a nave em combate, e o espaço do acelerador hiperespacial.",
+    exigeParaReparar: true,
+  },
+  deposito: {
+    rotulo: "Depósito", obra: 30000, prazo: "3 dias",
+    efeito: "Carga, suprimentos, peças e pilhagem. Guarda veículos de apoio, como swoops ou trajes pesados.",
+  },
+  refeitorio: {
+    rotulo: "Refeitório", obra: 25000, prazo: "3 dias",
+    efeito: "Prepara rações para expedições longas, mantém o moral e reduz o custo de suprimentos em travessias.",
+  },
+  arsenal: {
+    rotulo: "Arsenal", obra: 80000, prazo: "1 semana",
+    efeito: "Estoque seguro de armas, munição e vestes, com trancas reforçadas (−20% em Sabotagem para invadir) e recarga rápida de baterias.",
+  },
+  hospital: {
+    rotulo: "Ala Hospitalar", obra: 120000, prazo: "2 semanas",
+    efeito: "Habilita os feitos de Operação Cirúrgica, Curar Doença e Diagnosticar Doença, e dobra a recuperação natural de PV em viagem.",
+  },
+  laboratorio: {
+    rotulo: "Laboratório", obra: 150000, prazo: "2 semanas",
+    efeito: "Instalação obrigatória para o Técnico construir aparatos (com o desconto da Aptidão Tecnológica) e fazer Reparos Robóticos em droides.",
+  },
+  acoplagem: {
+    rotulo: "Câmara de Acoplagem", obra: 100000, prazo: "1,5 semana",
+    efeito: "Conecta a nave a estações ou a outras naves no vácuo: abordagem tática, transferência de passageiros e embarque de carga.",
+  },
+  despressurizacao: {
+    rotulo: "Câmara de Despressurização", obra: 60000, prazo: "1 semana",
+    efeito: "Saída segura para atividade extraveicular no vácuo ou em superfícies tóxicas, sem perder pressão nem contaminar a nave.",
+  },
+  corredores: {
+    rotulo: "Corredores", obra: 20000, prazo: "3 dias",
+    efeito: "Ligam as câmaras. As portas blindadas podem ser seladas numa invasão, exigindo Sabotagem ou um cortador laser para abrir.",
+  },
+  emergencia: {
+    rotulo: "Saída de Emergência", obra: 90000, prazo: "1 semana",
+    efeito: "As cápsulas de evacuação. A 0 PV, é por ela que a tripulação abandona a nave e sobrevive à explosão.",
+    salvaA0PV: true,
+  },
+};
+
+/** Reparar custa 25% da obra e leva metade do tempo (a régua do Cap. 8). */
+export const REPARO_DE_CAMARA = 0.25;
+
+/** Uma câmara só conta quando está instalada — danificada não vale. */
+export const camaraOperacional = (s, chave) => s?.camaras?.[chave] === "instalada";
+
 /** Os postos do Modo Tripulação. */
 export const POSTOS = {
   leme: { rotulo: "Leme", quem: "Veterano / Contrabandista", acao: "Escolhe e executa a manobra; rola Pilotar em situações-limite." },
@@ -208,6 +286,12 @@ export class NaveDataModel extends foundry.abstract.TypeDataModel {
       ),
 
       postos: new fields.SchemaField(Object.fromEntries(Object.keys(POSTOS).map((p) => [p, txt("")]))),
+
+      // As 12 câmaras da T10-2. Nascem instaladas: é o estado de uma nave que
+      // voa, e quem tiver perdido alguma marca na ficha.
+      camaras: new fields.SchemaField(Object.fromEntries(Object.keys(CAMARAS).map((c) => [
+        c, new fields.StringField({ required: true, initial: "instalada", choices: ESTADOS_DE_CAMARA }),
+      ]))),
 
       // A manobra é escolhida EM SEGREDO e só sai no Mover.
       manobra: new fields.SchemaField({

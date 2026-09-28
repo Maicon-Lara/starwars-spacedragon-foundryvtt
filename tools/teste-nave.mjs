@@ -53,7 +53,11 @@ globalThis.ui = { notifications: { warn: () => {}, info: () => {} } };
 globalThis.canvas = null;
 
 const { NaveFicha, TIPO_NAVE } = await import("../starwars-sd-module/module/nave-ficha.js");
-const { TIPOS } = await import("../starwars-sd-module/module/nave-modelo.js");
+const { TIPOS, CAMARAS, camaraOperacional } = await import("../starwars-sd-module/module/nave-modelo.js");
+
+/** Uma nave inteira: as 12 câmaras instaladas, como nasce no schema. */
+const camarasInteiras = () =>
+  Object.fromEntries(Object.keys(CAMARAS).map((c) => [c, "instalada"]));
 
 const problemas = [];
 const confere = (ok, msg) => { if (!ok) problemas.push(msg); };
@@ -65,7 +69,8 @@ const sistema = (tipo, extra = {}) => {
     tipo, ba: p.ba, cp: p.cp, jp: p.jp, velocidade: p.velocidade, velocidadeEfetiva: p.velocidade,
     esquiva: p.esquiva, iniciativa: 0, perfil: p, colosso: !!p.colosso, sobrecarga: 0, trava: "",
     avarias: { motor: false, leme: false, armas: false, sensores: false, tripulacao: false },
-    armas: [], pv: { value: 50, max: 50, formula: p.pv }, ...extra,
+    armas: [], pv: { value: 50, max: 50, formula: p.pv },
+    camaras: camarasInteiras(), ...extra,
   };
 };
 
@@ -133,7 +138,33 @@ confere(tie.system.pv.value === 30, `com a Brecha o TIE devia ficar com 30 PV, f
 // ── Erro ────────────────────────────────────────────────────────────────────
 fila = [[2]];
 await atacar.call(ficha, {}, { dataset: { idx: "0" } });
-confere(/Errou/.test(mensagens.at(-1).content), "2 + 16 = 18 contra CP 28 devia errar");
+confere(/Errou/.test(mensagens.at(-1).content), "2 + 16 + 2 = 20 contra CP 28 devia errar");
+
+// ── As 12 câmaras (T10-2), e o que a ficha lê delas ─────────────────────────
+confere(Object.keys(CAMARAS).length === 12, `esperava 12 câmaras, achei ${Object.keys(CAMARAS).length}`);
+for (const [k, c] of Object.entries(CAMARAS)) {
+  confere(typeof c.obra === "number" && c.obra > 0, `${k}: sem custo de obra`);
+  confere(!!c.prazo && !!c.efeito && !!c.rotulo, `${k}: falta prazo, efeito ou rótulo`);
+}
+confere(CAMARAS.ponte.ataque === 2, "o Computador Balístico da Ponte dá +2");
+confere(camaraOperacional({ camaras: { ponte: "instalada" } }, "ponte"), "instalada é operacional");
+confere(!camaraOperacional({ camaras: { ponte: "danificada" } }, "ponte"), "danificada NÃO é operacional");
+confere(!camaraOperacional({ camaras: {} }, "ponte"), "ausente não é operacional");
+
+// O +2 entra na conta do tiro…
+xwing.system.pv.value = 50; tie.system.pv.value = 50;
+fila = [[15], [1, 1, 1], [2, 2, 2, 2]];
+await atacar.call(ficha, {}, { dataset: { idx: "0" } });
+confere(/Computador Bal[ií]stico \+2/.test(mensagens.at(-1).content),
+  "o cartão devia mostrar o +2 do Computador Balístico");
+
+// …e sem a Ponte operacional a nave não opera armas: nenhum cartão novo sai
+const antes = mensagens.length;
+xwing.system.camaras.ponte = "danificada";
+fila = [[15], [1, 1, 1], [2, 2, 2, 2]];
+await atacar.call(ficha, {}, { dataset: { idx: "0" } });
+confere(mensagens.length === antes, "sem Ponte operacional o ataque não devia sair");
+xwing.system.camaras.ponte = "instalada";
 
 // ── O template não pode abrir um <form> ─────────────────────────────────────
 //
@@ -213,4 +244,4 @@ if (problemas.length) {
   for (const p of problemas) console.error(`  ✘ ${p}`);
   process.exit(1);
 }
-console.log("  ✔ nave: dial (Sobrecarga, Leme, colosso, curva pela metade), ataque (X-wing, crítico e Brecha), template sem <form> aninhado, seletor de tipo, e as tabelas do livro (T10-5, T10-6, evasiva)");
+console.log("  ✔ nave: dial (Sobrecarga, Leme, colosso, curva pela metade), ataque (X-wing, crítico e Brecha), template sem <form> aninhado, seletor de tipo, as tabelas do livro (T10-5, T10-6, evasiva) e as 12 câmaras");
