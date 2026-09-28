@@ -43,20 +43,34 @@ export function dadoDaFaixa(nivel) {
 /** A reserva do nível: 5 + (nível ÷ 2), arredondado para baixo. */
 export const reservaDoNivel = (nivel) => 5 + Math.floor(Math.max(1, nivel) / 2);
 
+/**
+ * A reserva cheia é de PROTAGONISTA. Um PNJ comum tem 1 ponto — o bastante
+ * para um momento de virada por cena, e sem transformar o lado do Mestre numa
+ * planilha de trinta reservas.
+ *
+ * Quem decide é a ficha: personagem do jogador, ou PNJ que o Mestre marcou como
+ * protagonista pelo flag `heroico`.
+ */
+export function reservaDoAtor(ator) {
+  const nivel = Number(ator?.system?.level ?? 1);
+  const daMesa = ator?.hasPlayerOwner || ator?.getFlag?.(ID, "heroico");
+  return daMesa ? reservaDoNivel(nivel) : 1;
+}
+
 /** Quantos pontos o personagem ainda tem. */
 export function pontosAtuais(ator) {
   const nivel = Number(ator?.system?.level ?? 1);
   const guardado = ator?.getFlag?.(ID, FLAG);
   // sem flag, ou com flag de outro nível, a reserva é a do nível atual: subir
   // de nível zera e reenche, e é isso que o `nivel` guardado detecta
-  if (!guardado || guardado.nivel !== nivel) return reservaDoNivel(nivel);
-  return Math.max(0, Math.min(reservaDoNivel(nivel), Number(guardado.valor ?? 0)));
+  if (!guardado || guardado.nivel !== nivel) return reservaDoAtor(ator);
+  return Math.max(0, Math.min(reservaDoAtor(ator), Number(guardado.valor ?? 0)));
 }
 
 /** Grava a reserva, junto do nível em que ela vale. */
 export async function gravarPontos(ator, valor) {
   const nivel = Number(ator?.system?.level ?? 1);
-  const limite = reservaDoNivel(nivel);
+  const limite = reservaDoAtor(ator);
   await ator.setFlag(ID, FLAG, { nivel, valor: Math.max(0, Math.min(limite, valor)) });
 }
 
@@ -76,7 +90,7 @@ function montaPainel(ator) {
   const nivel = Number(ator.system?.level ?? 0);
   if (!nivel) return null;
   const tem = pontosAtuais(ator);
-  const limite = reservaDoNivel(nivel);
+  const limite = reservaDoAtor(ator);
   const { rotulo } = dadoDaFaixa(nivel);
 
   const pastilhas = Array.from({ length: limite }, (_, i) =>
@@ -111,7 +125,8 @@ async function cartaoDoGasto(ator, { roll, valor, faces, rotulo }) {
       `<p class="result"><strong>+${valor}</strong> em ataque ou JP · ` +
       `<strong>−${valor}</strong> no d20 de um teste de atributo</p>` +
       `<p><em>Em talento de d%, declare antes de rolar: <strong>+${valor * 10}%</strong> ` +
-      `ou uma re-rolagem.</em></p>`,
+      `ou uma re-rolagem.</em></p>` +
+      `<p class="nota-casa"><em>Ação livre, uma por rodada. O dado vale por uma rolagem só.</em></p>`,
     speaker: ChatMessage.getSpeaker({ actor: ator }),
     rolls: [roll],
     sound: CONFIG.sounds.dice,

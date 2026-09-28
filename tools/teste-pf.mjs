@@ -18,7 +18,7 @@ globalThis.Hooks = { on() {} };
 globalThis.ChatMessage = { create: async () => {}, getSpeaker: () => ({}) };
 globalThis.CONFIG = { sounds: { dice: null } };
 
-const { dadoDaFaixa, reservaDoNivel, pontosAtuais, rolarPonto } =
+const { dadoDaFaixa, reservaDoNivel, reservaDoAtor, pontosAtuais, rolarPonto } =
   await import("../starwars-sd-module/module/pontos-de-forca.js");
 
 const problemas = [];
@@ -53,9 +53,10 @@ confere(r.valor <= 6, "o dado nunca passa de 6, em faixa nenhuma");
 // O flag guarda o nível em que a reserva vale. Com o ator no 4º e o flag do 3º,
 // a reserva a valer é a do 4º, cheia — é assim que "zera ao subir" acontece
 // sem ninguém precisar clicar em nada.
-const ator = (nivel, flag) => ({
+const ator = (nivel, flag, heroico = true) => ({
   system: { level: nivel },
-  getFlag: () => flag,
+  hasPlayerOwner: heroico,
+  getFlag: (_id, chave) => (chave === "heroico" ? false : flag),
 });
 confere(pontosAtuais(ator(3, null)) === 6, "sem flag, a reserva é a cheia do nível");
 confere(pontosAtuais(ator(3, { nivel: 3, valor: 2 })) === 2, "com flag do mesmo nível, vale o guardado");
@@ -64,8 +65,20 @@ confere(pontosAtuais(ator(4, { nivel: 3, valor: 0 })) === 7,
 confere(pontosAtuais(ator(3, { nivel: 3, valor: 99 })) === 6, "o guardado não passa do limite do nível");
 confere(pontosAtuais(ator(3, { nivel: 3, valor: -5 })) === 0, "o guardado não fica negativo");
 
+// ── A reserva cheia é de protagonista ──────────────────────────────────────
+//
+// Um PNJ comum tem 1 ponto. Sem isso o Mestre administra uma reserva por
+// capanga, e o que devia ser um instante vira contabilidade.
+confere(reservaDoAtor({ system: { level: 10 }, hasPlayerOwner: true }) === 10,
+  "personagem de jogador tem a reserva do nível");
+confere(reservaDoAtor({ system: { level: 10 }, hasPlayerOwner: false, getFlag: () => false }) === 1,
+  "PNJ comum tem 1 ponto, não a reserva cheia");
+confere(reservaDoAtor({ system: { level: 10 }, hasPlayerOwner: false, getFlag: (_i, c) => c === "heroico" }) === 10,
+  "PNJ marcado como heroico tem a reserva cheia");
+confere(pontosAtuais(ator(10, null, false)) === 1, "e o painel do PNJ comum mostra 1");
+
 if (problemas.length) {
   for (const p of problemas) console.error(`  ✘ ${p}`);
   process.exit(1);
 }
-console.log("  ✔ pontos de força: a reserva por nível, as três faixas do dado, o maior de N e o zerar ao subir");
+console.log("  ✔ pontos de força: reserva por nível e por tipo de ator, as três faixas, o maior de N e o zerar ao subir");

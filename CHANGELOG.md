@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.10.1 — os Pontos de Força, conferidos contra a fonte
+
+A regra veio dos **Pontos de Força** do RPG de Star Wars, no desenho da *Saga
+Edition*. Conferida contra ela, três ajustes:
+
+- **Gastar é ação livre**, uma por rodada, e o dado vale por **uma rolagem só**
+  — não pela cena. O cartão passa a dizer isso.
+- **PNJ comum tem 1 ponto**, não a reserva cheia. A reserva de `5 + (nível ÷ 2)`
+  é de **protagonista**: personagem de jogador, ou PNJ que o Mestre marque como
+  tal pelo flag `heroico`. Sem isso, o lado do Mestre vira uma planilha de trinta
+  reservas, e o que devia ser um instante de heroísmo vira contabilidade.
+- A nota do cofre ganhou de onde a regra vem, e **onde a adaptação precisou
+  divergir**: na fonte tudo é d20 e maior é melhor, então o dado sempre soma; no
+  Space Dragon há três direções, e somar em tudo atrapalharia duas delas.
+
+A **recarga ao subir de nível** ficou confirmada como fiel à fonte — não é
+invenção da casa.
+
 ## 1.10.0 — Pontos de Força na ficha do personagem
 
 A reserva de heroísmo que todo personagem tem, sensível à Força ou não. A regra
