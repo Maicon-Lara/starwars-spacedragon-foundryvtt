@@ -11,9 +11,31 @@ repete as regras**. Ele depende do módulo
 Foundry faz o papel do livro básico: escala de atributos, testes de
 porcentagem, Danos Mortais, alcance mental e a ficha.
 
-> Não confundir com o **Star Dragon** (`sw-spacedragon-foundryvtt`), que é
-> Star Wars convertido para Old Dragon 2, com nível 1–15 e Foco Diário. Os dois
-> podem ficar ligados no mesmo mundo.
+## A pilha
+
+Três camadas, e **nenhuma delas é um sistema próprio**:
+
+```
+sistema  olddragon2e          oficial, da Old Dragon Editora
+   └── módulo  spacedragon     as regras do livro básico
+          └── módulo  starwars-sd   este: o cenário
+```
+
+> **A ficha é a do Old Dragon 2**, e ela calcula o modificador de atributo pela
+> tabela *dela* — faixa neutra 9–12 e teto 20, contra 10–11 e 29 do Space
+> Dragon. Não há como consertar isso de dentro de um módulo, porque quem calcula
+> é o sistema: **ignore o modificador que a ficha exibe** e use as tabelas T1-1 a
+> T1-6, no compêndio de Regras do módulo Space Dragon.
+
+### Os outros repositórios, e por que não são este
+
+- **`sw-spacedragon-nativo`** — fazia a mesma adaptação sobre o **Custom System
+  Builder**, com ficha sob medida (CP, JP única, Alcance da Força em %, Ordem de
+  Ação). **Arquivado em 25/09/2026:** cobria um terço do conteúdo. A ficha dele
+  era melhor; o acervo daqui é maior, e foi a troca escolhida.
+- **`sw-spacedragon-foundryvtt`** (Star Dragon) — Star Wars convertido para Old
+  Dragon 2 *de verdade*, com CA, três JPs, Carisma, nível 1–15 e Foco Diário.
+  Outro jogo, e pode ficar ligado no mesmo mundo que este.
 
 ## De onde vem o conteúdo
 
@@ -98,7 +120,8 @@ tools/
 ## Comandos
 
 ```
-npm install          # uma vez: instala o foundryvtt-cli
+npm install          # uma vez: instala o foundryvtt-cli (^3.0.3)
+node tools/importar-cofre.mjs   # relê o cofre; exige ../space-dragon-foundryvtt clonado ao lado
 npm run build        # gera os compêndios
 npm run validar      # build + validação + teste da Nave
 npm run banners      # regera as capas
