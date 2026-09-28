@@ -173,11 +173,46 @@
   font-size: 12px; text-transform: uppercase; letter-spacing: .09em;
   /* cor explícita: sem isto o h3 herda o carmim do sistema, que sobre o fundo
      claro do Space Dragon fica ilegível */
-  color: var(--sd-barra, #1b2340); font-weight: 700;
+  color: var(--sd-barra, #1b2340); font-weight: normal;
   margin: 0 0 6px; border-bottom: 1px solid var(--nave-linha); padding-bottom: 3px;
   display: flex; align-items: center; gap: 8px;
 }
 .starwars-sd.nave-ficha h3 .dica { text-transform: none; letter-spacing: 0; font-size: 11px; font-weight: normal; color: var(--nave-secundario); }
+
+/* OS CAMPOS DE DIGITAÇÃO.
+ *
+ * Um módulo de modo escuro (ou o tema escuro do próprio Foundry) repinta
+ * input/select do mundo inteiro, e a ficha ficava com caixas pretas sobre a
+ * página clara do Space Dragon. Como esta ficha tem paleta própria e clara, os
+ * campos declaram fundo, texto e borda — assim ela fica igual com o tema claro
+ * ou escuro ligado. O `color-scheme: light` faz o navegador desenhar a setinha
+ * do select e o cursor na variante clara.
+ */
+.starwars-sd.nave-ficha input[type="text"],
+.starwars-sd.nave-ficha input[type="number"],
+.starwars-sd.nave-ficha select,
+.starwars-sd.nave-ficha textarea {
+  color-scheme: light;
+  background: #fff;
+  color: var(--sd-tinta, #10162c);
+  border: 1px solid var(--nave-linha);
+  border-radius: 3px;
+}
+.starwars-sd.nave-ficha input:focus,
+.starwars-sd.nave-ficha select:focus,
+.starwars-sd.nave-ficha textarea:focus {
+  border-color: var(--sd-barra, #1b2340);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--sd-barra, #1b2340) 18%, transparent);
+  outline: none;
+}
+/* o nome da nave e os valores do perfil ficam sem caixa, como antes */
+.starwars-sd.nave-ficha .titulo input[name="name"],
+.starwars-sd.nave-ficha .dado input {
+  background: transparent;
+  border-color: transparent;
+}
+.starwars-sd.nave-ficha .titulo input[name="name"]:hover,
+.starwars-sd.nave-ficha .dado input:hover { border-color: var(--nave-linha); }
 
 /* Os botões comuns da ficha (aplicar tipo, rolar, iniciativa, esquivar…). Sem
    isto eles ficam com o cinza-sobre-cinza do sistema, que some no fundo claro.

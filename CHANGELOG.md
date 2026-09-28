@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.6.3 — os campos deixam de ficar escuros com o modo escuro ligado
+
+- **Os campos de digitação** (nome, fórmula de PV, postos, armas) declaram fundo,
+  texto e borda próprios. Um módulo de modo escuro, ou o tema escuro do próprio
+  Foundry, repinta `input` e `select` do mundo inteiro, e a ficha ficava com
+  caixas pretas sobre a página clara do Space Dragon. Agora ela fica igual com o
+  tema claro ou escuro. O `color-scheme: light` faz o navegador desenhar a seta
+  do select e o cursor na variante clara.
+- **Os títulos de seção saíram do negrito.** A cor continua sendo o azul escuro
+  da paleta, que é o que os tornou legíveis na 1.6.2.
+- O nome da nave e os valores do perfil seguem sem caixa, e só mostram a borda
+  ao passar o mouse.
+
 ## 1.6.2 — a ficha de nave voltou a ser legível
 
 A 1.5.2 trocou os fundos e as bordas para a paleta do Space Dragon, mas deixou o
