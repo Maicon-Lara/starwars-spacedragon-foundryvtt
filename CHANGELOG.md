@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.5.1 — a ficha de nave rola, guarda o tipo e veste as cores do Space Dragon
+## 1.5.2 — a ficha de nave rola, guarda o tipo e veste as cores do Space Dragon
 
 Três coisas, e duas delas eram o **mesmo defeito**: o template abria um
 `<form>`, mas em ApplicationV2 a raiz da ficha já é um `<form>`, e o parser
@@ -19,6 +19,11 @@ HTML descarta um `<form>` aninhado. A tag desaparecia, e levava duas coisas:
   `--sd-tinta`, `--sd-brilho`), cada uma com o valor de fallback, para ficar
   igual com o tema ligado ou desligado. Saíram os azuis e vermelhos próprios;
   o vermelho de perigo virou o do OD2, numa variável só.
+
+A correção de 26/09 deste arquivo, que pôs `overflow-y`, `min-height: 0` e
+`max-height: 100%` no container, estava certa — e não funcionava porque o
+container não existia no DOM. Ela foi mantida, e o `.window-content` ficou com
+`overflow: hidden` para não aparecerem duas barras.
 
 O teste da nave passou a conferir que o template não abre `<form>` e que o
 seletor marca o tipo salvo, para o defeito não voltar sem avisar.
