@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "node tools/build.mjs",
-    "validar": "node tools/build.mjs && node tools/validar.mjs && node tools/teste-nave.mjs",
+    "validar": "node tools/build.mjs && node tools/validar.mjs && node tools/teste-nave.mjs && node tools/teste-pf.mjs",
     "teste": "node tools/teste-nave.mjs",
     "banners": "node tools/make-banners.mjs",
     "empacotar": "python tools/make-zip.py",

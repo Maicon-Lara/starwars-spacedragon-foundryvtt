@@ -1,5 +1,36 @@
 # Changelog
 
+## 1.10.0 — Pontos de Força na ficha do personagem
+
+A reserva de heroísmo que todo personagem tem, sensível à Força ou não. A regra
+está no cofre, em *Novos Itens/Pontos de Forca.md*; aqui vai o painel.
+
+**Na ficha**, um painel com a reserva em pastilhas, quantos restam, o dado da
+faixa e dois botões: **gastar** (rola e desconta) e **+1** (devolve, para
+desfazer). O cartão do gasto traz as duas direções lado a lado, que é onde a
+mesa erra: **+X** em ataque e JP, **−X** no d20 de um teste de atributo, e o
+lembrete de que em d% a escolha entre +X0% e re-rolagem vem **antes** do dado.
+
+**A reserva é do nível inteiro** — não recarrega por descanso nem por sessão. Ao
+subir de nível ela zera e volta como `5 + (nível ÷ 2)`, e isso acontece sozinho:
+o valor é guardado junto do nível em que vale, então mudar de nível já reenche.
+
+O valor mora num **flag do ator**, não no `system`: a ficha é do sistema
+olddragon2e e um módulo não acrescenta campos ao modelo de dados dele. O painel
+é injetado, não substitui nada, e sai junto se o módulo for desligado.
+
+### A regra foi refinada antes de virar código
+
+- **"Evitar morte" não fazia o que parecia.** Em Space Dragon, 0 PV já é
+  *inconsciente, porém estável* — de graça. O ponto agora compra a única coisa
+  que o livro diz não ter salvação: o limiar de **Danos Mortais** da Constituição
+  (−5 a −19), onde *"não é feita nenhuma jogada"*.
+- **O uso contra a Corrupção saiu.** Um ponto por −1, como ação rápida,
+  esvaziava a trilha: dez pontos apagariam dez de Corrupção em dez rodadas, e a
+  Queda, a Redenção e o Caminho Cinza perderiam o peso.
+- **Em d%, a escolha passou a ser declarada antes de rolar o dado** — empurrar
+  (dado × 10) ou re-rolar. Escolher depois de ver o d6 é comprar certeza.
+
 ## 1.9.0 — as câmaras conversam com o Combate Tático
 
 As câmaras entraram na 1.7.0 como camada sobre o capítulo 10. Elas são, na

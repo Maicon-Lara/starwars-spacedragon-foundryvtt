@@ -25,6 +25,7 @@
 
 import { NaveDataModel } from "./nave-modelo.js";
 import { NaveFicha, TIPO_NAVE } from "./nave-ficha.js";
+import { ligarPontosDeForca } from "./pontos-de-forca.js";
 
 const ID = "starwars-sd";
 
@@ -113,6 +114,10 @@ Hooks.once("ready", () => {
   if (!game.modules.get("spacedragon")?.active) {
     ui.notifications?.warn(game.i18n.localize("starwars-sd.aviso.semSpaceDragon"));
   }
+
+  // O painel de Pontos de Força na ficha do personagem. Injetado, não
+  // substitui nada do sistema, e sai junto se o módulo for desligado.
+  ligarPontosDeForca();
 
   game.starwarsSD = {};
 });

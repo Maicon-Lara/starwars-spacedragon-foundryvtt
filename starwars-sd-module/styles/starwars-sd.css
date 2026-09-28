@@ -415,3 +415,29 @@ body.theme-dark .starwars-sd.nave-ficha.tema-auto,
    jogador precisa ver que a manobra existe e por que não pode. */
 .starwars-sd.nave-ficha .mano.bloqueada { opacity: .35; text-decoration: line-through; }
 .starwars-sd.nave-ficha .dica-colosso { margin: 0 0 5px; font-size: 11px; color: var(--nave-secundario); font-style: italic; }
+
+/* ── Pontos de Força, na ficha do personagem ───────────────────────────────
+ *
+ * Painel injetado na ficha do sistema. Cores próprias e discretas: ele é
+ * visita na casa dos outros, e não deve competir com o que o OD2 desenha.
+ */
+.starwars-sd-pf {
+  border: 1px solid rgba(27, 35, 64, 0.25);
+  border-radius: 4px;
+  padding: 6px 8px;
+  margin: 0 0 8px;
+  background: rgba(204, 211, 240, 0.25);
+}
+.starwars-sd-pf .pf-cabeca { display: flex; align-items: baseline; gap: 8px; font-size: 12px; }
+.starwars-sd-pf .pf-conta { font-weight: 700; }
+.starwars-sd-pf .pf-dado { margin-left: auto; opacity: .7; font-size: 11px; }
+.starwars-sd-pf .pf-trilha { display: flex; flex-wrap: wrap; gap: 4px; margin: 5px 0; }
+/* uma pastilha por ponto da reserva: cheia é ponto disponível */
+.starwars-sd-pf .pf-ponto {
+  width: 11px; height: 11px; border-radius: 50%;
+  border: 1px solid #1b2340;
+}
+.starwars-sd-pf .pf-ponto.cheio { background: #1b2340; }
+.starwars-sd-pf .pf-ponto.vazio { background: transparent; opacity: .45; }
+.starwars-sd-pf .pf-acoes { display: flex; gap: 5px; }
+.starwars-sd-pf .pf-acoes button { font-size: 11px; padding: 1px 8px; line-height: 1.6; }
