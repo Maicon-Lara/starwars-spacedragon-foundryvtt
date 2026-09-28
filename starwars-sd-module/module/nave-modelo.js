@@ -178,16 +178,16 @@ export const CAMARAS = {
   },
   aposentos: {
     rotulo: "Aposentos da Tripulação", obra: 40000, prazo: "1 semana",
-    efeito: "Recuperação natural de PV e de Alcance da Força em viagem. Sem aposentos adequados, a tripulação sofre −1 em todos os testes de atributo.",
+    efeito: "Recuperação natural de PV e de Alcance da Força para a tripulação orgânica durante viagens no hiperespaço. Sem aposentos adequados, os tripulantes sofrem −1 em todos os testes de atributo após 3 dias de viagem contínua, por fadiga.",
   },
   maquinas: {
     rotulo: "Sala de Máquinas", obra: 200000, prazo: "3 semanas",
-    efeito: "Propulsão e geradores. É o que permite ao Técnico testar Operar Máquinas para restabelecer energia ou reparar a nave em combate, e o espaço do acelerador hiperespacial.",
+    efeito: "Propulsão e geradores primários. É o que permite ao Técnico testar Operar e Consertar Máquinas para reativar a energia ou reparar a nave em combate. Espaço obrigatório do acelerador hiperespacial, e onde se gerenciam os tanques de combustível.",
     exigeParaReparar: true,
   },
   deposito: {
     rotulo: "Depósito", obra: 30000, prazo: "3 dias",
-    efeito: "Carga, suprimentos, peças e pilhagem. Guarda veículos de apoio, como swoops ou trajes pesados.",
+    efeito: "Carga comercial, suprimentos, peças sobressalentes e pilhagem. Guarda veículos de apoio leves, como swoop bikes ou trajes de combate pesados. Indispensável para transporte de bens e contrabando.",
   },
   refeitorio: {
     rotulo: "Refeitório", obra: 25000, prazo: "3 dias",
@@ -195,7 +195,7 @@ export const CAMARAS = {
   },
   arsenal: {
     rotulo: "Arsenal", obra: 80000, prazo: "1 semana",
-    efeito: "Estoque seguro de armas, munição e vestes, com trancas reforçadas (−20% em Sabotagem para invadir) e recarga rápida de baterias.",
+    efeito: "Estoque seguro das armas, munições e vestes reserva do grupo. Trancas digitais reforçadas: invadir exige Sabotagem com −20%. Permite recarga rápida de baterias energéticas antes das missões.",
   },
   hospital: {
     rotulo: "Ala Hospitalar", obra: 120000, prazo: "2 semanas",
@@ -203,7 +203,7 @@ export const CAMARAS = {
   },
   laboratorio: {
     rotulo: "Laboratório", obra: 150000, prazo: "2 semanas",
-    efeito: "Instalação obrigatória para o Técnico construir aparatos (com o desconto da Aptidão Tecnológica) e fazer Reparos Robóticos em droides.",
+    efeito: "Instalação obrigatória para o Técnico construir aparatos (com o desconto da Aptidão Tecnológica) e fazer Reparos Robóticos em droides. Sem ele, criar aparatos exige alugar oficina externa.",
   },
   acoplagem: {
     rotulo: "Câmara de Acoplagem", obra: 100000, prazo: "1,5 semana",
@@ -219,7 +219,7 @@ export const CAMARAS = {
   },
   emergencia: {
     rotulo: "Saída de Emergência", obra: 90000, prazo: "1 semana",
-    efeito: "As cápsulas de evacuação. A 0 PV, é por ela que a tripulação abandona a nave e sobrevive à explosão.",
+    efeito: "As cápsulas de evacuação, com suporte de vida independente. A 0 PV, durante a contagem regressiva para a explosão — 1 segundo por PV do total —, é por ela que a tripulação escapa.",
     salvaA0PV: true,
   },
 };

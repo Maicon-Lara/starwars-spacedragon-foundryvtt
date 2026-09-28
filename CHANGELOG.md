@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.7.1 — os efeitos das câmaras, completos
+
+A 1.7.0 tirou os textos de um DOCX cuja extração vinha com parágrafos cortados
+no meio, e seis efeitos perderam a parte final. Os custos e os prazos das doze
+estavam certos; o texto é que estava pela metade.
+
+O que voltou:
+
+- **Aposentos** — a penalidade de −1 nos testes de atributo tem gatilho: vale
+  **após 3 dias de viagem contínua**, por fadiga. Sem isso, parecia valer sempre.
+- **Sala de Máquinas** — é também onde se gerenciam os tanques de combustível.
+- **Laboratório** — sem ele ainda se criam aparatos, **alugando oficina
+  externa**; não é um bloqueio absoluto.
+- **Saída de Emergência** — a fuga acontece **durante a contagem regressiva**
+  para a explosão, que é de 1 segundo por PV do total.
+- **Arsenal** e **Depósito** — os detalhes de uso que faltavam.
+
 ## 1.7.0 — a nave como base de operações: as 12 câmaras
 
 Do guia *Espaçonaves como Base de Operações*, regra da casa sobre a Tabela
