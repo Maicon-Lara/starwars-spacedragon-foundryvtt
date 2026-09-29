@@ -9,5 +9,9 @@
   "starwars-sd.settings.temaDaNave.dica": "The ship sheet has its own palette and does not follow a dark-mode module on its own. On automatic it follows the page (the theme-dark class, used by Foundry and by most such modules) and, failing that, the operating system preference. A per-viewer preference: it applies only to you.",
   "starwars-sd.settings.temaDaNave.auto": "Automatic (follow Foundry)",
   "starwars-sd.settings.temaDaNave.claro": "Always light",
-  "starwars-sd.settings.temaDaNave.escuro": "Always dark"
+  "starwars-sd.settings.temaDaNave.escuro": "Always dark",
+  "starwars-sd.settings.movimentoDaNave.nome": "Ship movement on the map",
+  "starwars-sd.settings.movimentoDaNave.dica": "Hex: as the Supplement writes it — the ship moves straight through the cells and turns at the end. Arc: the X-Wing Miniatures Game mechanic — it follows the curve, turning along it, and stops where it would bump instead of skipping cells. Not just looks: the final position changes.",
+  "starwars-sd.settings.movimentoDaNave.hex": "Hex (Supplement) — move, then turn",
+  "starwars-sd.settings.movimentoDaNave.arco": "Arc (X-Wing) — follow the curve"
 }

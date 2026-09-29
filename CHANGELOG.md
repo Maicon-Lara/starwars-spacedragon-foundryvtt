@@ -1,5 +1,46 @@
 # Changelog
 
+## 1.12.0 — movimento em arco, a mecânica do X-Wing
+
+Opção nova em *Configurações do Módulo → Movimento da nave no mapa*, com dois
+valores. O padrão continua **Hex**; quem quiser experimentar liga o **Arco**.
+
+| | Hex (padrão) | Arco |
+|---|---|---|
+| Espaço | casas, saltos discretos | contínuo, em pixels |
+| Curva | anda reto, gira no fim | **descreve o arco**, girando ao longo |
+| Encosto | pula para a casa anterior | **para onde encostaria**, no próprio template |
+| Cena | precisa ser hex de 20 m | qualquer escala de 20 m por casa |
+
+**A régua curva da caixa é, matematicamente, um arco de círculo:** dado o giro
+da manobra e o comprimento do percurso, o raio sai de `R = L / θ`. É isso que
+dá a fluidez — a nave deixa de estalar 60° no fim e passa a girar enquanto anda.
+
+**Não é só aparência.** Andar 3 e virar 60° termina num lugar **diferente** de
+percorrer um arco de 60° com 3 de comprimento. Por isso é opção, e por isso o
+padrão continua sendo o hex: quem tem a regra do Suplemento escrita não é
+surpreendido por uma posição final que não bate.
+
+**Os giros continuam os da casa.** O X-Wing usa 45° e 90°, porque a base dele é
+quadrada; o Suplemento usa 60° e 120°, porque nasceu no hex. A mecânica é de lá,
+a regra é daqui.
+
+O Koiogran continua sendo uma reta com um tonel no fim, e não um arco — é o que
+a manobra é.
+
+### Por dentro
+
+- `module/nave-arco.js` — a geometria, testável fora do Foundry
+- `module/dial.js` — o dial e a escala saíram de `nave-modelo.js`, que só carrega
+  dentro do Foundry, pelo mesmo motivo que as câmaras saíram antes
+- `tools/teste-arco.mjs` — reta e ré nos dois eixos, inclinada e curva girando
+  ao longo, o Koiogran virando só no fim, e o encosto. Conferido por sabotagem:
+  invertendo o eixo Y ou trocando o lado da curva, três testes falham em cada caso
+
+Crédito da mecânica: **X-Wing Miniatures Game**, da Fantasy Flight Games, e a
+implementação de referência do **FlyCasual** (MIT), estudada e reescrita — nada
+de código ou arte de lá entra aqui.
+
 ## 1.11.0 — a reserva de Pontos de Força passa a acompanhar o dado
 
 A progressão era `5 + (nível ÷ 2)`, subindo de um em um nos níveis pares: onze

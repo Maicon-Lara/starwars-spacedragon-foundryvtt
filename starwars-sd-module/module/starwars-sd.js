@@ -79,6 +79,28 @@ Hooks.once("init", () => {
     },
   });
 
+  // ── Como a nave se move no mapa ──
+  //
+  // HEX é o que o Suplemento escreve: a nave anda em linha reta pelas casas e
+  // gira tudo de uma vez no fim. ARCO é a mecânica do X-Wing Miniatures Game,
+  // em que ela descreve a curva girando ao longo dela.
+  //
+  // Não é só aparência: andar 3 e virar 60° termina num lugar DIFERENTE de
+  // percorrer um arco de 60° com 3 de comprimento. Por isso é opção, e o padrão
+  // continua sendo o hex — quem tem a regra escrita não é surpreendido.
+  game.settings.register(ID, "movimentoDaNave", {
+    name: "starwars-sd.settings.movimentoDaNave.nome",
+    hint: "starwars-sd.settings.movimentoDaNave.dica",
+    scope: "world",
+    config: true,
+    type: String,
+    choices: {
+      hex: "starwars-sd.settings.movimentoDaNave.hex",
+      arco: "starwars-sd.settings.movimentoDaNave.arco",
+    },
+    default: "hex",
+  });
+
   // ── Claro ou escuro na ficha de nave ──
   //
   // A ficha tem paleta própria, e por isso não acompanha sozinha um módulo de

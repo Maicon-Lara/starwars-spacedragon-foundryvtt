@@ -9,5 +9,9 @@
   "starwars-sd.settings.temaDaNave.dica": "A ficha de nave tem paleta própria e não acompanha sozinha um módulo de modo escuro. No automático ela segue a página (a classe theme-dark, que o Foundry e a maioria desses módulos usam) e, na falta dela, a preferência do sistema operacional. Preferência de quem olha: vale só para você.",
   "starwars-sd.settings.temaDaNave.auto": "Automático (segue o Foundry)",
   "starwars-sd.settings.temaDaNave.claro": "Sempre claro",
-  "starwars-sd.settings.temaDaNave.escuro": "Sempre escuro"
+  "starwars-sd.settings.temaDaNave.escuro": "Sempre escuro",
+  "starwars-sd.settings.movimentoDaNave.nome": "Movimento da nave no mapa",
+  "starwars-sd.settings.movimentoDaNave.dica": "Hex: como o Suplemento escreve — a nave anda em linha reta pelas casas e gira no fim. Arco: a mecânica do X-Wing Miniatures Game — ela descreve a curva, girando ao longo dela, e para onde encostaria em vez de saltar casas. Não é só aparência: a posição final muda.",
+  "starwars-sd.settings.movimentoDaNave.hex": "Hex (Suplemento) — anda e vira no fim",
+  "starwars-sd.settings.movimentoDaNave.arco": "Arco (X-Wing) — descreve a curva"
 }

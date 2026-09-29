@@ -18,7 +18,8 @@
  *     do token tem 0 = NORTE. Daí a conversão de −90°.
  */
 
-import { MANOBRAS, METROS_POR_HEX } from "./nave-modelo.js";
+import { MANOBRAS, METROS_POR_HEX } from "./dial.js";
+import { caminhoDaManobra, ateOndeCabe } from "./nave-arco.js";
 
 /** Rotação do token (0 = norte, horário) → ângulo da grade (0 = leste, horário). */
 const anguloDaGrade = (rotacao) => (rotacao + 270) % 360;
@@ -115,6 +116,8 @@ export async function moverNave(token, manobra, velocidadeDaNave) {
   const escala = conferirEscala(cena);
   if (!escala.ok) return { erro: escala.motivo };
 
+  if (movimentoEmArco()) return moverEmArco(token, manobra, velocidadeDaNave, cena);
+
   const calc = calcularManobra(token, manobra, velocidadeDaNave);
   if (!calc) return { erro: "Manobra desconhecida." };
 
@@ -134,4 +137,48 @@ export async function moverNave(token, manobra, velocidadeDaNave) {
 
   await token.update({ x: destino.x, y: destino.y, rotation: calc.rotacao });
   return { ...calc, destino, colidiu };
+}
+
+/** A mesa escolheu o movimento em arco? */
+function movimentoEmArco() {
+  try {
+    return globalThis.game?.settings?.get?.("starwars-sd", "movimentoDaNave") === "arco";
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Move pela mecânica do X-Wing: a nave percorre o template e para onde
+ * encostaria, em vez de saltar casas.
+ *
+ * A animação sai de graça: o Foundry interpola entre a posição atual e a nova,
+ * e como passamos pelos pontos do arco em sequência, o token descreve a curva.
+ */
+async function moverEmArco(token, manobra, velocidadeDaNave, cena) {
+  const meio = (cena.grid.size * Math.max(token.width, token.height)) / 2;
+  const centro = { x: token.x + meio, y: token.y + meio };
+  const casas = casasDaManobra(manobra.tipo, manobra.velocidade, velocidadeDaNave);
+
+  const arco = caminhoDaManobra({
+    centro, rotacao: token.rotation ?? 0,
+    tipo: manobra.tipo, lado: manobra.lado, casas, cena,
+  });
+  if (!arco) return { erro: "Manobra desconhecida." };
+
+  const ate = ateOndeCabe(arco.pontos, token.id, cena, meio);
+  const colidiu = ate < arco.pontos.length - 1;
+  const fim = arco.pontos[Math.max(0, ate)];
+
+  await token.update(
+    { x: fim.x - meio, y: fim.y - meio, rotation: fim.rotacao },
+    { animate: true, animation: { duration: 600, easing: "easeInOutCosine" } },
+  );
+
+  return {
+    caminho: arco.pontos,
+    destino: { x: fim.x - meio, y: fim.y - meio },
+    rotacao: fim.rotacao,
+    casas, giro: arco.giro, colidiu, emArco: true,
+  };
 }
