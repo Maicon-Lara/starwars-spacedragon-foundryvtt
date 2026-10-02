@@ -1,5 +1,30 @@
 # Changelog
 
+## 1.16.6 — os painéis do módulo Space Dragon
+
+O painel **Desativar Robôs** ficava ilegível: fundo claro, e os nomes das
+categorias em cinza-escuro por cima.
+
+**Era um esquecimento, não um caso novo.** A medição da 1.16.4 já tinha
+apontado `div.spacedragon-testes` na lista de fundos claros, eu documentei os
+sete no CHANGELOG — e cobri seis no CSS. Também faltava o `code` dos textos de
+regra.
+
+**E há uma causa estrutural por trás.** O tema do vizinho pinta `.sd-rolar` — o
+nome clicável de cada linha — com `color: var(--sd-barra)`. Mas `--sd-barra` é
+*também* o fundo das barras de seção, onde o texto por cima é branco fixo, e por
+isso ela teve de ficar escura no nosso tema. A mesma variável serve a dois
+papéis opostos, e num tema escuro não há valor que atenda aos dois: o painel
+precisou ser tratado à parte.
+
+Agora ele usa o dourado do letreiro — fundo a 8%, barra lateral, e o número-alvo
+em destaque, que é o que a mesa procura na linha.
+
+**A lista medida virou teste.** Os sete elementos que a medição apontou estão
+numa constante em `teste-estilo.mjs`, e cada um precisa aparecer no CSS da
+camada escura. Esquecer de cobrir um passa a quebrar o teste, em vez da ficha de
+alguém — que é exatamente o que aconteceu aqui.
+
 ## 1.16.5 — os valores calculados voltam a aparecer
 
 A 1.16.4 escureceu o fundo dos campos e, com isso, **apagou metade dos números

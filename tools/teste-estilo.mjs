@@ -257,6 +257,40 @@ if (/\.olddragon2e\.sheet input[^{]*\{[^}]*background-color/.test(cssSemComentar
     "falta -webkit-text-fill-color nos campos em geral");
 }
 
+// ── A LISTA MEDIDA, E NADA DE FORA ────────────────────────────────────────
+//
+// Estes são os elementos que a medição numa ficha real apontou com fundo claro
+// — luminância acima de 140 — e que por isso somem sob o tema escuro. A lista
+// vira constante aqui porque o erro que ela previne já aconteceu: na 1.16.4 eu
+// medi, documentei os sete no CHANGELOG, e deixei `.spacedragon-testes` de fora
+// do CSS. O painel de Desativar Robôs ficou ilegível, e nada acusou.
+//
+// Acrescentar um elemento medido a esta lista é como se registra que ele existe;
+// esquecer de cobri-lo passa a quebrar o teste, e não a ficha de alguém.
+const FUNDOS_CLAROS_MEDIDOS = [
+  "ol.item-list",          // #ffffff — a lista de habilidades e poderes
+  ".editor",               // #ffffff — o editor de texto rico
+  ".character-race",       // #e0ddca — o campo ao lado do nome
+  ".character-class",      // #e0ddca
+  "option",                // #dad8cc — as opções dos seletores
+  ".spacedragon-testes",   // rgba(204,211,240,.35) — Desativar Robôs
+  // `code` sozinho é genérico demais para esta checagem: a folha dos journals
+  // também o estiliza, e a busca acharia aquela ocorrência. O alvo é o da ficha.
+  ".olddragon2e.sheet code",  // rgba(204,238,255,.267)
+];
+for (const alvo of FUNDOS_CLAROS_MEDIDOS) {
+  // O seletor tem de TERMINAR ali. Um `includes` simples aceitaria
+  // ".spacedragon-testesX", que é outro elemento e não cobre coisa alguma —
+  // foi assim que a primeira versão desta asserção deixou a sabotagem passar.
+  const coberto = cssSemComentarios
+    .split(alvo)
+    .slice(1)
+    .some((depois) => !/^[a-zA-Z0-9_-]/.test(depois));
+  confere(coberto,
+    `a medição apontou ${alvo} com fundo claro, e a camada escura não o cobre` +
+    ` — ele fica ilegível no tema do livro`);
+}
+
 // o tema sai de um arquivo próprio, com a opção e o aviso
 const temaJs = ler(MOD, "module", "tema.js");
 confere(temaJs.includes("spacedragon-tema"),

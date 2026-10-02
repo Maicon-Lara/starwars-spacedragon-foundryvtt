@@ -634,3 +634,72 @@ body.theme-dark.starwars-sd-tema .olddragon2e.sheet textarea:disabled {
     opacity: 1;
   }
 }
+
+/* ── OS PAINÉIS DO MÓDULO SPACE DRAGON ─────────────────────────────────────
+ *
+ * O vizinho injeta painéis próprios na ficha — Desativar Robôs, Ordem de Ação,
+ * Créditos, Danos Mortais —, e eles ficaram de fora da passagem anterior: a
+ * medição os apontou (`div.spacedragon-testes → rgba(204,211,240,.35)`), e eu
+ * cobri todo o resto da lista menos eles.
+ *
+ * ── A VARIÁVEL QUE SERVE A DOIS PAPÉIS OPOSTOS ────────────────────────────
+ *
+ * O tema dele pinta `.sd-rolar` — o nome clicável de cada linha — com
+ * `color: var(--sd-barra) !important`. Mas `--sd-barra` é TAMBÉM o fundo das
+ * barras de seção, onde o texto por cima é branco fixo; por isso ela teve de
+ * ficar escura no nosso tema. O resultado é que o mesmo valor que funciona
+ * como fundo vira texto escuro sobre o painel claro.
+ *
+ * Não há valor único que sirva aos dois papéis num tema escuro. A saída é
+ * tratar este painel à parte, que é o que esta seção faz.
+ */
+body.theme-dark.starwars-sd-tema .spacedragon-testes,
+body.theme-dark.starwars-sd-tema .spacedragon-creditos,
+body.theme-dark.starwars-sd-tema .spacedragon-mortais,
+body.theme-dark.starwars-sd-tema .spacedragon-ameaca,
+body.theme-dark.starwars-sd-tema .spacedragon-mental,
+body.theme-dark.starwars-sd-tema .sd-ordem,
+body.theme-dark.starwars-sd-tema .sd-teste {
+  background: color-mix(in srgb, var(--sw-cor) 8%, transparent) !important;
+  border-left-color: var(--sw-cor) !important;
+  color: var(--sw-texto) !important;
+}
+
+/* o nome clicável de cada linha, que o tema do vizinho deixa na cor da barra */
+body.theme-dark.starwars-sd-tema .spacedragon-testes .sd-rolar,
+body.theme-dark.starwars-sd-tema .sd-teste .sd-rolar {
+  color: var(--sw-texto) !important;
+}
+body.theme-dark.starwars-sd-tema .spacedragon-testes .sd-rolar:hover,
+body.theme-dark.starwars-sd-tema .sd-teste .sd-rolar:hover {
+  color: var(--sw-cor) !important;
+}
+
+/* o número é o que a mesa procura na linha: fica no amarelo do letreiro */
+body.theme-dark.starwars-sd-tema .spacedragon-testes .sd-alvo {
+  color: var(--sw-cor) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  body.starwars-sd-tema:not(.theme-light) .spacedragon-testes,
+  body.starwars-sd-tema:not(.theme-light) .spacedragon-creditos,
+  body.starwars-sd-tema:not(.theme-light) .spacedragon-mortais,
+  body.starwars-sd-tema:not(.theme-light) .sd-ordem,
+  body.starwars-sd-tema:not(.theme-light) .sd-teste {
+    background: color-mix(in srgb, var(--sw-cor) 8%, transparent) !important;
+    border-left-color: var(--sw-cor) !important;
+    color: var(--sw-texto) !important;
+  }
+  body.starwars-sd-tema:not(.theme-light) .spacedragon-testes .sd-rolar {
+    color: var(--sw-texto) !important;
+  }
+  body.starwars-sd-tema:not(.theme-light) .spacedragon-testes .sd-alvo {
+    color: var(--sw-cor) !important;
+  }
+}
+
+/* o <code> dos textos de regra, que o Foundry pinta num azul claro translúcido */
+body.theme-dark.starwars-sd-tema .olddragon2e.sheet code {
+  background: color-mix(in srgb, var(--sw-luz) 14%, transparent) !important;
+  color: var(--sw-texto) !important;
+}
