@@ -36,6 +36,7 @@ import { categorias } from "./data/equipamentos.mjs";
 import { listasDePoder, poderesJournal, ordensJournal } from "./data/poderes.mjs";
 import { grupos as gruposBestiario } from "./data/bestiario.mjs";
 import { navesJournal } from "./data/naves.mjs";
+import { referenciaJournal } from "./data/referencia.mjs";
 import { bestiarioJournal } from "./data/bestiario-journal.mjs";
 import { equipamentosJournal, sabreJournal } from "./data/equipamentos-journal.mjs";
 import { feitosJournal } from "./data/feitos-journal.mjs";
@@ -504,6 +505,9 @@ function buildBestiarioDocs() {
 // redações para a mesma frase. A numeração é a ordem desta lista, que é a
 // ordem em que os capítulos aparecem no compêndio.
 const CAPITULOS = [
+  // A folha de consulta vem PRIMEIRO: é o que se abre quando a pergunta é
+  // "onde está essa regra?", e um atalho no fim da lista não é atalho.
+  [referenciaJournal, "index", "Onde está cada regra, e os números que não se quer procurar."],
   [criacaoJournal, "atributos", "Seis números, e o que cada um deixa você tentar."],
   [equipamentosJournal, "equip", "Créditos são o que separa a ideia da nave."],
   [sabreJournal, "sabre", "A lâmina é a parte fácil. O cristal escolhe."],

@@ -15,7 +15,7 @@
       "image": {},
       "text": {
         "format": 1,
-        "content": "<div class=\"odo-markdown starwars-sd-doc c-forca\"><div class=\"abertura\"><div class=\"n\">05</div><h1>A Força</h1><p class=\"epigrafe\">Não é magia. É atenção.</p></div><blockquote><p>A Força não é um sistema novo: são os <strong>Poderes Mentais do Space Dragon</strong> (<em>SD</em>, Cap. 9), relidos como manifestações da Força. <strong>Alcance, duração, dano, Jogadas de Proteção e as regras de uso continuam sendo as do livro básico</strong> — este capítulo dá a cada poder o nome que ele tem na galáxia e o encaixa numa <strong>corrente</strong> (Universal, Luz ou Sombra).</p></blockquote><ol><li>Escolha o poder pelo <strong>nome de Star Wars</strong> na tabela da Grandeza correspondente.</li><li>Vá ao <strong><em>SD</em>, Cap. 9</strong> e procure o <strong>nome nativo</strong> da coluna do meio — é ali que estão os números.</li><li>Aplique a <strong>corrente</strong> e as marcas de <strong>Corrupção</strong> deste cenário (abaixo).</li></ol><p>As regras de Alcance da Força, Grandeza-Limite, poderes conhecidos × desconhecidos e Resistência Mental estão no livro básico e resumidas em O Sensível à Força.</p></div>"
+        "content": "<div class=\"odo-markdown starwars-sd-doc c-forca\"><div class=\"abertura\"><div class=\"n\">06</div><h1>A Força</h1><p class=\"epigrafe\">Não é magia. É atenção.</p></div><blockquote><p>A Força não é um sistema novo: são os <strong>Poderes Mentais do Space Dragon</strong> (<em>SD</em>, Cap. 9), relidos como manifestações da Força. <strong>Alcance, duração, dano, Jogadas de Proteção e as regras de uso continuam sendo as do livro básico</strong> — este capítulo dá a cada poder o nome que ele tem na galáxia e o encaixa numa <strong>corrente</strong> (Universal, Luz ou Sombra).</p></blockquote><ol><li>Escolha o poder pelo <strong>nome de Star Wars</strong> na tabela da Grandeza correspondente.</li><li>Vá ao <strong><em>SD</em>, Cap. 9</strong> e procure o <strong>nome nativo</strong> da coluna do meio — é ali que estão os números.</li><li>Aplique a <strong>corrente</strong> e as marcas de <strong>Corrupção</strong> deste cenário (abaixo).</li></ol><p>As regras de Alcance da Força, Grandeza-Limite, poderes conhecidos × desconhecidos e Resistência Mental estão no livro básico e resumidas em O Sensível à Força.</p></div>"
       },
       "video": {
         "controls": true,
@@ -412,7 +412,7 @@
     }
   ],
   "flags": {},
-  "sort": 500000,
+  "sort": 600000,
   "ownership": {
     "default": 0
   },

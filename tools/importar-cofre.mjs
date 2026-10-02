@@ -635,6 +635,22 @@ function tabelasDoMestre(texto) {
 
 // Quais seções de quais notas viram página. Nota nova entra aqui.
 const SECOES = {
+  // A folha de consulta: um journal só, com as seções na ordem em que a mesa
+  // as procura. Entra inteira, porque é feita para ser lida de ponta a ponta
+  // quando alguém pergunta "onde está essa regra?".
+  "SW-SUP-Referencia": [
+    "A régua de ouro",
+    "Criar um personagem",
+    "Rolar os dados",
+    "Combate de personagem",
+    "A Força",
+    "Equipamento, dinheiro e carga",
+    "Naves",
+    "Aventura e exploração",
+    "Para o Mestre",
+    "No Foundry",
+    "Crédito",
+  ],
   "SW-SUP-Usando-o-Basico": [
     "Onde está cada regra no livro básico",
     "Os nomes dos atributos",

@@ -15,7 +15,7 @@
       "image": {},
       "text": {
         "format": 1,
-        "content": "<div class=\"odo-markdown starwars-sd-doc c-mando\"><div class=\"abertura\"><div class=\"n\">07</div><h1>A Senda Mandaloriana</h1><p class=\"epigrafe\">Esta é a Doutrina.</p></div><blockquote><p>Mandaloriano <strong>não é uma espécie, é uma cultura</strong>: há Mandalorianos humanos, Twi'lek, Rodianos e até um raro Sensível à Força. Existe quem <strong>nasce no berço da cultura</strong> (a Origem, no 1º nível) e quem <strong>é adotado no Credo</strong> (a Senda, no 5º nível), trocando parte das habilidades da classe pelo pacote de clã.</p></blockquote><p>Uma <strong>Origem</strong> é escolhida na criação, por cima da espécie e da classe, e representa o berço cultural. <em>Filho de Mandalore</em> está disponível a <strong>qualquer espécie e classe</strong>.</p><ul><li><span class=\"sw-tarja\">1º</span> <strong>Criado na Armadura:</strong> usa a Lança-Vibro Mandaloriana, a Mochila de Propulsão (jetpack) e a armadura de clã <strong>sem penalidade</strong>, mesmo que a classe normalmente não permitisse.</li><li><span class=\"sw-tarja\">1º</span> <strong>Sangue de Clã:</strong> +1 em testes de reação com Mandalorianos e caçadores que reconheçam sua herança.</li><li><span class=\"sw-tarja\">1º</span> <strong>Mando'a:</strong> fala o idioma Mandaloriano além dos idiomas iniciais.</li></ul><blockquote><p>A Origem é leve e <strong>não substitui habilidades de classe</strong>. É a <strong>porta de entrada</strong> para a Senda — mas não é obrigatória.</p></blockquote></div>"
+        "content": "<div class=\"odo-markdown starwars-sd-doc c-mando\"><div class=\"abertura\"><div class=\"n\">08</div><h1>A Senda Mandaloriana</h1><p class=\"epigrafe\">Esta é a Doutrina.</p></div><blockquote><p>Mandaloriano <strong>não é uma espécie, é uma cultura</strong>: há Mandalorianos humanos, Twi'lek, Rodianos e até um raro Sensível à Força. Existe quem <strong>nasce no berço da cultura</strong> (a Origem, no 1º nível) e quem <strong>é adotado no Credo</strong> (a Senda, no 5º nível), trocando parte das habilidades da classe pelo pacote de clã.</p></blockquote><p>Uma <strong>Origem</strong> é escolhida na criação, por cima da espécie e da classe, e representa o berço cultural. <em>Filho de Mandalore</em> está disponível a <strong>qualquer espécie e classe</strong>.</p><ul><li><span class=\"sw-tarja\">1º</span> <strong>Criado na Armadura:</strong> usa a Lança-Vibro Mandaloriana, a Mochila de Propulsão (jetpack) e a armadura de clã <strong>sem penalidade</strong>, mesmo que a classe normalmente não permitisse.</li><li><span class=\"sw-tarja\">1º</span> <strong>Sangue de Clã:</strong> +1 em testes de reação com Mandalorianos e caçadores que reconheçam sua herança.</li><li><span class=\"sw-tarja\">1º</span> <strong>Mando'a:</strong> fala o idioma Mandaloriano além dos idiomas iniciais.</li></ul><blockquote><p>A Origem é leve e <strong>não substitui habilidades de classe</strong>. É a <strong>porta de entrada</strong> para a Senda — mas não é obrigatória.</p></blockquote></div>"
       },
       "video": {
         "controls": true,
@@ -116,7 +116,7 @@
     }
   ],
   "flags": {},
-  "sort": 700000,
+  "sort": 800000,
   "ownership": {
     "default": 0
   },

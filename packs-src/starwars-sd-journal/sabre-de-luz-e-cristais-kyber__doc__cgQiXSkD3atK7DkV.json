@@ -15,7 +15,7 @@
       "image": {},
       "text": {
         "format": 1,
-        "content": "<div class=\"odo-markdown starwars-sd-doc c-sabre\"><div class=\"abertura\"><div class=\"n\">03</div><h1>Sabre de Luz e Cristais Kyber</h1><p class=\"epigrafe\">A lâmina é a parte fácil. O cristal escolhe.</p></div><blockquote><p>O sabre de luz não é só uma arma (ficha em Equipamentos e Créditos, <strong>2d10</strong> de energia) — é um rito, uma identidade e, para alguns, um símbolo político. Este arquivo cobre o cristal que o alimenta, a construção, as lâminas lendárias e as <strong>sete Formas</strong> do Guardião (na escala nativa 1–20).</p></blockquote><p>No coração de todo sabre há um <strong>cristal kyber</strong>, pedra sensível à Força que focaliza a lâmina. Cristais são incolores até um usuário se <strong>sintonizar</strong> por meditação, quando o cristal <strong>assume uma cor</strong> que reflete o vínculo. A cor é <strong>narrativa, não mecânica</strong> (não dá bônus), mas costuma seguir a Senda:</p><table><thead><tr><th>Cor</th><th>Vínculo típico</th></tr></thead><tbody><tr><td><strong>Azul</strong></td><td><strong>Guardiões</strong> da Luz (o Jedi de sabre)</td></tr><tr><td><strong>Verde</strong></td><td><strong>Consulares</strong> da Luz (mais ligados à Força que à lâmina)</td></tr><tr><td><strong>Amarelo / raros</strong></td><td><strong>Sentinelas</strong> e híbridos que equilibram combate e mística</td></tr><tr><td><strong>Vermelho</strong></td><td>Caminho da Sombra — obtido pelo <strong>Sangramento</strong> (adiante)</td></tr></tbody></table></div>"
+        "content": "<div class=\"odo-markdown starwars-sd-doc c-sabre\"><div class=\"abertura\"><div class=\"n\">04</div><h1>Sabre de Luz e Cristais Kyber</h1><p class=\"epigrafe\">A lâmina é a parte fácil. O cristal escolhe.</p></div><blockquote><p>O sabre de luz não é só uma arma (ficha em Equipamentos e Créditos, <strong>2d10</strong> de energia) — é um rito, uma identidade e, para alguns, um símbolo político. Este arquivo cobre o cristal que o alimenta, a construção, as lâminas lendárias e as <strong>sete Formas</strong> do Guardião (na escala nativa 1–20).</p></blockquote><p>No coração de todo sabre há um <strong>cristal kyber</strong>, pedra sensível à Força que focaliza a lâmina. Cristais são incolores até um usuário se <strong>sintonizar</strong> por meditação, quando o cristal <strong>assume uma cor</strong> que reflete o vínculo. A cor é <strong>narrativa, não mecânica</strong> (não dá bônus), mas costuma seguir a Senda:</p><table><thead><tr><th>Cor</th><th>Vínculo típico</th></tr></thead><tbody><tr><td><strong>Azul</strong></td><td><strong>Guardiões</strong> da Luz (o Jedi de sabre)</td></tr><tr><td><strong>Verde</strong></td><td><strong>Consulares</strong> da Luz (mais ligados à Força que à lâmina)</td></tr><tr><td><strong>Amarelo / raros</strong></td><td><strong>Sentinelas</strong> e híbridos que equilibram combate e mística</td></tr><tr><td><strong>Vermelho</strong></td><td>Caminho da Sombra — obtido pelo <strong>Sangramento</strong> (adiante)</td></tr></tbody></table></div>"
       },
       "video": {
         "controls": true,
@@ -227,7 +227,7 @@
     }
   ],
   "flags": {},
-  "sort": 300000,
+  "sort": 400000,
   "ownership": {
     "default": 0
   },

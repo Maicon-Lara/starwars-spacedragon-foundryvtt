@@ -1,0 +1,431 @@
+{
+  "folder": null,
+  "name": "Referência Rápida",
+  "_id": "dtZEmxxXyYUFz07T",
+  "pages": [
+    {
+      "sort": 100000,
+      "name": "A Régua de Ouro",
+      "type": "text",
+      "_id": "fQNwc7UTBVcVxJGq",
+      "title": {
+        "show": false,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc c-index\"><div class=\"abertura\"><div class=\"n\">01</div><h1>Referência Rápida</h1><p class=\"epigrafe\">Onde está cada regra, e os números que não se quer procurar.</p></div><blockquote><p><strong>Para consultar no meio da mesa.</strong> Um índice de onde está cada regra — no <em>Space Dragon</em> ou neste suplemento — com os números que mais se procuram já à mão. Não substitui capítulo nenhum: é o atalho para achar o capítulo certo depressa.</p><p>O Combate Tático de Naves fica <strong>de fora</strong> desta folha de propósito: é módulo opcional, com dial e hexes, e tem a própria página de regras. Aqui está o que vale na mesa que <strong>não</strong> o liga.</p></blockquote><table><tbody><tr><td><strong>As regras nucleares são do livro</strong></td><td>atributos, PV, CP, BA, JP, testes, XP, morte. O suplemento <strong>não</strong> as repete.</td></tr><tr><td><strong>O cenário é daqui</strong></td><td>povos, classes vestidas, a Força, o sabre, as ordens, as naves da galáxia, o bestiário.</td></tr><tr><td><strong>Onde a casa inventou, está dito</strong></td><td>a Tripulação, as camadas de Energia e Avarias, o Eco da Senda, a Tentação.</td></tr></tbody></table><p>Endereços são por <strong>capítulo e tabela</strong>, nunca por página: o livro circula em mais de uma edição e a paginação muda.</p></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!dtZEmxxXyYUFz07T.fQNwc7UTBVcVxJGq"
+    },
+    {
+      "sort": 200000,
+      "name": "Criar um Personagem",
+      "type": "text",
+      "_id": "nfg1j0Tz6H0Dng06",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc c-index\"><table><thead><tr><th>Passo</th><th>Onde</th></tr></thead><tbody><tr><td>Rolar atributos, modificadores</td><td><em>SD</em>, Cap. 1 — <strong>T1-1 a T1-6</strong></td></tr><tr><td>Escolher o <strong>povo</strong></td><td>Espécies — 10 povos sobre os três moldes do SD</td></tr><tr><td>Escolher a <strong>classe</strong></td><td>Classes Mundanas — Veterano, Operativo, Técnico · [[SW-SUP-Forca</td><td>Sensível à Força]]</td></tr><tr><td>Especialização (5º nível)</td><td>a mesma nota da classe</td></tr><tr><td>PV, CP, BA, JP</td><td><em>SD</em>, Cap. 4 — <strong>Subatributos</strong> (CP por nível na <strong>T4-1</strong>)</td></tr><tr><td>XP e progressão</td><td><em>SD</em>, Cap. 3</td></tr><tr><td>Créditos iniciais</td><td>a tabela da classe, em Classes Mundanas</td></tr><tr><td>Idiomas</td><td><em>SD</em>, Cap. 4 + <strong>T1-6</strong> (Comunicação)</td></tr></tbody></table><p><strong>Os nomes mudaram:</strong> Sabedoria → <strong>Intelecto</strong> · Inteligência → <strong>Ciência</strong> · Carisma → <strong>Comunicação</strong>. Ver Usando o Suplemento.</p></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!dtZEmxxXyYUFz07T.nfg1j0Tz6H0Dng06"
+    },
+    {
+      "sort": 300000,
+      "name": "Rolar os Dados",
+      "type": "text",
+      "_id": "ypmsLloIcR85LsVW",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc c-index\"><table><thead><tr><th>Situação</th><th>Como</th></tr></thead><tbody><tr><td><strong>Teste de atributo</strong></td><td><code>1d20 ≤ atributo</code> — <em>roll-under</em></td></tr><tr><td><strong>Talento de classe</strong></td><td><code>d%</code> contra a porcentagem da tabela</td></tr><tr><td><strong>Jogada de Proteção</strong></td><td><code>1d20 + mod ≥ número-alvo</code> — <strong>menor é melhor</strong></td></tr><tr><td><strong>Ataque</strong></td><td><code>1d20 + BA ≥ CP</code> do alvo</td></tr><tr><td><strong>Jogada resistida</strong></td><td><em>SD</em>, Cap. 1</td></tr></tbody></table></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!dtZEmxxXyYUFz07T.ypmsLloIcR85LsVW"
+    },
+    {
+      "sort": 400000,
+      "name": "Combate de Personagem",
+      "type": "text",
+      "_id": "s5Gv86SCruTvDAdR",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc c-index\"><p>Tudo em <strong><em>SD</em>, Cap. 7 — Combate e Danos</strong>: iniciativa, ordem de ação, dano, críticos, morte e cura. O que o cenário acrescenta:</p><table><thead><tr><th></th><th>Onde</th></tr></thead><tbody><tr><td><strong>Manifestar um poder</strong> custa −4 no CP, e JPM para não perder a ação se for atingido antes</td><td>O Sensível à Força</td></tr><tr><td><strong>Duelo da Força</strong> (anulação, contra-ataque)</td><td>O Sensível à Força</td></tr><tr><td><strong>Sabre de luz</strong>: aparar, desviar tiro, decepar</td><td>Sabre de Luz e Cristais Kyber</td></tr><tr><td><strong>Gente contra nave, e nave contra gente</strong></td><td>[[SW-SUP-Naves#Quando gente e nave se enfrentam\\</td><td>Naves]]</td></tr></tbody></table><blockquote><p><strong>A morte:</strong> 0 PV é inconsciente <strong>mas estável</strong>. PV negativos pedem JPF por rodada, e a morte vem no limiar de <strong>Danos Mortais</strong> da Constituição — onde <em>não se faz jogada nenhuma</em>.</p></blockquote></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!dtZEmxxXyYUFz07T.s5Gv86SCruTvDAdR"
+    },
+    {
+      "sort": 500000,
+      "name": "A Força",
+      "type": "text",
+      "_id": "08OHoei7vFqFesmx",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc c-index\"><table><thead><tr><th></th><th>Onde</th></tr></thead><tbody><tr><td>A classe, as cinco Sendas, o Caminho</td><td>O Sensível à Força</td></tr><tr><td>A lista de poderes por Grandeza</td><td>Poderes da Força</td></tr><tr><td>Regras de uso dos poderes</td><td><em>SD</em>, Cap. 9 — <strong>Poderes Mentais</strong></td></tr><tr><td>Sabre de luz e cristais</td><td>Sabre de Luz e Cristais Kyber</td></tr><tr><td>Ordens, ranks e hierarquia</td><td>Ordens e Ranks da Força</td></tr><tr><td>A Senda Mandaloriana (abre mão da especialização)</td><td>Senda Mandaloriana</td></tr></tbody></table><p><strong>Os números que se procuram:</strong> o <strong>Alcance da Força</strong> é o combustível diário em %; usar um poder desconta <strong>% igual à Grandeza</strong> dele, mesmo falhando. Poder desconhecido exige <code>d% ≤ Intelecto</code>. Zera com <strong>8 h</strong> de descanso.</p></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!dtZEmxxXyYUFz07T.08OHoei7vFqFesmx"
+    },
+    {
+      "sort": 600000,
+      "name": "Equipamento, Dinheiro e Carga",
+      "type": "text",
+      "_id": "AO1rh8yBQZOdf31c",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc c-index\"><table><thead><tr><th></th><th>Onde</th></tr></thead><tbody><tr><td>Preços, armas, vestes, itens</td><td>Equipamentos e Créditos · <em>SD</em>, Cap. 5</td></tr><tr><td><strong>A carga dos itens</strong></td><td>[[SW-SUP-Equipamentos#A carga dos itens\\</td><td>Equipamentos]]</td></tr><tr><td>Limite de carga pela Força</td><td><em>SD</em>, <strong>T1-1</strong> — e a penalidade em <em>SD</em>, §6.3.3</td></tr><tr><td>Aparatos e feitos científicos</td><td>Aparatos e Feitos Científicos · <em>SD</em>, Cap. 8</td></tr><tr><td>Desativar robôs</td><td><em>SD</em>, <strong>T3-2</strong> (a tabela está em Classes Mundanas)</td></tr></tbody></table><p><strong>Carga:</strong> arma pequena <strong>1</strong>, média <strong>2</strong>, grande <strong>3</strong>; vestes leves 1, médias 2, trajes 3; munição e itens muito leves, <strong>0</strong>. Acima da carga leve, −1 m de deslocamento; acima da média, −2 m; acima da pesada, não se move.</p></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!dtZEmxxXyYUFz07T.AO1rh8yBQZOdf31c"
+    },
+    {
+      "sort": 700000,
+      "name": "Naves",
+      "type": "text",
+      "_id": "eGPpWRneR4r7o1re",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc c-index\"><p>Tudo em Naves e Veículos, que consolida o <strong>Cap. 10</strong> inteiro do livro.</p><table><thead><tr><th>Assunto</th><th>Tabela</th><th>O número-chave</th></tr></thead><tbody><tr><td>Os oito tipos</td><td><strong>T10-1</strong></td><td>a JP é número-alvo: <strong>menor é melhor</strong></td></tr><tr><td>Câmaras</td><td><strong>T10-2</strong></td><td>reparo em campo: <strong>25%</strong> do valor, metade do prazo</td></tr><tr><td><strong>Fontes de energia</strong></td><td><strong>T10-3</strong></td><td>autonomia escolhe o dado (<strong>d6/d4/d2</strong>), a ação escolhe quantos (<strong>1–3</strong>)</td></tr><tr><td><strong>Equipamentos adicionais</strong></td><td><strong>T10-4</strong></td><td>Escudo de Força <strong>+10 no CP</strong> · Computador Balístico <strong>+2</strong></td></tr><tr><td>Pilotagem e a JP da nave</td><td><strong>T10-5</strong></td><td>o teste de pilotagem vira o modificador: <strong>−8 a +8</strong></td></tr><tr><td>Ordem de ação e críticos</td><td><strong>T10-6</strong></td><td><strong>menor age primeiro</strong>, e o valor depende da <strong>ação</strong></td></tr><tr><td><strong>Veículos</strong></td><td><strong>T10-7</strong></td><td>escala de tamanho <strong>própria</strong>; Tanque de guerra BA <strong>+20</strong></td></tr><tr><td><strong>Estações</strong></td><td><strong>T10-8</strong></td><td>reparo: <strong>1.000 créditos por PV</strong></td></tr></tbody></table><p><strong>O que a mesa mais erra:</strong></p><ul><li><strong>Quem agiu com a nave não age de novo</strong> na rodada — é a regra que faz a tripulação funcionar.</li><li><strong>Manobra evasiva é só de nave pequena</strong>, uma vez a cada <strong>5 rodadas</strong>.</li><li><strong>O salto exige o Acelerador Hiperespacial</strong>, que não cabe em nave pequena nem colossal. Três testes; só o último cancela o salto.</li><li><strong>0 PV destrói a nave sem jogada</strong>, em <strong>1 segundo por PV do total</strong>.</li><li><strong>Nave atirando em gente:</strong> JPR para metade do dano, e <strong>−2 na JPR a cada 20 pontos</strong> do ataque.</li></ul><p><strong>A tripulação</strong> (da casa): os cinco postos com três opções cada, e as camadas opcionais de <strong>Energia</strong>, <strong>Controle de Avarias</strong> e <strong>fuga como relógio</strong>.</p></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!dtZEmxxXyYUFz07T.eGPpWRneR4r7o1re"
+    },
+    {
+      "sort": 800000,
+      "name": "Aventura e Exploração",
+      "type": "text",
+      "_id": "viEerRb1BqFGD93x",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc c-index\"><p>Em <strong><em>SD</em>, Cap. 6 — Aventuras Espaciais</strong>: movimentação, gravidade, terreno, carga, exploração, luz e visibilidade, falta de oxigênio, infecções, temperaturas extremas, operação de máquinas, acidentes e armadilhas, contato com alienígenas.</p><p>O cenário não reescreve nada disso — <strong>Movimento base 10 m</strong>, modificado por gravidade, terreno e carga.</p></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!dtZEmxxXyYUFz07T.viEerRb1BqFGD93x"
+    },
+    {
+      "sort": 900000,
+      "name": "Para o Mestre",
+      "type": "text",
+      "_id": "bYdz8xVGVMmAiQ0j",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc c-index\"><table><thead><tr><th></th><th>Onde</th></tr></thead><tbody><tr><td>Criaturas da galáxia</td><td>Bestiário · fichas em <em>SD</em>, Cap. 11</td></tr><tr><td>Tom, facções, ganchos, recompensas</td><td>Seção do Mestre</td></tr><tr><td>Geração de planetas, alienígenas, relíquias</td><td><em>SD</em>, Cap. 12</td></tr></tbody></table></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!dtZEmxxXyYUFz07T.bYdz8xVGVMmAiQ0j"
+    },
+    {
+      "sort": 1000000,
+      "name": "No Foundry",
+      "type": "text",
+      "_id": "tTDNdA5evKzylla3",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc c-index\"><table><thead><tr><th>Na mesa virtual</th><th>Onde fica</th></tr></thead><tbody><tr><td><strong>Duas fichas de nave</strong>, uma por regra</td><td>escolha por ator, em <em>Configurar Ficha</em></td></tr><tr><td>Regra padrão do mundo</td><td>opção <em>Regras de combate de nave</em></td></tr><tr><td>Camadas da tripulação</td><td>três opções, <strong>desligadas</strong> por padrão</td></tr><tr><td>Paleta do livro nas fichas</td><td>opção <em>client</em>, desligada por padrão</td></tr><tr><td>Pontos de Força</td><td>painel na barra lateral da ficha de personagem</td></tr></tbody></table></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!dtZEmxxXyYUFz07T.tTDNdA5evKzylla3"
+    },
+    {
+      "sort": 1100000,
+      "name": "Crédito",
+      "type": "text",
+      "_id": "SLFPotCRLBY8dwU9",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc c-index\"><p>Regras do <strong><em>Space Dragon</strong></em> (Old Dragon Editora) e do guia de conversão de <strong>Francisco Martellini</strong>. Roster e sabor das naves de <strong>Jonas Picholaro</strong> (CC BY 3.0). Adaptação e texto deste suplemento: <strong>Maicon Lara</strong>.</p></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!dtZEmxxXyYUFz07T.SLFPotCRLBY8dwU9"
+    }
+  ],
+  "flags": {},
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "_key": "!journal!dtZEmxxXyYUFz07T"
+}

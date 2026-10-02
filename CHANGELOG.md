@@ -1,5 +1,34 @@
 # Changelog
 
+## 1.20.0 — a folha de consulta
+
+Uma nota nova no cofre e um compêndio novo aqui: **Referência rápida** — onde
+está cada regra, e os números que não se quer procurar no meio do turno.
+
+Ela não repete capítulo nenhum. É o **endereço**: para cada situação de mesa —
+criar personagem, rolar os dados, combate, a Força, equipamento e carga, naves,
+exploração, Mestre — diz se a regra é do livro ou daqui, e traz junto os números
+que a mesa mais procura: o Alcance da Força, a carga por porte, a JP da nave, o
+dado do combustível, os −2 por 20 pontos da arma montada.
+
+O **Combate Tático fica de fora** de propósito: é módulo opcional, com dial e
+hexes, e misturá-lo faria a folha descrever duas mesas diferentes. Ele tem a
+própria página de regras.
+
+No compêndio ela vem **em primeiro**, antes dos capítulos: um atalho no fim da
+lista não é atalho.
+
+**O mapa antigo foi atualizado.** A tabela *Onde está cada regra no livro
+básico*, em "Usando este suplemento", estava defasada — citava só as T10-1 e
+T10-2 do capítulo de naves. Agora cobre o Cap. 10 inteiro (T10-3 a T10-8), mais
+a carga dos itens e o combate entre gente e nave.
+
+**Auditoria de cobertura.** Cruzei as 113 seções do cofre com o que o importador
+leva para o módulo. O resultado: espécies, poderes e especializações **não** são
+páginas de journal — viram **itens** (9 raças, 118 poderes, 37 classes, 58
+habilidades), e por isso apareciam como "ausentes" numa contagem ingênua. Fora
+isso, nada do cofre estava fora do módulo.
+
 ## 1.19.0 — o resto do capítulo 10
 
 Auditoria do Cap. 10 inteiro, seção por seção, contra o que o cenário tinha.
