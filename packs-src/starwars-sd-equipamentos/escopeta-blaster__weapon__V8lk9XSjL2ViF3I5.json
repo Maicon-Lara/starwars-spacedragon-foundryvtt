@@ -9,7 +9,7 @@
     "description": "Dano 4d4, tipo Energia. Cadência: disparo único. Alcance — Rifles: queima-roupa 0–30 m (+2), curto 31–60 (−2), médio 61–150 (−5), longo 151–300 (−10). Disponibilidade: Licenciada.",
     "quantity": 1,
     "cost": "35.000 CR",
-    "weight_in_load": 0,
+    "weight_in_load": 2,
     "weight_in_grams": 3000,
     "magic_item": false,
     "is_equipped": false,

@@ -9,7 +9,7 @@
     "description": "Dano 4d12, tipo Energia. Disponibilidade: Ilegal. Alcance — Arremesso: queima-roupa 0–6 m (+2), curto 7–8 (−2), médio 9–10 (−5), longo 11–12 (−10).",
     "quantity": 1,
     "cost": "80.000 CR",
-    "weight_in_load": 0,
+    "weight_in_load": 2,
     "weight_in_grams": 1000,
     "magic_item": false,
     "is_equipped": false,

@@ -9,7 +9,7 @@
     "description": "Organiza pequenos itens.",
     "quantity": 1,
     "cost": "25.000 CR",
-    "weight_in_load": 0,
+    "weight_in_load": 2,
     "weight_in_grams": 4000,
     "magic_item": false,
     "is_equipped": false

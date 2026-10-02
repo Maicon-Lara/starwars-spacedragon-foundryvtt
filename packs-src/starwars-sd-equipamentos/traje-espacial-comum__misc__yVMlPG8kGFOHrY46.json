@@ -9,7 +9,7 @@
     "description": "24 h de sobrevivência no vácuo.",
     "quantity": 1,
     "cost": "",
-    "weight_in_load": 0,
+    "weight_in_load": 3,
     "weight_in_grams": 0,
     "magic_item": false,
     "is_equipped": false

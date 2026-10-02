@@ -9,7 +9,7 @@
     "description": "Dano 2d10, tipo Energia. Cadência: disparo único. Alcance — Rifles: queima-roupa 0–30 m (+2), curto 31–60 (−2), médio 61–150 (−5), longo 151–300 (−10). Disponibilidade: Rara.",
     "quantity": 1,
     "cost": "60.000 CR",
-    "weight_in_load": 0,
+    "weight_in_load": 3,
     "weight_in_grams": 8000,
     "magic_item": false,
     "is_equipped": false,

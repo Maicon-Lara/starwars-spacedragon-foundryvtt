@@ -9,7 +9,7 @@
     "description": "CP 11: é o valor de proteção da veste, a BASE do Coeficiente de Proteção — a ficha soma o bônus +1 aos 10 dela e chega a 11. Tipo: Veste. Sem proficiência: −1 em perícias físicas e ataque. Disponibilidade: Licenciada.",
     "quantity": 1,
     "cost": "40.000 CR",
-    "weight_in_load": 0,
+    "weight_in_load": 2,
     "weight_in_grams": 1000,
     "magic_item": false,
     "is_equipped": false,

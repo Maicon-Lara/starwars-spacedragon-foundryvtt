@@ -9,7 +9,7 @@
     "description": "Dano 1d4, tipo Contusão. Cadência: disparo único. Alcance — Armas simples: queima-roupa 0–20 m (+2), curto 21–40 (−2), médio 41–60 (−5), longo 61–80 (−10). Disponibilidade: Livre.",
     "quantity": 1,
     "cost": "1.500 CR",
-    "weight_in_load": 0,
+    "weight_in_load": 1,
     "weight_in_grams": 500,
     "magic_item": false,
     "is_equipped": false,

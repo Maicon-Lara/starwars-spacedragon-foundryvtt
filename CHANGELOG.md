@@ -1,5 +1,47 @@
 # Changelog
 
+## 1.17.0 — a carga dos itens
+
+Nenhum personagem ficava sobrecarregado, e a causa era que **todos os 146 itens
+tinham carga zero**.
+
+**Os dois campos.** O sistema `olddragon2e` guarda `weight_in_grams` (o peso
+real) e `weight_in_load` (a **carga**, que é o que entra no limite do
+personagem). O build preenchia só o primeiro. O efeito na mesa é silencioso e
+total: a regra de carga existe, a ficha a calcula, e o resultado é sempre zero.
+
+**E não bastava converter o peso**, porque não é a mesma grandeza. No *Space
+Dragon* a carga é peso, com os limites leve/média/pesada vindos da Força e
+penalidade de −1 m, −2 m e imobilidade (§6.3.3). No Old Dragon 2 é um número de
+**espaços** — e é por isso que o guia de conversão de Francisco Martellini traz
+uma tabela só para ela, a **5-1**: arma pequena 1, média 2, grande 3; vestes
+leves 1, médias 2, trajes 3; munição, anel de laser, potencializador e escudo de
+energia não entram no limite.
+
+**O porte, que o livro tem e o cofre não.** A Tabela 5-1 classifica por porte
+(P/M/G), que o *SD* define em §5 — mas essa coluna não veio para as tabelas do
+cofre, e a tabela de armas do livro **não é extraível**: tanto a transcrição
+quanto o DOCX devolvem sete linhas, porque ela está diagramada em caixas de
+texto, o mesmo problema da T10-5.
+
+Então o porte é **derivado do peso**, com a régua declarada em
+`tools/data/carga.mjs` e calibrada nas cinco armas que o livro entrega com as
+duas informações — Zarabatana P 0,5 kg, Porrete M 1 kg, Rifle laser M 2 kg,
+Rifle de plasma e de projéteis M 4 kg. A régua acerta as cinco. É uma
+**aproximação declarada**, e não a tabela do livro: onde a mesa discordar, vale o
+livro, e a exceção se registra pelo nome em `PORTE_A_MAO`.
+
+Distribuição nos 146 itens: **67 com carga 0, 15 com 1, 37 com 2, 27 com 3.**
+
+**Um bug no caminho, que o teste agora pega.** A primeira versão dava carga 0 a
+toda arma pequena, porque o cofre escreve o decimal com vírgula — "0,5" — e
+`Number("0,5")` devolve `NaN`. O sintoma era não existir **um único** item com
+carga 1, e é essa a asserção central do teste novo: se uma faixa fica vazia, a
+régua está quebrada, qualquer que seja a causa.
+
+O capítulo de Equipamentos ganhou a seção **A carga dos itens**, com a tabela, a
+régua e o limite por Força — no cofre e no compêndio.
+
 ## 1.16.6 — os painéis do módulo Space Dragon
 
 O painel **Desativar Robôs** ficava ilegível: fundo claro, e os nomes das

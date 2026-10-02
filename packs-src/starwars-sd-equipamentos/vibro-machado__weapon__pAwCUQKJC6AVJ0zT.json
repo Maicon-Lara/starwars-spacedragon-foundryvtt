@@ -9,7 +9,7 @@
     "description": "Dano 2d8, tipo Corte. Disponibilidade: Restrita.",
     "quantity": 1,
     "cost": "100.000 CR",
-    "weight_in_load": 0,
+    "weight_in_load": 3,
     "weight_in_grams": 6000,
     "magic_item": false,
     "is_equipped": false,

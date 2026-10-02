@@ -9,7 +9,7 @@
     "description": "CP 13: é o valor de proteção da veste, a BASE do Coeficiente de Proteção — a ficha soma o bônus +3 aos 10 dela e chega a 13. Tipo: Leve. Sem proficiência: −2 em perícias físicas e ataque. Disponibilidade: Licenciada.",
     "quantity": 1,
     "cost": "60.000 CR",
-    "weight_in_load": 0,
+    "weight_in_load": 2,
     "weight_in_grams": 3000,
     "magic_item": false,
     "is_equipped": false,

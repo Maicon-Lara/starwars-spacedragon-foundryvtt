@@ -657,6 +657,7 @@ const SECOES = {
     "Referência de equipamento",
   ],
   "SW-SUP-Equipamentos": [
+    "A carga dos itens",
     "Créditos",
     "Armas de combate corpo a corpo",
     "Armas de fogo, arremesso e explosivos",

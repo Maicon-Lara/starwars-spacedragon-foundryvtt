@@ -9,7 +9,7 @@
     "description": "Recarrega cargas/células (4 h cada).",
     "quantity": 1,
     "cost": "5.000 CR",
-    "weight_in_load": 0,
+    "weight_in_load": 2,
     "weight_in_grams": 1000,
     "magic_item": false,
     "is_equipped": false

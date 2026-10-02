@@ -9,7 +9,7 @@
     "description": "CP 24: é o valor de proteção da veste, a BASE do Coeficiente de Proteção — a ficha soma o bônus +14 aos 10 dela e chega a 24. Tipo: Pesada. Deslocamento −3. Sem proficiência: −10 em perícias físicas e ataque. Disponibilidade: Militar.",
     "quantity": 1,
     "cost": "350.000 CR",
-    "weight_in_load": 0,
+    "weight_in_load": 3,
     "weight_in_grams": 50000,
     "magic_item": false,
     "is_equipped": false,

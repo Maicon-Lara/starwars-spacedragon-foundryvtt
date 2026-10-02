@@ -9,7 +9,7 @@
     "description": "Luz e calor num raio de ~12 m.",
     "quantity": 1,
     "cost": "1.000 CR",
-    "weight_in_load": 0,
+    "weight_in_load": 2,
     "weight_in_grams": 1000,
     "magic_item": false,
     "is_equipped": false

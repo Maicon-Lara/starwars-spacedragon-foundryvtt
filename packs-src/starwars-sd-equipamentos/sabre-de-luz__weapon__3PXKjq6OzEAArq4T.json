@@ -9,7 +9,7 @@
     "description": "Uma lâmina de energia pura: 2d10 de dano por energia, e corta quase qualquer coisa. Ignora a proteção de armaduras comuns (a lâmina atravessa placas), mas não a Beskar mandaloriana nem outro sabre. Manejo perigoso: só o Sensível à Força o empunha sem risco (e o Guardião é o mestre da lâmina). Nas mãos de um não-sensível, um 1 natural no ataque significa que ele se fere (2d10 no próprio portador). Deflexão de tiros é técnica de Forma (Soresu e cia.); a construção e os cristais kyber estão no journal Sabre de Luz e Cristais Kyber. Dano 2d10, tipo Energia. Disponibilidade: Rara.",
     "quantity": 1,
     "cost": "600.000 CR",
-    "weight_in_load": 0,
+    "weight_in_load": 2,
     "weight_in_grams": 1000,
     "magic_item": false,
     "is_equipped": false,

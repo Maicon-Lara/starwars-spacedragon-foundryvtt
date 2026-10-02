@@ -24,6 +24,7 @@
 
 import { EQUIPAMENTOS, APARATOS, TEXTOS } from "./textos-do-cofre.mjs";
 import { md } from "../lib.mjs";
+import { cargaDoItem } from "./carga.mjs";
 
 /** A tabela do cofre cujo cabeçalho começa com estas colunas. */
 function tabela(...colunas) {
@@ -72,6 +73,9 @@ const corpoACorpo = tabela("Arma", "Custo", "Dano", "Tipo", "Peso", "Disponib.")
     two_handed: duasPontas,
     cost: custo(a.Custo),
     weight_in_grams: gramas(a.Peso),
+    // a CARGA do Old Dragon 2 (Tab. 5-1 do guia), que é outra grandeza
+    // que o peso — ver tools/data/carga.mjs
+    weight_in_load: cargaDoItem(a.Nome ?? a.Arma ?? a.Item, a.Peso),
     desc:
       (nome === "Sabre de Luz" ? `${REGRA_SABRE} ` : "") +
       (luvas ? "Soma +1 ao dano desarmado. " : "") +
@@ -129,6 +133,9 @@ const deFogo = tabela("Arma", "Custo", "Dano", "Tipo", "CDT", "Peso", "Disponib.
     two_handed: cat !== "Pistolas",
     cost: custo(a.Custo),
     weight_in_grams: gramas(a.Peso),
+    // a CARGA do Old Dragon 2 (Tab. 5-1 do guia), que é outra grandeza
+    // que o peso — ver tools/data/carga.mjs
+    weight_in_load: cargaDoItem(a.Nome ?? a.Arma ?? a.Item, a.Peso),
     desc:
       `Dano ${vazio(a.Dano) ? "o da munição (granada)" : semMarca(a.Dano)}, tipo ${vazio(a.Tipo) ? "—" : semMarca(a.Tipo)}. ` +
       `Cadência: ${CDT[cdt] ?? cdt}${cdt === "A" ? " (permite Tiro Duplo e Rajada)" : cdt === "SA" ? " (permite Tiro Duplo)" : ""}. ` +
@@ -151,7 +158,10 @@ const explosivos = tabela("Item", "Custo", "Dano", "Tipo", "Peso", "Disponib.").
       ? " Explosivo de fixação: colocar exige teste de Demolição (Ciência); sucesso ignora a redução de dano do alvo. Margem de 5 dobra o dano; 10 ou crítico triplica. Dobrar o número de cargas soma +2 dados."
       : ` Alcance — ${FAIXAS.Arremesso.texto}`);
   return { nome, fixacao: EXPLOSIVO_DE_FIXACAO.test(nome), damage: dano(a.Dano), damage_type: tipoDeDano(a.Tipo),
-    cost: custo(a.Custo), weight_in_grams: gramas(a.Peso), desc: texto };
+    cost: custo(a.Custo), weight_in_grams: gramas(a.Peso),
+    // a CARGA do Old Dragon 2 (Tab. 5-1 do guia), que é outra grandeza
+    // que o peso — ver tools/data/carga.mjs
+    weight_in_load: cargaDoItem(a.Nome ?? a.Arma ?? a.Item, a.Peso), desc: texto };
 });
 
 // ── Armaduras e vestes ──────────────────────────────────────────────────────
@@ -173,6 +183,9 @@ const vestes = tabela("Proteção", "Custo", "CP", "Desloc.", "Tipo", "Peso", "D
     bonus_ca: cp - 10,
     cost: custo(v.Custo),
     weight_in_grams: gramas(v.Peso),
+    // a CARGA do Old Dragon 2 (Tab. 5-1 do guia), que é outra grandeza
+    // que o peso — ver tools/data/carga.mjs
+    weight_in_load: cargaDoItem(v.Nome ?? v.Arma ?? v.Item, v.Peso),
     desc:
       `CP ${cp}: é o valor de proteção da veste, a BASE do Coeficiente de Proteção — a ficha soma o bônus ${cp - 10 >= 0 ? "+" : ""}${cp - 10} aos 10 dela e chega a ${cp}. ` +
       `Tipo: ${tipo}.` +
@@ -193,6 +206,9 @@ const aparelhos = tabela("Item", "Custo", "Peso", "Efeito").map((a) => ({
   nome: semMarca(a.Item),
   cost: custo(a.Custo),
   weight_in_grams: gramas(a.Peso),
+    // a CARGA do Old Dragon 2 (Tab. 5-1 do guia), que é outra grandeza
+    // que o peso — ver tools/data/carga.mjs
+    weight_in_load: cargaDoItem(a.Nome ?? a.Arma ?? a.Item, a.Peso),
   desc: frase(a.Efeito),
 }));
 const medicina = tabela("Item", "Custo", "Efeito").map((a) => ({

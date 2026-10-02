@@ -17,6 +17,9 @@ export const equipamentosJournal = {
   title: "Equipamentos & Créditos",
   pages: [
     { title: "Créditos", content: eq["(abertura)"] + eq["Créditos"] },
+    // vem ANTES das tabelas: é a régua que explica a coluna Peso delas, e a
+    // diferença entre peso (quilos) e carga (espaços do Old Dragon 2)
+    { title: "A Carga dos Itens", content: eq["A carga dos itens"] },
     { title: "Armas Corpo a Corpo", content: eq["Armas de combate corpo a corpo"] },
     { title: "Armas de Fogo, Arremesso e Explosivos", content: eq["Armas de fogo, arremesso e explosivos"] },
     { title: "Armaduras e Vestes", content: eq["Armaduras & Vestes"] },

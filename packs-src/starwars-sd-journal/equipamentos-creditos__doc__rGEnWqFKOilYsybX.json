@@ -42,9 +42,46 @@
     },
     {
       "sort": 200000,
+      "name": "A Carga dos Itens",
+      "type": "text",
+      "_id": "8UBfJavJwKnBWB0O",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc c-equip\"><p>A coluna <strong>Peso</strong> das tabelas é o peso real, em quilos, como no <em>SD</em>. Mas a <strong>carga</strong> — o que conta no limite que o personagem carrega — é outra grandeza no Old Dragon 2: um número de <strong>espaços</strong>, e não quilos. O guia de conversão traz a régua na <strong>Tabela 5-1</strong>:</p><table><thead><tr><th></th><th>carga</th></tr></thead><tbody><tr><td>Arma <strong>pequena</strong></td><td><strong>1</strong></td></tr><tr><td>Arma <strong>média</strong></td><td><strong>2</strong></td></tr><tr><td>Arma <strong>grande</strong></td><td><strong>3</strong></td></tr><tr><td><strong>Vestes leves</strong></td><td><strong>1</strong> · <strong>médias</strong> <strong>2</strong> · traje de combate, defletora, aquático e espacial <strong>3</strong></td></tr><tr><td>Munições, anel de laser, potencializador, escudo de energia</td><td><strong>0</strong> — <em>muito leve para ser considerado</em></td></tr></tbody></table><blockquote><p><strong>Como o porte é decidido aqui.</strong> O <em>SD</em> classifica as armas em <strong>P/M/G</strong> (§5), mas essa coluna não veio para estas tabelas — e a tabela de armas do livro não é extraível, porque está diagramada em caixas de texto. O porte é <strong>derivado do peso</strong>: até 0,2 kg não conta; até 0,5 kg é pequena; até 4 kg é média; acima disso, grande. A régua foi calibrada nas cinco armas que o livro entrega com as duas informações (Zarabatana P 0,5 · Porrete M 1 · Rifle laser M 2 · Rifle de plasma M 4 · Rifle de projéteis M 4) e acerta todas. Onde a sua mesa discordar, <strong>vale o livro</strong> — e no módulo do Foundry a exceção se registra em <code>tools/data/carga.mjs</code>.</p></blockquote><p><strong>No limite de carga</strong> (<em>SD</em>, §6.3.3): até a carga <strong>leve</strong> da sua Força, sem penalidade; acima dela até a <strong>média</strong>, −1 m de deslocamento; acima da média até a <strong>pesada</strong>, −2 m; acima da pesada, você não se move.</p></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!rGEnWqFKOilYsybX.8UBfJavJwKnBWB0O"
+    },
+    {
+      "sort": 300000,
       "name": "Armas Corpo a Corpo",
       "type": "text",
-      "_id": "8LKLrUnhuwatbPv8",
+      "_id": "JXCrD9t8eoFEwjQ1",
       "title": {
         "show": true,
         "level": 1
@@ -75,13 +112,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!rGEnWqFKOilYsybX.8LKLrUnhuwatbPv8"
+      "_key": "!journal.pages!rGEnWqFKOilYsybX.JXCrD9t8eoFEwjQ1"
     },
     {
-      "sort": 300000,
+      "sort": 400000,
       "name": "Armas de Fogo, Arremesso e Explosivos",
       "type": "text",
-      "_id": "vGfqJC43ChxozabL",
+      "_id": "EC4iB2ombvTFKTi7",
       "title": {
         "show": true,
         "level": 1
@@ -112,13 +149,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!rGEnWqFKOilYsybX.vGfqJC43ChxozabL"
+      "_key": "!journal.pages!rGEnWqFKOilYsybX.EC4iB2ombvTFKTi7"
     },
     {
-      "sort": 400000,
+      "sort": 500000,
       "name": "Armaduras e Vestes",
       "type": "text",
-      "_id": "cvi8HzWbVs9PmoHI",
+      "_id": "4wqNuFlLMMOElEgr",
       "title": {
         "show": true,
         "level": 1
@@ -149,13 +186,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!rGEnWqFKOilYsybX.cvi8HzWbVs9PmoHI"
+      "_key": "!journal.pages!rGEnWqFKOilYsybX.4wqNuFlLMMOElEgr"
     },
     {
-      "sort": 500000,
+      "sort": 600000,
       "name": "Aparelhos, Kits e Suprimentos",
       "type": "text",
-      "_id": "YSnYmDWb7iyfARxr",
+      "_id": "TzODJFlwfAfnpU6Z",
       "title": {
         "show": true,
         "level": 1
@@ -186,13 +223,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!rGEnWqFKOilYsybX.YSnYmDWb7iyfARxr"
+      "_key": "!journal.pages!rGEnWqFKOilYsybX.TzODJFlwfAfnpU6Z"
     },
     {
-      "sort": 600000,
+      "sort": 700000,
       "name": "Crédito",
       "type": "text",
-      "_id": "uVp2YDEHy1HJCzXf",
+      "_id": "ksH2tBaXQzPwgaoB",
       "title": {
         "show": true,
         "level": 1
@@ -223,7 +260,7 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!rGEnWqFKOilYsybX.uVp2YDEHy1HJCzXf"
+      "_key": "!journal.pages!rGEnWqFKOilYsybX.ksH2tBaXQzPwgaoB"
     }
   ],
   "flags": {},

@@ -9,7 +9,7 @@
     "description": "CP 17: é o valor de proteção da veste, a BASE do Coeficiente de Proteção — a ficha soma o bônus +7 aos 10 dela e chega a 17. Tipo: Média. Deslocamento −1. Sem proficiência: −5 em perícias físicas e ataque. Disponibilidade: Livre. Dá +2 de Força a quem tem proficiência em médias.",
     "quantity": 1,
     "cost": "140.000 CR",
-    "weight_in_load": 0,
+    "weight_in_load": 3,
     "weight_in_grams": 20000,
     "magic_item": false,
     "is_equipped": false,
