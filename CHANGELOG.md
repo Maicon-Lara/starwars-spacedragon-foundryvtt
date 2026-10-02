@@ -1,5 +1,36 @@
 # Changelog
 
+## 1.16.3 — os três últimos pontos de contraste
+
+Fecha o que a 1.16.1 abriu ao pôr fundo escuro numa ficha que o tema do módulo
+Space Dragon sempre desenhou clara. Os três casos saíram de uma **ficha real**,
+com o console do navegador listando todo elemento de texto com luminância
+baixa — e o resultado foi menor e mais específico do que a inspeção visual
+sugeria.
+
+**Os botões do nosso painel de Pontos de Força** estavam em `rgb(0, 0, 0)`.
+Eles herdavam a cor de botão do Foundry, e o painel vive na ficha do sistema,
+que no tema do livro tem fundo escuro. O componente é nosso, então as cores
+dele passam a ser nossas em vez de depender do tema de quem o hospeda.
+
+**Os campos Raça e Classe** são `input` desabilitado, esmaecido com uma cor
+pensada para fundo claro. Corrigido por seletor de **elemento** — `input`,
+`select`, `textarea` —, que não é caminho interno do sistema e não quebra
+quando ele mudar.
+
+**O losango `.diamond`**, que o sistema põe no carmim `#D72240`, ficava quase
+preto sobre o espaço. É uma classe curta e estável, e não um daqueles caminhos
+de cinco níveis que a folha do módulo Space Dragon documenta ter copiado e
+tido de desfazer: cobri-la custa uma linha e não cria dívida contra o sistema.
+
+**O que NÃO precisou de correção.** Os títulos das habilidades pareciam
+apagados numa captura de tela, e não estavam: medidos na ficha, vêm em
+`rgb(217, 214, 204)` com opacidade 1 — a cor clara do livro, que a correção
+pelas variáveis do Foundry, na 1.16.2, já tinha resolvido. A diferença de tom
+entre o título e o corpo do texto, mais a compressão da imagem, fizeram parecer
+problema. Medir custou dois comandos no console e evitou escrever seletores do
+sistema para consertar o que já funcionava.
+
 ## 1.16.2 — o painel de Pontos de Força sai do esconderijo, e o escuro fica legível
 
 Duas correções do que a 1.16.1 deixou passar, ambas vistas numa ficha de verdade.
