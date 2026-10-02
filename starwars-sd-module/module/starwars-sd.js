@@ -27,7 +27,7 @@ import { NaveDataModel } from "./nave-modelo.js";
 import { NaveFicha, NaveFichaTatico, NaveFichaLivro, TIPO_NAVE } from "./nave-ficha.js";
 import { ligarPontosDeForca } from "./pontos-de-forca.js";
 import { registrarTema, ligarTema } from "./tema.js";
-import { registrarCombate, ligarOrdemDeAcao, ligarResumoDaRodada } from "./ordem-painel.js";
+import { registrarCombate, ligarOrdemDeAcao, ligarResumoDaRodada, avisarSeOrdemPerdida } from "./ordem-painel.js";
 
 const ID = "starwars-sd";
 
@@ -233,6 +233,9 @@ Hooks.once("ready", () => {
   // A Ordem de Ação: o painel do jogador e o resumo da rodada para o Mestre.
   ligarOrdemDeAcao();
   ligarResumoDaRodada();
+  // No ready todos os módulos já carregaram: é aqui que dá para saber se algum
+  // deles substituiu a classe de Combat e apagou a nossa ordenação crescente.
+  avisarSeOrdemPerdida();
 
   // O painel de Pontos de Força na ficha do personagem. Injetado, não
   // substitui nada do sistema, e sai junto se o módulo for desligado.

@@ -1,5 +1,30 @@
 # Changelog
 
+## 1.21.1 — conviver com outros módulos
+
+A Ordem de Ação da 1.21.0 inverte a ordenação do Combat Tracker estendendo a
+classe de `Combat`. Isso convive bem com quem faz o mesmo — mas **um módulo que
+SUBSTITUA** a classe, em vez de estendê-la, apaga a nossa, e a ordenação volta a
+ser decrescente.
+
+O risco não é a falha: é o **silêncio** dela. A lista continua parecendo uma
+lista, só que na ordem exatamente contrária à regra — a mesa levaria sessões
+para notar.
+
+Agora o módulo confere no `ready`, quando todos já carregaram, se a nossa classe
+ainda está na cadeia. Se não estiver, avisa de forma permanente, dizendo o que
+aconteceu e as duas saídas: desligar o outro módulo, ou desligar a Ordem de Ação
+para não jogar com a ordem invertida sem perceber.
+
+**O sistema `olddragon2e` não é o problema.** Ele substitui
+`CONFIG.Item.documentClass` e configura `CONFIG.Combat.initiative` (a fórmula),
+mas **não** mexe na classe de Combat nem na ordenação. O atrito possível é com
+módulos de terceiros.
+
+**E uma confirmação:** o campo `mod_destreza`, que o painel usa para o
+`10 − Destreza`, existe mesmo no `OD2CharacterDataModel` do sistema. Era um
+palpite na 1.21.0, e agora está verificado.
+
 ## 1.21.0 — a Ordem de Ação, automatizada
 
 A mesa passa a poder rodar a **Ordem de Ação do Space Dragon** (§7.5 e §10.6) no

@@ -44,15 +44,63 @@ export const ordemLigada = () => {
 
 /* ── A ORDEM CRESCENTE ──────────────────────────────────────────────────── */
 
+/**
+ * A marca que identifica a nossa classe na cadeia.
+ *
+ * Serve para `conferirCombate` saber se continuamos valendo depois que todos os
+ * módulos carregaram — ver abaixo.
+ */
+const MARCA_COMBATE = "swSdOrdemDeAcao";
+
 export function registrarCombate() {
+  // ESTENDE o que já estiver lá, em vez de substituir. Se outro módulo
+  // registrou a classe dele antes, ele continua funcionando por baixo; se
+  // registrar depois e também estender, a cadeia se mantém inteira.
+  //
+  // O sistema `olddragon2e` não substitui Combat — só configura
+  // `CONFIG.Combat.initiative` —, então o atrito possível é com outro módulo.
   const Base = CONFIG.Combat.documentClass;
-  CONFIG.Combat.documentClass = class extends Base {
+  class CombateComOrdemDeAcao extends Base {
     _sortCombatants(a, b) {
       // só inverte com a opção ligada: sem ela, o mundo segue o padrão
       if (!ordemLigada()) return super._sortCombatants(a, b);
       return ordenarCrescente(a, b);
     }
-  };
+  }
+  CombateComOrdemDeAcao[MARCA_COMBATE] = true;
+  CONFIG.Combat.documentClass = CombateComOrdemDeAcao;
+}
+
+/**
+ * A nossa classe de Combat ainda está valendo?
+ *
+ * Um módulo que faça `CONFIG.Combat.documentClass = MinhaClasse` — substituindo
+ * em vez de estender — APAGA a nossa, e a Ordem de Ação volta a ser ordenada do
+ * maior para o menor. A regra fica silenciosamente invertida, e a lista continua
+ * parecendo uma lista: é o tipo de coisa que a mesa leva sessões para notar.
+ *
+ * Por isso se confere no `ready`, quando todos os módulos já carregaram, e se
+ * avisa em vez de deixar passar.
+ */
+export function conferirCombate() {
+  let C = CONFIG.Combat.documentClass;
+  while (C && C !== Function.prototype) {
+    if (C[MARCA_COMBATE]) return true;
+    C = Object.getPrototypeOf(C);
+  }
+  return false;
+}
+
+/** Avisa o Mestre se a ordenação foi perdida para outro módulo. */
+export function avisarSeOrdemPerdida() {
+  if (!ordemLigada() || conferirCombate()) return;
+  const msg =
+    "A Ordem de Ação está ligada, mas outro módulo substituiu a classe de " +
+    "Combate e a ordenação crescente se perdeu — o Combat Tracker vai ordenar " +
+    "do MAIOR para o menor, ao contrário da regra. Desligue o outro módulo, ou " +
+    "desligue a Ordem de Ação para não jogar com a ordem invertida sem perceber.";
+  console.warn(`starwars-sd | ${msg}`);
+  ui.notifications?.error(msg, { permanent: true });
 }
 
 /* ── O PAINEL DO JOGADOR ────────────────────────────────────────────────── */

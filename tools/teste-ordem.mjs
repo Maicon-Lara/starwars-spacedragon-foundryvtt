@@ -107,11 +107,49 @@ confere(dadoDaArma("1d6/1d6") === "1d6", "arma de duas pontas: a primeira");
 confere(dadoDaArma("Nocaute") === null, "sem dado, não dá para ordenar por ataque");
 confere(dadoDaArma("") === null && dadoDaArma(undefined) === null, "vazio não quebra");
 
+// ── A CADEIA DE CLASSES DE COMBAT ─────────────────────────────────────────
+//
+// Nossa classe ESTENDE a que já estiver registrada, para não apagar a de outro
+// módulo. Mas o inverso pode acontecer: um módulo que faça
+// `CONFIG.Combat.documentClass = MinhaClasse` apaga a nossa, e a ordenação
+// volta a ser decrescente — a regra fica invertida em silêncio.
+//
+// Estes testes exercitam a detecção com classes de mentira, sem Foundry.
+{
+  const MARCA = "swSdOrdemDeAcao";
+  const naCadeia = (C) => {
+    while (C && C !== Function.prototype) {
+      if (C[MARCA]) return true;
+      C = Object.getPrototypeOf(C);
+    }
+    return false;
+  };
+
+  class Original {}
+  class Nossa extends Original {}
+  Nossa[MARCA] = true;
+  confere(naCadeia(Nossa), "a nossa classe tem de ser reconhecida");
+
+  // outro módulo estende a nossa: a cadeia se mantém, e nós continuamos valendo
+  class OutroQueEstende extends Nossa {}
+  confere(naCadeia(OutroQueEstende),
+    "um módulo que ESTENDE a nossa não deve nos apagar da cadeia");
+
+  // outro módulo substitui: a nossa sumiu, e é isso que o aviso precisa pegar
+  class OutroQueSubstitui extends Original {}
+  confere(!naCadeia(OutroQueSubstitui),
+    "um módulo que SUBSTITUI a classe tem de ser detectado como conflito");
+
+  // e a busca não pode entrar em laço infinito no topo da cadeia
+  confere(naCadeia(Original) === false, "a busca termina no topo sem travar");
+}
+
 if (problemas.length) {
   for (const p of problemas) console.error(`  ✘ ${p}`);
   process.exit(1);
 }
 console.log(
   "  ✔ ordem de ação: as 4 ações, a arma pesada por último, A INVERSÃO (menor primeiro), " +
-    "quem não declarou no fim, a duração da rodada e os empates simultâneos"
+    "quem não declarou no fim, a duração da rodada, os empates simultâneos " +
+    "e a detecção de conflito na classe de Combat"
 );
