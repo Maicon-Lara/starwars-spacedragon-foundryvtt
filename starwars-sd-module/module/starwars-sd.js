@@ -26,6 +26,7 @@
 import { NaveDataModel } from "./nave-modelo.js";
 import { NaveFicha, NaveFichaTatico, NaveFichaLivro, TIPO_NAVE } from "./nave-ficha.js";
 import { ligarPontosDeForca } from "./pontos-de-forca.js";
+import { registrarTema, ligarTema } from "./tema.js";
 
 const ID = "starwars-sd";
 
@@ -76,6 +77,14 @@ Hooks.once("init", () => {
       }
     },
   });
+
+  // ── A paleta do livro nas fichas do sistema ──
+  //
+  // A ficha de personagem é do SISTEMA, e o módulo Space Dragon já tem a
+  // camada que a repinta. Esta opção só troca as cinco cores dela pela paleta
+  // do livro — ver module/tema.js, que explica por que não se reescreve
+  // seletor nenhum aqui.
+  registrarTema();
 
   // ── As camadas da tripulação ──
   //
@@ -188,6 +197,11 @@ Hooks.once("ready", () => {
   if (!game.modules.get("spacedragon")?.active) {
     ui.notifications?.warn(game.i18n.localize("starwars-sd.aviso.semSpaceDragon"));
   }
+
+  // A classe do tema no <body>. Vai no `ready` porque é aqui que o <body>
+  // existe e que a classe do módulo Space Dragon já está lá — o aviso de
+  // "tema do vizinho desligado" depende de poder conferi-la.
+  ligarTema();
 
   // O painel de Pontos de Força na ficha do personagem. Injetado, não
   // substitui nada do sistema, e sai junto se o módulo for desligado.

@@ -1,5 +1,39 @@
 # Changelog
 
+## 1.16.1 — a paleta do livro também na ficha de personagem
+
+A 1.13.0 vestiu os journals e a ficha de nave, mas a **ficha de personagem**
+continuou com a paleta do Space Dragon. Ela é do sistema `olddragon2e`, não
+deste módulo, e repintá-la por fora era o risco que a folha de estilo já
+avisava: "dois temas brigando na mesma janela é o que o Star Dragon e o Space
+Dragon tiveram de desembaraçar na 1.5.0".
+
+**A saída foi não reescrever nada.** O módulo Space Dragon já tem a camada que
+cobre a ficha do sistema — e ela fez o trabalho difícil: o sistema pinta o mesmo
+carmim em vinte e três seletores longos, e a folha do vizinho os cobre com
+`!important`, concentrando tudo em **cinco variáveis**. Esta versão só troca as
+cinco cores pela paleta do livro, e a maquinaria dele faz o resto.
+
+A opção nova é *Paleta do livro nas fichas do sistema*. É `client` (quem olha
+decide, como a do vizinho) e **começa desligada**: num mundo misto — Ekhoria e
+Star Wars no mesmo servidor — a paleta de um cenário na ficha do outro é erro, e
+não estilo.
+
+**Precisa do tema do Space Dragon ligado**, porque as regras que leem essas
+variáveis moram na folha dele. Ligar uma sem a outra definiria cinco variáveis
+que ninguém lê, então o módulo confere ao ligar e avisa, em vez de deixar a
+opção marcada sem efeito.
+
+**Um detalhe que a ficha de nave não tinha.** `--sd-barra` é fundo, e o vizinho
+fixa `color: #ffffff !important` em cima dela. Na ficha de nave o amarelo do
+letreiro funciona porque lá a cor do texto é nossa; aqui, branco sobre #FFD93B
+não se lê. A barra ficou escura nos dois temas — o #2A2E38 que o livro usa no
+papel, e o aço no escuro. O teste barra o amarelo nesse campo.
+
+A única mudança de tipografia é o **nome do personagem**, em Orbitron. Medidas,
+grades e fontes do corpo ficam com o sistema de propósito: mexer nelas é
+persegui-lo a cada versão, e a ficha de personagem tem grade apertada.
+
 ## 1.16.0 — a tripulação na ficha
 
 As regras de tripulação que a 1.15.0 escreveu agora **rodam**. O que a ficha

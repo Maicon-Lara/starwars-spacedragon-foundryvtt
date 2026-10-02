@@ -21,5 +21,7 @@
   "starwars-sd.settings.camadaAvarias.nome": "Camada: Controle de avarias",
   "starwars-sd.settings.camadaAvarias.dica": "Dá prazo às avarias: a propulsão tem 3 rodadas, armas e sensores têm 2. Resolver custa a ação de quem está na câmara; perder o prazo deixa a câmara inoperante até reparo em porto. É o que dá tarefa a quem não tem posto.",
   "starwars-sd.settings.camadaFuga.nome": "Camada: fuga como relógio",
-  "starwars-sd.settings.camadaFuga.dica": "Liga o relógio do perseguidor ao lado das três etapas do salto. Ele avança uma marca por rodada, e duas quando a nave sofre avaria nova ou escolhe Correr. Quem fecha primeiro decide a cena — no empate, o perseguidor alcança."
+  "starwars-sd.settings.camadaFuga.dica": "Liga o relógio do perseguidor ao lado das três etapas do salto. Ele avança uma marca por rodada, e duas quando a nave sofre avaria nova ou escolhe Correr. Quem fecha primeiro decide a cena — no empate, o perseguidor alcança.",
+  "starwars-sd.settings.temaDoLivro.nome": "Paleta do livro nas fichas do sistema",
+  "starwars-sd.settings.temaDoLivro.dica": "Troca as cores das fichas do Old Dragon 2 pela paleta do livro deste cenário — pergaminho no claro, o espaço no escuro, e o verde do Tático no interativo. PRECISA do “Tema Space Dragon nas fichas” ligado, nas configurações do módulo Space Dragon: é a folha dele que cobre os seletores do sistema, e esta camada só troca as cores. Começa desligada porque num mundo misto a paleta de um cenário na ficha do outro é erro, não estilo."
 }

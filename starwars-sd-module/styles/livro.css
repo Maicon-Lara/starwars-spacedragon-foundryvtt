@@ -309,3 +309,77 @@ body.theme-dark,
   letter-spacing: 0.06em;
   color: var(--sw-cor);
 }
+
+/* ══ O TEMA DO LIVRO NA FICHA DE PERSONAGEM ════════════════════════════════
+ *
+ * A ficha de personagem é do sistema `olddragon2e`, não deste módulo — e o
+ * módulo Space Dragon já tem uma camada que a repinta, sob `body.spacedragon-
+ * tema`. Essa camada fez o trabalho difícil: o sistema pinta o mesmo carmim em
+ * vinte e três seletores longos, e a folha do vizinho os cobre com
+ * `!important` e concentra TUDO em cinco variáveis.
+ *
+ * Então aqui não se reescreve seletor nenhum. Só se trocam as cinco cores pela
+ * paleta do livro, e a maquinaria do vizinho faz o resto. Reescrever os vinte e
+ * três caminhos seria quebrar na próxima versão do sistema — é o que a folha
+ * dele diz, e está certo.
+ *
+ * ── DEPENDE DO TEMA DO VIZINHO ESTAR LIGADO ───────────────────────────────
+ *
+ * As REGRAS que consomem estas variáveis moram sob `body.spacedragon-tema`.
+ * Sem aquela classe, definir as variáveis não alcança nada — e é por isso que
+ * a opção deste módulo avisa, e o código confere ao ligar.
+ *
+ * ── A ESPECIFICIDADE, E POR QUE A CLASSE DUPLA ────────────────────────────
+ *
+ * `body.spacedragon-tema` tem um elemento e uma classe; `body.starwars-sd-tema`
+ * tem o mesmo peso, e num empate vence quem o navegador carregou depois — que
+ * entre dois módulos não é garantido. A segunda regra, com as DUAS classes,
+ * vence sempre.
+ *
+ * ── POR QUE A BARRA NÃO É O AMARELO DO LETREIRO ───────────────────────────
+ *
+ * `--sd-barra` é fundo, e o vizinho fixa `color: #ffffff !important` em cima
+ * dela. Na ficha de NAVE o amarelo funciona porque lá a cor do texto é nossa;
+ * aqui, branco sobre #FFD93B não se lê. A barra fica escura nos dois temas: o
+ * #2A2E38 que o livro usa no papel, e o aço no escuro.
+ */
+
+body.starwars-sd-tema,
+body.starwars-sd-tema.spacedragon-tema {
+  --sd-fundo: var(--sw-pergaminho);
+  --sd-caixa: #e6dcc3;
+  --sd-barra: #2a2e38;
+  --sd-tinta: #1a1a18;
+  --sd-brilho: var(--sw-fosforo-claro);
+}
+
+body.theme-dark.starwars-sd-tema,
+body.theme-dark.starwars-sd-tema.spacedragon-tema {
+  --sd-fundo: var(--sw-espaco);
+  --sd-caixa: var(--sw-painel);
+  /* o aço, e não o crawl: o texto em cima é branco e fixado pelo vizinho */
+  --sd-barra: var(--sw-aco);
+  --sd-tinta: var(--sw-texto);
+  --sd-brilho: var(--sw-fosforo);
+}
+
+@media (prefers-color-scheme: dark) {
+  body.starwars-sd-tema:not(.theme-light),
+  body.starwars-sd-tema.spacedragon-tema:not(.theme-light) {
+    --sd-fundo: var(--sw-espaco);
+    --sd-caixa: var(--sw-painel);
+    --sd-barra: var(--sw-aco);
+    --sd-tinta: var(--sw-texto);
+    --sd-brilho: var(--sw-fosforo);
+  }
+}
+
+/* O nome do personagem em Orbitron, como o título de capítulo. É a ÚNICA
+ * mudança de tipografia aqui: medidas, grades e fontes do corpo ficam com o
+ * sistema de propósito — mexer nelas significa persegui-lo a cada versão, e a
+ * ficha de personagem tem grade apertada. */
+body.starwars-sd-tema .olddragon2e.sheet input[name="name"] {
+  font-family: var(--sw-display);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}

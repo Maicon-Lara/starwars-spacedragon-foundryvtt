@@ -160,6 +160,57 @@ for (const d of journals) {
 confere(numeros.size === journals.length,
   `números de capítulo repetidos: ${[...numeros].sort().join(", ")}`);
 
+// ── O TEMA DO LIVRO NA FICHA DO SISTEMA ───────────────────────────────────
+//
+// A ficha de personagem é do sistema `olddragon2e`; quem cobre os seletores
+// dele é a folha do módulo Space Dragon, sob `body.spacedragon-tema`. Esta
+// camada só troca as cinco variáveis. O que pode dar errado em silêncio:
+//
+//   1. perder a regra de classe DUPLA, e aí num empate de especificidade vence
+//      quem o navegador carregou depois — entre dois módulos, imprevisível;
+//   2. pôr o amarelo do letreiro em `--sd-barra`, que é FUNDO com
+//      `color: #ffffff !important` fixado pelo vizinho: branco sobre #FFD93B
+//      não se lê, e na ficha de nave o mesmo amarelo funciona porque lá a cor
+//      do texto é nossa;
+//   3. reescrever os seletores do sistema aqui, que é o que a folha do vizinho
+//      diz que quebra na versão seguinte dele.
+// CADA bloco que define as variáveis precisa da variante de classe dupla, e
+// não só um deles: o claro, o escuro e o @media são três, e um que fique sem
+// ela perde o empate de especificidade em silêncio, naquele tema só.
+const blocosComBarra = (livroCss.match(/--sd-barra:/g) ?? []).length;
+const duplas = (livroCss.match(/\.starwars-sd-tema\.spacedragon-tema/g) ?? []).length;
+confere(duplas >= blocosComBarra,
+  `${blocosComBarra} bloco(s) definem --sd-barra, mas só ${duplas} têm a classe dupla ` +
+  `— o que ficar sem ela perde o empate de especificidade naquele tema`);
+confere(/body\.theme-dark\.starwars-sd-tema/.test(livroCss),
+  "o tema do livro não tem variante escura na ficha do sistema");
+
+// a barra tem de ser escura nos DOIS temas, porque o texto em cima é branco
+const barras = [...livroCss.matchAll(/--sd-barra:\s*([^;]+);/g)].map((m) => m[1].trim());
+confere(barras.length >= 2, `só ${barras.length} definição(ões) de --sd-barra`);
+for (const b of barras) {
+  confere(!/crawl|ffd93b/i.test(b),
+    `--sd-barra: ${b} — é fundo com texto branco fixo; o amarelo do letreiro não se lê`);
+}
+
+// e não se reescreve seletor do sistema: só as variáveis, mais o nome do ator
+const regrasDoSistema = [...livroCss.matchAll(/^body\.starwars-sd-tema[^{]*\{/gm)]
+  .map((m) => m[0]);
+for (const r of regrasDoSistema) {
+  const soVariaveis = !/\.olddragon2e/.test(r) || /input\[name="name"\]/.test(r);
+  confere(soVariaveis,
+    `a camada do livro reescreve seletor do sistema: ${r.trim()} — isso quebra quando o sistema mudar`);
+}
+
+// o tema sai de um arquivo próprio, com a opção e o aviso
+const temaJs = ler(MOD, "module", "tema.js");
+confere(temaJs.includes("spacedragon-tema"),
+  "o tema.js não confere se a camada do vizinho está ligada");
+confere(temaJs.includes("scope: \"client\""),
+  "a opção do tema devia ser client, como a do vizinho: quem olha decide");
+confere(temaJs.includes("default: false"),
+  "o tema devia começar desligado: num mundo misto, impor a paleta é erro");
+
 if (problemas.length) {
   for (const p of problemas) console.error(`  ✘ ${p}`);
   process.exit(1);
