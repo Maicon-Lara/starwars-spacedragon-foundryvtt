@@ -1,0 +1,125 @@
+{
+  "folder": "yfWD4akBvEDUtEPe",
+  "name": "Acerto crítico — T7-4",
+  "_id": "Jp2n71YBKZBJuf5X",
+  "img": "systems/olddragon2e/assets/icons/d6.svg",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "_id": "TxLnlxb3wzlpINEk",
+      "name": "",
+      "description": "<strong>Área vital.</strong> Dano ×2.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!Jp2n71YBKZBJuf5X.TxLnlxb3wzlpINEk"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "_id": "kW6cglsDdGwHR1FO",
+      "name": "",
+      "description": "<strong>Ferimento.</strong> Dano ×2, e a movimentação do alvo cai à metade.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!Jp2n71YBKZBJuf5X.kW6cglsDdGwHR1FO"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "_id": "BS7TX5nrxyWJHyxS",
+      "name": "",
+      "description": "<strong>Ferimento.</strong> Dano ×2, e −2 nos ataques desferidos pelo alvo.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!Jp2n71YBKZBJuf5X.BS7TX5nrxyWJHyxS"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "_id": "WNxgW3hADtZF6iuG",
+      "name": "",
+      "description": "<strong>Vestes avariadas.</strong> Dano ×2, e −2 no CP do alvo.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!Jp2n71YBKZBJuf5X.WNxgW3hADtZF6iuG"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "_id": "9P6rjGAIUq9KBrsx",
+      "name": "",
+      "description": "<strong>Ataque extra</strong> contra um inimigo ao alcance da arma.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!Jp2n71YBKZBJuf5X.9P6rjGAIUq9KBrsx"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "_id": "rArahY8XaywLHGwg",
+      "name": "",
+      "description": "<strong>Morte.</strong>",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!Jp2n71YBKZBJuf5X.rArahY8XaywLHGwg"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "formula": "1d6",
+  "sort": 900000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!tables!Jp2n71YBKZBJuf5X"
+}

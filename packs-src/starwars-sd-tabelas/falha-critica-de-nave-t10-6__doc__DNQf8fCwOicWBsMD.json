@@ -1,0 +1,125 @@
+{
+  "folder": "yfWD4akBvEDUtEPe",
+  "name": "Falha crítica de nave — T10-6",
+  "_id": "DNQf8fCwOicWBsMD",
+  "img": "systems/olddragon2e/assets/icons/d6.svg",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "_id": "oDxUz5701Yl95Nhr",
+      "name": "",
+      "description": "<strong>Armas travadas.</strong> Param de funcionar.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!DNQf8fCwOicWBsMD.oDxUz5701Yl95Nhr"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "_id": "OXjBTjeB8zlC2CQD",
+      "name": "",
+      "description": "<strong>Perda de controle momentânea.</strong> −5 no CP até o próximo turno.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!DNQf8fCwOicWBsMD.OXjBTjeB8zlC2CQD"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "_id": "qt5BXecsq73zrsQO",
+      "name": "",
+      "description": "<strong>Arma temporariamente danificada.</strong>",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!DNQf8fCwOicWBsMD.qt5BXecsq73zrsQO"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "_id": "RPQBBN3dZMB8x76B",
+      "name": "",
+      "description": "<strong>Arma permanentemente danificada.</strong>",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!DNQf8fCwOicWBsMD.RPQBBN3dZMB8x76B"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "_id": "scGELLQiHIg9DNfi",
+      "name": "",
+      "description": "<strong>Fogo amigo.</strong> O tiro atinge uma nave aliada próxima ao alvo.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!DNQf8fCwOicWBsMD.scGELLQiHIg9DNfi"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "_id": "NLHGGqVrp2kd9AnQ",
+      "name": "",
+      "description": "<strong>Perda de controle brusca.</strong> −10 no CP até o próximo turno, e um teste de pilotagem para retomar o controle.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!DNQf8fCwOicWBsMD.NLHGGqVrp2kd9AnQ"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "formula": "1d6",
+  "sort": 1200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!tables!DNQf8fCwOicWBsMD"
+}

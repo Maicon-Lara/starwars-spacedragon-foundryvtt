@@ -1,0 +1,125 @@
+{
+  "folder": "yfWD4akBvEDUtEPe",
+  "name": "Acerto crítico de nave — T10-6",
+  "_id": "E6cxwGXGu3I5pmfa",
+  "img": "systems/olddragon2e/assets/icons/d6.svg",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "_id": "AFVc5W8c8M4phDBS",
+      "name": "",
+      "description": "<strong>Área crítica.</strong> Dano ×2.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!E6cxwGXGu3I5pmfa.AFVc5W8c8M4phDBS"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "_id": "z2yFfO2vIymIfdZR",
+      "name": "",
+      "description": "<strong>Avaria na propulsão.</strong> Dano ×2, e a movimentação cai à metade.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!E6cxwGXGu3I5pmfa.z2yFfO2vIymIfdZR"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "_id": "5oVH8fxhSH4HisSF",
+      "name": "",
+      "description": "<strong>Avaria nas armas.</strong> Dano ×2, e −5 nos ataques da nave alvo.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!E6cxwGXGu3I5pmfa.5oVH8fxhSH4HisSF"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "_id": "ErZ5ZLUAsfQDkGjv",
+      "name": "",
+      "description": "<strong>Casco avariado.</strong> Dano ×2, e −5 no CP.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!E6cxwGXGu3I5pmfa.ErZ5ZLUAsfQDkGjv"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "_id": "FABoy8j1xqTjMypt",
+      "name": "",
+      "description": "<strong>Ataque extra</strong> contra outra nave ao alcance.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!E6cxwGXGu3I5pmfa.FABoy8j1xqTjMypt"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "_id": "GMBe1Zdm8baA9eou",
+      "name": "",
+      "description": "<strong>Pane geral</strong> na espaçonave.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!E6cxwGXGu3I5pmfa.GMBe1Zdm8baA9eou"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "formula": "1d6",
+  "sort": 1100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!tables!E6cxwGXGu3I5pmfa"
+}

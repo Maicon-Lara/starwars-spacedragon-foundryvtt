@@ -58,6 +58,8 @@ export const CORES_DE_PASTA = {
   "Cristais Kyber": "#366f69", // e o que a alimenta
   "Armaduras e Escudos": "#51687f",
   "Armaduras e Vestes": "#51687f",
+  // as tabelas de crítico: o vermelho que o livro usa no capítulo de combate
+  "Combate": "#e0262b",
   "Preparação de Aventura": "#42679c",
   "Granadas e Explosivos": "#a14e43", // mesma família das armas
   "Aparelhos e Kits": "#62666c",

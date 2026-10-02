@@ -1,0 +1,125 @@
+{
+  "folder": "yfWD4akBvEDUtEPe",
+  "name": "Falha crítica — T7-5",
+  "_id": "DULI4jt27u8Jp00F",
+  "img": "systems/olddragon2e/assets/icons/d6.svg",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "_id": "iJUokPjwaBHhFOCE",
+      "name": "",
+      "description": "<strong>Derruba a arma.</strong>",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!DULI4jt27u8Jp00F.iJUokPjwaBHhFOCE"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "_id": "ttAmEIdlYox6En5U",
+      "name": "",
+      "description": "<strong>Desequilíbrio.</strong> −1 no CP.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!DULI4jt27u8Jp00F.ttAmEIdlYox6En5U"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "_id": "HzyEAEuGiBMfvmmu",
+      "name": "",
+      "description": "<strong>Arma temporariamente danificada.</strong>",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!DULI4jt27u8Jp00F.HzyEAEuGiBMfvmmu"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "_id": "dbAaEejabZBgz8lX",
+      "name": "",
+      "description": "<strong>Arma permanentemente danificada.</strong>",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!DULI4jt27u8Jp00F.dbAaEejabZBgz8lX"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "_id": "JyW94Y09JGuDwuii",
+      "name": "",
+      "description": "<strong>Atinge um aliado</strong> próximo ao alvo.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!DULI4jt27u8Jp00F.JyW94Y09JGuDwuii"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "_id": "wgAw5DeHCtr05eNC",
+      "name": "",
+      "description": "<strong>Queda.</strong> −1 no CP, e uma ação de movimento para se levantar.",
+      "documentUuid": null,
+      "flags": {},
+      "img": "systems/olddragon2e/assets/icons/d6.svg",
+      "_key": "!tables.results!DULI4jt27u8Jp00F.wgAw5DeHCtr05eNC"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "formula": "1d6",
+  "sort": 1000000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!tables!DULI4jt27u8Jp00F"
+}

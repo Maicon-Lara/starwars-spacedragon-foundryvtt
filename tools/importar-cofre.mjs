@@ -643,6 +643,7 @@ const SECOES = {
     "Criar um personagem",
     "Rolar os dados",
     "A Ordem de Ação",
+    "Acertos e falhas críticas",
     "Combate de personagem",
     "A Força",
     "Equipamento, dinheiro e carga",

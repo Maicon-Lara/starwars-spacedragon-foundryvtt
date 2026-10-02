@@ -190,9 +190,46 @@
     },
     {
       "sort": 600000,
+      "name": "Acertos e Falhas Críticas",
+      "type": "text",
+      "_id": "0I0WHKsoCQfkE1HT",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc c-index\"><p><strong>20 natural:</strong> o ataque acerta e o dano é <strong>×2</strong> — ou mais, se o atacante for um Veterano. A tabela abaixo é <strong>opcional</strong>, e entra por cima disso.</p><table><thead><tr><th>1d6</th><th>Acerto crítico (<strong>T7-4</strong>)</th></tr></thead><tbody><tr><td>1</td><td>Área vital: dano ×2</td></tr><tr><td>2</td><td>Ferimento: ×2, e a <strong>movimentação do alvo cai à metade</strong></td></tr><tr><td>3</td><td>Ferimento: ×2, e <strong>−2 nos ataques</strong> do alvo</td></tr><tr><td>4</td><td>Vestes avariadas: ×2, e <strong>−2 no CP</strong></td></tr><tr><td>5</td><td><strong>Ataque extra</strong> contra um inimigo ao alcance</td></tr><tr><td>6</td><td><strong>Morte</strong></td></tr></tbody></table><p><strong>1 natural:</strong> erro automático, <em>independentemente de BA ou CP</em>. A tabela também é opcional.</p><table><thead><tr><th>1d6</th><th>Falha crítica (<strong>T7-5</strong>)</th></tr></thead><tbody><tr><td>1</td><td>Derruba a arma</td></tr><tr><td>2</td><td>Desequilíbrio: −1 no CP</td></tr><tr><td>3</td><td>Arma temporariamente danificada</td></tr><tr><td>4</td><td>Arma <strong>permanentemente</strong> danificada</td></tr><tr><td>5</td><td><strong>Atinge um aliado</strong> próximo ao alvo</td></tr><tr><td>6</td><td>Queda: −1 no CP, e uma ação de movimento para se levantar</td></tr></tbody></table><blockquote><p><strong>As de nave são outras</strong> — a T10-6, em Naves e Veículos. Mesma estrutura, com avaria de propulsão, armas e casco no lugar dos ferimentos.</p></blockquote><blockquote><p><strong>No Foundry</strong> as quatro são <strong>tabelas roláveis</strong>, no compêndio de tabelas, pasta <em>Combate</em>. Se a mesa usa um módulo de automação de combate com regras de crítico próprias, deixe-o em \"perguntar sempre\" e role estas — assim o crítico segue o Space Dragon, como o resto da mesa.</p></blockquote></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!dtZEmxxXyYUFz07T.0I0WHKsoCQfkE1HT"
+    },
+    {
+      "sort": 700000,
       "name": "A Força",
       "type": "text",
-      "_id": "DMn9hWFnt9DC6Jx8",
+      "_id": "NeoBG8tUl7bbhssr",
       "title": {
         "show": true,
         "level": 1
@@ -223,13 +260,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!dtZEmxxXyYUFz07T.DMn9hWFnt9DC6Jx8"
+      "_key": "!journal.pages!dtZEmxxXyYUFz07T.NeoBG8tUl7bbhssr"
     },
     {
-      "sort": 700000,
+      "sort": 800000,
       "name": "Equipamento, Dinheiro e Carga",
       "type": "text",
-      "_id": "TWxEs3OcNOVpbYL9",
+      "_id": "Nkdr8OohsguUu2B3",
       "title": {
         "show": true,
         "level": 1
@@ -260,13 +297,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!dtZEmxxXyYUFz07T.TWxEs3OcNOVpbYL9"
+      "_key": "!journal.pages!dtZEmxxXyYUFz07T.Nkdr8OohsguUu2B3"
     },
     {
-      "sort": 800000,
+      "sort": 900000,
       "name": "Naves",
       "type": "text",
-      "_id": "HJ77ncbHC3JHqGst",
+      "_id": "D4FRUQgUlkkO9BpN",
       "title": {
         "show": true,
         "level": 1
@@ -297,13 +334,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!dtZEmxxXyYUFz07T.HJ77ncbHC3JHqGst"
+      "_key": "!journal.pages!dtZEmxxXyYUFz07T.D4FRUQgUlkkO9BpN"
     },
     {
-      "sort": 900000,
+      "sort": 1000000,
       "name": "Aventura e Exploração",
       "type": "text",
-      "_id": "G2RBWLmEcKdH6ODF",
+      "_id": "kuMcIeF2XRhPAJWo",
       "title": {
         "show": true,
         "level": 1
@@ -334,13 +371,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!dtZEmxxXyYUFz07T.G2RBWLmEcKdH6ODF"
+      "_key": "!journal.pages!dtZEmxxXyYUFz07T.kuMcIeF2XRhPAJWo"
     },
     {
-      "sort": 1000000,
+      "sort": 1100000,
       "name": "Para o Mestre",
       "type": "text",
-      "_id": "W9NBA9wHfc7iFP0w",
+      "_id": "DSXvBNLRlnMRTPOB",
       "title": {
         "show": true,
         "level": 1
@@ -371,13 +408,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!dtZEmxxXyYUFz07T.W9NBA9wHfc7iFP0w"
+      "_key": "!journal.pages!dtZEmxxXyYUFz07T.DSXvBNLRlnMRTPOB"
     },
     {
-      "sort": 1100000,
+      "sort": 1200000,
       "name": "No Foundry",
       "type": "text",
-      "_id": "yXwy6NpNYGUVHUK0",
+      "_id": "sNIiHpNvxk6mAGrh",
       "title": {
         "show": true,
         "level": 1
@@ -408,13 +445,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!dtZEmxxXyYUFz07T.yXwy6NpNYGUVHUK0"
+      "_key": "!journal.pages!dtZEmxxXyYUFz07T.sNIiHpNvxk6mAGrh"
     },
     {
-      "sort": 1200000,
+      "sort": 1300000,
       "name": "Crédito",
       "type": "text",
-      "_id": "2L2Ti0kAF8uYc6WL",
+      "_id": "AwXvDRcH800TMpKE",
       "title": {
         "show": true,
         "level": 1
@@ -445,7 +482,7 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!dtZEmxxXyYUFz07T.2L2Ti0kAF8uYc6WL"
+      "_key": "!journal.pages!dtZEmxxXyYUFz07T.AwXvDRcH800TMpKE"
     }
   ],
   "flags": {},

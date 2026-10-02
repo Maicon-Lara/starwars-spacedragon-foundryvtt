@@ -1,5 +1,34 @@
 # Changelog
 
+## 1.22.0 — os críticos do Space Dragon
+
+As tabelas **T7-4** (acertos) e **T7-5** (falhas) do Cap. 7 entraram no
+compêndio como **tabelas roláveis**, junto das duas de nave (T10-6) — quatro no
+total, na pasta *Combate*.
+
+**Por que tabela rolável, e não automação.** O crítico de personagem é rolado
+pela ficha do **sistema**, e há módulos de automação de combate que já o tratam
+— o *Old Dragon 2: Qualidade de Vida* tem as regras do LB1 e do LB2. Disputar
+aquele momento significaria dois módulos reagindo ao mesmo 20 natural, com dois
+cartões e duas regras. Uma RollTable não disputa nada: fica no compêndio, e
+quem rola é a mesa.
+
+Para quem usa aquele módulo: deixe a opção de crítico dele em **"perguntar
+sempre"** e role estas no lugar — assim o crítico segue o Space Dragon, como o
+resto da mesa.
+
+**A regra é maior que a tabela**, e está na descrição de cada uma: no 20 natural
+o dano **já é ×2** ("ou um número maior caso o atacante seja um Cosmonauta"), e
+a tabela é *opcional*, por cima disso. No 1 natural o erro é automático,
+*independentemente de BA ou CP*.
+
+**De onde elas vieram.** Nem o cofre nem o DOCX do livro as têm inteiras: a
+transcrição não traz a tabela, e o DOCX perde duas das seis linhas da T7-4 —
+mais um caso de tabela diagramada em caixa de texto. Saíram do PDF.
+
+A **Referência rápida** ganhou a seção com as duas tabelas e o aviso sobre a
+convivência com módulos de automação.
+
 ## 1.21.1 — conviver com outros módulos
 
 A Ordem de Ação da 1.21.0 inverte a ordenação do Combat Tracker estendendo a

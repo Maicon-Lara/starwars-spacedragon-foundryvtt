@@ -24,6 +24,7 @@ export const referenciaJournal = {
     { title: "Rolar os Dados", content: r["Rolar os dados"] },
     { title: "A Ordem de Ação", content: r["A Ordem de Ação"] },
     { title: "Combate de Personagem", content: r["Combate de personagem"] },
+    { title: "Acertos e Falhas Críticas", content: r["Acertos e falhas críticas"] },
     { title: "A Força", content: r["A Força"] },
     { title: "Equipamento, Dinheiro e Carga", content: r["Equipamento, dinheiro e carga"] },
     { title: "Naves", content: r["Naves"] },
