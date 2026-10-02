@@ -606,3 +606,19 @@ body.theme-dark .starwars-sd.nave-ficha.tema-auto,
   border-left: 3px solid var(--nave-perigo);
   background: color-mix(in srgb, var(--nave-perigo) 12%, transparent);
 }
+
+/* ── COMBUSTÍVEL (T10-3) ───────────────────────────────────────────────────
+ * A barra é o que se lê de longe: o número exato importa menos que "ainda dá
+ * para chegar?". Abaixo de 20% ela vira âmbar; seca, vermelha. */
+.starwars-sd.nave-ficha .barra-comb {
+  flex: 1 1 auto; height: 10px; min-width: 60px;
+  border: 1px solid var(--nave-linha); border-radius: 5px; overflow: hidden;
+}
+.starwars-sd.nave-ficha .barra-comb .cheio {
+  height: 100%; background: var(--sd-brilho); transition: width .2s;
+}
+.starwars-sd.nave-ficha .pct-comb {
+  font-variant-numeric: tabular-nums; font-weight: 700; font-size: 12px; min-width: 3.2em; text-align: right;
+}
+.starwars-sd.nave-ficha .pct-comb.seco { color: var(--nave-perigo); }
+.starwars-sd.nave-ficha .combustivel .fonte { width: 100%; margin-top: 4px; font-size: 11px; }

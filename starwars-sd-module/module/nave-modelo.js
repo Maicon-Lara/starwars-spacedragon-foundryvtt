@@ -157,8 +157,10 @@ export {
 export {
   EQUIPAMENTOS_DE_NAVE, TAMANHOS, cabeNoTamanho, equipamentosDoTamanho,
   efeitosInstalados, conflitosDeTamanho, armasInstaladas,
+  FONTES_DE_ENERGIA, DADO_DE_AUTONOMIA, formulaDeGasto, custoDeAbastecimento,
+  VEICULOS, PENALIDADE_POR, penalidadeNaJPR,
 } from "./equipamentos-nave.js";
-import { EQUIPAMENTOS_DE_NAVE } from "./equipamentos-nave.js";
+import { EQUIPAMENTOS_DE_NAVE, FONTES_DE_ENERGIA } from "./equipamentos-nave.js";
 
 /** Os postos do Modo Tripulação. */
 export const POSTOS = {
@@ -255,6 +257,17 @@ export class NaveDataModel extends foundry.abstract.TypeDataModel {
 
       // Fuga: as etapas do salto já feitas, e as marcas do perseguidor.
       fuga: new fields.SchemaField({ etapas: num(0), perseguidor: num(0) }),
+
+      // ── COMBUSTÍVEL (T10-3) ──────────────────────────────────────────────
+      //
+      // De 0 a 100%, qualquer que seja o número de tanques — é assim no livro.
+      // Nasce CHEIO: uma nave recém-criada acabou de sair do hangar, e começar
+      // com o tanque vazio seria uma surpresa desagradável no meio da primeira
+      // cena. A fonte padrão é o combustível líquido, a mais comum da T10-3.
+      combustivel: num(100),
+      fonte: new fields.StringField({
+        required: true, initial: "liquido", choices: Object.keys(FONTES_DE_ENERGIA),
+      }),
 
       // ── OS EQUIPAMENTOS ADICIONAIS (T10-4) ───────────────────────────────
       //

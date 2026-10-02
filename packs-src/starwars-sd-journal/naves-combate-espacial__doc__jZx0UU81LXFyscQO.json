@@ -227,9 +227,46 @@
     },
     {
       "sort": 700000,
+      "name": "Fontes de Energia e Combustível (T10-3)",
+      "type": "text",
+      "_id": "pqQbadj0kbWJ8oYM",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc c-naves\"><p>Toda nave tem um nível de combustível de <strong>0% a 100%</strong>, qualquer que seja o número de tanques. Ele cai conforme a nave cruza o espaço, manobra, pousa e decola — e é o que transforma distância em decisão.</p><table><thead><tr><th>Fonte</th><th>Raridade</th><th>Abastecimento (P / M / G / C)</th><th>Autonomia</th></tr></thead><tbody><tr><td><strong>Combustível líquido</strong></td><td>Comum</td><td>500 / 1.000 / 10.000 / 100.000</td><td>Média</td></tr><tr><td><strong>Incineração de detritos</strong></td><td>Incomum</td><td>50 / 100 / 1.000 / 10.000</td><td>Baixa</td></tr><tr><td><strong>Painéis termoenergéticos</strong></td><td>Rara</td><td>—</td><td>Variável</td></tr><tr><td><strong>Reatores atômicos</strong></td><td>Comum</td><td>1.000 / 10.000 / 100.000 / 1.000.000</td><td>Alta</td></tr></tbody></table><p>O preço é <strong>por ponto percentual</strong>: encher 10% custa dez vezes o valor da tabela.</p><h3>Quanto se gasta</h3><p>O livro não dá uma tabela de consumo, e dá algo melhor — uma régua de duas peças:</p><ol><li><strong>A autonomia escolhe o dado.</strong> Baixa → <strong>d6</strong> · Média → <strong>d4</strong> · Alta → <strong>d2</strong>.</li><li><strong>A ação escolhe quantos dados</strong>, de <strong>1 a 3</strong>, pelo custo dela.</li></ol><p>Role e desconte <strong>em pontos percentuais</strong>.</p><blockquote><p><strong>Exemplo do livro.</strong> Uma espaçonave particular com combustível líquido (<strong>d4</strong>) dá um salto hiperespacial. O Mestre vê pouca interferência gravitacional e atribui gasto <strong>2</strong> — a tripulação perde <strong>2d4%</strong> do combustível.</p></blockquote><p>Um dia de viagem costuma ser <strong>gasto 1</strong>. Em combate, <strong>movimentação dupla</strong> e <strong>manobras evasivas</strong> gastam combustível a critério do Mestre — e é daí que vem o aviso, três seções acima, de que elas custam.</p><blockquote><p><strong>Combustível não é a Energia do reator.</strong> São dois recursos, em escalas diferentes: o <strong>combustível</strong> é de viagem, medido em % e reposto em estação; a <strong>Energia</strong> da seção <em>A tripulação</em> é de <strong>rodada</strong>, repartida pelo Engenheiro e zerada no fim. Uma nave pode estar com o tanque cheio e sem energia para os escudos naquela rodada.</p></blockquote></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.pqQbadj0kbWJ8oYM"
+    },
+    {
+      "sort": 800000,
       "name": "Combate Espacial: o Princípio",
       "type": "text",
-      "_id": "kQS7XUEGzZQL0Tm7",
+      "_id": "Ku1meP2Cx15aTf4K",
       "title": {
         "show": true,
         "level": 1
@@ -260,13 +297,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.kQS7XUEGzZQL0Tm7"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.Ku1meP2Cx15aTf4K"
     },
     {
-      "sort": 800000,
+      "sort": 900000,
       "name": "Combate Espacial: as Ações da Nave",
       "type": "text",
-      "_id": "jmoDHlsW7VmDkDnm",
+      "_id": "11AIiuvP0hYG9Msk",
       "title": {
         "show": true,
         "level": 1
@@ -297,13 +334,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.jmoDHlsW7VmDkDnm"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.11AIiuvP0hYG9Msk"
     },
     {
-      "sort": 900000,
+      "sort": 1000000,
       "name": "Combate Espacial: Disparo de Armas",
       "type": "text",
-      "_id": "QayhhJiAWmQzecz4",
+      "_id": "33ouE7ZYDgAUJZIj",
       "title": {
         "show": true,
         "level": 1
@@ -334,13 +371,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.QayhhJiAWmQzecz4"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.33ouE7ZYDgAUJZIj"
     },
     {
-      "sort": 1000000,
+      "sort": 1100000,
       "name": "Combate Espacial: Manobras Evasivas",
       "type": "text",
-      "_id": "wTt1hmIQlEAP7aSG",
+      "_id": "CydQtEcXZVZKjdpd",
       "title": {
         "show": true,
         "level": 1
@@ -371,13 +408,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.wTt1hmIQlEAP7aSG"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.CydQtEcXZVZKjdpd"
     },
     {
-      "sort": 1100000,
+      "sort": 1200000,
       "name": "Combate Espacial: Críticos e Falhas",
       "type": "text",
-      "_id": "gAEHIML6Qk0ClZkJ",
+      "_id": "hGcoEldKUo5zBGKb",
       "title": {
         "show": true,
         "level": 1
@@ -408,13 +445,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.gAEHIML6Qk0ClZkJ"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.hGcoEldKUo5zBGKb"
     },
     {
-      "sort": 1200000,
+      "sort": 1300000,
       "name": "Combate Espacial: Chegar a Zero",
       "type": "text",
-      "_id": "vCcQPoJxV9R4yKpK",
+      "_id": "Olmv1E5TRORdLb9c",
       "title": {
         "show": true,
         "level": 1
@@ -445,13 +482,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.vCcQPoJxV9R4yKpK"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.Olmv1E5TRORdLb9c"
     },
     {
-      "sort": 1300000,
+      "sort": 1400000,
       "name": "Combate Espacial: Nave Avariada",
       "type": "text",
-      "_id": "d1vWVFH4qjc07XVe",
+      "_id": "tFUl36HAmUSSxpiU",
       "title": {
         "show": true,
         "level": 1
@@ -482,13 +519,50 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.d1vWVFH4qjc07XVe"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.tFUl36HAmUSSxpiU"
     },
     {
-      "sort": 1400000,
+      "sort": 1500000,
+      "name": "Quando Gente e Nave se Enfrentam",
+      "type": "text",
+      "_id": "xPVnTejN1Pih7gaa",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc c-naves\"><p>Um combate não separa as escalas: personagens atiram em naves, e naves atiram em personagens. O livro trata os dois lados, e de formas diferentes.</p><h3>Pessoas contra a nave</h3><p>Pode-se atacar um veículo ou nave com <strong>armas comuns</strong> — sem o BA da arma montada. O CP alto torna isso difícil, mas não impossível com uma rolagem alta.</p><p>A saída melhor é <strong>granada, míssil ou explosivo</strong>: eles forçam uma <strong>JP da nave</strong> (com o teste de pilotagem antes, pela T10-5), o que costuma dar mais chance do que furar o CP.</p><h3>A nave contra as pessoas</h3><p>Aqui a regra inverte, e de propósito: <em>\"a ficção científica retrô é sobre intrépidos exploradores espaciais que conseguem facilmente desviar de lasers\"</em>.</p><ul><li>Os alvos fazem <strong>JPR</strong>; quem passa <strong>reduz o dano à metade</strong>.</li><li>Role o ataque da arma <strong>para cada alvo</strong>, somando o <strong>BA do veículo ou nave</strong> e o <strong>BA à distância de quem opera a arma</strong>.</li><li><strong>A cada 20 pontos no resultado do ataque, os alvos levam −2 na JPR.</strong></li></ul><blockquote><p>Um ataque que somar <strong>37</strong> dá <strong>−2</strong> na JPR dos alvos; <strong>41</strong> dá <strong>−4</strong>. É a régua que faz a torre de um AT-AT ser aterrorizante sem ser instantânea — e é por isso que correr para fora do campo de tiro continua valendo a pena.</p></blockquote></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.xPVnTejN1Pih7gaa"
+    },
+    {
+      "sort": 1600000,
       "name": "O Salto para o Hiperespaço",
       "type": "text",
-      "_id": "y9FsyrXQxs1rrKsr",
+      "_id": "8ky3wevN4lbqPe7r",
       "title": {
         "show": true,
         "level": 1
@@ -519,13 +593,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.y9FsyrXQxs1rrKsr"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.8ky3wevN4lbqPe7r"
     },
     {
-      "sort": 1500000,
+      "sort": 1700000,
       "name": "A Tripulação: os Postos",
       "type": "text",
-      "_id": "z9l2QQ5Er8gr0Ffp",
+      "_id": "LNAMUvnuxDFU3nx6",
       "title": {
         "show": true,
         "level": 1
@@ -556,13 +630,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.z9l2QQ5Er8gr0Ffp"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.LNAMUvnuxDFU3nx6"
     },
     {
-      "sort": 1600000,
+      "sort": 1800000,
       "name": "A Tripulação: Energia",
       "type": "text",
-      "_id": "jAyLFAMqBXmOG2KM",
+      "_id": "xmw7WnDPFC8xwirY",
       "title": {
         "show": true,
         "level": 1
@@ -593,13 +667,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.jAyLFAMqBXmOG2KM"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.xmw7WnDPFC8xwirY"
     },
     {
-      "sort": 1700000,
+      "sort": 1900000,
       "name": "A Tripulação: Controle de Avarias",
       "type": "text",
-      "_id": "UGwtzomALVX90aTd",
+      "_id": "wqxX2Ma3CPOsJQnl",
       "title": {
         "show": true,
         "level": 1
@@ -630,13 +704,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.UGwtzomALVX90aTd"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.wqxX2Ma3CPOsJQnl"
     },
     {
-      "sort": 1800000,
+      "sort": 2000000,
       "name": "A Tripulação: Fuga e Perseguição",
       "type": "text",
-      "_id": "Y0GnxODD2Tq2C12Q",
+      "_id": "DKHDxf4NFYNzNuig",
       "title": {
         "show": true,
         "level": 1
@@ -667,13 +741,87 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.Y0GnxODD2Tq2C12Q"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.DKHDxf4NFYNzNuig"
     },
     {
-      "sort": 1900000,
+      "sort": 2100000,
+      "name": "Veículos (T10-7)",
+      "type": "text",
+      "_id": "uhZVpLEA4DFt0D0g",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc c-naves\"><p>Nem toda viagem é espacial. Os veículos usam <strong>as mesmas regras de pilotagem e de combate</strong> das naves, inclusive em pequena e grande escala — e <strong>as armas da T10-4 valem neles</strong>, com os limites que o Mestre achar razoáveis para o tamanho reduzido.</p><table><thead><tr><th>Tipo</th><th>Tam.</th><th>Tripulação</th><th>PV</th><th>BA</th><th>CP</th><th>JP</th><th>Mov.</th></tr></thead><tbody><tr><td><strong>Aerocarro</strong></td><td>Pequeno</td><td>1 a 4</td><td>1d100</td><td>+10</td><td>22</td><td>14</td><td>40 m</td></tr><tr><td><strong>Hidrocarro</strong></td><td>Pequeno</td><td>1 a 4</td><td>1d100</td><td>+10</td><td>22</td><td>14</td><td>40 m</td></tr><tr><td><strong>Submersível</strong></td><td>Médio</td><td>1 a 6</td><td>2d100</td><td>+16</td><td>28</td><td>16</td><td>40 m</td></tr><tr><td><strong>Veículo de exploração</strong></td><td>Médio</td><td>1 a 6</td><td>2d100</td><td>+16</td><td>28</td><td>16</td><td>30 m</td></tr><tr><td><strong>Submarino</strong></td><td>Grande</td><td>1 a 10</td><td>3d100</td><td>+14</td><td>26</td><td>12</td><td>30 m</td></tr><tr><td><strong>Tanque de guerra</strong></td><td>Grande</td><td>1 a 10</td><td>3d100</td><td>+20</td><td>30</td><td>12</td><td>20 m</td></tr><tr><td><strong>Aeroplano</strong></td><td>Enorme</td><td>1 a 20</td><td>1d1000</td><td>+12</td><td>24</td><td>10</td><td>120 m</td></tr><tr><td><strong>Cargueiro terrestre</strong></td><td>Enorme</td><td>1 a 20</td><td>1d1000</td><td>+12</td><td>24</td><td>10</td><td>30 m</td></tr></tbody></table><blockquote><p><strong>Na galáxia.</strong> O <strong>speeder</strong> e o <strong>landspeeder</strong> são Aerocarro; a <strong>speeder bike</strong>, um Aerocarro de tripulação 1. O <strong>AT-ST</strong> é Tanque de guerra; o <strong>AT-AT</strong>, um Tanque com PV de Enorme, a critério do Mestre. A <strong>lançadeira</strong> atmosférica é Aeroplano, e o <strong>sandcrawler</strong> jawa é Cargueiro terrestre. Em água: o submersível de Naboo, o <strong>Bongo</strong>, é Submersível.</p><p><strong>O Tanque de guerra tem a maior BA da tabela (+20) e o maior CP (30)</strong> — mais do que um Cruzador em BA. Não se enfrenta um AT-AT de frente; derruba-se com cabo nas pernas, que é o que o filme mostra.</p></blockquote></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.uhZVpLEA4DFt0D0g"
+    },
+    {
+      "sort": 2200000,
+      "name": "Estações Espaciais (T10-8)",
+      "type": "text",
+      "_id": "0IBYQ9wtOF4bKpQP",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc c-naves\"><p>Enquanto as naves são lares móveis, as <strong>estações</strong> são a moradia de quem não sai — e a parada obrigatória de quem sai. Em geral <strong>colossais</strong>, orbitando um corpo celeste ou pousadas em superfície, abrigam de dezenas a centenas de naves.</p><p><strong>Todas as câmaras de nave existem nelas</strong>, maiores e em maior número, e o Mestre pode criar ambientes que nave nenhuma comporta. Muitas são posto de alfândega e ponto de entrada obrigatório de um planeta — e <strong>quase todas têm armamento de defesa</strong>, agindo contra naves não identificadas.</p><table><thead><tr><th>Serviço</th><th>Preço</th><th>O que é</th></tr></thead><tbody><tr><td><strong>Estadia da tripulação</strong></td><td>5.000</td><td>por pessoa, com refeições, cobrado por dia</td></tr><tr><td><strong>Pouso e hangar</strong></td><td>10.000 / 50.000 / 100.000</td><td>por dia, pelo tamanho da nave (P/M/G)</td></tr><tr><td><strong>Abastecimento</strong></td><td>variável</td><td>pela fonte e pelo tamanho — ver a tabela de fontes</td></tr><tr><td><strong>Manutenção de rotina</strong></td><td>10.000 / 25.000 / 75.000</td><td>pelo tamanho (P/M/G)</td></tr><tr><td><strong>Reparos mecânicos</strong></td><td>1.000</td><td><strong>por PV</strong> recuperado</td></tr></tbody></table><blockquote><p><strong>O que isso faz com a campanha.</strong> Reparar uma nave de 200 PV até o topo custa 200.000 créditos — mais do que muitas naves valem. É o número que empurra o grupo a consertar em campo, com o Técnico e a Sala de Máquinas, e a tratar o estaleiro como último recurso. A estadia diária é o que transforma ficar parado numa decisão.</p></blockquote></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.0IBYQ9wtOF4bKpQP"
+    },
+    {
+      "sort": 2300000,
       "name": "Qual Modo Usar",
       "type": "text",
-      "_id": "agJehDPtZHW7zXsI",
+      "_id": "Ar5SftKE9DwCOCOL",
       "title": {
         "show": true,
         "level": 1
@@ -704,13 +852,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.agJehDPtZHW7zXsI"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.Ar5SftKE9DwCOCOL"
     },
     {
-      "sort": 2000000,
+      "sort": 2400000,
       "name": "As Duas Fichas de Nave",
       "type": "text",
-      "_id": "snLCQvWeofwoCWN2",
+      "_id": "JOySteLzofxF1g9H",
       "title": {
         "show": true,
         "level": 1
@@ -741,13 +889,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.snLCQvWeofwoCWN2"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.JOySteLzofxF1g9H"
     },
     {
-      "sort": 2100000,
+      "sort": 2500000,
       "name": "Combate Tático: Preparação",
       "type": "text",
-      "_id": "4q2B5oB11Qyk1L3a",
+      "_id": "AbVRj0fpQAEJ3sYB",
       "title": {
         "show": true,
         "level": 1
@@ -778,13 +926,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.4q2B5oB11Qyk1L3a"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.AbVRj0fpQAEJ3sYB"
     },
     {
-      "sort": 2200000,
+      "sort": 2600000,
       "name": "Combate Tático: a Rodada",
       "type": "text",
-      "_id": "tlfDh4rP8uTYneWr",
+      "_id": "a8VX1umSAaYinzFv",
       "title": {
         "show": true,
         "level": 1
@@ -815,13 +963,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.tlfDh4rP8uTYneWr"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.a8VX1umSAaYinzFv"
     },
     {
-      "sort": 2300000,
+      "sort": 2700000,
       "name": "Combate Tático: Atacar",
       "type": "text",
-      "_id": "BcXTCALrZTCDvWPt",
+      "_id": "bX4k7lyRsCsbTbvs",
       "title": {
         "show": true,
         "level": 1
@@ -852,13 +1000,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.BcXTCALrZTCDvWPt"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.bX4k7lyRsCsbTbvs"
     },
     {
-      "sort": 2400000,
+      "sort": 2800000,
       "name": "Combate Tático: o Modo dele",
       "type": "text",
-      "_id": "ZtQ8e8fi2l4WzeNi",
+      "_id": "v5sd5Yq4kUkGh0BC",
       "title": {
         "show": true,
         "level": 1
@@ -889,13 +1037,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.ZtQ8e8fi2l4WzeNi"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.v5sd5Yq4kUkGh0BC"
     },
     {
-      "sort": 2500000,
+      "sort": 2900000,
       "name": "Combate Tático: Ajuste de Ritmo",
       "type": "text",
-      "_id": "t6LmlkGCeoqlDtXR",
+      "_id": "mOwlgulBdByJHHw9",
       "title": {
         "show": true,
         "level": 1
@@ -926,13 +1074,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.t6LmlkGCeoqlDtXR"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.mOwlgulBdByJHHw9"
     },
     {
-      "sort": 2600000,
+      "sort": 3000000,
       "name": "A Ficha Tática de Nave",
       "type": "text",
-      "_id": "C8ei3oIgxZVfUedh",
+      "_id": "w2dFVVUXLGHF8w8f",
       "title": {
         "show": true,
         "level": 1
@@ -963,13 +1111,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.C8ei3oIgxZVfUedh"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.w2dFVVUXLGHF8w8f"
     },
     {
-      "sort": 2700000,
+      "sort": 3100000,
       "name": "Crédito",
       "type": "text",
-      "_id": "q93GArTZmc42tp1f",
+      "_id": "q7HmZOGNApHafqCx",
       "title": {
         "show": true,
         "level": 1
@@ -1000,7 +1148,7 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.q93GArTZmc42tp1f"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.q7HmZOGNApHafqCx"
     }
   ],
   "flags": {},

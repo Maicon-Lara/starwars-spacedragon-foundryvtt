@@ -1,5 +1,46 @@
 # Changelog
 
+## 1.19.0 — o resto do capítulo 10
+
+Auditoria do Cap. 10 inteiro, seção por seção, contra o que o cenário tinha.
+Faltavam **quatro** coisas, e uma delas era regra de combate.
+
+**§10.3 — Fontes de energia e combustível (T10-3).** O cenário dizia em três
+lugares que manobra evasiva, movimentação dupla e salto "gastam combustível" —
+e nunca dizia **quanto**. O livro não dá tabela de consumo, e dá algo melhor: a
+**autonomia** da fonte escolhe o dado (baixa **d6**, média **d4**, alta **d2**) e
+a **ação** escolhe quantos, de 1 a 3. Role e desconte em pontos percentuais.
+
+As quatro fontes entraram com raridade, autonomia e custo por tamanho — e o
+custo é **por ponto percentual**, então encher uma nave média de combustível
+líquido custa 100.000 créditos. A ficha ganhou barra de tanque, seletor de fonte
+e um botão que rola o gasto ou abastece.
+
+**Quando gente e nave se enfrentam.** Era a lacuna mais séria, porque é regra de
+combate usada toda vez que um PJ atira numa nave ou leva tiro de uma. Pessoas
+podem atacar com armas comuns, contra o CP alto, e granadas forçam **JP da
+nave**. No sentido inverso, a regra se inverte de propósito — *"a ficção
+científica retrô é sobre exploradores que desviam de lasers"*: os alvos fazem
+**JPR** e quem passa reduz o dano à metade, mas **a cada 20 pontos no ataque
+levam −2 na JPR**. Um ataque de 37 dá −2; de 41, −4.
+
+**§10.7 — Veículos (T10-7).** Oito veículos terrestres, aquáticos e aéreos, com
+as mesmas regras de pilotagem e combate — e **as armas da T10-4 valem neles**. A
+escala de tamanho é **outra** (Pequeno/Médio/Grande/Enorme), e o teste impede
+que ela se misture com a das naves. O **Tanque de guerra** tem BA +20 e CP 30:
+mais BA que um Cruzador, o que explica por que não se enfrenta um AT-AT de
+frente.
+
+**§10.8 — Estações espaciais (T10-8).** Serviços e preços: estadia, hangar,
+manutenção e **reparo a 1.000 créditos por PV**. Esse último número tem efeito de
+campanha — recuperar 200 PV custa 200.000, mais do que muitas naves valem, e é o
+que empurra o grupo a consertar em campo com o Técnico e a Sala de Máquinas.
+
+**Sobre armamento padrão:** a T10-1 **não tem coluna de armas**. Nenhuma nave vem
+armada pela tabela; as armas são todas da T10-4. Os Disparadores laser são "a
+arma mais comum em espaçonaves" e cabem em qualquer tamanho, mas por hábito, e
+não por regra — então continuam nascendo desinstalados.
+
 ## 1.18.0 — os equipamentos adicionais de nave (T10-4)
 
 A **Tabela 10-4** do livro nunca tinha entrado no cenário — e, pior, parte dela

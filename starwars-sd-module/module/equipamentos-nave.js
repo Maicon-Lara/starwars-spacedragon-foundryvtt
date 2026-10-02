@@ -187,3 +187,97 @@ export function armasInstaladas(instalados = {}, tamanho = "Média") {
     .filter(([k, e]) => e.efeito?.arma && instalados[k] === true && cabeNoTamanho(k, tamanho))
     .map(([, e]) => ({ ...e.efeito.arma, ataques: e.efeito.ataques ?? 1 }));
 }
+
+/* ── FONTES DE ENERGIA E COMBUSTÍVEL (T10-3) ───────────────────────────────
+ *
+ * O combustível é o recurso de VIAGEM: 0% a 100%, reposto em estação. Não se
+ * confunde com a Energia do reator, de tripulacao.js, que é o recurso de
+ * RODADA — uma nave pode estar com o tanque cheio e sem energia para os
+ * escudos naquela rodada.
+ *
+ * O livro não dá tabela de consumo, e dá algo melhor: a AUTONOMIA escolhe o
+ * dado, e a AÇÃO escolhe quantos dados. Role e desconte em pontos percentuais.
+ */
+export const FONTES_DE_ENERGIA = {
+  liquido: {
+    rotulo: "Combustível líquido",
+    raridade: "Comum",
+    autonomia: "Média",
+    custo: { Pequena: 500, "Média": 1000, Gigantesca: 10000, Colossal: 100000 },
+  },
+  detritos: {
+    rotulo: "Incineração de detritos",
+    raridade: "Incomum",
+    autonomia: "Baixa",
+    custo: { Pequena: 50, "Média": 100, Gigantesca: 1000, Colossal: 10000 },
+  },
+  solar: {
+    rotulo: "Painéis termoenergéticos",
+    raridade: "Rara",
+    autonomia: "Variável",
+    custo: null, // o livro não dá preço: não se abastece, se expõe ao sol
+  },
+  atomico: {
+    rotulo: "Reatores atômicos",
+    raridade: "Comum",
+    autonomia: "Alta",
+    custo: { Pequena: 1000, "Média": 10000, Gigantesca: 100000, Colossal: 1000000 },
+  },
+};
+
+/** A autonomia escolhe o dado do consumo. */
+export const DADO_DE_AUTONOMIA = { Baixa: 6, "Média": 4, Alta: 2, "Variável": 4 };
+
+/**
+ * A fórmula do gasto: `N` dados da autonomia, em pontos percentuais.
+ *
+ * `gasto` é de 1 a 3, e quem decide é o Mestre — um dia de viagem costuma ser 1.
+ */
+export function formulaDeGasto(fonte, gasto = 1) {
+  const faces = DADO_DE_AUTONOMIA[FONTES_DE_ENERGIA[fonte]?.autonomia] ?? 4;
+  const n = Math.max(1, Math.min(3, Number(gasto) || 1));
+  return `${n}d${faces}`;
+}
+
+/** O que custa encher `pct` pontos percentuais desta nave. */
+export function custoDeAbastecimento(fonte, tamanho, pct = 100) {
+  const porPonto = FONTES_DE_ENERGIA[fonte]?.custo?.[tamanho];
+  if (porPonto == null) return null;  // painéis solares: não se abastece
+  return porPonto * Math.max(0, Math.min(100, Number(pct) || 0));
+}
+
+/* ── VEÍCULOS TERRESTRES, AQUÁTICOS E AÉREOS (T10-7) ───────────────────────
+ *
+ * Mesmas regras de pilotagem e combate das naves, e as armas da T10-4 valem
+ * neles — com os limites que o Mestre achar razoáveis para o tamanho reduzido.
+ *
+ * A ESCALA DE TAMANHO É OUTRA: aqui é Pequeno/Médio/Grande/Enorme, e não o
+ * Pequena/Média/Gigantesca/Colossal das naves. São tabelas diferentes, e
+ * misturá-las faria um tanque de guerra receber equipamento de cruzador.
+ */
+export const VEICULOS = {
+  aerocarro: { rotulo: "Aerocarro", tamanho: "Pequeno", tripulacao: "1 a 4", pv: "1d100", ba: 10, cp: 22, jp: 14, mov: "40 m" },
+  hidrocarro: { rotulo: "Hidrocarro", tamanho: "Pequeno", tripulacao: "1 a 4", pv: "1d100", ba: 10, cp: 22, jp: 14, mov: "40 m" },
+  submersivel: { rotulo: "Submersível", tamanho: "Médio", tripulacao: "1 a 6", pv: "2d100", ba: 16, cp: 28, jp: 16, mov: "40 m" },
+  exploracao: { rotulo: "Veículo de exploração", tamanho: "Médio", tripulacao: "1 a 6", pv: "2d100", ba: 16, cp: 28, jp: 16, mov: "30 m" },
+  submarino: { rotulo: "Submarino", tamanho: "Grande", tripulacao: "1 a 10", pv: "3d100", ba: 14, cp: 26, jp: 12, mov: "30 m" },
+  tanque: { rotulo: "Tanque de guerra", tamanho: "Grande", tripulacao: "1 a 10", pv: "3d100", ba: 20, cp: 30, jp: 12, mov: "20 m" },
+  aeroplano: { rotulo: "Aeroplano", tamanho: "Enorme", tripulacao: "1 a 20", pv: "1d1000", ba: 12, cp: 24, jp: 10, mov: "120 m" },
+  cargueiroTerrestre: { rotulo: "Cargueiro terrestre", tamanho: "Enorme", tripulacao: "1 a 20", pv: "1d1000", ba: 12, cp: 24, jp: 10, mov: "30 m" },
+};
+
+/* ── QUANDO GENTE E NAVE SE ENFRENTAM ──────────────────────────────────────
+ *
+ * A nave atirando em pessoas tem regra própria, e ela inverte o sentido usual:
+ * os alvos fazem JPR e quem passa reduz o dano à metade — "a ficção científica
+ * retrô é sobre exploradores que desviam de lasers".
+ *
+ * A cada 20 pontos no resultado do ataque, os alvos levam −2 na JPR. É a régua
+ * que faz a torre de um AT-AT ser aterrorizante sem ser instantânea.
+ */
+export const PENALIDADE_POR = 20;
+
+export function penalidadeNaJPR(totalDoAtaque) {
+  const n = Math.max(0, Number(totalDoAtaque) || 0);
+  return -2 * Math.floor(n / PENALIDADE_POR);
+}

@@ -33,6 +33,7 @@ import {
   LIMPA_NO_FIM_DA_RODADA,
   EQUIPAMENTOS_DE_NAVE, equipamentosDoTamanho, efeitosInstalados,
   conflitosDeTamanho, armasInstaladas,
+  FONTES_DE_ENERGIA, formulaDeGasto, custoDeAbastecimento, penalidadeNaJPR,
 } from "./nave-modelo.js";
 import { moverNave, conferirEscala, casasDaManobra } from "./nave-movimento.js";
 
@@ -204,6 +205,7 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
       perseguidor: NaveFicha.#perseguidor,
       etapaDoSalto: NaveFicha.#etapaDoSalto,
       equipamento: NaveFicha.#equipamento,
+      combustivel: NaveFicha.#combustivel,
     },
   };
 
@@ -251,6 +253,19 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
       })),
       semPonte: !camaraOperacional(s, "ponte"),
       ordemLivro: Object.values(ORDEM_LIVRO),
+
+      // ── O COMBUSTÍVEL (T10-3) ──
+      combustivel: {
+        pct: Math.max(0, Math.min(100, s.combustivel ?? 100)),
+        fonte: FONTES_DE_ENERGIA[s.fonte]?.rotulo ?? "—",
+        autonomia: FONTES_DE_ENERGIA[s.fonte]?.autonomia ?? "—",
+        // o que custa encher o que falta, na escala de créditos do livro
+        encher: custoDeAbastecimento(s.fonte, TIPOS[s.tipo]?.tamanho,
+                                     100 - (s.combustivel ?? 100)),
+        fontes: Object.entries(FONTES_DE_ENERGIA).map(([k, f]) => ({
+          chave: k, ...f, sel: k === s.fonte,
+        })),
+      },
 
       // ── OS EQUIPAMENTOS ADICIONAIS (T10-4) ──
       // A lista é filtrada pelo TAMANHO da nave: a tabela do livro diz onde
@@ -941,6 +956,63 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
     linhas.push(`<p class="dica"><em>${acao.nota}</em></p>`);
     await this.actor.update(upd);
     await card(this.actor, `Posto: ${POSTOS[posto].rotulo}`, linhas.join(""), rolls);
+  }
+
+  /**
+   * O gasto de combustível (T10-3).
+   *
+   * O livro não dá tabela de consumo e dá uma régua de duas peças: a AUTONOMIA
+   * da fonte escolhe o dado (baixa d6, média d4, alta d2) e a AÇÃO escolhe
+   * quantos dados, de 1 a 3. O resultado desconta em pontos percentuais.
+   */
+  static async #combustivel() {
+    const s = this.actor.system;
+    const r = await pergunta({
+      titulo: `Combustível — ${this.actor.name}`,
+      conteudo:
+        `<form class="starwars-sd-nave-dialogo">` +
+        `<p>Fonte: <strong>${FONTES_DE_ENERGIA[s.fonte]?.rotulo}</strong> ` +
+        `(autonomia ${FONTES_DE_ENERGIA[s.fonte]?.autonomia}). ` +
+        `Tanque em <strong>${s.combustivel ?? 100}%</strong>.</p>` +
+        `<div class="linha"><label>Custo da ação</label><select name="gasto">` +
+        `<option value="1">1 — rotina (um dia de viagem)</option>` +
+        `<option value="2" selected>2 — exigente (salto, manobra evasiva)</option>` +
+        `<option value="3">3 — extremo (fuga longa, trajeto hostil)</option>` +
+        `</select></div>` +
+        `<p class="dica"><em>A autonomia escolhe o dado; a ação, quantos. ` +
+        `Quem decide o custo é o Mestre.</em></p></form>`,
+      botoes: [
+        { chave: "gastar", rotulo: "Gastar", padrao: true },
+        { chave: "encher", rotulo: "Abastecer" },
+      ],
+    });
+    if (!r) return;
+
+    if (r.acao === "encher") {
+      const custo = custoDeAbastecimento(s.fonte, TIPOS[s.tipo]?.tamanho,
+                                         100 - (s.combustivel ?? 0));
+      await this.actor.update({ "system.combustivel": 100 });
+      return void await card(this.actor, "Abastecida",
+        `<p class="result">Tanque em <strong>100%</strong>.</p>` +
+        (custo == null
+          ? `<p class="dica"><em>Painéis termoenergéticos não se abastecem: basta sol.</em></p>`
+          : `<p class="dica"><em>Custo: ${custo.toLocaleString("pt-BR")} créditos.</em></p>`));
+    }
+
+    const formula = formulaDeGasto(s.fonte, r.dados.gasto);
+    const roll = await new Roll(formula).evaluate();
+    const resta = Math.max(0, (s.combustivel ?? 100) - roll.total);
+    await this.actor.update({ "system.combustivel": resta });
+    await card(this.actor, "Combustível",
+      `<p class="result">${formula}: gastou <strong>${roll.total}%</strong></p>` +
+      `<p class="result">Resta <strong>${resta}%</strong></p>` +
+      (resta === 0
+        ? `<p class="result"><strong class="failure">Tanque seco.</strong> A nave ` +
+          `não se move até abastecer.</p>`
+        : resta <= 20
+          ? `<p class="dica"><em>Abaixo de 20%: é hora de procurar estação.</em></p>`
+          : ""),
+      [roll]);
   }
 
   /** Instala ou remove um equipamento adicional da T10-4. */

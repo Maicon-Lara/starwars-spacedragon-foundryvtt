@@ -124,6 +124,7 @@ export const navesJournal = {
     { title: "Equipamentos Adicionais (T10-4)", content: naves["Equipamentos adicionais"] },
     { title: "Câmaras da Nave", content: naves["Câmaras da nave"] },
     { title: "A Nave como Base de Operações", content: BASE_DE_OPERACOES },
+    { title: "Fontes de Energia e Combustível (T10-3)", content: naves["Fontes de energia e combustível"] },
     // ── o combate do §10.6 ──
     { title: "Combate Espacial: o Princípio", content: naves["O princípio"] },
     { title: "Combate Espacial: as Ações da Nave", content: naves["As ações da nave"] },
@@ -132,6 +133,7 @@ export const navesJournal = {
     { title: "Combate Espacial: Críticos e Falhas", content: naves["Acertos e falhas críticas"] },
     { title: "Combate Espacial: Chegar a Zero", content: naves["Chegar a zero"] },
     { title: "Combate Espacial: Nave Avariada", content: naves["Pilotar uma nave avariada"] },
+    { title: "Quando Gente e Nave se Enfrentam", content: naves["Quando gente e nave se enfrentam"] },
     { title: "O Salto para o Hiperespaço", content: naves["O salto para o hiperespaço"] },
     // ── a tripulação (da casa) ──
     { title: "A Tripulação: os Postos", content: naves["Os postos"] },
@@ -139,6 +141,8 @@ export const navesJournal = {
     { title: "A Tripulação: Controle de Avarias", content: naves["Controle de avarias"] },
     { title: "A Tripulação: Fuga e Perseguição", content: naves["Fuga e perseguição"] },
     // ── as duas regras, e as duas fichas ──
+    { title: "Veículos (T10-7)", content: naves["Veículos terrestres, aquáticos e aéreos"] },
+    { title: "Estações Espaciais (T10-8)", content: naves["Estações espaciais"] },
     { title: "Qual Modo Usar", content: naves["Qual modo usar"] },
     { title: "As Duas Fichas de Nave", content: FICHA_LIVRO },
     // ── o módulo tático, que não é do livro ──

@@ -172,6 +172,24 @@
     </div>
   </section>
 
+  {{!-- COMBUSTÍVEL (T10-3). O recurso de VIAGEM, de 0 a 100% — não se confunde
+        com a Energia do reator, que é o recurso de rodada. --}}
+  <section class="combustivel">
+    <h3>Combustível <span class="dica">{{combustivel.fonte}} · autonomia {{combustivel.autonomia}}</span></h3>
+    <div class="linha">
+      <div class="barra-comb" title="{{combustivel.pct}}% do tanque">
+        <div class="cheio" style="width: {{combustivel.pct}}%"></div>
+      </div>
+      <span class="pct-comb {{#unless combustivel.pct}}seco{{/unless}}">{{combustivel.pct}}%</span>
+      <button type="button" data-action="combustivel" title="Gastar pela autonomia, ou abastecer">gastar / abastecer</button>
+    </div>
+    <select name="system.fonte" class="fonte">
+      {{#each combustivel.fontes}}
+      <option value="{{chave}}" {{#if sel}}selected{{/if}}>{{rotulo}} ({{raridade}} · {{autonomia}})</option>
+      {{/each}}
+    </select>
+  </section>
+
   {{!-- OS EQUIPAMENTOS ADICIONAIS (T10-4). A lista já vem filtrada pelo
         TAMANHO da nave: a tabela do livro diz onde cada um cabe, e oferecer o
         que não cabe seria convidar a mesa a quebrar a regra sem saber. --}}
