@@ -16,7 +16,7 @@
     "range": "Visual",
     "duration": "Instantâneo",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.BHPc1TPXifSlmZ4Y]{Induzir Pensamento}</p><hr><p>Este poder mental é capaz de fazer com que o alvo instantaneamente pense em uma frase implantada em sua mente, como se fosse um pensamento próprio. A frase deve ser curta e não pode conter conclusões lógicas.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.BHPc1TPXifSlmZ4Y]{Induzir Pensamento}</p><hr><p>Este poder mental é capaz de fazer com que o alvo instantaneamente pense em uma frase implantada em sua mente, como se fosse um pensamento próprio. A frase deve ser curta e não pode conter conclusões lógicas.</p>"
   },
   "effects": [],
   "flags": {},

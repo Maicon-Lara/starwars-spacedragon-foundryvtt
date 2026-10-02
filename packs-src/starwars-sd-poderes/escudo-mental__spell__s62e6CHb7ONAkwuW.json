@@ -16,7 +16,7 @@
     "range": "Pessoal ou Toque",
     "duration": "10 minutos/nível",
     "jp": "nenhuma",
-    "description": "<p><code>[L]</code> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.sNbTTZ5NhCMBxwSD]{Bloqueio Mental}</p><hr><p>O alvo deste poder mental, seja o próprio mentálico ou outro indivíduo, terá resistência mental de 2% para cada nível do mentálico pela duração dos efeitos. Caso o bloqueio seja feito na mente de um mentálico ele será incapaz de tentar a utilização de poderes mentais que não conhece, e terá de fazer uma rolagem percentual para superar sua própria resistência mental quando for utilizar um poder que domina.</p>"
+    "description": "<p><span class=\"sw-selo l\">L</span> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.sNbTTZ5NhCMBxwSD]{Bloqueio Mental}</p><hr><p>O alvo deste poder mental, seja o próprio mentálico ou outro indivíduo, terá resistência mental de 2% para cada nível do mentálico pela duração dos efeitos. Caso o bloqueio seja feito na mente de um mentálico ele será incapaz de tentar a utilização de poderes mentais que não conhece, e terá de fazer uma rolagem percentual para superar sua própria resistência mental quando for utilizar um poder que domina.</p>"
   },
   "effects": [],
   "flags": {},

@@ -16,7 +16,7 @@
     "range": "Visual",
     "duration": "30 segundos/nível",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.WcdTs4tFHfCGWkuZ]{Imobilizar Criatura}</p><hr><p>Este poder mental funciona de forma similar ao de imobilizar pessoas, mas pode ser utilizado em qualquer forma de vida animal – não humana e não microbiana.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.WcdTs4tFHfCGWkuZ]{Imobilizar Criatura}</p><hr><p>Este poder mental funciona de forma similar ao de imobilizar pessoas, mas pode ser utilizado em qualquer forma de vida animal – não humana e não microbiana.</p>"
   },
   "effects": [],
   "flags": {},

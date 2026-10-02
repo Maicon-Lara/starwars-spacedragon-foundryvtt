@@ -94,6 +94,26 @@ def main():
                 if alvo not in dentro:
                     faltando.append(f"template citado em {f}: {alvo}")
 
+    # Toda FONTE que uma folha de estilo referencia também precisa estar no
+    # zip. É o mesmo caso do templates/ da v1.7.0, mas pior: um .woff2 que não
+    # foi distribuído não dá erro em lugar nenhum — o navegador cai para a
+    # fonte seguinte da pilha, e a mesa simplesmente vê Georgia no lugar de
+    # Source Serif, sem uma linha no console que explique.
+    import re
+
+    for caminho in manifesto.get("styles") or []:
+        arq = os.path.join(SRC, caminho.replace("/", os.sep))
+        if not os.path.exists(arq):
+            continue
+        css = open(arq, encoding="utf-8").read()
+        base = os.path.dirname(caminho)
+        for url in re.findall(r"url\(['\"]?([^)'\"]+)['\"]?\)", css):
+            if url.startswith(("http:", "https:", "data:", "//")):
+                continue
+            alvo = os.path.normpath(os.path.join(base, url)).replace(os.sep, "/")
+            if alvo not in dentro:
+                faltando.append(f"arquivo citado em {caminho}: {alvo}")
+
     if faltando:
         raise SystemExit(
             "  ✘ o zip saiu incompleto — o manifesto ou o código apontam para:\n     "

@@ -5,7 +5,7 @@
   "_id": "JVEd1TmDvugRUTxV",
   "img": "systems/olddragon2e/assets/icons/slashing.svg",
   "system": {
-    "description": "<p><em>o duelo elegante</em></p><ul><li><code>5º</code> <strong>Precisão do Duelista:</strong> marque um oponente — <strong>+1 no ataque e no dano</strong> contra ele; 1×/rodada, <strong>apara</strong> uma lâmina/sabre (teste de ataque) para <strong>reduzir o dano à metade</strong>.</li><li><code>10º</code> <strong>Riposte:</strong> quando o alvo do duelo <strong>erra</strong> você, ganha um <strong>ataque de resposta</strong> imediato.</li><li><code>20º</code> <strong>Mestre Makashi:</strong> no duelo, críticos saem em <strong>1-2 no d20</strong> e o oponente tem desvantagem para anular seus golpes com a Força.</li></ul>",
+    "description": "<p><em>o duelo elegante</em></p><ul><li><span class=\"sw-tarja\">5º</span> <strong>Precisão do Duelista:</strong> marque um oponente — <strong>+1 no ataque e no dano</strong> contra ele; 1×/rodada, <strong>apara</strong> uma lâmina/sabre (teste de ataque) para <strong>reduzir o dano à metade</strong>.</li><li><span class=\"sw-tarja\">10º</span> <strong>Riposte:</strong> quando o alvo do duelo <strong>erra</strong> você, ganha um <strong>ataque de resposta</strong> imediato.</li><li><span class=\"sw-tarja\">20º</span> <strong>Mestre Makashi:</strong> no duelo, críticos saem em <strong>1-2 no d20</strong> e o oponente tem desvantagem para anular seus golpes com a Força.</li></ul>",
     "level": 5,
     "level3": "",
     "level6": "",

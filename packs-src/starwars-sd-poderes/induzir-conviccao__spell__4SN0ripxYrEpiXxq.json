@@ -16,7 +16,7 @@
     "range": "Visual",
     "duration": "Instantâneo",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.KlrMC3qbHVIcq2pb]{Induzir Lógica}</p><hr><p>Funciona de maneira similar ao poder mental de induzir pensamentos, mas a frase implantada na mente do alvo pode conter uma dedução lógica. Por exemplo, é possível induzir a lógica de que um personagem está com uma arma de projéteis e estas armas são proibidas no setor galático atual, logo, ele deve ser o criminoso procurado pelas autoridades. A aceitação ou não da lógica induzida dependerá exclusivamente do alvo.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.KlrMC3qbHVIcq2pb]{Induzir Lógica}</p><hr><p>Funciona de maneira similar ao poder mental de induzir pensamentos, mas a frase implantada na mente do alvo pode conter uma dedução lógica. Por exemplo, é possível induzir a lógica de que um personagem está com uma arma de projéteis e estas armas são proibidas no setor galático atual, logo, ele deve ser o criminoso procurado pelas autoridades. A aceitação ou não da lógica induzida dependerá exclusivamente do alvo.</p>"
   },
   "effects": [],
   "flags": {},

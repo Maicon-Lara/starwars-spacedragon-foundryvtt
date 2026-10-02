@@ -5,7 +5,7 @@
   "_id": "AgqjCM77PqmHLvNk",
   "img": "systems/olddragon2e/assets/icons/slashing.svg",
   "system": {
-    "description": "<p><em>acrobática</em></p><ul><li><code>5º</code> <strong>Ímpeto Acrobático:</strong> se você <strong>se moveu</strong> antes de atacar, <strong>+1 no ataque e no dano</strong>; atacar de cima torna o primeiro golpe <strong>Fácil</strong>.</li><li><code>10º</code> <strong>Turbilhão:</strong> gastando <strong>1% de Alcance</strong>, um <strong>ataque extra</strong> enquanto se reposiciona.</li><li><code>20º</code> <strong>Mestre Ataru:</strong> em terreno aberto, <strong>dois ataques extras</strong> em movimento — mas <strong>−2 no CP</strong> se for <strong>imobilizado</strong>.</li></ul>",
+    "description": "<p><em>acrobática</em></p><ul><li><span class=\"sw-tarja\">5º</span> <strong>Ímpeto Acrobático:</strong> se você <strong>se moveu</strong> antes de atacar, <strong>+1 no ataque e no dano</strong>; atacar de cima torna o primeiro golpe <strong>Fácil</strong>.</li><li><span class=\"sw-tarja\">10º</span> <strong>Turbilhão:</strong> gastando <strong>1% de Alcance</strong>, um <strong>ataque extra</strong> enquanto se reposiciona.</li><li><span class=\"sw-tarja\">20º</span> <strong>Mestre Ataru:</strong> em terreno aberto, <strong>dois ataques extras</strong> em movimento — mas <strong>−2 no CP</strong> se for <strong>imobilizado</strong>.</li></ul>",
     "level": 5,
     "level3": "",
     "level6": "",

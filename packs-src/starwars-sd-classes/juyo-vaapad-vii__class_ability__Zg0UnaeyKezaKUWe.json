@@ -5,7 +5,7 @@
   "_id": "Zg0UnaeyKezaKUWe",
   "img": "systems/olddragon2e/assets/icons/slashing.svg",
   "system": {
-    "description": "<p><em>a forma feroz</em></p><ul><li><code>5º</code> <strong>Fúria Canalizada:</strong> <strong>+1 no ataque e no dano</strong>, mas usá-la movido pela raiva arrisca <strong>+1 de Corrupção</strong> por combate (a critério do Mestre); inimigos têm desvantagem para aparar/anular seus golpes.</li><li><code>10º</code> <strong>Sede de Batalha:</strong> ao <strong>derrubar</strong> um inimigo, um <strong>ataque extra</strong> imediato.</li><li><code>20º</code> <strong>Mestre Vaapad:</strong> <strong>+1 no dano para cada inimigo que o atacou</strong> na rodada — mas a Sombra cobra.</li></ul>",
+    "description": "<p><em>a forma feroz</em></p><ul><li><span class=\"sw-tarja\">5º</span> <strong>Fúria Canalizada:</strong> <strong>+1 no ataque e no dano</strong>, mas usá-la movido pela raiva arrisca <strong>+1 de Corrupção</strong> por combate (a critério do Mestre); inimigos têm desvantagem para aparar/anular seus golpes.</li><li><span class=\"sw-tarja\">10º</span> <strong>Sede de Batalha:</strong> ao <strong>derrubar</strong> um inimigo, um <strong>ataque extra</strong> imediato.</li><li><span class=\"sw-tarja\">20º</span> <strong>Mestre Vaapad:</strong> <strong>+1 no dano para cada inimigo que o atacou</strong> na rodada — mas a Sombra cobra.</li></ul>",
     "level": 5,
     "level3": "",
     "level6": "",

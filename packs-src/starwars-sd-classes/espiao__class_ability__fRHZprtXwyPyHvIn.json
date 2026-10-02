@@ -5,7 +5,7 @@
   "_id": "fRHZprtXwyPyHvIn",
   "img": "systems/olddragon2e/assets/icons/bag.svg",
   "system": {
-    "description": "<p>Sua <strong>Sabotagem</strong> sobe para a <strong>% de Furtividade</strong> e passa a progredir junto com ela. O <strong>Crédito Tecnológico</strong> (por Ciência) conta <strong>dobrado</strong>. Usa a <strong>% de Furtar</strong> para <strong>passar-se por outra pessoa</strong>, somando o ajuste de reação por Comunicação.</p><ul><li><code>10º</code> usa a <strong>% de Escalar</strong> como chance de <strong>obter informação</strong> relevante, por contatos ou registros; usa <strong>aparatos defensivos</strong> como um Técnico.</li><li><code>20º</code> <strong>Furtividade, Sabotagem e Furtar igualam os 99% de Escalar</strong>.</li></ul>",
+    "description": "<p>Sua <strong>Sabotagem</strong> sobe para a <strong>% de Furtividade</strong> e passa a progredir junto com ela. O <strong>Crédito Tecnológico</strong> (por Ciência) conta <strong>dobrado</strong>. Usa a <strong>% de Furtar</strong> para <strong>passar-se por outra pessoa</strong>, somando o ajuste de reação por Comunicação.</p><ul><li><span class=\"sw-tarja\">10º</span> usa a <strong>% de Escalar</strong> como chance de <strong>obter informação</strong> relevante, por contatos ou registros; usa <strong>aparatos defensivos</strong> como um Técnico.</li><li><span class=\"sw-tarja\">20º</span> <strong>Furtividade, Sabotagem e Furtar igualam os 99% de Escalar</strong>.</li></ul>",
     "level": 5,
     "level3": "",
     "level6": "",

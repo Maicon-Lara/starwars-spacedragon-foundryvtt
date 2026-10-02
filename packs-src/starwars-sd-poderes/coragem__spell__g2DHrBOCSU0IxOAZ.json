@@ -16,7 +16,7 @@
     "range": "18 m",
     "duration": "10 rodadas",
     "jp": "JPM (ver texto)",
-    "description": "<p><code>[L]</code> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</p><p><strong>✦ Criação do cenário</strong> — não há Poder Mental equivalente no livro básico. O preço é o de qualquer poder: a Grandeza diz quanto custa em Alcance e a partir de que nível se chega lá.</p><hr><p>Aliados que o escutem ganham <strong>+1 em ataque e em JP a cada 3 níveis</strong> seus; inimigos que falhem numa <strong>JPM</strong> sofrem a mesma penalidade.</p>"
+    "description": "<p><span class=\"sw-selo l\">L</span> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</p><p><strong>✦ Criação do cenário</strong> — não há Poder Mental equivalente no livro básico. O preço é o de qualquer poder: a Grandeza diz quanto custa em Alcance e a partir de que nível se chega lá.</p><hr><p>Aliados que o escutem ganham <strong>+1 em ataque e em JP a cada 3 níveis</strong> seus; inimigos que falhem numa <strong>JPM</strong> sofrem a mesma penalidade.</p>"
   },
   "effects": [],
   "flags": {},

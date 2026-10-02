@@ -16,7 +16,7 @@
     "range": "Pessoal",
     "duration": "Variável (ver texto)",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.kkJb7mBD8Jv4OssR]{Ampliar Poder Mental}</p><hr><p>Este poder mental pode ser utilizado em conjunto com outro poder qualquer para ampliar sua duração ou seu alcance em 10%. O desconto a ser feito do alcance mental diário é o do poder mental principal e da ampliação somados.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.kkJb7mBD8Jv4OssR]{Ampliar Poder Mental}</p><hr><p>Este poder mental pode ser utilizado em conjunto com outro poder qualquer para ampliar sua duração ou seu alcance em 10%. O desconto a ser feito do alcance mental diário é o do poder mental principal e da ampliação somados.</p>"
   },
   "effects": [],
   "flags": {},

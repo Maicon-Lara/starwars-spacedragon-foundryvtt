@@ -22,7 +22,7 @@ import { compilePack } from "@foundryvtt/foundryvtt-cli";
 
 import {
   folderDoc, aninhaPastas, classDoc, classAbilityDoc, raceDoc, raceAbilityDoc,
-  weaponDoc, armorDoc, miscDoc, spellDoc, journalDoc, macroDoc, rollTableDoc, itemUuid, writeSource, pintaPastas,
+  weaponDoc, armorDoc, miscDoc, spellDoc, journalDoc, macroDoc, rollTableDoc, enfeitarDoc, itemUuid, writeSource, pintaPastas,
   md, tabelaHTML,
 } from "./lib.mjs";
 import { monsterDoc } from "./lib-actors.mjs";
@@ -492,13 +492,35 @@ function buildBestiarioDocs() {
 // ── Pack de journal (referência do mestre) ──
 // Journal sem página ainda não foi transcrito e fica de fora: um diário vazio
 // no compêndio parece conteúdo perdido.
+//
+// ── A COR E A EPÍGRAFE DE CADA CAPÍTULO ────────────────────────────────────
+//
+// Cada JournalEntry é um capítulo do livro, e recebe dele duas coisas: a
+// CLASSE DE COR (styles/livro.css pinta a faixa de abertura, o fio da tabela,
+// as tarjas e o marcador das listas) e a EPÍGRAFE, a linha em itálico que abre
+// o capítulo antes da primeira regra.
+//
+// As epígrafes são as mesmas de _build/build_livro.py, no cofre — não há duas
+// redações para a mesma frase. A numeração é a ordem desta lista, que é a
+// ordem em que os capítulos aparecem no compêndio.
+const CAPITULOS = [
+  [criacaoJournal, "atributos", "Seis números, e o que cada um deixa você tentar."],
+  [equipamentosJournal, "equip", "Créditos são o que separa a ideia da nave."],
+  [sabreJournal, "sabre", "A lâmina é a parte fácil. O cristal escolhe."],
+  [feitosJournal, "aparatos", "As engenhocas que esta galáxia tem no lugar de magia."],
+  [poderesJournal, "forca", "Não é magia. É atenção."],
+  [ordensJournal, "ordens", "Quem manda, quem ensina, e quem cobra."],
+  [sendaJournal, "mando", "Esta é a Doutrina."],
+  [navesJournal, "naves", "Ter uma nave é ter um problema com motores."],
+  [bestiarioJournal, "bestiario", "O que vive lá fora, e o que ele quer de você."],
+  [mestreJournal, "mestre", "A parte que os jogadores não leem."],
+];
+
 function buildJournalDocs() {
-  return [
-    criacaoJournal, equipamentosJournal, sabreJournal, feitosJournal, poderesJournal,
-    ordensJournal, sendaJournal, navesJournal, bestiarioJournal, mestreJournal,
-  ]
-    .filter((e) => (e.pages?.length ?? 0) > 0 || e.content)
-    .map((e, i) => journalDoc(e, (i + 1) * 100000));
+  return CAPITULOS
+    .filter(([e]) => (e.pages?.length ?? 0) > 0 || e.content)
+    .map(([e, cap, epigrafe], i) =>
+      journalDoc({ ...e, cap, epigrafe, numero: i + 1 }, (i + 1) * 100000));
 }
 
 // ── Pack de tabelas roláveis ──
@@ -544,6 +566,10 @@ async function compile(packName, docs) {
     return;
   }
   if (!DECLARADOS.has(packName)) throw new Error(`${packName} tem ${docs.length} documentos e não está no module.json`);
+  // Os selos de corrente e as tarjas de nível, em todo HTML do pack. Aqui, e
+  // não em cada construtor: os selos aparecem em poderes, espécies, classes e
+  // journals, por caminhos diferentes, e passar por todos seria esquecer um.
+  docs.forEach(enfeitarDoc);
   // Converte a hierarquia dos NOMES ("Sensível à Força — Guardião") em pastas
   // aninhadas de verdade. Vale para todos os packs, por isso mora aqui.
   const arvore = aninhaPastas(docs);

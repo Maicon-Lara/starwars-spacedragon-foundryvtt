@@ -16,7 +16,7 @@
     "range": "Visual",
     "duration": "1 minuto/nível",
     "jp": "nenhuma",
-    "description": "<p><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.HAj1Nvg9ojnKyhOt]{Inverter Personalidade}</p><hr><p>Com este poder o mentálico é capaz de inverter a personalidade de um alvo, que pode resistir aos efeitos com uma JPM. Uma mudança de personalidade pode acarretar mudanças nas atitudes, pensamentos e mesmo na afiliação de um alvo. A inversão de personalidade não gera uma dupla personalidade e nem ativa uma já existente. O alvo estará totalmente consciente de seus atos.</p>"
+    "description": "<p><span class=\"sw-selo s\">S</span> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <span class=\"sw-selo s\">S</span> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.HAj1Nvg9ojnKyhOt]{Inverter Personalidade}</p><hr><p>Com este poder o mentálico é capaz de inverter a personalidade de um alvo, que pode resistir aos efeitos com uma JPM. Uma mudança de personalidade pode acarretar mudanças nas atitudes, pensamentos e mesmo na afiliação de um alvo. A inversão de personalidade não gera uma dupla personalidade e nem ativa uma já existente. O alvo estará totalmente consciente de seus atos.</p>"
   },
   "effects": [],
   "flags": {},

@@ -16,7 +16,7 @@
     "range": "Indefinido",
     "duration": "Instantâneo",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.Znq8l9tG9za2HMdR]{Rastrear Pessoa}</p><hr><p>O mentálico pode intuir a localização de outra pessoa que esteja no mesmo planeta ou a uma distância similar no espaço. Só é possível rastrear uma pessoa com a qual o mentálico já tenha tido ou contato mental, seja usando um poder mental na pessoa, telepatia, ou se ela fizer parte da rede de inteligência coletiva do mentálico. Também é possível rastrear mentálicos os quais tenham sido contatados com o poder mental específico, mas eles poderão rebater sua tentativa de rastreio de acordo com as regras de anulação e contra-ataque mental.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.Znq8l9tG9za2HMdR]{Rastrear Pessoa}</p><hr><p>O mentálico pode intuir a localização de outra pessoa que esteja no mesmo planeta ou a uma distância similar no espaço. Só é possível rastrear uma pessoa com a qual o mentálico já tenha tido ou contato mental, seja usando um poder mental na pessoa, telepatia, ou se ela fizer parte da rede de inteligência coletiva do mentálico. Também é possível rastrear mentálicos os quais tenham sido contatados com o poder mental específico, mas eles poderão rebater sua tentativa de rastreio de acordo com as regras de anulação e contra-ataque mental.</p>"
   },
   "effects": [],
   "flags": {},

@@ -16,7 +16,7 @@
     "range": "10 metros/nível",
     "duration": "30 segundos/nível",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.fNXkSRAcCA1WNK2Z]{Mentalizar Egrégora}</p><hr><p>O mentálico junta todos os padrões cerebrais residuais existentes em um lugar para mentalizar uma personificação do local, com a qual poderá interagir através de outros poderes mentais. Essa personificação de um lugar é chamada egrégora, e assumirá uma forma etérea que só o mentálico será capaz de ver, com aparência e expressão que reflita toda a história do lugar. A egrégora de um campo de guerra pode ser um soldado, e a personificação de um hospital pode ser um médico, por exemplo.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.fNXkSRAcCA1WNK2Z]{Mentalizar Egrégora}</p><hr><p>O mentálico junta todos os padrões cerebrais residuais existentes em um lugar para mentalizar uma personificação do local, com a qual poderá interagir através de outros poderes mentais. Essa personificação de um lugar é chamada egrégora, e assumirá uma forma etérea que só o mentálico será capaz de ver, com aparência e expressão que reflita toda a história do lugar. A egrégora de um campo de guerra pode ser um soldado, e a personificação de um hospital pode ser um médico, por exemplo.</p>"
   },
   "effects": [],
   "flags": {},

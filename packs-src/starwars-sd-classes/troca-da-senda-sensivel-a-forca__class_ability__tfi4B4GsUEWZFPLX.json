@@ -5,7 +5,7 @@
   "_id": "tfi4B4GsUEWZFPLX",
   "img": "systems/olddragon2e/assets/icons/brain.svg",
   "system": {
-    "description": "<p>o <strong>Alcance conta como o de um Sensível de −1 nível</strong> e o <strong>teto de Grandeza para na 6ª</strong>; em troca, o clã lhe ensina <strong>uma Forma de Sabre</strong> (até a técnica <code>10º</code>).</p>",
+    "description": "<p>o <strong>Alcance conta como o de um Sensível de −1 nível</strong> e o <strong>teto de Grandeza para na 6ª</strong>; em troca, o clã lhe ensina <strong>uma Forma de Sabre</strong> (até a técnica <span class=\"sw-tarja\">10º</span>).</p>",
     "level": 5,
     "level3": "",
     "level6": "",

@@ -16,7 +16,7 @@
     "range": "Visual",
     "duration": "Instantâneo",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.1I4cKrs0MWlv1h1H]{Alternar Personalidade}</p><hr><p>Este poder mental faz com que um alvo, que tenha dupla personalidade, imediatamente mude para a personalidade inativa no momento, caso falhe em uma JPM. Embora o efeito tenha duração instantânea, a personalidade continuará ativa até que um evento cause a inversão de forma natural ou este poder mental seja novamente utilizado sobre o alvo.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.1I4cKrs0MWlv1h1H]{Alternar Personalidade}</p><hr><p>Este poder mental faz com que um alvo, que tenha dupla personalidade, imediatamente mude para a personalidade inativa no momento, caso falhe em uma JPM. Embora o efeito tenha duração instantânea, a personalidade continuará ativa até que um evento cause a inversão de forma natural ou este poder mental seja novamente utilizado sobre o alvo.</p>"
   },
   "effects": [],
   "flags": {},

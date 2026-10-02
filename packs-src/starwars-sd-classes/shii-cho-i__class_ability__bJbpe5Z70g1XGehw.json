@@ -5,7 +5,7 @@
   "_id": "bJbpe5Z70g1XGehw",
   "img": "systems/olddragon2e/assets/icons/slashing.svg",
   "system": {
-    "description": "<p><em>a forma fundamental</em></p><p>Versátil, feita para enfrentar vários oponentes.</p><ul><li><code>5º</code> <strong>Sequência Aberta:</strong> ao derrubar ou errar um inimigo, transfere o ataque a <strong>outro adjacente</strong>; ao acertar, pode <strong>desarmar</strong> sem gastar o ataque.</li><li><code>10º</code> <strong>Domínio do Enxame:</strong> cercado por 2+ inimigos, <strong>+2 no CP</strong> e um <strong>ataque extra</strong> contra um flanqueador.</li><li><code>20º</code> <strong>Mestre Shii-Cho:</strong> distribui os ataques livremente entre adjacentes e <strong>nunca sofre penalidade por estar cercado</strong>.</li></ul>",
+    "description": "<p><em>a forma fundamental</em></p><p>Versátil, feita para enfrentar vários oponentes.</p><ul><li><span class=\"sw-tarja\">5º</span> <strong>Sequência Aberta:</strong> ao derrubar ou errar um inimigo, transfere o ataque a <strong>outro adjacente</strong>; ao acertar, pode <strong>desarmar</strong> sem gastar o ataque.</li><li><span class=\"sw-tarja\">10º</span> <strong>Domínio do Enxame:</strong> cercado por 2+ inimigos, <strong>+2 no CP</strong> e um <strong>ataque extra</strong> contra um flanqueador.</li><li><span class=\"sw-tarja\">20º</span> <strong>Mestre Shii-Cho:</strong> distribui os ataques livremente entre adjacentes e <strong>nunca sofre penalidade por estar cercado</strong>.</li></ul>",
     "level": 5,
     "level3": "",
     "level6": "",

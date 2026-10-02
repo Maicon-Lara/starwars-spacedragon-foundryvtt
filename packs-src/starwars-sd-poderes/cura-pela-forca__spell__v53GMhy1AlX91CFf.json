@@ -16,7 +16,7 @@
     "range": "Toque",
     "duration": "5 minutos/nível",
     "jp": "nenhuma",
-    "description": "<p><code>[L]</code> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.3lU68ETGFtaAHIsh]{Cura Psicológica}</p><hr><p>O mentálico é capaz de aumentar os pontos de vida de um alvo, conferindo a ele 1d8 PV temporários a cada 4 níveis que tiver na classe. Os pontos de vida são anotados em um montante separado e são eliminados antes dos PV normais. Por exemplo, um personagem que tenha 20 PV e 4 PV psicológicos e sofra 5 pontos de dano elimina antes os PV extras e sofre 1 ponto de dano, terminando com 19 PV. Os PV extras são perdidos ao final da duração.</p>"
+    "description": "<p><span class=\"sw-selo l\">L</span> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.3lU68ETGFtaAHIsh]{Cura Psicológica}</p><hr><p>O mentálico é capaz de aumentar os pontos de vida de um alvo, conferindo a ele 1d8 PV temporários a cada 4 níveis que tiver na classe. Os pontos de vida são anotados em um montante separado e são eliminados antes dos PV normais. Por exemplo, um personagem que tenha 20 PV e 4 PV psicológicos e sofra 5 pontos de dano elimina antes os PV extras e sofre 1 ponto de dano, terminando com 19 PV. Os PV extras são perdidos ao final da duração.</p>"
   },
   "effects": [],
   "flags": {},

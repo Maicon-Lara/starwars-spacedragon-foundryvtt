@@ -5,7 +5,7 @@
   "_id": "pGgrdTbHTBqT1BJD",
   "img": "systems/olddragon2e/assets/icons/magic-potion.svg",
   "system": {
-    "description": "<p>Para de progredir em <strong>Operar Máquinas</strong>, mas o <strong>Crédito Tecnológico sobe +1%/nível</strong>; abre mão de armas, exceto os artefatos que ele mesmo cria. Dedica a ciência à carne viva — cirurgia, bacta, próteses, antídotos.</p><ul><li><code>10º</code> usa a <strong>% de Operar Máquinas</strong> como chance de ter à mão a informação ou o artefato médico relevante; em troca, seus aparatos contam <strong>2 NT acima</strong> (limitando-o a criar até o 8º NT).</li><li><code>20º</code> Crédito Tecnológico de <strong>100%</strong>; submete-se a um código de ética: <strong>proibido causar dano a seres vivos</strong> — quebrar isso suspende as habilidades da especialização até uma reparação.</li></ul>",
+    "description": "<p>Para de progredir em <strong>Operar Máquinas</strong>, mas o <strong>Crédito Tecnológico sobe +1%/nível</strong>; abre mão de armas, exceto os artefatos que ele mesmo cria. Dedica a ciência à carne viva — cirurgia, bacta, próteses, antídotos.</p><ul><li><span class=\"sw-tarja\">10º</span> usa a <strong>% de Operar Máquinas</strong> como chance de ter à mão a informação ou o artefato médico relevante; em troca, seus aparatos contam <strong>2 NT acima</strong> (limitando-o a criar até o 8º NT).</li><li><span class=\"sw-tarja\">20º</span> Crédito Tecnológico de <strong>100%</strong>; submete-se a um código de ética: <strong>proibido causar dano a seres vivos</strong> — quebrar isso suspende as habilidades da especialização até uma reparação.</li></ul>",
     "level": 5,
     "level3": "",
     "level6": "",

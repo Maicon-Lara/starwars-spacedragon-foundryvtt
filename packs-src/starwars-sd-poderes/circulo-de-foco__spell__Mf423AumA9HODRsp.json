@@ -16,7 +16,7 @@
     "range": "5 metros",
     "duration": "30 segundos/nível",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.3KuHoH8r9X4ZaGL1]{Grupo Canalizador}</p><hr><p>Com este poder mental até 4 mentálicos podem aumentar temporariamente o nível de outro mentálico, para fins de utilização de um poder mental. Cada mentálico aumenta 1 nível do beneficiado, que poderá realizar poderes mentais de acordo com a grandeza mental de seu nível temporário. O beneficiado pelo grupo canalizador não recebe nenhum outro bônus devido aos níveis temporários.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.3KuHoH8r9X4ZaGL1]{Grupo Canalizador}</p><hr><p>Com este poder mental até 4 mentálicos podem aumentar temporariamente o nível de outro mentálico, para fins de utilização de um poder mental. Cada mentálico aumenta 1 nível do beneficiado, que poderá realizar poderes mentais de acordo com a grandeza mental de seu nível temporário. O beneficiado pelo grupo canalizador não recebe nenhum outro bônus devido aos níveis temporários.</p>"
   },
   "effects": [],
   "flags": {},

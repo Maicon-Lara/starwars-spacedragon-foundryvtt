@@ -5,7 +5,7 @@
   "_id": "rfpiBG0O2PDeElwU",
   "img": "systems/olddragon2e/assets/icons/slashing.svg",
   "system": {
-    "description": "<p><em>força e contra-ataque</em></p><ul><li><code>5º</code> <strong>Contra-Ataque:</strong> quando um inimigo adjacente <strong>erra</strong> você em corpo a corpo, ganha um <strong>ataque de resposta</strong>; pode trocar precisão (<strong>−2 no ataque</strong>) por <strong>+1d8 de dano</strong>.</li><li><code>10º</code> <strong>Fúria Controlada:</strong> com metade dos PV ou menos, <strong>+2 no ataque e no dano</strong>.</li><li><code>20º</code> <strong>Mestre Djem So:</strong> todo ataque inimigo que você <strong>aparar ou que errar</strong> abre uma resposta.</li></ul>",
+    "description": "<p><em>força e contra-ataque</em></p><ul><li><span class=\"sw-tarja\">5º</span> <strong>Contra-Ataque:</strong> quando um inimigo adjacente <strong>erra</strong> você em corpo a corpo, ganha um <strong>ataque de resposta</strong>; pode trocar precisão (<strong>−2 no ataque</strong>) por <strong>+1d8 de dano</strong>.</li><li><span class=\"sw-tarja\">10º</span> <strong>Fúria Controlada:</strong> com metade dos PV ou menos, <strong>+2 no ataque e no dano</strong>.</li><li><span class=\"sw-tarja\">20º</span> <strong>Mestre Djem So:</strong> todo ataque inimigo que você <strong>aparar ou que errar</strong> abre uma resposta.</li></ul>",
     "level": 5,
     "level3": "",
     "level6": "",

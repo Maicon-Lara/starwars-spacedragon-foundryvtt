@@ -16,7 +16,7 @@
     "range": "Pessoal",
     "duration": "Permanente",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.VgBTA2xytYSCPcpZ]{Desenvolver Mente}</p><hr><p>O mentálico pode desenvolver uma mente a partir do zero, e armazená-la em sua própria mente para que seja transferida para outro corpo. A nova mente terá as memórias e a personalidade desejadas pelo mentálico, e pode ter até 10 níveis de personagem em uma classe também à sua escolha – efetivamente um novo personagem. Uma mente criada dessa forma não pode ser assimilada pelo mentálico.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.VgBTA2xytYSCPcpZ]{Desenvolver Mente}</p><hr><p>O mentálico pode desenvolver uma mente a partir do zero, e armazená-la em sua própria mente para que seja transferida para outro corpo. A nova mente terá as memórias e a personalidade desejadas pelo mentálico, e pode ter até 10 níveis de personagem em uma classe também à sua escolha – efetivamente um novo personagem. Uma mente criada dessa forma não pode ser assimilada pelo mentálico.</p>"
   },
   "effects": [],
   "flags": {},

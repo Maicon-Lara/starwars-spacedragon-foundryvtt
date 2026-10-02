@@ -16,7 +16,7 @@
     "range": "5 metros/nível",
     "duration": "Variável (ver texto)",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.AtKQbQ0WTLVvbBNX]{Reviver Memórias Locais}</p><hr><p>Este poder mental funciona de forma similar a vivenciar uma memória, com a diferença que é possível presenciar os eventos ocorridos em um lugar pelo período de até 1 hora por nível do mentálico. O alcance do poder mental define a área na qual os acontecimentos poderão ser vivenciados, e o poder mental durará até o final da memória ou até o mentálico cancelar sua execução.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.AtKQbQ0WTLVvbBNX]{Reviver Memórias Locais}</p><hr><p>Este poder mental funciona de forma similar a vivenciar uma memória, com a diferença que é possível presenciar os eventos ocorridos em um lugar pelo período de até 1 hora por nível do mentálico. O alcance do poder mental define a área na qual os acontecimentos poderão ser vivenciados, e o poder mental durará até o final da memória ou até o mentálico cancelar sua execução.</p>"
   },
   "effects": [],
   "flags": {},

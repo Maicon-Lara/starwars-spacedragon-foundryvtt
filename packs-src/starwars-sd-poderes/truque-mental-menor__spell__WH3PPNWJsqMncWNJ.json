@@ -16,7 +16,7 @@
     "range": "Visual",
     "duration": "Especial (ver texto)",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.dDiemmtCAS2pBrcV]{Ajustar Emoções}</p><hr><p>Ao utilizar este poder o mentálico consegue compreender as diferentes emoções (felicidade, raiva, tristeza, etc.) que o alvo está sentindo e modificá-las a seu bel-prazer. A mudança se dá instantaneamente, mas a permanência da emoção depende da personalidade do alvo e da situação em que ocorreu.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.dDiemmtCAS2pBrcV]{Ajustar Emoções}</p><hr><p>Ao utilizar este poder o mentálico consegue compreender as diferentes emoções (felicidade, raiva, tristeza, etc.) que o alvo está sentindo e modificá-las a seu bel-prazer. A mudança se dá instantaneamente, mas a permanência da emoção depende da personalidade do alvo e da situação em que ocorreu.</p>"
   },
   "effects": [],
   "flags": {},

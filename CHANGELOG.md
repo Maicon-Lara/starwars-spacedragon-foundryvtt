@@ -1,5 +1,75 @@
 # Changelog
 
+## 1.13.0 — o estilo do livro no módulo
+
+A folha de estilo dos dois volumes em HTML (`_estilo/estilo-livro.css`, no
+cofre) agora veste o módulo: os journals, a ficha de nave, os diálogos e o
+painel de Pontos de Força. É a mesma paleta, a mesma tipografia e os mesmos
+enfeites — não há duas identidades visuais para manter.
+
+**A paleta.** Trinta variáveis em `styles/livro.css`, todas prefixadas `--sw-`
+porque `:root` no Foundry é compartilhado com o sistema e com os outros
+módulos. O livro já tinha DUAS paletas — espaço na tela, pergaminho na
+impressão —, e elas caem exatamente nos dois temas do Foundry: a de impressão
+no tema claro, a de tela no escuro. Nenhuma cor foi inventada.
+
+As sete variáveis `--starwars-sd-*` que pintavam o journal continuam
+existindo, com o mesmo papel; o que mudou é que derivam da paleta nova em vez
+de serem hexadecimais fixos — e por isso agora acompanham o tema. Uma delas,
+`--starwars-sd-titulo`, servia a dois papéis que no livro são cores
+diferentes: a cor do `h2` e o fundo do cabeçalho de tabela. Foram separadas, e
+o cabeçalho ganhou de volta o **filete** na cor do capítulo.
+
+**As fontes** (Orbitron, Saira Condensed, Source Serif 4) vão embutidas em
+`fonts/`, 349 KB, só os subsets `latin` e `latin-ext`. São OFL 1.1, e a
+`LICENSE.md` ganhou a seção. Não foi por `@import` do Google Fonts de
+propósito: sem internet, um `@import` falha **calado** — a mesa veria Georgia
+e não haveria uma linha no console explicando por quê. `tools/baixar-fontes.py`
+regera a pasta.
+
+**Os selos e as tarjas.** No cofre, a corrente de um poder é `[U]`, `[L]`,
+`[S]`, `[C]` entre crases, e o nível é `5º`. O markdown os entregava como
+`<code>`, que o Foundry desenha como trecho de código: cinza, monoespaçado, sem
+significado. Agora viram o hexágono colorido e a tarja cortada do livro — 177
+selos e 140 tarjas. As expressões são as do build do livro, para que os dois
+concordem sobre o que é marcador e o que é código de verdade (`actor.setFlag`
+continua código).
+
+A conversão é uma pós-passagem única em `compile()`, e não está em cada
+construtor: os selos aparecem em poderes, espécies, classes e journals, por
+caminhos diferentes, e passar por todos seria esquecer um. Ela é **campo a
+campo** — um ★ no *nome* de um poder não pode virar HTML, porque o Foundry
+mostra `name` como texto puro e a tag sairia literal na lista.
+
+`.sw-selo` e `.sw-tarja` têm classe própria, solta, e não dependem de
+`.starwars-sd-doc`: as habilidades de classe aparecem na ficha, no cartão de
+chat e no tooltip, todos fora do container do journal — presas a ele, as
+tarjas sairiam sem estilo justamente na ficha, que é onde se olha o nível.
+
+**As aberturas de capítulo.** Cada um dos dez journals é um capítulo, com o
+número grande, o título e a epígrafe sobre a faixa na sua cor. As epígrafes são
+as mesmas de `_build/build_livro.py` — não há duas redações para a mesma frase.
+A página de abertura esconde o próprio título, que já aparece dentro da faixa.
+
+**A ficha de nave** troca as cinco variáveis de tema pela paleta do livro, e os
+títulos e rótulos passam para a condensada; o nome da nave é o único em
+Orbitron. O corpo e os números ficam com a fonte da interface de propósito:
+uma serif em 11px dentro de campo de digitação perde legibilidade, e a ficha é
+para consultar no meio do turno, não para ler.
+
+O **painel de Pontos de Força** só troca o azul fixo pelo dourado da Força. Ele
+é injetado na ficha do *sistema*, e continua discreto — nada de fundo nem
+tipografia próprios na casa dos outros.
+
+**Duas verificações novas, para falhas que não dão erro.**
+`tools/teste-estilo.mjs` (em `npm run validar`) confere que todo `.woff2`
+citado existe, que a ordem das folhas está certa, que nenhuma `--sw-*` ficou
+órfã, que selo e tarja não voltaram a depender do container e que os dez
+capítulos têm cor, faixa e epígrafe. E `make-zip.py` passou a exigir que todo
+arquivo referenciado por `url()` nas folhas esteja **no zip** — é o caso do
+`templates/` da 1.7.0, mas pior: uma fonte que não foi distribuída não produz
+erro nenhum, só uma mesa vendo a fonte errada.
+
 ## 1.12.1 — as habilidades do Artífice, revisadas
 
 O Artífice mudou no cofre e o módulo acompanha. As quatro habilidades e a

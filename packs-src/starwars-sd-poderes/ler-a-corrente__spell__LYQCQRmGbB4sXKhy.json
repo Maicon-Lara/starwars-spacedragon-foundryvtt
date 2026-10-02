@@ -16,7 +16,7 @@
     "range": "Visual",
     "duration": "Instantâneo",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.6S4v51lJHBWbAcBL]{Detectar Afiliação}</p><p><em>A <strong>Sintonia Eletrônica</strong> é o poder que faz um Jedi ouvir a transmissão imperial sem tocar num painel. <strong>Ler a Corrente</strong> é o arrepio ao cruzar com alguém que serve ao outro lado.</em></p><hr><p>Este poder mental permite que o mentálico detecte a afiliação de um único alvo. A resposta obtida não dita exatamente que afiliação o alvo segue, mas indicará a resposta através de um evento do seu passado que a defina.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.6S4v51lJHBWbAcBL]{Detectar Afiliação}</p><p><em>A <strong>Sintonia Eletrônica</strong> é o poder que faz um Jedi ouvir a transmissão imperial sem tocar num painel. <strong>Ler a Corrente</strong> é o arrepio ao cruzar com alguém que serve ao outro lado.</em></p><hr><p>Este poder mental permite que o mentálico detecte a afiliação de um único alvo. A resposta obtida não dita exatamente que afiliação o alvo segue, mas indicará a resposta através de um evento do seu passado que a defina.</p>"
   },
   "effects": [],
   "flags": {},

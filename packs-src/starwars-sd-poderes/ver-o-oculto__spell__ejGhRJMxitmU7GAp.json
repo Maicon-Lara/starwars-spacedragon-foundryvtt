@@ -16,7 +16,7 @@
     "range": "10 metros + 3 metros/ nível",
     "duration": "Instantâneo",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.vrs3cMU6nlG5iCkG]{Detectar Invisibilidade}</p><hr><p>O mentálico pode detectar personagens invisíveis dentro do alcance deste poder mental ao analisar os padrões cerebrais presentes no local. A detecção dirá se há alguém invisível e sua direção aproximada.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.vrs3cMU6nlG5iCkG]{Detectar Invisibilidade}</p><hr><p>O mentálico pode detectar personagens invisíveis dentro do alcance deste poder mental ao analisar os padrões cerebrais presentes no local. A detecção dirá se há alguém invisível e sua direção aproximada.</p>"
   },
   "effects": [],
   "flags": {},

@@ -16,7 +16,7 @@
     "range": "Toque",
     "duration": "30 segundos/nível",
     "jp": "nenhuma",
-    "description": "<p><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.dXF0zmeZ3ghyIncA]{Reviver Mente}</p><hr><p>O mentálico é capaz de reativar a mente de um corpo humano morto a até 72 horas por um período curto de tempo. Neste período apenas a mente estará ativa e o corpo não apresentará qualquer reação. É possível utilizar qualquer poder mental no alvo que seria utilizável em vida, com exceção de que a mente revivida nunca realizará JPM para resistir aos efeitos, falhando automaticamente.</p>"
+    "description": "<p><span class=\"sw-selo s\">S</span> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <span class=\"sw-selo s\">S</span> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.dXF0zmeZ3ghyIncA]{Reviver Mente}</p><hr><p>O mentálico é capaz de reativar a mente de um corpo humano morto a até 72 horas por um período curto de tempo. Neste período apenas a mente estará ativa e o corpo não apresentará qualquer reação. É possível utilizar qualquer poder mental no alvo que seria utilizável em vida, com exceção de que a mente revivida nunca realizará JPM para resistir aos efeitos, falhando automaticamente.</p>"
   },
   "effects": [],
   "flags": {},

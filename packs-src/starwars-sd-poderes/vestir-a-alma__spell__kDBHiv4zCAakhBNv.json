@@ -16,7 +16,7 @@
     "range": "Pessoal",
     "duration": "1 minuto/nível",
     "jp": "nenhuma",
-    "description": "<p><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.4fyrOU2zOAOn3xAa]{Assumir Mente Armazenada}</p><hr><p>Este poder mental funciona de forma similar a assumir uma mente desencarnada, mas funciona apenas com mentes que o mentálico tenha armazenado em sua própria através de resgate ou recriação mental. Ao final do efeito a mente é novamente armazenada para que o mentálico a transfira para outro corpo.</p>"
+    "description": "<p><span class=\"sw-selo s\">S</span> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <span class=\"sw-selo s\">S</span> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.4fyrOU2zOAOn3xAa]{Assumir Mente Armazenada}</p><hr><p>Este poder mental funciona de forma similar a assumir uma mente desencarnada, mas funciona apenas com mentes que o mentálico tenha armazenado em sua própria através de resgate ou recriação mental. Ao final do efeito a mente é novamente armazenada para que o mentálico a transfira para outro corpo.</p>"
   },
   "effects": [],
   "flags": {},

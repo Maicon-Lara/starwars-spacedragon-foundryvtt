@@ -16,7 +16,7 @@
     "range": "18 m",
     "duration": "10 rodadas",
     "jp": "nenhuma",
-    "description": "<p><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>✦ Criação do cenário</strong> — não há Poder Mental equivalente no livro básico. O preço é o de qualquer poder: a Grandeza diz quanto custa em Alcance e a partir de que nível se chega lá.</p><hr><p>Esfera de <strong>6 m de raio</strong> de trevas sobrenaturais: quem não tem infravisão fica <strong>cego</strong> lá dentro, enquanto você e quem você designar enxergam normalmente.</p>"
+    "description": "<p><span class=\"sw-selo s\">S</span> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <span class=\"sw-selo s\">S</span> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>✦ Criação do cenário</strong> — não há Poder Mental equivalente no livro básico. O preço é o de qualquer poder: a Grandeza diz quanto custa em Alcance e a partir de que nível se chega lá.</p><hr><p>Esfera de <strong>6 m de raio</strong> de trevas sobrenaturais: quem não tem infravisão fica <strong>cego</strong> lá dentro, enquanto você e quem você designar enxergam normalmente.</p>"
   },
   "effects": [],
   "flags": {},

@@ -5,7 +5,7 @@
   "_id": "LE2uX8JCuhaUrjwB",
   "img": "systems/olddragon2e/assets/icons/kit.svg",
   "system": {
-    "description": "<p>Salta para o <strong>4º Nível Tecnológico</strong> já no 5º nível e ganha <strong>+1 NT a cada 2 níveis</strong> (chega ao 10º NT no 17º). O Crédito Tecnológico vira <strong>custo adicional</strong> — inventar do zero sai mais caro que comprar pronto.</p><ul><li><code>10º</code> o prejuízo <strong>dobra</strong>, mas ele passa a <strong>combinar até 3 aparatos</strong> num só engenho.</li><li><code>20º</code> cria <strong>qualquer</strong> máquina e realiza <strong>qualquer</strong> feito, a custo dobrado, independente das condições.</li></ul>",
+    "description": "<p>Salta para o <strong>4º Nível Tecnológico</strong> já no 5º nível e ganha <strong>+1 NT a cada 2 níveis</strong> (chega ao 10º NT no 17º). O Crédito Tecnológico vira <strong>custo adicional</strong> — inventar do zero sai mais caro que comprar pronto.</p><ul><li><span class=\"sw-tarja\">10º</span> o prejuízo <strong>dobra</strong>, mas ele passa a <strong>combinar até 3 aparatos</strong> num só engenho.</li><li><span class=\"sw-tarja\">20º</span> cria <strong>qualquer</strong> máquina e realiza <strong>qualquer</strong> feito, a custo dobrado, independente das condições.</li></ul>",
     "level": 5,
     "level3": "",
     "level6": "",

@@ -16,7 +16,7 @@
     "range": "Pessoal",
     "duration": "Indefinida",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.ZIUDZbxxfDj0qOAh]{Canalizar Ondas de Rádio}</p><p><em>A <strong>Sintonia Eletrônica</strong> é o poder que faz um Jedi ouvir a transmissão imperial sem tocar num painel. <strong>Ler a Corrente</strong> é o arrepio ao cruzar com alguém que serve ao outro lado.</em></p><hr><p>O mentálico pode canalizar ondas de rádio que cubram sua localização atual, ouvindo transmissões de áudio como se fossem narradas em voz alta em sua frente. A recepção está sujeita a interferência normalmente, e não é possível enviar qualquer sinal de volta.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.ZIUDZbxxfDj0qOAh]{Canalizar Ondas de Rádio}</p><p><em>A <strong>Sintonia Eletrônica</strong> é o poder que faz um Jedi ouvir a transmissão imperial sem tocar num painel. <strong>Ler a Corrente</strong> é o arrepio ao cruzar com alguém que serve ao outro lado.</em></p><hr><p>O mentálico pode canalizar ondas de rádio que cubram sua localização atual, ouvindo transmissões de áudio como se fossem narradas em voz alta em sua frente. A recepção está sujeita a interferência normalmente, e não é possível enviar qualquer sinal de volta.</p>"
   },
   "effects": [],
   "flags": {},

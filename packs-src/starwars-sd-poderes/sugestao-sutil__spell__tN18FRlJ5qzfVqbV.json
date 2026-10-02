@@ -16,7 +16,7 @@
     "range": "Visual",
     "duration": "1 dia/nível",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.A4BAn2RYpRcFslgO]{Sugestão Subliminar}</p><hr><p>O mentálico pode fazer uma única sugestão subliminar ao alvo, que deve fazer uma JPM para resistir aos efeitos. A sugestão deve consistir em uma frase de um único verbo. O indivíduo sentirá um impulso inexplicável de realizá-la a cada 1d8 horas até o fim do efeito, mas não estará consciente dele. Sugestões potencialmente letais para o alvo quebram o efeito imediatamente.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.A4BAn2RYpRcFslgO]{Sugestão Subliminar}</p><hr><p>O mentálico pode fazer uma única sugestão subliminar ao alvo, que deve fazer uma JPM para resistir aos efeitos. A sugestão deve consistir em uma frase de um único verbo. O indivíduo sentirá um impulso inexplicável de realizá-la a cada 1d8 horas até o fim do efeito, mas não estará consciente dele. Sugestões potencialmente letais para o alvo quebram o efeito imediatamente.</p>"
   },
   "effects": [],
   "flags": {},

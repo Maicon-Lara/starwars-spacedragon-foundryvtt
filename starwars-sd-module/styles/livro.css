@@ -1,0 +1,308 @@
+/* A folha de estilo do LIVRO, portada para o Foundry.
+ *
+ * Fonte: Documents\Ekhoria\20 Space Dragon\_estilo\estilo-livro.css, a mesma
+ * folha que gera os dois volumes em HTML. Aqui ela veste os journals, a ficha
+ * de nave, os diálogos e o painel de Pontos de Força deste módulo.
+ *
+ * ── POR QUE OS NOMES TÊM PREFIXO ───────────────────────────────────────────
+ *
+ * No livro as variáveis se chamam --cor, --texto, --fundo, --display. Numa
+ * página isolada isso é limpo; dentro do Foundry, :root é COMPARTILHADO com o
+ * sistema e com todos os outros módulos, e um --texto nosso repintaria a
+ * interface de quem usasse o mesmo nome. Por isso tudo aqui é --sw-.
+ *
+ * ── AS DUAS VERSÕES, E POR QUE ELAS JÁ EXISTIAM ────────────────────────────
+ *
+ * O livro tem duas paletas: na tela o fundo é o espaço (#0B0E14), na impressão
+ * vira pergaminho (#F2EBD9), com as cores de destaque escurecidas porque
+ * amarelo #FFD93B sobre papel claro não se lê.
+ *
+ * Isso cai exatamente nos dois temas do Foundry: a de IMPRESSÃO serve ao tema
+ * CLARO (o journal do Foundry já é pergaminho) e a de TELA ao ESCURO. Não foi
+ * preciso inventar paleta nenhuma — só ligar cada uma no lugar certo.
+ */
+
+:root {
+  /* ── Paleta base ── */
+  --sw-espaco: #0b0e14;       /* fundo, na tela   */
+  --sw-painel: #151a24;       /* caixas           */
+  --sw-texto: #d9d6cc;        /* corpo, na tela   */
+  --sw-crawl: #ffd93b;        /* destaque         */
+  --sw-aco: #3a4252;          /* linhas           */
+  --sw-pergaminho: #f2ebd9;   /* fundo, impresso  */
+
+  /* ── Correntes da Força ── */
+  --sw-universal: #a8b2c1;
+  --sw-luz: #3fa7ff;
+  --sw-sombra: #e0262b;
+  --sw-cinza: #9b6dff;
+  --sw-corrompe: #ff6a1a;
+
+  /* ── Classes ── */
+  --sw-veterano: #e8751a;
+  --sw-operativo: #5c7a4b;
+  --sw-tecnico: #2ec4c4;
+  --sw-sensivel: #f2e6b8;
+
+  /* ── Capítulos temáticos ── */
+  --sw-beskar: #4a5d4e;
+  --sw-prata: #c0c7cc;
+  --sw-radar: #1e6bff;
+  --sw-fosforo: #39ff88;
+  --sw-ambar: #ffb000;
+  --sw-ferrugem: #a0522d;
+  --sw-terra: #6b4f2a;
+
+  /* ── Tipografia ── */
+  --sw-serif: "Source Serif 4", Georgia, serif;
+  --sw-display: "Orbitron", "Exo 2", sans-serif;
+  --sw-condensada: "Saira Condensed", "Exo 2", sans-serif;
+
+  /* ── Os tokens que as regras usam de fato ──────────────────────────────
+   * O PADRÃO É O CLARO, porque o journal do Foundry é claro por natureza e
+   * uma mesa sem modo escuro tem de ficar legível sem configurar nada. São
+   * os valores que o livro usa na impressão.
+   */
+  --sw-fundo: var(--sw-pergaminho);
+  --sw-caixa: #e6dcc3;
+  --sw-tinta: #1a1a18;
+  --sw-linha: #8c8272;
+  --sw-cor: #9a7b00;          /* o crawl, escurecido para o papel */
+
+  /* As cores que não se leem sobre papel claro, escurecidas — os mesmos
+   * valores do bloco @media print do livro. Têm nome próprio para deixar
+   * claro que são a MESMA cor em outro valor, e não outra cor. */
+  /* O cabeçalho de tabela do livro é painel ESCURO com texto claro, nos dois
+   * temas — é o que sustenta o filete amarelo por baixo. Na impressão o livro
+   * usa #2A2E38 em vez do #151A24 da tela, porque sobre papel o painel puro
+   * fica num preto chapado. */
+  --sw-cabecalho: #2a2e38;
+  --sw-cabecalho-tinta: #f2ebd9;
+
+  --sw-universal-claro: #5a6472;
+  --sw-sensivel-claro: #8a7a3c;
+  --sw-prata-claro: #6e757a;
+  --sw-fosforo-claro: #1e7a45;
+}
+
+/* ── O ESCURO: a paleta de tela do livro ───────────────────────────────────
+ *
+ * Os mesmos dois sinais que a ficha de nave já respeitava: a classe
+ * theme-dark, que o Foundry v13 e os módulos de modo escuro põem no corpo da
+ * página, e a preferência do sistema operacional.
+ */
+body.theme-dark,
+.theme-dark {
+  --sw-fundo: var(--sw-espaco);
+  --sw-caixa: var(--sw-painel);
+  --sw-tinta: var(--sw-texto);
+  --sw-linha: var(--sw-aco);
+  --sw-cor: var(--sw-crawl);
+  --sw-cabecalho: var(--sw-painel);
+  --sw-cabecalho-tinta: var(--sw-texto);
+  --sw-universal-claro: var(--sw-universal);
+  --sw-sensivel-claro: var(--sw-sensivel);
+  --sw-prata-claro: var(--sw-prata);
+  --sw-fosforo-claro: var(--sw-fosforo);
+}
+
+@media (prefers-color-scheme: dark) {
+  body:not(.theme-light) {
+    --sw-fundo: var(--sw-espaco);
+    --sw-caixa: var(--sw-painel);
+    --sw-tinta: var(--sw-texto);
+    --sw-linha: var(--sw-aco);
+    --sw-cor: var(--sw-crawl);
+    --sw-cabecalho: var(--sw-painel);
+    --sw-cabecalho-tinta: var(--sw-texto);
+    --sw-universal-claro: var(--sw-universal);
+    --sw-sensivel-claro: var(--sw-sensivel);
+    --sw-prata-claro: var(--sw-prata);
+    --sw-fosforo-claro: var(--sw-fosforo);
+  }
+}
+
+/* ══ OS COMPONENTES DO LIVRO ═══════════════════════════════════════════════
+ *
+ * A maioria é escopada em .starwars-sd-doc, o conteúdo dos journals deste
+ * módulo: sem o escopo, estilizar título e tabela vazaria para os journals do
+ * sistema e de outros módulos.
+ *
+ * SELO E TARJA são a exceção, e têm classe própria (.sw-selo, .sw-tarja). Eles
+ * aparecem TAMBÉM nas descrições de item, que o Foundry renderiza na ficha, no
+ * cartão de chat e no tooltip — todas fora do container do journal. Prendê-los
+ * a .starwars-sd-doc deixaria a tarja sem estilo justamente na ficha, que é
+ * onde o jogador olha o nível. O prefixo .sw- é o que evita colidir com um
+ * `.selo` de qualquer outro módulo.
+ */
+
+/* ── Selos hexagonais das correntes ────────────────────────────────────────
+ * No livro, [U], [L], [S], [C] e a estrela marcam a corrente de cada poder.
+ * O gerador (tools/lib.mjs) emite os span; aqui eles ganham o hexágono.
+ */
+.sw-selo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.45em;
+  height: 1.65em;
+  font-family: var(--sw-condensada);
+  font-weight: 700;
+  font-size: 0.82em;
+  color: #fff;
+  background: var(--sw-universal-claro);
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  vertical-align: -0.3em;
+  margin: 0 0.12em;
+}
+.sw-selo.u { background: var(--sw-universal-claro); }
+.sw-selo.l { background: var(--sw-luz); }
+.sw-selo.s { background: var(--sw-sombra); }
+.sw-selo.c { background: var(--sw-cinza); }
+.sw-selo.estrela { background: var(--sw-corrompe); }
+
+/* ── Tarja de nível ───────────────────────────────────────────────────────
+ * O marcador de nível que o build do livro já gerava. O corte em diagonal é
+ * o que o distingue de um simples fundo colorido.
+ */
+.sw-tarja {
+  display: inline-block;
+  font-family: var(--sw-condensada);
+  font-weight: 700;
+  font-size: 0.8em;
+  color: var(--sw-fundo);
+  background: var(--sw-cor);
+  padding: 0 0.45em;
+  letter-spacing: 0.04em;
+  clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
+}
+
+/* ── Abertura de capítulo ─────────────────────────────────────────────────
+ * O número grande, o título e a epígrafe, sobre a faixa na cor do capítulo.
+ * No livro é uma section; aqui é a primeira coisa da página de journal.
+ */
+.starwars-sd-doc .abertura {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0 1.1em;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--sw-cor) 26%, transparent),
+    transparent 82%
+  );
+  border-left: 5px solid var(--sw-cor);
+  padding: 0.9em 1.1em;
+  margin: 0 0 1.6em;
+}
+.starwars-sd-doc .abertura .n {
+  font-family: var(--sw-display);
+  font-weight: 900;
+  font-size: 2.6em;
+  line-height: 1;
+  color: var(--sw-cor);
+  opacity: 0.85;
+  grid-row: span 2;
+}
+.starwars-sd-doc .abertura h1 {
+  font-family: var(--sw-display);
+  font-weight: 700;
+  font-size: 1.35em;
+  letter-spacing: 0.04em;
+  /* o journal do Foundry põe borda e espaço nos títulos; a abertura é um
+     bloco fechado em si, e a borda dele cortaria a faixa ao meio */
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--sw-tinta);
+  text-align: left;
+}
+.starwars-sd-doc .abertura .epigrafe {
+  font-style: italic;
+  font-size: 0.92em;
+  opacity: 0.75;
+  margin: 0.25em 0 0;
+  text-align: left;
+}
+
+/* ── A cor de cada capítulo ───────────────────────────────────────────────
+ * O build marca a página com a classe; daqui para baixo tudo que usa
+ * --sw-cor (abertura, tarja, marcador de lista, fio da tabela) acompanha.
+ */
+.starwars-sd-doc.c-index { --sw-cor: var(--sw-crawl); }
+.starwars-sd-doc.c-usando { --sw-cor: var(--sw-crawl); }
+.starwars-sd-doc.c-atributos { --sw-cor: var(--sw-universal-claro); }
+.starwars-sd-doc.c-especies { --sw-cor: var(--sw-operativo); }
+.starwars-sd-doc.c-classes { --sw-cor: var(--sw-veterano); }
+.starwars-sd-doc.c-forca { --sw-cor: var(--sw-sensivel-claro); }
+.starwars-sd-doc.c-poderes { --sw-cor: var(--sw-luz); }
+.starwars-sd-doc.c-sabre { --sw-cor: var(--sw-luz); }
+.starwars-sd-doc.c-mando { --sw-cor: var(--sw-beskar); }
+.starwars-sd-doc.c-ordens { --sw-cor: var(--sw-prata-claro); }
+.starwars-sd-doc.c-equip { --sw-cor: var(--sw-aco); }
+.starwars-sd-doc.c-aventuras { --sw-cor: var(--sw-radar); }
+.starwars-sd-doc.c-combate { --sw-cor: var(--sw-sombra); }
+.starwars-sd-doc.c-aparatos { --sw-cor: var(--sw-tecnico); }
+.starwars-sd-doc.c-naves { --sw-cor: var(--sw-radar); }
+.starwars-sd-doc.c-tatico { --sw-cor: var(--sw-fosforo-claro); }
+.starwars-sd-doc.c-bestiario { --sw-cor: var(--sw-ferrugem); }
+.starwars-sd-doc.c-mestre { --sw-cor: var(--sw-ambar); }
+
+/* ── Tipografia do corpo ──────────────────────────────────────────────────
+ * O livro é serif no corpo e condensada nos títulos e nas tabelas; o display
+ * fica para o número do capítulo e o título da abertura, que é onde uma fonte
+ * geométrica larga não cansa a leitura.
+ *
+ * Nota de especificidade: o journal do Foundry traz font-family própria em
+ * vários seletores, e por isso cada um aqui nomeia o elemento em vez de
+ * confiar na herança a partir do container.
+ */
+.starwars-sd-doc,
+.starwars-sd-doc p,
+.starwars-sd-doc li,
+.starwars-sd-doc blockquote {
+  font-family: var(--sw-serif);
+}
+.starwars-sd-doc h1,
+.starwars-sd-doc h2,
+.starwars-sd-doc h3,
+.starwars-sd-doc h4 {
+  font-family: var(--sw-condensada);
+  text-align: left;
+}
+.starwars-sd-doc table,
+.starwars-sd-doc th,
+.starwars-sd-doc td {
+  font-family: var(--sw-condensada);
+}
+.starwars-sd-doc code {
+  font-family: var(--sw-condensada);
+  font-weight: 600;
+}
+
+/* o marcador da lista na cor do capítulo, como no livro */
+.starwars-sd-doc li::marker {
+  color: var(--sw-cor);
+}
+
+/* ── Caixas de destaque ───────────────────────────────────────────────────
+ * No livro todo blockquote é uma caixa: fundo de painel e uma barra na cor
+ * do capítulo. O journal do Foundry desenha o blockquote como citação
+ * recuada, sem fundo — daí redefinir margin e padding junto.
+ */
+.starwars-sd-doc blockquote {
+  margin: 1.1em 0;
+  padding: 0.8em 1em;
+  background: var(--sw-caixa);
+  border-left: 4px solid var(--sw-cor);
+  border-radius: 0 3px 3px 0;
+}
+.starwars-sd-doc blockquote p:first-child { margin-top: 0; }
+.starwars-sd-doc blockquote p:last-child { margin-bottom: 0; }
+/* o rótulo, quando a caixa abre em negrito */
+.starwars-sd-doc blockquote > p:first-child > strong:first-child {
+  font-family: var(--sw-condensada);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--sw-cor);
+}

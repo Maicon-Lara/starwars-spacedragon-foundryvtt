@@ -101,6 +101,7 @@ export function md(s) {
     .replace(/`([^`]+)`/g, "<code>$1</code>");
 }
 
+
 // Tabela do cofre ({ cabecalho, linhas }) → HTML, com a legenda e a nota que a
 // acompanham no cofre, quando houver.
 export function tabelaHTML(titulo, t) {
@@ -562,6 +563,80 @@ export function raceDoc(race, folderId, abilityUuids) {
   };
 }
 
+// ── Os enfeites do livro: selos de corrente e tarjas de nível ─────────────
+//
+// No cofre a corrente de um poder é `[U]`, `[L]`, `[S]` ou `[C]` entre crases,
+// e o nível é `5º` ou `[11]`. O markdown os entrega como <code>, e o Foundry
+// desenha <code> como trecho de código: cinza, monoespaçado, sem significado
+// nenhum para quem lê a regra.
+//
+// O livro transforma os primeiros em hexágono colorido e os segundos em tarja
+// cortada em diagonal. Aqui é a mesma conversão, com as mesmas classes — quem
+// desenha é styles/livro.css. As expressões são as do build do livro
+// (_build/build_docx.py, linhas 242-243), para que os dois concordem sobre o
+// que é marcador e o que é código de verdade.
+//
+// A estrela de "sempre corrompe" aparece solta no texto, fora de crase.
+const SELO = { U: "u", L: "l", S: "s", C: "c" };
+
+export function enfeitar(html) {
+  return String(html ?? "")
+    .replace(/<code>\[([ULSC])\]<\/code>/g,
+      (_, c) => `<span class="sw-selo ${SELO[c]}">${c}</span>`)
+    .replace(/<code>(\d{1,2})[ºo°]<\/code>/g, '<span class="sw-tarja">$1º</span>')
+    .replace(/<code>\[(\d{1,2})\]<\/code>/g, '<span class="sw-tarja">$1</span>')
+    // o lookbehind é o que torna enfeitar() IDEMPOTENTE: sem ele, uma segunda
+    // passada envolveria num novo <span> a estrela que já está dentro de um.
+    // Os outros três casos já são idempotentes por construção, porque consomem
+    // o <code> que procuram.
+    .replace(/(?<!<span class="sw-selo estrela">)★/g,
+      '<span class="sw-selo estrela">★</span>');
+}
+
+/**
+ * Enfeita os campos de um documento que são HTML, e só eles.
+ *
+ * É aplicado UMA VEZ, no fim do build (compile), e não dentro de cada
+ * construtor. Dois motivos:
+ *
+ *   1. os selos aparecem nos poderes, nas espécies, nas classes e nos
+ *      journals, montados por caminhos diferentes — passar por todos seria
+ *      esquecer um;
+ *   2. enfeitar() NÃO é idempotente para a estrela: aplicado duas vezes, o
+ *      ★ já dentro de um <span> ganharia outro <span> em volta.
+ *
+ * E é campo a campo, nunca em toda string do documento: um ★ no NOME de um
+ * poder viraria HTML dentro de um campo de texto puro, e o Foundry mostraria
+ * a tag literal na lista.
+ */
+export function enfeitarDoc(doc) {
+  if (doc?.system?.description) {
+    doc.system.description = enfeitar(doc.system.description);
+  }
+  for (const pg of doc?.pages ?? []) {
+    if (pg?.text?.content) pg.text.content = enfeitar(pg.text.content);
+  }
+  return doc;
+}
+
+/**
+ * A abertura de capítulo do livro: o número grande, o título e a epígrafe,
+ * sobre uma faixa na cor do capítulo.
+ *
+ * Vai só na PRIMEIRA página da entry, e essa página perde o título que o
+ * Foundry mostraria por cima — senão o nome do capítulo sairia duas vezes,
+ * uma no cabeçalho da página e outra dentro da faixa.
+ */
+function aberturaHTML(numero, titulo, epigrafe) {
+  return (
+    '<div class="abertura">' +
+    `<div class="n">${String(numero).padStart(2, "0")}</div>` +
+    `<h1>${titulo}</h1>` +
+    (epigrafe ? `<p class="epigrafe">${epigrafe}</p>` : "") +
+    "</div>"
+  );
+}
+
 // JournalEntry com páginas de texto (HTML).
 // Marca como callout os parágrafos que começam com o sinal de aviso.
 function destacaAvisos(html) {
@@ -573,22 +648,35 @@ function destacaAvisos(html) {
 
 export function journalDoc(entry, sort) {
   const id = makeId(`journal:${entry.title}`);
+  // `cap` é a cor do capítulo; sem ela a página fica no amarelo do letreiro,
+  // que é o padrão de --sw-cor.
+  const cap = entry.cap ? ` c-${entry.cap}` : "";
   const pages = (entry.pages || [{ title: entry.title, content: entry.content }]).map(
     (p, i) => {
       const pid = makeId(`journal-page:${entry.title}:${p.title}:${i}`);
+      const abre =
+        i === 0 && entry.numero
+          ? aberturaHTML(entry.numero, entry.title, entry.epigrafe)
+          : "";
       return {
         sort: (i + 1) * 100000,
         name: p.title,
         type: "text",
         _id: pid,
-        title: { show: true, level: 1 },
+        // A primeira página abre o capítulo e por isso esconde o próprio
+        // título: ele já aparece grande dentro da faixa.
+        title: { show: abre === "", level: 1 },
         image: {},
         // `starwars-sd-doc` é o gancho de escopo do CSS do módulo: sem ele, estilizar
         // tabela e título vazaria para os journals do sistema e de outros módulos.
+        // A classe `c-…` leva a COR do capítulo, que o livro usa na faixa, no
+        // fio da tabela, nas tarjas e no marcador das listas.
         // Parágrafos de aviso (⚠) viram callout — o marcador já estava no texto.
         text: {
           format: 1,
-          content: `<div class="odo-markdown starwars-sd-doc">${destacaAvisos(p.content)}</div>`,
+          content:
+            `<div class="odo-markdown starwars-sd-doc${cap}">` +
+            `${abre}${destacaAvisos(p.content)}</div>`,
         },
         video: { controls: true, volume: 0.5 },
         src: null,

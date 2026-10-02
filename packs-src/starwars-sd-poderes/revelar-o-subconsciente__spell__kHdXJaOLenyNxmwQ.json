@@ -16,7 +16,7 @@
     "range": "Visual",
     "duration": "Permanente",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.6EDlwA9jZDW2LZT6]{Manifestar Subconsciente}</p><hr><p>Com este poder mental, o mentálico é capaz de manifestar alguma informação do subconsciente do alvo. Essa informação pode ser uma mensagem subliminar, memórias quase esquecidas ou o efeito de algum poder mental. O alvo passará a armazenar a informação em sua memória consciente, que o mentálico lerá instantaneamente.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.6EDlwA9jZDW2LZT6]{Manifestar Subconsciente}</p><hr><p>Com este poder mental, o mentálico é capaz de manifestar alguma informação do subconsciente do alvo. Essa informação pode ser uma mensagem subliminar, memórias quase esquecidas ou o efeito de algum poder mental. O alvo passará a armazenar a informação em sua memória consciente, que o mentálico lerá instantaneamente.</p>"
   },
   "effects": [],
   "flags": {},

@@ -16,7 +16,7 @@
     "range": "Visual",
     "duration": "1 minuto",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.VfYV0QakvFFSkRKy]{Detectar Mentiras}</p><hr><p>Ao utilizar este poder em um alvo, o mentálico é capaz de determinar a veracidade de tudo que ele disser enquanto estiver sob efeito. O alvo precisa estar dentro do alcance deste poder mental, mas a detecção não revela a verdade.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.VfYV0QakvFFSkRKy]{Detectar Mentiras}</p><hr><p>Ao utilizar este poder em um alvo, o mentálico é capaz de determinar a veracidade de tudo que ele disser enquanto estiver sob efeito. O alvo precisa estar dentro do alcance deste poder mental, mas a detecção não revela a verdade.</p>"
   },
   "effects": [],
   "flags": {},

@@ -5,7 +5,7 @@
   "_id": "MwQeavdM2yhVbIlQ",
   "img": "systems/olddragon2e/assets/icons/slashing.svg",
   "system": {
-    "description": "<p><em>defesa pura</em></p><ul><li><code>5º</code> <strong>Postura Defensiva:</strong> <strong>+2 no CP</strong> contra ataques à distância e você <strong>deflete disparos de blaster</strong> sem gastar ação; gastando a ação, deflete <strong>todos</strong> os disparos contra você e aliados adjacentes.</li><li><code>10º</code> <strong>Devolver ao Remetente:</strong> ao defletir, pode <strong>redirecionar o disparo ao atirador</strong> com um ataque seu.</li><li><code>20º</code> <strong>Mestre Soresu:</strong> ataques à distância só o acertam num <strong>crítico</strong>.</li></ul>",
+    "description": "<p><em>defesa pura</em></p><ul><li><span class=\"sw-tarja\">5º</span> <strong>Postura Defensiva:</strong> <strong>+2 no CP</strong> contra ataques à distância e você <strong>deflete disparos de blaster</strong> sem gastar ação; gastando a ação, deflete <strong>todos</strong> os disparos contra você e aliados adjacentes.</li><li><span class=\"sw-tarja\">10º</span> <strong>Devolver ao Remetente:</strong> ao defletir, pode <strong>redirecionar o disparo ao atirador</strong> com um ataque seu.</li><li><span class=\"sw-tarja\">20º</span> <strong>Mestre Soresu:</strong> ataques à distância só o acertam num <strong>crítico</strong>.</li></ul>",
     "level": 5,
     "level3": "",
     "level6": "",

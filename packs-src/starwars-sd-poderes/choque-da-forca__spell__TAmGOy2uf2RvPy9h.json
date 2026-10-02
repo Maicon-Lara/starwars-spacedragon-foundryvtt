@@ -16,7 +16,7 @@
     "range": "Visual",
     "duration": "Instantâneo",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.SlZ7WWEkKEgn1EkM]{Choque Mental}</p><hr><p>Este poder mental funciona de forma idêntica ao choque mental descrito nas regras de anulação e contra-ataque mental, causando 1d4 pontos de dano mental e deixando o alvo atordoado por 6d10 segundos, em caso de falha em uma JPM. Personagens atordoados recebem uma penalidade de -3 em quaisquer rolagens que fizerem.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.SlZ7WWEkKEgn1EkM]{Choque Mental}</p><hr><p>Este poder mental funciona de forma idêntica ao choque mental descrito nas regras de anulação e contra-ataque mental, causando 1d4 pontos de dano mental e deixando o alvo atordoado por 6d10 segundos, em caso de falha em uma JPM. Personagens atordoados recebem uma penalidade de -3 em quaisquer rolagens que fizerem.</p>"
   },
   "effects": [],
   "flags": {},

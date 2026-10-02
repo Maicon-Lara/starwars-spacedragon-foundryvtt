@@ -16,7 +16,7 @@
     "range": "Visual",
     "duration": "Instantâneo",
     "jp": "nenhuma",
-    "description": "<p><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.njBFCW6Nq6kfiwJN]{Revelar Segredos}</p><hr><p>O mentálico força o alvo a contar qualquer segredo que tenha, se ele não for bem-sucedido em uma JPM. Só é possível revelar segredos dos quais o alvo esteja consciente, portanto eventos ocorridos durante uma hipnose ou outro tipo de controle mental não são acessíveis. Apenas um segredo pode ser revelado por utilização deste poder mental.</p>"
+    "description": "<p><span class=\"sw-selo s\">S</span> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <span class=\"sw-selo s\">S</span> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.njBFCW6Nq6kfiwJN]{Revelar Segredos}</p><hr><p>O mentálico força o alvo a contar qualquer segredo que tenha, se ele não for bem-sucedido em uma JPM. Só é possível revelar segredos dos quais o alvo esteja consciente, portanto eventos ocorridos durante uma hipnose ou outro tipo de controle mental não são acessíveis. Apenas um segredo pode ser revelado por utilização deste poder mental.</p>"
   },
   "effects": [],
   "flags": {},

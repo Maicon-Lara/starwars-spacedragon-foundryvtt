@@ -16,7 +16,7 @@
     "range": "100 metros + 10 metros/ nível",
     "duration": "Instantâneo",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.kxeF8B0fPkKTkKMY]{Detectar Poderes Mentais}</p><hr><p>O mentálico consegue captar o uso de um poder mental no ambiente ao seu redor e intuir a direção em que foi executado e qual poder foi utilizado. Ele só conseguirá detectar poderes mentais sendo utilizados naquele exato momento ou de efeito prolongado sobre um local.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.kxeF8B0fPkKTkKMY]{Detectar Poderes Mentais}</p><hr><p>O mentálico consegue captar o uso de um poder mental no ambiente ao seu redor e intuir a direção em que foi executado e qual poder foi utilizado. Ele só conseguirá detectar poderes mentais sendo utilizados naquele exato momento ou de efeito prolongado sobre um local.</p>"
   },
   "effects": [],
   "flags": {},

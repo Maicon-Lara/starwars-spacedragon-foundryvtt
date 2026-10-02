@@ -16,7 +16,7 @@
     "range": "Visual",
     "duration": "6 horas/nível",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.qaRGQChHwhXpBMmf]{Sugestão Direta}</p><hr><p>A sugestão direta funciona de forma similar à sugestão subliminar, mas o indivíduo afetado estará consciente de seu impulso em realizar a sugestão plantada em sua mente – embora não possa explicá-lo. A sugestão também pode incluir dois verbos ao invés de um.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.qaRGQChHwhXpBMmf]{Sugestão Direta}</p><hr><p>A sugestão direta funciona de forma similar à sugestão subliminar, mas o indivíduo afetado estará consciente de seu impulso em realizar a sugestão plantada em sua mente – embora não possa explicá-lo. A sugestão também pode incluir dois verbos ao invés de um.</p>"
   },
   "effects": [],
   "flags": {},

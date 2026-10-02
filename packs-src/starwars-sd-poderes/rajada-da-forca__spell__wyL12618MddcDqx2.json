@@ -16,7 +16,7 @@
     "range": "Visual",
     "duration": "Instantâneo",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.abXaSZoxCO2BH5JC]{Disparo Mental}</p><hr><p>O mentálico projeta um raio concentrado de energia psíquica similar a um raio laser contra um alvo, causando 1d6 pontos de dano. Caso opte por investir uma porcentagem maior de seu alcance mental diário, o mentálico pode causar +2 pontos de dano por ponto percentual, para um total de +10. Ao gastar 4% um mentálico causaria 1d6+6 pontos de dano, por exemplo. O alvo não tem direito a uma JPM, e o dano causado não é mental, e sim de energia.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.abXaSZoxCO2BH5JC]{Disparo Mental}</p><hr><p>O mentálico projeta um raio concentrado de energia psíquica similar a um raio laser contra um alvo, causando 1d6 pontos de dano. Caso opte por investir uma porcentagem maior de seu alcance mental diário, o mentálico pode causar +2 pontos de dano por ponto percentual, para um total de +10. Ao gastar 4% um mentálico causaria 1d6+6 pontos de dano, por exemplo. O alvo não tem direito a uma JPM, e o dano causado não é mental, e sim de energia.</p>"
   },
   "effects": [],
   "flags": {},

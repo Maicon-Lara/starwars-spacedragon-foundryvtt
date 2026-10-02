@@ -16,7 +16,7 @@
     "range": "Toque",
     "duration": "Variável (ver texto)",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.bVoXq6MkpjzVl7cs]{Interagir com Memória}</p><hr><p>Este poder mental é uma versão aprimorada do poder de vivenciar memória, pois permite que o mentálico e seus aliados interajam com os acontecimentos. Eles podem falar com indivíduos, que reagirão normalmente a eles, e interferir no ambiente. O curso dos eventos retratados na memória pode ser mudado devido à presença do mentálico e seus aliados, dependendo de suas ações.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.bVoXq6MkpjzVl7cs]{Interagir com Memória}</p><hr><p>Este poder mental é uma versão aprimorada do poder de vivenciar memória, pois permite que o mentálico e seus aliados interajam com os acontecimentos. Eles podem falar com indivíduos, que reagirão normalmente a eles, e interferir no ambiente. O curso dos eventos retratados na memória pode ser mudado devido à presença do mentálico e seus aliados, dependendo de suas ações.</p>"
   },
   "effects": [],
   "flags": {},

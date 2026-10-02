@@ -16,7 +16,7 @@
     "range": "100 metros + 10 metros/nível",
     "duration": "Instantâneo",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.rJoJzy36q2i5kAsW]{Localizar Objeto}</p><hr><p>O mentálico pode intuir a direção e distância de um único objeto ao tocar em um objeto igual ou relacionado. Esse objeto pode ser um pedaço do objeto que se quer localizar, algo feito do mesmo material ou com funcionalidade similar.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.rJoJzy36q2i5kAsW]{Localizar Objeto}</p><hr><p>O mentálico pode intuir a direção e distância de um único objeto ao tocar em um objeto igual ou relacionado. Esse objeto pode ser um pedaço do objeto que se quer localizar, algo feito do mesmo material ou com funcionalidade similar.</p>"
   },
   "effects": [],
   "flags": {},

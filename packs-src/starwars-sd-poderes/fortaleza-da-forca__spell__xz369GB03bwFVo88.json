@@ -16,7 +16,7 @@
     "range": "2 m²/nível",
     "duration": "1 minuto/nível",
     "jp": "nenhuma",
-    "description": "<p><code>[L]</code> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.Cg8OP12kDn84pqTD]{Fortaleza Mental}</p><hr><p>Este poder mental funciona de forma idêntica ao bloqueio mental, exceto pelo fato de que pode afetar quaisquer aliados ao alcance do efeito. Indivíduos que já estejam sob efeito de um bloqueio mental mantêm o efeito original, e não ganham bônus algum.</p>"
+    "description": "<p><span class=\"sw-selo l\">L</span> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.Cg8OP12kDn84pqTD]{Fortaleza Mental}</p><hr><p>Este poder mental funciona de forma idêntica ao bloqueio mental, exceto pelo fato de que pode afetar quaisquer aliados ao alcance do efeito. Indivíduos que já estejam sob efeito de um bloqueio mental mantêm o efeito original, e não ganham bônus algum.</p>"
   },
   "effects": [],
   "flags": {},

@@ -16,7 +16,7 @@
     "range": "Visual",
     "duration": "1 minuto/nível",
     "jp": "nenhuma",
-    "description": "<p><code>[L]</code> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.LbD5QYBsoF8KAHOr]{Placebo}</p><hr><p>Este poder mental concede um bônus de +1 em qualquer atributo do alvo a cada 4 níveis do mentálico através de manipulação mental. O poder é ineficaz se o alvo já estiver sob os efeitos de outro poder mental que envolva bônus ou penalidades de atributo.</p>"
+    "description": "<p><span class=\"sw-selo l\">L</span> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.LbD5QYBsoF8KAHOr]{Placebo}</p><hr><p>Este poder mental concede um bônus de +1 em qualquer atributo do alvo a cada 4 níveis do mentálico através de manipulação mental. O poder é ineficaz se o alvo já estiver sob os efeitos de outro poder mental que envolva bônus ou penalidades de atributo.</p>"
   },
   "effects": [],
   "flags": {},

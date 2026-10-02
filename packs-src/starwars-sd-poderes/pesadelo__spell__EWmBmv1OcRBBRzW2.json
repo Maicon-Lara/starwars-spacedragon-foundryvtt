@@ -16,7 +16,7 @@
     "range": "Visual",
     "duration": "1 minuto/nível",
     "jp": "nenhuma",
-    "description": "<p><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.0W2y1ZMuZheHGk0y]{Criar Pesadelo}</p><hr><p>Este poder mental funciona de forma similar ao de criar sonhos, mas o mentálico é capaz de criar pesadelos na mente do alvo. Ao acordar, o indivíduo afetado deve fazer uma JPM para não ficar amedrontado pelo pesadelo durante 24 horas, sofrendo uma penalidade de -2 em suas rolagens e -4 em situações que lembrem acontecimentos vividos durante o pesadelo.</p>"
+    "description": "<p><span class=\"sw-selo s\">S</span> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <span class=\"sw-selo s\">S</span> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.0W2y1ZMuZheHGk0y]{Criar Pesadelo}</p><hr><p>Este poder mental funciona de forma similar ao de criar sonhos, mas o mentálico é capaz de criar pesadelos na mente do alvo. Ao acordar, o indivíduo afetado deve fazer uma JPM para não ficar amedrontado pelo pesadelo durante 24 horas, sofrendo uma penalidade de -2 em suas rolagens e -4 em situações que lembrem acontecimentos vividos durante o pesadelo.</p>"
   },
   "effects": [],
   "flags": {},

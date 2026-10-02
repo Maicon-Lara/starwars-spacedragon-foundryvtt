@@ -16,7 +16,7 @@
     "range": "Visual",
     "duration": "Instantâneo",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.Oav4NZaw4oiJ64Ut]{Transferir Pensamento}</p><hr><p>O mentálico pode transferir um pensamento qualquer que tenha tido para um alvo ao alcance visual. Ao receber o pensamento o alvo o compreenderá como se o tivesse formulado, mas detalhes dependentes de conhecimento prévio como idiomas ou fatos passados serão obscuros.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.Oav4NZaw4oiJ64Ut]{Transferir Pensamento}</p><hr><p>O mentálico pode transferir um pensamento qualquer que tenha tido para um alvo ao alcance visual. Ao receber o pensamento o alvo o compreenderá como se o tivesse formulado, mas detalhes dependentes de conhecimento prévio como idiomas ou fatos passados serão obscuros.</p>"
   },
   "effects": [],
   "flags": {},

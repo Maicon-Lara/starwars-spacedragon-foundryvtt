@@ -14,29 +14,50 @@
  */
 
 :root {
-  --starwars-sd-titulo: #3b1d10;       /* títulos e cabeçalho de tabela */
-  --starwars-sd-texto-claro: #f5efe6;  /* sobre o cabeçalho de tabela   */
-  --starwars-sd-ouro: #a8801c;         /* fio de destaque               */
-  --starwars-sd-acento: #8a3f1c;       /* subtítulos e marcadores       */
-  --starwars-sd-linha: rgba(59, 29, 16, 0.25);
-  --starwars-sd-zebra: rgba(59, 29, 16, 0.06);
-  --starwars-sd-aviso-fundo: rgba(232, 197, 71, 0.14);
+  /* As cores eram as das capas deste módulo (brasa e o amarelo do letreiro),
+   * fixas em hexadecimal. Agora DERIVAM da paleta do livro (styles/livro.css),
+   * a mesma dos dois volumes em HTML. As sete variáveis continuam existindo
+   * com o mesmo papel, para que estas 400 linhas não precisassem ser
+   * reescritas: o que mudou é de onde vem o valor, e que ele agora acompanha
+   * o tema claro ou escuro em vez de ser um só. */
+  --starwars-sd-titulo: var(--sw-cabecalho);         /* fundo do cabeçalho de tabela */
+  --starwars-sd-texto-claro: var(--sw-cabecalho-tinta);
+  --starwars-sd-ouro: var(--sw-cor);                 /* o filete, na cor do capítulo */
+  --starwars-sd-acento: var(--sw-cor);               /* subtítulos e marcadores      */
+  --starwars-sd-linha: var(--sw-linha);
+  --starwars-sd-zebra: color-mix(in srgb, var(--sw-cor) 7%, transparent);
+  --starwars-sd-aviso-fundo: var(--sw-caixa);
+}
+
+/* O fundo e a tinta do tema. Sem isto o journal mantém o pergaminho do
+   Foundry no modo escuro, e o texto claro do livro desaparece dentro dele. */
+.starwars-sd-doc {
+  background: var(--sw-fundo);
+  color: var(--sw-tinta);
 }
 
 /* ── Títulos ───────────────────────────────────────────────────────────── */
 
+/* O h2 usa a COR DO CAPÍTULO, e não o escuro do cabeçalho de tabela: no livro
+   esses dois papéis são cores diferentes, e --starwars-sd-titulo atendia os
+   dois enquanto havia uma paleta só. */
 .starwars-sd-doc h2 {
   margin: 1.4em 0 0.5em;
   padding-bottom: 0.2em;
-  border-bottom: 2px solid var(--starwars-sd-titulo);
-  color: var(--starwars-sd-titulo);
-  font-variant: small-caps;
-  letter-spacing: 0.02em;
+  border-bottom: 2px solid var(--sw-cor);
+  color: var(--sw-cor);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .starwars-sd-doc h3 {
   margin: 1.1em 0 0.4em;
-  color: var(--starwars-sd-acento);
+  color: var(--sw-cor);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.95em;
 }
 
 /* ── Tabelas ───────────────────────────────────────────────────────────── */
@@ -49,11 +70,14 @@
 }
 
 .starwars-sd-doc thead th {
-  background: var(--starwars-sd-titulo);
-  color: var(--starwars-sd-texto-claro);
+  background: var(--sw-cabecalho);
+  color: var(--sw-cabecalho-tinta);
   text-align: left;
-  font-variant: small-caps;
+  font-weight: 700;
   letter-spacing: 0.03em;
+  /* O FILETE. É a marca da tabela no livro, e é o que amarra a tabela à cor do
+     capítulo sem ter de pintar o cabeçalho inteiro. */
+  border-bottom: 2px solid var(--sw-cor);
 }
 
 .starwars-sd-doc th,
@@ -156,38 +180,38 @@
 .starwars-sd.nave-ficha.tema-escuro,
 body.theme-dark .starwars-sd.nave-ficha.tema-auto,
 .theme-dark .starwars-sd.nave-ficha.tema-auto {
-  --sd-fundo: #11162a;    /* o fundo da ficha */
-  --sd-caixa: #29325a;    /* a caixa preenchida */
-  --sd-barra: #c3cdf2;    /* títulos, e o fundo do que está ligado */
-  --sd-tinta: #e8ebf7;    /* o texto */
-  --sd-brilho: #4fd0be;   /* o verde-água, clareado para o fundo escuro */
-  --nave-perigo: #ff8a84; /* o vermelho do OD2, clareado pelo mesmo motivo */
-  --nave-campo: #1b2340;  /* o fundo dos campos de digitação */
+  --sd-fundo: var(--sw-espaco);    /* o fundo da ficha */
+  --sd-caixa: var(--sw-painel);    /* a caixa preenchida */
+  --sd-barra: var(--sw-crawl);     /* títulos, e o fundo do que está ligado */
+  --sd-tinta: var(--sw-texto);     /* o texto */
+  --sd-brilho: var(--sw-fosforo);  /* o verde do Tático */
+  --nave-perigo: var(--sw-sombra); /* o vermelho da Sombra, para avaria */
+  --nave-campo: #0f131b;           /* um degrau abaixo do painel, para o campo afundar */
   --nave-campo-esquema: dark;
 }
 
 @media (prefers-color-scheme: dark) {
   .starwars-sd.nave-ficha.tema-auto {
-    --sd-fundo: #11162a;
-    --sd-caixa: #29325a;
-    --sd-barra: #c3cdf2;
-    --sd-tinta: #e8ebf7;
-    --sd-brilho: #4fd0be;
-    --nave-perigo: #ff8a84;
-    --nave-campo: #1b2340;
-    --nave-campo-esquema: dark;
+  --sd-fundo: var(--sw-espaco);    /* o fundo da ficha */
+  --sd-caixa: var(--sw-painel);    /* a caixa preenchida */
+  --sd-barra: var(--sw-crawl);     /* títulos, e o fundo do que está ligado */
+  --sd-tinta: var(--sw-texto);     /* o texto */
+  --sd-brilho: var(--sw-fosforo);  /* o verde do Tático */
+  --nave-perigo: var(--sw-sombra); /* o vermelho da Sombra, para avaria */
+  --nave-campo: #0f131b;           /* um degrau abaixo do painel, para o campo afundar */
+  --nave-campo-esquema: dark;
   }
 }
 /* O claro explícito vence os dois sinais acima: quem escolhe "claro" na opção
    quer claro mesmo com o Foundry no escuro. */
 .starwars-sd.nave-ficha.tema-claro {
-  --sd-fundo: #eef0f8;
-  --sd-caixa: #ccd3f0;
-  --sd-barra: #1b2340;
-  --sd-tinta: #10162c;
-  --sd-brilho: #2f9e8f;
+  --sd-fundo: var(--sw-pergaminho);
+  --sd-caixa: #e6dcc3;
+  --sd-barra: #2a2e38;      /* o escuro que o livro usa no papel */
+  --sd-tinta: #1a1a18;
+  --sd-brilho: #1e7a45;     /* o verde do Tático, escurecido para o papel */
   --nave-perigo: #9e1510;
-  --nave-campo: #fff;
+  --nave-campo: #fffdf6;    /* branco quente: sobre pergaminho, #fff estala */
   --nave-campo-esquema: light;
 }
 
@@ -224,6 +248,28 @@ body.theme-dark .starwars-sd.nave-ficha.tema-auto,
   min-height: 0;
   max-height: 100%;
 }
+/* ── A TIPOGRAFIA DO LIVRO NA FICHA ──────────────────────────────────────
+ *
+ * Só nos títulos e nos rótulos. O corpo e os números ficam com a fonte da
+ * interface de propósito: Source Serif numa ficha, em corpo 11px e dentro de
+ * campo de digitação, perde legibilidade — e a ficha é para consultar rápido
+ * no meio do turno, não para ler.
+ */
+.starwars-sd.nave-ficha h3,
+.starwars-sd.nave-ficha .dado label,
+.starwars-sd.nave-ficha .posto label,
+.starwars-sd.nave-ficha .sobrecarga label,
+.starwars-sd-nave-dialogo h3 {
+  font-family: var(--sw-condensada);
+}
+
+/* o nome da nave é a única coisa em display, como o título de capítulo */
+.starwars-sd.nave-ficha input[name="name"] {
+  font-family: var(--sw-display);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
 .starwars-sd.nave-ficha h3 {
   font-size: 12px; text-transform: uppercase; letter-spacing: .09em;
   /* cor explícita: sem isto o h3 herda o carmim do sistema, que sobre o fundo
@@ -422,22 +468,22 @@ body.theme-dark .starwars-sd.nave-ficha.tema-auto,
  * visita na casa dos outros, e não deve competir com o que o OD2 desenha.
  */
 .starwars-sd-pf {
-  border: 1px solid rgba(27, 35, 64, 0.25);
+  border: 1px solid color-mix(in srgb, var(--sw-cor) 45%, transparent);
   border-radius: 4px;
   padding: 6px 8px;
   margin: 0 0 8px;
-  background: rgba(204, 211, 240, 0.25);
+  background: color-mix(in srgb, var(--sw-cor) 10%, transparent);
 }
-.starwars-sd-pf .pf-cabeca { display: flex; align-items: baseline; gap: 8px; font-size: 12px; }
+.starwars-sd-pf .pf-cabeca { display: flex; align-items: baseline; gap: 8px; font-size: 12px; font-family: var(--sw-condensada); text-transform: uppercase; letter-spacing: .04em; }
 .starwars-sd-pf .pf-conta { font-weight: 700; }
 .starwars-sd-pf .pf-dado { margin-left: auto; opacity: .7; font-size: 11px; }
 .starwars-sd-pf .pf-trilha { display: flex; flex-wrap: wrap; gap: 4px; margin: 5px 0; }
 /* uma pastilha por ponto da reserva: cheia é ponto disponível */
 .starwars-sd-pf .pf-ponto {
   width: 11px; height: 11px; border-radius: 50%;
-  border: 1px solid #1b2340;
+  border: 1px solid color-mix(in srgb, var(--sw-cor) 70%, var(--sw-tinta));
 }
-.starwars-sd-pf .pf-ponto.cheio { background: #1b2340; }
+.starwars-sd-pf .pf-ponto.cheio { background: var(--sw-cor); }
 .starwars-sd-pf .pf-ponto.vazio { background: transparent; opacity: .45; }
 .starwars-sd-pf .pf-acoes { display: flex; gap: 5px; }
 .starwars-sd-pf .pf-acoes button { font-size: 11px; padding: 1px 8px; line-height: 1.6; }

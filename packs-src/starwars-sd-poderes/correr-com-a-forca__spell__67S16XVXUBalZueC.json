@@ -16,7 +16,7 @@
     "range": "Pessoal",
     "duration": "1 rodada por nível",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>✦ Criação do cenário</strong> — não há Poder Mental equivalente no livro básico. O preço é o de qualquer poder: a Grandeza diz quanto custa em Alcance e a partir de que nível se chega lá.</p><hr><p><strong>dobra o deslocamento</strong> e dá uma <strong>ação extra de movimento</strong> por rodada. É o borrão que cruza o hangar antes das portas fecharem.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>✦ Criação do cenário</strong> — não há Poder Mental equivalente no livro básico. O preço é o de qualquer poder: a Grandeza diz quanto custa em Alcance e a partir de que nível se chega lá.</p><hr><p><strong>dobra o deslocamento</strong> e dá uma <strong>ação extra de movimento</strong> por rodada. É o borrão que cruza o hangar antes das portas fecharem.</p>"
   },
   "effects": [],
   "flags": {},

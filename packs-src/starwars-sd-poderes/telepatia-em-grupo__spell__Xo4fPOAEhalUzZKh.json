@@ -16,7 +16,7 @@
     "range": "1 Km/nível",
     "duration": "15 segundos/nível",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.Xa6TqmsPH3Lt9lRX]{Telepatia em Grupo}</p><hr><p>Similar ao poder de telepatia, mas a telepatia em grupo pode ser realizada com tantas pessoas quantas o mentálico conseguir criar uma conexão psíquica.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.Xa6TqmsPH3Lt9lRX]{Telepatia em Grupo}</p><hr><p>Similar ao poder de telepatia, mas a telepatia em grupo pode ser realizada com tantas pessoas quantas o mentálico conseguir criar uma conexão psíquica.</p>"
   },
   "effects": [],
   "flags": {},

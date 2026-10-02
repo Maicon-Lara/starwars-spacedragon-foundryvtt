@@ -16,7 +16,7 @@
     "range": "Visual",
     "duration": "enquanto se concentrar, até 1 rodada por nível",
     "jp": "JPM (ver texto)",
-    "description": "<p><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>✦ Criação do cenário</strong> — não há Poder Mental equivalente no livro básico. O preço é o de qualquer poder: a Grandeza diz quanto custa em Alcance e a partir de que nível se chega lá.</p><hr><p>A garra invisível fecha na garganta à distância: <strong>JPM</strong> ou o alvo é <strong>erguido do chão, imobilizado e sufocado</strong>, sofrendo <strong>1d6 por rodada</strong> enquanto você mantiver o punho cerrado. Difere da <strong>Prisão da Força</strong>, que imobiliza sem ferir.</p>"
+    "description": "<p><span class=\"sw-selo s\">S</span> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <span class=\"sw-selo s\">S</span> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>✦ Criação do cenário</strong> — não há Poder Mental equivalente no livro básico. O preço é o de qualquer poder: a Grandeza diz quanto custa em Alcance e a partir de que nível se chega lá.</p><hr><p>A garra invisível fecha na garganta à distância: <strong>JPM</strong> ou o alvo é <strong>erguido do chão, imobilizado e sufocado</strong>, sofrendo <strong>1d6 por rodada</strong> enquanto você mantiver o punho cerrado. Difere da <strong>Prisão da Força</strong>, que imobiliza sem ferir.</p>"
   },
   "effects": [],
   "flags": {},

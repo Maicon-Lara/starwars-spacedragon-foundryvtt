@@ -16,7 +16,7 @@
     "range": "Indefinido",
     "duration": "30 segundos/nível",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.MTNs3wkQRAYj7ZGF]{Contatar Mente Desencarnada}</p><hr><p>Este poder mental permite ao mentálico contatar a mente de alguém que já morreu, através do Espírito Galáctico. É preciso de um objeto que tenha pertencido ao indivíduo em vida como canalizador. O mentálico será capaz de conversar telepaticamente com a mente desencarnada e, até mesmo, assumir certas características que a pessoa tinha quando viva, como voz, caligrafia e trejeitos.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.MTNs3wkQRAYj7ZGF]{Contatar Mente Desencarnada}</p><hr><p>Este poder mental permite ao mentálico contatar a mente de alguém que já morreu, através do Espírito Galáctico. É preciso de um objeto que tenha pertencido ao indivíduo em vida como canalizador. O mentálico será capaz de conversar telepaticamente com a mente desencarnada e, até mesmo, assumir certas características que a pessoa tinha quando viva, como voz, caligrafia e trejeitos.</p>"
   },
   "effects": [],
   "flags": {},

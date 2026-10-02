@@ -16,7 +16,7 @@
     "range": "10 metros + 3 metros/nível",
     "duration": "30 segundos/nível",
     "jp": "nenhuma",
-    "description": "<p><code>[L]</code> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.T3SNUD46GScOO8OK]{Campo Desestimulante}</p><hr><p>Este poder mental desestimula todos os inimigos ao alcance, conferindo-lhes uma penalidade de -2 em ataques e dano contra o mentálico e seus aliados. Os inimigos podem fazer uma JPM para resistir aos efeitos.</p>"
+    "description": "<p><span class=\"sw-selo l\">L</span> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.T3SNUD46GScOO8OK]{Campo Desestimulante}</p><hr><p>Este poder mental desestimula todos os inimigos ao alcance, conferindo-lhes uma penalidade de -2 em ataques e dano contra o mentálico e seus aliados. Os inimigos podem fazer uma JPM para resistir aos efeitos.</p>"
   },
   "effects": [],
   "flags": {},

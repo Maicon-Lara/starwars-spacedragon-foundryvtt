@@ -16,7 +16,7 @@
     "range": "Visual",
     "duration": "Permanente",
     "jp": "nenhuma",
-    "description": "<p><code>[S]</code> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <code>[S]</code> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.l2kYd23EbcxkmG7m]{Implantar Memória}</p><hr><p>O mentálico pode implantar uma memória criada por ele na mente de um alvo, se este não resistir com uma JPM. A memória pode conter quaisquer acontecimentos desejados pelo mentálico, contanto que não possua mais de 1 elemento-chave, como um evento ou indivíduo importante, para cada 4 níveis na classe.</p>"
+    "description": "<p><span class=\"sw-selo s\">S</span> <strong>Sombra</strong> — só quem trilha o <strong>Caminho da Sombra</strong> (medo, domínio, destruição). Usar um poder <span class=\"sw-selo s\">S</span> sendo da Luz marca <strong>+1 de Corrupção</strong>.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.l2kYd23EbcxkmG7m]{Implantar Memória}</p><hr><p>O mentálico pode implantar uma memória criada por ele na mente de um alvo, se este não resistir com uma JPM. A memória pode conter quaisquer acontecimentos desejados pelo mentálico, contanto que não possua mais de 1 elemento-chave, como um evento ou indivíduo importante, para cada 4 níveis na classe.</p>"
   },
   "effects": [],
   "flags": {},

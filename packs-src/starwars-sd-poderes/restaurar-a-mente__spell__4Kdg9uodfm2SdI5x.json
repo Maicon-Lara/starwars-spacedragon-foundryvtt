@@ -16,7 +16,7 @@
     "range": "Visual",
     "duration": "Permanente",
     "jp": "nenhuma",
-    "description": "<p><code>[L]</code> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.8iS4SAQHiMlcEVAb]{Curar Insanidade}</p><hr><p>O mentálico pode curar permanentemente a insanidade de um alvo com este poder mental. A insanidade pode tanto ter sido causada por um poder mental quanto por outros motivos. O alvo terá de cooperar com o processo realizando uma JPM, mas neste caso é necessário que ele tenha sucesso na jogada para que a insanidade seja curada.</p>"
+    "description": "<p><span class=\"sw-selo l\">L</span> <strong>Luz</strong> — só quem trilha o <strong>Caminho da Luz</strong> (serenidade, cura, defesa, presciência).</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.8iS4SAQHiMlcEVAb]{Curar Insanidade}</p><hr><p>O mentálico pode curar permanentemente a insanidade de um alvo com este poder mental. A insanidade pode tanto ter sido causada por um poder mental quanto por outros motivos. O alvo terá de cooperar com o processo realizando uma JPM, mas neste caso é necessário que ele tenha sucesso na jogada para que a insanidade seja curada.</p>"
   },
   "effects": [],
   "flags": {},

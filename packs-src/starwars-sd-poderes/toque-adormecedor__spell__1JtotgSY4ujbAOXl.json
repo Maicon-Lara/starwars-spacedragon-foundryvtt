@@ -16,7 +16,7 @@
     "range": "Visual",
     "duration": "1d4 minutos",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.wot8GgmaFWLn6mHX]{Provocar Sono}</p><hr><p>Este poder mental faz alvos caírem no sono, sem direito a uma JP. Ele afeta 1d4+1 DV ou níveis de criaturas para cada 5 níveis do mentálico. As criaturas afetadas são sempre as mais próximas do personagem.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.wot8GgmaFWLn6mHX]{Provocar Sono}</p><hr><p>Este poder mental faz alvos caírem no sono, sem direito a uma JP. Ele afeta 1d4+1 DV ou níveis de criaturas para cada 5 níveis do mentálico. As criaturas afetadas são sempre as mais próximas do personagem.</p>"
   },
   "effects": [],
   "flags": {},

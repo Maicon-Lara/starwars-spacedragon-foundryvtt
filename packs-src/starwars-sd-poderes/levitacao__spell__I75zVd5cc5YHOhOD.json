@@ -16,7 +16,7 @@
     "range": "Pessoal",
     "duration": "15 segundos/nível",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.g1BMuhgT4QGy4kjV]{Levitação}</p><hr><p>O mentálico é capaz de levitar a 10 centímetros do chão, enquanto este poder mental estiver ativo. Ele poderá se deslocar em qualquer direção utilizando sua movimentação total, descontando quaisquer redutores devidos à gravidade. Só é possível levitar se o mentálico estiver com carga nula ou leve, e o efeito termina instantaneamente se ele sofrer dano ou fizer qualquer outra ação.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.g1BMuhgT4QGy4kjV]{Levitação}</p><hr><p>O mentálico é capaz de levitar a 10 centímetros do chão, enquanto este poder mental estiver ativo. Ele poderá se deslocar em qualquer direção utilizando sua movimentação total, descontando quaisquer redutores devidos à gravidade. Só é possível levitar se o mentálico estiver com carga nula ou leve, e o efeito termina instantaneamente se ele sofrer dano ou fizer qualquer outra ação.</p>"
   },
   "effects": [],
   "flags": {},

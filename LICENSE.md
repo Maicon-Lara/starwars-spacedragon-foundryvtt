@@ -46,6 +46,24 @@ Poderes Mentais reskinados. É a essa camada que a CC BY-SA se aplica.
   reproduzido.
 - Adaptação, texto do cenário e este módulo — **Maicon Lara**
 
+## As fontes
+
+`starwars-sd-module/fonts/` traz três famílias sob **SIL Open Font License 1.1**,
+que permite redistribuição junto de um trabalho:
+
+- **Orbitron** — Matt McInerney
+- **Saira Condensed** — Omnibus-Type
+- **Source Serif 4** — Frank Grießhammer, Adobe
+
+Vão embutidas, e não por `@import` do Google Fonts, porque um `@import` falha
+**calado** numa mesa sem internet: o navegador cai para a fonte seguinte da
+pilha e ninguém descobre por quê. São só os subsets `latin` e `latin-ext`.
+
+Isto **não contradiz** o que a seção acima diz sobre arte: a OFL é uma licença
+livre e explícita quanto a isso, ao contrário de ilustração e diagramação, que
+continuam fora do módulo. Nenhuma fonte foi modificada, e o nome reservado de
+nenhuma delas é usado para outra coisa.
+
 ## O código
 
 Os scripts em `tools/` e `starwars-sd-module/module/` são de autoria própria, sob

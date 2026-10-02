@@ -16,7 +16,7 @@
     "range": "Visual",
     "duration": "30 segundos/nível",
     "jp": "nenhuma",
-    "description": "<p><code>[U]</code> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.UDPyky3eXXMFVk3i]{Imobilizar Pessoa}</p><hr><p>O mentálico consegue imobilizar um humano completamente com este poder mental. É possível imobilizar um alvo com tantos DV quantos níveis na classe o personagem possuir. O alvo pode realizar uma JPM para resistir aos efeitos.</p>"
+    "description": "<p><span class=\"sw-selo u\">U</span> <strong>Universal</strong> — acessível a qualquer Sensível, de qualquer Caminho.</p><p><strong>Poder Mental (<em>SD</em>):</strong> @UUID[Compendium.spacedragon.spacedragon-poderes.Item.UDPyky3eXXMFVk3i]{Imobilizar Pessoa}</p><hr><p>O mentálico consegue imobilizar um humano completamente com este poder mental. É possível imobilizar um alvo com tantos DV quantos níveis na classe o personagem possuir. O alvo pode realizar uma JPM para resistir aos efeitos.</p>"
   },
   "effects": [],
   "flags": {},

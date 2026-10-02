@@ -5,7 +5,7 @@
   "_id": "GdEZCfns57v28aLO",
   "img": "systems/olddragon2e/assets/icons/slashing.svg",
   "system": {
-    "description": "<p><em>o equilíbrio sabre + Força</em></p><ul><li><code>5º</code> <strong>Fluxo Equilibrado:</strong> na rodada em que usa um poder da Força, ainda faz um <strong>ataque de sabre</strong> (ou vice-versa) sem penalidade; empunha a lâmina com a Força para atacar a curta distância ou desarmar telecineticamente.</li><li><code>10º</code> <strong>Golpe Carregado:</strong> ao acertar, gasta <strong>1% de Alcance</strong> para somar ao golpe um poder de <strong>1ª Grandeza</strong>.</li><li><code>20º</code> <strong>Mestre Niman:</strong> 1×/rodada, <strong>um poder da Força e um ataque de sabre</strong> contam como <strong>uma só ação</strong>.</li></ul>",
+    "description": "<p><em>o equilíbrio sabre + Força</em></p><ul><li><span class=\"sw-tarja\">5º</span> <strong>Fluxo Equilibrado:</strong> na rodada em que usa um poder da Força, ainda faz um <strong>ataque de sabre</strong> (ou vice-versa) sem penalidade; empunha a lâmina com a Força para atacar a curta distância ou desarmar telecineticamente.</li><li><span class=\"sw-tarja\">10º</span> <strong>Golpe Carregado:</strong> ao acertar, gasta <strong>1% de Alcance</strong> para somar ao golpe um poder de <strong>1ª Grandeza</strong>.</li><li><span class=\"sw-tarja\">20º</span> <strong>Mestre Niman:</strong> 1×/rodada, <strong>um poder da Força e um ataque de sabre</strong> contam como <strong>uma só ação</strong>.</li></ul>",
     "level": 5,
     "level3": "",
     "level6": "",
