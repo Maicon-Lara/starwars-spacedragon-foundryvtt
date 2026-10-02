@@ -1,5 +1,58 @@
 # Changelog
 
+## 1.15.0 — naves consolidadas, e a tripulação com o que fazer
+
+**As regras do livro sobre nave estão num capítulo só.** *Naves & Combate
+Espacial* reúne o que era três coisas: os oito tipos e as câmaras (Cap. 10), o
+combate espacial do §10.6, e agora a tripulação. O Combate Tático **não** entrou
+— ele não é do livro, é criação da casa sobre o X-Wing Miniatures, e tem crédito
+próprio.
+
+**O problema que isto resolve.** O Combate Tático é um jogo de posição, e
+posição só rende decisão quando cada jogador tem o próprio token. Com o grupo
+numa nave só, um jogador escolhe a manobra no dial e os outros assistem.
+
+O conserto não foi um dial melhor nem um terceiro modo de combate: o §10.6 **já
+é** a regra do grupo numa nave — o livro diz que no turno da nave "as ações de
+todos em seu interior são realizadas", e que quem agiu com a nave não age de
+novo. Faltava dizer *o que* cada um faz.
+
+E o Modo Tripulação estava no **módulo errado**: vivia no Combate Tático, o
+dogfight em hexes, exatamente onde não funciona. Mudou para o capítulo de
+Naves, apoiado no §10.6; no Tático ficou um ponteiro, para não haver duas
+versões dos postos.
+
+**Os cinco postos ganharam opções**, em vez de uma ação fixa cada:
+
+- **Leme** — manobrar, *firmar* (+4 na JP e +2 para os artilheiros, mas a nave
+  não se move) ou *correr* (dobro do movimento, perde a ação).
+- **Artilharia** — tiro certeiro, *rajada* (−5 no ataque, +1 dado de dano) ou
+  *supressão* (sem dano; o alvo leva −2 e não pode evadir).
+- **Engenharia** — reparar, distribuir energia ou *forçar o reator* (+2 pontos,
+  e num 1 em 1d6 a Sala de Máquinas pega avaria).
+- **Sensores** — travar alvo, varredura (revela qual câmara do inimigo está
+  avariada) ou interferência.
+- **Comando** — ordem (um posto age duas vezes), sangue frio (rerrola um dado)
+  ou *aguentem firme* (cancela uma penalidade de avaria por uma rodada).
+
+**Três camadas opcionais**, cada uma ligável sozinha:
+
+- **Energia.** O reator dá pontos por tamanho (2/3/4/6) que Engenharia reparte
+  entre Motores, Escudos e Armas. As três saídas usam mecânica que já existia —
+  a JP e o CP no §10.6, os dados de esquiva e de dano no Tático. Nenhum número
+  novo para decorar.
+- **Controle de avarias.** Cada avaria acontece **numa câmara** e vira
+  emergência com prazo; resolver custa a ação de quem está lá, e chegar de outro
+  ponto da nave gasta uma rodada. É o que dá tarefa a quem não tem posto. O
+  mapa avaria→câmara já existia no código (`AVARIA_VIRA_CAMARA`).
+- **Fuga como relógio.** O salto já era um relógio de três etapas
+  (`ETAPAS_DO_SALTO`); agora o perseguidor tem o dele, que avança duas marcas
+  quando a nave sofre avaria ou escolhe *correr*.
+
+**No módulo.** O journal *Naves & Combate Espacial* passou a ter 26 páginas e
+cobre o capítulo inteiro mais as duas fichas; o journal *Combate Espacial*
+separado, criado na 1.14.0, foi absorvido.
+
 ## 1.14.0 — as regras do livro escritas, e duas fichas de nave
 
 O cenário sempre teve **dois** modos de combate de nave, mas só um estava

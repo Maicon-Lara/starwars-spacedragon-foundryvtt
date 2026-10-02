@@ -20,7 +20,6 @@ import { CAMARAS, REPARO_DE_CAMARA, TRANCA_DO_ARSENAL, ETAPAS_DO_SALTO, AVARIA_V
 
 const naves = TEXTOS["SW-SUP-Naves"];
 const tatico = TEXTOS["SW-SUP-Combate-Tatico-de-Naves"];
-const espacial = TEXTOS["SW-SUP-Combate-Espacial"];
 
 const FICHA =
   "<p>O módulo tem um tipo de ator próprio, <strong>Nave</strong>, com uma ficha que roda o Combate Tático. " +
@@ -92,30 +91,6 @@ const BASE_DE_OPERACOES =
   `<li><strong>A tranca do Arsenal.</strong> Invadi-lo sem autorização exige Sabotagem com <strong>${TRANCA_DO_ARSENAL}%</strong>.</li>` +
   "</ul>";
 
-export const navesJournal = {
-  title: "Naves & Veículos",
-  pages: [
-    { title: "Ter e Pilotar uma Nave", content: naves["(abertura)"] + naves["Ter e pilotar uma nave"] },
-    { title: "Os Oito Tipos de Espaçonave", content: naves["Os oito tipos de espaçonave"] },
-    { title: "De-para: as Naves da Galáxia", content: naves["De-para — as naves da galáxia"] },
-    { title: "Câmaras da Nave", content: naves["Câmaras da nave"] },
-    { title: "A Nave como Base de Operações", content: BASE_DE_OPERACOES },
-    { title: "Combate Tático: Preparação", content: tatico["(abertura)"] + tatico["Preparação"] + tatico["Perfil tático da nave"] },
-    { title: "Combate Tático: a Rodada", content: tatico["A rodada"] },
-    { title: "Combate Tático: Atacar", content: tatico["Atacar"] },
-    { title: "Combate Tático: os Dois Modos", content: tatico["Os dois modos"] },
-    { title: "Combate Tático: Ajuste de Ritmo", content: tatico["Ajuste de ritmo (leia se o combate ficar estático)"] },
-    { title: "A Ficha de Nave", content: FICHA },
-    { title: "Crédito", content: naves["Crédito"] + tatico["Crédito"] },
-  ],
-};
-
-/* ── COMBATE ESPACIAL (§10.6) ───────────────────────────────────────────────
- *
- * A regra nativa de combate de nave, a que a ficha usa no modo Livro. Vem toda
- * do cofre; a única coisa acrescentada aqui é a página que liga a regra à
- * ficha, porque é no Foundry que a mesa descobre qual das duas está valendo.
- */
 const FICHA_LIVRO =
   "<p>O módulo registra <strong>duas fichas de nave</strong>, uma por regra, e o Foundry " +
   "escolhe a ficha por <strong>ator</strong>:</p><ul>" +
@@ -139,18 +114,39 @@ const FICHA_LIVRO =
   "§10.6 o valor da iniciativa depende dela — e quem tem o menor age primeiro.</li>" +
   "</ul>";
 
-export const combateEspacialJournal = {
-  title: "Combate Espacial",
+export const navesJournal = {
+  title: "Naves & Combate Espacial",
   pages: [
-    { title: "O Princípio", content: espacial["(abertura)"] + espacial["O princípio"] },
-    { title: "As Ações da Nave", content: espacial["As ações da nave"] },
-    { title: "Disparo de Armas", content: espacial["Disparo de armas"] },
-    { title: "Manobras Evasivas", content: espacial["Manobras evasivas"] },
-    { title: "Acertos e Falhas Críticas", content: espacial["Acertos e falhas críticas"] },
-    { title: "Chegar a Zero", content: espacial["Chegar a zero"] },
-    { title: "Pilotar uma Nave Avariada", content: espacial["Pilotar uma nave avariada"] },
-    { title: "Qual dos Dois Modos Usar", content: espacial["Qual dos dois modos usar"] },
+    // ── as naves ──
+    { title: "Ter e Pilotar uma Nave", content: naves["(abertura)"] + naves["Ter e pilotar uma nave"] },
+    { title: "Os Oito Tipos de Espaçonave", content: naves["Os oito tipos de espaçonave"] },
+    { title: "De-para: as Naves da Galáxia", content: naves["De-para — as naves da galáxia"] },
+    { title: "Câmaras da Nave", content: naves["Câmaras da nave"] },
+    { title: "A Nave como Base de Operações", content: BASE_DE_OPERACOES },
+    // ── o combate do §10.6 ──
+    { title: "Combate Espacial: o Princípio", content: naves["O princípio"] },
+    { title: "Combate Espacial: as Ações da Nave", content: naves["As ações da nave"] },
+    { title: "Combate Espacial: Disparo de Armas", content: naves["Disparo de armas"] },
+    { title: "Combate Espacial: Manobras Evasivas", content: naves["Manobras evasivas"] },
+    { title: "Combate Espacial: Críticos e Falhas", content: naves["Acertos e falhas críticas"] },
+    { title: "Combate Espacial: Chegar a Zero", content: naves["Chegar a zero"] },
+    { title: "Combate Espacial: Nave Avariada", content: naves["Pilotar uma nave avariada"] },
+    { title: "O Salto para o Hiperespaço", content: naves["O salto para o hiperespaço"] },
+    // ── a tripulação (da casa) ──
+    { title: "A Tripulação: os Postos", content: naves["Os postos"] },
+    { title: "A Tripulação: Energia", content: naves["Energia"] },
+    { title: "A Tripulação: Controle de Avarias", content: naves["Controle de avarias"] },
+    { title: "A Tripulação: Fuga e Perseguição", content: naves["Fuga e perseguição"] },
+    // ── as duas regras, e as duas fichas ──
+    { title: "Qual Modo Usar", content: naves["Qual modo usar"] },
     { title: "As Duas Fichas de Nave", content: FICHA_LIVRO },
-    { title: "Crédito", content: espacial["Crédito"] },
+    // ── o módulo tático, que não é do livro ──
+    { title: "Combate Tático: Preparação", content: tatico["(abertura)"] + tatico["Preparação"] + tatico["Perfil tático da nave"] },
+    { title: "Combate Tático: a Rodada", content: tatico["A rodada"] },
+    { title: "Combate Tático: Atacar", content: tatico["Atacar"] },
+    { title: "Combate Tático: o Modo dele", content: tatico["O modo deste módulo"] },
+    { title: "Combate Tático: Ajuste de Ritmo", content: tatico["Ajuste de ritmo (leia se o combate ficar estático)"] },
+    { title: "A Ficha Tática de Nave", content: FICHA },
+    { title: "Crédito", content: naves["Crédito"] + tatico["Crédito"] },
   ],
 };

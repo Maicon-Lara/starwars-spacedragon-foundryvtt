@@ -670,14 +670,15 @@ const SECOES = {
     "Feitos Científicos, na galáxia",
     "Crédito",
   ],
+  // O capítulo de Naves consolidou as regras do LIVRO sobre nave: os tipos e
+  // as câmaras do Cap. 10, o combate espacial do §10.6, e a tripulação (que é
+  // da casa). Os "# " internos do capítulo são divisores de parte e não vêm
+  // para cá — secao() para neles, que é o comportamento que se quer.
   "SW-SUP-Naves": [
     "Ter e pilotar uma nave",
     "Os oito tipos de espaçonave",
     "De-para — as naves da galáxia",
     "Câmaras da nave",
-    "Crédito",
-  ],
-  "SW-SUP-Combate-Espacial": [
     "O princípio",
     "As ações da nave",
     "Disparo de armas",
@@ -685,7 +686,12 @@ const SECOES = {
     "Acertos e falhas críticas",
     "Chegar a zero",
     "Pilotar uma nave avariada",
-    "Qual dos dois modos usar",
+    "O salto para o hiperespaço",
+    "Os postos",
+    "Energia",
+    "Controle de avarias",
+    "Fuga e perseguição",
+    "Qual modo usar",
     "Crédito",
   ],
   "SW-SUP-Combate-Tatico-de-Naves": [
@@ -693,7 +699,7 @@ const SECOES = {
     "Perfil tático da nave",
     "A rodada",
     "Atacar",
-    "Os dois modos",
+    "O modo deste módulo",
     "Ajuste de ritmo (leia se o combate ficar estático)",
     "Crédito",
   ],
