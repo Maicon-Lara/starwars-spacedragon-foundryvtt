@@ -552,3 +552,22 @@ body.theme-dark .starwars-sd.nave-ficha.tema-auto,
   border-left: 3px solid var(--nave-perigo);
   background: color-mix(in srgb, var(--nave-perigo) 12%, transparent);
 }
+
+/* Os botões do painel, com cor própria.
+ *
+ * Eles herdavam a cor de botão do Foundry — preta — e o painel vive na ficha
+ * do sistema, que no tema do livro tem fundo escuro: preto sobre #0B0E14 não
+ * se lê. O componente é nosso, então as cores dele são nossas e não dependem
+ * do tema de quem o hospeda. */
+.starwars-sd-pf .pf-acoes button {
+  color: var(--sw-tinta, #1a1a18);
+  background: color-mix(in srgb, var(--sw-cor) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--sw-cor) 50%, transparent);
+  border-radius: 3px;
+}
+.starwars-sd-pf .pf-acoes button:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--sw-cor) 30%, transparent);
+}
+.starwars-sd-pf .pf-acoes button:disabled {
+  opacity: 0.45;
+}

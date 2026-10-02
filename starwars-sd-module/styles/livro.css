@@ -460,3 +460,55 @@ body.theme-dark.starwars-sd-tema.spacedragon-tema .olddragon2e.sheet {
   flex: 1 1 auto;
   min-width: 0;
 }
+
+/* Os campos de formulário, no escuro.
+ *
+ * "Raça" e "Classe" são inputs desabilitados: o navegador e o Foundry os
+ * esmaecem com uma cor pensada para fundo claro, e sobre o espaço ela some.
+ * Isto é seletor de ELEMENTO — input, select, textarea —, não um caminho
+ * interno do sistema, e por isso não quebra quando o sistema mudar. */
+body.theme-dark.starwars-sd-tema .olddragon2e.sheet input,
+body.theme-dark.starwars-sd-tema .olddragon2e.sheet select,
+body.theme-dark.starwars-sd-tema .olddragon2e.sheet textarea,
+body.theme-dark.starwars-sd-tema.spacedragon-tema .olddragon2e.sheet input,
+body.theme-dark.starwars-sd-tema.spacedragon-tema .olddragon2e.sheet select,
+body.theme-dark.starwars-sd-tema.spacedragon-tema .olddragon2e.sheet textarea {
+  color: var(--sw-texto);
+}
+/* desabilitado continua parecendo desabilitado, mas legível */
+body.theme-dark.starwars-sd-tema .olddragon2e.sheet input:disabled,
+body.theme-dark.starwars-sd-tema .olddragon2e.sheet select:disabled,
+body.theme-dark.starwars-sd-tema.spacedragon-tema .olddragon2e.sheet input:disabled,
+body.theme-dark.starwars-sd-tema.spacedragon-tema .olddragon2e.sheet select:disabled {
+  color: #b9b5a8;
+  opacity: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet input,
+  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet select,
+  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet textarea {
+    color: var(--sw-texto);
+  }
+}
+
+/* O losango do sistema, no escuro.
+ *
+ * `.diamond` é o marcador "⬥" que o sistema põe antes de algumas linhas, no
+ * carmim #D72240 — que sobre pergaminho se lê e sobre o espaço fica quase
+ * preto. É UMA classe curta e estável, e não um daqueles caminhos de cinco
+ * níveis que a folha do módulo Space Dragon documenta ter copiado e tido de
+ * desfazer: cobri-la custa uma linha e não cria dívida contra o sistema.
+ *
+ * Achado com o console do navegador, numa ficha real — era um dos três únicos
+ * elementos que restavam com contraste baixo. */
+body.theme-dark.starwars-sd-tema .olddragon2e.sheet .diamond,
+body.theme-dark.starwars-sd-tema.spacedragon-tema .olddragon2e.sheet .diamond {
+  color: var(--sw-corrompe);
+}
+
+@media (prefers-color-scheme: dark) {
+  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet .diamond {
+    color: var(--sw-corrompe);
+  }
+}
