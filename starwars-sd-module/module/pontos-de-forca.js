@@ -151,15 +151,39 @@ export function ligarPontosDeForca() {
       const ator = app?.actor ?? app?.document;
       if (!html || ator?.type !== "character") return;
 
-      // a aba de poderes é a que existe com certeza neste sistema; se um dia
-      // houver outra melhor, basta trocar o seletor
-      const painel = [...html.querySelectorAll("[data-tab='spells']")].find((n) => !n.closest("nav"))
-        ?? html.querySelector(".sheet-body") ?? html;
+      // ── ONDE O PAINEL ENTRA ──────────────────────────────────────────
+      //
+      // Na BARRA LATERAL, abaixo das Jogadas de Proteção. Até a 1.16.1 ele
+      // ficava dentro da aba de poderes, e o efeito era que só aparecia para
+      // quem abrisse aquela aba — numa ficha cuja aba inicial é Ataques, o
+      // painel simplesmente não existia para o jogador.
+      //
+      // A lateral é o lugar certo por conteúdo, e não só por espaço: ela já
+      // reúne os atributos e as três JP, que são os recursos permanentes do
+      // personagem, e Pontos de Força é um deles. Fica visível em qualquer
+      // aba, que é o que o uso em mesa pede — gasta-se um ponto no meio de um
+      // teste, não ao consultar a lista de poderes.
+      //
+      // A cadeia desce do mais específico ao mais genérico e termina no
+      // próprio `html`: assim uma mudança de layout do sistema degrada o
+      // lugar do painel, mas nunca o faz sumir.
+      const lateral = html.querySelector(".sheet-container .sidebar")
+        ?? html.querySelector(".sidebar");
+      const abaPoderes = [...html.querySelectorAll("[data-tab='spells']")]
+        .find((n) => !n.closest("nav"));
+      const painel = lateral
+        ?? html.querySelector(".sheet-container .body .main")
+        ?? abaPoderes
+        ?? html.querySelector(".sheet-body")
+        ?? html;
 
-      painel.querySelector(`.${MARCA}`)?.remove();
+      // tira a cópia anterior de QUALQUER lugar da ficha: numa re-renderização
+      // o painel pode ter sido desenhado noutro ponto pela versão antiga
+      html.querySelectorAll(`.${MARCA}`).forEach((n) => n.remove());
       const marcacao = montaPainel(ator);
       if (!marcacao) return;
-      painel.insertAdjacentHTML("afterbegin", marcacao);
+      // na lateral vai no FIM, embaixo das JP; nos outros lugares, no começo
+      painel.insertAdjacentHTML(lateral ? "beforeend" : "afterbegin", marcacao);
 
       painel.querySelector(`.${MARCA}`)?.addEventListener("click", async (ev) => {
         const acao = ev.target?.closest?.("[data-pf]")?.dataset?.pf;

@@ -1,5 +1,34 @@
 # Changelog
 
+## 1.16.2 — o painel de Pontos de Força sai do esconderijo, e o escuro fica legível
+
+Duas correções do que a 1.16.1 deixou passar, ambas vistas numa ficha de verdade.
+
+**O painel de Pontos de Força estava escondido numa aba.** Ele era injetado
+dentro de `[data-tab='spells']`, a aba de poderes — e numa ficha cuja aba
+inicial é *Ataques*, o painel simplesmente não existia para o jogador. Agora vai
+na **barra lateral**, abaixo das Jogadas de Proteção.
+
+A lateral é o lugar certo por conteúdo, e não só por espaço livre: ela já reúne
+os atributos e as três JP, que são os recursos permanentes do personagem, e
+Pontos de Força é um deles. Fica visível em **qualquer aba**, que é o que o uso
+em mesa pede — gasta-se um ponto no meio de um teste, não ao consultar a lista
+de poderes. A cadeia de seletores desce do mais específico ao mais genérico e
+termina no próprio elemento da ficha: uma mudança de layout do sistema degrada o
+lugar do painel, mas nunca o faz sumir.
+
+**O modo escuro deixava os rótulos ilegíveis.** O tema do módulo Space Dragon é
+sempre claro (`--sd-fundo: #eef0f8`), e ao pôr o fundo do espaço atrás dele a
+1.16.1 quebrou o que ele nunca precisou cobrir: os rótulos pequenos do sistema —
+"Nome", "Movimento", "Base", "M. DES", os nomes dos atributos, as abas inativas
+— são cinza-escuro, que sobre pergaminho se lê e sobre `#0B0E14` não.
+
+A correção é pelas **variáveis de texto do Foundry**, e não pelos seletores do
+sistema: elas são da plataforma, valem para qualquer sistema e qualquer versão
+dele. Copiar os caminhos internos do sistema é o que quebra quando ele muda — e
+o teste agora barra exatamente isso, junto de qualquer `!important` nesta
+camada, que seria sinal de disputa em vez de troca de variável.
+
 ## 1.16.1 — a paleta do livro também na ficha de personagem
 
 A 1.13.0 vestiu os journals e a ficha de nave, mas a **ficha de personagem**

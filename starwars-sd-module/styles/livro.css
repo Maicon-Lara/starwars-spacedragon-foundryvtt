@@ -383,3 +383,80 @@ body.starwars-sd-tema .olddragon2e.sheet input[name="name"] {
   font-weight: 700;
   letter-spacing: 0.02em;
 }
+
+/* ── O CONTRASTE NO ESCURO, NA FICHA DO SISTEMA ────────────────────────────
+ *
+ * O tema do módulo Space Dragon é SEMPRE CLARO (--sd-fundo: #eef0f8). Ao pôr
+ * o fundo do espaço atrás dele, esta camada quebrou o que ele nunca precisou
+ * cobrir: os rótulos pequenos do sistema — "Nome", "Movimento", "Base",
+ * "M. DES", os nomes dos atributos, as abas inativas — são cinza-escuro, que
+ * sobre pergaminho se lê e sobre #0B0E14 não.
+ *
+ * A correção é pelas VARIÁVEIS DE TEXTO DO FOUNDRY, e não pelos seletores do
+ * sistema: elas são da plataforma, valem para qualquer sistema e qualquer
+ * versão dele, e um sistema que use cor literal apenas não é alcançado — ao
+ * contrário de copiar caminhos longos, que quebra ativamente quando o sistema
+ * muda.
+ *
+ * Escopado na ficha, e não no <body>: a interface do Foundry em volta tem o
+ * próprio contraste resolvido.
+ */
+body.theme-dark.starwars-sd-tema .olddragon2e.sheet,
+body.theme-dark.starwars-sd-tema.spacedragon-tema .olddragon2e.sheet {
+  --color-text-dark-primary: var(--sw-texto);
+  --color-text-dark-secondary: #b9b5a8;
+  --color-text-dark-inactive: #8d8a80;
+  --color-text-dark-5: #a9a59a;
+  --color-text-dark-6: #b9b5a8;
+  --color-text-primary: var(--sw-texto);
+  --color-text-secondary: #b9b5a8;
+  --color-text-subtle: #8d8a80;
+  --color-text-emphatic: #f0ede4;
+}
+
+@media (prefers-color-scheme: dark) {
+  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet,
+  body.starwars-sd-tema.spacedragon-tema:not(.theme-light) .olddragon2e.sheet {
+    --color-text-dark-primary: var(--sw-texto);
+    --color-text-dark-secondary: #b9b5a8;
+    --color-text-dark-inactive: #8d8a80;
+    --color-text-dark-5: #a9a59a;
+    --color-text-dark-6: #b9b5a8;
+    --color-text-primary: var(--sw-texto);
+    --color-text-secondary: #b9b5a8;
+    --color-text-subtle: #8d8a80;
+    --color-text-emphatic: #f0ede4;
+  }
+}
+
+/* ── O painel de Pontos de Força na barra lateral ──────────────────────────
+ *
+ * A lateral é estreita, e o painel nasceu para a largura do corpo da ficha: a
+ * linha do cabeçalho e os dois botões lado a lado não cabem em ~110px. Aqui
+ * ele empilha.
+ */
+.sidebar .starwars-sd-pf {
+  margin-top: 8px;
+}
+.sidebar .starwars-sd-pf .pf-cabeca {
+  flex-wrap: wrap;
+  gap: 2px 6px;
+  justify-content: center;
+  text-align: center;
+}
+/* o dado da faixa ("1d6") não disputa a linha com o nome numa coluna estreita */
+.sidebar .starwars-sd-pf .pf-dado {
+  margin-left: 0;
+  width: 100%;
+  text-align: center;
+}
+.sidebar .starwars-sd-pf .pf-trilha {
+  justify-content: center;
+}
+.sidebar .starwars-sd-pf .pf-acoes {
+  justify-content: center;
+}
+.sidebar .starwars-sd-pf .pf-acoes button {
+  flex: 1 1 auto;
+  min-width: 0;
+}

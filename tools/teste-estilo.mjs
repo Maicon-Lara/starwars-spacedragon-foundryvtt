@@ -193,13 +193,34 @@ for (const b of barras) {
     `--sd-barra: ${b} — é fundo com texto branco fixo; o amarelo do letreiro não se lê`);
 }
 
-// e não se reescreve seletor do sistema: só as variáveis, mais o nome do ator
-const regrasDoSistema = [...livroCss.matchAll(/^body\.starwars-sd-tema[^{]*\{/gm)]
-  .map((m) => m[0]);
-for (const r of regrasDoSistema) {
-  const soVariaveis = !/\.olddragon2e/.test(r) || /input\[name="name"\]/.test(r);
-  confere(soVariaveis,
-    `a camada do livro reescreve seletor do sistema: ${r.trim()} — isso quebra quando o sistema mudar`);
+// Escopar em `.olddragon2e.sheet` para DEFINIR VARIÁVEIS é legítimo e é o que
+// esta camada faz. O que quebra na versão seguinte do sistema é COPIAR os
+// caminhos internos dele — foi o erro que a folha do módulo Space Dragon
+// documenta ter cometido na primeira versão.
+// Sem os comentários: eles EXPLICAM o !important da folha do vizinho e os
+// caminhos do sistema, e analisá-los junto com o código dá falso positivo —
+// foi o que aconteceu na primeira versão desta asserção.
+const cssSemComentarios = livroCss.replace(/\/\*[\s\S]*?\*\//g, "");
+const INTERNOS_DO_SISTEMA = [
+  ".tab-title", ".ability-level", ".character-tab-", ".race-abilities",
+  ".class-abilities", ".jp-value", ".race-value",
+];
+for (const regra of cssSemComentarios.split("}")) {
+  const seletor = regra.split("{")[0];
+  if (!/starwars-sd-tema/.test(seletor)) continue;
+  for (const interno of INTERNOS_DO_SISTEMA) {
+    confere(!seletor.includes(interno),
+      `a camada do livro copia um caminho interno do sistema (${interno}) em` +
+      ` "${seletor.trim().slice(0, 70)}" — é o que quebra quando o sistema muda`);
+  }
+}
+// e nenhum !important: quem precisa dele é a folha do vizinho, que cobre o
+// sistema; aqui só se definem variáveis, que não disputam especificidade
+const nossasRegras = cssSemComentarios.split("}").filter((r) => /starwars-sd-tema/.test(r.split("{")[0]));
+for (const r of nossasRegras) {
+  confere(!r.includes("!important"),
+    `a camada do livro usa !important — sinal de que está disputando com o sistema` +
+    ` em vez de só trocar as variáveis: "${r.split("{")[0].trim().slice(0, 60)}"`);
 }
 
 // o tema sai de um arquivo próprio, com a opção e o aviso
