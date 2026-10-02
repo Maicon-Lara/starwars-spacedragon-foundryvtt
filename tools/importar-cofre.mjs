@@ -679,6 +679,7 @@ const SECOES = {
     "Ter e pilotar uma nave",
     "Os oito tipos de espaçonave",
     "De-para — as naves da galáxia",
+    "Equipamentos adicionais",
     "Câmaras da nave",
     "O princípio",
     "As ações da nave",

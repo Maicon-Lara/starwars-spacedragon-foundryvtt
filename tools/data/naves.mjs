@@ -121,6 +121,7 @@ export const navesJournal = {
     { title: "Ter e Pilotar uma Nave", content: naves["(abertura)"] + naves["Ter e pilotar uma nave"] },
     { title: "Os Oito Tipos de Espaçonave", content: naves["Os oito tipos de espaçonave"] },
     { title: "De-para: as Naves da Galáxia", content: naves["De-para — as naves da galáxia"] },
+    { title: "Equipamentos Adicionais (T10-4)", content: naves["Equipamentos adicionais"] },
     { title: "Câmaras da Nave", content: naves["Câmaras da nave"] },
     { title: "A Nave como Base de Operações", content: BASE_DE_OPERACOES },
     // ── o combate do §10.6 ──

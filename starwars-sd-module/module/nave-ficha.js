@@ -31,6 +31,8 @@ import {
   partesDaTripulacao, cpComEnergia, jpComEnergia,
   dadosExtrasDeDano, dadosExtrasDeEsquiva, evasivaBloqueada,
   LIMPA_NO_FIM_DA_RODADA,
+  EQUIPAMENTOS_DE_NAVE, equipamentosDoTamanho, efeitosInstalados,
+  conflitosDeTamanho, armasInstaladas,
 } from "./nave-modelo.js";
 import { moverNave, conferirEscala, casasDaManobra } from "./nave-movimento.js";
 
@@ -201,6 +203,7 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
       energia: NaveFicha.#energia,
       perseguidor: NaveFicha.#perseguidor,
       etapaDoSalto: NaveFicha.#etapaDoSalto,
+      equipamento: NaveFicha.#equipamento,
     },
   };
 
@@ -248,6 +251,18 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
       })),
       semPonte: !camaraOperacional(s, "ponte"),
       ordemLivro: Object.values(ORDEM_LIVRO),
+
+      // ── OS EQUIPAMENTOS ADICIONAIS (T10-4) ──
+      // A lista é filtrada pelo TAMANHO da nave: a tabela do livro diz onde
+      // cada equipamento cabe, e oferecer um acelerador hiperespacial num caça
+      // seria convidar a mesa a quebrar a regra sem saber.
+      equipamentos: equipamentosDoTamanho(TIPOS[s.tipo]?.tamanho).map((e) => ({
+        ...e, ligado: s.equipamentos?.[e.chave] === true,
+      })),
+      // marcas que sobraram de quando a nave era de outro tipo
+      conflitosDeEquipamento: conflitosDeTamanho(s.equipamentos, TIPOS[s.tipo]?.tamanho),
+      efeitosDeEquipamento: efeitosInstalados(s.equipamentos, TIPOS[s.tipo]?.tamanho),
+      armasDeEquipamento: armasInstaladas(s.equipamentos, TIPOS[s.tipo]?.tamanho),
 
       // ── A TRIPULAÇÃO ──
       // Os postos agora levam a AÇÃO escolhida, e não só quem os ocupa. As
@@ -423,7 +438,12 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
     const partes = [
       ["BA", s.ba], ["faixa", faixa.mod], ["Trava", d.trava ? 2 : 0],
       // o Computador Balístico mora na Ponte: sem ela operacional, não há +2
-      ["Computador Balístico", camaraOperacional(s, "ponte") ? CAMARAS.ponte.ataque : 0],
+      // o Computador Balístico é EQUIPAMENTO (T10-4), e não efeito da câmara:
+      // vale se estiver instalado E a Ponte estiver operacional
+      ["Computador Balístico",
+        camaraOperacional(s, "ponte")
+          ? efeitosInstalados(s.equipamentos, TIPOS[s.tipo]?.tamanho).ataque
+          : 0],
       ["Sensores avariados", s.avarias.sensores ? -2 : 0], ["extra", Number(d.extra) || 0],
     ].filter(([, v]) => v);
     const total = partes.reduce((a, [, v]) => a + v, 0);
@@ -540,14 +560,20 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
     if (!r || r.acao !== "rolar") return;
     const d = r.dados;
 
-    // O CP do alvo já vem com os Escudos dele, se a mesa usa a camada de Energia.
+    // O CP do alvo já vem com os Escudos dele (camada de Energia) e com o
+    // Escudo de Força instalado, que a T10-4 dá como +10.
     const cp = alvoNave
       ? cpComEnergia(alvoNave.system, true)
+        + efeitosInstalados(alvoNave.system.equipamentos,
+                            TIPOS[alvoNave.system.tipo]?.tamanho).cp
       : Number(d.cp) || 0;
     const partes = [
       ["BA da nave", s.ba],
       ["artilheiro", Number(d.artilheiro) || 0],
-      ["Computador Balístico", camaraOperacional(s, "ponte") ? CAMARAS.ponte.ataque : 0],
+      ["Computador Balístico",
+        camaraOperacional(s, "ponte")
+          ? efeitosInstalados(s.equipamentos, TIPOS[s.tipo]?.tamanho).ataque
+          : 0],
       // Firmar, Supressão e Interferência: os efeitos de posto que mexem no tiro
       ...partesDaTripulacao(s, alvoNave?.system ?? {}),
       ["extra", Number(d.extra) || 0],
@@ -917,6 +943,22 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
     await card(this.actor, `Posto: ${POSTOS[posto].rotulo}`, linhas.join(""), rolls);
   }
 
+  /** Instala ou remove um equipamento adicional da T10-4. */
+  static async #equipamento(event, botao) {
+    const chave = botao.dataset.chave;
+    const e = EQUIPAMENTOS_DE_NAVE[chave];
+    if (!e) return;
+    const s = this.actor.system;
+    const tamanho = TIPOS[s.tipo]?.tamanho;
+    const ligando = s.equipamentos?.[chave] !== true;
+    // a matriz da T10-4 é regra: a ficha não deixa instalar onde não cabe
+    if (ligando && e.cabe?.[tamanho] !== true) {
+      return ui.notifications.warn(
+        `A T10-4 não admite ${e.rotulo} em nave ${tamanho}.`);
+    }
+    await this.actor.update({ [`system.equipamentos.${chave}`]: ligando });
+  }
+
   /** Engenharia reparte os pontos do reator. Não acumulam entre rodadas. */
   static async #energia() {
     const s = this.actor.system;
@@ -1068,6 +1110,20 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
    * A sequência não pode ser abortada no meio, então os três saem de uma vez.
    */
   static async #salto() {
+    // T10-4: sem acelerador hiperespacial não há salto — e a tabela não o
+    // admite em nave pequena nem colossal, o que é a regra por trás de um caça
+    // precisar de nave-mãe para sair do sistema.
+    {
+      const s0 = this.actor.system;
+      if (!efeitosInstalados(s0.equipamentos, TIPOS[s0.tipo]?.tamanho).podeSaltar) {
+        const cabe = EQUIPAMENTOS_DE_NAVE.acelerador.cabe[TIPOS[s0.tipo]?.tamanho];
+        return ui.notifications.warn(
+          cabe
+            ? `${this.actor.name} não tem o Acelerador Hiperespacial instalado (T10-4).`
+            : `${this.actor.name} é ${TIPOS[s0.tipo]?.tamanho}: a T10-4 não admite ` +
+              `Acelerador Hiperespacial nesse tamanho — a nave não salta.`);
+      }
+    }
     if (!camaraOperacional(this.actor.system, "ponte")) {
       return ui.notifications.warn(
         `${this.actor.name}: o salto se rola na Ponte de Comando, e ela não está operacional.`);

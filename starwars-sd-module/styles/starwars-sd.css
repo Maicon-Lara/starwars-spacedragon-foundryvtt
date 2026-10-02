@@ -571,3 +571,38 @@ body.theme-dark .starwars-sd.nave-ficha.tema-auto,
 .starwars-sd-pf .pf-acoes button:disabled {
   opacity: 0.45;
 }
+
+/* ── OS EQUIPAMENTOS ADICIONAIS (T10-4) ────────────────────────────────────
+ *
+ * Botões que ligam e desligam. A cor separa utilitário de combate, porque a
+ * tabela do livro os separa — e porque, no meio de um combate, é a metade de
+ * combate que se procura.
+ */
+.starwars-sd.nave-ficha .grade-equip {
+  display: flex; flex-wrap: wrap; gap: 4px;
+}
+.starwars-sd.nave-ficha .equip {
+  flex: 0 1 auto; font-size: 10.5px; line-height: 1.6; padding: 1px 7px;
+  border: 1px solid var(--nave-linha); border-radius: 3px;
+  background: transparent; color: var(--nave-secundario);
+}
+.starwars-sd.nave-ficha .equip.ligado {
+  color: var(--sd-tinta); font-weight: 600;
+  border-color: color-mix(in srgb, var(--sd-brilho) 70%, transparent);
+  background: color-mix(in srgb, var(--sd-brilho) 16%, transparent);
+}
+/* os de combate puxam para o vermelho quando ligados; os utilitários, não */
+.starwars-sd.nave-ficha .equip.g-combate.ligado {
+  border-color: color-mix(in srgb, var(--nave-perigo) 60%, transparent);
+  background: color-mix(in srgb, var(--nave-perigo) 14%, transparent);
+}
+.starwars-sd.nave-ficha .efeito-equip {
+  margin: 5px 0 0; font-size: 11px; font-weight: 600; color: var(--sd-brilho);
+}
+/* a nave trocou de tipo e sobrou marca: o aviso fica, em vez de apagar a marca
+   em silêncio — quem for conferir precisa ver o conflito */
+.starwars-sd.nave-ficha .conflito-equip {
+  margin: 5px 0 0; padding: 4px 7px; font-size: 10.5px;
+  border-left: 3px solid var(--nave-perigo);
+  background: color-mix(in srgb, var(--nave-perigo) 12%, transparent);
+}

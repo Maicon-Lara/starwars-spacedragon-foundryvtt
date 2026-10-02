@@ -172,6 +172,30 @@
     </div>
   </section>
 
+  {{!-- OS EQUIPAMENTOS ADICIONAIS (T10-4). A lista já vem filtrada pelo
+        TAMANHO da nave: a tabela do livro diz onde cada um cabe, e oferecer o
+        que não cabe seria convidar a mesa a quebrar a regra sem saber. --}}
+  <section class="equipamentos">
+    <h3>Equipamentos <span class="dica">T10-4 · só o que cabe em nave {{s.perfil.tamanho}}</span></h3>
+    <div class="grade-equip">
+      {{#each equipamentos}}
+      <button type="button" class="equip {{#if ligado}}ligado{{/if}} g-{{grupo}}"
+              data-action="equipamento" data-chave="{{chave}}" title="{{nota}}">
+        {{rotulo}}
+      </button>
+      {{/each}}
+    </div>
+    {{#if efeitosDeEquipamento.cp}}
+    <p class="efeito-equip">Escudo de Força: <strong>+{{efeitosDeEquipamento.cp}}</strong> no CP enquanto durar.</p>
+    {{/if}}
+    {{#if conflitosDeEquipamento.length}}
+    <p class="conflito-equip">
+      Instalado mas <strong>fora do tamanho</strong> desta nave, e por isso sem efeito:
+      {{#each conflitosDeEquipamento}}{{rotulo}}{{#unless @last}}, {{/unless}}{{/each}}.
+    </p>
+    {{/if}}
+  </section>
+
   {{!-- OS POSTOS. Cada um guarda quem o ocupa E a ação escolhida na rodada:
         era "uma ação fixa por posto" que deixava só o Leme decidindo algo. --}}
   <section class="postos">

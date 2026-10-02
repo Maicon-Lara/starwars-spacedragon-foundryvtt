@@ -116,9 +116,46 @@
     },
     {
       "sort": 400000,
+      "name": "Equipamentos Adicionais (T10-4)",
+      "type": "text",
+      "_id": "BFPRj6DCAGrshyRV",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc c-naves\"><p>Além das câmaras, a nave pode ter <strong>equipamentos instalados</strong> — a <strong>Tabela 10-4</strong> do livro. Não são parte do casco: são instalações caras, feitas por cientistas especializados, e <strong>cada uma só cabe em certos tamanhos</strong>. Custo, prazo e quantidade máxima o livro deixa para o Mestre.</p><p><strong>Utilitários</strong></p><table><thead><tr><th>Equipamento</th><th>Peq</th><th>Méd</th><th>Gig</th><th>Col</th><th>O que faz</th></tr></thead><tbody><tr><td><strong>Acelerador hiperespacial</strong></td><td>—</td><td>✓</td><td>✓</td><td>—</td><td>Permite o <strong>salto</strong>. Sem ele, não há salto.</td></tr><tr><td><strong>Blindagem térmica</strong></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>Reduz muito o desgaste de entrar e sair de atmosferas.</td></tr><tr><td><strong>Braço robótico</strong></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>Reparo externo sem deixar a nave; operado com talento de cientista.</td></tr><tr><td><strong>Corredor de acoplagem</strong></td><td>—</td><td>✓</td><td>✓</td><td>—</td><td>Passagem acoplável a outra nave, para abordagem.</td></tr><tr><td><strong>Gancho eletromagnético</strong></td><td>✓</td><td>✓</td><td>—</td><td>—</td><td>Prende e reboca nave ou carga no vácuo.</td></tr><tr><td><strong>Painéis solares</strong></td><td>—</td><td>✓</td><td>—</td><td>—</td><td>Energia para as funções básicas, ao alcance de um sol.</td></tr><tr><td><strong>Piloto automático</strong></td><td>—</td><td>✓</td><td>✓</td><td>✓</td><td><strong>Sucesso automático</strong> em pilotagem — <strong>nunca em combate</strong>.</td></tr><tr><td><strong>Propulsores a jato</strong></td><td>✓</td><td>✓</td><td>—</td><td>—</td><td><strong>+50%</strong> de movimento, consumindo combustível rápido.</td></tr></tbody></table><p><strong>Combate</strong></p><table><thead><tr><th>Equipamento</th><th>Peq</th><th>Méd</th><th>Gig</th><th>Col</th><th>O que faz</th></tr></thead><tbody><tr><td><strong>Disparadores laser</strong></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>A arma mais comum. <strong>2d10</strong>.</td></tr><tr><td><strong>Canhões de energia</strong></td><td>—</td><td>—</td><td>✓</td><td>✓</td><td>Versão mais poderosa dos disparadores.</td></tr><tr><td><strong>Metralhadora de energia</strong></td><td>—</td><td>✓</td><td>✓</td><td>✓</td><td><strong>4 ataques por rodada</strong>, de <strong>1d10</strong> cada.</td></tr><tr><td><strong>Mísseis teleguiados</strong></td><td>—</td><td>✓</td><td>✓</td><td>✓</td><td>Segue o alvo por <strong>1d4+1 rodadas</strong>; <strong>4d10</strong> no impacto.</td></tr><tr><td><strong>Computador balístico</strong></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td><strong>+2</strong> nas rolagens de ataque. Exige a Ponte operacional.</td></tr><tr><td><strong>Defletores de raios</strong></td><td>✓</td><td>✓</td><td>—</td><td>—</td><td><strong>25%</strong> de redirecionar contra o atacante, por 1d4 rodadas.</td></tr><tr><td><strong>Escudo de força</strong></td><td>—</td><td>✓</td><td>✓</td><td>✓</td><td><strong>+10 no CP</strong> enquanto durar; gasta combustível por rodada.</td></tr></tbody></table><blockquote><p><strong>O que a tabela de tamanhos decide, de verdade.</strong> Um <strong>caça não leva acelerador hiperespacial</strong> — é a regra por trás de um esquadrão precisar de nave-mãe para sair do sistema, e é o que o TIE Fighter encena na tela. Um <strong>colosso não leva defletor de raios</strong> nem propulsores a jato: ele absorve, não desvia. E o <strong>Escudo de Força não cabe em nave pequena</strong>, o que mantém o caça frágil, que é o que faz a cena funcionar.</p><p><strong>Equipamento não é câmara.</strong> A Ponte de Comando é onde o Computador Balístico fica, mas ter a Ponte não é ter o computador: ele se instala, e uma nave pode voar sem ele.</p></blockquote></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.BFPRj6DCAGrshyRV"
+    },
+    {
+      "sort": 500000,
       "name": "Câmaras da Nave",
       "type": "text",
-      "_id": "juKTpxEHsHIKMbnb",
+      "_id": "FO4AcqwzgMxEWnO6",
       "title": {
         "show": true,
         "level": 1
@@ -149,13 +186,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.juKTpxEHsHIKMbnb"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.FO4AcqwzgMxEWnO6"
     },
     {
-      "sort": 500000,
+      "sort": 600000,
       "name": "A Nave como Base de Operações",
       "type": "text",
-      "_id": "ht0L20YbfewKNR7z",
+      "_id": "cYyqkrbus3Ky1ZoN",
       "title": {
         "show": true,
         "level": 1
@@ -186,13 +223,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.ht0L20YbfewKNR7z"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.cYyqkrbus3Ky1ZoN"
     },
     {
-      "sort": 600000,
+      "sort": 700000,
       "name": "Combate Espacial: o Princípio",
       "type": "text",
-      "_id": "pjvWxCSlmm14YjPI",
+      "_id": "kQS7XUEGzZQL0Tm7",
       "title": {
         "show": true,
         "level": 1
@@ -223,13 +260,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.pjvWxCSlmm14YjPI"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.kQS7XUEGzZQL0Tm7"
     },
     {
-      "sort": 700000,
+      "sort": 800000,
       "name": "Combate Espacial: as Ações da Nave",
       "type": "text",
-      "_id": "3tYFwwkEzKy2bz58",
+      "_id": "jmoDHlsW7VmDkDnm",
       "title": {
         "show": true,
         "level": 1
@@ -260,13 +297,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.3tYFwwkEzKy2bz58"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.jmoDHlsW7VmDkDnm"
     },
     {
-      "sort": 800000,
+      "sort": 900000,
       "name": "Combate Espacial: Disparo de Armas",
       "type": "text",
-      "_id": "NWkJpMJbXSZ8nv6U",
+      "_id": "QayhhJiAWmQzecz4",
       "title": {
         "show": true,
         "level": 1
@@ -297,13 +334,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.NWkJpMJbXSZ8nv6U"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.QayhhJiAWmQzecz4"
     },
     {
-      "sort": 900000,
+      "sort": 1000000,
       "name": "Combate Espacial: Manobras Evasivas",
       "type": "text",
-      "_id": "5LAp9UXnAVOV57Ng",
+      "_id": "wTt1hmIQlEAP7aSG",
       "title": {
         "show": true,
         "level": 1
@@ -334,13 +371,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.5LAp9UXnAVOV57Ng"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.wTt1hmIQlEAP7aSG"
     },
     {
-      "sort": 1000000,
+      "sort": 1100000,
       "name": "Combate Espacial: Críticos e Falhas",
       "type": "text",
-      "_id": "7xKy6RbNlpY6EhXJ",
+      "_id": "gAEHIML6Qk0ClZkJ",
       "title": {
         "show": true,
         "level": 1
@@ -371,13 +408,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.7xKy6RbNlpY6EhXJ"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.gAEHIML6Qk0ClZkJ"
     },
     {
-      "sort": 1100000,
+      "sort": 1200000,
       "name": "Combate Espacial: Chegar a Zero",
       "type": "text",
-      "_id": "HAoHiWr8cyIK8B2G",
+      "_id": "vCcQPoJxV9R4yKpK",
       "title": {
         "show": true,
         "level": 1
@@ -408,13 +445,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.HAoHiWr8cyIK8B2G"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.vCcQPoJxV9R4yKpK"
     },
     {
-      "sort": 1200000,
+      "sort": 1300000,
       "name": "Combate Espacial: Nave Avariada",
       "type": "text",
-      "_id": "3c6Bmb5hVvqApp4K",
+      "_id": "d1vWVFH4qjc07XVe",
       "title": {
         "show": true,
         "level": 1
@@ -445,13 +482,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.3c6Bmb5hVvqApp4K"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.d1vWVFH4qjc07XVe"
     },
     {
-      "sort": 1300000,
+      "sort": 1400000,
       "name": "O Salto para o Hiperespaço",
       "type": "text",
-      "_id": "rCgQ3R5FEM33GY7X",
+      "_id": "y9FsyrXQxs1rrKsr",
       "title": {
         "show": true,
         "level": 1
@@ -482,13 +519,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.rCgQ3R5FEM33GY7X"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.y9FsyrXQxs1rrKsr"
     },
     {
-      "sort": 1400000,
+      "sort": 1500000,
       "name": "A Tripulação: os Postos",
       "type": "text",
-      "_id": "Hq7IaOsJE6ltyUlV",
+      "_id": "z9l2QQ5Er8gr0Ffp",
       "title": {
         "show": true,
         "level": 1
@@ -519,13 +556,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.Hq7IaOsJE6ltyUlV"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.z9l2QQ5Er8gr0Ffp"
     },
     {
-      "sort": 1500000,
+      "sort": 1600000,
       "name": "A Tripulação: Energia",
       "type": "text",
-      "_id": "nbln01RHGFSEvMR7",
+      "_id": "jAyLFAMqBXmOG2KM",
       "title": {
         "show": true,
         "level": 1
@@ -556,13 +593,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.nbln01RHGFSEvMR7"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.jAyLFAMqBXmOG2KM"
     },
     {
-      "sort": 1600000,
+      "sort": 1700000,
       "name": "A Tripulação: Controle de Avarias",
       "type": "text",
-      "_id": "eKeU94sGOv6vzrK2",
+      "_id": "UGwtzomALVX90aTd",
       "title": {
         "show": true,
         "level": 1
@@ -593,13 +630,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.eKeU94sGOv6vzrK2"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.UGwtzomALVX90aTd"
     },
     {
-      "sort": 1700000,
+      "sort": 1800000,
       "name": "A Tripulação: Fuga e Perseguição",
       "type": "text",
-      "_id": "gmXDHCjhhkCLiQ9e",
+      "_id": "Y0GnxODD2Tq2C12Q",
       "title": {
         "show": true,
         "level": 1
@@ -630,13 +667,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.gmXDHCjhhkCLiQ9e"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.Y0GnxODD2Tq2C12Q"
     },
     {
-      "sort": 1800000,
+      "sort": 1900000,
       "name": "Qual Modo Usar",
       "type": "text",
-      "_id": "VD9Q0SSppfzEQg8C",
+      "_id": "agJehDPtZHW7zXsI",
       "title": {
         "show": true,
         "level": 1
@@ -667,13 +704,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.VD9Q0SSppfzEQg8C"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.agJehDPtZHW7zXsI"
     },
     {
-      "sort": 1900000,
+      "sort": 2000000,
       "name": "As Duas Fichas de Nave",
       "type": "text",
-      "_id": "E2hxJkAflAkm5TmU",
+      "_id": "snLCQvWeofwoCWN2",
       "title": {
         "show": true,
         "level": 1
@@ -704,13 +741,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.E2hxJkAflAkm5TmU"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.snLCQvWeofwoCWN2"
     },
     {
-      "sort": 2000000,
+      "sort": 2100000,
       "name": "Combate Tático: Preparação",
       "type": "text",
-      "_id": "N5GKlV6SH7sAQZTv",
+      "_id": "4q2B5oB11Qyk1L3a",
       "title": {
         "show": true,
         "level": 1
@@ -741,13 +778,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.N5GKlV6SH7sAQZTv"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.4q2B5oB11Qyk1L3a"
     },
     {
-      "sort": 2100000,
+      "sort": 2200000,
       "name": "Combate Tático: a Rodada",
       "type": "text",
-      "_id": "OPDVuMehcfjS22ZH",
+      "_id": "tlfDh4rP8uTYneWr",
       "title": {
         "show": true,
         "level": 1
@@ -778,13 +815,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.OPDVuMehcfjS22ZH"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.tlfDh4rP8uTYneWr"
     },
     {
-      "sort": 2200000,
+      "sort": 2300000,
       "name": "Combate Tático: Atacar",
       "type": "text",
-      "_id": "7Ed6SuS8w8jc5ZBu",
+      "_id": "BcXTCALrZTCDvWPt",
       "title": {
         "show": true,
         "level": 1
@@ -815,13 +852,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.7Ed6SuS8w8jc5ZBu"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.BcXTCALrZTCDvWPt"
     },
     {
-      "sort": 2300000,
+      "sort": 2400000,
       "name": "Combate Tático: o Modo dele",
       "type": "text",
-      "_id": "mo98CpGotAcVqdKO",
+      "_id": "ZtQ8e8fi2l4WzeNi",
       "title": {
         "show": true,
         "level": 1
@@ -852,13 +889,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.mo98CpGotAcVqdKO"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.ZtQ8e8fi2l4WzeNi"
     },
     {
-      "sort": 2400000,
+      "sort": 2500000,
       "name": "Combate Tático: Ajuste de Ritmo",
       "type": "text",
-      "_id": "cc5xoSIQu7DoMQPC",
+      "_id": "t6LmlkGCeoqlDtXR",
       "title": {
         "show": true,
         "level": 1
@@ -889,13 +926,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.cc5xoSIQu7DoMQPC"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.t6LmlkGCeoqlDtXR"
     },
     {
-      "sort": 2500000,
+      "sort": 2600000,
       "name": "A Ficha Tática de Nave",
       "type": "text",
-      "_id": "mOWfykJPtkcOoTDU",
+      "_id": "C8ei3oIgxZVfUedh",
       "title": {
         "show": true,
         "level": 1
@@ -926,13 +963,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.mOWfykJPtkcOoTDU"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.C8ei3oIgxZVfUedh"
     },
     {
-      "sort": 2600000,
+      "sort": 2700000,
       "name": "Crédito",
       "type": "text",
-      "_id": "MI9cbWF48imXkhI7",
+      "_id": "q93GArTZmc42tp1f",
       "title": {
         "show": true,
         "level": 1
@@ -963,7 +1000,7 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!jZx0UU81LXFyscQO.MI9cbWF48imXkhI7"
+      "_key": "!journal.pages!jZx0UU81LXFyscQO.q93GArTZmc42tp1f"
     }
   ],
   "flags": {},

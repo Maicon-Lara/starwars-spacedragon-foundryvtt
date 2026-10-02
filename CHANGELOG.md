@@ -1,5 +1,44 @@
 # Changelog
 
+## 1.18.0 — os equipamentos adicionais de nave (T10-4)
+
+A **Tabela 10-4** do livro nunca tinha entrado no cenário — e, pior, parte dela
+já estava aqui **no lugar errado**.
+
+**O erro que isto corrige.** O cenário tinha as câmaras (T10-2) e não tinha os
+equipamentos (T10-4), e a diferença entre as duas coisas se perdeu: o
+**Computador Balístico**, o **piloto automático** e o **acelerador
+hiperespacial** tinham virado efeito fixo da Ponte de Comando. Toda nave com
+Ponte ganhava o +2 de ataque de graça.
+
+No livro eles são **instalações**: caras, opcionais, feitas por cientistas
+especializados — e cada uma só cabe em certos tamanhos de nave.
+
+**A matriz de tamanhos é regra, e muda a mesa.** Um **caça não leva acelerador
+hiperespacial**: é a regra por trás de um esquadrão precisar de nave-mãe para
+sair do sistema. Um **colosso não leva defletor de raios** nem propulsores a
+jato. E o **Escudo de Força não cabe em nave pequena**, o que mantém o caça
+frágil. A ficha só oferece o que o tamanho admite, e recusa o resto.
+
+**Os quinze equipamentos**, com os efeitos que a ficha aplica sozinha:
+
+- **Computador balístico** +2 no ataque · **Escudo de força** +10 no CP
+- **Propulsores a jato** +50% de movimento · **Defletores** 25% de redirecionar
+- **Acelerador hiperespacial** habilita o salto — sem ele, o botão recusa
+- **Piloto automático**, sucesso garantido fora de combate
+- E as quatro armas prontas: **Disparadores** 2d10, **Canhões**, **Metralhadora**
+  4×1d10, **Mísseis** 4d10
+
+**Retrocompatível.** O Computador Balístico **nasce instalado**: ele era de
+graça até aqui, e uma nave já criada não pode perder o +2 porque a regra foi
+corrigida. Os outros catorze nascem desligados.
+
+**O conflito fica visível.** Uma marca que não cabe no tamanho — porque a nave
+mudou de tipo depois de equipada — **não é apagada em silêncio**: ela deixa de
+valer e a ficha avisa, para quem for conferir enxergar o conflito.
+
+O capítulo de Naves ganhou a tabela inteira, no cofre e no compêndio.
+
 ## 1.17.0 — a carga dos itens
 
 Nenhum personagem ficava sobrecarregado, e a causa era que **todos os 146 itens

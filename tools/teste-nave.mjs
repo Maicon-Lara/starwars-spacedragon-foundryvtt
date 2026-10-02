@@ -54,6 +54,8 @@ globalThis.canvas = null;
 
 const { NaveFicha, NaveFichaTatico, NaveFichaLivro, TIPO_NAVE } =
   await import("../starwars-sd-module/module/nave-ficha.js");
+const { EQUIPAMENTOS_DE_NAVE } =
+  await import("../starwars-sd-module/module/equipamentos-nave.js");
 const { TIPOS, CAMARAS, camaraOperacional, ETAPAS_DO_SALTO, TRANCA_DO_ARSENAL, AVARIA_VIRA_CAMARA } =
   await import("../starwars-sd-module/module/nave-modelo.js");
 
@@ -90,6 +92,11 @@ const sistema = (tipo, extra = {}) => {
     interferencia: false,
     suprimida: { ativa: false, rodada: 0 },
     fuga: { etapas: 0, perseguidor: 0 },
+    // Os equipamentos da T10-4, no padrão do schema: só o Computador Balístico
+    // nasce ligado, porque até a 1.17.0 o +2 dele vinha da Ponte e uma nave já
+    // criada não pode perder o bônus de uma versão para a outra.
+    equipamentos: Object.fromEntries(
+      Object.entries(EQUIPAMENTOS_DE_NAVE).map(([k, e]) => [k, e.padrao === true])),
     ...extra,
   };
 };

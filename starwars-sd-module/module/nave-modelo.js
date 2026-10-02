@@ -153,6 +153,13 @@ export {
   LIMPA_NO_FIM_DA_RODADA,
 } from "./tripulacao.js";
 
+/* Os equipamentos adicionais da T10-4 vivem em equipamentos-nave.js. */
+export {
+  EQUIPAMENTOS_DE_NAVE, TAMANHOS, cabeNoTamanho, equipamentosDoTamanho,
+  efeitosInstalados, conflitosDeTamanho, armasInstaladas,
+} from "./equipamentos-nave.js";
+import { EQUIPAMENTOS_DE_NAVE } from "./equipamentos-nave.js";
+
 /** Os postos do Modo Tripulação. */
 export const POSTOS = {
   leme: { rotulo: "Leme", quem: "Veterano / Contrabandista", acao: "Escolhe e executa a manobra; rola Pilotar em situações-limite." },
@@ -248,6 +255,17 @@ export class NaveDataModel extends foundry.abstract.TypeDataModel {
 
       // Fuga: as etapas do salto já feitas, e as marcas do perseguidor.
       fuga: new fields.SchemaField({ etapas: num(0), perseguidor: num(0) }),
+
+      // ── OS EQUIPAMENTOS ADICIONAIS (T10-4) ───────────────────────────────
+      //
+      // Um booleano por equipamento. O Computador Balístico nasce LIGADO, e os
+      // outros desligados: até a 1.17.0 o +2 dele vinha de ter a Ponte de
+      // Comando, de graça, e uma nave já criada não pode perder o bônus só
+      // porque a regra foi corrigida para o que o livro diz.
+      equipamentos: new fields.SchemaField(
+        Object.fromEntries(Object.entries(EQUIPAMENTOS_DE_NAVE).map(([k, e]) => [
+          k, new fields.BooleanField({ initial: e.padrao === true }),
+        ]))),
 
       // As 12 câmaras da T10-2. Nascem instaladas: é o estado de uma nave que
       // voa, e quem tiver perdido alguma marca na ficha.
