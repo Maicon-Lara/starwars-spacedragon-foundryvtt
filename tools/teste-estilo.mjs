@@ -214,13 +214,30 @@ for (const regra of cssSemComentarios.split("}")) {
       ` "${seletor.trim().slice(0, 70)}" — é o que quebra quando o sistema muda`);
   }
 }
-// e nenhum !important: quem precisa dele é a folha do vizinho, que cobre o
-// sistema; aqui só se definem variáveis, que não disputam especificidade
-const nossasRegras = cssSemComentarios.split("}").filter((r) => /starwars-sd-tema/.test(r.split("{")[0]));
-for (const r of nossasRegras) {
-  confere(!r.includes("!important"),
-    `a camada do livro usa !important — sinal de que está disputando com o sistema` +
-    ` em vez de só trocar as variáveis: "${r.split("{")[0].trim().slice(0, 60)}"`);
+// A PROFUNDIDADE do seletor, e não o `!important`.
+//
+// A primeira versão desta asserção proibia `!important`, supondo que bastaria
+// trocar as variáveis `--sd-*`. Medir a ficha refutou isso: há fundo claro
+// FIXADO em hexadecimal — `ol.item-list` em #ffffff, `.character-race` em
+// #e0ddca — que variável nenhuma alcança, e contra cor fixa não há seletor
+// curto que ganhe na contagem. O `!important` passou a ser necessário, pela
+// mesma razão que a folha do módulo Space Dragon já o usava.
+//
+// O que de fato quebra quando o sistema muda é a PROFUNDIDADE: um nome de
+// componente (`ol.item-list`) sobrevive a uma remodelagem de layout; uma
+// cadeia de cinco descendentes não. O limite é dois níveis depois do escopo.
+const LIMITE_DE_NIVEIS = 2;
+for (const regra of cssSemComentarios.split("}")) {
+  const bruto = regra.split("{")[0];
+  if (!/starwars-sd-tema/.test(bruto)) continue;
+  for (const sel of bruto.split(",")) {
+    const depoisDoEscopo = sel.split(".olddragon2e.sheet")[1];
+    if (!depoisDoEscopo) continue;
+    const niveis = depoisDoEscopo.trim().split(/\s+/).filter(Boolean).length;
+    confere(niveis <= LIMITE_DE_NIVEIS,
+      `seletor fundo demais no sistema (${niveis} níveis): "${sel.trim().slice(0, 80)}"` +
+      ` — cadeias longas quebram quando o sistema remodela o layout`);
+  }
 }
 
 // o tema sai de um arquivo próprio, com a opção e o aviso

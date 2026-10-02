@@ -1,5 +1,36 @@
 # Changelog
 
+## 1.16.4 — os fundos que nenhuma variável alcançava
+
+O diagnóstico das três versões anteriores estava **invertido**, e medir a ficha
+mostrou isso: o problema nunca foi texto escuro. Era texto **claro sobre fundo
+claro**, em áreas que o tema do módulo Space Dragon não cobre.
+
+Ele pinta três containers (`.sidebar`, `.header`, `.main`) e os campos, tudo por
+variável — e é por isso que trocar `--sd-*` resolveu os rótulos. O que sobrou
+tem a cor **fixada em hexadecimal**, no sistema ou na folha dele, e variável
+nenhuma alcança:
+
+| elemento | fundo | o que é |
+|---|---|---|
+| `ol.item-list` | `#ffffff` | a lista de habilidades e poderes |
+| `div.editor` | `#ffffff` | o editor de texto rico |
+| `.character-race` / `.character-class` | `#e0ddca` | os campos ao lado do nome |
+| `option` | `#dad8cc` | as opções dos seletores |
+| `input.system-*` | `rgba(204,211,240,.55)` | o azul-lavanda, sem variável |
+| `tr` | branco a 20% | a zebra das tabelas |
+
+Os campos de Raça e Classe, aliás, **não eram `input`**: são `div.character-race`
+com um `a.item-edit` dentro. A tentativa da 1.16.3 tratou o filho e não o fundo
+do pai, e por isso não mudou nada.
+
+**O `!important` voltou, e com razão.** Contra uma cor fixa não há seletor curto
+que ganhe na contagem — é a mesma conclusão a que a folha do módulo Space Dragon
+chegou. O teste deixou de proibi-lo e passou a vigiar o que de fato quebra: a
+**profundidade** do seletor. Um nome de componente (`ol.item-list`) sobrevive a
+uma remodelagem de layout; uma cadeia de cinco descendentes não. O limite agora
+é dois níveis depois do escopo.
+
 ## 1.16.3 — os três últimos pontos de contraste
 
 Fecha o que a 1.16.1 abriu ao pôr fundo escuro numa ficha que o tema do módulo

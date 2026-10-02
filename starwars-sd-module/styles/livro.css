@@ -512,3 +512,79 @@ body.theme-dark.starwars-sd-tema.spacedragon-tema .olddragon2e.sheet .diamond {
     color: var(--sw-corrompe);
   }
 }
+
+/* ── OS FUNDOS QUE NENHUMA VARIÁVEL ALCANÇA ────────────────────────────────
+ *
+ * Esta lista saiu de MEDIÇÃO, e não de leitura de código: com a ficha aberta,
+ * o console listou todo elemento cujo fundo tem luminância alta. Foi o que
+ * mostrou que o problema nunca foi texto escuro — era texto claro sobre fundo
+ * CLARO, em áreas que o tema do módulo Space Dragon não cobre.
+ *
+ * Ele pinta três containers (.sidebar, .header, .main) e os campos, tudo por
+ * variável. O que sobra tem a cor FIXA em hexadecimal, no sistema ou na folha
+ * dele, e por isso trocar `--sd-*` não alcança:
+ *
+ *   ol.item-list       #ffffff              a lista de habilidades e poderes
+ *   div.editor         #ffffff              o editor de texto rico
+ *   .character-race    #e0ddca              os campos ao lado do nome
+ *   .character-class   #e0ddca
+ *   option             #dad8cc              as opções dos seletores
+ *   input.system-*     rgba(204,211,240,.55)
+ *   tr                 rgba(255,255,255,.2) a zebra das tabelas
+ *
+ * ── POR QUE AQUI TEM `!important`, E NA CAMADA DE CIMA NÃO ────────────────
+ *
+ * Porque isto é DISPUTA, e não troca de variável. É a mesma conclusão a que a
+ * folha do módulo Space Dragon chegou, e pelo mesmo motivo: contra uma cor
+ * fixada no sistema não há seletor curto que ganhe na contagem.
+ *
+ * São seletores CURTOS e semânticos — `ol.item-list`, `.character-race` —, e
+ * não caminhos de cinco níveis como
+ * `.character-tab-race .race-abilities ol li .ability-header .ability-level`.
+ * A diferença importa: um nome de componente sobrevive a uma remodelagem de
+ * layout; uma cadeia de descendentes não.
+ */
+body.theme-dark.starwars-sd-tema .olddragon2e.sheet ol.item-list,
+body.theme-dark.starwars-sd-tema .olddragon2e.sheet .editor,
+body.theme-dark.starwars-sd-tema .olddragon2e.sheet .character-race,
+body.theme-dark.starwars-sd-tema .olddragon2e.sheet .character-class,
+body.theme-dark.starwars-sd-tema .olddragon2e.sheet option {
+  background-color: var(--sw-painel) !important;
+  color: var(--sw-texto) !important;
+}
+
+/* os campos de valor, que o vizinho pinta num azul-lavanda sem variável */
+body.theme-dark.starwars-sd-tema .olddragon2e.sheet input,
+body.theme-dark.starwars-sd-tema .olddragon2e.sheet select,
+body.theme-dark.starwars-sd-tema .olddragon2e.sheet textarea {
+  background-color: var(--sw-painel) !important;
+  border-color: color-mix(in srgb, var(--sw-aco) 70%, transparent) !important;
+}
+
+/* a zebra das tabelas: branco a 20% vira a cor do capítulo a 7%, como no livro */
+body.theme-dark.starwars-sd-tema .olddragon2e.sheet tbody tr {
+  background-color: color-mix(in srgb, var(--sw-cor) 7%, transparent) !important;
+}
+
+/* o editor de texto rico também pinta o próprio corpo */
+body.theme-dark.starwars-sd-tema .olddragon2e.sheet .editor-content,
+body.theme-dark.starwars-sd-tema .olddragon2e.sheet .ProseMirror {
+  background-color: transparent !important;
+  color: var(--sw-texto) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet ol.item-list,
+  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet .editor,
+  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet .character-race,
+  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet .character-class,
+  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet option {
+    background-color: var(--sw-painel) !important;
+    color: var(--sw-texto) !important;
+  }
+  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet input,
+  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet select,
+  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet textarea {
+    background-color: var(--sw-painel) !important;
+  }
+}
