@@ -2,7 +2,7 @@
   "starwars-sd.aviso.semSpaceDragon": "Star Wars SD: the Space Dragon module is disabled. This supplement's classes and powers use its rules — enable it in Manage Modules.",
   "TYPES.Actor.starwars-sd.nave": "Starship",
   "starwars-sd.settings.regrasDeNave.nome": "Starship combat rules",
-  "starwars-sd.settings.regrasDeNave.dica": "Tactical: the Supplement's tactical combat, with a maneuver dial, secretly planned maneuvers, Overload and defence dice that cancel damage dice. Book: Space Dragon §10.6, with no grid and no dial — defence is the CP, and only small ships trade the CP for a saving throw via evasive maneuvers. World-wide, because combat is collective.",
+  "starwars-sd.settings.regrasDeNave.dica": "Sets the table's DEFAULT rule, used by every new ship. Tactical: the Supplement's tactical combat, with a maneuver dial, secretly planned maneuvers, Overload and defence dice that cancel damage dice. Book: Space Dragon §10.6, with no grid and no dial — defence is the CP, and only small ships trade the CP for a saving throw via evasive maneuvers. Any single ship can use the other rule via Configure Sheet, with no reload.",
   "starwars-sd.settings.regrasDeNave.tatico": "Tactical (Supplement)",
   "starwars-sd.settings.regrasDeNave.livro": "Book (Space Dragon §10.6)",
   "starwars-sd.settings.temaDaNave.nome": "Ship sheet: light or dark",
@@ -13,5 +13,7 @@
   "starwars-sd.settings.movimentoDaNave.nome": "Ship movement on the map",
   "starwars-sd.settings.movimentoDaNave.dica": "Hex: as the Supplement writes it — the ship moves straight through the cells and turns at the end. Arc: the X-Wing Miniatures Game mechanic — it follows the curve, turning along it, and stops where it would bump instead of skipping cells. Not just looks: the final position changes.",
   "starwars-sd.settings.movimentoDaNave.hex": "Hex (Supplement) — move, then turn",
-  "starwars-sd.settings.movimentoDaNave.arco": "Arc (X-Wing) — follow the curve"
+  "starwars-sd.settings.movimentoDaNave.arco": "Arc (X-Wing) — follow the curve",
+  "starwars-sd.fichas.tatico": "Starship — Tactical Combat (Star Wars SD)",
+  "starwars-sd.fichas.livro": "Starship — book rules, §10.6 (Star Wars SD)"
 }

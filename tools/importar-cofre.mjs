@@ -677,6 +677,17 @@ const SECOES = {
     "Câmaras da nave",
     "Crédito",
   ],
+  "SW-SUP-Combate-Espacial": [
+    "O princípio",
+    "As ações da nave",
+    "Disparo de armas",
+    "Manobras evasivas",
+    "Acertos e falhas críticas",
+    "Chegar a zero",
+    "Pilotar uma nave avariada",
+    "Qual dos dois modos usar",
+    "Crédito",
+  ],
   "SW-SUP-Combate-Tatico-de-Naves": [
     "Preparação",
     "Perfil tático da nave",

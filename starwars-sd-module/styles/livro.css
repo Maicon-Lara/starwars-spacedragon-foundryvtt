@@ -244,6 +244,9 @@ body.theme-dark,
 .starwars-sd-doc.c-combate { --sw-cor: var(--sw-sombra); }
 .starwars-sd-doc.c-aparatos { --sw-cor: var(--sw-tecnico); }
 .starwars-sd-doc.c-naves { --sw-cor: var(--sw-radar); }
+/* o combate espacial e o capitulo de naves sao o mesmo assunto e dividem a
+   cor; o modulo tatico, que e opcional, fica no fosforo para se distinguir */
+.starwars-sd-doc.c-espacial { --sw-cor: var(--sw-radar); }
 .starwars-sd-doc.c-tatico { --sw-cor: var(--sw-fosforo-claro); }
 .starwars-sd-doc.c-bestiario { --sw-cor: var(--sw-ferrugem); }
 .starwars-sd-doc.c-mestre { --sw-cor: var(--sw-ambar); }

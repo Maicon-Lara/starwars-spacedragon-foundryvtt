@@ -52,7 +52,8 @@ globalThis.CONFIG = { sounds: { dice: "" } };
 globalThis.ui = { notifications: { warn: () => {}, info: () => {} } };
 globalThis.canvas = null;
 
-const { NaveFicha, TIPO_NAVE } = await import("../starwars-sd-module/module/nave-ficha.js");
+const { NaveFicha, NaveFichaTatico, NaveFichaLivro, TIPO_NAVE } =
+  await import("../starwars-sd-module/module/nave-ficha.js");
 const { TIPOS, CAMARAS, camaraOperacional, ETAPAS_DO_SALTO, TRANCA_DO_ARSENAL, AVARIA_VIRA_CAMARA } =
   await import("../starwars-sd-module/module/nave-modelo.js");
 
@@ -303,8 +304,45 @@ for (const salvo of Object.keys(TIPOS)) {
     `o seletor devia marcar só ${salvo}, marcou [${marcados}]`);
 }
 
+// ── AS DUAS FICHAS ────────────────────────────────────────────────────────
+//
+// Uma por regra, escolhidas por ator. O que pode dar errado em silêncio:
+//
+//   · uma subclasse esquecer o MODO e cair na opção de mundo, o que faria a
+//     ficha "do livro" resolver pelo Tático sem nada na tela denunciar;
+//   · a base perder o fallback `null`, e um ator salvo antes da 1.14.0 passar
+//     a usar o Tático mesmo numa mesa que escolheu o livro;
+//   · uma subclasse não herdar as ações, e os botões pararem de responder.
+confere(NaveFichaTatico.MODO === "tatico", `NaveFichaTatico.MODO = ${NaveFichaTatico.MODO}`);
+confere(NaveFichaLivro.MODO === "livro", `NaveFichaLivro.MODO = ${NaveFichaLivro.MODO}`);
+confere(NaveFicha.MODO === null,
+  `a base devia seguir a opção de mundo (MODO null), está ${NaveFicha.MODO}`);
+
+// o getter responde pela CLASSE, e não pela opção global
+const comoFicha = (C) => Object.create(C.prototype);
+confere(comoFicha(NaveFichaLivro).ehLivro === true, "a ficha do livro não resolve pelo §10.6");
+confere(comoFicha(NaveFichaTatico).ehLivro === false, "a ficha tática caiu no §10.6");
+// sem Foundry não há settings, e o padrão documentado é o Tático
+confere(comoFicha(NaveFicha).ehLivro === false, "a base, sem settings, devia cair no Tático");
+
+// as ações são herdadas: sem isso os botões não respondem
+for (const [nome, C] of [["Tático", NaveFichaTatico], ["Livro", NaveFichaLivro]]) {
+  for (const acao of ["atacar", "esquivar", "iniciativa", "salto"]) {
+    confere(typeof C.DEFAULT_OPTIONS?.actions?.[acao] === "function",
+      `a ficha ${nome} não herdou a ação ${acao}`);
+  }
+}
+
+// e cada uma tem rótulo nos dois idiomas, senão a janela mostra a chave crua
+for (const lang of ["pt-BR", "en"]) {
+  const d = JSON.parse(fs.readFileSync(`starwars-sd-module/lang/${lang}.json`, "utf8"));
+  for (const k of ["starwars-sd.fichas.tatico", "starwars-sd.fichas.livro"]) {
+    confere(typeof d[k] === "string" && d[k].length > 0, `${lang}: falta ${k}`);
+  }
+}
+
 if (problemas.length) {
   for (const p of problemas) console.error(`  ✘ ${p}`);
   process.exit(1);
 }
-console.log("  ✔ nave: dial (Sobrecarga, Leme, colosso, curva pela metade), ataque (X-wing, crítico e Brecha), template sem <form> aninhado, seletor de tipo, as tabelas do livro (T10-5, T10-6, evasiva) as 12 câmaras, o salto, a tranca do Arsenal e a avaria que vira obra");
+console.log("  ✔ nave: dial (Sobrecarga, Leme, colosso, curva pela metade), ataque (X-wing, crítico e Brecha), template sem <form> aninhado, seletor de tipo, as tabelas do livro (T10-5, T10-6, evasiva) as 12 câmaras, o salto, a tranca do Arsenal, a avaria que vira obra, e as DUAS FICHAS (modo fixo, fallback da base, ações herdadas e rótulos)");

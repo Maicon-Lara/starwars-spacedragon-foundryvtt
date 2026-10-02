@@ -35,7 +35,7 @@ import { classAbilitiesAvulsas, origensAvulsas, sendaMandaloriana, sendaJournal 
 import { categorias } from "./data/equipamentos.mjs";
 import { listasDePoder, poderesJournal, ordensJournal } from "./data/poderes.mjs";
 import { grupos as gruposBestiario } from "./data/bestiario.mjs";
-import { navesJournal } from "./data/naves.mjs";
+import { navesJournal, combateEspacialJournal } from "./data/naves.mjs";
 import { bestiarioJournal } from "./data/bestiario-journal.mjs";
 import { equipamentosJournal, sabreJournal } from "./data/equipamentos-journal.mjs";
 import { feitosJournal } from "./data/feitos-journal.mjs";
@@ -512,6 +512,8 @@ const CAPITULOS = [
   [ordensJournal, "ordens", "Quem manda, quem ensina, e quem cobra."],
   [sendaJournal, "mando", "Esta é a Doutrina."],
   [navesJournal, "naves", "Ter uma nave é ter um problema com motores."],
+  [combateEspacialJournal, "espacial",
+    "O menor valor age primeiro — e o valor depende do que você escolher fazer."],
   [bestiarioJournal, "bestiario", "O que vive lá fora, e o que ele quer de você."],
   [mestreJournal, "mestre", "A parte que os jogadores não leem."],
 ];

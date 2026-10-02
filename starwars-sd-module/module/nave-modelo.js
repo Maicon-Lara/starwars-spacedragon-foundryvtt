@@ -114,7 +114,9 @@ export const FALHAS_LIVRO = {
   3: { rotulo: "Arma danificada", efeito: "Uma arma fica temporariamente danificada." },
   4: { rotulo: "Arma destruída", efeito: "Uma arma fica permanentemente danificada." },
   5: { rotulo: "Fogo amigo", efeito: "O tiro atinge uma nave aliada próxima ao alvo." },
-  6: { rotulo: "Perda de controle brusca", efeito: "−10 no CP." },
+  // O livro manda DUAS coisas aqui, e a segunda faltava: "−10 no CP até o
+  // próximo turno E um teste de pilotagem para retomar o controle".
+  6: { rotulo: "Perda de controle brusca", efeito: "−10 no CP até o próximo turno, e um teste de pilotagem para retomar o controle." },
 };
 
 /**

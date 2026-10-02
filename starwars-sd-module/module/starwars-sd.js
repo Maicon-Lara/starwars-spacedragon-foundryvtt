@@ -24,7 +24,7 @@
  */
 
 import { NaveDataModel } from "./nave-modelo.js";
-import { NaveFicha, TIPO_NAVE } from "./nave-ficha.js";
+import { NaveFicha, NaveFichaTatico, NaveFichaLivro, TIPO_NAVE } from "./nave-ficha.js";
 import { ligarPontosDeForca } from "./pontos-de-forca.js";
 
 const ID = "starwars-sd";
@@ -39,11 +39,6 @@ Hooks.once("init", () => {
   // Star Dragon: as duas naves convivem no mesmo mundo, cada uma com a sua
   // regra.
   Object.assign(CONFIG.Actor.dataModels, { [TIPO_NAVE]: NaveDataModel });
-  foundry.documents.collections.Actors.registerSheet(ID, NaveFicha, {
-    types: [TIPO_NAVE],
-    label: "Nave (Star Wars SD)",
-    makeDefault: true,
-  });
 
   // ── Qual regra de combate de nave a mesa usa ──
   //
@@ -57,9 +52,9 @@ Hooks.once("init", () => {
   //           no CP, manobra evasiva trocando o CP por uma JP, e as tabelas
   //           T10-5 e T10-6.
   //
-  // É opção de MUNDO, e não de nave nem de jogador, porque combate é coletivo:
-  // com metade das naves cancelando dados em d6 e a outra metade fazendo JP, a
-  // cena não fecha.
+  // A opção é de MUNDO e define a regra PADRÃO da mesa — é ela que decide qual
+  // das duas fichas abre quando se cria uma nave nova. Vem antes do registro
+  // das fichas de propósito: `makeDefault` é lido no momento do registro.
   game.settings.register(ID, "regrasDeNave", {
     name: "starwars-sd.settings.regrasDeNave.nome",
     hint: "starwars-sd.settings.regrasDeNave.dica",
@@ -71,12 +66,42 @@ Hooks.once("init", () => {
       livro: "starwars-sd.settings.regrasDeNave.livro",
     },
     default: "tatico",
-    // o que a ficha mostra muda por completo, então as abertas se redesenham
+    // Trocar a padrão exige recarregar, porque quem é a ficha padrão se decide
+    // no registro, em `init`. Quem quer mudar UMA nave agora não precisa disto:
+    // troca a ficha dela em Configurar Ficha, sem reload nenhum.
+    requiresReload: true,
     onChange: () => {
       for (const app of foundry.applications?.instances?.values?.() ?? []) {
         if (app instanceof NaveFicha) app.render();
       }
     },
+  });
+
+  // ── As duas fichas de nave ──
+  //
+  // UMA PARA CADA REGRA, e não uma que troca de comportamento. No Foundry a
+  // ficha é escolhida por ATOR (Configurar Ficha, no cabeçalho da janela), e
+  // isso dá três coisas que a ficha única não dava:
+  //
+  //   · a mesa pode rodar a frota no Tático e resolver a nave do Mestre pelo
+  //     livro, no mesmo mundo;
+  //   · o nome da ficha aparece na janela, então o jogador sabe qual regra
+  //     está valendo sem abrir as configurações do módulo para entender por
+  //     que o dial não está lá;
+  //   · trocar a regra de uma nave não pede reload.
+  //
+  // A opção de mundo acima continua mandando no PADRÃO — é o que a mesa
+  // escolheu, e vale para toda nave nova.
+  const regraPadrao = game.settings.get(ID, "regrasDeNave");
+  foundry.documents.collections.Actors.registerSheet(ID, NaveFichaTatico, {
+    types: [TIPO_NAVE],
+    label: "starwars-sd.fichas.tatico",
+    makeDefault: regraPadrao === "tatico",
+  });
+  foundry.documents.collections.Actors.registerSheet(ID, NaveFichaLivro, {
+    types: [TIPO_NAVE],
+    label: "starwars-sd.fichas.livro",
+    makeDefault: regraPadrao === "livro",
   });
 
   // ── Como a nave se move no mapa ──

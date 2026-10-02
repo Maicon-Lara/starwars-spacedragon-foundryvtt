@@ -1,8 +1,14 @@
 // Naves & Veículos: os oito tipos de espaçonave, o de-para das naves da
-// galáxia e as câmaras, mais o Combate Tático de Naves (opcional).
+// galáxia e as câmaras, mais AS DUAS REGRAS de combate de nave.
 //
 // Fonte: o cofre, em Documents\Ekhoria\20 Space Dragon\Space Dragon Suplemento\
-//   SW-SUP-Naves.md e SW-SUP-Combate-Tatico-de-Naves.md
+//   SW-SUP-Naves.md, SW-SUP-Combate-Espacial.md e
+//   SW-SUP-Combate-Tatico-de-Naves.md
+//
+// O COMBATE ESPACIAL (§10.6) é journal PRÓPRIO, e não uma página dentro de
+// Naves como o Tático. Ele é a regra padrão da mesa — a que vale quando
+// ninguém liga a outra —, e enterrá-lo na página 13 de outro capítulo era
+// justamente o motivo de ele não estar escrito em lugar nenhum até agora.
 //
 // As duas notas vão inteiras para o journal, pelo importador. O Combate
 // Tático também virou a ficha de Nave (module/nave-*.js); a página "A Ficha
@@ -14,6 +20,7 @@ import { CAMARAS, REPARO_DE_CAMARA, TRANCA_DO_ARSENAL, ETAPAS_DO_SALTO, AVARIA_V
 
 const naves = TEXTOS["SW-SUP-Naves"];
 const tatico = TEXTOS["SW-SUP-Combate-Tatico-de-Naves"];
+const espacial = TEXTOS["SW-SUP-Combate-Espacial"];
 
 const FICHA =
   "<p>O módulo tem um tipo de ator próprio, <strong>Nave</strong>, com uma ficha que roda o Combate Tático. " +
@@ -100,5 +107,50 @@ export const navesJournal = {
     { title: "Combate Tático: Ajuste de Ritmo", content: tatico["Ajuste de ritmo (leia se o combate ficar estático)"] },
     { title: "A Ficha de Nave", content: FICHA },
     { title: "Crédito", content: naves["Crédito"] + tatico["Crédito"] },
+  ],
+};
+
+/* ── COMBATE ESPACIAL (§10.6) ───────────────────────────────────────────────
+ *
+ * A regra nativa de combate de nave, a que a ficha usa no modo Livro. Vem toda
+ * do cofre; a única coisa acrescentada aqui é a página que liga a regra à
+ * ficha, porque é no Foundry que a mesa descobre qual das duas está valendo.
+ */
+const FICHA_LIVRO =
+  "<p>O módulo registra <strong>duas fichas de nave</strong>, uma por regra, e o Foundry " +
+  "escolhe a ficha por <strong>ator</strong>:</p><ul>" +
+  "<li><strong>Nave — regras do livro (§10.6)</strong>: defesa no CP, manobra evasiva " +
+  "trocando o CP por uma JP, ordem de ação pela T10-6 e as tabelas de crítico e falha em 1d6. " +
+  "Sem dial, sem Sobrecarga e sem dados de esquiva — o capítulo 10 não os tem.</li>" +
+  "<li><strong>Nave — Combate Tático</strong>: o dial de manobras, a manobra em segredo, " +
+  "a Sobrecarga e os dados de defesa que cancelam dados de dano.</li>" +
+  "</ul>" +
+  "<p>A opção <em>Regras de combate de nave</em>, nas configurações do módulo, define qual é a " +
+  "<strong>padrão</strong> do mundo — a que abre em toda nave nova. Para rodar <em>uma</em> nave " +
+  "na outra regra, use <strong>Configurar Ficha</strong> no cabeçalho da janela dela: vale só para " +
+  "aquele ator e não precisa recarregar.</p>" +
+  "<h3>O que a ficha do livro faz sozinha</h3><ul>" +
+  "<li><strong>Atirar.</strong> 1d20 + BA da nave + BA à distância de quem opera a arma, contra o " +
+  "CP do alvo. O 20 e o 1 naturais rolam as tabelas da T10-6 — e quatro dos seis acertos críticos " +
+  "dobram o dano.</li>" +
+  "<li><strong>Manobra evasiva.</strong> Só em nave pequena, e a ficha guarda a rodada para " +
+  "cobrar o intervalo de 5. O teste de pilotagem entra pela T10-5 e vira o modificador da JP.</li>" +
+  "<li><strong>Ordem de ação.</strong> O botão pergunta qual ação a nave vai tomar, porque no " +
+  "§10.6 o valor da iniciativa depende dela — e quem tem o menor age primeiro.</li>" +
+  "</ul>";
+
+export const combateEspacialJournal = {
+  title: "Combate Espacial",
+  pages: [
+    { title: "O Princípio", content: espacial["(abertura)"] + espacial["O princípio"] },
+    { title: "As Ações da Nave", content: espacial["As ações da nave"] },
+    { title: "Disparo de Armas", content: espacial["Disparo de armas"] },
+    { title: "Manobras Evasivas", content: espacial["Manobras evasivas"] },
+    { title: "Acertos e Falhas Críticas", content: espacial["Acertos e falhas críticas"] },
+    { title: "Chegar a Zero", content: espacial["Chegar a zero"] },
+    { title: "Pilotar uma Nave Avariada", content: espacial["Pilotar uma nave avariada"] },
+    { title: "Qual dos Dois Modos Usar", content: espacial["Qual dos dois modos usar"] },
+    { title: "As Duas Fichas de Nave", content: FICHA_LIVRO },
+    { title: "Crédito", content: espacial["Crédito"] },
   ],
 };

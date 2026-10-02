@@ -2,7 +2,7 @@
   "starwars-sd.aviso.semSpaceDragon": "Star Wars SD: o módulo Space Dragon está desligado. As classes e poderes deste suplemento usam as regras dele — ligue-o em Gerenciar Módulos.",
   "TYPES.Actor.starwars-sd.nave": "Nave",
   "starwars-sd.settings.regrasDeNave.nome": "Regras de combate de naves",
-  "starwars-sd.settings.regrasDeNave.dica": "Tático: o Combate Tático do Suplemento, com dial de manobras, manobra planejada em segredo, Sobrecarga e dados de defesa que cancelam dados de dano. Livro: o §10.6 do Livro Básico Aprimorado, sem grid nem dial — a defesa é o CP, e só naves pequenas trocam o CP por uma JP com a manobra evasiva. Vale para o mundo inteiro, porque combate é coletivo.",
+  "starwars-sd.settings.regrasDeNave.dica": "Define a regra PADRÃO da mesa, usada por toda nave nova. Tático: o Combate Tático do Suplemento, com dial de manobras, manobra planejada em segredo, Sobrecarga e dados de defesa que cancelam dados de dano. Livro: o §10.6 do Space Dragon, sem grid e sem dial — a defesa é o CP, e só naves pequenas trocam o CP por uma jogada de proteção na manobra evasiva. Cada nave pode usar a outra regra em Configurar Ficha, sem recarregar.",
   "starwars-sd.settings.regrasDeNave.tatico": "Tático (Suplemento)",
   "starwars-sd.settings.regrasDeNave.livro": "Livro (Space Dragon §10.6)",
   "starwars-sd.settings.temaDaNave.nome": "Ficha de nave: claro ou escuro",
@@ -13,5 +13,7 @@
   "starwars-sd.settings.movimentoDaNave.nome": "Movimento da nave no mapa",
   "starwars-sd.settings.movimentoDaNave.dica": "Hex: como o Suplemento escreve — a nave anda em linha reta pelas casas e gira no fim. Arco: a mecânica do X-Wing Miniatures Game — ela descreve a curva, girando ao longo dela, e para onde encostaria em vez de saltar casas. Não é só aparência: a posição final muda.",
   "starwars-sd.settings.movimentoDaNave.hex": "Hex (Suplemento) — anda e vira no fim",
-  "starwars-sd.settings.movimentoDaNave.arco": "Arco (X-Wing) — descreve a curva"
+  "starwars-sd.settings.movimentoDaNave.arco": "Arco (X-Wing) — descreve a curva",
+  "starwars-sd.fichas.tatico": "Nave — Combate Tático (Star Wars SD)",
+  "starwars-sd.fichas.livro": "Nave — regras do livro, §10.6 (Star Wars SD)"
 }

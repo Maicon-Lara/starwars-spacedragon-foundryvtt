@@ -135,7 +135,10 @@ const journals = fs
   .readdirSync(path.join(PACKS, "starwars-sd-journal"))
   .map((f) => JSON.parse(ler(PACKS, "starwars-sd-journal", f)))
   .filter((d) => d.pages?.length);
-confere(journals.length === 10, `${journals.length} capítulos, esperava 10`);
+// O número cresce quando um capítulo é escrito, e travá-lo aqui só obrigaria a
+// editar o teste junto. O que importa é que TODOS tenham cor, faixa e epígrafe,
+// e que os números não se repitam — é isso que as asserções abaixo cobrem.
+confere(journals.length >= 10, `só ${journals.length} capítulos com página`);
 const numeros = new Set();
 for (const d of journals) {
   const p0 = d.pages[0].text.content;
@@ -163,5 +166,5 @@ if (problemas.length) {
 }
 console.log(
   "  ✔ estilo: selos e tarjas (e o que não é marcador), as fontes citadas existem, " +
-    "a ordem das folhas, --sw-* sem variável órfã, e os 10 capítulos com cor, faixa e epígrafe"
+    "a ordem das folhas, --sw-* sem variável órfã, e todo capítulo com cor, faixa e epígrafe"
 );

@@ -1,5 +1,48 @@
 # Changelog
 
+## 1.14.0 — as regras do livro escritas, e duas fichas de nave
+
+O cenário sempre teve **dois** modos de combate de nave, mas só um estava
+escrito. O Combate Tático tinha capítulo próprio; o **§10.6 do Módulo Básico**
+— que é o modo PADRÃO, o que vale quando a mesa não liga a outra — existia só
+como código na ficha.
+
+**O capítulo novo.** `SW-SUP-Combate-Espacial`, no cofre, e o compêndio
+*Combate Espacial* aqui. É uma **folha de consulta**, não uma reprodução do
+capítulo 10: o `SW-SUP-Usando-o-Basico` declara que as regras nucleares ficam
+no livro, e isso continua valendo. O que a página traz é o que se procura no
+meio do turno — as cinco ações, a ordem de ação da T10-6, a fórmula do disparo,
+a manobra evasiva com o intervalo de 5 rodadas, a T10-5, as duas tabelas de
+1d6, o tempo até a explosão e a penalidade por avaria.
+
+**DUAS FICHAS DE NAVE**, uma por regra, em vez de uma que trocava de
+comportamento conforme a opção:
+
+- **Nave — Combate Tático**: dial, manobra em segredo, Sobrecarga, dados de
+  esquiva.
+- **Nave — regras do livro (§10.6)**: CP, manobra evasiva trocando o CP por uma
+  JP, ordem de ação pela ação escolhida, crítico e falha em 1d6.
+
+No Foundry a ficha é escolhida por **ator**, e isso dá três coisas que a ficha
+única não dava: a mesa pode rodar a frota no Tático e resolver a nave do Mestre
+pelo livro no mesmo mundo; o jogador vê **na barra de título** qual regra está
+valendo, em vez de ter de abrir as configurações para entender por que o dial
+não está lá; e trocar a regra de uma nave não pede reload.
+
+A opção *Regras de combate de nave* continua existindo e agora decide a ficha
+**padrão** do mundo — a que abre em toda nave nova. Mudá-la pede reload
+(`requiresReload`), porque quem é a padrão se define no registro, em `init`;
+mudar **uma** nave não pede nada, é Configurar Ficha.
+
+A classe base `NaveFicha` fica com `MODO = null` e segue a opção de mundo, de
+propósito: um ator salvo antes desta versão guarda `NaveFicha` como ficha dele,
+e sem esse fallback abriria sempre no Tático — trocando a regra da mesa sem
+avisar ninguém.
+
+**Uma correção de regra.** A falha crítica 6 da T10-6 estava incompleta no
+módulo: dizia só "−10 no CP", e o livro manda **também** um teste de pilotagem
+para retomar o controle.
+
 ## 1.13.0 — o estilo do livro no módulo
 
 A folha de estilo dos dois volumes em HTML (`_estilo/estilo-livro.css`, no

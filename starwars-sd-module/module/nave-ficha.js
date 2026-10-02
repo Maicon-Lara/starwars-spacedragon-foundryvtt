@@ -46,7 +46,9 @@ export function regraDeNave() {
     return "tatico";
   }
 }
-const ehLivro = () => regraDeNave() === "livro";
+/* A função `ehLivro` global saiu na 1.14.0: cada ficha agora FIXA a sua regra
+ * em `static MODO`, e a opção de mundo só decide qual delas é a padrão. Ver o
+ * getter `ehLivro` na classe, e as duas subclasses no fim do arquivo. */
 
 /**
  * A classe de tema da ficha: "tema-auto", "tema-claro" ou "tema-escuro".
@@ -130,6 +132,27 @@ const legendaEsquiva = (faces) =>
   faces.map((f) => (f >= 5 ? `<strong class="success">${f}</strong>` : `${f}`)).join(" · ");
 
 export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
+  /**
+   * A regra de combate desta ficha: "tatico", "livro", ou `null` para seguir a
+   * opção de mundo.
+   *
+   * São DUAS FICHAS, e não uma que troca de comportamento, porque no Foundry a
+   * ficha é escolhida POR ATOR: a frota rebelde pode rodar no Tático enquanto
+   * a nave do Mestre resolve pelo livro, e o jogador vê na barra de título da
+   * janela qual regra está valendo — em vez de ter de abrir as configurações
+   * do módulo para descobrir por que o dial sumiu.
+   *
+   * A classe base fica em `null` de propósito. Um ator salvo antes da 1.14.0
+   * guarda `NaveFicha` como ficha dele, e sem esse fallback abriria sempre no
+   * Tático, trocando a regra da mesa sem avisar.
+   */
+  static MODO = null;
+
+  /** Se esta ficha resolve o combate pelo §10.6. */
+  get ehLivro() {
+    return (this.constructor.MODO ?? regraDeNave()) === "livro";
+  }
+
   static DEFAULT_OPTIONS = {
     classes: ["starwars-sd", "nave-ficha"],  // a de tema entra em _onRender
     position: { width: 580, height: 780 },
@@ -191,8 +214,8 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
         : "",
       // Qual regra está valendo: o template esconde o dial, o planejar/revelar
       // e a Sobrecarga no modo Livro, porque o capítulo 10 não os tem.
-      livro: ehLivro(),
-      tatico: !ehLivro(),
+      livro: this.ehLivro,
+      tatico: !this.ehLivro,
       podeEvadir: evasivaPermitida(s.tipo),
       camaras: Object.entries(CAMARAS).map(([k, c]) => ({
         chave: k, ...c, estado: s.camaras?.[k] ?? "instalada",
@@ -247,7 +270,7 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
     }
     // O §10.6 resolve o tiro de outro jeito: sem faixas de hex, sem dados de
     // defesa, e com as tabelas T10-6 no 20 e no 1 naturais.
-    if (ehLivro()) return NaveFicha.#atacarPeloLivro.call(this, event, botao);
+    if (this.ehLivro) return NaveFicha.#atacarPeloLivro.call(this, event, botao);
     const arma = this.actor.system.armas[Number(botao.dataset.idx)];
     if (!arma) return;
     const s = this.actor.system;
@@ -548,7 +571,7 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
 
   /** Esquiva avulsa, para quando o atacante não marcou esta nave como alvo. */
   static async #esquivar() {
-    if (ehLivro()) return NaveFicha.#manobraEvasiva.call(this);
+    if (this.ehLivro) return NaveFicha.#manobraEvasiva.call(this);
     const s = this.actor.system;
     if (s.esquiva <= 0)
       return ui.notifications.info(`${this.actor.name} é colossal: não esquiva — é atingida e absorve no PV.`);
@@ -561,7 +584,7 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
 
   /** Iniciativa deste módulo: 1d20 + Destreza do piloto. */
   static async #iniciativa() {
-    if (ehLivro()) return NaveFicha.#ordemDeAcao.call(this);
+    if (this.ehLivro) return NaveFicha.#ordemDeAcao.call(this);
     const s = this.actor.system;
     const roll = await new Roll(`1d20 + ${s.iniciativa}`).evaluate();
     // Se a nave está num combate, grava lá — é a ordem de tiro da rodada.
@@ -714,7 +737,7 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
 
     // os parênteses importam: sem eles a concatenação vem antes do ternário e o
     // cartão sai sempre com o texto do modo Livro, mesmo no Tático
-    const fecho = ehLivro()
+    const fecho = this.ehLivro
       ? `<p>A <strong>manobra evasiva</strong> saiu: ataques voltam a ser opostos pelo CP. ` +
         `A rodada dela fica registrada — são ${EVASIVA_INTERVALO} rodadas até a próxima.</p>`
       : `<p>Manobra limpa para o próximo planejamento. As avarias de <strong>Leme</strong> e <strong>Tripulação</strong>, ` +
@@ -910,4 +933,22 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
       `<p class="result"><strong>${info.simbolo} ${info.rotulo}${m.velocidade ? " " + m.velocidade : ""}` +
       `${m.lado ? (m.lado === "esq" ? " à esquerda" : " à direita") : ""}</strong></p>` + efeito);
   }
+}
+
+/* ── AS DUAS FICHAS ────────────────────────────────────────────────────────
+ *
+ * Só fixam a regra; todo o resto é herdado. `DEFAULT_OPTIONS` e `PARTS` são
+ * mesclados pela hierarquia no ApplicationV2, então o template é um só — e é
+ * de propósito: dois .hbs para a mesma nave divergiriam na primeira correção,
+ * e o que muda entre os modos são seis condicionais, não a página.
+ */
+
+/** O Combate Tático do Suplemento, sobre o X-Wing Miniatures Game. */
+export class NaveFichaTatico extends NaveFicha {
+  static MODO = "tatico";
+}
+
+/** O §10.6 do Livro Básico Aprimorado: CP, manobra evasiva, T10-5 e T10-6. */
+export class NaveFichaLivro extends NaveFicha {
+  static MODO = "livro";
 }
