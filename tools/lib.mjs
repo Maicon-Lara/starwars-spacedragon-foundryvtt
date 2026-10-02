@@ -963,6 +963,41 @@ export function macroDoc(macro, folderId, sort) {
   };
 }
 
+// Item que carrega um MODELO DE EFEITO do "Old Dragon 2: Qualidade de Vida".
+//
+// A forma do item é a mesma que o `libraryItemData` dele cria: `type: "misc"`,
+// a `img` igual ao ícone do efeito, a descrição no `system` e o efeito inteiro
+// na flag `old-dragon-2-qualidade-de-vida.effectTemplate`. O QdV aceita o
+// arrasto de qualquer Item que tenha essa flag, venha de onde vier — é só isso
+// que faz o modelo funcionar vindo do nosso compêndio.
+//
+// Quem não tem o QdV instalado vê um item de descrição comum, com o texto do
+// crítico. A flag fica lá, inerte, e nada quebra.
+export function efeitoQdVDoc(efeito, folderId, sort, { modulo, flag, template }) {
+  const id = makeId(`efeito:${efeito.nome}`);
+  return {
+    folder: folderId,
+    name: efeito.nome,
+    type: "misc",
+    _id: id,
+    img: efeito.icone,
+    system: {
+      ...equipmentBase({ nome: efeito.nome, desc: efeito.descricao }),
+      // Um efeito não é carga nem mercadoria: sem preço, sem peso, e a ficha
+      // não o conta no limite de carga de ninguém.
+      cost: "",
+      weight_in_load: 0,
+      weight_in_grams: 0,
+    },
+    effects: [],
+    flags: { [modulo]: { [flag]: template(efeito, id) } },
+    _stats: stats(),
+    sort: sort,
+    ownership: { default: 0 },
+    _key: `!items!${id}`,
+  };
+}
+
 // Pinta as pastas e faz o filho herdar a cor do pai.
 //
 // Roda DEPOIS de aninhaPastas(), porque só então a hierarquia existe: até ali

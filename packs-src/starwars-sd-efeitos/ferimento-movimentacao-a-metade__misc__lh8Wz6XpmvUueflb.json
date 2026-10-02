@@ -1,0 +1,89 @@
+{
+  "folder": "hqQmS8ZHQyewE7HU",
+  "name": "Ferimento — movimentação à metade",
+  "type": "misc",
+  "_id": "lh8Wz6XpmvUueflb",
+  "img": "icons/svg/blood.svg",
+  "system": {
+    "odo_id": "ferimento-movimentacao-a-metade",
+    "description": "Acerto crítico, T7-4 — resultado 2. O ferimento reduz a movimentação do alvo à metade.\nO efeito divide o Movimento normal por 2. Se a corrida da sua ficha não acompanhar sozinha, ajuste-a à mão: o livro fala de movimentação, e dividir os dois campos arriscaria cortar a corrida a um quarto.",
+    "quantity": 1,
+    "cost": "",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {
+    "old-dragon-2-qualidade-de-vida": {
+      "effectTemplate": {
+        "id": "lh8Wz6XpmvUueflb",
+        "name": "Ferimento — movimentação à metade",
+        "icon": "icons/svg/blood.svg",
+        "enabled": true,
+        "origin": "Space Dragon — T7-4, resultado 2",
+        "sourceActorUuid": "",
+        "association": {
+          "type": "",
+          "id": "",
+          "name": "",
+          "effectId": ""
+        },
+        "description": "<p><strong>Acerto crítico, T7-4 — resultado 2.</strong> O ferimento reduz a <strong>movimentação do alvo à metade</strong>.</p><p><em>O efeito divide o Movimento normal por 2. Se a corrida da sua ficha não acompanhar sozinha, ajuste-a à mão: o livro fala de movimentação, e dividir os dois campos arriscaria cortar a corrida a um quarto.</em></p>",
+        "gmNotes": "",
+        "deleteOnExpire": false,
+        "duration": {
+          "type": "permanent",
+          "value": 0,
+          "remaining": 0,
+          "expiresAt": 0
+        },
+        "conditional": {
+          "enabled": false,
+          "flow": "if",
+          "trigger": "manual",
+          "conditions": [],
+          "actions": []
+        },
+        "eventAction": {
+          "type": "none",
+          "formula": "1d20",
+          "target": "self",
+          "resourceName": "",
+          "radius": 0,
+          "privateResult": false
+        },
+        "uses": {
+          "max": 0,
+          "remaining": 0,
+          "resetOnRest": true
+        },
+        "modifiers": [
+          {
+            "key": "movement.normal",
+            "mode": "divide",
+            "value": "2",
+            "resolvedValue": null
+          }
+        ]
+      }
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!lh8Wz6XpmvUueflb"
+}

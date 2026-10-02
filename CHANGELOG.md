@@ -1,5 +1,50 @@
 # Changelog
 
+## 1.23.0 — os críticos aplicados na ficha
+
+Os cinco resultados de crítico que mudam um **número** da ficha vêm prontos como
+**efeitos arrastáveis**, no compêndio novo **SW: Efeitos dos Críticos**, pasta
+*Críticos*:
+
+| Efeito | Vem de | O que faz |
+|---|---|---|
+| Ferimento — movimentação à metade | T7-4, 2 | divide o **Movimento normal** por 2 |
+| Ferimento — −2 nos ataques | T7-4, 3 | −2 em **Ataques** |
+| Vestes avariadas — −2 no CP | T7-4, 4 | −2 no **CP** |
+| Desequilíbrio — −1 no CP | T7-5, 2 | −1 no **CP**, **1 rodada**, e some sozinho |
+| Queda — −1 no CP | T7-5, 6 | −1 no **CP** |
+
+A 1.22.0 trouxe as tabelas, que **dizem** o que aconteceu. Elas não aplicavam
+nada: o "−2 no CP" ficava num cartão de chat, e a mesa precisava lembrar dele
+até o ferimento sarar. O Mestre agora arrasta o efeito para a ficha de quem
+levou o crítico, e o CP, o ataque ou o movimento mudam sozinhos — com a origem
+("Space Dragon — T7-4, resultado 4") à vista na ficha.
+
+**Pede o módulo *Old Dragon 2: Qualidade de Vida***, que é o gerenciador de
+efeitos que faz a conta. Ele **não** é dependência declarada: quem não o tem vê
+itens de descrição no compêndio, e as tabelas roláveis continuam valendo
+sozinhas.
+
+**O que NÃO foi inventado.** Os ferimentos da T7-4 ficaram **permanentes**
+porque o livro não diz quando saram — pôr "até o próximo descanso" por conta
+própria seria escrever regra no lugar do autor. Quem os tira é o Mestre. Só o
+desequilíbrio da T7-5 tem prazo (1 rodada), e ele se apaga ao expirar.
+
+**O movimento é dividido num campo só.** O efeito divide o *Movimento normal*;
+a corrida fica de fora, porque dividir os dois campos arriscaria cortá-la a um
+quarto se a ficha já derivar a corrida do movimento.
+
+**As de nave não entram:** as chaves do gerenciador são de personagem e de
+monstro, e a nave é ator de outro módulo — a ficha de Nave já rola a T10-6 e
+aplica a avaria sozinha.
+
+**O teste reimplementa o descarte do QdV.** O `normalizeEffect` dele joga fora,
+*em silêncio*, todo modificador com chave ou modo inválido: um efeito escrito
+`movement` em vez de `movement.normal` entra na ficha, aparece na lista e não
+faz nada. `tools/teste-efeitos-criticos.mjs` copia o descarte e a aplicação dele
+e mede o número que a ficha mostraria — CP 14 → 12, ataque +3 → +1, movimento 10
+→ 5 — em vez de conferir só a forma do documento.
+
 ## 1.22.0 — os críticos do Space Dragon
 
 As tabelas **T7-4** (acertos) e **T7-5** (falhas) do Cap. 7 entraram no

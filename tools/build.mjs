@@ -22,7 +22,7 @@ import { compilePack } from "@foundryvtt/foundryvtt-cli";
 
 import {
   folderDoc, aninhaPastas, classDoc, classAbilityDoc, raceDoc, raceAbilityDoc,
-  weaponDoc, armorDoc, miscDoc, spellDoc, journalDoc, macroDoc, rollTableDoc, enfeitarDoc, itemUuid, writeSource, pintaPastas,
+  weaponDoc, armorDoc, miscDoc, spellDoc, journalDoc, macroDoc, rollTableDoc, efeitoQdVDoc, enfeitarDoc, itemUuid, writeSource, pintaPastas,
   md, tabelaHTML,
 } from "./lib.mjs";
 import { monsterDoc } from "./lib-actors.mjs";
@@ -45,6 +45,7 @@ import { criacaoJournal } from "./data/criacao-journal.mjs";
 import { macros } from "./data/macros.mjs";
 import { CORES_DE_PASTA } from "./data/pastas.mjs";
 import { tabelas } from "./data/tabelas.mjs";
+import { EFEITOS_CRITICOS, templateDoQdV, QDV_ID, QDV_FLAG } from "./data/efeitos-criticos.mjs";
 
 const ROOT = path.resolve(fileURLToPath(import.meta.url), "../..");
 const SRC = path.join(ROOT, "packs-src");
@@ -58,6 +59,7 @@ const BESTIARIO_PACK = "starwars-sd-bestiario";
 const JOURNAL_PACK = "starwars-sd-journal";
 const MACROS_PACK = "starwars-sd-macros";
 const TABELAS_PACK = "starwars-sd-tabelas";
+const EFEITOS_PACK = "starwars-sd-efeitos";
 
 // Agrupa documentos avulsos em pastas nomeadas pelo campo `folder`.
 function agrupaAvulsas(docs, lista, seed, build) {
@@ -547,6 +549,24 @@ function buildTabelasDocs() {
   return docs;
 }
 
+// ── Pack de efeitos do QdV ──
+// Os críticos que mudam um número da ficha, como modelos de efeito do módulo
+// "Old Dragon 2: Qualidade de Vida". O Mestre arrasta para a ficha e o CP, o
+// ataque ou o movimento mudam sozinhos. Ver data/efeitos-criticos.mjs.
+function buildEfeitosDocs() {
+  const docs = [];
+  // "Críticos", e nenhum dos quatro nomes que o QdV usa para amarrar o efeito a
+  // uma classe, raça, magia ou equipamento — ver data/efeitos-criticos.mjs.
+  const pasta = folderDoc("Críticos", "Item", "efeitos");
+  docs.push(pasta);
+  EFEITOS_CRITICOS.forEach((e, i) => {
+    docs.push(efeitoQdVDoc(e, pasta._id, (i + 1) * 100000, {
+      modulo: QDV_ID, flag: QDV_FLAG, template: templateDoQdV,
+    }));
+  });
+  return docs;
+}
+
 // ── Pack de macros ──
 // Botões arrastáveis; a lógica mora no script do módulo (game.starwarsSD.*).
 function buildMacrosDocs() {
@@ -597,6 +617,7 @@ async function main() {
   await compile(JOURNAL_PACK, buildJournalDocs());
   await compile(MACROS_PACK, buildMacrosDocs());
   await compile(TABELAS_PACK, buildTabelasDocs());
+  await compile(EFEITOS_PACK, buildEfeitosDocs());
   console.log("Concluído.");
 }
 
