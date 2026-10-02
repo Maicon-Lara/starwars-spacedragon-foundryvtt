@@ -36,6 +36,7 @@ import {
   FONTES_DE_ENERGIA, formulaDeGasto, custoDeAbastecimento, penalidadeNaJPR,
 } from "./nave-modelo.js";
 import { moverNave, conferirEscala, casasDaManobra } from "./nave-movimento.js";
+import { ordemLigada } from "./ordem-painel.js";
 
 export const TIPO_NAVE = "starwars-sd.nave";
 
@@ -746,7 +747,11 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
 
   /** Iniciativa deste módulo: 1d20 + Destreza do piloto. */
   static async #iniciativa() {
-    if (this.ehLivro) return NaveFicha.#ordemDeAcao.call(this);
+    // A Ordem de Ação é do modo Livro — e, com a opção de mundo ligada, dos
+    // DOIS modos: quando a mesa adota a regra do Space Dragon, ela vale para
+    // tudo, e ter o Tático rolando 1d20+Destreza no meio disso devolveria a
+    // bagunça de duas ordens na mesma cena.
+    if (this.ehLivro || ordemLigada()) return NaveFicha.#ordemDeAcao.call(this);
     const s = this.actor.system;
     const roll = await new Roll(`1d20 + ${s.iniciativa}`).evaluate();
     // Se a nave está num combate, grava lá — é a ordem de tiro da rodada.

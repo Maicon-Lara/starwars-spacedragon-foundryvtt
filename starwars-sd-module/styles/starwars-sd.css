@@ -622,3 +622,25 @@ body.theme-dark .starwars-sd.nave-ficha.tema-auto,
 }
 .starwars-sd.nave-ficha .pct-comb.seco { color: var(--nave-perigo); }
 .starwars-sd.nave-ficha .combustivel .fonte { width: 100%; margin-top: 4px; font-size: 11px; }
+
+/* ── O PAINEL DE ORDEM DE AÇÃO ─────────────────────────────────────────────
+ * Na barra lateral da ficha de personagem, abaixo dos Pontos de Força. Mesma
+ * lógica daquele: a lateral reúne o que é permanente, e a Ordem de Ação é o
+ * que se declara a cada rodada — fica à mão em qualquer aba. */
+.starwars-sd-ordem {
+  border: 1px solid color-mix(in srgb, var(--sw-luz) 45%, transparent);
+  border-radius: 4px;
+  padding: 6px 8px;
+  margin: 8px 0 0;
+  background: color-mix(in srgb, var(--sw-luz) 10%, transparent);
+}
+.starwars-sd-ordem .ordem-cabeca {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  font-family: var(--sw-condensada); text-transform: uppercase; letter-spacing: .04em;
+  font-size: 12px;
+}
+.starwars-sd-ordem .ordem-cabeca .dica { font-size: 9.5px; text-transform: none; letter-spacing: 0; opacity: .8; }
+.starwars-sd-ordem .ordem-acao { width: 100%; margin: 5px 0 4px; font-size: 10.5px; }
+.starwars-sd-ordem .ordem-linha { display: flex; gap: 4px; }
+.starwars-sd-ordem .ordem-dado { flex: 1 1 auto; min-width: 0; font-size: 11px; text-align: center; }
+.starwars-sd-ordem .ordem-linha button { flex: 0 0 auto; font-size: 10.5px; padding: 1px 8px; }

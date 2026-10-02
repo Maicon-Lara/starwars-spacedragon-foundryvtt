@@ -116,9 +116,46 @@
     },
     {
       "sort": 400000,
+      "name": "A Ordem de Ação",
+      "type": "text",
+      "_id": "1IyWSuCkg16wauFS",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<div class=\"odo-markdown starwars-sd-doc c-index\"><p>A mesa usa a regra do <strong>Space Dragon</strong> (§7.5 para gente, §10.6 para naves), e não a iniciativa do Old Dragon 2. A diferença é de natureza, não de fórmula: <strong>o valor vem da ação que você escolheu</strong>, muda a cada rodada, e <strong>o menor age primeiro</strong>.</p><table><thead><tr><th>Você vai…</th><th>Seu valor é…</th></tr></thead><tbody><tr><td><strong>Atacar</strong></td><td>role o <strong>dado de dano</strong> da arma</td></tr><tr><td>Usar um <strong>poder</strong></td><td>a <strong>Grandeza</strong> dele</td></tr><tr><td>Usar um <strong>aparato</strong></td><td>o <strong>NT</strong> dele</td></tr><tr><td><strong>Mover-se</strong> ou outra coisa</td><td><strong>10 − mod. de Destreza</strong></td></tr></tbody></table><p><strong>Naves:</strong> disparo = os dados de dano · ativar equipamento = o bônus de ataque · manobra evasiva ou movimento duplo = a jogada de proteção.</p><blockquote><p><strong>A arma pesada age por último.</strong> O valor <em>é</em> o dano, então o canhão de 1d12 sai depois da pistola de 1d4. Escolher a ação é escolher a iniciativa — e é essa troca que a regra oferece em lugar da sorte.</p></blockquote><p><strong>A sequência, toda rodada:</strong> declarar → ordenar → resolver → declarar de novo. Empate significa <strong>ação simultânea</strong>, com os efeitos calculados juntos.</p><blockquote><p><strong>A rodada não dura 6 segundos.</strong> Ela dura <strong>o dobro do maior valor</strong>, em segundos — e é esse número que governa tudo o que vale \"por uma rodada\". No Foundry, o Mestre recebe a conta pronta a cada virada.</p></blockquote></div>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "olddragon2e",
+        "systemVersion": "This is auto replaced",
+        "createdTime": 0,
+        "modifiedTime": 0,
+        "lastModifiedBy": "starwarssdbuild1",
+        "exportSource": null
+      },
+      "_key": "!journal.pages!dtZEmxxXyYUFz07T.1IyWSuCkg16wauFS"
+    },
+    {
+      "sort": 500000,
       "name": "Combate de Personagem",
       "type": "text",
-      "_id": "s5Gv86SCruTvDAdR",
+      "_id": "uVjE3y4pw3zVFOQB",
       "title": {
         "show": true,
         "level": 1
@@ -149,13 +186,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!dtZEmxxXyYUFz07T.s5Gv86SCruTvDAdR"
+      "_key": "!journal.pages!dtZEmxxXyYUFz07T.uVjE3y4pw3zVFOQB"
     },
     {
-      "sort": 500000,
+      "sort": 600000,
       "name": "A Força",
       "type": "text",
-      "_id": "08OHoei7vFqFesmx",
+      "_id": "DMn9hWFnt9DC6Jx8",
       "title": {
         "show": true,
         "level": 1
@@ -186,13 +223,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!dtZEmxxXyYUFz07T.08OHoei7vFqFesmx"
+      "_key": "!journal.pages!dtZEmxxXyYUFz07T.DMn9hWFnt9DC6Jx8"
     },
     {
-      "sort": 600000,
+      "sort": 700000,
       "name": "Equipamento, Dinheiro e Carga",
       "type": "text",
-      "_id": "AO1rh8yBQZOdf31c",
+      "_id": "TWxEs3OcNOVpbYL9",
       "title": {
         "show": true,
         "level": 1
@@ -223,13 +260,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!dtZEmxxXyYUFz07T.AO1rh8yBQZOdf31c"
+      "_key": "!journal.pages!dtZEmxxXyYUFz07T.TWxEs3OcNOVpbYL9"
     },
     {
-      "sort": 700000,
+      "sort": 800000,
       "name": "Naves",
       "type": "text",
-      "_id": "eGPpWRneR4r7o1re",
+      "_id": "HJ77ncbHC3JHqGst",
       "title": {
         "show": true,
         "level": 1
@@ -260,13 +297,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!dtZEmxxXyYUFz07T.eGPpWRneR4r7o1re"
+      "_key": "!journal.pages!dtZEmxxXyYUFz07T.HJ77ncbHC3JHqGst"
     },
     {
-      "sort": 800000,
+      "sort": 900000,
       "name": "Aventura e Exploração",
       "type": "text",
-      "_id": "viEerRb1BqFGD93x",
+      "_id": "G2RBWLmEcKdH6ODF",
       "title": {
         "show": true,
         "level": 1
@@ -297,13 +334,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!dtZEmxxXyYUFz07T.viEerRb1BqFGD93x"
+      "_key": "!journal.pages!dtZEmxxXyYUFz07T.G2RBWLmEcKdH6ODF"
     },
     {
-      "sort": 900000,
+      "sort": 1000000,
       "name": "Para o Mestre",
       "type": "text",
-      "_id": "bYdz8xVGVMmAiQ0j",
+      "_id": "W9NBA9wHfc7iFP0w",
       "title": {
         "show": true,
         "level": 1
@@ -334,13 +371,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!dtZEmxxXyYUFz07T.bYdz8xVGVMmAiQ0j"
+      "_key": "!journal.pages!dtZEmxxXyYUFz07T.W9NBA9wHfc7iFP0w"
     },
     {
-      "sort": 1000000,
+      "sort": 1100000,
       "name": "No Foundry",
       "type": "text",
-      "_id": "tTDNdA5evKzylla3",
+      "_id": "yXwy6NpNYGUVHUK0",
       "title": {
         "show": true,
         "level": 1
@@ -371,13 +408,13 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!dtZEmxxXyYUFz07T.tTDNdA5evKzylla3"
+      "_key": "!journal.pages!dtZEmxxXyYUFz07T.yXwy6NpNYGUVHUK0"
     },
     {
-      "sort": 1100000,
+      "sort": 1200000,
       "name": "Crédito",
       "type": "text",
-      "_id": "SLFPotCRLBY8dwU9",
+      "_id": "2L2Ti0kAF8uYc6WL",
       "title": {
         "show": true,
         "level": 1
@@ -408,7 +445,7 @@
         "lastModifiedBy": "starwarssdbuild1",
         "exportSource": null
       },
-      "_key": "!journal.pages!dtZEmxxXyYUFz07T.SLFPotCRLBY8dwU9"
+      "_key": "!journal.pages!dtZEmxxXyYUFz07T.2L2Ti0kAF8uYc6WL"
     }
   ],
   "flags": {},

@@ -27,6 +27,7 @@ import { NaveDataModel } from "./nave-modelo.js";
 import { NaveFicha, NaveFichaTatico, NaveFichaLivro, TIPO_NAVE } from "./nave-ficha.js";
 import { ligarPontosDeForca } from "./pontos-de-forca.js";
 import { registrarTema, ligarTema } from "./tema.js";
+import { registrarCombate, ligarOrdemDeAcao, ligarResumoDaRodada } from "./ordem-painel.js";
 
 const ID = "starwars-sd";
 
@@ -77,6 +78,32 @@ Hooks.once("init", () => {
       }
     },
   });
+
+  // ── A Ordem de Ação do Space Dragon ──
+  //
+  // Numa iniciativa comum rola-se uma vez e a ordem vale o combate. A Ordem de
+  // Ação é outra coisa: o valor vem da AÇÃO escolhida, muda a cada rodada, e o
+  // MENOR age primeiro. A sequência do livro (§7.2) é declarar → ordenar →
+  // resolver, repetindo toda rodada — é o que a torna cara à mão, e o motivo de
+  // este módulo automatizá-la.
+  //
+  // É opção de MUNDO porque inverte a ordenação do Combat Tracker, e isso vale
+  // para todos os combates: num mundo com Ekhoria e Star Wars juntos, a troca
+  // tem de ser escolha consciente. Desligada, o módulo não registra classe de
+  // Combat nenhuma e o Foundry segue o padrão.
+  game.settings.register(ID, "ordemDeAcao", {
+    name: "starwars-sd.settings.ordemDeAcao.nome",
+    hint: "starwars-sd.settings.ordemDeAcao.dica",
+    scope: "world",
+    config: true,
+    type: Boolean,
+    default: false,
+    requiresReload: true,
+  });
+
+  // A subclasse de Combat entra sempre; quem decide inverter é a opção, lida a
+  // cada ordenação. Registrar condicionalmente exigiria reload para voltar.
+  registrarCombate();
 
   // ── A paleta do livro nas fichas do sistema ──
   //
@@ -202,6 +229,10 @@ Hooks.once("ready", () => {
   // existe e que a classe do módulo Space Dragon já está lá — o aviso de
   // "tema do vizinho desligado" depende de poder conferi-la.
   ligarTema();
+
+  // A Ordem de Ação: o painel do jogador e o resumo da rodada para o Mestre.
+  ligarOrdemDeAcao();
+  ligarResumoDaRodada();
 
   // O painel de Pontos de Força na ficha do personagem. Injetado, não
   // substitui nada do sistema, e sai junto se o módulo for desligado.

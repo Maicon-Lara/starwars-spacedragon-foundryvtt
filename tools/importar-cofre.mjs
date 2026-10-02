@@ -642,6 +642,7 @@ const SECOES = {
     "A régua de ouro",
     "Criar um personagem",
     "Rolar os dados",
+    "A Ordem de Ação",
     "Combate de personagem",
     "A Força",
     "Equipamento, dinheiro e carga",

@@ -1,5 +1,45 @@
 # Changelog
 
+## 1.21.0 — a Ordem de Ação, automatizada
+
+A mesa passa a poder rodar a **Ordem de Ação do Space Dragon** (§7.5 e §10.6) no
+lugar da iniciativa — para personagens **e** naves, com o módulo fazendo a parte
+que custava.
+
+**A diferença é de natureza.** Numa iniciativa comum rola-se uma vez e a ordem
+vale o combate. Na Ordem de Ação o valor vem da **ação escolhida**, muda a cada
+rodada, e **o menor age primeiro**: o canhão de 1d12 sai depois da pistola de
+1d4, porque o valor *é* o dano. Escolher a ação é escolher a iniciativa.
+
+**O que a automação resolve** — as três coisas que tornavam a regra cara à mão:
+
+1. **A conta de cada jogador.** Um painel na barra lateral da ficha: escolha a
+   ação, informe o dado da arma (ou a Grandeza, ou o NT), e o valor vai para o
+   Combat Tracker. O `10 − Destreza` sai sozinho.
+2. **A ordem no tracker.** O Foundry ordena do maior para o menor; a regra pede
+   o contrário. Uma subclasse de `Combat` inverte a ordenação — e **só** com a
+   opção ligada, porque isso vale para todos os combates do mundo.
+3. **A duração da rodada.** No Space Dragon a rodada **não dura 6 segundos**:
+   dura **o dobro do maior valor**, e é esse número que governa tudo o que vale
+   "por uma rodada". O Mestre recebe a conta pronta a cada virada, junto de quem
+   empatou — porque empate é **ação simultânea**, e a lista ordenada esconde isso.
+
+**Unificada.** Com a opção ligada, a ficha de nave usa a Ordem de Ação nos
+**dois** modos. Antes a mesa podia ter três regras convivendo — OD2 nos
+personagens, `1d20+Destreza` no Tático, Ordem de Ação no Livro —, e o §10.6
+prevê justamente que as duas escalas rodem na mesma cena.
+
+**Opção de mundo, desligada por padrão, e com reload.** Ela inverte o Combat
+Tracker, e num mundo com Ekhoria e Star Wars na mesma instalação a troca tem de
+ser escolha consciente. Desligada, o módulo não muda a ordenação de nada.
+
+**Não toca em `CONFIG.Combat.initiative`.** O painel *escreve* o valor no
+tracker, como a ficha de nave já fazia. Quem não usa o painel continua com a
+iniciativa do sistema.
+
+A **Referência rápida** ganhou a seção, com a tabela das quatro ações e o aviso
+sobre a duração variável da rodada.
+
 ## 1.20.0 — a folha de consulta
 
 Uma nota nova no cofre e um compêndio novo aqui: **Referência rápida** — onde
