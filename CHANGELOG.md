@@ -1,5 +1,27 @@
 # Changelog
 
+## 1.16.5 — os valores calculados voltam a aparecer
+
+A 1.16.4 escureceu o fundo dos campos e, com isso, **apagou metade dos números
+da ficha**: os modificadores de atributo, a Base do CP, a BA, as três JP, o
+limiar de Danos Mortais, o Próximo Nível e o Movimento derivado ficaram em
+branco.
+
+**A causa.** A ficha tem dois tipos de campo: os que se digitam e os
+**calculados**, que são `input` desabilitado. Num input desabilitado o Chrome
+pinta o texto com **`-webkit-text-fill-color`**, que ignora `color` — então
+escurecer o fundo sem tratar essa propriedade deixou o texto na cor antiga,
+escura sobre escuro.
+
+O sintoma denunciava a causa, e vale registrar: os campos **editáveis**
+continuavam mostrando o valor (XP, PV, os atributos), e só os **calculados**
+sumiam. Não era contraste geral; era uma propriedade específica de campo
+desabilitado.
+
+O teste ganhou a trava: se a camada escurece o fundo de `input`, tem de tratar
+`-webkit-text-fill-color` — inclusive em `:disabled`. É o tipo de erro que o
+build nunca acusa, porque só aparece na tela.
+
 ## 1.16.4 — os fundos que nenhuma variável alcançava
 
 O diagnóstico das três versões anteriores estava **invertido**, e medir a ficha

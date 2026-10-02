@@ -240,6 +240,23 @@ for (const regra of cssSemComentarios.split("}")) {
   }
 }
 
+// ── O TEXTO DOS CAMPOS DESABILITADOS ──────────────────────────────────────
+//
+// Num `input` desabilitado o Chrome pinta o texto com `-webkit-text-fill-color`,
+// que IGNORA `color`. Escurecer o fundo desses campos sem tratar essa
+// propriedade apaga metade dos números da ficha — os modificadores, a Base do
+// CP, a BA, as JP —, e nada no build acusa: só se vê na tela.
+//
+// Foi exatamente o que aconteceu na 1.16.4, e o sintoma denunciava a causa: os
+// campos editáveis continuavam mostrando o valor, e só os calculados sumiam.
+if (/\.olddragon2e\.sheet input[^{]*\{[^}]*background-color/.test(cssSemComentarios)) {
+  confere(/input:disabled[^{]*\{[^}]*-webkit-text-fill-color/.test(cssSemComentarios),
+    "a camada escurece o fundo dos campos mas não trata -webkit-text-fill-color" +
+    " em input:disabled — os valores calculados ficam invisíveis no Chrome");
+  confere(/\.olddragon2e\.sheet input[^{]*\{[^}]*-webkit-text-fill-color/.test(cssSemComentarios),
+    "falta -webkit-text-fill-color nos campos em geral");
+}
+
 // o tema sai de um arquivo próprio, com a opção e o aviso
 const temaJs = ler(MOD, "module", "tema.js");
 confere(temaJs.includes("spacedragon-tema"),

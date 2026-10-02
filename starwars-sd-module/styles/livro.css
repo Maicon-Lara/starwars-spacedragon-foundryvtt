@@ -588,3 +588,49 @@ body.theme-dark.starwars-sd-tema .olddragon2e.sheet .ProseMirror {
     background-color: var(--sw-painel) !important;
   }
 }
+
+/* ── O TEXTO DOS CAMPOS CALCULADOS ─────────────────────────────────────────
+ *
+ * A ficha tem dois tipos de campo: os que se digitam (XP, PV, atributos) e os
+ * CALCULADOS — os modificadores, a Base do CP, a BA, as JP, o limiar de Danos
+ * Mortais, o Próximo Nível, o Movimento derivado. Os calculados são `input`
+ * desabilitado.
+ *
+ * E aí está a armadilha: num input desabilitado o Chrome pinta o texto com
+ * `-webkit-text-fill-color`, que IGNORA `color`. Escurecer o fundo desses
+ * campos sem tratar essa propriedade deixou o texto na cor antiga — escura
+ * sobre escuro —, e a ficha apareceu com metade dos números em branco.
+ *
+ * O sintoma denuncia a causa: os campos editáveis continuavam mostrando o
+ * valor, e só os calculados sumiam.
+ */
+body.theme-dark.starwars-sd-tema .olddragon2e.sheet input,
+body.theme-dark.starwars-sd-tema .olddragon2e.sheet select,
+body.theme-dark.starwars-sd-tema .olddragon2e.sheet textarea {
+  color: var(--sw-texto) !important;
+  -webkit-text-fill-color: var(--sw-texto);
+}
+body.theme-dark.starwars-sd-tema .olddragon2e.sheet input:disabled,
+body.theme-dark.starwars-sd-tema .olddragon2e.sheet input[readonly],
+body.theme-dark.starwars-sd-tema .olddragon2e.sheet select:disabled,
+body.theme-dark.starwars-sd-tema .olddragon2e.sheet textarea:disabled {
+  /* legível, mas ainda com cara de campo que não se edita */
+  color: #c3bfb2 !important;
+  -webkit-text-fill-color: #c3bfb2;
+  opacity: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet input,
+  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet select,
+  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet textarea {
+    color: var(--sw-texto) !important;
+    -webkit-text-fill-color: var(--sw-texto);
+  }
+  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet input:disabled,
+  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet input[readonly] {
+    color: #c3bfb2 !important;
+    -webkit-text-fill-color: #c3bfb2;
+    opacity: 1;
+  }
+}
