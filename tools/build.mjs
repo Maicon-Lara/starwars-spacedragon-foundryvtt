@@ -139,7 +139,12 @@ const limpaCelula = (c) => String(c ?? "").replace(/\*\*/g, "").replace(/⊘/g, 
 export function progressaoDaTabela(fonte, t) {
   const iNv = coluna(t, "Nv");
   const iRodadas = coluna(t, "Rodadas");
-  const iPV = coluna(t, "PV por nível");
+  // Os PV que a especialização dá por nível. O Artífice os teve numa coluna
+  // própria ("PV por nível") e depois direto no DV: a tabela do cofre passou a
+  // trazer "+4" no 17º, somando o +2 da base ao +2 extra. Aceitamos as duas
+  // grafias — sem isto, mudar o cabeçalho no cofre apaga os PV em silêncio,
+  // porque o build continua passando: ninguém valida uma coluna que sumiu.
+  const iPV = coluna(t, "PV por nível", "DV");
   const colunas = {};
   t.cabecalho.forEach((h, i) => {
     const col = COLUNA_DO_LIVRO[h];
@@ -152,7 +157,8 @@ export function progressaoDaTabela(fonte, t) {
       colunas[col][limpaCelula(l[iNv])] = v;
     }
   });
-  // O Artífice volta a ganhar PV do 17º em diante, numa coluna própria.
+  // Só as células "+N" entram: no começo da tabela a coluna DV traz o NÚMERO
+  // de dados de vida ("5", "6"…), que não é bônus fixo e não pode virar PV.
   if (iPV >= 0) {
     for (const l of t.linhas) {
       const v = limpaCelula(l[iPV]);

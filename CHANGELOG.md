@@ -1,5 +1,32 @@
 # Changelog
 
+## 1.12.1 — as habilidades do Artífice, revisadas
+
+O Artífice mudou no cofre e o módulo acompanha. As quatro habilidades e a
+tabela de progressão vêm da revisão do autor:
+
+- **Mãos de Oficina (10º)** passa a dar **aparatos ofensivos** — ele é a única
+  exceção à regra de que só o Técnico os opera — e **conserto/modificação** de
+  aparato ou droide até **3º NT** com **teste de Ciência**. Antes era "opera
+  qualquer aparato como um Técnico de metade dos níveis".
+- **Carne Compensada (17º)** agora dá **+4 PV por nível**, não +2: como o
+  Artífice não alcança a plenitude mental do 16º, os PV dele **não congelam**
+  com ela — ele segue ganhando os +2 da tabela e recebe os +2 extras.
+- **O Preço da Lente (20º)** passa a **criar** aparatos até **5º NT** (o que um
+  Técnico faz no 9º), e a rolagem de ativação ficou definida: **d% ≤ Intelecto**.
+- **A Lente (5º)** diz explicitamente que o Sensível comum só usa utilitários, e
+  que a Grandeza chega à **8ª no 19º** — antes dizia "teto prático na 8ª".
+
+A habilidade perdeu a flag `spacedragon.habilidade = "Operar Máquinas"`: o teste
+agora é de **atributo** (1d20 ≤ Ciência), e os botões da % do Técnico estariam
+oferecendo a rolagem errada.
+
+**Correção de build.** `progressaoDaTabela` lia os PV da especialização só na
+coluna "PV por nível". Essa coluna saiu da tabela do Artífice (o +4 passou a
+vir no DV), e o build **continuava passando** — a ficha é que deixaria de dar
+os PV do 17º, em silêncio. Agora lê as duas grafias, e `tools/teste-progressao.mjs`
+(novo, dentro de `npm run validar`) trava a regressão lendo o pack gerado.
+
 ## 1.12.0 — movimento em arco, a mecânica do X-Wing
 
 Opção nova em *Configurações do Módulo → Movimento da nave no mapa*, com dois

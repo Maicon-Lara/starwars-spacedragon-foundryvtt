@@ -3249,8 +3249,8 @@ export const ESPECIALIZACOES = {
       "Alcance",
       "Grandeza",
       "Aparatos",
-      "PV por nível",
-      "Poder pede rolagem"
+      "Conserto / Modificação",
+      "Ativar poder"
     ],
     "linhas": [
       [
@@ -3315,8 +3315,8 @@ export const ESPECIALIZACOES = {
         "⊘ 13",
         "**17%**",
         "**4ª**",
-        "como Técnico ½",
-        "—",
+        "**todos**",
+        "**3º NT**",
         "—"
       ],
       [
@@ -3326,8 +3326,8 @@ export const ESPECIALIZACOES = {
         "⊘ 13",
         "**23%**",
         "**4ª**",
-        "como Técnico ½",
-        "—",
+        "**todos**",
+        "**3º NT**",
         "—"
       ],
       [
@@ -3337,8 +3337,8 @@ export const ESPECIALIZACOES = {
         "⊘ 13",
         "**23%**",
         "**4ª**",
-        "como Técnico ½",
-        "—",
+        "**todos**",
+        "**3º NT**",
         "—"
       ],
       [
@@ -3348,8 +3348,8 @@ export const ESPECIALIZACOES = {
         "⊘ 13",
         "**28%**",
         "**5ª**",
-        "como Técnico ½",
-        "—",
+        "**todos**",
+        "**3º NT**",
         "—"
       ],
       [
@@ -3359,8 +3359,8 @@ export const ESPECIALIZACOES = {
         "⊘ 13",
         "**28%**",
         "**5ª**",
-        "como Técnico ½",
-        "—",
+        "**todos**",
+        "**3º NT**",
         "—"
       ],
       [
@@ -3370,8 +3370,8 @@ export const ESPECIALIZACOES = {
         "⊘ 13",
         "**36%**",
         "**6ª**",
-        "como Técnico ½",
-        "—",
+        "**todos**",
+        "**3º NT**",
         "—"
       ],
       [
@@ -3381,56 +3381,56 @@ export const ESPECIALIZACOES = {
         "⊘ 13",
         "**36%**",
         "**6ª**",
-        "como Técnico ½",
-        "—",
+        "**todos**",
+        "**3º NT**",
         "—"
       ],
       [
         "**17**",
-        "—",
+        "**+4**",
         "⊘ +2",
         "⊘ 13",
         "**43%**",
         "**7ª**",
-        "como Técnico ½",
-        "+2",
+        "**todos**",
+        "**3º NT**",
         "—"
       ],
       [
         "**18**",
-        "—",
+        "**+4**",
         "⊘ +2",
         "⊘ 13",
         "**43%**",
         "**7ª**",
-        "como Técnico ½",
-        "+2",
+        "**todos**",
+        "**3º NT**",
         "—"
       ],
       [
         "**19**",
-        "—",
+        "**+4**",
         "⊘ +2",
         "⊘ 13",
         "**53%**",
         "**8ª**",
-        "como Técnico ½",
-        "+2",
+        "**todos**",
+        "**3º NT**",
         "—"
       ],
       [
         "**20**",
-        "—",
+        "**+4**",
         "⊘ +2",
         "⊘ 13",
         "**53%**",
         "**8ª**",
-        "como Técnico igual",
-        "+2",
-        "sempre"
+        "**todos**",
+        "**5º NT (cria)**",
+        "**d% ≤ INT**"
       ]
     ],
     "legenda": "⊘ = congelado, repete o valor em que travou · **em negrito** = o valor desta especialização, no lugar do da classe base.",
-    "nota": "Ele extrai o poder **do cristal**, não de si — e a Força própria atrofia. No 20º alcança o auge como artífice e o fundo como místico: cria aparatos como um Técnico de igual nível, mas **todo** poder da Força passa a exigir rolagem, porque ele já desaprendeu a sentir."
+    "nota": "Ele extrai o poder **do cristal**, não de si — e a Força própria atrofia. No 20º alcança o auge como artífice e o fundo como místico: **cria** aparatos de até 5º NT, como um Técnico de 9º, mas **todo** poder da Força passa a exigir rolagem de ativação, porque ele já desaprendeu a sentir."
   }
 };

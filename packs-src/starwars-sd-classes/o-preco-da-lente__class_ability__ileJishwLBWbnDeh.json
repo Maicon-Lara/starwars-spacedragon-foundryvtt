@@ -5,7 +5,7 @@
   "_id": "ileJishwLBWbnDeh",
   "img": "systems/olddragon2e/assets/icons/kit.svg",
   "system": {
-    "description": "<p><strong>O Preço da Lente:</strong> usa aparatos como um Técnico de <strong>nível igual</strong> e os <strong>cria</strong> como um Técnico de metade. Mas você já desaprendeu a sentir: <strong>todo</strong> poder da Força passa a exigir uma rolagem percentual para funcionar.</p>",
+    "description": "<p><strong>O Preço da Lente:</strong> você alcança o ápice da engenharia de kyber e passa a <strong>criar</strong> seus próprios aparatos de até <strong>5º NT</strong>, o que um Técnico só faz no 9º nível. Contudo, desaprendeu a sentir a Força intuitivamente: <strong>todo</strong> uso de poder — conhecido ou não — passa a exigir uma <strong>rolagem de ativação</strong> (d% ≤ Intelecto, Tabela 1-4), e a falha gasta o Alcance mesmo assim, como qualquer poder.</p>",
     "level": 20,
     "level3": "",
     "level6": "",

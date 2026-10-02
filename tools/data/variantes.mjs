@@ -266,22 +266,22 @@ export const variantes = [
     extra:
       "**O que ele constrói.** O sabre é só o começo. Kyber move hipermotores, alimenta canhões, guarda memória em holocrons — e um superlaser é kyber industrial. O Artífice é quem pega a pedra que canta e a transforma em ferramenta. Por isso o Império o procura, a Ordem o despreza, e ele é a única pessoa viva capaz de desmontar a arma que vai destruir o planeta.\n\n" +
       "**O Sangramento dele é laboratório, não ódio** (ver [[SW-SDN-Sabre-e-Cristais]]). Um Sith tradicional acha isso uma blasfêmia — e talvez tenha razão.",
-    restricoes: { magic_items: "Aparatos defensivos (A Lente); do 10º, qualquer um com teste de Operar Máquinas." },
+    restricoes: { magic_items: "Aparatos defensivos (A Lente); do 10º, todos — inclusive os ofensivos, que só o Técnico opera; do 20º, cria os seus até 5º NT." },
     habilidades: [
       { nome: "A Lente", level: 5,
-        desc: p("**A Lente:** usa **aparatos defensivos** livremente. Sua **Grandeza trava na 3ª** e o **Alcance passa a avançar uma linha da tabela a cada dois níveis** — no 5º você tem 9%, e só no 7º sobe para 13%, que é o valor do 6º.") +
+        desc: p("**A Lente:** você aprende a canalizar a Força em circuitos, e passa a usar **aparatos defensivos** livremente — o Sensível comum só usa **utilitários**. Em troca, sua **Grandeza trava na 3ª** e o **Alcance passa a avançar uma linha da tabela a cada dois níveis**: no 5º você tem 9%, e só no 7º sobe para 13%, que é o valor do 6º.") +
               lista([
                 "`9º` a Grandeza destrava na **4ª**.",
-                "`13º` a Grandeza destrava na **5ª** e volta a subir de dois em dois — **teto prático na 8ª**.",
+                "`13º` a Grandeza destrava na **5ª** e volta a progredir normalmente, de dois em dois, até o teto da **8ª Grandeza** no 19º nível.",
               ]) +
               p("**Troca:** **BA e JP congelam no 5º** e nunca mais progridem. É a única Senda que paga as duas colunas de uma vez — e, por isso, **a única em que o Caminho não decide nada**. Ele está tão fora do eixo místico que nem a escolha moral chega ao corpo dele.") },
-      { nome: "Mãos de Oficina", level: 10, flags: doLivro("Operar Máquinas"),
-        desc: p("**Mãos de Oficina:** opera **qualquer** aparato com um teste de Operar Máquinas, como um Técnico de **metade** dos seus níveis. A Grandeza trava de novo.") +
-              "<p class='nota-casa'><em>Os botões abaixo calculam pelo nível inteiro. Para o Artífice, role como Técnico de metade do nível — Shift-clique abre o diálogo, onde se corrige o nível.</em></p>" },
+      { nome: "Mãos de Oficina", level: 10,
+        desc: p("**Mãos de Oficina:** você domina os segredos das armas energéticas de kyber e passa a operar também **aparatos ofensivos** — sabres modificados, projetores energéticos. É a **única exceção** à regra de que só o Técnico os opera. Além disso, **conserta e modifica** qualquer aparato ou droide de até **3º NT** com um **teste de Ciência**.") +
+              "<p class='nota-casa'><em>O conserto é um <strong>teste de atributo</strong>: role 1d20 ≤ Ciência na ficha. Não é a % de Operar Máquinas do Técnico — por isso esta habilidade não traz os botões dela.</em></p>" },
       { nome: "Carne Compensada", level: 17,
-        desc: p("**Carne Compensada:** você nunca alcança a plenitude mental do 16º, e o corpo cobre a lacuna: **+2 PV por nível** daí em diante.") },
+        desc: p("**Carne Compensada:** o corpo e os implantes cibernéticos cobrem o desgaste espiritual. Como você **não** alcança a iluminação mental do 16º, seus PV também **não congelam** junto com ela: você segue ganhando os **+2 por nível** do 15º–16º e recebe **mais +2 extras** — **+4 PV por nível** daí em diante.") },
       { nome: "O Preço da Lente", level: 20,
-        desc: p("**O Preço da Lente:** usa aparatos como um Técnico de **nível igual** e os **cria** como um Técnico de metade. Mas você já desaprendeu a sentir: **todo** poder da Força passa a exigir uma rolagem percentual para funcionar.") },
+        desc: p("**O Preço da Lente:** você alcança o ápice da engenharia de kyber e passa a **criar** seus próprios aparatos de até **5º NT**, o que um Técnico só faz no 9º nível. Contudo, desaprendeu a sentir a Força intuitivamente: **todo** uso de poder — conhecido ou não — passa a exigir uma **rolagem de ativação** (d% ≤ Intelecto, Tabela 1-4), e a falha gasta o Alcance mesmo assim, como qualquer poder.") },
       eco("A Matéria e o Cristal — a Força que lê, molda e desperta objetos, e a que mexe na engenharia dos próprios poderes"),
     ],
   },
