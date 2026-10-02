@@ -1,5 +1,59 @@
 # Changelog
 
+## 1.16.0 — a tripulação na ficha
+
+As regras de tripulação que a 1.15.0 escreveu agora **rodam**. O que a ficha
+faz sozinha, e o que ela deixa para a mesa de propósito.
+
+**Os postos.** Cada um dos cinco ganhou um seletor com as três opções e um
+botão que executa. *Firmar*, *Correr*, *Rajada*, *Supressão*, *Forçar o
+reator*, *Travar*, *Interferência* e *Aguentem firme* a ficha aplica; **Ordem**
+e **Sangue frio** saem como texto no cartão, porque a ficha não tem como saber
+o que o outro posto ia fazer, nem rerrolar um dado que já saiu no chat.
+Automatizar os dois faria a ficha adivinhar a intenção da mesa — e errar.
+
+**E os números entram na rolagem**, que é a parte que não se vê:
+
+- o **+2 de Firmar** soma nas partes do ataque, ao lado da BA e do Computador
+  Balístico;
+- os **Escudos** sobem o **CP do alvo** antes da comparação;
+- os **Motores** somam ao modificador da **JP** na manobra evasiva dele;
+- as **Armas** somam **dado de dano**;
+- quem está **suprimido** leva **−2** e **não pode** fazer manobra evasiva — a
+  ficha barra o botão;
+- a **Interferência** do alvo tira 2 do ataque contra ele.
+
+**Três camadas, três opções de módulo**, e começam **desligadas**: *Camada:
+Energia do reator*, *Controle de avarias* e *Fuga como relógio*. A ficha
+esconde o painel inteiro de quem não ligou, em vez de mostrá-lo vazio — ela já
+é cheia, e painel morto custa mais atenção do que vale.
+
+**Energia** mostra os pontos do reator, quanto sobra, e o efeito em uma linha
+("+4 JP · +1 dado de dano"). Repartir mais do que o reator deu é barrado, e o
+número fica vermelho. **Forçar o reator** dá +2 e rola 1d6: no 1, a Sala de
+Máquinas pega avaria — datada, para o prazo começar a contar.
+
+**Controle de avarias** lista as emergências com o prazo correndo e a câmara
+onde alguém precisa estar. A avaria passou a ser **datada** quando surge; sem
+combate ativo não há relógio, pelo mesmo critério que a evasiva já usava.
+
+**Fuga** põe os dois relógios lado a lado — as três etapas do salto e as três
+marcas do perseguidor. Escolher *Correr* avança o perseguidor em 2
+automaticamente, se a camada estiver ligada.
+
+**O Fim da Rodada** apaga tudo o que vale "até o fim da rodada", a partir de
+uma lista única (`LIMPA_NO_FIM_DA_RODADA`). Estar numa constante é o que evita
+esquecer um campo novo — um +4 de Firmar que nunca sai é pior do que o bônus
+não existir, porque ninguém percebe.
+
+**Retrocompatível.** Todos os campos foram ACRESCENTADOS, nenhum alterado:
+`avarias` continua booleano e o prazo mora num campo paralelo, porque trocar o
+tipo quebraria toda nave já criada.
+
+`tools/teste-tripulacao.mjs` (em `npm run validar`) cobre as regras e a ponte
+até a rolagem: o que não se automatiza, o efeito diferente por modo, o prazo, o
+empate da fuga, e **o que a rodada apaga**. Quatro sabotagens verificadas.
+
 ## 1.15.0 — naves consolidadas, e a tripulação com o que fazer
 
 **As regras do livro sobre nave estão num capítulo só.** *Naves & Combate

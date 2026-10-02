@@ -25,6 +25,12 @@ import {
   EVASIVA_INTERVALO, evasivaPermitida,
   CAMARAS, ESTADOS_DE_CAMARA, camaraOperacional, ETAPAS_DO_SALTO, TRANCA_DO_ARSENAL,
   AVARIA_VIRA_CAMARA, REPARO_DE_CAMARA,
+  ACOES_DE_POSTO, AUTOMATIZA, acaoDoPosto,
+  DESTINOS_DE_ENERGIA, energiaDoReator, efeitoDaEnergia, energiaGasta,
+  PRAZO_DE_AVARIA, prazoDaAvaria, MARCAS_DO_PERSEGUIDOR, avancoDoPerseguidor, quemFechaPrimeiro,
+  partesDaTripulacao, cpComEnergia, jpComEnergia,
+  dadosExtrasDeDano, dadosExtrasDeEsquiva, evasivaBloqueada,
+  LIMPA_NO_FIM_DA_RODADA,
 } from "./nave-modelo.js";
 import { moverNave, conferirEscala, casasDaManobra } from "./nave-movimento.js";
 
@@ -49,6 +55,21 @@ export function regraDeNave() {
 /* A função `ehLivro` global saiu na 1.14.0: cada ficha agora FIXA a sua regra
  * em `static MODO`, e a opção de mundo só decide qual delas é a padrão. Ver o
  * getter `ehLivro` na classe, e as duas subclasses no fim do arquivo. */
+
+/**
+ * Se a mesa ligou uma das camadas opcionais da tripulação.
+ *
+ * Fora do Foundry — no teste de fumaça — não há settings, e todas contam como
+ * DESLIGADAS: é o mesmo padrão de `regraDeNave`, e deixa o teste exercitar a
+ * ficha sem precisar simular as opções.
+ */
+export function camadaLigada(qual) {
+  try {
+    return globalThis.game?.settings?.get?.("starwars-sd", qual) === true;
+  } catch {
+    return false;
+  }
+}
 
 /**
  * A classe de tema da ficha: "tema-auto", "tema-claro" ou "tema-escuro".
@@ -176,6 +197,10 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
       camara: NaveFicha.#camara,
       salto: NaveFicha.#salto,
       arsenal: NaveFicha.#arsenal,
+      acaoPosto: NaveFicha.#acaoPosto,
+      energia: NaveFicha.#energia,
+      perseguidor: NaveFicha.#perseguidor,
+      etapaDoSalto: NaveFicha.#etapaDoSalto,
     },
   };
 
@@ -223,10 +248,96 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
       })),
       semPonte: !camaraOperacional(s, "ponte"),
       ordemLivro: Object.values(ORDEM_LIVRO),
+
+      // ── A TRIPULAÇÃO ──
+      // Os postos agora levam a AÇÃO escolhida, e não só quem os ocupa. As
+      // três camadas só entram no contexto se a mesa as ligou: o template
+      // esconde o painel inteiro, em vez de mostrá-lo vazio.
+      postosComAcao: Object.entries(POSTOS).map(([k, v]) => {
+        const escolhida = s.postoAcao?.[k] ?? "";
+        return {
+          chave: k, ...v, valor: s.postos[k], escolhida,
+          acoes: (ACOES_DE_POSTO[k] ?? []).map((a) => ({
+            ...a, sel: a.chave === escolhida, automatica: AUTOMATIZA.has(a.chave),
+          })),
+          nota: acaoDoPosto(k, escolhida)?.nota ?? "",
+        };
+      }),
+      firmado: s.firmar?.ativa === true,
+      camadaEnergia: camadaLigada("camadaEnergia"),
+      camadaAvarias: camadaLigada("camadaAvarias"),
+      camadaFuga: camadaLigada("camadaFuga"),
+      energia: NaveFicha.painelDeEnergia(s, this.ehLivro),
+      emergencias: NaveFicha.emergencias(s),
+      fuga: {
+        etapas: s.fuga?.etapas ?? 0,
+        perseguidor: s.fuga?.perseguidor ?? 0,
+        marcas: MARCAS_DO_PERSEGUIDOR,
+        // Dois booleanos além da string: o estado tem três valores (nenhum,
+        // salto, perseguidor), e o template diz qual é sem comparar string.
+        saltou: quemFechaPrimeiro(s.fuga?.etapas ?? 0, s.fuga?.perseguidor ?? 0) === "salto",
+        alcancada: quemFechaPrimeiro(s.fuga?.etapas ?? 0, s.fuga?.perseguidor ?? 0) === "perseguidor",
+        fechou: quemFechaPrimeiro(s.fuga?.etapas ?? 0, s.fuga?.perseguidor ?? 0),
+      },
       escala: canvas?.scene ? conferirEscala(canvas.scene) : { ok: true },
       pctPV: s.pv.max ? Math.max(0, Math.min(100, Math.round((s.pv.value / s.pv.max) * 100))) : 0,
       descricao: await foundry.applications.ux.TextEditor.implementation.enrichHTML(s.descricao, { async: true }),
     };
+  }
+
+  /* ── OS HELPERS DA TRIPULAÇÃO ───────────────────────────────────────────
+   *
+   * Estáticos e puros: recebem o `system` e devolvem o que o template mostra.
+   * É o que permite o teste de fumaça exercitá-los sem montar uma ficha — o
+   * mesmo desenho de montaDial, logo abaixo.
+   */
+
+  /** O painel de Energia: quanto o reator deu, quanto sobra, e o efeito atual. */
+  static painelDeEnergia(s, ehLivro) {
+    const total = energiaDoReator(TIPOS[s.tipo]?.tamanho) + (s.energia?.extra ?? 0);
+    const gasta = energiaGasta(s.energia);
+    const efeito = efeitoDaEnergia(s.energia, ehLivro);
+    return {
+      total,
+      gasta,
+      // nunca negativo: o painel mostra o número, e "−1 ponto" não diz nada
+      sobra: Math.max(0, total - gasta),
+      excedeu: gasta > total,
+      destinos: Object.entries(DESTINOS_DE_ENERGIA).map(([k, d]) => ({
+        chave: k, rotulo: d.rotulo,
+        valor: s.energia?.[k] ?? 0,
+        efeito: ehLivro ? d.livro : d.tatico,
+      })),
+      efeito,
+      // o resumo em uma linha, que é o que a mesa lê no meio do turno
+      resumo: [
+        efeito.jp ? `+${efeito.jp} JP` : "",
+        efeito.cp ? `+${efeito.cp} CP` : "",
+        efeito.hexes ? `+${efeito.hexes} hexe(s)` : "",
+        efeito.dadosDeEsquiva ? `+${efeito.dadosDeEsquiva}d6 esquiva` : "",
+        efeito.dadosDeDano ? `+${efeito.dadosDeDano} dado(s) de dano` : "",
+      ].filter(Boolean).join(" · "),
+    };
+  }
+
+  /** As avarias com prazo correndo, para o Controle de Avarias. */
+  static emergencias(s) {
+    let rodada = 0;
+    try { rodada = globalThis.game?.combat?.round ?? 0; } catch { rodada = 0; }
+    const out = [];
+    for (const [avaria, camara] of Object.entries(AVARIA_VIRA_CAMARA)) {
+      if (!s.avarias?.[avaria]) continue;
+      const p = prazoDaAvaria(avaria, s.avariaRodada?.[avaria] ?? 0, rodada);
+      if (!p) continue;
+      out.push({
+        avaria,
+        rotuloAvaria: AVARIAS[avaria]?.rotulo ?? avaria,
+        camara,
+        rotuloCamara: CAMARAS[camara]?.rotulo ?? camara,
+        ...p,
+      });
+    }
+    return out;
   }
 
   /**
@@ -429,11 +540,16 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
     if (!r || r.acao !== "rolar") return;
     const d = r.dados;
 
-    const cp = alvoNave ? alvoNave.system.cp : Number(d.cp) || 0;
+    // O CP do alvo já vem com os Escudos dele, se a mesa usa a camada de Energia.
+    const cp = alvoNave
+      ? cpComEnergia(alvoNave.system, true)
+      : Number(d.cp) || 0;
     const partes = [
       ["BA da nave", s.ba],
       ["artilheiro", Number(d.artilheiro) || 0],
       ["Computador Balístico", camaraOperacional(s, "ponte") ? CAMARAS.ponte.ataque : 0],
+      // Firmar, Supressão e Interferência: os efeitos de posto que mexem no tiro
+      ...partesDaTripulacao(s, alvoNave?.system ?? {}),
       ["extra", Number(d.extra) || 0],
     ].filter(([, v]) => v);
     const total = partes.reduce((a, [, v]) => a + v, 0);
@@ -461,7 +577,8 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
     // A manobra evasiva do alvo substitui o CP por uma JP dele.
     let acertou;
     if (evasiva) {
-      const jp = await new Roll(`1d20 + ${evasiva.mod}`).evaluate();
+      const modJP = jpComEnergia(alvoNave.system, true);
+      const jp = await new Roll(`1d20 + ${modJP}`).evaluate();
       rolls.push(jp);
       const evitou = jp.total >= alvoNave.system.jp;
       acertou = critico || !evitou;
@@ -523,6 +640,10 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
    * feita para evitar ataques" — então a manobra não fica ativa.
    */
   static async #manobraEvasiva() {
+    if (evasivaBloqueada(this.actor.system)) {
+      return ui.notifications.warn(
+        `${this.actor.name} está sob supressão: não faz manobra evasiva nesta rodada.`);
+    }
     const s = this.actor.system;
     const nome = TIPOS[s.tipo]?.rotulo ?? s.tipo;
     if (!evasivaPermitida(s.tipo)) {
@@ -685,7 +806,14 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
 
   static async #avaria(event, botao) {
     const q = botao.dataset.chave;
-    await this.actor.update({ [`system.avarias.${q}`]: !this.actor.system.avarias[q] });
+    const liga = !this.actor.system.avarias[q];
+    const upd = { [`system.avarias.${q}`]: liga };
+    // A avaria é DATADA ao ligar, para o Controle de Avarias ter de quando
+    // contar o prazo. Desligar zera, senão a próxima herdaria o relógio velho.
+    if (q in PRAZO_DE_AVARIA) {
+      upd[`system.avariaRodada.${q}`] = liga ? (game.combat?.round ?? 0) : 0;
+    }
+    await this.actor.update(upd);
   }
 
   /** Sensores: +2 no próximo ataque aliado contra o alvo travado. */
@@ -704,9 +832,179 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
     await this.actor.update({ "system.trava": r.acao === "limpar" ? "" : (r.dados.alvo ?? "") });
   }
 
+  /* ── AS AÇÕES DA TRIPULAÇÃO ─────────────────────────────────────────────
+   *
+   * O posto escolhe, e a ficha aplica o que PODE aplicar. Duas opções do
+   * Comando ficam como texto de propósito (ver AUTOMATIZA em tripulacao.js):
+   * "Ordem" dá uma ação a mais a um posto, e a ficha não sabe o que aquele
+   * posto ia fazer; "Sangue frio" rerrola um dado que já saiu no chat.
+   */
+  static async #acaoPosto(event, botao) {
+    const posto = botao.dataset.posto;
+    const chave = botao.closest(".posto")?.querySelector("select.acao")?.value ?? "";
+    const acao = acaoDoPosto(posto, chave);
+    if (!acao) return ui.notifications.warn("Escolha uma ação para o posto.");
+
+    const s = this.actor.system;
+    const upd = { [`system.postoAcao.${posto}`]: chave };
+    const rodada = game.combat?.round ?? 0;
+    const linhas = [`<p><strong>${POSTOS[posto].rotulo}</strong> — ${acao.rotulo}</p>`];
+    const rolls = [];
+
+    if (chave === "firmar") {
+      upd["system.firmar.ativa"] = true;
+      upd["system.firmar.rodada"] = rodada;
+      linhas.push(
+        `<p class="result">A nave <strong>não se move</strong> nesta rodada: ` +
+        `<strong>+4</strong> na JP dela e <strong>+2</strong> nos ataques dos artilheiros.</p>`);
+    } else if (chave === "correr") {
+      // "Correr" apressa o perseguidor, se a camada de fuga estiver ligada
+      if (camadaLigada("camadaFuga")) {
+        const marcas = Math.min(MARCAS_DO_PERSEGUIDOR, (s.fuga?.perseguidor ?? 0) + 2);
+        upd["system.fuga.perseguidor"] = marcas;
+        linhas.push(
+          `<p class="result">Movimento dobrado — e o perseguidor avança <strong>2</strong>, ` +
+          `para <strong>${marcas}/${MARCAS_DO_PERSEGUIDOR}</strong>.</p>`);
+      } else {
+        linhas.push(
+          `<p class="result">Movimento dobrado, e a <strong>ação do turno se perde</strong>.</p>`);
+      }
+    } else if (chave === "forcar") {
+      if (!camadaLigada("camadaEnergia")) {
+        return ui.notifications.warn("Forçar o reator precisa da camada de Energia ligada.");
+      }
+      const roll = await new Roll("1d6").evaluate();
+      rolls.push(roll);
+      upd["system.energia.extra"] = (s.energia?.extra ?? 0) + 2;
+      upd["system.energia.rodada"] = rodada;
+      linhas.push(`<p class="result"><strong>+2</strong> pontos de energia nesta rodada.</p>`);
+      if (roll.total === 1) {
+        upd["system.avarias.motor"] = true;
+        upd["system.avariaRodada.motor"] = rodada;
+        linhas.push(
+          `<p class="result">O <strong>1</strong> saiu: a <strong>Sala de Máquinas</strong> pegou avaria.</p>`);
+      }
+    } else if (chave === "interferencia") {
+      upd["system.interferencia"] = true;
+      linhas.push(
+        `<p class="result"><strong>−2</strong> no próximo ataque inimigo contra esta nave.</p>`);
+    } else if (chave === "aguentem") {
+      upd["system.aguentem.ativa"] = true;
+      upd["system.aguentem.rodada"] = rodada;
+      linhas.push(
+        `<p class="result">Uma penalidade de avaria fica <strong>cancelada</strong> até o fim da rodada.</p>`);
+    } else if (chave === "supressao") {
+      // a supressão se grava em QUEM levou, e por isso precisa do alvo marcado
+      const alvo = [...(game.user?.targets ?? [])][0]?.actor;
+      if (alvo?.type === TIPO_NAVE && alvo.isOwner) {
+        await alvo.update({
+          "system.suprimida.ativa": true,
+          "system.suprimida.rodada": rodada,
+        });
+        linhas.push(
+          `<p class="result"><strong>${alvo.name}</strong> fica suprimida: <strong>−2</strong> no ` +
+          `próximo ataque dela, e <strong>sem manobra evasiva</strong> nesta rodada.</p>`);
+      } else {
+        linhas.push(
+          `<p class="result">Marque a nave alvo (tecla T) para a ficha aplicar a supressão nela. ` +
+          `Sem isso, à mão: <strong>−2</strong> no próximo ataque do alvo, e ele não evade nesta rodada.</p>`);
+      }
+    }
+
+    // a nota entra sempre: é o que explica a escolha para quem leu o cartão
+    linhas.push(`<p class="dica"><em>${acao.nota}</em></p>`);
+    await this.actor.update(upd);
+    await card(this.actor, `Posto: ${POSTOS[posto].rotulo}`, linhas.join(""), rolls);
+  }
+
+  /** Engenharia reparte os pontos do reator. Não acumulam entre rodadas. */
+  static async #energia() {
+    const s = this.actor.system;
+    const p = NaveFicha.painelDeEnergia(s, this.ehLivro);
+    const r = await pergunta({
+      titulo: `Energia — ${this.actor.name}`,
+      conteudo:
+        `<form class="starwars-sd-nave-dialogo">` +
+        `<p>O reator dá <strong>${p.total}</strong> ponto(s) nesta rodada. Reparta — o que não ` +
+        `for gasto <strong>não acumula</strong>.</p>` +
+        p.destinos.map((d) =>
+          `<div class="linha"><label>${d.rotulo}</label>` +
+          `<input type="number" name="${d.chave}" value="${d.valor}" min="0" max="${p.total}">` +
+          `<span class="dica">${d.efeito}</span></div>`).join("") +
+        `</form>`,
+      botoes: [
+        { chave: "ok", rotulo: "Distribuir", padrao: true },
+        { chave: "zerar", rotulo: "Zerar" },
+      ],
+    });
+    if (!r) return;
+    const rodada = game.combat?.round ?? 0;
+    if (r.acao === "zerar") {
+      await this.actor.update({
+        "system.energia.motores": 0,
+        "system.energia.escudos": 0,
+        "system.energia.armas": 0,
+        "system.energia.extra": 0,
+        "system.energia.rodada": rodada,
+      });
+      return;
+    }
+    const pedido = {
+      motores: Math.max(0, Number(r.dados.motores) || 0),
+      escudos: Math.max(0, Number(r.dados.escudos) || 0),
+      armas: Math.max(0, Number(r.dados.armas) || 0),
+    };
+    if (energiaGasta(pedido) > p.total) {
+      return ui.notifications.warn(
+        `O reator dá ${p.total} ponto(s), e foram repartidos ${energiaGasta(pedido)}.`);
+    }
+    await this.actor.update({
+      "system.energia.motores": pedido.motores,
+      "system.energia.escudos": pedido.escudos,
+      "system.energia.armas": pedido.armas,
+      "system.energia.rodada": rodada,
+    });
+    const novo = NaveFicha.painelDeEnergia(this.actor.system, this.ehLivro);
+    await card(this.actor, "Energia distribuída",
+      `<p class="result">${novo.resumo || "nada investido"}</p>` +
+      `<p class="dica"><em>Sobram ${novo.sobra} de ${novo.total}. Zera no fim da rodada.</em></p>`);
+  }
+
+  /** O relógio do perseguidor, na camada de fuga. */
+  static async #perseguidor(event, botao) {
+    const passo = Number(botao.dataset.passo ?? 1);
+    const s = this.actor.system;
+    const marcas = Math.max(0, Math.min(MARCAS_DO_PERSEGUIDOR, (s.fuga?.perseguidor ?? 0) + passo));
+    await this.actor.update({ "system.fuga.perseguidor": marcas });
+    if (quemFechaPrimeiro(s.fuga?.etapas ?? 0, marcas) === "perseguidor") {
+      await card(this.actor, "O perseguidor alcançou",
+        `<p class="result">O relógio dele fechou: <strong>travão de raio</strong>, abordagem, ` +
+        `e o combate continua a pé.</p>`);
+    }
+  }
+
+  /** Uma etapa do salto: Distância, Direção, Execução. */
+  static async #etapaDoSalto(event, botao) {
+    const passo = Number(botao.dataset.passo ?? 1);
+    const s = this.actor.system;
+    const etapas = Math.max(0, Math.min(3, (s.fuga?.etapas ?? 0) + passo));
+    await this.actor.update({ "system.fuga.etapas": etapas });
+    if (quemFechaPrimeiro(etapas, s.fuga?.perseguidor ?? 0) === "salto") {
+      await card(this.actor, "A nave saltou",
+        `<p class="result">As três etapas fecharam antes do perseguidor: ` +
+        `<strong>a nave entra no hiperespaço</strong>.</p>`);
+    }
+  }
+
   static async #fimDaRodada() {
     const s = this.actor.system;
-    const upd = { "system.manobra.tipo": "", "system.manobra.revelada": false };
+    // LIMPA_NO_FIM_DA_RODADA é a lista única do que vale "até o fim da rodada":
+    // a energia (que não acumula), o Firmar, a Interferência, a Supressão e o
+    // Aguentem firme. Estar numa constante é o que evita esquecer um campo novo.
+    const upd = {
+      "system.manobra.tipo": "", "system.manobra.revelada": false,
+      ...LIMPA_NO_FIM_DA_RODADA,
+    };
     for (const a of AVARIAS_DE_UMA_RODADA) upd[`system.avarias.${a}`] = false;
     // A manobra evasiva vale pela rodada em que foi declarada; a rodada em que
     // ela aconteceu FICA gravada, para valer o intervalo de 5.

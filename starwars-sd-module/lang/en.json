@@ -15,5 +15,11 @@
   "starwars-sd.settings.movimentoDaNave.hex": "Hex (Supplement) — move, then turn",
   "starwars-sd.settings.movimentoDaNave.arco": "Arc (X-Wing) — follow the curve",
   "starwars-sd.fichas.tatico": "Starship — Tactical Combat (Star Wars SD)",
-  "starwars-sd.fichas.livro": "Starship — book rules, §10.6 (Star Wars SD)"
+  "starwars-sd.fichas.livro": "Starship — book rules, §10.6 (Star Wars SD)",
+  "starwars-sd.settings.camadaEnergia.nome": "Layer: reactor power",
+  "starwars-sd.settings.camadaEnergia.dica": "Adds the Power panel to the ship sheet. The reactor grants points per round (2 to 6, by size) that Engineering splits between Engines, Shields and Weapons. It is the layer with the best return per round; if you enable only one, enable this.",
+  "starwars-sd.settings.camadaAvarias.nome": "Layer: damage control",
+  "starwars-sd.settings.camadaAvarias.dica": "Gives critical damage a deadline: propulsion has 3 rounds, weapons and sensors 2. Fixing it costs the action of whoever is in that chamber; missing the deadline leaves the chamber inoperative until a dockyard repair. This is what gives the unstationed PC something to do.",
+  "starwars-sd.settings.camadaFuga.nome": "Layer: escape as a clock",
+  "starwars-sd.settings.camadaFuga.dica": "Adds the pursuer's clock beside the three jump steps. It advances one mark per round, and two when the ship takes new critical damage or chooses Run. Whoever fills it first decides the scene — on a tie, the pursuer catches up."
 }

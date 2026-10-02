@@ -141,6 +141,18 @@ export {
 } from "./camaras.js";
 import { CAMARAS, ESTADOS_DE_CAMARA } from "./camaras.js";
 
+/* A tripulação (postos com opções, Energia, prazo de avaria, fuga) vive em
+ * tripulacao.js, que é dado puro e o build e os testes também leem. */
+export {
+  ACOES_DE_POSTO, AUTOMATIZA, acaoDoPosto,
+  ENERGIA_POR_TAMANHO, DESTINOS_DE_ENERGIA, energiaDoReator, efeitoDaEnergia, energiaGasta,
+  PRAZO_DE_AVARIA, prazoDaAvaria,
+  MARCAS_DO_PERSEGUIDOR, avancoDoPerseguidor, quemFechaPrimeiro,
+  partesDaTripulacao, cpComEnergia, jpComEnergia,
+  dadosExtrasDeDano, dadosExtrasDeEsquiva, evasivaBloqueada,
+  LIMPA_NO_FIM_DA_RODADA,
+} from "./tripulacao.js";
+
 /** Os postos do Modo Tripulação. */
 export const POSTOS = {
   leme: { rotulo: "Leme", quem: "Veterano / Contrabandista", acao: "Escolhe e executa a manobra; rola Pilotar em situações-limite." },
@@ -197,6 +209,45 @@ export class NaveDataModel extends foundry.abstract.TypeDataModel {
       ),
 
       postos: new fields.SchemaField(Object.fromEntries(Object.keys(POSTOS).map((p) => [p, txt("")]))),
+
+      // ── A TRIPULAÇÃO (SW-SUP-Naves, "A tripulação") ──────────────────────
+      //
+      // Tudo abaixo é ACRESCENTADO, nunca alterado: uma nave salva antes da
+      // 1.16.0 abre com estes campos no padrão e se comporta como antes. Por
+      // isso `avarias` continua booleano e o prazo mora num campo paralelo —
+      // trocar o tipo de `avarias` quebraria toda ficha já criada.
+
+      // A ação que cada posto escolheu nesta rodada (ACOES_DE_POSTO).
+      postoAcao: new fields.SchemaField(
+        Object.fromEntries(Object.keys(POSTOS).map((p) => [p, txt("")]))),
+
+      // "Firmar", do Leme: +4 na JP e +2 nos ataques, e a nave não se move.
+      firmar: new fields.SchemaField({ ativa: sim(), rodada: num(0) }),
+
+      // Os pontos do reator repartidos nesta rodada. Não acumulam: `rodada`
+      // guarda quando foram gastos, e a ficha zera ao virar a rodada.
+      energia: new fields.SchemaField({
+        motores: num(0), escudos: num(0), armas: num(0), rodada: num(0),
+        // os +2 de "Forçar o reator", que valem só nesta rodada
+        extra: num(0),
+      }),
+
+      // Em que rodada cada avaria surgiu, para o prazo do Controle de Avarias.
+      // Zero = sem relógio (fora de combate, ou avaria anterior à camada).
+      avariaRodada: new fields.SchemaField({
+        motor: num(0), armas: num(0), sensores: num(0),
+      }),
+
+      // Penalidade de avaria cancelada pelo Comando ("Aguentem firme").
+      aguentem: new fields.SchemaField({ ativa: sim(), rodada: num(0) }),
+
+      // −2 no próximo ataque inimigo (Sensores) e no próximo ataque do alvo
+      // (Supressão, gravada na ficha de QUEM levou).
+      interferencia: sim(),
+      suprimida: new fields.SchemaField({ ativa: sim(), rodada: num(0) }),
+
+      // Fuga: as etapas do salto já feitas, e as marcas do perseguidor.
+      fuga: new fields.SchemaField({ etapas: num(0), perseguidor: num(0) }),
 
       // As 12 câmaras da T10-2. Nascem instaladas: é o estado de uma nave que
       // voa, e quem tiver perdido alguma marca na ficha.

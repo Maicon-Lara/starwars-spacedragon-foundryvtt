@@ -76,6 +76,20 @@ const sistema = (tipo, extra = {}) => {
     // o schema tem os dois, e a ficha grava neles no fim da rodada
     manobra: { tipo: "", velocidade: 0, lado: "", revelada: false },
     evasiva: { ativa: false, mod: 0, rodada: 0 },
+    // A TRIPULAÇÃO. O stub de `update` navega o caminho com ponto, então todo
+    // campo que a ficha grava precisa existir aqui — no Foundry o schema
+    // garante o default, mas aqui um campo faltando estoura em
+    // "Cannot set properties of undefined", que foi como este teste pegou os
+    // campos novos da 1.16.0.
+    postos: { leme: "", artilharia: "", engenharia: "", sensores: "", comando: "" },
+    postoAcao: { leme: "", artilharia: "", engenharia: "", sensores: "", comando: "" },
+    firmar: { ativa: false, rodada: 0 },
+    energia: { motores: 0, escudos: 0, armas: 0, rodada: 0, extra: 0 },
+    avariaRodada: { motor: 0, armas: 0, sensores: 0 },
+    aguentem: { ativa: false, rodada: 0 },
+    interferencia: false,
+    suprimida: { ativa: false, rodada: 0 },
+    fuga: { etapas: 0, perseguidor: 0 },
     ...extra,
   };
 };

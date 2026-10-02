@@ -15,5 +15,11 @@
   "starwars-sd.settings.movimentoDaNave.hex": "Hex (Suplemento) — anda e vira no fim",
   "starwars-sd.settings.movimentoDaNave.arco": "Arco (X-Wing) — descreve a curva",
   "starwars-sd.fichas.tatico": "Nave — Combate Tático (Star Wars SD)",
-  "starwars-sd.fichas.livro": "Nave — regras do livro, §10.6 (Star Wars SD)"
+  "starwars-sd.fichas.livro": "Nave — regras do livro, §10.6 (Star Wars SD)",
+  "starwars-sd.settings.camadaEnergia.nome": "Camada: Energia do reator",
+  "starwars-sd.settings.camadaEnergia.dica": "Liga o painel de Energia na ficha de nave. O reator dá pontos por rodada (2 a 6, pelo tamanho) que a Engenharia reparte entre Motores, Escudos e Armas. É a camada que mais rende por rodada; se for ligar só uma, ligue esta.",
+  "starwars-sd.settings.camadaAvarias.nome": "Camada: Controle de avarias",
+  "starwars-sd.settings.camadaAvarias.dica": "Dá prazo às avarias: a propulsão tem 3 rodadas, armas e sensores têm 2. Resolver custa a ação de quem está na câmara; perder o prazo deixa a câmara inoperante até reparo em porto. É o que dá tarefa a quem não tem posto.",
+  "starwars-sd.settings.camadaFuga.nome": "Camada: fuga como relógio",
+  "starwars-sd.settings.camadaFuga.dica": "Liga o relógio do perseguidor ao lado das três etapas do salto. Ele avança uma marca por rodada, e duas quando a nave sofre avaria nova ou escolhe Correr. Quem fecha primeiro decide a cena — no empate, o perseguidor alcança."
 }

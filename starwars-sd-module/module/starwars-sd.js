@@ -77,6 +77,33 @@ Hooks.once("init", () => {
     },
   });
 
+  // ── As camadas da tripulação ──
+  //
+  // No cofre (SW-SUP-Naves, "A tripulação") Energia, Controle de Avarias e a
+  // fuga como relógio são CAMADAS OPCIONAIS: cada uma acrescenta uma decisão
+  // por rodada, e as três somadas pesam numa mesa casual. Por isso são três
+  // opções e não uma: o livro diz que se liga uma a uma.
+  //
+  // Começam DESLIGADAS. A ficha já é cheia, e três painéis que a mesa não usa
+  // custam mais atenção do que valem. Os POSTOS não estão aqui: eles são a
+  // regra da tripulação, não uma camada, e a ficha já guardava quem ocupa cada
+  // um — o que entra é a ação escolhida, que aparece sempre.
+  for (const [chave, padrao] of [["camadaEnergia", false], ["camadaAvarias", false], ["camadaFuga", false]]) {
+    game.settings.register(ID, chave, {
+      name: `starwars-sd.settings.${chave}.nome`,
+      hint: `starwars-sd.settings.${chave}.dica`,
+      scope: "world",
+      config: true,
+      type: Boolean,
+      default: padrao,
+      onChange: () => {
+        for (const app of foundry.applications?.instances?.values?.() ?? []) {
+          if (app instanceof NaveFicha) app.render();
+        }
+      },
+    });
+  }
+
   // ── As duas fichas de nave ──
   //
   // UMA PARA CADA REGRA, e não uma que troca de comportamento. No Foundry a

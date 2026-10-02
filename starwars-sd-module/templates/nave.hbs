@@ -172,18 +172,109 @@
     </div>
   </section>
 
+  {{!-- OS POSTOS. Cada um guarda quem o ocupa E a ação escolhida na rodada:
+        era "uma ação fixa por posto" que deixava só o Leme decidindo algo. --}}
   <section class="postos">
-    <h3>Postos <span class="dica">Modo Tripulação — cada posto é a ação daquele personagem</span></h3>
+    <h3>Postos <span class="dica">cada posto é a ação daquele personagem na rodada</span></h3>
     <div class="grade">
-      {{#each postos}}
-      <div class="posto" title="{{acao}}">
+      {{#each postosComAcao}}
+      <div class="posto">
         <label>{{rotulo}}</label>
         <input type="text" name="system.postos.{{chave}}" value="{{valor}}" placeholder="{{quem}}">
-        <p class="acao-posto">{{acao}}</p>
+        <div class="linha-acao">
+          <select class="acao" name="system.postoAcao.{{chave}}">
+            <option value="">— ação —</option>
+            {{#each acoes}}
+            <option value="{{chave}}" {{#if sel}}selected{{/if}}>{{rotulo}}{{#unless automatica}} (à mão){{/unless}}</option>
+            {{/each}}
+          </select>
+          <button type="button" data-action="acaoPosto" data-posto="{{chave}}"
+                  title="Executa a ação escolhida e manda o cartão para o chat">executar</button>
+        </div>
+        {{#if nota}}<p class="acao-posto">{{nota}}</p>{{/if}}
       </div>
       {{/each}}
     </div>
+    {{#if firmado}}
+    <p class="aviso-firmado">A nave está <strong>firmada</strong>: +4 na JP dela, +2 nos ataques, e ela não se move nesta rodada.</p>
+    {{/if}}
   </section>
+
+  {{!-- ENERGIA. Camada opcional: a seção inteira só existe se a mesa ligou,
+        porque um painel morto numa ficha cheia custa mais do que vale. --}}
+  {{#if camadaEnergia}}
+  <section class="energia">
+    <h3>Energia <span class="dica">o reator dá {{energia.total}} por rodada · não acumula</span></h3>
+    <div class="grade-energia">
+      {{#each energia.destinos}}
+      <div class="destino">
+        <label>{{rotulo}}</label>
+        <span class="pontos">{{valor}}</span>
+        <span class="dica">{{efeito}}</span>
+      </div>
+      {{/each}}
+    </div>
+    <div class="linha">
+      <span class="sobra {{#if energia.excedeu}}excedeu{{/if}}">
+        {{#if energia.excedeu}}repartiu {{energia.gasta}} de {{energia.total}}{{else}}sobram {{energia.sobra}} de {{energia.total}}{{/if}}
+      </span>
+      <button type="button" data-action="energia">distribuir</button>
+    </div>
+    {{#if energia.resumo}}<p class="resumo-energia">{{energia.resumo}}</p>{{/if}}
+  </section>
+  {{/if}}
+
+  {{!-- CONTROLE DE AVARIAS. O prazo de cada emergência, e em que câmara
+        alguém precisa estar para resolvê-la. --}}
+  {{#if camadaAvarias}}
+  <section class="emergencias">
+    <h3>Controle de avarias <span class="dica">resolver custa a ação de quem está na câmara</span></h3>
+    {{#if emergencias.length}}
+    <ul>
+      {{#each emergencias}}
+      <li class="{{#if venceu}}venceu{{/if}}">
+        <strong>{{rotuloAvaria}}</strong> — {{rotuloCamara}} ·
+        {{#if venceu}}<strong>prazo vencido</strong>: a câmara fica inoperante até reparo em porto
+        {{else}}restam <strong>{{restam}}</strong> de {{prazo}} rodada(s){{/if}}
+      </li>
+      {{/each}}
+    </ul>
+    {{else}}
+    <p class="dica">Nenhuma emergência a bordo.</p>
+    {{/if}}
+  </section>
+  {{/if}}
+
+  {{!-- FUGA. Os dois relógios lado a lado: o salto e o perseguidor. --}}
+  {{#if camadaFuga}}
+  <section class="fuga">
+    <h3>Fuga <span class="dica">quem fecha primeiro decide a cena — no empate, o perseguidor</span></h3>
+    <div class="relogios">
+      <div class="relogio">
+        <label>Salto</label>
+        <span class="marcas">{{fuga.etapas}}/3</span>
+        <button type="button" data-action="etapaDoSalto" data-passo="1" title="Distância, Direção, Execução">+</button>
+        <button type="button" data-action="etapaDoSalto" data-passo="-1">−</button>
+      </div>
+      <div class="relogio">
+        <label>Perseguidor</label>
+        <span class="marcas">{{fuga.perseguidor}}/{{fuga.marcas}}</span>
+        <button type="button" data-action="perseguidor" data-passo="1" title="1 por rodada; 2 com avaria nova ou se a nave correu">+</button>
+        <button type="button" data-action="perseguidor" data-passo="-1">−</button>
+      </div>
+    </div>
+    {{#if fuga.fechou}}
+    {{!-- dois booleanos do contexto em vez de um (eq fuga.fechou "salto"): o
+          `eq` é usado em outros cinco pontos deste template e funciona, mas
+          aqui o estado tem três valores (nenhum, salto, perseguidor) e dois
+          booleanos dizem qual é sem comparar string. --}}
+    <p class="fechou">
+      {{#if fuga.saltou}}As três etapas fecharam: <strong>a nave salta</strong>.{{/if}}
+      {{#if fuga.alcancada}}O relógio do perseguidor fechou: <strong>travão de raio e abordagem</strong>.{{/if}}
+    </p>
+    {{/if}}
+  </section>
+  {{/if}}
 
   <section class="notas">
     <h3>Notas</h3>
