@@ -32,6 +32,7 @@ import {
   dadosExtrasDeDano, dadosExtrasDeEsquiva, evasivaBloqueada,
   LIMPA_NO_FIM_DA_RODADA,
   EQUIPAMENTOS_DE_NAVE, equipamentosDoTamanho, efeitosInstalados, decidirInstalacao,
+  decidirCamara,
   conflitosDeTamanho, armasInstaladas,
   FONTES_DE_ENERGIA, formulaDeGasto, custoDeAbastecimento, penalidadeNaJPR,
 } from "./nave-modelo.js";
@@ -260,12 +261,29 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
       if (dados.type !== "Item") return;
       const item = dados.uuid ? await fromUuid(dados.uuid) : null;
       const equip = item?.getFlag?.(ID, "equipamentoDeNave");
-      if (!equip?.chave) return; // item comum: a nave não tem inventário
+      const camara = item?.getFlag?.(ID, "camaraDeNave");
+      // Item comum (uma espada, uma ração) não é erro: a nave simplesmente não
+      // tem inventário, e deixar o arrasto seguir é melhor que avisar.
+      if (!equip?.chave && !camara?.chave) return;
 
       ev.preventDefault();
       ev.stopPropagation();
 
       const s = this.actor.system;
+
+      // ── CÂMARA (T10-2): construir ───────────────────────────────────────
+      if (camara?.chave) {
+        const r = decidirCamara(camara.chave, {
+          estados: s.camaras,
+          nomeDaNave: this.actor.name,
+        });
+        if (r.acao === "desconhecida") return;
+        if (r.acao === "jaInstalada") return ui.notifications.info(r.mensagem);
+        if (r.acao === "repararAntes") return ui.notifications.warn(r.mensagem);
+        await this.actor.update({ [`system.camaras.${camara.chave}`]: "instalada" });
+        return void ui.notifications.info(r.mensagem);
+      }
+
       // A decisão é REGRA, e mora em equipamentos-nave.js, testada sem Foundry.
       // Aqui só se traduz o resultado em notificação.
       const r = decidirInstalacao(equip.chave, {

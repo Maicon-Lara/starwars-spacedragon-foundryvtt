@@ -372,6 +372,46 @@ for (const lang of ["pt-BR", "en"]) {
 // num teste caseiro, e um que erra nas duas direções é pior que nenhum — ele
 // ensina a ignorar o resultado. O bug está corrigido; a varredura, não.
 
+// ── CONSTRUIR CÂMARA ARRASTANDO (T10-2) ──────────────────────────────────
+//
+// O compêndio traz as doze câmaras como itens, e arrastar uma a constrói: o
+// estado vai de "ausente" para "instalada". É o que torna a nave montável peça
+// a peça.
+//
+// A ASSERÇÃO QUE MAIS IMPORTA: câmara DANIFICADA não se reinstala. Arrastar por
+// cima pareceria consertar de graça, e a T10-2 cobra 25% do valor e metade do
+// prazo por um reparo. Um "conserto" silencioso por arrasto apagaria a avaria
+// que o combate causou, e ninguém notaria.
+{
+  const { decidirCamara, CAMARAS } = await import("../starwars-sd-module/module/camaras.js");
+
+  const nova = decidirCamara("ponte", { estados: { ponte: "ausente" }, nomeDaNave: "Falcão" });
+  confere(nova.acao === "instalar", `câmara ausente devia instalar, veio ${nova.acao}`);
+  confere(nova.mensagem.includes("120.000"), "a confirmação diz o custo da obra");
+  confere(nova.mensagem.includes("Falcão"), "a confirmação diz em qual nave");
+
+  const repetida = decidirCamara("ponte", { estados: { ponte: "instalada" } });
+  confere(repetida.acao === "jaInstalada", `já instalada: ${repetida.acao}`);
+
+  const quebrada = decidirCamara("ponte", { estados: { ponte: "danificada" } });
+  confere(quebrada.acao === "repararAntes",
+    `câmara danificada NÃO pode ser reinstalada por arrasto, veio ${quebrada.acao}`);
+  confere(quebrada.mensagem.includes("T10-2"), "o aviso cita a tabela do reparo");
+  confere(/25%/.test(quebrada.mensagem), "o aviso diz quanto custa o reparo");
+
+  // sem estado nenhum, a câmara é tratada como ausente — nave recém-criada
+  confere(decidirCamara("ponte", {}).acao === "instalar", "sem estado, trata como ausente");
+  confere(decidirCamara("inexistente", {}).acao === "desconhecida", "chave errada não instala nada");
+
+  // e vale para as doze, não só para a Ponte
+  for (const chave of Object.keys(CAMARAS)) {
+    confere(decidirCamara(chave, { estados: {} }).acao === "instalar",
+      `${chave} devia poder ser construída numa nave sem ela`);
+    confere(decidirCamara(chave, { estados: { [chave]: "danificada" } }).acao === "repararAntes",
+      `${chave} danificada devia pedir reparo`);
+  }
+}
+
 if (problemas.length) {
   for (const p of problemas) console.error(`  ✘ ${p}`);
   process.exit(1);

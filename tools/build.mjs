@@ -47,6 +47,7 @@ import { CORES_DE_PASTA } from "./data/pastas.mjs";
 import { tabelas } from "./data/tabelas.mjs";
 import { EFEITOS_CRITICOS, templateDoQdV, QDV_ID, QDV_FLAG } from "./data/efeitos-criticos.mjs";
 import { equipamentosDeNave } from "./data/equipamentos-de-nave.mjs";
+import { camarasDeNave } from "./data/camaras-de-nave.mjs";
 
 const ROOT = path.resolve(fileURLToPath(import.meta.url), "../..");
 const SRC = path.join(ROOT, "packs-src");
@@ -461,6 +462,22 @@ function buildEquipamentosDocs() {
         { nome: e.nome, desc: e.desc, img: e.img },
         folder._id, "nave-equip", (i + 1) * 100000);
       doc.flags["starwars-sd"] = { equipamentoDeNave: { chave: e.chave, grupo: e.grupo, cabe: e.cabe } };
+      docs.push(doc);
+    });
+  }
+
+  // ── As câmaras da nave (T10-2) ──
+  //
+  // Arrastar uma câmara para a nave a constrói: o estado vai de "ausente" para
+  // "instalada". É o que torna a nave montável peça a peça, em vez de nascer
+  // com as doze e você desligar as que não tem.
+  {
+    const folder = pasta("Nave — Câmaras");
+    camarasDeNave.forEach((c, i) => {
+      const doc = miscDoc(
+        { nome: c.nome, desc: c.desc, img: c.img, cost: `${c.obra}` },
+        folder._id, "nave-camara", (i + 1) * 100000);
+      doc.flags["starwars-sd"] = { camaraDeNave: { chave: c.chave } };
       docs.push(doc);
     });
   }

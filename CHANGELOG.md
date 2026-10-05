@@ -1,5 +1,42 @@
 # Changelog
 
+## 1.27.0 — a nave montada peça a peça
+
+Os **equipamentos adicionais (T10-4)** e as **câmaras (T10-2)** entram no
+compêndio de Equipamentos como itens, nas pastas *Nave — Equipamentos
+adicionais* e *Nave — Câmaras*. **Arrastar para a ficha da nave instala.**
+
+Cada item traz o que a mesa precisa para decidir antes de arrastar: a descrição
+do livro, o efeito mecânico, em que tamanhos de nave cabe (T10-4) e o custo de
+obra com o prazo (T10-2).
+
+**O item não substitui o schema — ele o liga.** A regra (o que cabe em que
+tamanho, os conflitos, os efeitos, os estados da câmara) já mora no modelo e tem
+teste. Transformá-la numa lista de itens embutidos significaria reescrever tudo
+isso e perder a cobertura; do jeito que ficou, a regra continua num lugar só e a
+mesa ganha o arrasto.
+
+O que o arrasto recusa, e por quê:
+
+| Situação | O que acontece |
+|---|---|
+| Equipamento que não cabe no tamanho | avisa **antes** de instalar, dizendo o tamanho |
+| Equipamento já instalado | avisa, não duplica |
+| Câmara já instalada | avisa, não duplica |
+| Câmara **danificada** | manda **reparar** (25% do valor, metade do prazo), não reinstalar |
+| Item comum (uma espada) | ignora em silêncio — a nave não tem inventário |
+
+A câmara danificada é o caso que mais importa: reinstalar por arrasto pareceria
+consertar de graça e apagaria a avaria que o combate causou, sem ninguém notar.
+
+As duas decisões viraram funções puras — `decidirInstalacao` e `decidirCamara` —
+testadas sem Foundry, nos 15 equipamentos × 4 tamanhos e nas 12 câmaras × 3
+estados.
+
+**Correção junto:** `nave-ficha.js` passou a declarar `const ID`, que o código do
+arrasto usava e o arquivo nunca teve — `ReferenceError` dentro de `try/catch`,
+ou seja, o arrasto falharia calado.
+
 ## 1.26.0 — o ⟳ do Mestre, e a ficha que encolhe
 
 **Pontos de Força: um botão de recarregar, só para o Mestre.** A reserva já

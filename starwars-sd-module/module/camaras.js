@@ -120,3 +120,42 @@ export const REPARO_DE_CAMARA = 0.25;
 
 /** Uma câmara só conta quando está instalada — danificada não vale. */
 export const camaraOperacional = (s, chave) => s?.camaras?.[chave] === "instalada";
+
+/**
+ * O que acontece ao arrastar uma câmara para uma nave.
+ *
+ * Função pura, pelo mesmo motivo de `decidirInstalacao` em equipamentos-nave.js:
+ * é a REGRA (a T10-2 dizendo o que a câmara custa e em que estado ela entra), e
+ * precisa ser testável sem o Foundry em volta. A ficha só traduz em notificação.
+ *
+ * Devolve { acao, mensagem }, com `acao` em:
+ *   · "instalar"     — estava ausente, passa a instalada
+ *   · "jaInstalada"
+ *   · "repararAntes" — está DANIFICADA: instalar por cima apagaria a avaria, e
+ *                      a T10-2 manda reparar (25% do valor, metade do prazo)
+ *   · "desconhecida"
+ */
+export function decidirCamara(chave, { estados = {}, nomeDaNave = "a nave" } = {}) {
+  const c = CAMARAS[chave];
+  if (!c) return { acao: "desconhecida", mensagem: "" };
+  const estado = estados?.[chave]?.estado ?? estados?.[chave] ?? "ausente";
+
+  if (estado === "instalada") {
+    return { acao: "jaInstalada", mensagem: `${c.rotulo} já está instalada em ${nomeDaNave}.` };
+  }
+  // Danificada não é ausente. Arrastar por cima pareceria consertar de graça, e
+  // a T10-2 cobra 25% do valor e metade do prazo por um reparo — a ficha tem o
+  // botão de reparo para isso.
+  if (estado === "danificada") {
+    return {
+      acao: "repararAntes",
+      mensagem:
+        `${c.rotulo} está danificada em ${nomeDaNave}. A T10-2 manda repará-la ` +
+        `(25% do valor, metade do prazo), e não reinstalá-la.`,
+    };
+  }
+  return {
+    acao: "instalar",
+    mensagem: `${c.rotulo} instalada em ${nomeDaNave}. Obra: ${c.obra?.toLocaleString("pt-BR")} créditos, ${c.prazo}.`,
+  };
+}
