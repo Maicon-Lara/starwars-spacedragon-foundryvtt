@@ -36,7 +36,7 @@ import {
   FONTES_DE_ENERGIA, formulaDeGasto, custoDeAbastecimento, penalidadeNaJPR,
 } from "./nave-modelo.js";
 import { moverNave, conferirEscala, casasDaManobra } from "./nave-movimento.js";
-import { ordemLigada } from "./ordem-painel.js";
+import { ordemLigada } from "./ordem-inversao.js";
 
 export const TIPO_NAVE = "starwars-sd.nave";
 

@@ -31,73 +31,16 @@
  * o painel continua com a iniciativa do sistema.
  */
 
-/* ── AS AÇÕES, E O QUE CADA UMA VALE ───────────────────────────────────────
+/* ── O QUE ESTE ARQUIVO AINDA FAZ ──────────────────────────────────────────
  *
- * Personagens (§7.5):
- *   atacar ............ role o DADO DE DANO da arma
- *   aparato ou poder .. o NT do aparato, ou a Grandeza do poder (sem rolar)
- *   outra ............. 10 − modificador de Destreza
+ * As CONTAS da T7-2 — qual dado rolar, a Grandeza, o 10 − Destreza — saíram
+ * daqui. Elas vivem em `MODOS`, no módulo `spacedragon` (module/ordem.js), que
+ * é onde a regra do livro base pertence: duas cópias da mesma conta em dois
+ * módulos da mesma cadeia é como a regra passa a divergir sem ninguém notar.
  *
- * Naves (§10.6): disparo = os dados de dano; equipamento = o bônus de ataque;
- * evasiva ou movimento duplo = o valor da jogada de proteção. Elas vivem em
- * ORDEM_LIVRO, em nave-modelo.js, e seguem o mesmo princípio.
+ * O que sobrou é o que o base não faz, por decisão declarada dele: a ORDEM na
+ * tela e a DURAÇÃO da rodada.
  */
-export const ACOES_DE_ORDEM = {
-  atacar: {
-    rotulo: "Atacar",
-    comoSeCalcula: "role o dado de dano da arma",
-    rola: true,
-    nota: "A arma pesada age por ÚLTIMO: 1d12 tende a sair depois de 1d4.",
-  },
-  poder: {
-    rotulo: "Poder da Força",
-    comoSeCalcula: "a Grandeza do poder",
-    rola: false,
-    nota: "Um poder de 1ª Grandeza sai quase sempre primeiro; um de 10ª, por último.",
-  },
-  aparato: {
-    rotulo: "Aparato tecnológico",
-    comoSeCalcula: "o Nível Tecnológico do aparato",
-    rola: false,
-    nota: "Mesmo princípio do poder: quanto mais potente, mais demora a sair.",
-  },
-  outra: {
-    rotulo: "Mover-se ou outra ação",
-    comoSeCalcula: "10 − modificador de Destreza",
-    rola: false,
-    nota: "Quem é mais rápido age antes. Com Destreza alta o valor cai, e pode ficar negativo.",
-  },
-};
-
-/**
- * O valor da Ordem de Ação.
- *
- * `rolado` é o resultado do dado de dano, quando a ação pede rolagem; os outros
- * casos usam `grandeza` (poder), `nt` (aparato) ou `modDestreza` (outra).
- */
-export function valorDaOrdem(acao, { rolado = 0, grandeza = 0, nt = 0, modDestreza = 0 } = {}) {
-  switch (acao) {
-    case "atacar":
-      return Number(rolado) || 0;
-    case "poder":
-      return Number(grandeza) || 0;
-    case "aparato":
-      return Number(nt) || 0;
-    case "outra":
-      // o livro é literal: "subtraindo o modificador de Destreza do valor
-      // básico 10". Destreza alta pode levar o valor abaixo de zero, e isso é
-      // o esperado — quem é muito rápido age antes de todo mundo.
-      return 10 - (Number(modDestreza) || 0);
-    default:
-      return 0;
-  }
-}
-
-/** A fórmula do dado de dano, para a ficha rolar — "1d8+2" → "1d8". */
-export function dadoDaArma(dano) {
-  const m = String(dano ?? "").match(/(\d+)\s*d\s*(\d+)/i);
-  return m ? `${m[1]}d${m[2]}` : null;
-}
 
 /**
  * A duração da rodada, em segundos: **o dobro do maior valor**.

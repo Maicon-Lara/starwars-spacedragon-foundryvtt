@@ -623,49 +623,7 @@ body.theme-dark .starwars-sd.nave-ficha.tema-auto,
 .starwars-sd.nave-ficha .pct-comb.seco { color: var(--nave-perigo); }
 .starwars-sd.nave-ficha .combustivel .fonte { width: 100%; margin-top: 4px; font-size: 11px; }
 
-/* ── O PAINEL DE ORDEM DE AÇÃO ─────────────────────────────────────────────
- * Na barra lateral da ficha de personagem, abaixo dos Pontos de Força. Mesma
- * lógica daquele: a lateral reúne o que é permanente, e a Ordem de Ação é o
- * que se declara a cada rodada — fica à mão em qualquer aba. */
-.starwars-sd-ordem {
-  border: 1px solid color-mix(in srgb, var(--sw-luz) 45%, transparent);
-  border-radius: 4px;
-  padding: 6px 8px;
-  margin: 8px 0 0;
-  background: color-mix(in srgb, var(--sw-luz) 10%, transparent);
-}
-.starwars-sd-ordem .ordem-cabeca {
-  display: flex; flex-direction: column; align-items: center; text-align: center;
-  font-family: var(--sw-condensada); text-transform: uppercase; letter-spacing: .04em;
-  font-size: 12px;
-}
-.starwars-sd-ordem .ordem-cabeca .dica { font-size: 9.5px; text-transform: none; letter-spacing: 0; opacity: .8; }
-.starwars-sd-ordem .ordem-acao { width: 100%; margin: 5px 0 4px; font-size: 10.5px; }
-
-/* Uma linha só: o campo cresce, o botão fica do tamanho do rótulo.
- * `!important` porque a ficha do OD2 dá width:100% e height fixo a input e
- * button, e sem isso o botão engole a linha e o campo vira um risco. */
-.starwars-sd-ordem .ordem-linha {
-  display: flex !important;
-  gap: 4px;
-  align-items: stretch;
-  width: 100%;
-}
-.starwars-sd-ordem .ordem-dado {
-  flex: 1 1 0 !important;
-  width: auto !important;
-  min-width: 0 !important;
-  height: auto !important;
-  min-height: 0 !important;
-  font-size: 11px;
-  text-align: center;
-}
-.starwars-sd-ordem .ordem-linha button {
-  flex: 0 0 auto !important;
-  width: auto !important;
-  height: auto !important;
-  min-height: 0 !important;
-  padding: 1px 10px;
-  font-size: 10.5px;
-  line-height: 1.6;
-}
+/* O painel de declaração da Ordem de Ação mudou de casa: ele agora é do
+ * módulo `spacedragon`, na aba de ataques, e o CSS dele foi com ele. A T7-2
+ * é regra do livro base, e tê-la em dois módulos da mesma cadeia foi o que
+ * fez perder uma tarde arrumando o CSS do painel errado. */

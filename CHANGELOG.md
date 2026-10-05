@@ -1,5 +1,37 @@
 # Changelog
 
+## 1.25.0 — a declaração sai daqui e vai para o livro base
+
+O painel de declarar a Ordem de Ação **saiu deste módulo**. Ele agora é do
+módulo **Space Dragon**, na **aba de ataques** da ficha, e exige a versão
+**1.17.0** dele.
+
+**Por quê.** A T7-2 é regra do livro base, não de Star Wars. Tê-la aqui
+significava duas implementações da mesma conta em dois módulos da mesma cadeia —
+e o módulo base já tinha a dele, na janela do Mestre. O custo dessa duplicação
+apareceu na prática: uma tarde inteira arrumando o CSS de um painel que não
+estava quebrado, porque o painel torto na tela era de outro módulo.
+
+Como ficou a divisão:
+
+| | Onde |
+|---|---|
+| Escolher a ação e rolar o valor | módulo **Space Dragon**, aba de ataques |
+| Janela de ordem do Mestre | módulo **Space Dragon**, pela macro |
+| **Inverter a fila** (menor primeiro) | **aqui**, opção *Ordem de Ação* |
+| Duração da rodada ao Mestre | **aqui**, a cada virada |
+| Ordem de ação da nave | **aqui**, nos dois modos da ficha de Nave |
+
+A inversão fica neste módulo de propósito: o base declara, em `ordem.js`, que
+não mexe no rastreador de combate do Foundry — reescrever a iniciativa de um
+sistema alheio quebraria todo módulo de combate instalado. Quem quer a fila na
+ordem certa liga a opção aqui e assume esse atrito de olhos abertos.
+
+**O que saiu do código:** o painel e as contas da T7-2 que ele usava
+(`ACOES_DE_ORDEM`, `valorDaOrdem`, `dadoDaArma`) e o CSS `.starwars-sd-ordem`.
+O que ficou em `ordem-de-acao.js` é só a ordem e a duração — o que o base não
+faz.
+
 ## 1.24.0 — o painel da Ordem de Ação numa linha
 
 O campo do dado e o botão *declarar* ficavam empilhados e espremidos: a ficha do

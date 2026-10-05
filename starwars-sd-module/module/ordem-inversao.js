@@ -1,9 +1,17 @@
 /**
- * A Ordem de Ação na mesa: o painel do jogador e o resumo do Mestre.
+ * A Ordem de Ação na mesa: a INVERSÃO da ordem e o resumo do Mestre.
  *
- * As fórmulas estão em ordem-de-acao.js, que é dado puro. Aqui está o que toca
- * o Foundry — o painel injetado na ficha, a escrita no Combat Tracker e a
- * inversão da ordem.
+ * ── ONDE ESTÁ O PAINEL DE DECLARAÇÃO ────────────────────────────────────────
+ *
+ * No módulo `spacedragon`, em module/ordem-ficha.js, na aba de ataques. Ele
+ * morava aqui e foi para lá porque a T7-2 é regra do LIVRO BASE: mantê-la em
+ * dois módulos da mesma cadeia significava duas implementações da mesma conta,
+ * e foi o que levou uma tarde de caça ao CSS do painel errado — o daqui estava
+ * certo, o torto na tela era outro.
+ *
+ * O que sobra aqui é o que só este módulo faz: inverter a ordenação do
+ * rastreador (o base decidiu não mexer nele) e contar a duração da rodada ao
+ * Mestre.
  *
  * ── A INVERSÃO, QUE É A PARTE DELICADA ──────────────────────────────────────
  *
@@ -18,21 +26,9 @@
  * instalação não tem a ordem trocada por causa deste módulo.
  */
 
-import {
-  ACOES_DE_ORDEM, valorDaOrdem, dadoDaArma, duracaoDaRodada,
-  ordenarCrescente, simultaneos,
-} from "./ordem-de-acao.js";
+import { duracaoDaRodada, ordenarCrescente, simultaneos } from "./ordem-de-acao.js";
 
 const ID = "starwars-sd";
-const MARCA = "starwars-sd-ordem";
-
-/**
- * O modificador de Destreza, no campo em que o sistema o guarda.
- *
- * Se o sistema mudar o nome do campo, o painel não quebra: ele cai no valor
- * digitado pelo jogador, que é o que o campo de texto do painel aceita.
- */
-const CAMPO_DESTREZA = "mod_destreza";
 
 export const ordemLigada = () => {
   try {
@@ -101,109 +97,6 @@ export function avisarSeOrdemPerdida() {
     "desligue a Ordem de Ação para não jogar com a ordem invertida sem perceber.";
   console.warn(`starwars-sd | ${msg}`);
   ui.notifications?.error(msg, { permanent: true });
-}
-
-/* ── O PAINEL DO JOGADOR ────────────────────────────────────────────────── */
-
-function montaPainel(ator) {
-  const acoes = Object.entries(ACOES_DE_ORDEM)
-    .map(([k, a]) => `<option value="${k}">${a.rotulo} — ${a.comoSeCalcula}</option>`)
-    .join("");
-  return `
-<div class="${MARCA}">
-  <div class="ordem-cabeca">
-    <strong>Ordem de Ação</strong>
-    <span class="dica" title="No Space Dragon o menor age primeiro, e o valor vem da ação escolhida">menor age primeiro</span>
-  </div>
-  <select class="ordem-acao">${acoes}</select>
-  <div class="ordem-linha">
-    <input type="text" class="ordem-dado" placeholder="1d8 · Grandeza · NT" title="O dado de dano da arma, a Grandeza do poder ou o NT do aparato">
-    <button type="button" data-ordem="rolar">declarar</button>
-  </div>
-</div>`;
-}
-
-/**
- * Declara a ação e grava o valor no combate.
- *
- * O jogador escolhe a ação; a ficha faz a conta e põe o número no tracker. É o
- * passo 2 e o passo 3 da sequência do livro, num clique.
- */
-async function declarar(ator, html) {
-  const acao = html.querySelector(".ordem-acao")?.value ?? "outra";
-  const campo = (html.querySelector(".ordem-dado")?.value ?? "").trim();
-  const spec = ACOES_DE_ORDEM[acao];
-
-  let valor;
-  let roll = null;
-  let como;
-
-  if (spec.rola) {
-    const formula = dadoDaArma(campo);
-    if (!formula) {
-      return ui.notifications.warn(
-        "Para atacar, informe o dado de dano da arma — por exemplo 1d8.");
-    }
-    roll = await new Roll(formula).evaluate();
-    valor = valorDaOrdem("atacar", { rolado: roll.total });
-    como = `${formula} = ${roll.total}`;
-  } else if (acao === "outra") {
-    const mod = Number(ator.system?.[CAMPO_DESTREZA] ?? campo) || Number(campo) || 0;
-    valor = valorDaOrdem("outra", { modDestreza: mod });
-    como = `10 − ${mod} (Destreza)`;
-  } else {
-    const n = Number(campo) || 0;
-    if (!n) {
-      return ui.notifications.warn(
-        acao === "poder" ? "Informe a Grandeza do poder." : "Informe o NT do aparato.");
-    }
-    valor = valorDaOrdem(acao, { grandeza: n, nt: n });
-    como = acao === "poder" ? `Grandeza ${n}` : `NT ${n}`;
-  }
-
-  const tok = ator.getActiveTokens?.()[0]?.document;
-  const c = tok && game.combat?.getCombatantByToken?.(tok.id);
-  if (c) await game.combat.setInitiative(c.id, valor);
-
-  await ChatMessage.create({
-    speaker: ChatMessage.getSpeaker({ actor: ator }),
-    content:
-      `<div class="starwars-sd-doc"><h3>Ordem de Ação — ${spec.rotulo}</h3>` +
-      `<p class="result"><strong>${valor}</strong> <em>(${como})</em></p>` +
-      `<p class="dica"><em>${spec.nota}</em></p>` +
-      (c ? "" : `<p class="dica"><em>Fora de combate: o valor não foi para o tracker.</em></p>`) +
-      `</div>`,
-    rolls: roll ? [roll] : [],
-  });
-}
-
-export function ligarOrdemDeAcao() {
-  const injeta = (app, elemento) => {
-    try {
-      if (!ordemLigada()) return;
-      const html = elemento instanceof HTMLElement ? elemento : elemento?.[0];
-      const ator = app?.actor ?? app?.document;
-      if (!html || ator?.type !== "character") return;
-
-      const lateral = html.querySelector(".sheet-container .sidebar")
-        ?? html.querySelector(".sidebar")
-        ?? html.querySelector(".sheet-body")
-        ?? html;
-      html.querySelectorAll(`.${MARCA}`).forEach((n) => n.remove());
-      lateral.insertAdjacentHTML("beforeend", montaPainel(ator));
-
-      lateral.querySelector(`.${MARCA}`)?.addEventListener("click", async (ev) => {
-        if (!ev.target?.closest?.("[data-ordem='rolar']")) return;
-        ev.preventDefault();
-        await declarar(ator, lateral.querySelector(`.${MARCA}`));
-      });
-    } catch (e) {
-      console.warn(`${ID} | painel de Ordem de Ação não pôde ser desenhado`, e);
-    }
-  };
-
-  Hooks.on("renderActorSheet", injeta);
-  Hooks.on("renderOD2CharacterSheet", injeta);
 }
 
 /* ── O RESUMO DO MESTRE ─────────────────────────────────────────────────── */

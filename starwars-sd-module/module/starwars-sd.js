@@ -27,7 +27,7 @@ import { NaveDataModel } from "./nave-modelo.js";
 import { NaveFicha, NaveFichaTatico, NaveFichaLivro, TIPO_NAVE } from "./nave-ficha.js";
 import { ligarPontosDeForca } from "./pontos-de-forca.js";
 import { registrarTema, ligarTema } from "./tema.js";
-import { registrarCombate, ligarOrdemDeAcao, ligarResumoDaRodada, avisarSeOrdemPerdida } from "./ordem-painel.js";
+import { registrarCombate, ligarResumoDaRodada, avisarSeOrdemPerdida } from "./ordem-inversao.js";
 
 const ID = "starwars-sd";
 
@@ -230,8 +230,8 @@ Hooks.once("ready", () => {
   // "tema do vizinho desligado" depende de poder conferi-la.
   ligarTema();
 
-  // A Ordem de Ação: o painel do jogador e o resumo da rodada para o Mestre.
-  ligarOrdemDeAcao();
+  // A Ordem de Ação: a declaração mora no módulo spacedragon (aba de ataques);
+  // aqui fica o resumo da rodada para o Mestre, e a inversão registrada acima.
   ligarResumoDaRodada();
   // No ready todos os módulos já carregaram: é aqui que dá para saber se algum
   // deles substituiu a classe de Combat e apagou a nossa ordenação crescente.
