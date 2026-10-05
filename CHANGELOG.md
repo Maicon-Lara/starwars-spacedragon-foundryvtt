@@ -1,5 +1,25 @@
 # Changelog
 
+## 1.24.0 — o painel da Ordem de Ação numa linha
+
+O campo do dado e o botão *declarar* ficavam empilhados e espremidos: a ficha do
+OD2 dá `width: 100%` e altura fixa a todo `input` e `button`, e a nossa regra
+original não vencia essa. O painel agora é um flex com `!important` nos três
+pontos em que a ficha do sistema impunha largura e altura — o campo cresce, o
+botão fica do tamanho do rótulo.
+
+**Sobre a numeração.** Esta versão foi publicada primeiro sob a tag `v1.23.1`,
+com o manifest já dizendo 1.24.0. A tag foi corrigida para `v1.24.0` depois: o
+Foundry decide atualizar pela versão do manifest, não pela tag, e deixar as duas
+em desacordo faria o próximo lançamento passar batido.
+
+**Nada a fazer quanto à iniciativa.** O módulo *Old Dragon 2: Qualidade de Vida*
+não toca em iniciativa — não há `CONFIG.Combat`, `_sortCombatants` nem
+`rollInitiative` no código dele. Quem configura a fórmula é o sistema
+`olddragon2e`, e a nossa Ordem de Ação não disputa isso: escreve o valor direto
+no tracker. O atrito possível continua sendo outro módulo *substituindo* a classe
+de Combat, e para isso o aviso da 1.21.1 segue de pé.
+
 ## 1.23.0 — os críticos aplicados na ficha
 
 Os cinco resultados de crítico que mudam um **número** da ficha vêm prontos como
