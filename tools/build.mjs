@@ -62,6 +62,7 @@ const JOURNAL_PACK = "starwars-sd-journal";
 const MACROS_PACK = "starwars-sd-macros";
 const TABELAS_PACK = "starwars-sd-tabelas";
 const EFEITOS_PACK = "starwars-sd-efeitos";
+const NAVES_PACK = "starwars-sd-naves";
 
 // Agrupa documentos avulsos em pastas nomeadas pelo campo `folder`.
 function agrupaAvulsas(docs, lista, seed, build) {
@@ -447,40 +448,41 @@ function buildEquipamentosDocs() {
     });
   }
 
-  // ── Os equipamentos adicionais de nave (T10-4) ──
-  //
-  // Eles vivem AQUI, no compêndio de equipamentos, e não num pack próprio: são
-  // equipamentos, e quem procura um Escudo de Força procura onde estão as
-  // vestes e os blasters. A pasta os separa; o tipo de item é o mesmo do resto.
-  //
-  // O item não substitui o booleano da ficha de Nave — ele o liga. Ver
-  // tools/data/equipamentos-de-nave.mjs.
-  {
-    const folder = pasta("Nave — Equipamentos adicionais");
-    equipamentosDeNave.forEach((e, i) => {
-      const doc = miscDoc(
-        { nome: e.nome, desc: e.desc, img: e.img },
-        folder._id, "nave-equip", (i + 1) * 100000);
-      doc.flags["starwars-sd"] = { equipamentoDeNave: { chave: e.chave, grupo: e.grupo, cabe: e.cabe } };
-      docs.push(doc);
-    });
-  }
+  return docs;
+}
 
-  // ── As câmaras da nave (T10-2) ──
-  //
-  // Arrastar uma câmara para a nave a constrói: o estado vai de "ausente" para
-  // "instalada". É o que torna a nave montável peça a peça, em vez de nascer
-  // com as doze e você desligar as que não tem.
-  {
-    const folder = pasta("Nave — Câmaras");
-    camarasDeNave.forEach((c, i) => {
-      const doc = miscDoc(
-        { nome: c.nome, desc: c.desc, img: c.img, cost: `${c.obra}` },
-        folder._id, "nave-camara", (i + 1) * 100000);
-      doc.flags["starwars-sd"] = { camaraDeNave: { chave: c.chave } };
-      docs.push(doc);
-    });
-  }
+// ── Pack de Naves ──
+//
+// As peças da nave num compêndio só delas: quem está montando uma nave não quer
+// percorrer blasters e rações até achar a Sala de Máquinas, e quem está
+// equipando um personagem não quer tropeçar em Acelerador Hiperespacial.
+//
+// Os itens NÃO substituem o schema da nave — eles o ligam. Arrastar um para a
+// ficha instala o equipamento (T10-4) ou constrói a câmara (T10-2). A regra
+// continua em equipamentos-nave.js e camaras.js, testada sem Foundry.
+function buildNavesDocs() {
+  const docs = [];
+  const pasta = (nome, seed) => {
+    const f = folderDoc(nome, "Item", seed);
+    docs.push(f);
+    return f;
+  };
+
+  const fEquip = pasta("Equipamentos adicionais (T10-4)", "nave-equip-pasta");
+  equipamentosDeNave.forEach((e, i) => {
+    const doc = miscDoc({ nome: e.nome, desc: e.desc, img: e.img },
+      fEquip._id, "nave-equip", (i + 1) * 100000);
+    doc.flags["starwars-sd"] = { equipamentoDeNave: { chave: e.chave, grupo: e.grupo, cabe: e.cabe } };
+    docs.push(doc);
+  });
+
+  const fCamaras = pasta("Câmaras (T10-2)", "nave-camara-pasta");
+  camarasDeNave.forEach((c, i) => {
+    const doc = miscDoc({ nome: c.nome, desc: c.desc, img: c.img, cost: `${c.obra}` },
+      fCamaras._id, "nave-camara", (i + 1) * 100000);
+    doc.flags["starwars-sd"] = { camaraDeNave: { chave: c.chave } };
+    docs.push(doc);
+  });
 
   return docs;
 }
@@ -656,6 +658,7 @@ async function main() {
   await compile(MACROS_PACK, buildMacrosDocs());
   await compile(TABELAS_PACK, buildTabelasDocs());
   await compile(EFEITOS_PACK, buildEfeitosDocs());
+  await compile(NAVES_PACK, buildNavesDocs());
   console.log("Concluído.");
 }
 

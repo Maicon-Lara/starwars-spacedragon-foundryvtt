@@ -1,0 +1,48 @@
+{
+  "folder": "HrqAzC6v3ObyDVZk",
+  "name": "Braço robótico",
+  "type": "misc",
+  "_id": "7ukAU3czO7sv5I1O",
+  "img": "systems/olddragon2e/assets/icons/misc.svg",
+  "system": {
+    "odo_id": "braco-robotico",
+    "description": "Ferramenta para reparos externos sem deixar a nave. Operado com o talento de cientista. Qualquer tamanho de nave.",
+    "quantity": 1,
+    "cost": "",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {
+    "starwars-sd": {
+      "equipamentoDeNave": {
+        "chave": "braco",
+        "grupo": "utilitario",
+        "cabe": {
+          "Pequena": true,
+          "Média": true,
+          "Gigantesca": true,
+          "Colossal": true
+        }
+      }
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 300000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!7ukAU3czO7sv5I1O"
+}

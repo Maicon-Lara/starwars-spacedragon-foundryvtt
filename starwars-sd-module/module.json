@@ -2,7 +2,7 @@
   "id": "starwars-sd",
   "title": "Star Wars — Suplemento para Space Dragon",
   "description": "Star Wars como suplemento de cenário para Space Dragon: as quatro classes (Veterano, Operativo, Técnico e Sensível à Força) sobre os chassis do Space Dragon, nível 1 a 20, com espécies da galáxia, os Poderes da Força em três correntes, sabre e cristais kyber, a Senda Mandaloriana, naves, bestiário e a Seção do Mestre. Não repete as regras: depende do módulo Space Dragon, que é o livro básico. Obra de fã, não oficial e sem fins lucrativos.",
-  "version": "1.27.0",
+  "version": "1.28.0",
   "license": "LICENSE.md",
   "compatibility": {
     "minimum": "13",
@@ -82,6 +82,17 @@
       "banner": "modules/starwars-sd/assets/banners/equipamentos.svg"
     },
     {
+      "name": "starwars-sd-naves",
+      "label": "Star Wars SD: Naves",
+      "path": "packs/starwars-sd-naves",
+      "type": "Item",
+      "system": "olddragon2e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
       "name": "starwars-sd-poderes",
       "label": "Star Wars SD: Poderes da Força",
       "path": "packs/starwars-sd-poderes",
@@ -141,6 +152,7 @@
         "starwars-sd-especies",
         "starwars-sd-classes",
         "starwars-sd-equipamentos",
+        "starwars-sd-naves",
         "starwars-sd-poderes",
         "starwars-sd-bestiario",
         "starwars-sd-journal",

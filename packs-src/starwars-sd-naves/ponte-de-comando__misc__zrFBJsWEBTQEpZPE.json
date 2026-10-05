@@ -1,0 +1,41 @@
+{
+  "folder": "dQvPp8YvBU9GHweH",
+  "name": "Ponte de Comando",
+  "type": "misc",
+  "_id": "zrFBJsWEBTQEpZPE",
+  "img": "systems/olddragon2e/assets/icons/misc.svg",
+  "system": {
+    "odo_id": "ponte-de-comando",
+    "description": "Controle central. Abriga o Computador Balístico (+2 nos ataques da nave) e o piloto automático; é onde se rolam os 3 testes de Pilotar do salto hiperespacial. Sem ela operacional, a nave não pode ser pilotada nem operar escudos ou armas. Obra: 120.000 créditos, 2 semanas. Reparo em campo: 30.000 créditos, metade do prazo.",
+    "quantity": 1,
+    "cost": "120000",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {
+    "starwars-sd": {
+      "camaraDeNave": {
+        "chave": "ponte"
+      }
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!zrFBJsWEBTQEpZPE"
+}

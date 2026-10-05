@@ -1,0 +1,41 @@
+{
+  "folder": "dQvPp8YvBU9GHweH",
+  "name": "Sala de Máquinas",
+  "type": "misc",
+  "_id": "4G2FTWua3xVequKA",
+  "img": "systems/olddragon2e/assets/icons/misc.svg",
+  "system": {
+    "odo_id": "sala-de-maquinas",
+    "description": "Propulsão e geradores primários. É o que permite ao Técnico testar Operar e Consertar Máquinas para reativar a energia ou reparar a nave em combate. Espaço obrigatório do acelerador hiperespacial, e onde se gerenciam os tanques de combustível. Obra: 200.000 créditos, 3 semanas. Reparo em campo: 50.000 créditos, metade do prazo.",
+    "quantity": 1,
+    "cost": "200000",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {
+    "starwars-sd": {
+      "camaraDeNave": {
+        "chave": "maquinas"
+      }
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 300000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!4G2FTWua3xVequKA"
+}
