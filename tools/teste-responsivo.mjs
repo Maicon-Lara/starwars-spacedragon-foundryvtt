@@ -219,6 +219,31 @@ confere(houveContainer, "nenhuma container query nas folhas — o layout não en
   }
 }
 
+// ── 8. PAINEL DO MÓDULO DECLARA O PAR COR+FUNDO ───────────────────────────
+//
+// A REGRA DO PROJETO, aprendida caro em 2026-10-05: painel que declara fundo e
+// não declara cor fica refém do tema do Foundry. Com o VTT em tema escuro, o
+// texto vem claro e cai sobre o fundo claro do próprio painel — e o sintoma
+// aparece num lugar de cada vez, parecendo bugs diferentes.
+//
+// Vale só para o que o MÓDULO cria. Janela de terceiro não se pinta: tentar isso
+// quebrou a interface da mesa.
+{
+  const css = semComentarios(fs.readFileSync(path.join(RAIZ, FOLHAS[0]), "utf8"));
+  for (const m of css.matchAll(/(^|\})\s*(\.[a-z][\w-]*(?:\.[a-z][\w-]*)?)\s*\{([^{}]*)\}/gm)) {
+    const sel = m[2];
+    const corpo = m[3];
+    // só os blocos que montam um PAINEL (têm caixa), não os de ajuste fino
+    if (!/(padding|border)\s*:/.test(corpo)) continue;
+    const temCor = /(^|[;{\s])color\s*:/.test(corpo);
+    const temFundo = /background(-color)?\s*:/.test(corpo);
+    if (!temCor && !temFundo) continue; // não assume aparência: pode herdar
+    confere(temCor && temFundo,
+      `"${sel}" declara ${temCor ? "cor sem fundo" : "fundo sem cor"} — ` +
+      `a metade que falta vem do tema do Foundry, e as duas pontas andam separadas`);
+  }
+}
+
 if (problemas.length) {
   for (const p of problemas) console.error(`  ✘ ${p}`);
   process.exit(1);

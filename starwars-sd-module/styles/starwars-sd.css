@@ -486,6 +486,9 @@ body.theme-dark .starwars-sd.nave-ficha.tema-auto,
   padding: 6px 8px;
   margin: 0 0 8px;
   background: color-mix(in srgb, var(--sw-cor) 10%, transparent);
+  /* o par: sem a cor, o painel herda a do tema do Foundry e some
+     sobre o próprio fundo claro. Ver a nota em spacedragon.css. */
+  color: var(--sd-tinta, #191813);
 }
 .starwars-sd-pf .pf-cabeca { display: flex; align-items: baseline; gap: 8px; font-size: 12px; font-family: var(--sw-condensada); text-transform: uppercase; letter-spacing: .04em; }
 .starwars-sd-pf .pf-conta { font-weight: 700; }
