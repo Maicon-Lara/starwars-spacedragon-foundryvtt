@@ -149,6 +149,76 @@ confere(houveContainer, "nenhuma container query nas folhas — o layout não en
   }
 }
 
+// ── 7. BOTÃO ESTILIZADO DECLARA O PAR COR+FUNDO ──────────────────────────
+//
+// O erro de hoje, três vezes seguidas e em três lugares diferentes: estilizar
+// um elemento (largura, altura, padding) e NÃO declarar cor nem fundo. O texto
+// herda a cor do tema e cai sobre o fundo que o tema der — e as duas pontas
+// mudam de forma independente. No botão "declarar" isso saiu como um botão SEM
+// TEXTO na mesa: só a borda aparecia.
+//
+// A primeira versão desta conferência procurava a palavra "button" no SELETOR,
+// e por isso nunca olhou o bloco certo: o botão é identificado por classe
+// (.sd-ordem-declarar). Agora o caminho vai do HTML ao CSS — as classes que o
+// JS põe num <button> é que são cobradas.
+{
+  const css = semComentarios(fs.readFileSync(path.join(RAIZ, FOLHAS[0]), "utf8"));
+  const dir = path.join(RAIZ, path.dirname(path.dirname(FOLHAS[0])), "module");
+  const classesDeBotao = new Set();
+
+  // Os botões deste módulo moram nos TEMPLATES, não no JS — a ficha de Nave é
+  // Handlebars. Varrer só .js aqui dava zero classes, e a conferência passava
+  // sem olhar nada.
+  const fontes = [];
+  for (const f of fs.readdirSync(dir).filter((n) => n.endsWith(".js"))) {
+    fontes.push(path.join(dir, f));
+  }
+  const tpl = path.join(RAIZ, "starwars-sd-module", "templates");
+  if (fs.existsSync(tpl)) {
+    for (const f of fs.readdirSync(tpl).filter((n) => n.endsWith(".hbs"))) fontes.push(path.join(tpl, f));
+  }
+  for (const caminho of fontes) {
+    const texto = fs.readFileSync(caminho, "utf8");
+    for (const m of texto.matchAll(/<button[^>]*class="([^"]+)"/g)) {
+      // classes com Handlebars dentro ({{#if}}) são condicionais: fica a parte
+      // fixa, que é a que o CSS nomeia.
+      for (const c of m[1].replace(/\{\{[^}]*\}\}/g, " ").split(/\s+/)) {
+        if (c && !c.includes("$") && !c.includes("{")) classesDeBotao.add(c);
+      }
+    }
+  }
+  confere(classesDeBotao.size > 0, "nenhuma classe de <button> encontrada — a varredura falhou");
+
+  // A folha tem um padrão BASE para botão? (uma regra sobre o elemento, com o
+  // par declarado). A ficha de Nave tem; o painel da Ordem de Ação não tinha, e
+  // foi por isso que o botão dele saiu sem texto.
+  const temBaseDeBotao = [...css.matchAll(/([^{}@]*button[^{}@]*)\{([^{}]*)\}/g)].some(
+    ([, sel, corpo]) =>
+      !/:hover|:focus|:disabled/.test(sel) &&
+      /(^|[;{\s])color\s*:/.test(corpo) &&
+      /background(-color)?\s*:/.test(corpo)
+  );
+
+  for (const c of [...classesDeBotao].sort()) {
+    // Só cobra de quem o CSS ASSUME: se o módulo não estiliza o botão, ele fica
+    // com a aparência do tema, que é coerente consigo mesma. O erro é estilizar
+    // pela metade.
+    const i = css.indexOf(`.${c}`);
+    if (i < 0) continue;
+    const corpo = css.slice(i, css.indexOf("}", i));
+    if (!/(width|height|padding|flex|font|border)\s*:/.test(corpo)) continue;
+    const temCor = /(^|[;{\s])color\s*:/.test(corpo);
+    const temFundo = /background(-color)?\s*:/.test(corpo);
+    // Com uma regra BASE de botão na folha, a classe pode não declarar nada —
+    // ela herda o par de lá, e isso é coerente. O que nunca pode é declarar
+    // METADE: aí a outra metade vem do tema, e as duas andam separadas.
+    if (temBaseDeBotao && !temCor && !temFundo) continue;
+    confere(temCor && temFundo,
+      `.${c} é um <button> que o CSS estiliza, e declara ${temCor ? "cor sem fundo" : temFundo ? "fundo sem cor" : "nem cor nem fundo"} — ` +
+      `a metade que falta vem do tema, e foi assim que o botão saiu sem texto`);
+  }
+}
+
 if (problemas.length) {
   for (const p of problemas) console.error(`  ✘ ${p}`);
   process.exit(1);
