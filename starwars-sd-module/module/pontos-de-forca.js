@@ -151,13 +151,14 @@ async function cartaoDoGasto(ator, { roll, valor, faces, rotulo }) {
     : `${valor}`;
   return ChatMessage.create({
     content:
-      `<div class="title">Ponto de Força</div>` +
+      `<div class="sw-cartao"><div class="title">Ponto de Força</div>` +
       `<p class="result">${rotulo}: ${legenda} → <strong>${valor}</strong></p>` +
       `<p class="result"><strong>+${valor}</strong> em ataque ou JP · ` +
       `<strong>−${valor}</strong> no d20 de um teste de atributo</p>` +
       `<p><em>Em talento de d%, declare antes de rolar: <strong>+${valor * 10}%</strong> ` +
       `ou uma re-rolagem.</em></p>` +
-      `<p class="nota-casa"><em>Ação livre, uma por rodada. O dado vale por uma rolagem só.</em></p>`,
+      `<p class="nota-casa"><em>Ação livre, uma por rodada. O dado vale por uma rolagem só.</em></p>` +
+      `</div>`,
     speaker: ChatMessage.getSpeaker({ actor: ator }),
     rolls: [roll],
     sound: CONFIG.sounds.dice,
@@ -219,11 +220,12 @@ export function ligarPontosDeForca() {
           // o jogador segue contando os pontos que tinha antes.
           await ChatMessage.create({
             content:
-              `<div class="title">Pontos de Força</div>` +
+              `<div class="sw-cartao"><div class="title">Pontos de Força</div>` +
               `<p class="result">Reserva cheia: <strong>${cheia}</strong> ` +
               `(${dadoDaFaixa(Number(ator.system?.level ?? 1)).rotulo})</p>` +
               `<p><em>A reserva é do nível inteiro — ela volta ao subir de nível, ` +
-              `não por descanso nem por sessão.</em></p>`,
+              `não por descanso nem por sessão.</em></p>` +
+              `</div>`,
             speaker: ChatMessage.getSpeaker({ actor: ator }),
           });
           return;

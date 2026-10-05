@@ -98,7 +98,7 @@ const { HandlebarsApplicationMixin } = foundry.applications.api;
 /** Cartão no formato nativo do OD2 (div.title + p.result). */
 function card(ator, titulo, corpo, rolls = []) {
   return ChatMessage.create({
-    content: `<div class="title">${titulo}</div>${corpo}`,
+    content: `<div class="sw-cartao"><div class="title">${titulo}</div>${corpo}</div>`,
     speaker: ChatMessage.getSpeaker({ actor: ator }),
     rolls,
     sound: rolls.length ? CONFIG.sounds.dice : null,

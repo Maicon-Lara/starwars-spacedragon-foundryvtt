@@ -641,6 +641,53 @@ body.theme-dark .starwars-sd.nave-ficha.tema-auto,
  * é regra do livro base, e tê-la em dois módulos da mesma cadeia foi o que
  * fez perder uma tarde arrumando o CSS do painel errado. */
 
+/* ── O CARTÃO NO CHAT: CONTRASTE PRÓPRIO ───────────────────────────────────
+ *
+ * MEDIDO na mesa, não suposto: o texto saía em rgb(217,214,204) — bege claro —
+ * sobre o pergaminho claro do chat, e o bloco ganhava um fundo amarelo a 8%
+ * vindo de fora deste módulo. Resultado: cartão invisível, com só o título
+ * sobrevivendo, porque `.title` tem cor própria do sistema.
+ *
+ * A cor herdada do chat muda com o tema do Foundry, com o sistema e com
+ * qualquer módulo de interface instalado. Descobrir quem a define e disputar
+ * caminho a caminho é perder a cada versão do outro. O cartão passa a não
+ * depender dela: fundo e cor PRÓPRIOS, sempre declarados juntos.
+ *
+ * O `!important` e a especificidade dobrada não são preguiça: a primeira
+ * tentativa declarou o par sem eles e perdeu — medido no console da mesa. Quem
+ * pinta aquele texto o faz com especificidade maior que `.chat-message
+ * .sw-cartao`. O escopo continua mínimo: só dentro dos cartões deste módulo.
+ *
+ * Contraste: 15,7:1 no texto principal, 8,3:1 no de apoio. A WCAG pede 4,5:1. */
+.chat-message .message-content .sw-cartao,
+.chat-message .sw-cartao {
+  color: #191813 !important;
+  background: #f4f1e6 !important;
+  border-radius: 3px;
+  padding: 0.3rem 0.45rem;
+}
+.chat-message .sw-cartao p,
+.chat-message .sw-cartao li,
+.chat-message .sw-cartao ol,
+.chat-message .sw-cartao ul,
+.chat-message .sw-cartao h3,
+.chat-message .sw-cartao span,
+.chat-message .sw-cartao strong,
+.chat-message .sw-cartao em,
+.chat-message .message-content .sw-cartao p,
+.chat-message .message-content .sw-cartao li,
+.chat-message .message-content .sw-cartao h3,
+.chat-message .message-content .sw-cartao span,
+.chat-message .message-content .sw-cartao strong,
+.chat-message .message-content .sw-cartao em { color: inherit !important; }
+
+/* O texto de apoio é mais leve de propósito — por MISTURA com o fundo acima, e
+ * não por `opacity` sobre cor herdada, que esconde a queda de contraste. */
+.chat-message .sw-cartao .nota-casa,
+.chat-message .sw-cartao .dica,
+.chat-message .message-content .sw-cartao .nota-casa,
+.chat-message .message-content .sw-cartao .dica { color: #4a463d !important; }
+
 /* ── A FICHA ENCOLHENDO ────────────────────────────────────────────────────
  *
  * O perfil tático nasceu com SEIS colunas, e seis colunas numa janela estreita

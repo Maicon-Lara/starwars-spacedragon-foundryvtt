@@ -122,7 +122,7 @@ export function ligarResumoDaRodada() {
     await ChatMessage.create({
       whisper: ChatMessage.getWhisperRecipients("GM"),
       content:
-        `<div class="starwars-sd-doc"><h3>Rodada ${combat.round}</h3>` +
+        `<div class="sw-cartao starwars-sd-doc"><h3>Rodada ${combat.round}</h3>` +
         `<p class="result">Duração: <strong>${dur} segundo(s)</strong> ` +
         `<em>(o dobro do maior valor)</em></p>` +
         `<p class="dica"><em>É esta a duração dos efeitos que valem "uma rodada".</em></p>` +
