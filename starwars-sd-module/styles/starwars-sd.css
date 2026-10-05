@@ -688,6 +688,51 @@ body.theme-dark .starwars-sd.nave-ficha.tema-auto,
 .chat-message .message-content .sw-cartao .nota-casa,
 .chat-message .message-content .sw-cartao .dica { color: #4a463d !important; }
 
+/* ── AS ABAS DA FICHA DE NAVE ───────────────────────────────────────────────
+ *
+ * A ficha usa as classes do sistema (`sheet-tabs`, `tab`, `character-tab-*`),
+ * mas a janela dela não tem a classe `olddragon2e` — então o CSS do sistema não
+ * a alcança, e o mínimo para as abas FUNCIONAREM precisa estar aqui. Sem estas
+ * seis linhas, os seis painéis aparecem todos de uma vez.
+ *
+ * O par cor+fundo nos itens é a lição do dia: elemento que não declara os dois
+ * herda a cor do tema e cai sobre o fundo que o tema der. */
+.starwars-sd.nave-ficha .sheet-body .tab { display: none; }
+.starwars-sd.nave-ficha .sheet-body .tab.active { display: block; }
+
+.starwars-sd.nave-ficha .sheet-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin: 8px 0 10px;
+  padding: 0 0 4px;
+  border-bottom: 1px solid var(--nave-linha);
+  list-style: none;
+}
+.starwars-sd.nave-ficha .sheet-tabs .item {
+  flex: 0 1 auto;
+  padding: 3px 10px;
+  border: 1px solid var(--nave-linha);
+  border-radius: 3px 3px 0 0;
+  font-family: var(--sw-condensada, inherit);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  cursor: pointer;
+  /* o par, sempre os dois */
+  background: color-mix(in srgb, var(--sd-caixa, #ccd3f0) 30%, transparent);
+  color: var(--sd-tinta, #10162c);
+}
+.starwars-sd.nave-ficha .sheet-tabs .item:hover {
+  background: color-mix(in srgb, var(--sd-caixa, #ccd3f0) 60%, transparent);
+  color: var(--sd-tinta, #10162c);
+}
+.starwars-sd.nave-ficha .sheet-tabs .item.active {
+  background: var(--sd-barra, #1b2340);
+  color: #f2f0ea;
+  border-color: var(--sd-barra, #1b2340);
+}
+
 /* ── A FICHA ENCOLHENDO ────────────────────────────────────────────────────
  *
  * O perfil tático nasceu com SEIS colunas, e seis colunas numa janela estreita

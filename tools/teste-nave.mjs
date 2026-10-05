@@ -264,7 +264,23 @@ const hbs = fs.readFileSync(
 // por que ele não pode estar aqui
 const marcacao = hbs.replace(/\{\{!--[\s\S]*?--\}\}/g, "");
 confere(!/<form[\s>]/.test(marcacao), "nave.hbs não pode abrir <form>: a raiz da ficha já é um");
-confere(/class="starwars-sd-nave"/.test(hbs), "nave.hbs precisa do container .starwars-sd-nave");
+// A classe pode vir acompanhada (hoje ela divide o atributo com
+// `sheet-container`, do sistema), então o que se exige é a PRESENÇA dela, e não
+// que esteja sozinha.
+confere(/class="[^"]*starwars-sd-nave/.test(hbs),
+  "nave.hbs precisa do container .starwars-sd-nave");
+// E as abas do sistema, que a ficha passou a usar: sem a nav, a ficha vira uma
+// coluna só de novo, e sem os painéis não há o que mostrar.
+confere(/class="sheet-tabs/.test(hbs), "nave.hbs precisa da nav .sheet-tabs");
+for (const aba of ["attacks", "race", "class", "spells", "equipment", "details"]) {
+  confere(new RegExp(`character-tab-${aba}`).test(hbs),
+    `nave.hbs: falta o painel da aba ${aba}`);
+  confere(new RegExp(`data-tab="${aba}"`).test(hbs),
+    `nave.hbs: falta o data-tab="${aba}"`);
+}
+// Uma aba ativa, e só uma: duas abas `active` mostram as duas ao mesmo tempo.
+confere((hbs.match(/class="tab [^"]*active/g) ?? []).length === 1,
+  "exatamente um painel pode nascer ativo");
 
 // ── O template fecha o que abre, com os dois modos ──────────────────────────
 {

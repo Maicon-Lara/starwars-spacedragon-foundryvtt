@@ -228,7 +228,51 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
     this.element?.classList.remove("tema-auto", "tema-claro", "tema-escuro");
     this.element?.classList.add(classeDeTema());
     this.#ligarArrasto();
+    this.#ligarAbas();
   }
+
+  /* ── AS ABAS ──────────────────────────────────────────────────────────────
+   *
+   * Troca feita por JS próprio, e não pelo sistema de abas do ApplicationV2.
+   * O motivo é o mesmo do arrasto: a API de abas mudou de forma entre as
+   * versões maiores do Foundry, e `classList.toggle` não muda.
+   *
+   * A aba escolhida fica guardada NA INSTÂNCIA, e não no ator: ela é de quem
+   * está olhando, não da nave. Sem isso, cada salvamento devolveria a ficha
+   * para a primeira aba no meio da rodada — que é exatamente quando a mesa
+   * menos quer isso.
+   */
+  #ligarAbas() {
+    const raiz = this.element;
+    if (!raiz) return;
+    const nav = raiz.querySelector(".sheet-tabs");
+    if (!nav) return;
+
+    const mostrar = (chave) => {
+      for (const a of raiz.querySelectorAll(".sheet-tabs .item")) {
+        a.classList.toggle("active", a.dataset.tab === chave);
+      }
+      for (const t of raiz.querySelectorAll(".sheet-body .tab")) {
+        t.classList.toggle("active", t.dataset.tab === chave);
+      }
+      this.#aba = chave;
+    };
+
+    // devolve a aba que estava aberta antes do redesenho
+    if (this.#aba) mostrar(this.#aba);
+
+    if (nav.dataset.swAbas === "1") return;
+    nav.dataset.swAbas = "1";
+    nav.addEventListener("click", (ev) => {
+      const item = ev.target?.closest?.(".item");
+      if (!item?.dataset?.tab) return;
+      ev.preventDefault();
+      mostrar(item.dataset.tab);
+    });
+  }
+
+  /** A aba aberta, por instância de ficha. */
+  #aba = null;
 
   /* ── INSTALAR EQUIPAMENTO ARRASTANDO ──────────────────────────────────────
    *
