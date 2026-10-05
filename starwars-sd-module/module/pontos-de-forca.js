@@ -96,8 +96,13 @@ export async function rolarPonto(nivel) {
   return { roll, valor: Math.max(...faces), faces, rotulo };
 }
 
-/** O painel, em HTML. Devolve null quando não há o que mostrar. */
-function montaPainel(ator) {
+/**
+ * O painel, em HTML. Devolve null quando não há o que mostrar.
+ *
+ * Exportado para o teste: o que importa aqui é QUEM vê o botão de recarregar,
+ * e isso só se vê no HTML.
+ */
+export function montaPainel(ator) {
   const nivel = Number(ator.system?.level ?? 0);
   if (!nivel) return null;
   const tem = pontosAtuais(ator);
@@ -106,6 +111,20 @@ function montaPainel(ator) {
 
   const pastilhas = Array.from({ length: limite }, (_, i) =>
     `<span class="pf-ponto ${i < tem ? "cheio" : "vazio"}"></span>`).join("");
+
+  // O ⟳ é SÓ DO MESTRE, e não por hierarquia: nas mãos do jogador ele é um
+  // botão de desfazer a regra. "Não recarrega por descanso nem por sessão" é o
+  // que dá peso ao gasto — com um botão de reenchar na própria ficha, a reserva
+  // deixa de ser do nível inteiro e passa a ser infinita.
+  //
+  // Para o Mestre ele serve ao que a mesa precisa de verdade: subir de nível
+  // (quando a reserva deveria ter voltado e alguém já tinha gasto antes de o
+  // nível ser corrigido na ficha) e consertar contagem errada.
+  const doMestre = !!game.user?.isGM;
+  const recarregar = doMestre
+    ? `<button type="button" data-pf="recarregar" ${tem < limite ? "" : "disabled"}
+            title="Devolve a reserva cheia da faixa — ao subir de nível, ou para corrigir a contagem. Só o Mestre vê este botão.">⟳</button>`
+    : "";
 
   return `
 <div class="${MARCA}">
@@ -120,6 +139,7 @@ function montaPainel(ator) {
             title="Rola o dado da faixa e desconta 1 ponto">gastar</button>
     <button type="button" data-pf="devolver" ${tem < limite ? "" : "disabled"}
             title="Devolve 1 ponto — para desfazer um gasto">+1</button>
+    ${recarregar}
   </div>
 </div>`;
 }
@@ -190,6 +210,24 @@ export function ligarPontosDeForca() {
         if (!acao) return;
         ev.preventDefault();
         const nivel = Number(ator.system?.level ?? 1);
+        if (acao === "recarregar") {
+          if (!game.user?.isGM) return;
+          const cheia = reservaDoAtor(ator);
+          if (pontosAtuais(ator) >= cheia) return;
+          await gravarPontos(ator, cheia);
+          // O cartão é público: a mesa precisa saber que a reserva voltou, senão
+          // o jogador segue contando os pontos que tinha antes.
+          await ChatMessage.create({
+            content:
+              `<div class="title">Pontos de Força</div>` +
+              `<p class="result">Reserva cheia: <strong>${cheia}</strong> ` +
+              `(${dadoDaFaixa(Number(ator.system?.level ?? 1)).rotulo})</p>` +
+              `<p><em>A reserva é do nível inteiro — ela volta ao subir de nível, ` +
+              `não por descanso nem por sessão.</em></p>`,
+            speaker: ChatMessage.getSpeaker({ actor: ator }),
+          });
+          return;
+        }
         if (acao === "devolver") return void await gravarPontos(ator, pontosAtuais(ator) + 1);
         if (pontosAtuais(ator) <= 0) return;
         await gravarPontos(ator, pontosAtuais(ator) - 1);

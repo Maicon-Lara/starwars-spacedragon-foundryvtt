@@ -216,6 +216,19 @@ body.theme-dark .starwars-sd.nave-ficha.tema-auto,
 }
 
 .starwars-sd.nave-ficha {
+  /* O CONTÊINER de referência para as larguras lá no fim do arquivo.
+   *
+   * `@media (max-width: …)` NÃO serve aqui: ele responde ao tamanho da TELA, e
+   * a ficha do Foundry é uma janela que o jogador arrasta — a tela não muda
+   * quando ele a encolhe. `container-type: inline-size` faz as regras
+   * responderem à largura DESTA ficha, que é o que se quer.
+   *
+   * `inline-size` contém só o eixo horizontal: a altura continua crescendo com
+   * o conteúdo, e nada aqui depende de o elemento se medir pela largura do
+   * conteúdo. */
+  container-type: inline-size;
+  container-name: nave;
+
   --nave-campo: #fff;
   --nave-campo-esquema: light;
   --nave-linha: color-mix(in srgb, var(--sd-barra, #1b2340) 28%, transparent);
@@ -627,3 +640,41 @@ body.theme-dark .starwars-sd.nave-ficha.tema-auto,
  * módulo `spacedragon`, na aba de ataques, e o CSS dele foi com ele. A T7-2
  * é regra do livro base, e tê-la em dois módulos da mesma cadeia foi o que
  * fez perder uma tarde arrumando o CSS do painel errado. */
+
+/* ── A FICHA ENCOLHENDO ────────────────────────────────────────────────────
+ *
+ * O perfil tático nasceu com SEIS colunas, e seis colunas numa janela estreita
+ * não são seis campos apertados: são seis rótulos ilegíveis em cima de seis
+ * números cortados. O mesmo vale para a grade de energia, de três.
+ *
+ * Os valores são por CONTÊINER (a ficha), não por tela — ver o
+ * `container-type` na raiz, acima. Navegador sem suporte a `@container` ignora
+ * este bloco inteiro e fica com o layout largo: pior, mas não quebrado.
+ *
+ * Os degraus foram escolhidos pelo conteúdo, e não em números redondos: 6
+ * colunas pedem ~86px por campo para o rótulo ("ESCUDO", "CASCO") não quebrar
+ * em duas linhas, e é aí que a primeira passa para 3. */
+
+@container nave (max-width: 520px) {
+  .starwars-sd.nave-ficha .perfil { grid-template-columns: repeat(3, 1fr); }
+}
+
+@container nave (max-width: 380px) {
+  .starwars-sd.nave-ficha .perfil { grid-template-columns: repeat(2, 1fr); }
+  .starwars-sd.nave-ficha .grade-energia { grid-template-columns: 1fr; }
+  /* O retrato cede primeiro: ele é o único item do cabeçalho que não carrega
+     informação que se lê. */
+  .starwars-sd.nave-ficha .retrato { width: 44px; height: 44px; }
+  .starwars-sd.nave-ficha .titulo input[name="name"] { font-size: 16px; }
+  /* A barra de combustível e a porcentagem disputam a mesma linha: a barra
+     encurta, o número não — ele é o que se lê. */
+  .starwars-sd.nave-ficha .barra-comb { min-width: 36px; }
+}
+
+@container nave (max-width: 300px) {
+  /* Aqui o cabeçalho deixa de ser duas colunas: o nome da nave em uma linha de
+     ~200px vale mais que o retrato ao lado dele. */
+  .starwars-sd.nave-ficha .cabecalho { flex-direction: column; align-items: stretch; }
+  .starwars-sd.nave-ficha .perfil { grid-template-columns: 1fr 1fr; gap: 4px; }
+  .starwars-sd.nave-ficha .linha-tipo { flex-wrap: wrap; }
+}

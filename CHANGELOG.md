@@ -1,5 +1,34 @@
 # Changelog
 
+## 1.26.0 — o ⟳ do Mestre, e a ficha que encolhe
+
+**Pontos de Força: um botão de recarregar, só para o Mestre.** A reserva já
+voltava sozinha ao subir de nível (o flag guarda o nível em que ela vale), mas
+nada na tela dizia que isso aconteceu. O ⟳ torna explícito, serve para corrigir
+contagem errada, e manda um cartão ao chat.
+
+Ele é **só do Mestre**, e não por hierarquia: "não recarrega por descanso nem
+por sessão" é o que dá peso ao gasto. Um botão de reenchar na ficha do jogador
+desfaz a regra inteira — a reserva deixa de ser do nível e passa a ser infinita.
+Para o Mestre ele serve ao caso que a mesa tem de verdade: o nível que subiu
+depois de alguém já ter gasto, e a contagem que saiu errada.
+
+**A ficha de nave encolhe sem quebrar.** O perfil tático nasceu com seis
+colunas, e seis colunas numa janela estreita não são seis campos pequenos: são
+seis rótulos ilegíveis sobre seis números cortados. Agora ele passa a 3 colunas
+abaixo de 520px de ficha, a 2 abaixo de 380px, e o cabeçalho empilha abaixo de
+300px — com a grade de energia, o retrato e a barra de combustível cedendo
+junto.
+
+**Por container query, não media query.** `@media (max-width: …)` responde ao
+tamanho da TELA, e a ficha do Foundry é uma janela que o jogador arrasta: a tela
+não muda quando ele a encolhe. O layout pareceria responsivo no navegador
+redimensionado e não funcionaria na mesa. `tools/teste-responsivo.mjs` recusa
+`@media` de largura nestas folhas, exige que todo `@container` tenha um
+`container-name` declarado (erro que de fato cometi ao escrever isto, e que é
+silencioso: a regra fica letra morta) e cobra versão estreita de todo grid de
+três ou mais colunas.
+
 ## 1.25.0 — a declaração sai daqui e vai para o livro base
 
 O painel de declarar a Ordem de Ação **saiu deste módulo**. Ele agora é do

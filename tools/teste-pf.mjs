@@ -18,7 +18,7 @@ globalThis.Hooks = { on() {} };
 globalThis.ChatMessage = { create: async () => {}, getSpeaker: () => ({}) };
 globalThis.CONFIG = { sounds: { dice: null } };
 
-const { dadoDaFaixa, reservaDoNivel, reservaDoAtor, pontosAtuais, rolarPonto } =
+const { dadoDaFaixa, reservaDoNivel, reservaDoAtor, pontosAtuais, rolarPonto, montaPainel } =
   await import("../starwars-sd-module/module/pontos-de-forca.js");
 
 const problemas = [];
@@ -85,8 +85,59 @@ confere(reservaDoAtor({ system: { level: 10 }, hasPlayerOwner: false, getFlag: (
 confere(pontosAtuais(ator(10, null, false)) === 1, "e o painel do PNJ comum mostra 1");
 confere(reservaDoAtor({ system: { level: 20 }, hasPlayerOwner: true }) === 15, "no 20º são 15");
 
+// ── O BOTÃO DE RECARREGAR É SÓ DO MESTRE ──────────────────────────────────
+//
+// A ASSERÇÃO QUE MAIS IMPORTA DESTE BLOCO. "Não recarrega por descanso nem por
+// sessão" é o que dá peso ao gasto: um ponto queimado na perseguição não está
+// lá no duelo do fim do arco. Um botão de reenchar na ficha do JOGADOR desfaz
+// essa regra inteira — a reserva deixa de ser do nível e passa a ser infinita.
+//
+// Por isso o ⟳ existe só para o Mestre, para o caso que a mesa tem de verdade:
+// o nível que subiu depois de alguém já ter gasto, e a contagem errada.
+{
+  const heroi = { id: "a1", system: { level: 1 }, hasPlayerOwner: true, getFlag: () => null };
+
+  globalThis.game = { user: { isGM: false } };
+  const doJogador = montaPainel(heroi);
+  confere(!doJogador.includes('data-pf="recarregar"'),
+    "o jogador NÃO pode ter botão de recarregar — ele desfaria a regra da reserva");
+  // e os dois que ele deve ter continuam lá
+  confere(doJogador.includes('data-pf="gastar"') && doJogador.includes('data-pf="devolver"'),
+    "o jogador perdeu gastar ou +1");
+
+  globalThis.game = { user: { isGM: true } };
+  const doMestre = montaPainel(heroi);
+  confere(doMestre.includes('data-pf="recarregar"'), "o Mestre devia ter o botão de recarregar");
+
+  // Com a reserva CHEIA o botão não tem o que fazer, e botão que não faz nada
+  // é botão que a mesa clica e desconfia.
+  const cheio = { ...heroi, getFlag: () => ({ nivel: 1, valor: 5 }) };
+  const html = montaPainel(cheio);
+  const i = html.indexOf('data-pf="recarregar"');
+  confere(html.slice(i, i + 120).includes("disabled"),
+    "com a reserva cheia o ⟳ tem de vir desabilitado");
+
+  // E com ponto gasto, habilitado
+  const gasto = { ...heroi, getFlag: () => ({ nivel: 1, valor: 2 }) };
+  const h2 = montaPainel(gasto);
+  const j = h2.indexOf('data-pf="recarregar"');
+  confere(!h2.slice(j, j + 120).includes("disabled"),
+    "com ponto gasto o ⟳ tem de estar clicável");
+
+  // O que o botão devolve é a reserva da FAIXA, não um número fixo: no 15º são
+  // 15, e recarregar tem de respeitar isso.
+  const alto = { id: "a2", system: { level: 15 }, hasPlayerOwner: true, getFlag: () => ({ nivel: 15, valor: 1 }) };
+  confere(reservaDoAtor(alto) === 15, "no 15º o ⟳ devolve 15, não 5");
+
+  globalThis.game = { user: { isGM: false } };
+  // PNJ comum: 1 ponto, e o painel não promete mais do que isso
+  const pnj = { id: "a3", system: { level: 9 }, hasPlayerOwner: false, getFlag: () => null };
+  confere(montaPainel(pnj).includes("1 / 1"), "o PNJ comum tem 1 ponto, e o painel diz isso");
+}
+
 if (problemas.length) {
   for (const p of problemas) console.error(`  ✘ ${p}`);
   process.exit(1);
 }
-console.log("  ✔ pontos de força: reserva por nível e por tipo de ator, as três faixas, o maior de N e o zerar ao subir");
+console.log("  ✔ pontos de força: reserva por nível e por tipo de ator, as três faixas, o maior de N, " +
+    "o zerar ao subir, e o ⟳ de recarregar SÓ para o Mestre (desabilitado com a reserva cheia)");
