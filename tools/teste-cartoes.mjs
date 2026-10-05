@@ -27,6 +27,7 @@ import { fileURLToPath } from "node:url";
 
 const RAIZ = path.resolve(fileURLToPath(import.meta.url), "../..");
 const MODULO = path.join(RAIZ, "starwars-sd-module");
+const FOLHA = "starwars-sd.css";
 const MARCA = "sw-cartao";
 
 const problemas = [];
@@ -118,6 +119,46 @@ confere(cartoes >= 4, `só ${cartoes} cartões encontrados — a varredura deve 
 
   // E `opacity` não entra: ela mascara a queda de contraste.
   confere(!/opacity:/.test(bloco), "o cartão não deve usar opacity — ela esconde o contraste perdido");
+}
+
+/* ── TODA CLASSE DO CARTÃO ESTÁ NOMEADA NO CSS ───────────────────────────── */
+//
+// A ASSERÇÃO QUE FECHA ESTE BUG. Cobrir os filhos por ELEMENTO (`p`, `span`)
+// não bastou na mesa: ficaram legíveis só as classes que o CSS nomeava, e
+// continuaram invisíveis as outras — entre elas `.result`, a mais usada dos
+// cartões. É especificidade: uma regra de elemento perde para uma regra de
+// classe com `!important` do outro lado.
+//
+// Então o CSS precisa nomear cada classe, e este teste recusa qualquer classe
+// nova que apareça num cartão e não tenha sido coberta. Sem ele, o próximo
+// cartão com uma classe nova volta a sair pela metade, e em silêncio.
+{
+  const css = fs
+    .readFileSync(path.join(MODULO, "styles", FOLHA), "utf8")
+    .replace(/\/\*[\s\S]*?\*\//g, "");
+
+  // `title` tem cor própria do sistema e sobreviveu ao bug no print da mesa;
+  // a própria marca e o escopo de livro não são texto.
+  const ISENTAS = new Set(["title", MARCA, "starwars-sd-doc"]);
+  const usadas = new Set();
+
+  for (const f of arquivos) {
+    const js = fs.readFileSync(path.join(MODULO, "module", f), "utf8");
+    for (const m of js.matchAll(/ChatMessage\.create\(\{/g)) {
+      const trecho = js.slice(m.index, js.indexOf("});", m.index) + 3);
+      for (const c of trecho.matchAll(/class="([a-z0-9 -]+)"/g)) {
+        for (const nome of c[1].split(/\s+/)) if (nome && !ISENTAS.has(nome)) usadas.add(nome);
+      }
+    }
+  }
+
+  confere(usadas.size > 0, "nenhuma classe encontrada nos cartões — a varredura falhou");
+
+  for (const nome of [...usadas].sort()) {
+    confere(css.includes(`.${MARCA} .${nome}`),
+      `a classe .${nome} aparece num cartão e o CSS não a nomeia — ela vai herdar a ` +
+      `cor do tema e sair invisível, como aconteceu com .result`);
+  }
 }
 
 if (problemas.length) {

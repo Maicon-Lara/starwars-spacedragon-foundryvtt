@@ -666,20 +666,20 @@ body.theme-dark .starwars-sd.nave-ficha.tema-auto,
   border-radius: 3px;
   padding: 0.3rem 0.45rem;
 }
-.chat-message .sw-cartao p,
-.chat-message .sw-cartao li,
-.chat-message .sw-cartao ol,
-.chat-message .sw-cartao ul,
-.chat-message .sw-cartao h3,
-.chat-message .sw-cartao span,
-.chat-message .sw-cartao strong,
-.chat-message .sw-cartao em,
-.chat-message .message-content .sw-cartao p,
-.chat-message .message-content .sw-cartao li,
-.chat-message .message-content .sw-cartao h3,
-.chat-message .message-content .sw-cartao span,
-.chat-message .message-content .sw-cartao strong,
-.chat-message .message-content .sw-cartao em { color: inherit !important; }
+/* ── CADA CLASSE PELO NOME, E NÃO POR ELEMENTO ─────────────────────────────
+ *
+ * Cobrir os filhos por ELEMENTO (`p`, `span`) não bastou: o print da mesa
+ * mostrou que ficaram legíveis só as classes nomeadas, e continuaram invisíveis
+ * as que não eram — `.result`, a mais usada dos cartões deste módulo (62 vezes).
+ *
+ * É especificidade: `.chat-message .sw-cartao p` perde para uma regra de classe
+ * com `!important` do outro lado. Nomear a classe empata o peso, e a
+ * especificidade dobrada desempata.
+ *
+ * A lista é gerada das classes que os cartões usam de fato, e
+ * tools/teste-cartoes.mjs recusa classe nova que não esteja aqui. */
+.chat-message .sw-cartao .result,
+.chat-message .message-content .sw-cartao .result { color: inherit !important; }
 
 /* O texto de apoio é mais leve de propósito — por MISTURA com o fundo acima, e
  * não por `opacity` sobre cor herdada, que esconde a queda de contraste. */
