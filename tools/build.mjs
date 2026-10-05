@@ -46,6 +46,7 @@ import { macros } from "./data/macros.mjs";
 import { CORES_DE_PASTA } from "./data/pastas.mjs";
 import { tabelas } from "./data/tabelas.mjs";
 import { EFEITOS_CRITICOS, templateDoQdV, QDV_ID, QDV_FLAG } from "./data/efeitos-criticos.mjs";
+import { equipamentosDeNave } from "./data/equipamentos-de-nave.mjs";
 
 const ROOT = path.resolve(fileURLToPath(import.meta.url), "../..");
 const SRC = path.join(ROOT, "packs-src");
@@ -444,6 +445,26 @@ function buildEquipamentosDocs() {
       docs.push(build(it, folder._id, cat.folder, (i + 1) * 100000));
     });
   }
+
+  // ── Os equipamentos adicionais de nave (T10-4) ──
+  //
+  // Eles vivem AQUI, no compêndio de equipamentos, e não num pack próprio: são
+  // equipamentos, e quem procura um Escudo de Força procura onde estão as
+  // vestes e os blasters. A pasta os separa; o tipo de item é o mesmo do resto.
+  //
+  // O item não substitui o booleano da ficha de Nave — ele o liga. Ver
+  // tools/data/equipamentos-de-nave.mjs.
+  {
+    const folder = pasta("Nave — Equipamentos adicionais");
+    equipamentosDeNave.forEach((e, i) => {
+      const doc = miscDoc(
+        { nome: e.nome, desc: e.desc, img: e.img },
+        folder._id, "nave-equip", (i + 1) * 100000);
+      doc.flags["starwars-sd"] = { equipamentoDeNave: { chave: e.chave, grupo: e.grupo, cabe: e.cabe } };
+      docs.push(doc);
+    });
+  }
+
   return docs;
 }
 

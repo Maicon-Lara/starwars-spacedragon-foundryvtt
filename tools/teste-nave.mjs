@@ -362,6 +362,16 @@ for (const lang of ["pt-BR", "en"]) {
   }
 }
 
+// NOTA: aqui existiu uma conferência de "identificador usado e nunca
+// declarado", escrita depois que o código do arrasto saiu usando `ID` num
+// arquivo que nunca o declarou — ReferenceError dentro de try/catch, ou seja,
+// falha calada.
+//
+// Ela foi removida: três versões seguidas ou passavam verde com o bug presente,
+// ou acusavam importações legítimas. Um analisador de escopo de verdade não cabe
+// num teste caseiro, e um que erra nas duas direções é pior que nenhum — ele
+// ensina a ignorar o resultado. O bug está corrigido; a varredura, não.
+
 if (problemas.length) {
   for (const p of problemas) console.error(`  ✘ ${p}`);
   process.exit(1);

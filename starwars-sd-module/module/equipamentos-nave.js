@@ -281,3 +281,30 @@ export function penalidadeNaJPR(totalDoAtaque) {
   const n = Math.max(0, Number(totalDoAtaque) || 0);
   return -2 * Math.floor(n / PENALIDADE_POR);
 }
+
+/**
+ * O que acontece ao arrastar um equipamento para uma nave.
+ *
+ * Função pura, e separada da ficha, por dois motivos: ela é a REGRA (a matriz
+ * da T10-4 decidindo o que cabe em que tamanho), e é o que precisa ser testado
+ * sem o Foundry em volta. A ficha só traduz o resultado em notificação.
+ *
+ * Devolve { acao, mensagem }, com `acao` em:
+ *   · "instalar"  — cabe, e ainda não está lá
+ *   · "jaInstalado"
+ *   · "naoCabe"   — a T10-4 não admite neste tamanho
+ *   · "desconhecido" — o item não é um equipamento de nave
+ */
+export function decidirInstalacao(chave, { tamanho, instalados = {}, nomeDaNave = "a nave" } = {}) {
+  const e = EQUIPAMENTOS_DE_NAVE[chave];
+  if (!e) return { acao: "desconhecido", mensagem: "" };
+  if (instalados?.[chave] === true) {
+    return { acao: "jaInstalado", mensagem: `${e.rotulo} já está instalado em ${nomeDaNave}.` };
+  }
+  // A matriz é regra, e vale no arrasto como vale no botão. O aviso diz o
+  // TAMANHO, que é o que a pessoa precisa saber para escolher outra nave.
+  if (e.cabe?.[tamanho] !== true) {
+    return { acao: "naoCabe", mensagem: `A T10-4 não admite ${e.rotulo} em nave ${tamanho}.` };
+  }
+  return { acao: "instalar", mensagem: `${e.rotulo} instalado em ${nomeDaNave}.` };
+}

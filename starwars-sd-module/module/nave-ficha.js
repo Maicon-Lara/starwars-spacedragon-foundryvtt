@@ -31,7 +31,7 @@ import {
   partesDaTripulacao, cpComEnergia, jpComEnergia,
   dadosExtrasDeDano, dadosExtrasDeEsquiva, evasivaBloqueada,
   LIMPA_NO_FIM_DA_RODADA,
-  EQUIPAMENTOS_DE_NAVE, equipamentosDoTamanho, efeitosInstalados,
+  EQUIPAMENTOS_DE_NAVE, equipamentosDoTamanho, efeitosInstalados, decidirInstalacao,
   conflitosDeTamanho, armasInstaladas,
   FONTES_DE_ENERGIA, formulaDeGasto, custoDeAbastecimento, penalidadeNaJPR,
 } from "./nave-modelo.js";
@@ -91,6 +91,9 @@ function classeDeTema() {
   }
   return `tema-${escolha}`;
 }
+
+/** O id do módulo. Os `game.settings.get` daqui o repetiam como literal. */
+const ID = "starwars-sd";
 
 const { ActorSheetV2 } = foundry.applications.sheets;
 const { HandlebarsApplicationMixin } = foundry.applications.api;
@@ -223,6 +226,61 @@ export class NaveFicha extends HandlebarsApplicationMixin(ActorSheetV2) {
     super._onRender?.(contexto, opcoes);
     this.element?.classList.remove("tema-auto", "tema-claro", "tema-escuro");
     this.element?.classList.add(classeDeTema());
+    this.#ligarArrasto();
+  }
+
+  /* ── INSTALAR EQUIPAMENTO ARRASTANDO ──────────────────────────────────────
+   *
+   * O compêndio de Equipamentos traz os quinze da T10-4 como itens, e arrastar
+   * um deles para a nave o INSTALA — ou seja, liga o booleano que o schema já
+   * tem. O item não vira item embutido da nave de propósito: a regra (o que
+   * cabe em que tamanho, os conflitos, os efeitos) já mora no schema e está
+   * coberta por teste. Duplicá-la numa lista de itens seria tê-la em dois
+   * lugares, com duas chances de divergir.
+   *
+   * Assim a mesa ganha o que faltava — arrastar do compêndio, como se arrasta
+   * uma arma para o personagem — sem que a regra mude de casa.
+   *
+   * Os listeners são NATIVOS, e não a API de DragDrop do Foundry: ela mudou de
+   * forma entre as versões maiores, e `dragover`/`drop` não mudam.
+   */
+  #ligarArrasto() {
+    const raiz = this.element;
+    if (!raiz || raiz.dataset.swArrasto === "1") return;
+    raiz.dataset.swArrasto = "1";
+    raiz.addEventListener("dragover", (ev) => ev.preventDefault());
+    raiz.addEventListener("drop", (ev) => this.#aoSoltar(ev));
+  }
+
+  async #aoSoltar(ev) {
+    try {
+      if (!this.isEditable) return;
+      const Editor = globalThis.TextEditor?.implementation ?? globalThis.TextEditor;
+      const dados = Editor?.getDragEventData?.(ev) ?? {};
+      if (dados.type !== "Item") return;
+      const item = dados.uuid ? await fromUuid(dados.uuid) : null;
+      const equip = item?.getFlag?.(ID, "equipamentoDeNave");
+      if (!equip?.chave) return; // item comum: a nave não tem inventário
+
+      ev.preventDefault();
+      ev.stopPropagation();
+
+      const s = this.actor.system;
+      // A decisão é REGRA, e mora em equipamentos-nave.js, testada sem Foundry.
+      // Aqui só se traduz o resultado em notificação.
+      const r = decidirInstalacao(equip.chave, {
+        tamanho: TIPOS[s.tipo]?.tamanho,
+        instalados: s.equipamentos,
+        nomeDaNave: this.actor.name,
+      });
+      if (r.acao === "desconhecido") return;
+      if (r.acao === "jaInstalado") return ui.notifications.info(r.mensagem);
+      if (r.acao === "naoCabe") return ui.notifications.warn(r.mensagem);
+      await this.actor.update({ [`system.equipamentos.${equip.chave}`]: true });
+      ui.notifications.info(r.mensagem);
+    } catch (erro) {
+      console.warn(`${ID} | não pude instalar o equipamento arrastado`, erro);
+    }
   }
 
   async _prepareContext() {

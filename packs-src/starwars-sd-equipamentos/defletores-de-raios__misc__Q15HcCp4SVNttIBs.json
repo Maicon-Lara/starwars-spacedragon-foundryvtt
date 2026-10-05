@@ -1,0 +1,48 @@
+{
+  "folder": "b9GWNuJFvboRBJQV",
+  "name": "Defletores de raios",
+  "type": "misc",
+  "_id": "Q15HcCp4SVNttIBs",
+  "img": "systems/olddragon2e/assets/icons/weapon.svg",
+  "system": {
+    "odo_id": "defletores-de-raios",
+    "description": "Garantem 25% de chance de redirecionar contra o atacante qualquer ataque de raios que a nave sofra, por 1d4 rodadas. Cabe em nave: pequena, média.",
+    "quantity": 1,
+    "cost": "",
+    "weight_in_load": 0,
+    "weight_in_grams": 0,
+    "magic_item": false,
+    "is_equipped": false
+  },
+  "effects": [],
+  "flags": {
+    "starwars-sd": {
+      "equipamentoDeNave": {
+        "chave": "defletores",
+        "grupo": "combate",
+        "cabe": {
+          "Pequena": true,
+          "Média": true,
+          "Gigantesca": false,
+          "Colossal": false
+        }
+      }
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 1400000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!Q15HcCp4SVNttIBs"
+}

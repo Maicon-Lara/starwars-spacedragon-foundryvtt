@@ -156,7 +156,7 @@ export {
 /* Os equipamentos adicionais da T10-4 vivem em equipamentos-nave.js. */
 export {
   EQUIPAMENTOS_DE_NAVE, TAMANHOS, cabeNoTamanho, equipamentosDoTamanho,
-  efeitosInstalados, conflitosDeTamanho, armasInstaladas,
+  efeitosInstalados, conflitosDeTamanho, armasInstaladas, decidirInstalacao,
   FONTES_DE_ENERGIA, DADO_DE_AUTONOMIA, formulaDeGasto, custoDeAbastecimento,
   VEICULOS, PENALIDADE_POR, penalidadeNaJPR,
 } from "./equipamentos-nave.js";

@@ -18,6 +18,7 @@ import {
   efeitosInstalados, conflitosDeTamanho, armasInstaladas,
   FONTES_DE_ENERGIA, DADO_DE_AUTONOMIA, formulaDeGasto, custoDeAbastecimento,
   VEICULOS, penalidadeNaJPR,
+  decidirInstalacao,
 } from "../starwars-sd-module/module/equipamentos-nave.js";
 
 const problemas = [];
@@ -197,6 +198,49 @@ confere(penalidadeNaJPR(19) === 0, "abaixo de 20 não há penalidade");
 confere(penalidadeNaJPR(20) === -2, "exatamente 20 já dá −2");
 confere(penalidadeNaJPR(0) === 0 && penalidadeNaJPR(-5) === 0,
   "resultado nulo ou negativo não vira bônus para o alvo");
+
+// ── INSTALAR ARRASTANDO ───────────────────────────────────────────────────
+//
+// O compêndio de Equipamentos traz os quinze da T10-4 como itens, e arrastar um
+// deles para a nave o instala. A decisão é a mesma do botão — a matriz da T10-4
+// decidindo o que cabe em que tamanho —, e é por isso que ela mora aqui e não na
+// ficha: a regra num lugar só, testável sem o Foundry em volta.
+{
+  // O Acelerador hiperespacial NÃO cabe em nave pequena (a tabela é explícita),
+  // e cabe em média.
+  const emCaca = decidirInstalacao("acelerador", { tamanho: "Pequena", nomeDaNave: "Ala-X" });
+  confere(emCaca.acao === "naoCabe", `acelerador em nave pequena: ${emCaca.acao}`);
+  confere(emCaca.mensagem.includes("Pequena"),
+    "o aviso precisa dizer o TAMANHO — é o que a pessoa usa para escolher outra nave");
+  confere(emCaca.mensagem.includes("T10-4"), "o aviso cita a tabela, para a mesa poder conferir");
+
+  const emCargueiro = decidirInstalacao("acelerador", { tamanho: "Média", nomeDaNave: "Falcão" });
+  confere(emCargueiro.acao === "instalar", `acelerador em nave média: ${emCargueiro.acao}`);
+  confere(emCargueiro.mensagem.includes("Falcão"), "a confirmação diz em qual nave instalou");
+
+  // Já instalado não reinstala, e avisa em vez de calar
+  const repetido = decidirInstalacao("acelerador", {
+    tamanho: "Média", instalados: { acelerador: true }, nomeDaNave: "Falcão",
+  });
+  confere(repetido.acao === "jaInstalado", `reinstalar devia avisar, veio ${repetido.acao}`);
+
+  // Item que não é equipamento de nave: a ficha ignora em silêncio, porque
+  // arrastar uma espada para a nave não é erro — é só nada.
+  confere(decidirInstalacao("inexistente", { tamanho: "Média" }).acao === "desconhecido",
+    "item desconhecido não pode virar instalação");
+  confere(decidirInstalacao(undefined, {}).acao === "desconhecido", "chave ausente não quebra");
+
+  // E a decisão vale para TODOS os quinze, nos quatro tamanhos: o que a matriz
+  // diz é o que a função faz, sem exceção escrita à mão.
+  for (const [chave, e] of Object.entries(EQUIPAMENTOS_DE_NAVE)) {
+    for (const t of TAMANHOS) {
+      const r = decidirInstalacao(chave, { tamanho: t });
+      const esperado = e.cabe?.[t] === true ? "instalar" : "naoCabe";
+      confere(r.acao === esperado,
+        `${e.rotulo} em nave ${t}: esperava ${esperado}, veio ${r.acao}`);
+    }
+  }
+}
 
 if (problemas.length) {
   for (const p of problemas) console.error(`  ✘ ${p}`);
