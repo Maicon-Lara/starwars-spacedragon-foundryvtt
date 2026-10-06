@@ -119,6 +119,26 @@ confere(cartoes >= 4, `só ${cartoes} cartões encontrados — a varredura deve 
 
   // E `opacity` não entra: ela mascara a queda de contraste.
   confere(!/opacity:/.test(bloco), "o cartão não deve usar opacity — ela esconde o contraste perdido");
+
+  // ── NADA DE `color: inherit` NO CARTÃO ────────────────────────────────────
+  //
+  // `inherit` é uma CADEIA, e cadeia tem elo fraco: ele só funciona se o bloco
+  // pai tiver recebido a cor. Na mesa o pai não recebeu, e o cartão saiu pela
+  // metade — sobreviveram as classes com cor própria e sumiram as que herdavam,
+  // justamente a linha da ação e o número do resultado.
+  //
+  // Dentro deste cartão, cor é sempre explícita.
+  // Em TODA regra do cartão, e não só no bloco principal: a primeira versão
+  // desta conferência olhava apenas `.chat-message .MARCA {…}` e deixava passar
+  // o `inherit` que estava nas classes nomeadas — que era justamente onde ele
+  // estava, e onde fez o cartão sair pela metade.
+  for (const m of css.matchAll(/([^{}]*)\{([^{}]*)\}/g)) {
+    if (!m[1].includes(MARCA)) continue;
+    confere(!/color:\s*inherit/.test(m[2]),
+      `"${m[1].trim().slice(-60)}" usa color: inherit — ` +
+      `a herança depende do bloco pai ter cor, e na mesa ele não teve`);
+  }
+
 }
 
 /* ── TODA CLASSE DO CARTÃO ESTÁ NOMEADA NO CSS ───────────────────────────── */

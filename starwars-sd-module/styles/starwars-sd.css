@@ -682,7 +682,12 @@ body.theme-dark .starwars-sd.nave-ficha.tema-auto,
  * A lista é gerada das classes que os cartões usam de fato, e
  * tools/teste-cartoes.mjs recusa classe nova que não esteja aqui. */
 .chat-message .sw-cartao .result,
-.chat-message .message-content .sw-cartao .result { color: inherit !important; }
+.chat-message .message-content .sw-cartao .result {
+  /* COR EXPLÍCITA, e não `inherit`: a herança depende de o bloco pai ter
+   * recebido a cor, e na mesa ele não recebeu — sobreviveram só as classes com
+   * cor própria. Ver a mesma nota em spacedragon.css. */
+  color: #191813 !important;
+}
 
 /* O texto de apoio é mais leve de propósito — por MISTURA com o fundo acima, e
  * não por `opacity` sobre cor herdada, que esconde a queda de contraste. */
