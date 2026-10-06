@@ -765,3 +765,65 @@ body.starwars-sd-tema.spacedragon-tema.sw-papel .olddragon2e.sheet {
   --color-text-subtle: #6b665c;
   --color-text-emphatic: #0d0c0a;
 }
+
+/* ── A FONTE DO LIVRO NA FICHA ──────────────────────────────────────────────
+ *
+ * O tema trocava as cores e deixava a tipografia do sistema. Metade do caráter
+ * de um livro está na letra, e as três famílias do livro já viajam no módulo
+ * (styles/fontes.css): Orbitron nos títulos, Saira Condensed nos rótulos,
+ * Source Serif no texto corrido.
+ *
+ * ── PELAS VARIÁVEIS DO FOUNDRY, E NÃO POR SELETOR ───────────────────────────
+ *
+ * Mesmo caminho que deu certo com as cores: redefinir `--font-primary` e
+ * `--font-body` no escopo da ficha alcança o que o sistema desenhar hoje e o que
+ * ele desenhar depois. Caçar seletor a seletor é perseguir o sistema a cada
+ * versão dele — e a folha do módulo Space Dragon tem um comentário inteiro sobre
+ * ter aprendido isso do jeito difícil.
+ *
+ * ── POR QUE ORBITRON NÃO VAI EM TUDO ────────────────────────────────────────
+ *
+ * Porque ela é larga e geométrica: ótima num título de duas palavras, ilegível
+ * numa ficha cheia de rótulo curto em caixa apertada ("M. DES", "Prox. Nível").
+ * Os rótulos ficam com a condensada, que foi desenhada para isso.
+ */
+body.starwars-sd-tema .olddragon2e.sheet,
+body.starwars-sd-tema.spacedragon-tema .olddragon2e.sheet {
+  --font-primary: var(--sw-display);
+  --font-body: var(--sw-serif);
+  --font-h1: var(--sw-display);
+  --font-h2: var(--sw-display);
+  --font-h3: var(--sw-condensada);
+}
+
+/* Os títulos de seção e as abas: a letra do letreiro, em tamanho de título.
+ *
+ * `.tab-title` ficaria bem aqui e NÃO entra: é caminho interno do sistema, e
+ * esta folha tem uma regra contra copiá-los — quem os copia reescreve na versão
+ * seguinte dele. As barras de seção já recebem a fonte pelo `--font-h3` acima. */
+body.starwars-sd-tema .olddragon2e.sheet h1,
+body.starwars-sd-tema .olddragon2e.sheet h2,
+body.starwars-sd-tema .olddragon2e.sheet .sheet-tabs .item {
+  font-family: var(--sw-display);
+  letter-spacing: .02em;
+}
+
+/* Os rótulos: condensada, que cabe onde a geométrica não caberia. */
+body.starwars-sd-tema .olddragon2e.sheet label,
+body.starwars-sd-tema .olddragon2e.sheet legend,
+body.starwars-sd-tema .olddragon2e.sheet th {
+  font-family: var(--sw-condensada);
+  letter-spacing: .03em;
+}
+
+/* O texto corrido — descrição, habilidades, notas: a serifada do livro. */
+body.starwars-sd-tema .olddragon2e.sheet .description,
+body.starwars-sd-tema .olddragon2e.sheet .editor-content,
+body.starwars-sd-tema .olddragon2e.sheet p,
+body.starwars-sd-tema .olddragon2e.sheet li {
+  font-family: var(--sw-serif);
+}
+
+/* Os NÚMEROS ficam como estão: trocar a fonte de um campo numérico mexe na
+ * largura dele, e a ficha do sistema tem caixas de tamanho fixo. Não vale o
+ * risco por um ganho que ninguém nota num "14". */
