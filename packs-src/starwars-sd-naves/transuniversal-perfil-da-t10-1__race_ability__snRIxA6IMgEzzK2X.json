@@ -1,0 +1,44 @@
+{
+  "folder": "6D7zmvxaEHiaDeWn",
+  "name": "Transuniversal — perfil da T10-1",
+  "type": "race_ability",
+  "_id": "snRIxA6IMgEzzK2X",
+  "img": "systems/olddragon2e/assets/icons/diamond.svg",
+  "system": {
+    "description": "<p><strong>Transuniversal</strong> · Gigantesca · tripulação 100+</p><ul><li><strong>CP 24</strong> — já aplicado pela raça.</li><li><strong>Movimento 40 m</strong> — já aplicado pela raça.</li><li><strong>BA +10</strong> e <strong>JP 10</strong> — a JP é número-alvo: menor é melhor.</li><li><strong>PV 1d1000</strong> — role e anote; a tabela dá o dado, não o número.</li><li><strong>Esquiva 1d6</strong></li></ul>",
+    "xp": null,
+    "jp": {
+      "jpc": false,
+      "jpd": false,
+      "jps": false
+    },
+    "bonus_damage": 0,
+    "bonus_damage_condition": "none",
+    "bonus_damage_condition_2": "none",
+    "rogue_talent": "none",
+    "rogue_talent_2": "none",
+    "daily_uses": 0,
+    "natural_armor": 24,
+    "load_modifier": 0,
+    "max_load_override": 0,
+    "armor_weight_modifier": 0
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 6000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!snRIxA6IMgEzzK2X"
+}

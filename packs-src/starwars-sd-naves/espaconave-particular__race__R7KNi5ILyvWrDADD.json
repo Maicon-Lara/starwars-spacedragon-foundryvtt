@@ -1,0 +1,39 @@
+{
+  "folder": "6D7zmvxaEHiaDeWn",
+  "name": "Espaçonave particular",
+  "type": "race",
+  "_id": "R7KNi5ILyvWrDADD",
+  "img": "systems/olddragon2e/assets/icons/alignment.svg",
+  "system": {
+    "flavor": "<p><em>Média · tripulação 1 a 10</em></p>",
+    "description": "<p>Tipo de nave da <strong>Tabela 10-1</strong>. Arraste para a ficha e o <strong>CP 26</strong> e o <strong>movimento 100 m</strong> entram sozinhos.</p><p>BA <strong>+12</strong>, JP <strong>16</strong> e PV <strong>3d100</strong> ficam na habilidade abaixo — a BA e a JP vêm da classe no Old Dragon 2, e o PV é uma fórmula que a mesa rola.</p>",
+    "movement": 100,
+    "movement_fly": 0,
+    "movement_notes": "100 m · velocidade 3 no combate tático",
+    "infravision": 0,
+    "infravision_notes": "",
+    "alignment_tendency": "none",
+    "alignment_notes": "Não se aplica a uma nave.",
+    "race_abilities": [
+      "Compendium.starwars-sd.starwars-sd-naves.Item.K6HtStjeskUcc8Oz"
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 400000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!R7KNi5ILyvWrDADD"
+}

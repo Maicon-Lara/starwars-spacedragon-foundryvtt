@@ -48,6 +48,7 @@ import { tabelas } from "./data/tabelas.mjs";
 import { EFEITOS_CRITICOS, templateDoQdV, QDV_ID, QDV_FLAG } from "./data/efeitos-criticos.mjs";
 import { equipamentosDeNave } from "./data/equipamentos-de-nave.mjs";
 import { camarasDeNave } from "./data/camaras-de-nave.mjs";
+import { tiposComoRaca } from "./data/tipos-como-raca.mjs";
 
 const ROOT = path.resolve(fileURLToPath(import.meta.url), "../..");
 const SRC = path.join(ROOT, "packs-src");
@@ -475,6 +476,27 @@ function buildNavesDocs() {
     doc.flags["starwars-sd"] = { equipamentoDeNave: { chave: e.chave, grupo: e.grupo, cabe: e.cabe } };
     docs.push(doc);
   });
+
+  /* ── OS TIPOS DE NAVE, COMO RAÇA ─────────────────────────────────────────
+   *
+   * A nave numa ficha de personagem É de um tipo, e tipo é o que a raça
+   * significa no Old Dragon 2. Arrastar "Caça" para a ficha dá CP 28 e
+   * movimento 150 m pela maquinaria do sistema — `natural_armor` e `movement`
+   * —, sem automação nossa.
+   *
+   * Cada tipo leva uma habilidade de raça com o que a raça NÃO carrega: a BA e
+   * a JP (que no sistema vêm da classe) e a fórmula de PV (que a mesa rola).
+   */
+  {
+    const fTipos = pasta("Tipos de nave (T10-1)", "nave-tipo-pasta");
+    tiposComoRaca.forEach((t, i) => {
+      const hab = raceAbilityDoc(t.habilidade, fTipos._id, `nave-tipo:${t.chave}`, (i + 1) * 1000);
+      docs.push(hab);
+      const raca = raceDoc({ ...t }, fTipos._id, [itemUuid(NAVES_PACK, hab._id)]);
+      raca.sort = (i + 1) * 100000;
+      docs.push(raca);
+    });
+  }
 
   const fCamaras = pasta("Câmaras (T10-2)", "nave-camara-pasta");
   camarasDeNave.forEach((c, i) => {
