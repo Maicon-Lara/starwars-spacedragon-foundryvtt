@@ -1,5 +1,26 @@
 # Changelog
 
+## 1.37.1 — a Ficha de Nave não estava rodando nada
+
+A 1.37.0 registrava a ficha, trocava os rótulos das abas, e **paravam aí**: o
+seletor de cômodos e a ocultação de XP/alinhamento/idiomas não apareciam.
+
+A cadeia da ficha é `ActorSheet → OD2CharacterSheet → SDCharacterSheet` —
+Application **V1**, como o próprio Foundry avisa no console. E numa ficha V1 o
+`_onRender` **não é chamado**: quem roda é `activateListeners`. Eu tinha posto
+todo o trabalho no `_onRender` e deixado só o renomear das abas no
+`activateListeners`. Os 25 testes passavam porque nenhum deles perguntava *qual
+dos dois caminhos a mesa usa*.
+
+Agora os dois chamam o mesmo preparador, e há uma asserção que falha se um
+deles fizer menos que o outro.
+
+**Nada mais a esconder, e isso foi medido.** Eu tinha anotado "esconder
+escalada, voo e natação". Varrendo a ficha aberta, esses campos não existem: há
+um bloco de movimento só, com um valor derivado — e movimento a nave tem, vindo
+do tipo pela raça. A lista do que falta esconder agora está vazia, e foi o
+console que a fechou.
+
 ## 1.37.0 — os cômodos da nave se marcam na ficha
 
 Na aba **Câmaras** da Ficha de Nave, cada cômodo da T10-2 agora tem um seletor

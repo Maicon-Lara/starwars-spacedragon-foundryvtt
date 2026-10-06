@@ -93,15 +93,16 @@ export const ESCONDIDOS = [
 ];
 
 /**
- * O que AINDA aparece e não deveria: os campos de movimento que não são o
- * normal — escalada, voo, natação.
+ * Nada mais a esconder, e isto foi MEDIDO — não suposto.
  *
- * Eles não estão no schema do ator (vêm do item de raça), e esta lista só
- * aceita o que foi MEDIDO numa ficha de verdade. Escrever um seletor por
- * palpite é como se esconde meia ficha sem querer. Fica para quando houver uma
- * ficha de nave aberta para medir.
+ * Eu tinha anotado "esconder escalada, voo e natação". Varrendo a ficha aberta,
+ * esses campos NÃO EXISTEM: há um bloco `.mv` só, com um `system.current_movement`
+ * derivado e desabilitado. E movimento a nave tem — vem do tipo, pela raça.
+ *
+ * Fica como aviso para a próxima vez que eu quiser esconder algo: a lista do
+ * que sobra nasce do console, e não da memória.
  */
-export const AINDA_A_ESCONDER = ["movimento de escalada, voo e natação"];
+export const AINDA_A_ESCONDER = [];
 
 /* ── O QUE A NAVE NÃO USA ─────────────────────────────────────────────────── */
 
@@ -282,16 +283,10 @@ export function registrarFichaDeNavePC() {
       });
     }
 
+    /** O caminho da V2, para quando o sistema migrar. Faz o mesmo que a V1. */
     async _onRender(contexto, opcoes) {
       await super._onRender?.(contexto, opcoes);
-      try {
-        renomearAbas(this.element);
-        marcarComodos(this.element, this.actor);
-        ocultarOQueNaveNaoUsa(this.element);
-        this.#ligarComodos();
-      } catch (e) {
-        console.warn(`${ID} | não pude preparar a Ficha de Nave`, e);
-      }
+      this.#prepararFicha(this.element);
     }
 
     /**
@@ -300,9 +295,8 @@ export function registrarFichaDeNavePC() {
      * Delegado na raiz e registrado uma vez: a ficha redesenha a cada
      * alteração, e um listener por botão se multiplicaria a cada render.
      */
-    #ligarComodos() {
-      const raiz = this.element;
-      if (!raiz || raiz.dataset.swComodos === "1") return;
+    #ligarComodos(raiz) {
+      if (!raiz?.dataset || raiz.dataset.swComodos === "1") return;
       raiz.dataset.swComodos = "1";
       raiz.addEventListener("click", async (ev) => {
         const b = ev.target?.closest?.(`.${CLASSE_SELETOR}`);
@@ -320,13 +314,33 @@ export function registrarFichaDeNavePC() {
       });
     }
 
-    /** O mesmo para a ficha V1, que usa activateListeners em vez de _onRender. */
+    /**
+     * O caminho que REALMENTE roda nesta mesa.
+     *
+     * A cadeia medida no console é ActorSheet → OD2CharacterSheet →
+     * SDCharacterSheet: Application **V1**. Numa ficha V1 o Foundry não chama
+     * `_onRender` — chama `activateListeners`. Eu tinha deixado aqui só o
+     * renomear das abas, e com isso o seletor de cômodos e a ocultação dos
+     * campos nunca apareceriam, embora o teste passasse verde.
+     *
+     * Então os dois caminhos fazem o MESMO, e chamam a mesma função: o dia em
+     * que o sistema migrar para V2, nada aqui precisa mudar.
+     */
     activateListeners(html) {
       super.activateListeners?.(html);
+      this.#prepararFicha(html instanceof HTMLElement ? html : html?.[0]);
+    }
+
+    /** Tudo o que a Ficha de Nave faz no DOM, num lugar só. */
+    #prepararFicha(raiz) {
+      if (!raiz) return;
       try {
-        renomearAbas(html instanceof HTMLElement ? html : html?.[0]);
+        renomearAbas(raiz);
+        marcarComodos(raiz, this.actor);
+        ocultarOQueNaveNaoUsa(raiz);
+        this.#ligarComodos(raiz);
       } catch (e) {
-        console.warn(`${ID} | não pude renomear as abas da Ficha de Nave`, e);
+        console.warn(`${ID} | não pude preparar a Ficha de Nave`, e);
       }
     }
   }

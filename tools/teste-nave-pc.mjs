@@ -22,6 +22,7 @@ import { fileURLToPath } from "node:url";
 import {
   ROTULOS, MARCA_NAVE_PC, renomearAbas,
   CAMPOS_NAO_USADOS, CLASSE_OCULTO, alvoDoCampo, ocultarOQueNaveNaoUsa,
+  AINDA_A_ESCONDER,
 } from "../starwars-sd-module/module/nave-pc-ficha.js";
 
 const RAIZ = path.resolve(fileURLToPath(import.meta.url), "../..");
@@ -262,6 +263,75 @@ function no(tag, name, filhos = []) {
   }
 }
 
+/* ── O CAMINHO QUE REALMENTE RODA ─────────────────────────────────────────── */
+//
+// ── A ASSERÇÃO QUE ESTE ARQUIVO NÃO TINHA, E DEVIA ──────────────────────────
+//
+// A cadeia da ficha, medida no console da mesa, é:
+//   ActorSheet → OD2CharacterSheet → SDCharacterSheet
+// e o Foundry avisa: "The V1 Application framework is deprecated".
+//
+// Numa ficha V1 o Foundry NÃO chama `_onRender`. Chama `activateListeners`. Eu
+// tinha posto tudo no `_onRender` e só o renomear das abas no
+// `activateListeners` — então o seletor de cômodos e a ocultação dos campos
+// nunca apareceriam na mesa, com a suíte toda verde. Esta asserção é a que
+// pega isso.
+
+{
+  const js = fs.readFileSync(
+    path.join(RAIZ, "starwars-sd-module", "module", "nave-pc-ficha.js"), "utf8");
+
+  const corpoDe = (nome) => {
+    const i = js.indexOf(nome);
+    if (i < 0) return "";
+    // do nome até o fecho do bloco, contando chaves
+    let j = js.indexOf("{", i), nivel = 0, k = j;
+    for (; k < js.length; k += 1) {
+      if (js[k] === "{") nivel += 1;
+      else if (js[k] === "}") { nivel -= 1; if (nivel === 0) break; }
+    }
+    return js.slice(j, k + 1);
+  };
+
+  const DEVERES = ["renomearAbas", "marcarComodos", "ocultarOQueNaveNaoUsa", "ligarComodos"];
+
+  const v1 = corpoDe("activateListeners(html)");
+  confere(v1.length > 0, "a ficha não tem activateListeners — e é o único caminho que roda na V1");
+
+  // ele pode fazer o trabalho direto ou delegar; o que não pode é fazer MENOS
+  const delegado = /#prepararFicha|prepararFicha/.test(v1);
+  const preparador = delegado ? corpoDe("#prepararFicha(raiz)") : v1;
+  confere(preparador.length > 0, "activateListeners delega para um preparador que não existe");
+
+  for (const dever of DEVERES) {
+    confere(preparador.includes(dever),
+      `o caminho da V1 (activateListeners) não chama ${dever}() — a base É V1, ` +
+      `então isso simplesmente não aconteceria na mesa, com a suíte verde`);
+  }
+
+  // e o caminho da V2 faz o mesmo, para o dia em que o sistema migrar
+  const v2 = corpoDe("_onRender(contexto, opcoes)");
+  if (v2) {
+    const preparadorV2 = /#prepararFicha|prepararFicha/.test(v2) ? preparador : v2;
+    for (const dever of DEVERES) {
+      confere(preparadorV2.includes(dever),
+        `o caminho da V2 (_onRender) não chama ${dever}() — os dois têm de fazer o mesmo`);
+    }
+  }
+}
+
+{
+  // A lista do que sobra tem de nascer de medição. Varri a ficha aberta: existe
+  // UM bloco `.mv` com `system.current_movement` derivado, e não há escalada,
+  // voo nem natação. Movimento a nave TEM, vindo do tipo pela raça.
+  confere(AINDA_A_ESCONDER.length === 0,
+    `AINDA_A_ESCONDER tem ${AINDA_A_ESCONDER.length} item(ns): ` +
+    `${AINDA_A_ESCONDER.join(", ")}. Se é para esconder de verdade, mede e esconde; ` +
+    `se não existe na ficha, sai da lista`);
+  confere(!CAMPOS_NAO_USADOS.some((c) => /movement|movimento/i.test(c)),
+    "o movimento entrou na lista de esconder — a nave TEM movimento, vem do tipo");
+}
+
 /* ── O REGISTRO ───────────────────────────────────────────────────────────── */
 {
   const js = fs.readFileSync(
@@ -294,6 +364,7 @@ if (problemas.length) {
 console.log(
   "  ✔ ficha de nave sobre personagem: o mapa de rótulos do autor, a troca no DOM " +
     "(e não no lang global), sem acumular ao redesenhar, aba desconhecida intacta, " +
-    "os atributos escondidos por CSS, XP/alinhamento/idiomas marcados pelo CAMINHO DO " +
+    "o caminho da V1 (activateListeners) fazendo TUDO — a base é V1 e o _onRender não " +
+    "roda —, os atributos escondidos por CSS, XP/alinhamento/idiomas marcados pelo CAMINHO DO " +
     "SCHEMA com freio de subida (nunca a casca da ficha), e o registro no ready sem virar padrão"
 );
