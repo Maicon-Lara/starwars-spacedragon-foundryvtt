@@ -741,6 +741,28 @@ body.theme-dark .starwars-sd.nave-ficha.tema-auto,
   border-color: var(--sd-barra, #1b2340);
 }
 
+/* ── A FICHA DE NAVE SOBRE A DE PERSONAGEM ──────────────────────────────────
+ *
+ * Ela herda a ficha do sistema inteira e só traz esta classe. O que o módulo
+ * faz aqui é ESCONDER o que a nave não tem — e esconder, não remover: o sistema
+ * redesenha a ficha a cada alteração, e o que se remove volta no próximo
+ * render. Esconder sobrevive ao redesenho sem uma linha de JS.
+ *
+ * ── O QUE SOME, E POR QUÊ ───────────────────────────────────────────────────
+ *
+ * Os atributos: uma nave não tem Força nem Intelecto, e inventar equivalentes
+ * encheria a ficha de campos sem uso. XP e nível: nave não sobe de nível, ela é
+ * comprada e reformada. Os três movimentos extras: a nave tem UMA velocidade,
+ * e escalada, voo e natação não têm equivalente. Alinhamento e idiomas: idem.
+ *
+ * Nada aqui é `!important`: a ficha é nossa pela classe, e esconder não disputa
+ * com ninguém. */
+.starwars-sd-nave-pc .sheet-tabs .item[data-tab="attributes"],
+.starwars-sd-nave-pc .tab[data-tab="attributes"],
+.starwars-sd-nave-pc .character-tab-attributes {
+  display: none;
+}
+
 /* ── A FICHA ENCOLHENDO ────────────────────────────────────────────────────
  *
  * O perfil tático nasceu com SEIS colunas, e seis colunas numa janela estreita

@@ -28,6 +28,7 @@ import { NaveFicha, NaveFichaTatico, NaveFichaLivro, TIPO_NAVE } from "./nave-fi
 import { ligarPontosDeForca } from "./pontos-de-forca.js";
 import { registrarTema, ligarTema } from "./tema.js";
 import { registrarCombate, ligarResumoDaRodada, avisarSeOrdemPerdida } from "./ordem-inversao.js";
+import { registrarFichaDeNavePC } from "./nave-pc-ficha.js";
 
 const ID = "starwars-sd";
 
@@ -240,6 +241,12 @@ Hooks.once("ready", () => {
   // O painel de Pontos de Força na ficha do personagem. Injetado, não
   // substitui nada do sistema, e sai junto se o módulo for desligado.
   ligarPontosDeForca();
+
+  // A Ficha de Nave sobre a de personagem. No `ready` pelo mesmo motivo que o
+  // vizinho documenta: `registerSheet` entra numa fila processada depois do
+  // `init`, e no `init` o registro de fichas do sistema ainda está vazio — a
+  // classe-base não seria encontrada e a ficha não entraria.
+  registrarFichaDeNavePC();
 
   game.starwarsSD = {};
 });
