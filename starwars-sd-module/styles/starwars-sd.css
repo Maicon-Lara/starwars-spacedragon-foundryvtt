@@ -801,6 +801,13 @@ body.theme-dark .starwars-sd.nave-ficha.tema-auto,
 .starwars-sd-nave-pc .comodo-ausente { opacity: .55; }
 .starwars-sd-nave-pc .comodo-danificada { text-decoration: line-through dotted; }
 
+/* O que a nave não usa: XP, alinhamento e idiomas.
+   Quem marca é a ficha (ocultarOQueNaveNaoUsa), pelo CAMINHO DO SCHEMA e com
+   limite de subida — ver a nota em nave-pc-ficha.js. Aqui só se esconde o que
+   já foi marcado, e nunca um seletor do sistema: assim um erro de mira não
+   pode apagar a ficha inteira. */
+.starwars-sd-nave-pc .sw-nave-nao-usa { display: none !important; }
+
 /* ── A FICHA ENCOLHENDO ────────────────────────────────────────────────────
  *
  * O perfil tático nasceu com SEIS colunas, e seis colunas numa janela estreita

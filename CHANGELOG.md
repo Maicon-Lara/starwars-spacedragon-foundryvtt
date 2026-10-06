@@ -19,6 +19,28 @@ desmarcar nove em vez de marcar três.
 O estado é do **ator**, não da classe: duas naves do mesmo tipo têm os mesmos
 doze cômodos possíveis e configurações diferentes, como deve ser.
 
+### A ficha perde o que a nave não tem
+
+**XP, alinhamento e idiomas** saem da ficha. Nave não ganha experiência — é
+comprada, reformada e perdida; não tem alinhamento; e não fala idioma nenhum,
+porque quem fala é a tripulação, e ela tem a ficha dela.
+
+Os campos são achados pelo **caminho do schema** (`system.current_xp`,
+`system.details.alignment`, `system.details.languages`), e não pelo rótulo: o
+rótulo muda quando a mesa troca de idioma, o caminho não.
+
+**O freio que importa:** esconder um campo significa esconder o bloquinho que o
+embrulha, para o rótulo não ficar órfão — e subir no DOM atrás desse bloquinho é
+justamente como se apaga uma ficha por acidente. A subida para em dois níveis,
+nunca encosta na casca da ficha e desiste assim que o contêiner guarda outro
+campo. No pior caso o rótulo fica sozinho; a ficha não abre em branco.
+
+Ainda aparecem os campos de movimento que não são o normal (escalada, voo,
+natação). Eles não estão no schema do ator — vêm do item de raça — e um seletor
+por palpite é como se esconde meia ficha. Ficam para quando houver uma ficha
+aberta para medir.
+
+
 ## 1.27.0 — a nave montada peça a peça
 
 Os **equipamentos adicionais (T10-4)** e as **câmaras (T10-2)** entram no

@@ -88,11 +88,87 @@ export const ROTULOS = {
  * sobrevive ao redesenho sem uma linha de JS.
  */
 export const ESCONDIDOS = [
-  "a aba de atributos",
-  "os campos de movimento que não são o normal (escalada, voo, natação)",
-  "XP e progressão de nível",
-  "idiomas e alinhamento",
+  "a aba de atributos (por CSS, pelo seletor da aba)",
+  "XP, alinhamento e idiomas (marcados pela ficha, pelo caminho do schema)",
 ];
+
+/**
+ * O que AINDA aparece e não deveria: os campos de movimento que não são o
+ * normal — escalada, voo, natação.
+ *
+ * Eles não estão no schema do ator (vêm do item de raça), e esta lista só
+ * aceita o que foi MEDIDO numa ficha de verdade. Escrever um seletor por
+ * palpite é como se esconde meia ficha sem querer. Fica para quando houver uma
+ * ficha de nave aberta para medir.
+ */
+export const AINDA_A_ESCONDER = ["movimento de escalada, voo e natação"];
+
+/* ── O QUE A NAVE NÃO USA ─────────────────────────────────────────────────── */
+
+/**
+ * Os campos da ficha de personagem que não existem numa nave, pelo CAMINHO DO
+ * SCHEMA e não pelo rótulo.
+ *
+ * Medidos no ator exportado da mesa, não adivinhados. O `name` do input vem do
+ * schema do sistema; o rótulo vem da tradução. Casar pelo rótulo quebraria se a
+ * mesa trocasse de idioma, e casar pela posição quebraria na próxima versão do
+ * sistema.
+ *
+ * Nave não ganha XP (é comprada, reformada e perdida), não tem alinhamento e
+ * não fala idioma nenhum — quem fala é a tripulação, e ela tem a ficha dela.
+ */
+export const CAMPOS_NAO_USADOS = [
+  "system.current_xp",
+  "system.details.alignment",
+  "system.details.languages",
+];
+
+export const CLASSE_OCULTO = "sw-nave-nao-usa";
+
+/**
+ * De quem esconder: o campo, ou o bloquinho que o embrulha com o rótulo.
+ *
+ * ── A REGRA QUE EVITA O DESASTRE ──────────────────────────────────────────
+ *
+ * Sobe no máximo DOIS níveis, e para assim que o contêiner guardar outro campo
+ * além deste. Sem esse freio, um `:has()` largo ou um `closest(".form-group")`
+ * que não casasse acabaria escondendo o `<form>` — e a ficha abriria em branco.
+ * Já quebramos a interface uma vez por mirar largo; aqui o pior caso é esconder
+ * só o input e deixar o rótulo órfão, que é feio e não é fatal.
+ */
+export function alvoDoCampo(campo) {
+  let alvo = campo;
+  for (let i = 0; i < 2; i += 1) {
+    const pai = alvo.parentElement;
+    if (!pai) break;
+    // a casca da ficha nunca é alvo, por mais vazia que pareça
+    if (/^(FORM|SECTION|BODY|HTML|MAIN|ASIDE)$/.test(pai.tagName ?? "")) break;
+    // o contêiner guarda outra coisa também: esconder levaria essa outra junto
+    if ((pai.querySelectorAll?.("[name]")?.length ?? 0) > 1) break;
+    alvo = pai;
+  }
+  return alvo;
+}
+
+/**
+ * Marca o que a nave não usa. Esconder é do CSS; aqui só se põe a classe.
+ *
+ * Idempotente de propósito: roda a cada render, e a ficha redesenha a cada
+ * alteração do ator.
+ */
+export function ocultarOQueNaveNaoUsa(raiz) {
+  if (!raiz?.querySelector) return 0;
+  let marcados = 0;
+  for (const caminho of CAMPOS_NAO_USADOS) {
+    for (const campo of raiz.querySelectorAll(`[name="${caminho}"]`) ?? []) {
+      const alvo = alvoDoCampo(campo);
+      if (alvo.classList?.contains(CLASSE_OCULTO)) continue;
+      alvo.classList?.add(CLASSE_OCULTO);
+      marcados += 1;
+    }
+  }
+  return marcados;
+}
 
 let Registrada = null;
 
@@ -211,6 +287,7 @@ export function registrarFichaDeNavePC() {
       try {
         renomearAbas(this.element);
         marcarComodos(this.element, this.actor);
+        ocultarOQueNaveNaoUsa(this.element);
         this.#ligarComodos();
       } catch (e) {
         console.warn(`${ID} | não pude preparar a Ficha de Nave`, e);

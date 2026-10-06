@@ -19,7 +19,10 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { ROTULOS, MARCA_NAVE_PC, renomearAbas } from "../starwars-sd-module/module/nave-pc-ficha.js";
+import {
+  ROTULOS, MARCA_NAVE_PC, renomearAbas,
+  CAMPOS_NAO_USADOS, CLASSE_OCULTO, alvoDoCampo, ocultarOQueNaveNaoUsa,
+} from "../starwars-sd-module/module/nave-pc-ficha.js";
 
 const RAIZ = path.resolve(fileURLToPath(import.meta.url), "../..");
 const problemas = [];
@@ -130,6 +133,135 @@ confere(renomearAbas(null) === 0, "raiz ausente não quebra");
   }
 }
 
+/* ── O QUE A NAVE NÃO USA ─────────────────────────────────────────────────── */
+//
+// ── A ASSERÇÃO QUE MAIS IMPORTA AQUI ────────────────────────────────────────
+//
+// O FREIO DE SUBIDA. Esconder um campo significa esconder o bloquinho que o
+// embrulha, para o rótulo não ficar órfão — e subir no DOM atrás desse
+// bloquinho é como se apaga a ficha inteira por acidente. Já quebramos a
+// interface uma vez por mirar largo. Então: no máximo dois níveis, nunca a
+// casca da ficha, e para assim que o contêiner guardar outro campo.
+
+/** DOM de mentira com o que `alvoDoCampo` precisa: pai, tag, classes e busca. */
+function no(tag, name, filhos = []) {
+  const n = {
+    tagName: tag.toUpperCase(),
+    parentElement: null,
+    filhos,
+    name,
+    classes: new Set(),
+  };
+  n.classList = { add: (c) => n.classes.add(c), contains: (c) => n.classes.has(c) };
+  n.querySelectorAll = (sel) => {
+    const alvo = /\[name="([^"]+)"\]/.exec(sel)?.[1] ?? null;
+    const fora = [];
+    const desce = (x) => {
+      for (const f of x.filhos ?? []) {
+        if (f.name != null && (alvo === null || f.name === alvo)) fora.push(f);
+        desce(f);
+      }
+    };
+    desce(n);
+    return fora;
+  };
+  n.querySelector = (sel) => n.querySelectorAll(sel)[0] ?? null;
+  for (const f of filhos) f.parentElement = n;
+  return n;
+}
+
+{
+  // um campo sozinho no bloquinho: sobe, e o rótulo vai com ele
+  const campo = no("input", "system.current_xp");
+  const grupo = no("div", undefined, [no("label"), campo]);
+  no("form", undefined, [grupo]);
+  confere(alvoDoCampo(campo) === grupo,
+    "um campo sozinho no bloquinho devia esconder o bloquinho, senão o rótulo fica órfão");
+
+  // o bloquinho guarda OUTRO campo: não sobe, ou levaria o vizinho junto
+  const c2 = no("input", "system.current_xp");
+  const vizinho = no("input", "system.hp.value");
+  const juntos = no("div", undefined, [c2, vizinho]);
+  no("form", undefined, [juntos]);
+  confere(alvoDoCampo(c2) === c2,
+    "o bloquinho tinha outro campo (os PV!) e foi escolhido mesmo assim — " +
+    "esconder levaria o vizinho junto");
+
+  // filho direto da casca: nunca sobe
+  for (const casca of ["form", "section", "main", "aside", "body"]) {
+    const c = no("input", "system.details.alignment");
+    no(casca, undefined, [c]);
+    confere(alvoDoCampo(c) === c,
+      `o alvo subiu até o <${casca}> — a ficha abriria EM BRANCO`);
+  }
+
+  // dois níveis, e para
+  const c3 = no("input", "system.details.languages");
+  const n1 = no("div", undefined, [c3]);
+  const n2 = no("div", undefined, [n1]);
+  const n3 = no("div", undefined, [n2]);
+  no("form", undefined, [n3]);
+  confere(alvoDoCampo(c3) === n2, "a subida devia parar no segundo nível");
+  confere(alvoDoCampo(c3) !== n3, "subiu três níveis — o limite é dois, e por bom motivo");
+
+  // sem pai nenhum não quebra
+  confere(alvoDoCampo(no("input", "x")).tagName === "INPUT", "campo sem pai devia devolver ele mesmo");
+}
+
+{
+  // A ficha de verdade, em miniatura: os três campos que a nave não usa, e
+  // quatro que ela USA. Marcar um dos quatro é o erro que esta asserção pega.
+  const usados = ["system.hp.value", "system.level", "system.jpd.class", "system.economy.gp"];
+  const alvos = CAMPOS_NAO_USADOS.map((c) => no("div", undefined, [no("label"), no("input", c)]));
+  const outros = usados.map((c) => no("div", undefined, [no("label"), no("input", c)]));
+  const raiz = no("form", undefined, [...alvos, ...outros]);
+
+  const marcados = ocultarOQueNaveNaoUsa(raiz);
+  confere(marcados === CAMPOS_NAO_USADOS.length,
+    `marcou ${marcados} de ${CAMPOS_NAO_USADOS.length} campos`);
+  for (const g of alvos) {
+    confere(g.classes.has(CLASSE_OCULTO), "um campo que a nave não usa ficou à vista");
+  }
+  for (const g of outros) {
+    confere(!g.classes.has(CLASSE_OCULTO),
+      "um campo que a nave USA foi escondido — PV, nível, JP e créditos são dela");
+  }
+
+  // roda em todo render: não pode remarcar nem acumular
+  confere(ocultarOQueNaveNaoUsa(raiz) === 0,
+    "a segunda passada remarcou o que já estava marcado");
+
+  confere(ocultarOQueNaveNaoUsa(null) === 0, "raiz ausente não quebra");
+}
+
+{
+  // Os caminhos são do SCHEMA, medidos no ator exportado da mesa. Rótulo
+  // traduzido mudaria de idioma para idioma; posição mudaria de versão para
+  // versão. O `name` não muda.
+  for (const c of CAMPOS_NAO_USADOS) {
+    confere(c.startsWith("system."),
+      `"${c}" não parece um caminho de schema — casar por rótulo quebra ao trocar o idioma`);
+  }
+  confere(CAMPOS_NAO_USADOS.includes("system.current_xp"), "a nave não ganha XP");
+  confere(!CAMPOS_NAO_USADOS.some((c) => /hp|level|jp[dcs]|economy/.test(c)),
+    "um campo que a nave usa entrou na lista de esconder");
+}
+
+{
+  const css = fs
+    .readFileSync(path.join(RAIZ, "starwars-sd-module", "styles", "starwars-sd.css"), "utf8")
+    .replace(/\/\*[\s\S]*?\*\//g, "");
+  // A regra esconde o que a FICHA marcou, e nunca um seletor do sistema: é o
+  // que garante que um erro de mira não pode apagar a ficha inteira.
+  const regras = css.split("}").filter((r) => r.includes(`.${CLASSE_OCULTO}`));
+  confere(regras.length > 0, `o CSS não esconde .${CLASSE_OCULTO}`);
+  for (const r of regras) {
+    confere(r.includes(MARCA_NAVE_PC),
+      `a regra de .${CLASSE_OCULTO} não está presa a .${MARCA_NAVE_PC} — ` +
+      `pegaria fichas que não são naves`);
+  }
+}
+
 /* ── O REGISTRO ───────────────────────────────────────────────────────────── */
 {
   const js = fs.readFileSync(
@@ -162,5 +294,6 @@ if (problemas.length) {
 console.log(
   "  ✔ ficha de nave sobre personagem: o mapa de rótulos do autor, a troca no DOM " +
     "(e não no lang global), sem acumular ao redesenhar, aba desconhecida intacta, " +
-    "os atributos escondidos por CSS, e o registro no ready sem virar padrão"
+    "os atributos escondidos por CSS, XP/alinhamento/idiomas marcados pelo CAMINHO DO " +
+    "SCHEMA com freio de subida (nunca a casca da ficha), e o registro no ready sem virar padrão"
 );
