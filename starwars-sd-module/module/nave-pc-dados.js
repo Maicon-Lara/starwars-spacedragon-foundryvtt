@@ -130,27 +130,40 @@ export function postosOcupados(nave) {
  * sistema não aceita habilidades avulsas. Então a nave não se monta tirando
  * cômodos da lista — ela se monta DIZENDO quais existem.
  *
- * O padrão é "ausente", e não "instalada": uma nave nova não tem hospital nem
- * laboratório porque a classe os listou. Quem constrói escolhe.
+ * ── O PADRÃO É INSTALADA, E ISSO É REGRA DA CASA ────────────────────────
+ *
+ * «Toda nave nasce com as doze instaladas. Doze câmaras é o estado de uma nave
+ * que voa; quem perdeu alguma marca na ficha.» — Naves — Regras Compiladas, §4.
+ *
+ * Eu tinha feito o contrário, com o argumento de que o Mestre não deveria
+ * desmarcar nove cômodos para ficar com três. O argumento vale para um
+ * construtor de naves; não vale aqui, porque nesta mesa a nave começa inteira e
+ * o jogo é PERDER câmaras. A pendência 3 do documento registra que a decisão foi
+ * do autor, entre o livro (o Mestre escolhe) e a Base de Operações (todas), e
+ * que venceu a Base.
+ *
+ * Consequência prática: o registro na flag guarda só o que DIVERGE do padrão.
+ * Uma nave recém-criada tem `camaras: {}` e as doze de pé.
  */
 
 export const ESTADOS = ["instalada", "danificada", "ausente"];
 
-/** O estado de um cômodo nesta nave. Sem registro, ausente. */
+/** O estado de um cômodo nesta nave. Sem registro, instalada — a nave voa. */
 export function estadoDoComodo(nave, chave) {
   const e = nave?.camaras?.[chave];
-  return ESTADOS.includes(e) ? e : "ausente";
+  return ESTADOS.includes(e) ? e : "instalada";
 }
 
 /**
  * O próximo estado, para o clique que gira entre eles.
  *
- * A ordem é a da vida da nave: ausente → instalada → danificada → ausente. Um
- * clique constrói, o seguinte marca o estrago, o terceiro arranca o que sobrou.
+ * A ordem segue o que acontece na mesa, e a mesa começa com a nave inteira:
+ * instalada → danificada → ausente → instalada. O primeiro clique marca o
+ * estrago, o segundo arranca o que sobrou, o terceiro reconstrói.
  */
 export function proximoEstado(atual) {
   const i = ESTADOS.indexOf(atual);
-  if (i < 0) return "instalada";
+  if (i < 0) return "danificada";
   return ESTADOS[(i + 1) % ESTADOS.length];
 }
 

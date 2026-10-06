@@ -109,30 +109,40 @@ confere(aplicarTipo(undefined) === null, "tipo ausente não quebra");
 // aceita habilidades avulsas. Então a nave não se monta tirando cômodos da
 // lista: ela se monta dizendo quais existem.
 //
-// A ASSERÇÃO QUE MAIS IMPORTA: o padrão é AUSENTE. Se fosse "instalada", toda
-// nave nova nasceria com hospital, laboratório e corredor de acoplagem só
-// porque a classe os listou — e o Mestre teria de desmarcar nove cômodos em vez
-// de marcar três.
+// A ASSERÇÃO QUE MAIS IMPORTA: o padrão é INSTALADA, e é REGRA DA CASA.
+//
+//   «Toda nave nasce com as doze instaladas. Doze câmaras é o estado de uma nave
+//   que voa; quem perdeu alguma marca na ficha.»
+//     — Naves — Regras Compiladas, §4
+//
+// Eu tinha feito o contrário, argumentando que o Mestre não deveria desmarcar
+// nove cômodos para ficar com três. O argumento serve a um construtor de naves;
+// nesta mesa a nave começa inteira e o jogo é PERDER câmaras. A pendência 3 do
+// documento registra que a escolha entre o livro e a Base de Operações foi do
+// autor, e que venceu a Base.
 {
   confere(ESTADOS.length === 3, `${ESTADOS.length} estados, deviam ser 3`);
 
-  confere(estadoDoComodo({}, "ponte") === "ausente",
-    "sem registro, o cômodo tem de ser AUSENTE — senão a nave nova nasce completa");
-  confere(estadoDoComodo({ camaras: {} }, "ponte") === "ausente", "nave sem cômodo nenhum");
-  confere(estadoDoComodo({ camaras: { ponte: "instalada" } }, "ponte") === "instalada",
+  confere(estadoDoComodo({}, "ponte") === "instalada",
+    "sem registro, o cômodo tem de estar INSTALADO — toda nave nasce com as doze (§4)");
+  confere(estadoDoComodo({ camaras: {} }, "ponte") === "instalada",
+    "nave sem registro nenhum é uma nave inteira, não uma carcaça");
+  confere(estadoDoComodo({ camaras: { ponte: "ausente" } }, "ponte") === "ausente",
+    "o que foi perdido tem de ser respeitado — é o que a ficha guarda");
+  confere(estadoDoComodo({ camaras: { ponte: "danificada" } }, "ponte") === "danificada",
     "o estado gravado tem de ser respeitado");
-  confere(estadoDoComodo({ camaras: { ponte: "lixo" } }, "ponte") === "ausente",
-    "estado inválido vira ausente, e não quebra a ficha");
+  confere(estadoDoComodo({ camaras: { ponte: "lixo" } }, "ponte") === "instalada",
+    "estado inválido cai no padrão, e não quebra a ficha");
 
-  // o ciclo do clique segue a vida da nave: constrói, estraga, arranca
-  confere(proximoEstado("ausente") === "instalada", "o primeiro clique constrói");
-  confere(proximoEstado("instalada") === "danificada", "o segundo marca o estrago");
-  confere(proximoEstado("danificada") === "ausente", "o terceiro arranca o que sobrou");
-  confere(proximoEstado("lixo") === "instalada", "estado desconhecido começa o ciclo");
+  // o ciclo do clique segue o que acontece na mesa, e a mesa começa inteira
+  confere(proximoEstado("instalada") === "danificada", "o primeiro clique marca o estrago");
+  confere(proximoEstado("danificada") === "ausente", "o segundo arranca o que sobrou");
+  confere(proximoEstado("ausente") === "instalada", "o terceiro reconstrói");
+  confere(proximoEstado("lixo") === "danificada",
+    "estado desconhecido entra no ciclo a partir do padrão");
 
   confere(comodosInstalados({ camaras: { a: "instalada", b: "danificada", c: "instalada" } }) === 2,
     "só o instalado conta — o danificado não sustenta a nave");
-  confere(comodosInstalados({}) === 0, "nave sem cômodos");
 }
 
 if (problemas.length) {
@@ -142,5 +152,5 @@ if (problemas.length) {
 console.log(
   "  ✔ dados da nave sobre personagem: a T10-1 inteira linha a linha, o PV como " +
     "FÓRMULA e não rolado, a flag parcial completada sem perder nada, o aviso de " +
-    "nave incompleta, os cinco postos, e o estado dos cômodos (ausente por padrão)"
+    "nave incompleta, os cinco postos, e o estado dos cômodos (INSTALADA por padrão: toda nave nasce com as doze, §4)"
 );
