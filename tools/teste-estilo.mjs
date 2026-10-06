@@ -335,6 +335,48 @@ confere(temaJs.includes("default: false"),
   }
 }
 
+// ── OS DOIS MODOS DEFINEM AS MESMAS VARIÁVEIS ─────────────────────────────
+//
+// O bloco escuro redefine as variáveis de texto do Foundry porque sobre o fundo
+// de espaço elas têm de ser claras. Quando o pergaminho forçado fez aquele bloco
+// ceder, NINGUÉM mais as definia — e com o VTT em escuro elas voltavam ao claro
+// dele, sobre o pergaminho claro.
+//
+// O sintoma foi preciso e cruel: a ficha certa, e todos os RÓTULOS invisíveis.
+// Valor legível, rótulo não.
+//
+// A lista é EXPLÍCITA. A primeira versão desta conferência extraía as variáveis
+// dos dois blocos por regex e comparava os conjuntos — e passou verde com uma
+// variável apagada, porque a extração não pegou o bloco que eu imaginava. Lista
+// escrita à mão não tem esse problema: o que está aqui é o que se cobra.
+{
+  const VARIAVEIS = [
+    "--color-text-dark-primary",
+    "--color-text-dark-secondary",
+    "--color-text-dark-inactive",
+    "--color-text-dark-5",
+    "--color-text-dark-6",
+    "--color-text-primary",
+    "--color-text-secondary",
+    "--color-text-subtle",
+    "--color-text-emphatic",
+  ];
+  const livro2 = fs.readFileSync(
+    new URL("../starwars-sd-module/styles/livro.css", import.meta.url), "utf8")
+    .replace(/\/\*[\s\S]*?\*\//g, "");
+
+  // o trecho do modo pergaminho: do seletor até o fim do bloco
+  const i = livro2.indexOf("body.starwars-sd-tema.sw-papel .olddragon2e.sheet");
+  confere(i > 0, "falta o bloco de cores de texto do modo pergaminho");
+  const trecho = i > 0 ? livro2.slice(i, livro2.indexOf("}", i)) : "";
+
+  for (const v of VARIAVEIS) {
+    confere(trecho.includes(v + ":"),
+      `o modo pergaminho não define ${v} — com o VTT em escuro ela fica clara ` +
+      `sobre o pergaminho claro, e o rótulo some`);
+  }
+}
+
 if (problemas.length) {
   for (const p of problemas) console.error(`  ✘ ${p}`);
   process.exit(1);

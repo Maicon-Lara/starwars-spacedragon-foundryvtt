@@ -735,3 +735,33 @@ body.starwars-sd-tema.spacedragon-tema.sw-espaco {
   --sd-tinta: var(--sw-texto);
   --sd-brilho: var(--sw-fosforo);
 }
+
+/* ── O PERGAMINHO FORÇADO PRECISA DAS CORES DE TEXTO ───────────────────────
+ *
+ * O bloco escuro do livro redefine NOVE variáveis de texto do Foundry, porque
+ * sobre o fundo de espaço elas têm de ser claras. Ao fazer aquele bloco ceder ao
+ * pergaminho forçado, ninguém mais as definia — e com o Foundry em tema escuro
+ * elas voltavam ao claro dele, sobre o pergaminho claro.
+ *
+ * O resultado na mesa: a ficha ficou certa, e TODOS os rótulos sumiram —
+ * "Nome", "Raça", "Movimento", os nomes dos atributos, "Base", "Armadura".
+ * Valor legível, rótulo invisível.
+ *
+ * As nove voltam aqui, com os valores do papel. Contrastes sobre o pergaminho
+ * (#f2ebd9): principal 14,6:1, secundário 7,9:1, apagado 4,8:1 — todos acima dos
+ * 4,5:1 da WCAG, o último por pouco, e é o texto menos importante da ficha.
+ *
+ * Escopado na ficha, como o bloco escuro: a interface do Foundry em volta tem o
+ * próprio contraste resolvido. */
+body.starwars-sd-tema.sw-papel .olddragon2e.sheet,
+body.starwars-sd-tema.spacedragon-tema.sw-papel .olddragon2e.sheet {
+  --color-text-dark-primary: #1a1a18;
+  --color-text-dark-secondary: #4a463d;
+  --color-text-dark-inactive: #6b665c;
+  --color-text-dark-5: #5a564c;
+  --color-text-dark-6: #4a463d;
+  --color-text-primary: #1a1a18;
+  --color-text-secondary: #4a463d;
+  --color-text-subtle: #6b665c;
+  --color-text-emphatic: #0d0c0a;
+}
