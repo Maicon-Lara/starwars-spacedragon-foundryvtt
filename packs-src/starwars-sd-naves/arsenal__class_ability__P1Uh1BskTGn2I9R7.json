@@ -1,0 +1,56 @@
+{
+  "folder": "R9hxTBUBZgHhhJzx",
+  "name": "Arsenal",
+  "type": "class_ability",
+  "_id": "P1Uh1BskTGn2I9R7",
+  "img": "systems/olddragon2e/assets/icons/kit.svg",
+  "system": {
+    "description": "<p>Estoque seguro das armas, munições e vestes reserva do grupo. Trancas digitais reforçadas: invadir exige Sabotagem com −20%. Permite recarga rápida de baterias energéticas antes das missões.</p><p><strong>Obra:</strong> 80.000 créditos, 1 semana. <strong>Reparo em campo:</strong> 20.000 créditos, metade do prazo (T10-2).</p>",
+    "level": 1,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {
+    "starwars-sd": {
+      "camaraDeNave": {
+        "chave": "arsenal"
+      }
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 6000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!P1Uh1BskTGn2I9R7"
+}

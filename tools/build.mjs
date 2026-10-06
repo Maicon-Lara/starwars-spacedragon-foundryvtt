@@ -49,6 +49,7 @@ import { EFEITOS_CRITICOS, templateDoQdV, QDV_ID, QDV_FLAG } from "./data/efeito
 import { equipamentosDeNave } from "./data/equipamentos-de-nave.mjs";
 import { camarasDeNave } from "./data/camaras-de-nave.mjs";
 import { tiposComoRaca } from "./data/tipos-como-raca.mjs";
+import { classesDeNave, comodosDaNave } from "./data/classes-de-nave.mjs";
 
 const ROOT = path.resolve(fileURLToPath(import.meta.url), "../..");
 const SRC = path.join(ROOT, "packs-src");
@@ -495,6 +496,32 @@ function buildNavesDocs() {
       const raca = raceDoc({ ...t }, fTipos._id, [itemUuid(NAVES_PACK, hab._id)]);
       raca.sort = (i + 1) * 100000;
       docs.push(raca);
+    });
+  }
+
+  /* ── UMA CLASSE POR TIPO, E OS CÔMODOS COMO HABILIDADES ──────────────────
+   *
+   * No Old Dragon 2 a BA e a JP vêm da CLASSE, por nível — e na T10-1 elas
+   * variam por tipo. Uma classe "Nave" genérica daria os mesmos números a
+   * todos; uma por tipo traz os certos pela maquinaria do sistema.
+   *
+   * As doze habilidades são COMPARTILHADAS pelas oito classes: o cômodo é o
+   * mesmo em qualquer nave, e o que muda é quais estão instalados — estado do
+   * ator, não da classe. Um cômodo, uma descrição, um lugar para corrigir.
+   */
+  {
+    const fComodos = pasta("Cômodos (T10-2)", "nave-comodo-pasta");
+    const uuids = comodosDaNave.map((c, i) => {
+      const hab = classAbilityDoc(c, fComodos._id, "nave-comodo", (i + 1) * 1000);
+      docs.push(hab);
+      return itemUuid(NAVES_PACK, hab._id);
+    });
+
+    const fClasses = pasta("Tipos de nave — classe (T10-1)", "nave-classe-pasta");
+    classesDeNave.forEach((c, i) => {
+      const cls = classDoc(c, fClasses._id, uuids);
+      cls.sort = (i + 1) * 100000;
+      docs.push(cls);
     });
   }
 

@@ -1,0 +1,56 @@
+{
+  "folder": "R9hxTBUBZgHhhJzx",
+  "name": "Câmara de Despressurização",
+  "type": "class_ability",
+  "_id": "WgWr1uS6xQd9aqFB",
+  "img": "systems/olddragon2e/assets/icons/kit.svg",
+  "system": {
+    "description": "<p>Saída segura para atividade extraveicular no vácuo ou em superfícies tóxicas, sem perder pressão nem contaminar a nave.</p><p><strong>Obra:</strong> 60.000 créditos, 1 semana. <strong>Reparo em campo:</strong> 15.000 créditos, metade do prazo (T10-2).</p>",
+    "level": 1,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {
+    "starwars-sd": {
+      "camaraDeNave": {
+        "chave": "despressurizacao"
+      }
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 10000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!WgWr1uS6xQd9aqFB"
+}

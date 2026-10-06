@@ -1,0 +1,56 @@
+{
+  "folder": "R9hxTBUBZgHhhJzx",
+  "name": "Aposentos da Tripulação",
+  "type": "class_ability",
+  "_id": "0CwesenW0CyLdRnn",
+  "img": "systems/olddragon2e/assets/icons/kit.svg",
+  "system": {
+    "description": "<p>Recuperação natural de PV e de Alcance da Força para a tripulação orgânica durante viagens no hiperespaço. Sem aposentos, a viagem simplesmente não recupera nada.</p><p><strong>Obra:</strong> 40.000 créditos, 1 semana. <strong>Reparo em campo:</strong> 10.000 créditos, metade do prazo (T10-2).</p>",
+    "level": 1,
+    "level3": "",
+    "level6": "",
+    "level10": "",
+    "rogue_talents": [],
+    "daily_uses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    }
+  },
+  "effects": [],
+  "flags": {
+    "starwars-sd": {
+      "camaraDeNave": {
+        "chave": "aposentos"
+      }
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "olddragon2e",
+    "systemVersion": "This is auto replaced",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": "starwarssdbuild1",
+    "exportSource": null
+  },
+  "sort": 2000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!0CwesenW0CyLdRnn"
+}
