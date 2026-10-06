@@ -29,11 +29,29 @@
 
 const ID = "starwars-sd";
 const CLASSE = "starwars-sd-tema";
+/* As duas classes de MODO. Nenhuma delas = segue o tema do Foundry. */
+const CLASSE_PAPEL = "sw-papel";
+const CLASSE_ESPACO = "sw-espaco";
 const VIZINHO = "spacedragon-tema";
 
 function aplicar(ligado) {
   document.body?.classList.toggle(CLASSE, !!ligado);
   if (ligado) avisarSeSozinho();
+}
+
+/**
+ * Pergaminho, espaço, ou o que o Foundry mandar.
+ *
+ * O padrão (`auto`) segue o tema do VTT — pergaminho no claro, espaço no
+ * escuro —, que é o que o livro faz em cada meio. Mas o tema do Foundry é uma
+ * escolha de INTERFACE, e a cara do livro é de CENÁRIO: quem roda o VTT escuro
+ * e quer a ficha em pergaminho tem direito de pedir, e não tinha como.
+ */
+function aplicarModo(modo) {
+  const b = document.body;
+  if (!b) return;
+  b.classList.toggle(CLASSE_PAPEL, modo === "papel");
+  b.classList.toggle(CLASSE_ESPACO, modo === "espaco");
 }
 
 /**
@@ -56,6 +74,21 @@ function avisarSeSozinho() {
 }
 
 export function registrarTema() {
+  game.settings.register(ID, "modoDoLivro", {
+    name: "starwars-sd.settings.modoDoLivro.nome",
+    hint: "starwars-sd.settings.modoDoLivro.dica",
+    scope: "client",
+    config: true,
+    type: String,
+    choices: {
+      auto: "starwars-sd.settings.modoDoLivro.auto",
+      papel: "starwars-sd.settings.modoDoLivro.papel",
+      espaco: "starwars-sd.settings.modoDoLivro.espaco",
+    },
+    default: "auto",
+    onChange: aplicarModo,
+  });
+
   game.settings.register(ID, "temaDoLivro", {
     name: "starwars-sd.settings.temaDoLivro.nome",
     hint: "starwars-sd.settings.temaDoLivro.dica",
@@ -70,6 +103,9 @@ export function registrarTema() {
 
 export function ligarTema() {
   try {
+    // DENTRO do try, como o tema: num mundo que ainda não registrou a opção,
+    // `settings.get` lança — e lá fora isso derrubaria o tema junto.
+    aplicarModo(game.settings.get(ID, "modoDoLivro"));
     aplicar(game.settings.get(ID, "temaDoLivro"));
   } catch {
     /* mundo sem a opção ainda registrada: nada a fazer */

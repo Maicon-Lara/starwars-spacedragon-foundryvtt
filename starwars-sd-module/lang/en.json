@@ -25,5 +25,10 @@
   "starwars-sd.settings.temaDoLivro.nome": "Book palette on system sheets",
   "starwars-sd.settings.temaDoLivro.dica": "Swaps the colours of Old Dragon 2 sheets for this setting's book palette — parchment in light mode, deep space in dark, and the Tactical green for interactive elements. REQUIRES “Space Dragon theme on sheets” to be enabled in the Space Dragon module settings: its stylesheet is what overrides the system's selectors, and this layer only swaps the colours. Off by default, because in a mixed world one setting's palette on another's sheet is a bug, not a style.",
   "starwars-sd.settings.ordemDeAcao.nome": "Space Dragon Action Order",
-  "starwars-sd.settings.ordemDeAcao.dica": "INVERTS the combat tracker order so the LOWEST value acts first, as the book's Order of Action requires (§7.5 and §10.6), and whispers the round duration to the GM on every turn — twice the highest value, in seconds. Declaring itself (picking the action and rolling the value) lives in the attacks tab, provided by the Space Dragon module; the ship sheet uses the rule in both modes. This applies to EVERY combat in the world: enable it only if the whole table uses this rule."
+  "starwars-sd.settings.ordemDeAcao.dica": "INVERTS the combat tracker order so the LOWEST value acts first, as the book's Order of Action requires (§7.5 and §10.6), and whispers the round duration to the GM on every turn — twice the highest value, in seconds. Declaring itself (picking the action and rolling the value) lives in the attacks tab, provided by the Space Dragon module; the ship sheet uses the rule in both modes. This applies to EVERY combat in the world: enable it only if the whole table uses this rule.",
+  "starwars-sd.settings.modoDoLivro.nome": "Book look: parchment or space",
+  "starwars-sd.settings.modoDoLivro.dica": "By default the book theme follows the Foundry theme — parchment when light, space when dark. Here you pin one of them: the VTT theme is an interface choice, the book's look is a setting choice. Only applies with the book theme enabled.",
+  "starwars-sd.settings.modoDoLivro.auto": "Follow the Foundry theme",
+  "starwars-sd.settings.modoDoLivro.papel": "Always parchment",
+  "starwars-sd.settings.modoDoLivro.espaco": "Always space (dark)"
 }

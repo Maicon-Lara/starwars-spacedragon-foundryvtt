@@ -25,5 +25,10 @@
   "starwars-sd.settings.temaDoLivro.nome": "Paleta do livro nas fichas do sistema",
   "starwars-sd.settings.temaDoLivro.dica": "Troca as cores das fichas do Old Dragon 2 pela paleta do livro deste cenário — pergaminho no claro, o espaço no escuro, e o verde do Tático no interativo. PRECISA do “Tema Space Dragon nas fichas” ligado, nas configurações do módulo Space Dragon: é a folha dele que cobre os seletores do sistema, e esta camada só troca as cores. Começa desligada porque num mundo misto a paleta de um cenário na ficha do outro é erro, não estilo.",
   "starwars-sd.settings.ordemDeAcao.nome": "Ordem de Ação do Space Dragon",
-  "starwars-sd.settings.ordemDeAcao.dica": "INVERTE a ordem do rastreador de combate para que o MENOR valor aja primeiro, como manda a Ordem de Ação do livro (§7.5 e §10.6), e manda ao Mestre a duração da rodada a cada virada — o dobro do maior valor, em segundos. A declaração em si (escolher a ação e rolar o valor) fica na aba de ataques, pelo módulo Space Dragon; a ficha de nave usa a regra nos dois modos. Vale para TODOS os combates do mundo: ligue só se a mesa inteira usa esta regra."
+  "starwars-sd.settings.ordemDeAcao.dica": "INVERTE a ordem do rastreador de combate para que o MENOR valor aja primeiro, como manda a Ordem de Ação do livro (§7.5 e §10.6), e manda ao Mestre a duração da rodada a cada virada — o dobro do maior valor, em segundos. A declaração em si (escolher a ação e rolar o valor) fica na aba de ataques, pelo módulo Space Dragon; a ficha de nave usa a regra nos dois modos. Vale para TODOS os combates do mundo: ligue só se a mesa inteira usa esta regra.",
+  "starwars-sd.settings.modoDoLivro.nome": "Cara do livro: pergaminho ou espaço",
+  "starwars-sd.settings.modoDoLivro.dica": "Por padrão o tema do livro acompanha o tema do Foundry — pergaminho quando ele está claro, espaço quando está escuro. Aqui você fixa um dos dois: o tema do VTT é uma escolha de interface, e a cara do livro é de cenário. Só vale com o tema do livro ligado.",
+  "starwars-sd.settings.modoDoLivro.auto": "Seguir o tema do Foundry",
+  "starwars-sd.settings.modoDoLivro.papel": "Sempre pergaminho",
+  "starwars-sd.settings.modoDoLivro.espaco": "Sempre espaço (escuro)"
 }

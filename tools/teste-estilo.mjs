@@ -300,6 +300,41 @@ confere(temaJs.includes("scope: \"client\""),
 confere(temaJs.includes("default: false"),
   "o tema devia começar desligado: num mundo misto, impor a paleta é erro");
 
+// ── OS DOIS MODOS DO LIVRO ────────────────────────────────────────────────
+//
+// O tema do livro segue o Foundry por padrão: pergaminho no claro, espaço no
+// escuro. Quem roda o VTT escuro e quer a ficha em pergaminho precisa poder
+// pedir — o tema do VTT é escolha de interface, a cara do livro é de cenário.
+//
+// A ASSERÇÃO QUE IMPORTA: com `sw-papel` forçado, as regras ESCURAS têm de
+// ceder. Sem o `:not`, elas continuariam valendo e o pergaminho não apareceria —
+// e o sintoma seria "liguei a opção e não mudou nada", que é o pior tipo.
+{
+  const livro = fs.readFileSync(
+    new URL("../starwars-sd-module/styles/livro.css", import.meta.url), "utf8");
+  const semComentarios = livro.replace(/\/\*[\s\S]*?\*\//g, "");
+
+  // O BLOCO que define as variáveis, e não qualquer menção: `.sw-papel` aparece
+  // dezenas de vezes dentro de `:not(.sw-papel)`, e procurar a classe solta dava
+  // verde mesmo com o bloco apagado — a sabotagem passou batida na primeira
+  // versão desta conferência.
+  for (const [classe, nome] of [["sw-papel", "pergaminho"], ["sw-espaco", "espaço"]]) {
+    const temBloco = new RegExp(
+      String.raw`body\.starwars-sd-tema\.${classe}\s*[,{]`
+    ).test(semComentarios);
+    confere(temBloco, `falta o BLOCO do modo ${nome} (body.starwars-sd-tema.${classe})`);
+  }
+
+  // toda regra que pinta o ESCURO por causa do tema do Foundry tem de ceder
+  for (const m of semComentarios.matchAll(/([^{}]*theme-dark[^{}]*)\{/g)) {
+    for (const parte of m[1].split(",")) {
+      if (!/starwars-sd-tema/.test(parte)) continue;
+      confere(/:not\(\.sw-papel\)/.test(parte),
+        `"${parte.trim().slice(0, 60)}" não cede ao pergaminho forçado`);
+    }
+  }
+}
+
 if (problemas.length) {
   for (const p of problemas) console.error(`  ✘ ${p}`);
   process.exit(1);

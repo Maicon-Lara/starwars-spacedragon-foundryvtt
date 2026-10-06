@@ -353,8 +353,10 @@ body.starwars-sd-tema.spacedragon-tema {
   --sd-brilho: var(--sw-fosforo-claro);
 }
 
-body.theme-dark.starwars-sd-tema,
-body.theme-dark.starwars-sd-tema.spacedragon-tema {
+/* `:not(.sw-papel)` — ver a nota do modo, mais abaixo: com o pergaminho
+   forçado, o escuro do Foundry não manda mais aqui. */
+body.theme-dark.starwars-sd-tema:not(.sw-papel),
+body.theme-dark.starwars-sd-tema:not(.sw-papel).spacedragon-tema:not(.sw-papel) {
   --sd-fundo: var(--sw-espaco);
   --sd-caixa: var(--sw-painel);
   /* o aço, e não o crawl: o texto em cima é branco e fixado pelo vizinho */
@@ -364,8 +366,8 @@ body.theme-dark.starwars-sd-tema.spacedragon-tema {
 }
 
 @media (prefers-color-scheme: dark) {
-  body.starwars-sd-tema:not(.theme-light),
-  body.starwars-sd-tema.spacedragon-tema:not(.theme-light) {
+  body.starwars-sd-tema:not(.theme-light):not(.sw-papel),
+  body.starwars-sd-tema.spacedragon-tema:not(.theme-light):not(.sw-papel) {
     --sd-fundo: var(--sw-espaco);
     --sd-caixa: var(--sw-painel);
     --sd-barra: var(--sw-aco);
@@ -401,8 +403,8 @@ body.starwars-sd-tema .olddragon2e.sheet input[name="name"] {
  * Escopado na ficha, e não no <body>: a interface do Foundry em volta tem o
  * próprio contraste resolvido.
  */
-body.theme-dark.starwars-sd-tema .olddragon2e.sheet,
-body.theme-dark.starwars-sd-tema.spacedragon-tema .olddragon2e.sheet {
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet,
+body.theme-dark.starwars-sd-tema:not(.sw-papel).spacedragon-tema .olddragon2e.sheet {
   --color-text-dark-primary: var(--sw-texto);
   --color-text-dark-secondary: #b9b5a8;
   --color-text-dark-inactive: #8d8a80;
@@ -415,7 +417,7 @@ body.theme-dark.starwars-sd-tema.spacedragon-tema .olddragon2e.sheet {
 }
 
 @media (prefers-color-scheme: dark) {
-  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet,
+  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet,
   body.starwars-sd-tema.spacedragon-tema:not(.theme-light) .olddragon2e.sheet {
     --color-text-dark-primary: var(--sw-texto);
     --color-text-dark-secondary: #b9b5a8;
@@ -467,27 +469,27 @@ body.theme-dark.starwars-sd-tema.spacedragon-tema .olddragon2e.sheet {
  * esmaecem com uma cor pensada para fundo claro, e sobre o espaço ela some.
  * Isto é seletor de ELEMENTO — input, select, textarea —, não um caminho
  * interno do sistema, e por isso não quebra quando o sistema mudar. */
-body.theme-dark.starwars-sd-tema .olddragon2e.sheet input,
-body.theme-dark.starwars-sd-tema .olddragon2e.sheet select,
-body.theme-dark.starwars-sd-tema .olddragon2e.sheet textarea,
-body.theme-dark.starwars-sd-tema.spacedragon-tema .olddragon2e.sheet input,
-body.theme-dark.starwars-sd-tema.spacedragon-tema .olddragon2e.sheet select,
-body.theme-dark.starwars-sd-tema.spacedragon-tema .olddragon2e.sheet textarea {
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet input,
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet select,
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet textarea,
+body.theme-dark.starwars-sd-tema:not(.sw-papel).spacedragon-tema .olddragon2e.sheet input,
+body.theme-dark.starwars-sd-tema:not(.sw-papel).spacedragon-tema .olddragon2e.sheet select,
+body.theme-dark.starwars-sd-tema:not(.sw-papel).spacedragon-tema .olddragon2e.sheet textarea {
   color: var(--sw-texto);
 }
 /* desabilitado continua parecendo desabilitado, mas legível */
-body.theme-dark.starwars-sd-tema .olddragon2e.sheet input:disabled,
-body.theme-dark.starwars-sd-tema .olddragon2e.sheet select:disabled,
-body.theme-dark.starwars-sd-tema.spacedragon-tema .olddragon2e.sheet input:disabled,
-body.theme-dark.starwars-sd-tema.spacedragon-tema .olddragon2e.sheet select:disabled {
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet input:disabled,
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet select:disabled,
+body.theme-dark.starwars-sd-tema:not(.sw-papel).spacedragon-tema .olddragon2e.sheet input:disabled,
+body.theme-dark.starwars-sd-tema:not(.sw-papel).spacedragon-tema .olddragon2e.sheet select:disabled {
   color: #b9b5a8;
   opacity: 1;
 }
 
 @media (prefers-color-scheme: dark) {
-  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet input,
-  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet select,
-  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet textarea {
+  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet input,
+  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet select,
+  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet textarea {
     color: var(--sw-texto);
   }
 }
@@ -502,13 +504,13 @@ body.theme-dark.starwars-sd-tema.spacedragon-tema .olddragon2e.sheet select:disa
  *
  * Achado com o console do navegador, numa ficha real — era um dos três únicos
  * elementos que restavam com contraste baixo. */
-body.theme-dark.starwars-sd-tema .olddragon2e.sheet .diamond,
-body.theme-dark.starwars-sd-tema.spacedragon-tema .olddragon2e.sheet .diamond {
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet .diamond,
+body.theme-dark.starwars-sd-tema:not(.sw-papel).spacedragon-tema .olddragon2e.sheet .diamond {
   color: var(--sw-corrompe);
 }
 
 @media (prefers-color-scheme: dark) {
-  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet .diamond {
+  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet .diamond {
     color: var(--sw-corrompe);
   }
 }
@@ -544,47 +546,47 @@ body.theme-dark.starwars-sd-tema.spacedragon-tema .olddragon2e.sheet .diamond {
  * A diferença importa: um nome de componente sobrevive a uma remodelagem de
  * layout; uma cadeia de descendentes não.
  */
-body.theme-dark.starwars-sd-tema .olddragon2e.sheet ol.item-list,
-body.theme-dark.starwars-sd-tema .olddragon2e.sheet .editor,
-body.theme-dark.starwars-sd-tema .olddragon2e.sheet .character-race,
-body.theme-dark.starwars-sd-tema .olddragon2e.sheet .character-class,
-body.theme-dark.starwars-sd-tema .olddragon2e.sheet option {
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet ol.item-list,
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet .editor,
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet .character-race,
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet .character-class,
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet option {
   background-color: var(--sw-painel) !important;
   color: var(--sw-texto) !important;
 }
 
 /* os campos de valor, que o vizinho pinta num azul-lavanda sem variável */
-body.theme-dark.starwars-sd-tema .olddragon2e.sheet input,
-body.theme-dark.starwars-sd-tema .olddragon2e.sheet select,
-body.theme-dark.starwars-sd-tema .olddragon2e.sheet textarea {
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet input,
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet select,
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet textarea {
   background-color: var(--sw-painel) !important;
   border-color: color-mix(in srgb, var(--sw-aco) 70%, transparent) !important;
 }
 
 /* a zebra das tabelas: branco a 20% vira a cor do capítulo a 7%, como no livro */
-body.theme-dark.starwars-sd-tema .olddragon2e.sheet tbody tr {
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet tbody tr {
   background-color: color-mix(in srgb, var(--sw-cor) 7%, transparent) !important;
 }
 
 /* o editor de texto rico também pinta o próprio corpo */
-body.theme-dark.starwars-sd-tema .olddragon2e.sheet .editor-content,
-body.theme-dark.starwars-sd-tema .olddragon2e.sheet .ProseMirror {
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet .editor-content,
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet .ProseMirror {
   background-color: transparent !important;
   color: var(--sw-texto) !important;
 }
 
 @media (prefers-color-scheme: dark) {
-  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet ol.item-list,
-  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet .editor,
-  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet .character-race,
-  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet .character-class,
-  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet option {
+  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet ol.item-list,
+  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet .editor,
+  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet .character-race,
+  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet .character-class,
+  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet option {
     background-color: var(--sw-painel) !important;
     color: var(--sw-texto) !important;
   }
-  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet input,
-  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet select,
-  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet textarea {
+  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet input,
+  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet select,
+  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet textarea {
     background-color: var(--sw-painel) !important;
   }
 }
@@ -604,16 +606,16 @@ body.theme-dark.starwars-sd-tema .olddragon2e.sheet .ProseMirror {
  * O sintoma denuncia a causa: os campos editáveis continuavam mostrando o
  * valor, e só os calculados sumiam.
  */
-body.theme-dark.starwars-sd-tema .olddragon2e.sheet input,
-body.theme-dark.starwars-sd-tema .olddragon2e.sheet select,
-body.theme-dark.starwars-sd-tema .olddragon2e.sheet textarea {
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet input,
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet select,
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet textarea {
   color: var(--sw-texto) !important;
   -webkit-text-fill-color: var(--sw-texto);
 }
-body.theme-dark.starwars-sd-tema .olddragon2e.sheet input:disabled,
-body.theme-dark.starwars-sd-tema .olddragon2e.sheet input[readonly],
-body.theme-dark.starwars-sd-tema .olddragon2e.sheet select:disabled,
-body.theme-dark.starwars-sd-tema .olddragon2e.sheet textarea:disabled {
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet input:disabled,
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet input[readonly],
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet select:disabled,
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet textarea:disabled {
   /* legível, mas ainda com cara de campo que não se edita */
   color: #c3bfb2 !important;
   -webkit-text-fill-color: #c3bfb2;
@@ -621,14 +623,14 @@ body.theme-dark.starwars-sd-tema .olddragon2e.sheet textarea:disabled {
 }
 
 @media (prefers-color-scheme: dark) {
-  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet input,
-  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet select,
-  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet textarea {
+  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet input,
+  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet select,
+  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet textarea {
     color: var(--sw-texto) !important;
     -webkit-text-fill-color: var(--sw-texto);
   }
-  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet input:disabled,
-  body.starwars-sd-tema:not(.theme-light) .olddragon2e.sheet input[readonly] {
+  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet input:disabled,
+  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet input[readonly] {
     color: #c3bfb2 !important;
     -webkit-text-fill-color: #c3bfb2;
     opacity: 1;
@@ -653,53 +655,83 @@ body.theme-dark.starwars-sd-tema .olddragon2e.sheet textarea:disabled {
  * Não há valor único que sirva aos dois papéis num tema escuro. A saída é
  * tratar este painel à parte, que é o que esta seção faz.
  */
-body.theme-dark.starwars-sd-tema .spacedragon-testes,
-body.theme-dark.starwars-sd-tema .spacedragon-creditos,
-body.theme-dark.starwars-sd-tema .spacedragon-mortais,
-body.theme-dark.starwars-sd-tema .spacedragon-ameaca,
-body.theme-dark.starwars-sd-tema .spacedragon-mental,
-body.theme-dark.starwars-sd-tema .sd-ordem,
-body.theme-dark.starwars-sd-tema .sd-teste {
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .spacedragon-testes,
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .spacedragon-creditos,
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .spacedragon-mortais,
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .spacedragon-ameaca,
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .spacedragon-mental,
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .sd-ordem,
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .sd-teste {
   background: color-mix(in srgb, var(--sw-cor) 8%, transparent) !important;
   border-left-color: var(--sw-cor) !important;
   color: var(--sw-texto) !important;
 }
 
 /* o nome clicável de cada linha, que o tema do vizinho deixa na cor da barra */
-body.theme-dark.starwars-sd-tema .spacedragon-testes .sd-rolar,
-body.theme-dark.starwars-sd-tema .sd-teste .sd-rolar {
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .spacedragon-testes .sd-rolar,
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .sd-teste .sd-rolar {
   color: var(--sw-texto) !important;
 }
-body.theme-dark.starwars-sd-tema .spacedragon-testes .sd-rolar:hover,
-body.theme-dark.starwars-sd-tema .sd-teste .sd-rolar:hover {
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .spacedragon-testes .sd-rolar:hover,
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .sd-teste .sd-rolar:hover {
   color: var(--sw-cor) !important;
 }
 
 /* o número é o que a mesa procura na linha: fica no amarelo do letreiro */
-body.theme-dark.starwars-sd-tema .spacedragon-testes .sd-alvo {
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .spacedragon-testes .sd-alvo {
   color: var(--sw-cor) !important;
 }
 
 @media (prefers-color-scheme: dark) {
-  body.starwars-sd-tema:not(.theme-light) .spacedragon-testes,
-  body.starwars-sd-tema:not(.theme-light) .spacedragon-creditos,
-  body.starwars-sd-tema:not(.theme-light) .spacedragon-mortais,
-  body.starwars-sd-tema:not(.theme-light) .sd-ordem,
-  body.starwars-sd-tema:not(.theme-light) .sd-teste {
+  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .spacedragon-testes,
+  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .spacedragon-creditos,
+  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .spacedragon-mortais,
+  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .sd-ordem,
+  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .sd-teste {
     background: color-mix(in srgb, var(--sw-cor) 8%, transparent) !important;
     border-left-color: var(--sw-cor) !important;
     color: var(--sw-texto) !important;
   }
-  body.starwars-sd-tema:not(.theme-light) .spacedragon-testes .sd-rolar {
+  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .spacedragon-testes .sd-rolar {
     color: var(--sw-texto) !important;
   }
-  body.starwars-sd-tema:not(.theme-light) .spacedragon-testes .sd-alvo {
+  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .spacedragon-testes .sd-alvo {
     color: var(--sw-cor) !important;
   }
 }
 
 /* o <code> dos textos de regra, que o Foundry pinta num azul claro translúcido */
-body.theme-dark.starwars-sd-tema .olddragon2e.sheet code {
+body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet code {
   background: color-mix(in srgb, var(--sw-luz) 14%, transparent) !important;
   color: var(--sw-texto) !important;
+}
+
+/* ── O MODO DO LIVRO: PERGAMINHO OU ESPAÇO, POR ESCOLHA ────────────────────
+ *
+ * Por padrão o tema do livro segue o Foundry: pergaminho no claro, espaço no
+ * escuro. É o que o livro impresso e o livro na tela fazem, cada um no seu meio.
+ *
+ * Mas quem usa o Foundry em escuro e quer a ficha em PERGAMINHO não tinha como
+ * pedir — e era um pedido legítimo: o pergaminho é a cara do livro, e o tema do
+ * VTT é uma escolha de interface, não de cenário.
+ *
+ * `sw-papel` força o pergaminho (as regras escuras acima cedem a ele);
+ * `sw-espaco` força o escuro, mesmo com o Foundry em claro. Sem nenhuma das
+ * duas, o comportamento é o de sempre. */
+body.starwars-sd-tema.sw-papel,
+body.starwars-sd-tema.spacedragon-tema.sw-papel {
+  --sd-fundo: var(--sw-pergaminho);
+  --sd-caixa: #e6dcc3;
+  --sd-barra: #2a2e38;
+  --sd-tinta: #1a1a18;
+  --sd-brilho: var(--sw-fosforo-claro);
+}
+
+body.starwars-sd-tema.sw-espaco,
+body.starwars-sd-tema.spacedragon-tema.sw-espaco {
+  --sd-fundo: var(--sw-espaco);
+  --sd-caixa: var(--sw-painel);
+  --sd-barra: var(--sw-aco);
+  --sd-tinta: var(--sw-texto);
+  --sd-brilho: var(--sw-fosforo);
 }
