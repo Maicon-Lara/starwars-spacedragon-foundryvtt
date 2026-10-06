@@ -1,5 +1,28 @@
 # Changelog
 
+## 1.37.2 — o pergaminho, os botões e a aba
+
+**O painel de Pontos de Força ficava amarelo-neon sobre papel.** O tema tem dois
+conjuntos de variáveis — os `--sd-*` da ficha e os `--sw-*` do livro — e só os
+primeiros cediam ao modo pergaminho forçado. Com o Foundry em tema escuro e o
+pergaminho ligado, o fundo vinha claro e a cor de destaque continuava a do
+crawl, que é a que pinta título e números do painel. Agora os dois modos
+forçados devolvem as onze variáveis, e um teste falha se um deles esquecer
+qualquer uma.
+
+**Os botões "gastar" e "+1" se sobrepunham** na coluna estreita. A regra da
+barra lateral autorizava o botão a encolher abaixo do próprio rótulo, e a
+palavra saía por baixo do botão vizinho. Agora eles descem para a linha de
+baixo em vez de se espremerem.
+
+**A aba aberta se marca pelo filete, não pela cor** — a mudança vem do Space
+Dragon 1.25.0 e vale para as duas mesas.
+
+**As classes de nave avisam a ordem do arrasto.** O sistema recusa classe em
+ator sem raça, e a recusa é só uma notificação no canto: quem arrasta a classe
+primeiro conclui que o item está quebrado. A descrição agora diz para arrastar
+a raça antes.
+
 ## 1.37.1 — a Ficha de Nave não estava rodando nada
 
 A 1.37.0 registrava a ficha, trocava os rótulos das abas, e **paravam aí**: o

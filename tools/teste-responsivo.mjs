@@ -244,6 +244,37 @@ confere(houveContainer, "nenhuma container query nas folhas — o layout não en
   }
 }
 
+/* ── NENHUM BOTÃO PODE ENCOLHER ABAIXO DO PRÓPRIO RÓTULO ──────────────────── */
+//
+// `min-width: 0` num item de flex AUTORIZA o navegador a espremê-lo abaixo do
+// conteúdo. Numa coluna estreita, três botões lado a lado viram três faixas
+// menores que as palavras, e o rótulo escapa por baixo do botão vizinho — foi
+// o que o print da mesa mostrou, com "gastar" cortado atrás do "+1".
+//
+// A ASSERÇÃO: se um botão nosso declara `min-width: 0`, o contêiner dele
+// precisa poder quebrar linha. Sem uma das duas coisas, o texto transborda.
+{
+  const todas = FOLHAS.map((rel) =>
+    semComentarios(fs.readFileSync(path.join(RAIZ, rel), "utf8"))).join("\n");
+  const blocos = [...todas.matchAll(/([^{}]+)\{([^{}]*)\}/g)].map((m) => ({
+    sel: m[1].trim(),
+    corpo: m[2],
+  }));
+
+  for (const b of blocos) {
+    if (!/button/.test(b.sel)) continue;
+    if (!/min-width:\s*0/.test(b.corpo)) continue;
+    // achou um botão autorizado a encolher: o pai tem de deixar quebrar
+    const pai = b.sel.replace(/\s+button.*$/, "").trim();
+    const temWrap = blocos.some(
+      (o) => o.sel.includes(pai) && /flex-wrap:\s*wrap/.test(o.corpo)
+    );
+    confere(temWrap,
+      `"${b.sel.slice(0, 60)}" declara min-width: 0 e o contêiner não quebra linha — ` +
+      `numa coluna estreita o rótulo sai por baixo do botão vizinho`);
+  }
+}
+
 if (problemas.length) {
   for (const p of problemas) console.error(`  ✘ ${p}`);
   process.exit(1);

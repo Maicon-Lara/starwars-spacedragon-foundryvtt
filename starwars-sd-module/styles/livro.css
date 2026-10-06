@@ -521,10 +521,17 @@ body.theme-dark.starwars-sd-tema:not(.sw-papel).spacedragon-tema .olddragon2e.sh
 }
 .sidebar .starwars-sd-pf .pf-acoes {
   justify-content: center;
+  /* Em vez de espremer, DESCE. Sem isto os três botões dividem a coluna e cada
+     um fica menor que a própria palavra. */
+  flex-wrap: wrap;
 }
 .sidebar .starwars-sd-pf .pf-acoes button {
   flex: 1 1 auto;
-  min-width: 0;
+  /* `min-width: 0` estava aqui, e era o bug: ele AUTORIZA o botão a encolher
+     abaixo do conteúdo, e o rótulo "gastar" saía por baixo do "+1" ao lado.
+     `max-content` é o contrário — o botão nunca fica menor que a palavra, e com
+     o wrap acima ele vai para a linha de baixo quando não couber. */
+  min-width: max-content;
 }
 
 /* Os campos de formulário, no escuro.
