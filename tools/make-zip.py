@@ -32,8 +32,32 @@ SUFIXOS_FORA = (".map", ".less", ".bak", "~")
 
 
 def main():
+    # ── O MANIFESTO ANTES DE QUALQUER COISA ──
+    #
+    # Esta leitura ficava DEPOIS de escrever o zip. A 1.37.1 saiu com um
+    # module.json de 0 byte: o json.load estourou, mas o zip inválido já estava
+    # no disco, e quem rodou o comando num pipe não viu o erro. Validar antes
+    # significa que um manifesto quebrado não produz arquivo nenhum.
+    # Antes de tudo, inclusive da validação: se o manifesto estiver quebrado, o
+    # certo é não haver arquivo nenhum. Um zip da versão passada esperando no
+    # disco é o que se publica sem perceber.
     if os.path.exists(OUT):
         os.remove(OUT)
+
+    caminho_manifesto = os.path.join(SRC, "module.json")
+    cru = open(caminho_manifesto, encoding="utf-8").read()
+    if not cru.strip():
+        raise SystemExit(
+            "module.json está VAZIO — nada a empacotar. "
+            "(Um bump que abre o arquivo em modo escrita antes de ler trunca tudo.)"
+        )
+    try:
+        manifesto = json.loads(cru)
+    except json.JSONDecodeError as e:
+        raise SystemExit(f"module.json não é JSON válido: {e}")
+    if not manifesto.get("version"):
+        raise SystemExit("module.json sem version — o Foundry recusa a instalação")
+    print(f"  manifesto {manifesto['id']} {manifesto['version']} ({len(cru)} bytes)")
 
     entradas = []
     with zipfile.ZipFile(OUT, "w", zipfile.ZIP_DEFLATED) as z:
@@ -64,11 +88,17 @@ def main():
     with zipfile.ZipFile(OUT) as z:
         assert z.testzip() is None, "zip corrompido"
         assert not any("\\" in n for n in z.namelist()), "separador inválido"
+        # O manifesto que vale é o de DENTRO do zip — é esse que o Foundry abre.
+        # Conferir o de fora e publicar o de dentro vazio foi o erro da 1.37.1.
+        dentro_cru = z.read("module.json").decode("utf-8")
+        if not dentro_cru.strip():
+            raise SystemExit("o module.json DENTRO do zip está vazio")
+        if json.loads(dentro_cru).get("version") != manifesto["version"]:
+            raise SystemExit("o module.json de dentro do zip é de outra versão")
 
     # ── Sanidade do manifesto ──
     # Todo caminho que o module.json declara precisa ter entrado. É a
     # verificação que teria pego o templates/ faltando na v1.7.0.
-    manifesto = json.load(open(os.path.join(SRC, "module.json"), encoding="utf-8"))
     faltando = []
     for campo in ("esmodules", "scripts", "styles"):
         for caminho in manifesto.get(campo) or []:
