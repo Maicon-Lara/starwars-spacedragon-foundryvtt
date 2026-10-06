@@ -377,6 +377,47 @@ confere(temaJs.includes("default: false"),
   }
 }
 
+// ── O DESTAQUE NO PAPEL PRECISA SER LEGÍVEL E CALMO ───────────────────────
+//
+// `--sw-fosforo-claro` pinta a aba ativa, os links e a caixa marcada quando o
+// livro está em pergaminho. O valor original era o fósforo de tela escurecido
+// só o bastante para passar raspando na WCAG — 4,50:1, com 75% de saturação —
+// e na mesa isso se lê como berrante, não como destaque.
+//
+// Duas exigências, e as duas vieram da mesa: contraste com folga, e saturação
+// baixa o suficiente para não gritar sobre o papel.
+{
+  const livro3 = fs.readFileSync(
+    new URL("../starwars-sd-module/styles/livro.css", import.meta.url), "utf8")
+    .replace(/\/\*[\s\S]*?\*\//g, "");
+
+  const m = livro3.match(/--sw-fosforo-claro:\s*(#[0-9a-fA-F]{6})/);
+  const perg = livro3.match(/--sw-pergaminho:\s*(#[0-9a-fA-F]{6})/);
+  confere(!!m && !!perg, "não achei o destaque do papel ou o pergaminho");
+
+  if (m && perg) {
+    const lum = (hex) => {
+      const n = hex.replace("#", "");
+      const c = [0, 2, 4].map((i) => parseInt(n.slice(i, i + 2), 16) / 255)
+        .map((x) => (x <= 0.03928 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4));
+      return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2];
+    };
+    const [maior, menor] = [lum(m[1]), lum(perg[1])].sort((a, b) => b - a);
+    const contraste = (maior + 0.05) / (menor + 0.05);
+    confere(contraste >= 6,
+      `o destaque no papel tem ${contraste.toFixed(2)}:1 — a WCAG pede 4,5, mas ` +
+      `no limite ele fica desconfortável; aqui se cobra folga`);
+
+    const n = m[1].replace("#", "");
+    const [r, g, b] = [0, 2, 4].map((i) => parseInt(n.slice(i, i + 2), 16) / 255);
+    const max = Math.max(r, g, b), min = Math.min(r, g, b);
+    const saturacao = max === 0 ? 0 : (max - min) / max;
+    confere(saturacao <= 0.55,
+      `o destaque no papel tem ${(saturacao * 100).toFixed(0)}% de saturação — ` +
+      `acima disso ele grita sobre o pergaminho em vez de destacar`);
+  }
+}
+
 if (problemas.length) {
   for (const p of problemas) console.error(`  ✘ ${p}`);
   process.exit(1);

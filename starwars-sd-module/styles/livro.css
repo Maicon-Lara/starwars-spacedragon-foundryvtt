@@ -82,7 +82,14 @@
   --sw-universal-claro: #5a6472;
   --sw-sensivel-claro: #8a7a3c;
   --sw-prata-claro: #6e757a;
-  --sw-fosforo-claro: #1e7a45;
+  /* O fósforo no PAPEL. Não é o mesmo verde da tela: sobre o pergaminho, o
+   * #1e7a45 dava 4,50:1 — o mínimo exato da WCAG — com 75% de saturação, e na
+   * mesa isso se lê como berrante, não como destaque. Este tem 7,7:1 com 41%:
+   * continua verde, e para de gritar.
+   *
+   * Ele pinta a aba ativa, os links e a caixa marcada — tudo o que o tema do
+   * vizinho liga a `--sd-brilho`. */
+  --sw-fosforo-claro: #2f4f3a;
 }
 
 /* ── O ESCURO: a paleta de tela do livro ───────────────────────────────────
