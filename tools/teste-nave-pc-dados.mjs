@@ -18,6 +18,7 @@
 import {
   naveVazia, naveDe, aplicarTipo, faltaConfigurar, POSTOS_DA_NAVE, postosOcupados, FLAG,
   ESTADOS, estadoDoComodo, proximoEstado, comodosInstalados,
+  CAMARAS_BASE, LIVRES_POR_TAMANHO, padraoDoComodo, orcamentoDeCamaras,
 } from "../starwars-sd-module/module/nave-pc-dados.js";
 import { TIPOS } from "../starwars-sd-module/module/tipos-de-nave.js";
 
@@ -103,46 +104,119 @@ confere(aplicarTipo(undefined) === null, "tipo ausente não quebra");
     `dois postos ocupados (espaço em branco não conta), veio ${postosOcupados(comDois)}`);
 }
 
-/* ── O ESTADO DOS CÔMODOS ─────────────────────────────────────────────────── */
+/* ── O MÍNIMO PARA VOAR, E O ORÇAMENTO DO TAMANHO ─────────────────────────── */
 //
-// A classe entrega os doze cômodos a TODA nave — a aba de classe do sistema não
-// aceita habilidades avulsas. Então a nave não se monta tirando cômodos da
-// lista: ela se monta dizendo quais existem.
+// ── A ASSERÇÃO QUE MAIS IMPORTA ─────────────────────────────────────────────
 //
-// A ASSERÇÃO QUE MAIS IMPORTA: o padrão é INSTALADA, e é REGRA DA CASA.
+// Que a Ponte e a Sala de Máquinas venham de fábrica, e SÓ elas. São as duas
+// com veto no texto das regras: sem a Ponte a nave «não pode ser pilotada nem
+// operar escudos ou armas»; a Sala de Máquinas é «lugar obrigatório do
+// acelerador hiperespacial e dos tanques», e sem tanque não há combustível.
 //
-//   «Toda nave nasce com as doze instaladas. Doze câmaras é o estado de uma nave
-//   que voa; quem perdeu alguma marca na ficha.»
-//     — Naves — Regras Compiladas, §4
-//
-// Eu tinha feito o contrário, argumentando que o Mestre não deveria desmarcar
-// nove cômodos para ficar com três. O argumento serve a um construtor de naves;
-// nesta mesa a nave começa inteira e o jogo é PERDER câmaras. A pendência 3 do
-// documento registra que a escolha entre o livro e a Base de Operações foi do
-// autor, e que venceu a Base.
+// Se mais alguma entrasse na base, toda nave nasceria com algo que ninguém
+// escolheu e que custa dinheiro. Se uma das duas saísse, a nave nasceria
+// incapaz de voar — e o Mestre descobriria isso no meio de uma sessão.
+{
+  confere(CAMARAS_BASE.length === 2, `${CAMARAS_BASE.length} câmaras de base, deviam ser 2`);
+  confere(CAMARAS_BASE.includes("ponte"),
+    "a Ponte não vem de fábrica — sem ela a nave não pode ser pilotada (§4)");
+  confere(CAMARAS_BASE.includes("maquinas"),
+    "a Sala de Máquinas não vem de fábrica — é onde ficam os motores e os tanques (§4)");
+
+  // nenhuma outra: as dez restantes são escolha de quem monta a nave
+  for (const c of ["aposentos", "deposito", "refeitorio", "arsenal", "hospital",
+                   "laboratorio", "acoplagem", "despressurizacao", "corredores", "emergencia"]) {
+    confere(!CAMARAS_BASE.includes(c),
+      `"${c}" entrou na base — toda nave nasceria com ela, e ela custa dinheiro`);
+    confere(padraoDoComodo(c) === "ausente", `"${c}" vem instalada de fábrica e não devia`);
+  }
+  confere(padraoDoComodo("ponte") === "instalada", "a Ponte devia vir de pé");
+  confere(padraoDoComodo("maquinas") === "instalada", "a Sala de Máquinas devia vir de pé");
+}
+
 {
   confere(ESTADOS.length === 3, `${ESTADOS.length} estados, deviam ser 3`);
 
-  confere(estadoDoComodo({}, "ponte") === "instalada",
-    "sem registro, o cômodo tem de estar INSTALADO — toda nave nasce com as doze (§4)");
-  confere(estadoDoComodo({ camaras: {} }, "ponte") === "instalada",
-    "nave sem registro nenhum é uma nave inteira, não uma carcaça");
+  // sem registro, vale o de fábrica — e é por isso que a flag de uma nave nova
+  // é `{}` em vez de doze linhas dizendo "ausente"
+  confere(estadoDoComodo({}, "ponte") === "instalada", "a Ponte de uma nave nova devia estar de pé");
+  confere(estadoDoComodo({}, "hospital") === "ausente", "a Ala Hospitalar não vem de fábrica");
+  confere(estadoDoComodo({ camaras: {} }, "maquinas") === "instalada", "nave sem registro nenhum");
+
+  // o que foi gravado manda, inclusive contra o padrão: a Ponte PODE ser
+  // desinstalada, e aí a nave deixa de voar. A regra diz o que acontece; não
+  // impede que aconteça.
   confere(estadoDoComodo({ camaras: { ponte: "ausente" } }, "ponte") === "ausente",
-    "o que foi perdido tem de ser respeitado — é o que a ficha guarda");
-  confere(estadoDoComodo({ camaras: { ponte: "danificada" } }, "ponte") === "danificada",
-    "o estado gravado tem de ser respeitado");
+    "não dá para desinstalar a Ponte — a regra diz a consequência, não proíbe o ato");
+  confere(estadoDoComodo({ camaras: { hospital: "instalada" } }, "hospital") === "instalada",
+    "a câmara comprada tem de ficar instalada");
   confere(estadoDoComodo({ camaras: { ponte: "lixo" } }, "ponte") === "instalada",
     "estado inválido cai no padrão, e não quebra a ficha");
 
-  // o ciclo do clique segue o que acontece na mesa, e a mesa começa inteira
-  confere(proximoEstado("instalada") === "danificada", "o primeiro clique marca o estrago");
-  confere(proximoEstado("danificada") === "ausente", "o segundo arranca o que sobrou");
-  confere(proximoEstado("ausente") === "instalada", "o terceiro reconstrói");
-  confere(proximoEstado("lixo") === "danificada",
-    "estado desconhecido entra no ciclo a partir do padrão");
+  // o ciclo: instala, estraga, arranca
+  confere(proximoEstado("ausente") === "instalada", "o primeiro clique instala");
+  confere(proximoEstado("instalada") === "danificada", "o segundo marca o estrago");
+  confere(proximoEstado("danificada") === "ausente", "o terceiro desinstala");
+  confere(proximoEstado("lixo") === "instalada", "estado desconhecido entra pelo começo");
+}
 
-  confere(comodosInstalados({ camaras: { a: "instalada", b: "danificada", c: "instalada" } }) === 2,
-    "só o instalado conta — o danificado não sustenta a nave");
+/* ── O ORÇAMENTO ──────────────────────────────────────────────────────────── */
+//
+// O tamanho dá o número de câmaras livres. É o que faz um caça ser cabine e
+// motor enquanto uma nave-mãe nasce cidade — e o que deixa duas espaçonaves
+// particulares do mesmo tipo saírem diferentes.
+{
+  confere(LIVRES_POR_TAMANHO["Pequena"] === 0, "nave pequena não tem câmara livre: é cabine e motor");
+  confere(LIVRES_POR_TAMANHO["Média"] === 2, "nave média devia ter 2 livres");
+  confere(LIVRES_POR_TAMANHO["Gigantesca"] === 4, "nave gigantesca devia ter 4 livres");
+  confere(LIVRES_POR_TAMANHO["Colossal"] === 6, "nave colossal devia ter 6 livres");
+
+  // os quatro nomes têm de ser os da T10-1, ou o orçamento sai zero sem avisar
+  const daTabela = new Set(Object.values(TIPOS).map((t) => t.tamanho));
+  for (const t of daTabela) {
+    confere(t in LIVRES_POR_TAMANHO,
+      `a T10-1 tem o tamanho "${t}" e o orçamento não o conhece — a nave ficaria com 0 livres`);
+  }
+
+  const TODAS = ["ponte", "maquinas", "aposentos", "deposito", "refeitorio", "arsenal",
+                 "hospital", "laboratorio", "acoplagem", "despressurizacao", "corredores",
+                 "emergencia"];
+
+  // nave nova: nada gasto, porque a base não conta
+  const nova = orcamentoDeCamaras({}, TODAS, "Média");
+  confere(nova.usadas === 0,
+    `nave nova gastou ${nova.usadas} do orçamento — a Ponte e as Máquinas NÃO contam, ` +
+    `elas não são escolha`);
+  confere(nova.saldo === 2 && !nova.excedeu, "nave média nova devia ter 2 livres de saldo");
+
+  // duas compradas: o saldo zera
+  const cheia = orcamentoDeCamaras(
+    { camaras: { hospital: "instalada", laboratorio: "instalada" } }, TODAS, "Média");
+  confere(cheia.usadas === 2 && cheia.saldo === 0 && !cheia.excedeu,
+    `duas câmaras numa média deviam zerar o saldo, veio ${JSON.stringify(cheia)}`);
+
+  // a danificada OCUPA o lugar: ela está lá, e o conserto custa 25% da obra em
+  // vez da obra inteira — o que só faz sentido se a câmara continuar na nave
+  const comQuebrada = orcamentoDeCamaras(
+    { camaras: { hospital: "danificada" } }, TODAS, "Média");
+  confere(comQuebrada.usadas === 1,
+    "a câmara danificada não contou no orçamento — ela ocupa o lugar, e é por isso " +
+    "que o conserto custa 25% da obra e não a obra inteira");
+
+  // passar do orçamento AVISA, e não trava: nave comprada usada, nave de enredo
+  // e reforma paga em jogo são exatamente as naves interessantes
+  const demais = orcamentoDeCamaras(
+    { camaras: { hospital: "instalada", laboratorio: "instalada", arsenal: "instalada" } },
+    TODAS, "Média");
+  confere(demais.excedeu && demais.saldo === -1,
+    `três câmaras numa média deviam acusar excesso, veio ${JSON.stringify(demais)}`);
+
+  // o caça: zero livres, e a base não o deixa no vermelho
+  const caca = orcamentoDeCamaras({}, TODAS, "Pequena");
+  confere(!caca.excedeu && caca.saldo === 0,
+    "o caça recém-criado já nasce no vermelho — a base não pode contar contra o orçamento");
+
+  confere(orcamentoDeCamaras({}, TODAS, "Inventada").livres === 0, "tamanho desconhecido não quebra");
 }
 
 if (problemas.length) {
@@ -152,5 +226,5 @@ if (problemas.length) {
 console.log(
   "  ✔ dados da nave sobre personagem: a T10-1 inteira linha a linha, o PV como " +
     "FÓRMULA e não rolado, a flag parcial completada sem perder nada, o aviso de " +
-    "nave incompleta, os cinco postos, e o estado dos cômodos (INSTALADA por padrão: toda nave nasce com as doze, §4)"
+    "nave incompleta, os cinco postos, e o mínimo de fábrica (só Ponte e Sala de Máquinas, as duas com veto no texto) e o orçamento de câmaras livres por tamanho, que avisa sem travar"
 );

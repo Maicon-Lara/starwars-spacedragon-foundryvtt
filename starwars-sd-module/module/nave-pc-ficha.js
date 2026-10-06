@@ -212,12 +212,14 @@ export function renomearAbas(raiz) {
 /* ── O SELETOR DE CÔMODOS ─────────────────────────────────────────────────
  *
  * A classe entrega os doze cômodos a toda nave — a aba de classe do sistema
- * não aceita habilidades avulsas, então não dá para montar a nave tirando
- * cômodos da lista. Ela se monta DIZENDO quais existem, e é o que este seletor
- * faz: um clique gira ausente → instalada → danificada → ausente.
+ * não aceita habilidades avulsas, então a lista é sempre a das doze. O que a
+ * ficha guarda é o ESTADO de cada uma, e é o que este seletor gira:
+ * instalada → danificada → ausente → instalada.
  *
- * O padrão é AUSENTE. Uma nave nova não tem hospital nem laboratório só porque
- * a classe os listou.
+ * De fábrica vêm só a Ponte e a Sala de Máquinas, as duas que o texto veta
+ * dispensar (§4 das Regras Compiladas). As outras dez começam ausentes e se
+ * instalam clicando — dentro do orçamento que o tamanho dá, que a ficha mostra
+ * e não trava.
  *
  * ── COMO O CÔMODO É RECONHECIDO ───────────────────────────────────────────
  *
@@ -232,14 +234,28 @@ const ROTULO_DO_ESTADO = {
   ausente: "não tem",
 };
 
-/** O seletor de um cômodo, em HTML. */
+/**
+ * O seletor de um cômodo, dizendo o estado e o que o PRÓXIMO clique faz.
+ *
+ * O título nomeia a próxima ação em vez de descrever o ciclo inteiro. "Clique
+ * para girar: instalada → danificada → ausente" obriga quem lê a localizar onde
+ * está antes de saber o que vai acontecer; "clique para desinstalar" responde
+ * direto — e deixa claro que desinstalar é possível, que foi a dúvida da mesa
+ * quando o padrão passou a ser "instalada".
+ */
 export function botaoDoComodo(chave, estado) {
   const rotulo = ROTULO_DO_ESTADO[estado] ?? estado;
+  const seguinte = proximoEstado(estado);
+  const acao = {
+    danificada: "marcar como danificada",
+    ausente: "desinstalar",
+    instalada: "instalar de volta",
+  }[seguinte] ?? `mudar para ${seguinte}`;
   return (
     `<button type="button" class="${CLASSE_SELETOR} estado-${estado}" ` +
-    `data-comodo="${chave}" ` +
-    `title="Clique para girar: não tem → instalada → danificada. ` +
-    `A T10-2 cobra 25% do valor para reparar.">${rotulo}</button>`
+    `data-comodo="${chave}" data-proximo="${seguinte}" ` +
+    `title="Está ${rotulo}. Clique para ${acao}. ` +
+    `Consertar uma danificada custa 25% da obra e metade do prazo (T10-2).">${rotulo}</button>`
   );
 }
 

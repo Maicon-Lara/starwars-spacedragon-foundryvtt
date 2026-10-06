@@ -124,50 +124,95 @@ export function postosOcupados(nave) {
   return POSTOS_DA_NAVE.filter(([k]) => String(p[k] ?? "").trim()).length;
 }
 
-/* ── O ESTADO DOS CÔMODOS ─────────────────────────────────────────────────
+/* ── O ESTADO DAS CÂMARAS ──────────────────────────────────────────────────
  *
- * A classe entrega os doze cômodos a toda nave, porque a aba de classe do
- * sistema não aceita habilidades avulsas. Então a nave não se monta tirando
- * cômodos da lista — ela se monta DIZENDO quais existem.
+ * A classe entrega as doze câmaras a toda nave, porque a aba de classe do
+ * sistema não aceita habilidades avulsas. A lista é sempre a mesma; o que a
+ * ficha guarda é o ESTADO de cada uma.
  *
- * ── O PADRÃO É INSTALADA, E ISSO É REGRA DA CASA ────────────────────────
+ * ── O MÍNIMO PARA VOAR, E O ORÇAMENTO DO TAMANHO ──────────────────────────
  *
- * «Toda nave nasce com as doze instaladas. Doze câmaras é o estado de uma nave
- * que voa; quem perdeu alguma marca na ficha.» — Naves — Regras Compiladas, §4.
+ * Duas câmaras têm veto no texto das regras, e são o mínimo de fábrica:
  *
- * Eu tinha feito o contrário, com o argumento de que o Mestre não deveria
- * desmarcar nove cômodos para ficar com três. O argumento vale para um
- * construtor de naves; não vale aqui, porque nesta mesa a nave começa inteira e
- * o jogo é PERDER câmaras. A pendência 3 do documento registra que a decisão foi
- * do autor, entre o livro (o Mestre escolhe) e a Base de Operações (todas), e
- * que venceu a Base.
+ *   Ponte de Comando — «sem ela operacional, a nave não pode ser pilotada nem
+ *                       operar escudos ou armas»
+ *   Sala de Máquinas — «motores e gerador… lugar obrigatório do acelerador
+ *                       hiperespacial e dos tanques»
  *
- * Consequência prática: o registro na flag guarda só o que DIVERGE do padrão.
- * Uma nave recém-criada tem `camaras: {}` e as doze de pé.
+ * Sem motor não há movimento; sem tanque não há combustível. As outras dez não
+ * impedem voar — «nenhuma câmara multa por não existir; todas deixam de dar
+ * algo» (§4) — então são escolha de quem monta a nave.
+ *
+ * Sobre as duas, o TAMANHO dá um orçamento de câmaras livres: Pequena 0, Média
+ * 2, Gigantesca 4, Colossal 6. É o que faz um caça ser cabine e motor enquanto
+ * uma nave-mãe nasce cidade, e o que deixa duas espaçonaves particulares do
+ * mesmo tipo saírem diferentes — uma com Laboratório e Ala Hospitalar, outra
+ * com Depósito e Arsenal.
+ *
+ * O orçamento é um AVISO, não uma trava: a ficha diz quando passou do número, e
+ * o Mestre decide. Travar impediria a nave comprada usada, a nave de enredo e a
+ * reforma paga em jogo, que são exatamente as naves interessantes.
+ *
+ * Consequência prática: a flag guarda só o que DIVERGE do padrão. Uma nave
+ * recém-criada tem `camaras: {}`, com a Ponte e a Sala de Máquinas de pé e as
+ * outras dez por instalar.
  */
 
 export const ESTADOS = ["instalada", "danificada", "ausente"];
 
-/** O estado de um cômodo nesta nave. Sem registro, instalada — a nave voa. */
+/** As que vêm de fábrica em qualquer nave, porque sem elas ela não voa. */
+export const CAMARAS_BASE = ["ponte", "maquinas"];
+
+/** Quantas câmaras livres o tamanho dá, além das duas da base. */
+export const LIVRES_POR_TAMANHO = {
+  Pequena: 0,
+  Média: 2,
+  Gigantesca: 4,
+  Colossal: 6,
+};
+
+/** O estado de fábrica de uma câmara: de pé se for base, por instalar se não. */
+export function padraoDoComodo(chave) {
+  return CAMARAS_BASE.includes(chave) ? "instalada" : "ausente";
+}
+
+/** O estado de uma câmara nesta nave. Sem registro, o de fábrica. */
 export function estadoDoComodo(nave, chave) {
   const e = nave?.camaras?.[chave];
-  return ESTADOS.includes(e) ? e : "instalada";
+  return ESTADOS.includes(e) ? e : padraoDoComodo(chave);
 }
 
 /**
  * O próximo estado, para o clique que gira entre eles.
  *
- * A ordem segue o que acontece na mesa, e a mesa começa com a nave inteira:
- * instalada → danificada → ausente → instalada. O primeiro clique marca o
- * estrago, o segundo arranca o que sobrou, o terceiro reconstrói.
+ * A ordem é a da vida da câmara: ausente → instalada → danificada → ausente.
+ * Instala-se, estraga, e o que sobrou se arranca. Vale para as da base também:
+ * a Ponte pode ser desinstalada, e a nave simplesmente deixa de voar — a regra
+ * diz o que acontece, e não impede que aconteça.
  */
 export function proximoEstado(atual) {
   const i = ESTADOS.indexOf(atual);
-  if (i < 0) return "danificada";
+  if (i < 0) return "instalada";
   return ESTADOS[(i + 1) % ESTADOS.length];
 }
 
-/** Quantos cômodos estão de pé — o número que diz o que a nave consegue fazer. */
-export function comodosInstalados(nave) {
-  return Object.values(nave?.camaras ?? {}).filter((e) => e === "instalada").length;
+/** Quantas câmaras estão de pé — o número que diz o que a nave consegue fazer. */
+export function comodosInstalados(nave, chaves = null) {
+  const lista = chaves ?? Object.keys(nave?.camaras ?? {});
+  return lista.filter((c) => estadoDoComodo(nave, c) === "instalada").length;
+}
+
+/**
+ * O orçamento de câmaras desta nave: quantas livres o tamanho dá, quantas estão
+ * em pé além da base, e o que sobra.
+ *
+ * As da base NÃO contam contra o orçamento — elas não são escolha. Uma
+ * danificada conta: ela ocupa o lugar, e o conserto custa 25% da obra em vez da
+ * obra inteira, o que só faz sentido se a câmara ainda estiver lá.
+ */
+export function orcamentoDeCamaras(nave, chaves, tamanho) {
+  const livres = LIVRES_POR_TAMANHO[tamanho] ?? 0;
+  const opcionais = (chaves ?? []).filter((c) => !CAMARAS_BASE.includes(c));
+  const usadas = opcionais.filter((c) => estadoDoComodo(nave, c) !== "ausente").length;
+  return { livres, usadas, saldo: livres - usadas, excedeu: usadas > livres };
 }
