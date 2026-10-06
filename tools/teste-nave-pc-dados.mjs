@@ -17,6 +17,7 @@
 
 import {
   naveVazia, naveDe, aplicarTipo, faltaConfigurar, POSTOS_DA_NAVE, postosOcupados, FLAG,
+  ESTADOS, estadoDoComodo, proximoEstado, comodosInstalados,
 } from "../starwars-sd-module/module/nave-pc-dados.js";
 import { TIPOS } from "../starwars-sd-module/module/tipos-de-nave.js";
 
@@ -102,6 +103,38 @@ confere(aplicarTipo(undefined) === null, "tipo ausente não quebra");
     `dois postos ocupados (espaço em branco não conta), veio ${postosOcupados(comDois)}`);
 }
 
+/* ── O ESTADO DOS CÔMODOS ─────────────────────────────────────────────────── */
+//
+// A classe entrega os doze cômodos a TODA nave — a aba de classe do sistema não
+// aceita habilidades avulsas. Então a nave não se monta tirando cômodos da
+// lista: ela se monta dizendo quais existem.
+//
+// A ASSERÇÃO QUE MAIS IMPORTA: o padrão é AUSENTE. Se fosse "instalada", toda
+// nave nova nasceria com hospital, laboratório e corredor de acoplagem só
+// porque a classe os listou — e o Mestre teria de desmarcar nove cômodos em vez
+// de marcar três.
+{
+  confere(ESTADOS.length === 3, `${ESTADOS.length} estados, deviam ser 3`);
+
+  confere(estadoDoComodo({}, "ponte") === "ausente",
+    "sem registro, o cômodo tem de ser AUSENTE — senão a nave nova nasce completa");
+  confere(estadoDoComodo({ camaras: {} }, "ponte") === "ausente", "nave sem cômodo nenhum");
+  confere(estadoDoComodo({ camaras: { ponte: "instalada" } }, "ponte") === "instalada",
+    "o estado gravado tem de ser respeitado");
+  confere(estadoDoComodo({ camaras: { ponte: "lixo" } }, "ponte") === "ausente",
+    "estado inválido vira ausente, e não quebra a ficha");
+
+  // o ciclo do clique segue a vida da nave: constrói, estraga, arranca
+  confere(proximoEstado("ausente") === "instalada", "o primeiro clique constrói");
+  confere(proximoEstado("instalada") === "danificada", "o segundo marca o estrago");
+  confere(proximoEstado("danificada") === "ausente", "o terceiro arranca o que sobrou");
+  confere(proximoEstado("lixo") === "instalada", "estado desconhecido começa o ciclo");
+
+  confere(comodosInstalados({ camaras: { a: "instalada", b: "danificada", c: "instalada" } }) === 2,
+    "só o instalado conta — o danificado não sustenta a nave");
+  confere(comodosInstalados({}) === 0, "nave sem cômodos");
+}
+
 if (problemas.length) {
   for (const p of problemas) console.error(`  ✘ ${p}`);
   process.exit(1);
@@ -109,5 +142,5 @@ if (problemas.length) {
 console.log(
   "  ✔ dados da nave sobre personagem: a T10-1 inteira linha a linha, o PV como " +
     "FÓRMULA e não rolado, a flag parcial completada sem perder nada, o aviso de " +
-    "nave incompleta e os cinco postos"
+    "nave incompleta, os cinco postos, e o estado dos cômodos (ausente por padrão)"
 );

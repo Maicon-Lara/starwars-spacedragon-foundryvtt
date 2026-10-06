@@ -36,6 +36,10 @@
  * voo, natação) não têm equivalente.
  */
 
+import {
+  naveDe, estadoDoComodo, proximoEstado, comodosInstalados, FLAG,
+} from "./nave-pc-dados.js";
+
 const ID = "starwars-sd";
 export const MARCA_NAVE_PC = "starwars-sd-nave-pc";
 
@@ -127,6 +131,70 @@ export function renomearAbas(raiz) {
   return trocados;
 }
 
+
+/* ── O SELETOR DE CÔMODOS ─────────────────────────────────────────────────
+ *
+ * A classe entrega os doze cômodos a toda nave — a aba de classe do sistema
+ * não aceita habilidades avulsas, então não dá para montar a nave tirando
+ * cômodos da lista. Ela se monta DIZENDO quais existem, e é o que este seletor
+ * faz: um clique gira ausente → instalada → danificada → ausente.
+ *
+ * O padrão é AUSENTE. Uma nave nova não tem hospital nem laboratório só porque
+ * a classe os listou.
+ *
+ * ── COMO O CÔMODO É RECONHECIDO ───────────────────────────────────────────
+ *
+ * Pela FLAG do item, e não pelo nome: `flags["starwars-sd"].camaraDeNave.chave`.
+ * Nome muda com tradução e com revisão de texto; a flag é nossa e não muda.
+ */
+export const CLASSE_SELETOR = "sw-comodo-estado";
+
+const ROTULO_DO_ESTADO = {
+  instalada: "instalada",
+  danificada: "danificada",
+  ausente: "não tem",
+};
+
+/** O seletor de um cômodo, em HTML. */
+export function botaoDoComodo(chave, estado) {
+  const rotulo = ROTULO_DO_ESTADO[estado] ?? estado;
+  return (
+    `<button type="button" class="${CLASSE_SELETOR} estado-${estado}" ` +
+    `data-comodo="${chave}" ` +
+    `title="Clique para girar: não tem → instalada → danificada. ` +
+    `A T10-2 cobra 25% do valor para reparar.">${rotulo}</button>`
+  );
+}
+
+/**
+ * Põe o seletor em cada cômodo da aba de classe, e marca os ausentes.
+ *
+ * Devolve quantos cômodos encontrou — zero significa que a nave não tem a
+ * classe, ou que a aba não está desenhada, e aí não há o que fazer.
+ */
+export function marcarComodos(raiz, ator) {
+  if (!raiz || !ator) return 0;
+  const nave = naveDe(ator, ID);
+  let achados = 0;
+
+  for (const linha of raiz.querySelectorAll("[data-item-id]")) {
+    const item = ator.items?.get?.(linha.dataset.itemId);
+    const chave = item?.getFlag?.(ID, "camaraDeNave")?.chave
+      ?? item?.flags?.[ID]?.camaraDeNave?.chave;
+    if (!chave) continue;
+    achados += 1;
+
+    const estado = estadoDoComodo(nave, chave);
+    // a classe no elemento deixa o CSS apagar o que a nave não tem
+    linha.classList.remove("comodo-instalada", "comodo-danificada", "comodo-ausente");
+    linha.classList.add(`comodo-${estado}`);
+
+    linha.querySelectorAll(`.${CLASSE_SELETOR}`).forEach((n) => n.remove());
+    linha.insertAdjacentHTML("beforeend", botaoDoComodo(chave, estado));
+  }
+  return achados;
+}
+
 export function registrarFichaDeNavePC() {
   const Base = baseDaFicha();
   if (!Base) return null;
@@ -142,9 +210,37 @@ export function registrarFichaDeNavePC() {
       await super._onRender?.(contexto, opcoes);
       try {
         renomearAbas(this.element);
+        marcarComodos(this.element, this.actor);
+        this.#ligarComodos();
       } catch (e) {
-        console.warn(`${ID} | não pude renomear as abas da Ficha de Nave`, e);
+        console.warn(`${ID} | não pude preparar a Ficha de Nave`, e);
       }
+    }
+
+    /**
+     * O clique que gira o estado do cômodo.
+     *
+     * Delegado na raiz e registrado uma vez: a ficha redesenha a cada
+     * alteração, e um listener por botão se multiplicaria a cada render.
+     */
+    #ligarComodos() {
+      const raiz = this.element;
+      if (!raiz || raiz.dataset.swComodos === "1") return;
+      raiz.dataset.swComodos = "1";
+      raiz.addEventListener("click", async (ev) => {
+        const b = ev.target?.closest?.(`.${CLASSE_SELETOR}`);
+        if (!b?.dataset?.comodo) return;
+        ev.preventDefault();
+        ev.stopPropagation();
+        if (!this.isEditable) return;
+        const nave = naveDe(this.actor, ID);
+        const chave = b.dataset.comodo;
+        const novo = proximoEstado(estadoDoComodo(nave, chave));
+        await this.actor.setFlag(ID, FLAG, {
+          ...nave,
+          camaras: { ...(nave.camaras ?? {}), [chave]: novo },
+        });
+      });
     }
 
     /** O mesmo para a ficha V1, que usa activateListeners em vez de _onRender. */

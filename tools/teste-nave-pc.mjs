@@ -117,8 +117,17 @@ confere(renomearAbas(null) === 0, "raiz ausente não quebra");
   // que se remove no JS volta no próximo render.
   const js = fs.readFileSync(
     path.join(RAIZ, "starwars-sd-module", "module", "nave-pc-ficha.js"), "utf8");
-  confere(!/\.remove\(\)/.test(js),
-    "a ficha remove nós do DOM — o sistema os traz de volta no próximo render; esconda por CSS");
+  // Remover o PRÓPRIO botão antes de redesenhar é obrigatório: a ficha redesenha
+  // a cada alteração, e sem isso o seletor se duplicaria a cada render. O que a
+  // regra proíbe é remover conteúdo DO SISTEMA — esse volta no próximo render, e
+  // o efeito dura até ele.
+  for (const m of js.matchAll(/(.{0,80})\.remove\(\)/g)) {
+    const trecho = m[1];
+    const ehNosso = /CLASSE_SELETOR|MARCA|sw-|starwars-sd/.test(trecho);
+    confere(ehNosso,
+      `a ficha remove algo que não é nosso ("…${trecho.slice(-50)}.remove()") — ` +
+      `o sistema traz de volta no próximo render; esconda por CSS`);
+  }
 }
 
 /* ── O REGISTRO ───────────────────────────────────────────────────────────── */

@@ -44,6 +44,11 @@ export function naveVazia() {
     combustivel: { atual: 0, maximo: 0, fonte: "" },
     postos: {},
     avarias: {},
+    // O estado de cada cômodo. A CLASSE traz os doze sempre — a aba de classe
+    // do sistema não aceita habilidades avulsas —, e é aqui que se diz quais a
+    // nave tem de verdade. Sem chave, o cômodo é tratado como AUSENTE: uma nave
+    // recém-criada não tem hospital nem laboratório por acidente.
+    camaras: {},
     notas: "",
   };
 }
@@ -117,4 +122,39 @@ export const POSTOS_DA_NAVE = [
 export function postosOcupados(nave) {
   const p = nave?.postos ?? {};
   return POSTOS_DA_NAVE.filter(([k]) => String(p[k] ?? "").trim()).length;
+}
+
+/* ── O ESTADO DOS CÔMODOS ─────────────────────────────────────────────────
+ *
+ * A classe entrega os doze cômodos a toda nave, porque a aba de classe do
+ * sistema não aceita habilidades avulsas. Então a nave não se monta tirando
+ * cômodos da lista — ela se monta DIZENDO quais existem.
+ *
+ * O padrão é "ausente", e não "instalada": uma nave nova não tem hospital nem
+ * laboratório porque a classe os listou. Quem constrói escolhe.
+ */
+
+export const ESTADOS = ["instalada", "danificada", "ausente"];
+
+/** O estado de um cômodo nesta nave. Sem registro, ausente. */
+export function estadoDoComodo(nave, chave) {
+  const e = nave?.camaras?.[chave];
+  return ESTADOS.includes(e) ? e : "ausente";
+}
+
+/**
+ * O próximo estado, para o clique que gira entre eles.
+ *
+ * A ordem é a da vida da nave: ausente → instalada → danificada → ausente. Um
+ * clique constrói, o seguinte marca o estrago, o terceiro arranca o que sobrou.
+ */
+export function proximoEstado(atual) {
+  const i = ESTADOS.indexOf(atual);
+  if (i < 0) return "instalada";
+  return ESTADOS[(i + 1) % ESTADOS.length];
+}
+
+/** Quantos cômodos estão de pé — o número que diz o que a nave consegue fazer. */
+export function comodosInstalados(nave) {
+  return Object.values(nave?.camaras ?? {}).filter((e) => e === "instalada").length;
 }

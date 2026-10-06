@@ -1,5 +1,24 @@
 # Changelog
 
+## 1.37.0 — os cômodos da nave se marcam na ficha
+
+Na aba **Câmaras** da Ficha de Nave, cada cômodo da T10-2 agora tem um seletor
+de três estados: **instalada**, **danificada** e **ausente**. Um clique gira o
+estado, na ordem em que a coisa acontece na mesa: constrói, estraga, arranca.
+
+**Por que um seletor, e não uma lista que se monta.** A aba de classe do sistema
+não aceita habilidades avulsas — só mostra as que a classe traz. Então as oito
+classes de nave trazem os doze cômodos, todas elas, e a nave não se monta
+*tirando* cômodos da lista: ela se monta *dizendo quais existem*.
+
+**O padrão é ausente.** Uma nave recém-criada nasce sem cômodo nenhum marcado.
+Se o padrão fosse "instalada", toda nave nova viria com hospital, laboratório e
+corredor de acoplagem só porque a classe os lista — e o Mestre teria de
+desmarcar nove em vez de marcar três.
+
+O estado é do **ator**, não da classe: duas naves do mesmo tipo têm os mesmos
+doze cômodos possíveis e configurações diferentes, como deve ser.
+
 ## 1.27.0 — a nave montada peça a peça
 
 Os **equipamentos adicionais (T10-4)** e as **câmaras (T10-2)** entram no

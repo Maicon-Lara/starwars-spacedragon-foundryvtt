@@ -763,6 +763,44 @@ body.theme-dark .starwars-sd.nave-ficha.tema-auto,
   display: none;
 }
 
+/* ── O SELETOR DE CÔMODOS, NA ABA DE CLASSE ────────────────────────────────
+ *
+ * A classe entrega os doze cômodos a toda nave. O seletor diz quais ela tem de
+ * verdade, e o CSS deixa isso visível de relance: o que a nave não tem fica
+ * apagado, o danificado fica marcado, o instalado fica normal.
+ *
+ * O par cor+fundo em cada estado, como todo elemento deste módulo — ver a nota
+ * do painel de Pontos de Força. */
+.starwars-sd-nave-pc .sw-comodo-estado {
+  margin-left: auto;
+  padding: 1px 8px;
+  border-radius: 3px;
+  font-size: 11px;
+  text-transform: lowercase;
+  cursor: pointer;
+  background: var(--sd-caixa, #e6dcc3);
+  color: var(--sd-tinta, #1a1a18);
+  border: 1px solid var(--sd-barra, #2a2e38);
+}
+.starwars-sd-nave-pc .sw-comodo-estado.estado-instalada {
+  background: var(--sd-barra, #2a2e38);
+  color: #f2f0ea;
+}
+.starwars-sd-nave-pc .sw-comodo-estado.estado-danificada {
+  background: #8c2230;
+  color: #f7ecec;
+  border-color: #8c2230;
+}
+
+/* O cômodo que a nave NÃO tem fica apagado, mas legível: ele continua ali para
+ * poder ser construído, e some da leitura sem sumir da lista.
+ *
+ * `opacity` aqui é deliberado e seguro — o texto por baixo tem contraste de
+ * sobra, e o que se quer é justamente o apagado. Não é o caso que o teste dos
+ * cartões proíbe, que era opacidade escondendo contraste perdido. */
+.starwars-sd-nave-pc .comodo-ausente { opacity: .55; }
+.starwars-sd-nave-pc .comodo-danificada { text-decoration: line-through dotted; }
+
 /* ── A FICHA ENCOLHENDO ────────────────────────────────────────────────────
  *
  * O perfil tático nasceu com SEIS colunas, e seis colunas numa janela estreita
