@@ -74,7 +74,12 @@ export const classesDeNave = Object.entries(TIPOS).map(([chave, t]) => ({
     `<p><strong>PV ${t.pv}</strong> — role uma vez e anote. A tabela dá o dado, e não o ` +
     `número; o campo de PV da classe é dado POR NÍVEL, que é outra regra.</p>` +
     `<p>As habilidades são os <strong>cômodos</strong> (T10-2). Todos aparecem; quais estão ` +
-    `instalados é estado da nave, não da classe.</p>`,
+    `instalados é estado da nave, não da classe.</p>` +
+    // A ORDEM DO ARRASTO, dita onde ela é lida. O sistema recusa uma classe num
+    // ator sem raça (`class_requires_race`) com uma notificação vermelha e nada
+    // mais — e quem arrasta a classe primeiro conclui que o item está quebrado.
+    `<p><strong>Arraste a raça «${t.rotulo}» ANTES desta classe.</strong> O sistema recusa ` +
+    `classe em ator sem raça, e a recusa é só uma notificação no canto.</p>`,
   // nada de dado de vida por nível: ver a nota do topo
   dv: null,
   levels: niveisDoTipo(t),

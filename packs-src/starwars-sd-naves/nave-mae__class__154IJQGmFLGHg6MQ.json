@@ -6,7 +6,7 @@
   "img": "systems/olddragon2e/assets/icons/level-up.svg",
   "system": {
     "flavor": "<p><em>Colossal · tripulação 1.000+</em></p>",
-    "description": "<p>Tipo de nave da <strong>Tabela 10-1</strong>. A classe traz a <strong>BA +12</strong> e a <strong>JP 12</strong>; a raça de mesmo nome traz o <strong>CP 20</strong> e o <strong>movimento 20 m</strong>.</p><p><strong>PV 3d1000</strong> — role uma vez e anote. A tabela dá o dado, e não o número; o campo de PV da classe é dado POR NÍVEL, que é outra regra.</p><p>As habilidades são os <strong>cômodos</strong> (T10-2). Todos aparecem; quais estão instalados é estado da nave, não da classe.</p>",
+    "description": "<p>Tipo de nave da <strong>Tabela 10-1</strong>. A classe traz a <strong>BA +12</strong> e a <strong>JP 12</strong>; a raça de mesmo nome traz o <strong>CP 20</strong> e o <strong>movimento 20 m</strong>.</p><p><strong>PV 3d1000</strong> — role uma vez e anote. A tabela dá o dado, e não o número; o campo de PV da classe é dado POR NÍVEL, que é outra regra.</p><p>As habilidades são os <strong>cômodos</strong> (T10-2). Todos aparecem; quais estão instalados é estado da nave, não da classe.</p><p><strong>Arraste a raça «Nave-mãe» ANTES desta classe.</strong> O sistema recusa classe em ator sem raça, e a recusa é só uma notificação no canto.</p>",
     "hp": null,
     "high_level_hp_bonus": null,
     "equipment_restrictions": {

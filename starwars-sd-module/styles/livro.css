@@ -129,6 +129,63 @@ body.theme-dark,
   }
 }
 
+/* ── OS MODOS FORÇADOS TAMBÉM MANDAM NAS VARIÁVEIS DO LIVRO ────────────────
+ *
+ * ── O BUG QUE ISTO CONSERTA ───────────────────────────────────────────────
+ *
+ * Os blocos `--sd-*` do tema da ficha já cediam ao pergaminho forçado, com
+ * `:not(.sw-papel)`. Os blocos `--sw-*` acima NÃO cediam. Resultado, com o
+ * Foundry em tema escuro e o pergaminho ligado: o fundo vinha claro e
+ * `--sw-cor` continuava `#ffd93b`. O painel de Pontos de Força, que pinta
+ * título e números com ela, ficava amarelo-neon sobre papel — ilegível.
+ *
+ * O mesmo valia ao contrário: espaço forçado com o Foundry em claro deixava as
+ * variáveis na versão de papel, escuras sobre fundo escuro.
+ *
+ * ── POR QUE TRÊS SELETORES EM CADA ────────────────────────────────────────
+ *
+ * `body.sw-papel` sozinho empata com `body.theme-dark` e venceria só pela
+ * ordem — frágil. `body.sw-papel.theme-dark` vence sempre. E
+ * `body.sw-papel .theme-dark` é para as JANELAS: o Foundry marca cada janela
+ * com a própria classe de tema, e sem este seletor o painel dentro delas
+ * voltaria ao amarelo.
+ *
+ * Os valores são os mesmos do `:root` (papel) e do `body.theme-dark` (espaço).
+ * Há um teste que falha se os conjuntos divergirem — foi uma variável
+ * esquecida que produziu este bug.
+ */
+body.sw-papel,
+body.sw-papel.theme-dark,
+body.sw-papel .theme-dark {
+  --sw-fundo: var(--sw-pergaminho);
+  --sw-caixa: #e6dcc3;
+  --sw-tinta: #1a1a18;
+  --sw-linha: #8c8272;
+  --sw-cor: #9a7b00;
+  --sw-cabecalho: #2a2e38;
+  --sw-cabecalho-tinta: #f2ebd9;
+  --sw-universal-claro: #5a6472;
+  --sw-sensivel-claro: #8a7a3c;
+  --sw-prata-claro: #6e757a;
+  --sw-fosforo-claro: #2f4f3a;
+}
+
+body.sw-espaco,
+body.sw-espaco.theme-light,
+body.sw-espaco .theme-light {
+  --sw-fundo: var(--sw-espaco);
+  --sw-caixa: var(--sw-painel);
+  --sw-tinta: var(--sw-texto);
+  --sw-linha: var(--sw-aco);
+  --sw-cor: var(--sw-crawl);
+  --sw-cabecalho: var(--sw-painel);
+  --sw-cabecalho-tinta: var(--sw-texto);
+  --sw-universal-claro: var(--sw-universal);
+  --sw-sensivel-claro: var(--sw-sensivel);
+  --sw-prata-claro: var(--sw-prata);
+  --sw-fosforo-claro: var(--sw-fosforo);
+}
+
 /* ══ OS COMPONENTES DO LIVRO ═══════════════════════════════════════════════
  *
  * A maioria é escopada em .starwars-sd-doc, o conteúdo dos journals deste
