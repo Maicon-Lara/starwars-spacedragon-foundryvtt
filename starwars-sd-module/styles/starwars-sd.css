@@ -817,6 +817,43 @@ body.theme-dark .starwars-sd.nave-ficha.tema-auto,
  * acaba claro sobre fundo claro — foi a causa de todos os bugs de cor desta
  * série, e aqui não se repete.
  */
+
+/* ── O GUIA DE MONTAGEM ────────────────────────────────────────────────────
+ *
+ * Aparece enquanto a nave não tem tipo e classe, e some sozinho quando fica
+ * pronta — um aviso permanente vira decoração e deixa de ser lido.
+ *
+ * Ele usa a cor de destaque, e não a de erro: montar uma nave não é um
+ * problema, é o primeiro passo. O vermelho fica reservado para o que quebrou.
+ */
+.starwars-sd-nave-pc .sw-guia-nave {
+  margin: 0 0 8px;
+  padding: 7px 10px;
+  border: 1px dashed color-mix(in srgb, var(--sd-brilho, #2f9e8f) 55%, transparent);
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--sd-brilho, #2f9e8f) 7%, transparent);
+  color: var(--sd-tinta, #1a1a18);
+  font-size: 12px;
+}
+.starwars-sd-nave-pc .sw-guia-nave ol {
+  margin: 4px 0 0;
+  padding: 0 0 0 4px;
+  list-style: none;
+}
+.starwars-sd-nave-pc .sw-guia-nave li {
+  margin: 3px 0;
+  color: var(--sd-tinta, #1a1a18);
+}
+/* o passo feito recua: o que importa é o que falta */
+.starwars-sd-nave-pc .sw-guia-nave .guia-feito { opacity: .55; }
+.starwars-sd-nave-pc .sw-guia-nave .guia-falta { font-weight: 600; }
+.starwars-sd-nave-pc .sw-guia-nave .guia-nota {
+  margin: 5px 0 0;
+  font-size: 11px;
+  opacity: .8;
+  color: var(--sd-tinta, #1a1a18);
+}
+
 .starwars-sd-nave-pc .sw-painel-voo {
   margin: 0 0 8px;
   padding: 6px 8px;

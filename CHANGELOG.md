@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.38.1 — a ficha ensina a montar a nave
+
+O sistema recusa em silêncio. Arrastar a **classe antes da raça** produz uma
+notificação vermelha no canto que some em segundos, e nada muda na ficha;
+arrastar uma **câmara solta**, idem. Quem não viu a notificação conclui que o
+item está quebrado.
+
+Isso já tinha um aviso escrito na descrição da classe — e ninguém o leu, porque
+para ler a descrição é preciso **abrir** o item, e quem está arrastando não
+abriu.
+
+Agora a própria Ficha de Nave mostra os passos enquanto a nave não está pronta:
+arraste o tipo, depois a classe de mesmo nome, e as câmaras não se arrastam
+soltas. O aviso da recusa aparece só enquanto ela pode acontecer, e o guia
+inteiro **some quando a nave fica montada** — um aviso permanente vira
+decoração e deixa de ser lido justamente quando importa.
+
 ## 1.38.0 — a nave na ficha de personagem
 
 Quatro painéis novos na Ficha de Nave, todos tirados das *Regras Compiladas*.

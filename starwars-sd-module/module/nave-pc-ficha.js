@@ -342,6 +342,64 @@ export function porPainelDaTripulacao(raiz, ator) {
   return true;
 }
 
+/* ── O GUIA DE MONTAGEM ───────────────────────────────────────────────────── */
+
+export const MARCA_GUIA = "sw-guia-nave";
+
+/**
+ * Os passos para montar a nave, mostrados enquanto ela não está montada.
+ *
+ * ── POR QUE A FICHA PRECISA ENSINAR ───────────────────────────────────────
+ *
+ * Porque o sistema recusa em silêncio. Arrastar a classe antes da raça produz
+ * uma notificação vermelha no canto que some em segundos, e nada muda na ficha;
+ * arrastar um cômodo solto, idem. Quem não viu a notificação conclui que o item
+ * está quebrado — foi o que aconteceu na mesa, duas vezes, com um aviso já
+ * escrito na descrição da classe que ninguém leu, porque para ler a descrição é
+ * preciso abrir o item, e quem está arrastando não abriu.
+ *
+ * O guia some sozinho quando a nave fica pronta: um aviso permanente vira
+ * decoração e deixa de ser lido.
+ */
+export function guiaDeMontagem(ator) {
+  const tem = (tipo) => (ator?.items ?? []).some?.((i) => i.type === tipo);
+  const temRaca = tem("race");
+  const temClasse = tem("class");
+  if (temRaca && temClasse) return "";
+
+  const passo = (feito, texto) =>
+    `<li class="${feito ? "guia-feito" : "guia-falta"}">${feito ? "✔" : "○"} ${texto}</li>`;
+
+  return (
+    `<section class="${MARCA_GUIA}">` +
+    `<strong>Montar esta nave</strong>` +
+    `<ol>` +
+    passo(temRaca,
+      "Arraste o <strong>tipo</strong> (Caça, Cargueiro…) do compêndio " +
+      "<em>Naves</em>. Ele traz o CP e o movimento.") +
+    passo(temClasse,
+      "Depois arraste a <strong>classe de mesmo nome</strong> (“Nave — Caça”). " +
+      "Ela traz a BA, a JP e as doze câmaras." +
+      (temRaca ? "" : " <em>O sistema recusa a classe enquanto não houver raça.</em>")) +
+    `</ol>` +
+    `<p class="guia-nota">As câmaras não se arrastam soltas: elas vêm com a classe, ` +
+    `e você liga ou desliga cada uma na aba <em>Câmaras</em>.</p>` +
+    `</section>`
+  );
+}
+
+/** Põe o guia no alto da aba de ataques, acima do painel de voo. */
+export function porGuiaDeMontagem(raiz, ator) {
+  if (!raiz?.querySelector || !ator) return false;
+  const aba = raiz.querySelector(".character-tab-attacks") ??
+              raiz.querySelector('[data-tab="attacks"]:not(nav [data-tab="attacks"])');
+  if (!aba) return false;
+  aba.querySelector(`.${MARCA_GUIA}`)?.remove();
+  const html = guiaDeMontagem(ator);
+  if (html) aba.insertAdjacentHTML("afterbegin", html);
+  return !!html;
+}
+
 let Registrada = null;
 
 /** Esta ficha é a de Nave sobre personagem? */
@@ -527,6 +585,7 @@ export function registrarFichaDeNavePC() {
         ocultarOQueNaveNaoUsa(raiz);
         porPainelDeVoo(raiz, this.actor);
         porPainelDaTripulacao(raiz, this.actor);
+        porGuiaDeMontagem(raiz, this.actor);
         this.#ligarComodos(raiz);
       } catch (e) {
         console.warn(`${ID} | não pude preparar a Ficha de Nave`, e);

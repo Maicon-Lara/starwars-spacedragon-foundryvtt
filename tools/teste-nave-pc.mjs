@@ -22,7 +22,7 @@ import { fileURLToPath } from "node:url";
 import {
   ROTULOS, MARCA_NAVE_PC, renomearAbas,
   CAMPOS_NAO_USADOS, CLASSE_OCULTO, alvoDoCampo, ocultarOQueNaveNaoUsa,
-  AINDA_A_ESCONDER,
+  AINDA_A_ESCONDER, guiaDeMontagem,
 } from "../starwars-sd-module/module/nave-pc-ficha.js";
 
 const RAIZ = path.resolve(fileURLToPath(import.meta.url), "../..");
@@ -333,6 +333,42 @@ function no(tag, name, filhos = []) {
     `se não existe na ficha, sai da lista`);
   confere(!CAMPOS_NAO_USADOS.some((c) => /movement|movimento/i.test(c)),
     "o movimento entrou na lista de esconder — a nave TEM movimento, vem do tipo");
+}
+
+/* ── O GUIA DE MONTAGEM ───────────────────────────────────────────────────── */
+//
+// ── POR QUE ISTO EXISTE ─────────────────────────────────────────────────────
+//
+// Porque o sistema recusa em silêncio. Arrastar a classe antes da raça dá uma
+// notificação vermelha que some em segundos e nada muda na ficha; arrastar um
+// cômodo solto, idem. Quem não viu a notificação conclui que o item está
+// quebrado — aconteceu na mesa duas vezes, com o aviso já escrito na descrição
+// da classe. Ninguém leu, porque para ler a descrição é preciso ABRIR o item, e
+// quem está arrastando não abriu.
+//
+// A ASSERÇÃO QUE MAIS IMPORTA: o guia SOME quando a nave fica pronta. Um aviso
+// permanente vira decoração, e aí deixa de ser lido justamente quando importa.
+{
+  const comItens = (...tipos) => ({ items: tipos.map((type) => ({ type })) });
+
+  confere(guiaDeMontagem(comItens()) !== "", "nave sem nada devia mostrar o guia");
+  confere(guiaDeMontagem(comItens("race")) !== "", "nave só com o tipo ainda precisa da classe");
+  confere(guiaDeMontagem(comItens("race", "class")) === "",
+    "a nave montada ainda mostra o guia — um aviso permanente vira decoração");
+
+  // a recusa do sistema é citada ENQUANTO ela pode acontecer, e some depois
+  confere(/recusa a classe/.test(guiaDeMontagem(comItens())),
+    "o guia não avisa que o sistema recusa a classe sem raça — é a recusa silenciosa " +
+    "que fez a mesa achar que o item estava quebrado");
+  confere(!/recusa a classe/.test(guiaDeMontagem(comItens("race"))),
+    "com a raça posta, o aviso da recusa não faz mais sentido e devia sumir");
+
+  // e o guia diz o que NÃO se arrasta: o cômodo solto é a segunda recusa
+  confere(/não se arrastam soltas/.test(guiaDeMontagem(comItens())),
+    "o guia precisa dizer que as câmaras não se arrastam — é a segunda recusa silenciosa");
+
+  confere(guiaDeMontagem(null) === "" || typeof guiaDeMontagem(null) === "string",
+    "ator ausente não pode quebrar a ficha");
 }
 
 /* ── O REGISTRO ───────────────────────────────────────────────────────────── */
