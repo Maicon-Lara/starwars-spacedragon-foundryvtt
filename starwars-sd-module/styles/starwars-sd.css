@@ -808,6 +808,79 @@ body.theme-dark .starwars-sd.nave-ficha.tema-auto,
    pode apagar a ficha inteira. */
 .starwars-sd-nave-pc .sw-nave-nao-usa { display: none !important; }
 
+/* ── O PAINEL DE VOO ───────────────────────────────────────────────────────
+ *
+ * O bloco do alto da aba de ataques: CP, BA, JP, movimento, avaria e tanque.
+ *
+ * Cada regra declara o PAR cor + fundo. O painel é nosso e vive na ficha do
+ * sistema, que muda de tema debaixo dele; herdar metade do par é como o texto
+ * acaba claro sobre fundo claro — foi a causa de todos os bugs de cor desta
+ * série, e aqui não se repete.
+ */
+.starwars-sd-nave-pc .sw-painel-voo {
+  margin: 0 0 8px;
+  padding: 6px 8px;
+  border: 1px solid color-mix(in srgb, var(--sd-brilho, #2f9e8f) 40%, transparent);
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--sd-brilho, #2f9e8f) 8%, transparent);
+  color: var(--sd-tinta, #1a1a18);
+}
+.starwars-sd-nave-pc .sw-painel-voo .voo-linha {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+}
+.starwars-sd-nave-pc .sw-painel-voo .voo-campo {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  /* nunca menor que o próprio conteúdo: foi assim que os botões dos Pontos de
+     Força passaram um por baixo do outro na coluna estreita */
+  min-width: max-content;
+}
+.starwars-sd-nave-pc .sw-painel-voo .voo-rotulo {
+  font-family: var(--sw-condensada, inherit);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  opacity: .75;
+  color: var(--sd-tinta, #1a1a18);
+}
+.starwars-sd-nave-pc .sw-painel-voo .voo-valor {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--sd-tinta, #1a1a18);
+}
+
+/* A avaria é aviso, e usa a cor de aviso — não a de destaque. O piloto precisa
+   ver num relance que a nave está custando caro para voar. */
+.starwars-sd-nave-pc .sw-painel-voo .voo-avaria {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #8c3a20;
+  background: color-mix(in srgb, #8c3a20 10%, transparent);
+  border-radius: 3px;
+  padding: 2px 6px;
+}
+
+.starwars-sd-nave-pc .sw-painel-voo .voo-tanque {
+  margin-top: 5px;
+  font-size: 11px;
+  color: var(--sd-tinta, #1a1a18);
+}
+.starwars-sd-nave-pc .sw-painel-voo .voo-tanque-barra {
+  height: 6px;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 2px;
+  background: color-mix(in srgb, var(--sd-tinta, #1a1a18) 15%, transparent);
+}
+.starwars-sd-nave-pc .sw-painel-voo .voo-tanque-barra i {
+  display: block;
+  height: 100%;
+  background: var(--sd-brilho, #2f9e8f);
+}
+
 /* ── A FICHA ENCOLHENDO ────────────────────────────────────────────────────
  *
  * O perfil tático nasceu com SEIS colunas, e seis colunas numa janela estreita

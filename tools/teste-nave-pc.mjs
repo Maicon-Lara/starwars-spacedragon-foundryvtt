@@ -125,7 +125,10 @@ confere(renomearAbas(null) === 0, "raiz ausente não quebra");
   // a cada alteração, e sem isso o seletor se duplicaria a cada render. O que a
   // regra proíbe é remover conteúdo DO SISTEMA — esse volta no próximo render, e
   // o efeito dura até ele.
-  for (const m of js.matchAll(/(.{0,80})\.remove\(\)/g)) {
+  // sem comentários: um comentário que MENCIONA .remove() não é uma remoção, e
+  // já deu falso positivo aqui — a nota que explicava a regra foi acusada por ela
+  const jsVivo = js.replace(/\/\*[\s\S]*?\*\//g, "").replace(/\/\/.*/g, "");
+  for (const m of jsVivo.matchAll(/(.{0,80})\.remove\(\)/g)) {
     const trecho = m[1];
     const ehNosso = /CLASSE_SELETOR|MARCA|sw-|starwars-sd/.test(trecho);
     confere(ehNosso,

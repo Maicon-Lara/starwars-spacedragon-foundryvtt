@@ -38,10 +38,14 @@
 
 import {
   naveDe, estadoDoComodo, proximoEstado, comodosInstalados, FLAG,
+  orcamentoDeCamaras, CAMARAS_BASE,
 } from "./nave-pc-dados.js";
+import { linhasDoVoo, CUSTOS } from "./nave-voo.js";
+import { CAMARAS } from "./camaras.js";
 
 const ID = "starwars-sd";
 export const MARCA_NAVE_PC = "starwars-sd-nave-pc";
+export const MARCA_VOO = "sw-painel-voo";
 
 /**
  * A classe-base: a Ficha Space Dragon, se o módulo vizinho a registrou; senão a
@@ -169,6 +173,86 @@ export function ocultarOQueNaveNaoUsa(raiz) {
     }
   }
   return marcados;
+}
+
+/* ── O PAINEL DE VOO ──────────────────────────────────────────────────────── */
+
+/**
+ * O bloco que a mesa olha a cada rodada: CP, BA, JP, movimento, o tanque, e o
+ * que o dano está custando ao piloto.
+ *
+ * ── DE ONDE VEM CADA NÚMERO ───────────────────────────────────────────────
+ *
+ * CP, BA e JP são GETTERS do sistema (`ac_total`, `ba`, `jpd_total`), montados a
+ * partir da raça e da classe de nave. Eles não existem em `system` e não
+ * aparecem num JSON do ator — já perdi dois ciclos de medição concluindo que
+ * estavam quebrados quando o errado era onde eu olhava.
+ *
+ * A penalidade por avaria e o gasto de combustível vêm de nave-voo.js, que tem
+ * teste. Aqui só se desenha.
+ */
+export function painelDeVoo(ator, nave) {
+  const s = ator?.system ?? {};
+  const l = linhasDoVoo({
+    pv: s.hp?.value, pvMax: s.hp?.max,
+    // os derivados do sistema, com queda para o que a flag guardou: numa ficha
+    // sem raça nem classe de nave ainda se vê alguma coisa
+    cp: s.ac_total ?? nave?.cp, ba: s.ba ?? nave?.ba, jp: s.jpd_total ?? nave?.jp,
+    movimento: s.current_movement ? `${s.current_movement} m` : null,
+    combustivel: nave?.combustivel, fonte: nave?.fonte,
+    pilotagem: nave?.pilotagem,
+  });
+
+  const campo = (rotulo, valor, titulo = "") =>
+    `<div class="voo-campo"${titulo ? ` title="${titulo}"` : ""}>` +
+    `<span class="voo-rotulo">${rotulo}</span>` +
+    `<span class="voo-valor">${valor}</span></div>`;
+
+  const avaria = l.penalidade > 0
+    ? `<div class="voo-avaria" title="§2: 5% de penalidade a cada 10% dos PV perdidos, até 50%.">` +
+      `Avaria: <strong>−${l.penalidade}%</strong> na pilotagem` +
+      (l.pilotagem ? ` — ${l.pilotagem.base}% vira <strong>${l.pilotagem.efetiva}%</strong>` : "") +
+      `</div>`
+    : "";
+
+  const tanque = l.combustivel.fonte
+    ? `<div class="voo-tanque" title="${l.combustivel.fonte.rotulo} · autonomia ` +
+      `${l.combustivel.fonte.autonomia} · um dia de viagem gasta ${l.combustivel.gastoPorDia}">` +
+      `<div class="voo-tanque-barra"><i style="width:${l.combustivel.porcento}%"></i></div>` +
+      `<span>Combustível ${l.combustivel.porcento}% · ${l.combustivel.gastoPorDia}/dia</span>` +
+      `</div>`
+    : "";
+
+  return (
+    `<section class="${MARCA_VOO}">` +
+    `<div class="voo-linha">` +
+      campo("CP", l.cp, "Coeficiente de Proteção — vem do tipo (raça), T10-1") +
+      campo("BA", `+${l.ba}`, "Bônus de Ataque da nave — vem da classe, T10-1") +
+      campo("JP", l.jp, "Número-alvo: menor é melhor. O piloto rola antes e modifica (T10-5)") +
+      campo("Mov.", l.movimento) +
+    `</div>` +
+    avaria + tanque +
+    `</section>`
+  );
+}
+
+/**
+ * Põe o painel na aba de ataques, sem duplicar.
+ *
+ * Remove o próprio painel antes de redesenhar: a ficha redesenha a cada
+ * alteração do ator, e sem isso teríamos um painel por render.
+ */
+export function porPainelDeVoo(raiz, ator) {
+  if (!raiz?.querySelector || !ator) return false;
+  const aba = raiz.querySelector(".character-tab-attacks") ??
+              raiz.querySelector('[data-tab="attacks"]:not(nav [data-tab="attacks"])');
+  if (!aba) return false;
+  // só o NOSSO painel sai, e a marca fica visível na mesma linha: a asserção do
+  // teste lê o trecho antes do .remove() para distinguir nó nosso de nó do
+  // sistema, e uma variável intermediária escondia isso dela
+  aba.querySelector(`.${MARCA_VOO}`)?.remove();
+  aba.insertAdjacentHTML("afterbegin", painelDeVoo(ator, naveDe(ator, ID)));
+  return true;
 }
 
 let Registrada = null;
@@ -354,6 +438,7 @@ export function registrarFichaDeNavePC() {
         renomearAbas(raiz);
         marcarComodos(raiz, this.actor);
         ocultarOQueNaveNaoUsa(raiz);
+        porPainelDeVoo(raiz, this.actor);
         this.#ligarComodos(raiz);
       } catch (e) {
         console.warn(`${ID} | não pude preparar a Ficha de Nave`, e);
