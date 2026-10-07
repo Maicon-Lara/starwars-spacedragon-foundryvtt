@@ -37,7 +37,7 @@
  */
 
 import {
-  naveDe, estadoDoComodo, proximoEstado, comodosInstalados, FLAG,
+  naveDe, estadoDoComodo, proximoEstado, comodosInstalados, FLAG, updateDaNave,
   orcamentoDeCamaras, CAMARAS_BASE,
 } from "./nave-pc-dados.js";
 import { linhasDoVoo, CUSTOS } from "./nave-voo.js";
@@ -673,6 +673,24 @@ export function registrarFichaDeNavePC() {
      * firmou precisa que os artilheiros saibam do +2. Um efeito que só aparece
      * na ficha de quem clicou não chega a quem ele beneficia.
      */
+    /**
+     * Grava só o que mudou.
+     *
+     * Gravar a flag inteira de uma vez SUBSTITUI o que lá estava, e numa nave
+     * operada por cinco pessoas — que é o ponto do §7 — isso atropela: quem
+     * gravar depois escreve por cima com a versão que leu antes, e a alteração
+     * do outro desaparece sem erro nenhum. O jogador vê o campo voltar ao que
+     * era e conclui que a ficha não salvou.
+     *
+     * Gravando caminho a caminho, o merge é do servidor, e duas escritas em
+     * campos diferentes convivem.
+     */
+    async #gravarNave(antes, depois) {
+      const mudancas = updateDaNave(antes, depois, ID);
+      if (!mudancas) return;
+      await this.actor.update(mudancas);
+    }
+
     #ligarAcoes(raiz) {
       if (!raiz?.dataset || raiz.dataset.swAcoes === "1") return;
       raiz.dataset.swAcoes = "1";
@@ -687,7 +705,7 @@ export function registrarFichaDeNavePC() {
         const nave = naveDe(this.actor, ID);
 
         if (fim) {
-          await this.actor.setFlag(ID, FLAG, limparFimDaRodada(nave));
+          await this.#gravarNave(nave, limparFimDaRodada(nave));
           globalThis.ui?.notifications?.info?.("Fim da rodada: os efeitos temporários saíram.");
           return;
         }
@@ -697,7 +715,7 @@ export function registrarFichaDeNavePC() {
           globalThis.ui?.notifications?.warn?.(r.erro);
           return;
         }
-        await this.actor.setFlag(ID, FLAG, r.nave);
+        await this.#gravarNave(nave, r.nave);
 
         const linhas = r.cartao.linhas.map((l) => `<li>${l.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")}</li>`).join("");
         await globalThis.ChatMessage?.create?.({
@@ -743,7 +761,7 @@ export function registrarFichaDeNavePC() {
           const atual = { ...(nave.energia ?? {}) };
           // nunca negativo: "−1 ponto em escudos" não quer dizer nada
           atual[destino] = Math.max(0, (Number(atual[destino]) || 0) + passo);
-          await this.actor.setFlag(ID, FLAG, { ...nave, energia: atual });
+          await this.#gravarNave(nave, { ...nave, energia: atual });
           return;
         }
 
@@ -753,7 +771,7 @@ export function registrarFichaDeNavePC() {
         const teto = lado === "salto" ? ETAPAS.length : MARCAS_DO_PERSEGUIDOR;
         const campo = lado === "salto" ? "etapas" : "perseguidor";
         fuga[campo] = Math.max(0, Math.min(teto, (Number(fuga[campo]) || 0) + passo));
-        await this.actor.setFlag(ID, FLAG, { ...nave, fuga });
+        await this.#gravarNave(nave, { ...nave, fuga });
       });
     }
 
@@ -771,7 +789,7 @@ export function registrarFichaDeNavePC() {
         // do registro, e é o que `postosOcupados` conta
         if (quem) postos[campo.dataset.posto] = quem;
         else delete postos[campo.dataset.posto];
-        await this.actor.setFlag(ID, FLAG, { ...nave, postos });
+        await this.#gravarNave(nave, { ...nave, postos });
       });
     }
 
@@ -787,7 +805,7 @@ export function registrarFichaDeNavePC() {
         const nave = naveDe(this.actor, ID);
         const chave = b.dataset.comodo;
         const novo = proximoEstado(estadoDoComodo(nave, chave));
-        await this.actor.setFlag(ID, FLAG, {
+        await this.#gravarNave(nave, {
           ...nave,
           camaras: { ...(nave.camaras ?? {}), [chave]: novo },
         });
@@ -814,6 +832,16 @@ export function registrarFichaDeNavePC() {
     /** Tudo o que a Ficha de Nave faz no DOM, num lugar só. */
     #prepararFicha(raiz) {
       if (!raiz) return;
+      // ── O FOCO SOBREVIVE AO REDESENHO ──────────────────────────────────
+      //
+      // Toda gravação redesenha a ficha em TODOS os clientes que a têm aberta.
+      // Numa nave operada por cinco pessoas isso acontece o tempo todo — e
+      // quem estivesse digitando o nome de um tripulante via o campo ser
+      // recriado e perder o foco no meio da palavra.
+      //
+      // Guardamos qual campo estava em foco e onde estava o cursor, e
+      // devolvemos depois de redesenhar. O jogador continua digitando.
+      const antes = this.#guardarFoco(raiz);
       try {
         renomearAbas(raiz);
         marcarComodos(raiz, this.actor);
@@ -829,6 +857,39 @@ export function registrarFichaDeNavePC() {
       } catch (e) {
         console.warn(`${ID} | não pude preparar a Ficha de Nave`, e);
       }
+      this.#devolverFoco(raiz, antes);
+    }
+
+    /** Qual campo nosso estava em foco, e onde o cursor estava nele. */
+    #guardarFoco(raiz) {
+      try {
+        const alvo = raiz?.ownerDocument?.activeElement;
+        if (!alvo || !raiz.contains?.(alvo)) return null;
+        // só os campos QUE NÓS criamos: devolver foco a um campo do sistema
+        // seria mexer no que não é nosso, e o sistema tem a própria lógica
+        const nosso = alvo.classList?.contains(CLASSE_POSTO);
+        if (!nosso) return null;
+        return {
+          posto: alvo.dataset?.posto,
+          inicio: alvo.selectionStart,
+          fim: alvo.selectionEnd,
+        };
+      } catch {
+        return null;
+      }
+    }
+
+    /** Devolve o foco ao campo que o tinha, com o cursor onde estava. */
+    #devolverFoco(raiz, antes) {
+      if (!antes?.posto) return;
+      try {
+        const campo = raiz.querySelector(`.${CLASSE_POSTO}[data-posto="${antes.posto}"]`);
+        if (!campo) return;
+        campo.focus();
+        // o cursor volta para onde estava: devolver o foco e jogar o cursor
+        // para o fim seria quase tão ruim quanto perder o foco
+        if (antes.inicio != null) campo.setSelectionRange?.(antes.inicio, antes.fim);
+      } catch { /* um campo que não aceita foco não derruba a ficha */ }
     }
   }
 

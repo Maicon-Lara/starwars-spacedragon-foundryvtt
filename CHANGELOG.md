@@ -1,5 +1,45 @@
 # Changelog
 
+## 1.44.0 — a nave aguenta cinco pessoas ao mesmo tempo
+
+A ficha gravava a flag **inteira** a cada clique. Com uma pessoa operando a
+nave, isso nunca falha. Com cinco — que é o ponto do §7 — atropela:
+
+```
+A lê a nave              B lê a nave (a mesma)
+A grava com o posto
+                         B grava com a energia, usando a nave que leu ANTES
+                         → o posto que A gravou desaparece
+```
+
+E quem perdeu a alteração **não vê erro nenhum**: vê o campo voltar ao que era e
+conclui que a ficha não salvou.
+
+Agora cada clique grava só o caminho que mudou, e o merge é do servidor. Duas
+pessoas mexendo em campos diferentes convivem. Um teste simula essa sequência e
+falha se as gravações voltarem a se cruzar.
+
+### O foco sobrevive ao redesenho
+
+Toda gravação redesenha a ficha em **todos** os clientes que a têm aberta. Quem
+estivesse digitando o nome de um tripulante via o campo ser recriado e perder o
+foco no meio da palavra — e numa nave operada por várias pessoas isso acontece o
+tempo todo.
+
+A ficha agora guarda qual campo estava em foco e onde o cursor estava, e devolve
+depois de redesenhar.
+
+### Sobre as abas
+
+A aba aberta é de **cada cliente**, não da nave: se alguém troca para Câmaras, os
+outros continuam onde estavam. Isso já era assim e continua.
+
+### Para os jogadores operarem a nave
+
+O Mestre precisa dar **posse** do ator da nave a quem vai operá-la: botão direito
+na nave → *Configurar Permissões* → **Proprietário** para os jogadores. Sem isso
+os painéis aparecem, mas os botões não gravam.
+
 ## 1.43.0 — as ações de posto viraram botão
 
 Na aba Tripulação, **oito das quinze ações agora se clicam**: Firmar, Correr,

@@ -225,3 +225,64 @@ export function orcamentoDeCamaras(nave, chaves, tamanho) {
   const usadas = opcionais.filter((c) => estadoDoComodo(nave, c) !== "ausente").length;
   return { livres, usadas, saldo: livres - usadas, excedeu: usadas > livres };
 }
+
+/* ── ESCRITA SEM ATROPELO ──────────────────────────────────────────────────
+ *
+ * ── O BUG QUE ISTO CONSERTA ───────────────────────────────────────────────
+ *
+ * A ficha gravava `setFlag(ID, FLAG, {...nave, campo})`, que SUBSTITUI a flag
+ * inteira. Numa nave operada por uma pessoa isso nunca falha. Numa operada por
+ * cinco — que é o ponto do §7 — falha assim:
+ *
+ *   A lê a nave          B lê a nave (a mesma)
+ *   A grava com o posto
+ *                        B grava com a energia, usando a nave que leu ANTES
+ *                        → o posto que A gravou desaparece
+ *
+ * O jogador que perdeu a alteração não vê erro nenhum: vê o campo voltar ao que
+ * era, e conclui que a ficha "não salvou".
+ *
+ * A saída é gravar só o CAMINHO que mudou. O Foundry faz o merge no servidor, e
+ * duas escritas em campos diferentes convivem.
+ */
+
+/**
+ * Os caminhos que mudaram entre duas versões da nave, prontos para `update`.
+ *
+ * Percorre um nível de objeto — que é a profundidade real da nave: `postos.leme`,
+ * `camaras.ponte`, `energia.motores`. Mais fundo que isso não existe aqui, e
+ * fingir que existe complicaria sem ganhar nada.
+ *
+ * Uma chave que SUMIU vira `-=chave`, a sintaxe do Foundry para apagar: gravar
+ * `undefined` deixaria a chave lá com valor nulo, e um posto vago precisa ser a
+ * ausência do registro.
+ */
+export function caminhosAlterados(antes = {}, depois = {}, prefixo = "") {
+  const saida = {};
+  const chaves = new Set([...Object.keys(antes ?? {}), ...Object.keys(depois ?? {})]);
+
+  for (const k of chaves) {
+    const a = antes?.[k];
+    const d = depois?.[k];
+    const ehObj = (x) => x && typeof x === "object" && !Array.isArray(x);
+
+    if (ehObj(a) || ehObj(d)) {
+      if (d === undefined) {
+        saida[`${prefixo}-=${k}`] = null;
+        continue;
+      }
+      Object.assign(saida, caminhosAlterados(a ?? {}, d ?? {}, `${prefixo}${k}.`));
+      continue;
+    }
+    if (JSON.stringify(a) === JSON.stringify(d)) continue;
+    if (d === undefined) saida[`${prefixo}-=${k}`] = null;
+    else saida[`${prefixo}${k}`] = d;
+  }
+  return saida;
+}
+
+/** O objeto de `actor.update()` para gravar só o que mudou na nave. */
+export function updateDaNave(antes, depois, id = "starwars-sd") {
+  const diff = caminhosAlterados(antes, depois, `flags.${id}.${FLAG}.`);
+  return Object.keys(diff).length ? diff : null;
+}

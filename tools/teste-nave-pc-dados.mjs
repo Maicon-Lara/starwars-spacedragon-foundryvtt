@@ -19,6 +19,7 @@ import {
   naveVazia, naveDe, aplicarTipo, faltaConfigurar, POSTOS_DA_NAVE, postosOcupados, FLAG,
   ESTADOS, estadoDoComodo, proximoEstado, comodosInstalados,
   CAMARAS_BASE, LIVRES_POR_TAMANHO, padraoDoComodo, orcamentoDeCamaras,
+  caminhosAlterados, updateDaNave,
 } from "../starwars-sd-module/module/nave-pc-dados.js";
 import { TIPOS } from "../starwars-sd-module/module/tipos-de-nave.js";
 import { ACOES_DE_POSTO } from "../starwars-sd-module/module/tripulacao.js";
@@ -238,6 +239,77 @@ confere(aplicarTipo(undefined) === null, "tipo ausente não quebra");
     "o caça recém-criado já nasce no vermelho — a base não pode contar contra o orçamento");
 
   confere(orcamentoDeCamaras({}, TODAS, "Inventada").livres === 0, "tamanho desconhecido não quebra");
+}
+
+/* ── ESCRITA SEM ATROPELO ─────────────────────────────────────────────────── */
+//
+// ── A ASSERÇÃO QUE MAIS IMPORTA ─────────────────────────────────────────────
+//
+// Que a gravação toque SÓ o campo que mudou. A ficha gravava a flag inteira, e
+// numa nave operada por cinco pessoas — que é o ponto do §7 — isso atropela:
+//
+//   A lê a nave          B lê a nave (a mesma)
+//   A grava com o posto
+//                        B grava com a energia, usando a nave que leu ANTES
+//                        → o posto de A desaparece
+//
+// Quem perdeu a alteração não vê erro: vê o campo voltar ao que era, e conclui
+// que a ficha não salvou. O teste simula exatamente essa sequência.
+{
+  const base = { tipo: "caca", postos: { leme: "Han" }, energia: { motores: 1 } };
+
+  // ── A SEQUÊNCIA DE ATROPELO ──
+  const lidaPorA = { ...base };
+  const lidaPorB = { ...base };
+  const depoisDeA = { ...lidaPorA, postos: { ...lidaPorA.postos, artilharia: "Chewie" } };
+  const depoisDeB = { ...lidaPorB, energia: { motores: 3 } };
+
+  const updA = updateDaNave(lidaPorA, depoisDeA);
+  const updB = updateDaNave(lidaPorB, depoisDeB);
+
+  const tocaA = Object.keys(updA);
+  const tocaB = Object.keys(updB);
+  confere(tocaA.every((k) => !tocaB.includes(k)),
+    `as duas gravações tocam o mesmo caminho e uma apaga a outra:
+` +
+    `  A: ${tocaA.join(", ")}
+  B: ${tocaB.join(", ")}`);
+  confere(!tocaB.some((k) => k.includes("postos")),
+    "a gravação da energia toca os postos — é assim que o trabalho do outro some");
+  confere(!tocaA.some((k) => k.includes("energia")),
+    "a gravação do posto toca a energia");
+
+  // e nenhuma das duas escreve a flag inteira
+  for (const [quem, upd] of [["A", updA], ["B", updB]]) {
+    for (const k of Object.keys(upd)) {
+      confere(k.split(".").length > 3,
+        `${quem} grava "${k}", que é a flag inteira ou quase — tem de ser o campo`);
+    }
+  }
+}
+
+{
+  // só o que mudou entra, e o que não mudou fica de fora
+  const upd = updateDaNave(
+    { tipo: "caca", cp: 28, postos: { leme: "Han" } },
+    { tipo: "caca", cp: 28, postos: { leme: "Chewie" } });
+  confere(Object.keys(upd).length === 1,
+    `${Object.keys(upd).length} caminhos para uma troca de posto: ${Object.keys(upd).join(", ")}`);
+  confere(upd["flags.starwars-sd.nave.postos.leme"] === "Chewie", "o caminho ou o valor saiu errado");
+
+  // nada mudou: nada se grava. Uma gravação vazia redesenha a ficha de todo
+  // mundo por nada — e a ficha redesenhada tira o foco de quem está digitando.
+  confere(updateDaNave({ tipo: "caca" }, { tipo: "caca" }) === null,
+    "sem mudança devia devolver null, e não um update vazio que redesenha à toa");
+
+  // ── APAGAR É `-=`, E NÃO GRAVAR VAZIO ──
+  //
+  // Um posto vago é a AUSÊNCIA do registro: é o que `postosOcupados` conta.
+  // Gravar undefined deixaria a chave lá, e a vaga contaria como ocupada.
+  const apagou = caminhosAlterados({ postos: { leme: "Han" } }, { postos: {} }, "x.");
+  confere("x.postos.-=leme" in apagou,
+    `apagar um posto devia usar a sintaxe -= do Foundry, veio ${JSON.stringify(apagou)}`);
+  confere(apagou["x.postos.-=leme"] === null, "o valor do -= tem de ser null");
 }
 
 if (problemas.length) {
