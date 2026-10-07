@@ -1,5 +1,36 @@
 # Changelog
 
+## 1.42.0 — as três camadas opcionais, e o tanque que nunca aparecia
+
+### O combustível estava invisível
+
+O painel de voo lia o combustível como número solto, e a ficha guarda um objeto
+`{atual, maximo, fonte}`. O resultado era `NaN`, virava zero, e **a barra do
+tanque nunca apareceu em nave nenhuma** desde que o painel existe.
+
+Nenhum teste pegou porque todos passavam valores montados à mão — eles provavam
+que a função sabia formatar um número, não que sabia ler uma nave. Agora um
+deles usa a nave de verdade.
+
+### As três camadas do §7
+
+**Energia do reator**, **Controle de avarias** e **Fuga como relógio** aparecem
+na aba Tripulação, abaixo dos postos — e **só se a mesa ligar**, nas opções do
+módulo. Com as três desligadas, que é o padrão, não aparece nem um cabeçalho.
+
+- **Energia**: os pontos do tamanho (P 2 · M 3 · G 4 · C 6), distribuídos entre
+  motores, escudos e armas, com o efeito à vista e a sobra dita como sobra —
+  *"sobram 2 de 3"*, porque o número sozinho é ambíguo. Gastar além do reator é
+  possível (*Forçar o reator*) e aparece em vermelho.
+- **Avarias**: as emergências em curso com as rodadas que **restam**, não a
+  rodada em que começaram. Prazo vencido diz a consequência: a câmara fica
+  danificada até a obra, que custa 25%.
+- **Fuga**: os dois relógios lado a lado, porque a corrida é a informação — ver
+  só o próprio progresso não diz se vale continuar fugindo ou virar e lutar.
+
+A regra continua morando num lugar só, e um teste falha se estas telas
+reescreverem qualquer tabela.
+
 ## 1.41.0 — botão "Nova nave", e a tripulação se edita
 
 ### Criar uma nave virou uma ação

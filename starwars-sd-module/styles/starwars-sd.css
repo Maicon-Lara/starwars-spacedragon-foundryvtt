@@ -551,3 +551,107 @@
 }
 .starwars-sd-nave-pc .sw-painel-tripulacao .acao-auto { font-weight: 700; }
 .starwars-sd-nave-pc .sw-painel-tripulacao .acao-texto { opacity: .7; }
+
+/* ── AS TRÊS CAMADAS OPCIONAIS (§7) ────────────────────────────────────────
+ *
+ * Desligadas por padrão, então este CSS costuma não pintar nada. Quando pinta,
+ * segue o resto: par cor + fundo em toda regra, e min-width: max-content nos
+ * botões, que é a lição dos Pontos de Força.
+ */
+.starwars-sd-nave-pc .sw-painel-camadas {
+  margin-top: 8px;
+  color: var(--sd-tinta, #1a1a18);
+}
+.starwars-sd-nave-pc .sw-painel-camadas .camada {
+  margin: 0 0 6px;
+  padding: 5px 8px;
+  border: 1px solid color-mix(in srgb, var(--sd-brilho, #2f9e8f) 35%, transparent);
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--sd-brilho, #2f9e8f) 5%, transparent);
+  color: var(--sd-tinta, #1a1a18);
+}
+.starwars-sd-nave-pc .sw-painel-camadas .camada-cabeca {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.starwars-sd-nave-pc .sw-painel-camadas .camada-sobra {
+  font-size: 11px;
+  opacity: .8;
+  min-width: max-content;
+  color: var(--sd-tinta, #1a1a18);
+}
+/* gastar além do reator é possível — "Forçar o reator" dá +2, com risco de
+   avaria — então isto é aviso, e não erro */
+.starwars-sd-nave-pc .sw-painel-camadas .camada-sobra.excedeu {
+  color: #8c3a20;
+  font-weight: 700;
+  opacity: 1;
+}
+.starwars-sd-nave-pc .sw-painel-camadas .energia-destino,
+.starwars-sd-nave-pc .sw-painel-camadas .relogio {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin: 3px 0;
+  font-size: 11px;
+}
+.starwars-sd-nave-pc .sw-painel-camadas .energia-nome,
+.starwars-sd-nave-pc .sw-painel-camadas .relogio-nome {
+  min-width: 9ch;
+  font-weight: 600;
+  color: var(--sd-tinta, #1a1a18);
+}
+.starwars-sd-nave-pc .sw-painel-camadas .energia-pontos {
+  min-width: 2ch;
+  text-align: center;
+  font-weight: 700;
+  color: var(--sd-tinta, #1a1a18);
+}
+.starwars-sd-nave-pc .sw-painel-camadas .energia-efeito {
+  opacity: .7;
+  color: var(--sd-tinta, #1a1a18);
+}
+/* as marcas do relógio em monoespaçada: sem isso as bolinhas cheias e vazias
+   têm larguras diferentes e o relógio treme a cada clique */
+.starwars-sd-nave-pc .sw-painel-camadas .relogio-marcas {
+  font-family: monospace;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: var(--sd-brilho, #2f9e8f);
+}
+.starwars-sd-nave-pc .sw-painel-camadas button {
+  min-width: max-content;
+  padding: 0 7px;
+  line-height: 1.5;
+  border: 1px solid color-mix(in srgb, var(--sd-brilho, #2f9e8f) 45%, transparent);
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--sd-brilho, #2f9e8f) 12%, transparent);
+  color: var(--sd-tinta, #1a1a18);
+}
+.starwars-sd-nave-pc .sw-painel-camadas button:disabled { opacity: .35; }
+.starwars-sd-nave-pc .sw-painel-camadas .camada-lista {
+  margin: 4px 0;
+  padding-left: 16px;
+  font-size: 11px;
+}
+.starwars-sd-nave-pc .sw-painel-camadas .avaria-corre { color: #8a6d1f; }
+.starwars-sd-nave-pc .sw-painel-camadas .avaria-venceu {
+  color: #8c3a20;
+  font-weight: 600;
+}
+.starwars-sd-nave-pc .sw-painel-camadas .camada-resumo {
+  margin-top: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--sd-tinta, #1a1a18);
+}
+.starwars-sd-nave-pc .sw-painel-camadas .camada-nota {
+  margin-top: 3px;
+  font-size: 10px;
+  opacity: .7;
+  color: var(--sd-tinta, #1a1a18);
+}

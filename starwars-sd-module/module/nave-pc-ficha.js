@@ -43,6 +43,11 @@ import {
 import { linhasDoVoo, CUSTOS } from "./nave-voo.js";
 import { avisosDaNave, bonusDeAtaqueDasCamaras, podeAtacar, operacional } from "./nave-sistemas.js";
 import { POSTOS, ACOES_DE_POSTO, AUTOMATIZA } from "./tripulacao.js";
+import {
+  painelDasCamadas, MARCA_CAMADAS, CLASSE_ENERGIA, CLASSE_RELOGIO,
+} from "./nave-camadas.js";
+import { MARCAS_DO_PERSEGUIDOR } from "./tripulacao.js";
+import { ETAPAS } from "./nave-salto.js";
 import { CAMARAS } from "./camaras.js";
 
 const ID = "starwars-sd";
@@ -201,7 +206,11 @@ export function painelDeVoo(ator, nave) {
     // sem raça nem classe de nave ainda se vê alguma coisa
     cp: s.ac_total ?? nave?.cp, ba: s.ba ?? nave?.ba, jp: s.jpd_total ?? nave?.jp,
     movimento: s.current_movement ? `${s.current_movement} m` : null,
-    combustivel: nave?.combustivel, fonte: nave?.fonte,
+    // o combustível é um OBJETO na flag ({atual, maximo, fonte}), e eu o lia
+    // como número solto: `Number({...})` dá NaN, virava 0, e o bloco do tanque
+    // nunca aparecia. Os testes não pegaram porque passavam valores soltos em
+    // vez da nave de verdade — agora um deles usa `naveVazia()`.
+    combustivel: nave?.combustivel?.atual, fonte: nave?.combustivel?.fonte,
     pilotagem: nave?.pilotagem,
   });
 
@@ -440,6 +449,25 @@ export function porGuiaDeMontagem(raiz, ator) {
   return !!html;
 }
 
+/**
+ * As camadas opcionais, abaixo dos postos — porque são extensões do §7, e é lá
+ * que a mesa já está olhando quando pensa em tripulação.
+ */
+export function porPainelDasCamadas(raiz, ator) {
+  if (!raiz?.querySelector || !ator) return false;
+  const aba = raiz.querySelector(".character-tab-spells") ??
+              raiz.querySelector('[data-tab="spells"]:not(nav [data-tab="spells"])');
+  if (!aba) return false;
+  aba.querySelector(`.${MARCA_CAMADAS}`)?.remove();
+  const nave = naveDe(ator, ID);
+  const html = painelDasCamadas(nave, {
+    tamanho: nave?.tamanho,
+    rodada: globalThis.game?.combat?.round ?? null,
+  });
+  if (html) aba.insertAdjacentHTML("beforeend", html);
+  return !!html;
+}
+
 let Registrada = null;
 
 /** Esta ficha é a de Nave sobre personagem? */
@@ -611,6 +639,45 @@ export function registrarFichaDeNavePC() {
      * Delegado e registrado uma vez, como o dos cômodos — a ficha redesenha a
      * cada alteração, e um listener por campo se multiplicaria a cada render.
      */
+    /**
+     * Os botões das camadas: energia e os dois relógios da fuga.
+     *
+     * Os limites são aplicados AQUI e não só no desenho. Um botão desabilitado
+     * impede o clique, mas um estado gravado fora da faixa — por outra versão,
+     * por uma macro, por edição à mão — continuaria fora até alguém notar.
+     */
+    #ligarCamadas(raiz) {
+      if (!raiz?.dataset || raiz.dataset.swCamadas === "1") return;
+      raiz.dataset.swCamadas = "1";
+      raiz.addEventListener("click", async (ev) => {
+        const energia = ev.target?.closest?.(`.${CLASSE_ENERGIA}`);
+        const relogio = ev.target?.closest?.(`.${CLASSE_RELOGIO}`);
+        if (!energia && !relogio) return;
+        ev.preventDefault();
+        ev.stopPropagation();
+        if (!this.isEditable) return;
+
+        const nave = naveDe(this.actor, ID);
+        if (energia) {
+          const destino = energia.dataset.destino;
+          const passo = Number(energia.dataset.passo) || 0;
+          const atual = { ...(nave.energia ?? {}) };
+          // nunca negativo: "−1 ponto em escudos" não quer dizer nada
+          atual[destino] = Math.max(0, (Number(atual[destino]) || 0) + passo);
+          await this.actor.setFlag(ID, FLAG, { ...nave, energia: atual });
+          return;
+        }
+
+        const lado = relogio.dataset.lado;
+        const passo = Number(relogio.dataset.passo) || 0;
+        const fuga = { ...(nave.fuga ?? {}) };
+        const teto = lado === "salto" ? ETAPAS.length : MARCAS_DO_PERSEGUIDOR;
+        const campo = lado === "salto" ? "etapas" : "perseguidor";
+        fuga[campo] = Math.max(0, Math.min(teto, (Number(fuga[campo]) || 0) + passo));
+        await this.actor.setFlag(ID, FLAG, { ...nave, fuga });
+      });
+    }
+
     #ligarPostos(raiz) {
       if (!raiz?.dataset || raiz.dataset.swPostos === "1") return;
       raiz.dataset.swPostos = "1";
@@ -674,9 +741,11 @@ export function registrarFichaDeNavePC() {
         ocultarOQueNaveNaoUsa(raiz);
         porPainelDeVoo(raiz, this.actor);
         porPainelDaTripulacao(raiz, this.actor);
+        porPainelDasCamadas(raiz, this.actor);
         porGuiaDeMontagem(raiz, this.actor);
         this.#ligarComodos(raiz);
         this.#ligarPostos(raiz);
+        this.#ligarCamadas(raiz);
       } catch (e) {
         console.warn(`${ID} | não pude preparar a Ficha de Nave`, e);
       }

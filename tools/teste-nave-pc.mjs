@@ -15,6 +15,7 @@
 //
 // Uso: node tools/teste-nave-pc.mjs
 
+import { naveVazia } from "../starwars-sd-module/module/nave-pc-dados.js";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -22,7 +23,7 @@ import { fileURLToPath } from "node:url";
 import {
   ROTULOS, MARCA_NAVE_PC, renomearAbas,
   CAMPOS_NAO_USADOS, CLASSE_OCULTO, alvoDoCampo, ocultarOQueNaveNaoUsa,
-  AINDA_A_ESCONDER, guiaDeMontagem, painelDaTripulacao,
+  AINDA_A_ESCONDER, guiaDeMontagem, painelDaTripulacao, painelDeVoo,
 } from "../starwars-sd-module/module/nave-pc-ficha.js";
 
 const RAIZ = path.resolve(fileURLToPath(import.meta.url), "../..");
@@ -441,6 +442,36 @@ function no(tag, name, filhos = []) {
     "o campo grava mesmo com a ficha travada — um jogador sem permissão mudaria a tripulação");
   confere(/"change"/.test(corpo),
     "grava a cada tecla: a ficha redesenharia no meio da palavra e o campo perderia o foco");
+}
+
+/* ── O PAINEL LÊ A NAVE DE VERDADE ────────────────────────────────────────── */
+//
+// ── O BUG QUE ESTA ASSERÇÃO EXISTE PARA NÃO DEIXAR VOLTAR ───────────────────
+//
+// O painel de voo lia `nave.combustivel` como número e `nave.fonte` no topo. A
+// flag guarda `combustivel: {atual, maximo, fonte}`. `Number({...})` é NaN,
+// virava 0, e o bloco do tanque NUNCA APARECIA — em nenhuma nave, desde que o
+// painel existe.
+//
+// Nenhum teste pegou porque todos passavam valores soltos, montados à mão para
+// o teste. Eles provavam que a função sabia formatar um número; não provavam
+// que ela sabia ler uma nave. Por isso esta asserção usa `naveVazia()`, que é
+// a mesma estrutura que a ficha recebe.
+{
+  const nave = { ...naveVazia(), tipo: "caca" };
+  nave.combustivel = { atual: 60, maximo: 100, fonte: "liquido" };
+  const html = painelDeVoo({ system: { hp: { value: 10, max: 20 } } }, nave);
+
+  confere(/Combustível 60%/.test(html),
+    "o painel não mostra o tanque da nave de verdade — ele lê a estrutura da flag, " +
+    "e não um número solto");
+  confere(/1d4\/dia/.test(html),
+    "o gasto diário não saiu: a fonte também mora dentro de `combustivel`");
+
+  // sem fonte escolhida o bloco não aparece, e isso é certo: não há dado a mostrar
+  const semFonte = { ...naveVazia(), tipo: "caca" };
+  confere(!/Combustível/.test(painelDeVoo({ system: { hp: {} } }, semFonte)),
+    "nave sem fonte de energia não devia mostrar a barra de combustível");
 }
 
 /* ── O REGISTRO ───────────────────────────────────────────────────────────── */
