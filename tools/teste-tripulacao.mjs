@@ -214,22 +214,20 @@ confere(LIMPA_NO_FIM_DA_RODADA["system.firmar.ativa"] === false, "o Firmar devia
 confere(!("system.avariaRodada.motor" in LIMPA_NO_FIM_DA_RODADA),
   "o Fim da Rodada não pode zerar a data da avaria — é ela que conta o prazo");
 
-// ── O TEMPLATE ────────────────────────────────────────────────────────────
-const hbs = fs.readFileSync("starwars-sd-module/templates/nave.hbs", "utf8");
-// cada camada opcional é embrulhada no seu #if: sem isso a ficha mostra painel
-// morto para quem não ligou a camada
-for (const camada of ["camadaEnergia", "camadaAvarias", "camadaFuga"]) {
-  confere(hbs.includes(`{{#if ${camada}}}`), `o template não esconde a camada ${camada}`);
-}
-// os postos NÃO são camada: aparecem sempre
-confere(!hbs.includes("{{#if camadaPostos}}"), "os postos não deviam depender de camada");
-confere(hbs.includes("data-action=\"acaoPosto\""), "falta o botão de executar a ação do posto");
-confere(hbs.includes("system.postoAcao."), "o seletor de ação não grava em postoAcao");
-
-const css = fs.readFileSync("starwars-sd-module/styles/starwars-sd.css", "utf8");
-for (const classe of ["grade-energia", "relogios", "emergencias li.venceu", "sobra.excedeu"]) {
-  confere(css.includes(classe), `o CSS não estiliza .${classe}`);
-}
+// ── O TEMPLATE E O CSS SAÍRAM DAQUI, E POR QUÊ ───────────────────────────
+//
+// Este arquivo testava que o template `nave.hbs` embrulhava cada camada no seu
+// `{{#if}}`, e que o CSS estilizava os painéis. Os dois foram apagados na
+// 1.40.0 junto com a ficha antiga.
+//
+// A REGRA continua testada acima: os cinco postos, as três opções de cada, o
+// que não se automatiza, a energia, o prazo da avaria e o empate da fuga. O que
+// se perdeu foi a amarração ao DESENHO, e ela volta quando as camadas forem
+// ligadas na Ficha de Nave — com os seletores novos, não com os do template
+// que não existe mais.
+//
+// Ressuscitar estas asserções apontando para o HTML novo antes de ele existir
+// seria escrever um teste que falha de propósito e espera alguém desligá-lo.
 
 if (problemas.length) {
   for (const p of problemas) console.error(`  ✘ ${p}`);

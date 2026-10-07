@@ -1,5 +1,32 @@
 # Changelog
 
+## 1.40.0 — uma ficha de nave, e só
+
+Saíram do módulo, de uma vez:
+
+- o **tipo de ator Nave** e as duas fichas antigas (Tático e Livro)
+- o **Combate Tático** inteiro: o dial de manobras, o arco de tiro e o
+  movimento no mapa
+- o template, o modelo de dados e as opções de mundo que só serviam a eles
+
+São **3.064 linhas** a menos. O jogo de nave agora é o **§10.6**, como as
+*Regras Compiladas* definem — e sobra uma ficha só: a **Ficha de Nave (Space
+Dragon)**, que se escolhe num ator do tipo **personagem**.
+
+**Se você ainda tem naves no tipo antigo, elas pararam de carregar.** Era o
+aviso da 1.39.0. Para recuperá-las: volte para a 1.39.1, rode
+`await game.modules.get("starwars-sd").api.converterTodas()`, e atualize de
+novo.
+
+Por que o tipo precisava sair, e não podia só ficar quieto: ele aparecia no
+diálogo de criar ator, ao lado de Personagem. Escolher "Nave" para fazer uma
+nave é a coisa óbvia — e levava à ficha errada, sem nenhum dos painéis novos.
+Um atalho que leva ao lugar errado é pior que atalho nenhum.
+
+**O que o Combate Tático levava:** a posição no mapa, o arco de tiro e a
+sobrecarga do dial. Quem quiser esse minijogo de posição encontra tudo no
+histórico do repositório, até a versão 1.39.1.
+
 ## 1.39.1 — o conversor coberto por teste
 
 Sem mudança de comportamento: o registro da API do conversor passou a ter

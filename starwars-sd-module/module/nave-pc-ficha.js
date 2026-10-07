@@ -517,6 +517,27 @@ export function marcarComodos(raiz, ator) {
   return achados;
 }
 
+/**
+ * Manda toda Ficha de Nave aberta se redesenhar.
+ *
+ * Quem troca uma opção de mundo precisa ver o efeito sem fechar a ficha. Isto
+ * varre os DOIS registros de janela do Foundry 13: `ui.windows`, onde moram as
+ * Applications V1 — e a ficha É V1, porque a classe-base do sistema é —, e
+ * `foundry.applications.instances`, para o dia em que o sistema migrar. Varrer
+ * só um dos dois faz a opção parecer que não funcionou.
+ */
+export function redesenharFichasDeNave() {
+  const janelas = [
+    ...Object.values(globalThis.ui?.windows ?? {}),
+    ...(globalThis.foundry?.applications?.instances?.values?.() ?? []),
+  ];
+  for (const app of janelas) {
+    try {
+      if (Registrada && app instanceof Registrada) app.render(false);
+    } catch { /* uma janela que não gosta de render não derruba as outras */ }
+  }
+}
+
 export function registrarFichaDeNavePC() {
   const Base = baseDaFicha();
   if (!Base) return null;

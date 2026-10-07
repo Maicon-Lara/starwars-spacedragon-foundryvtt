@@ -23,9 +23,8 @@
  * só chaves com o prefixo "starwars-sd.".
  */
 
-import { NaveDataModel } from "./nave-modelo.js";
 import { navesAntigas, converterNave, converterTodas } from "./nave-converter.js";
-import { NaveFicha, NaveFichaTatico, NaveFichaLivro, TIPO_NAVE } from "./nave-ficha.js";
+import { redesenharFichasDeNave } from "./nave-pc-ficha.js";
 import { ligarPontosDeForca } from "./pontos-de-forca.js";
 import { registrarTema, ligarTema } from "./tema.js";
 import { registrarCombate, ligarResumoDaRodada, avisarSeOrdemPerdida } from "./ordem-inversao.js";
@@ -36,50 +35,6 @@ const ID = "starwars-sd";
 Hooks.once("init", () => {
   console.log(`${ID} | Star Wars — Suplemento para Space Dragon`);
 
-  // ── Nave: tipo de ator próprio ──
-  // O subtipo é declarado em module.json (documentTypes); aqui se ligam o
-  // modelo de dados e a ficha. A chave leva o id do módulo como prefixo —
-  // "starwars-sd.nave" —, e por isso não colide com a "stardragon.nave" do
-  // Star Dragon: as duas naves convivem no mesmo mundo, cada uma com a sua
-  // regra.
-  Object.assign(CONFIG.Actor.dataModels, { [TIPO_NAVE]: NaveDataModel });
-
-  // ── Qual regra de combate de nave a mesa usa ──
-  //
-  // São duas, e de origens diferentes:
-  //
-  //   TÁTICO  o Combate Tático do Suplemento, desenhado sobre o X-Wing
-  //           Miniatures Game da FFG — dial de manobras, manobra planejada em
-  //           segredo, Sobrecarga (o stress) e dados de defesa que cancelam
-  //           dados de dano. Tem tabela de crítico própria.
-  //   LIVRO   o §10.6 do Livro Básico Aprimorado: sem grid e sem dial, defesa
-  //           no CP, manobra evasiva trocando o CP por uma JP, e as tabelas
-  //           T10-5 e T10-6.
-  //
-  // A opção é de MUNDO e define a regra PADRÃO da mesa — é ela que decide qual
-  // das duas fichas abre quando se cria uma nave nova. Vem antes do registro
-  // das fichas de propósito: `makeDefault` é lido no momento do registro.
-  game.settings.register(ID, "regrasDeNave", {
-    name: "starwars-sd.settings.regrasDeNave.nome",
-    hint: "starwars-sd.settings.regrasDeNave.dica",
-    scope: "world",
-    config: true,
-    type: String,
-    choices: {
-      tatico: "starwars-sd.settings.regrasDeNave.tatico",
-      livro: "starwars-sd.settings.regrasDeNave.livro",
-    },
-    default: "tatico",
-    // Trocar a padrão exige recarregar, porque quem é a ficha padrão se decide
-    // no registro, em `init`. Quem quer mudar UMA nave agora não precisa disto:
-    // troca a ficha dela em Configurar Ficha, sem reload nenhum.
-    requiresReload: true,
-    onChange: () => {
-      for (const app of foundry.applications?.instances?.values?.() ?? []) {
-        if (app instanceof NaveFicha) app.render();
-      }
-    },
-  });
 
   // ── A Ordem de Ação do Space Dragon ──
   //
@@ -135,61 +90,11 @@ Hooks.once("init", () => {
       type: Boolean,
       default: padrao,
       onChange: () => {
-        for (const app of foundry.applications?.instances?.values?.() ?? []) {
-          if (app instanceof NaveFicha) app.render();
-        }
+        redesenharFichasDeNave();
       },
     });
   }
 
-  // ── As duas fichas de nave ──
-  //
-  // UMA PARA CADA REGRA, e não uma que troca de comportamento. No Foundry a
-  // ficha é escolhida por ATOR (Configurar Ficha, no cabeçalho da janela), e
-  // isso dá três coisas que a ficha única não dava:
-  //
-  //   · a mesa pode rodar a frota no Tático e resolver a nave do Mestre pelo
-  //     livro, no mesmo mundo;
-  //   · o nome da ficha aparece na janela, então o jogador sabe qual regra
-  //     está valendo sem abrir as configurações do módulo para entender por
-  //     que o dial não está lá;
-  //   · trocar a regra de uma nave não pede reload.
-  //
-  // A opção de mundo acima continua mandando no PADRÃO — é o que a mesa
-  // escolheu, e vale para toda nave nova.
-  const regraPadrao = game.settings.get(ID, "regrasDeNave");
-  foundry.documents.collections.Actors.registerSheet(ID, NaveFichaTatico, {
-    types: [TIPO_NAVE],
-    label: "starwars-sd.fichas.tatico",
-    makeDefault: regraPadrao === "tatico",
-  });
-  foundry.documents.collections.Actors.registerSheet(ID, NaveFichaLivro, {
-    types: [TIPO_NAVE],
-    label: "starwars-sd.fichas.livro",
-    makeDefault: regraPadrao === "livro",
-  });
-
-  // ── Como a nave se move no mapa ──
-  //
-  // HEX é o que o Suplemento escreve: a nave anda em linha reta pelas casas e
-  // gira tudo de uma vez no fim. ARCO é a mecânica do X-Wing Miniatures Game,
-  // em que ela descreve a curva girando ao longo dela.
-  //
-  // Não é só aparência: andar 3 e virar 60° termina num lugar DIFERENTE de
-  // percorrer um arco de 60° com 3 de comprimento. Por isso é opção, e o padrão
-  // continua sendo o hex — quem tem a regra escrita não é surpreendido.
-  game.settings.register(ID, "movimentoDaNave", {
-    name: "starwars-sd.settings.movimentoDaNave.nome",
-    hint: "starwars-sd.settings.movimentoDaNave.dica",
-    scope: "world",
-    config: true,
-    type: String,
-    choices: {
-      hex: "starwars-sd.settings.movimentoDaNave.hex",
-      arco: "starwars-sd.settings.movimentoDaNave.arco",
-    },
-    default: "hex",
-  });
 
   // ── Claro ou escuro na ficha de nave ──
   //
@@ -213,9 +118,7 @@ Hooks.once("init", () => {
     },
     default: "auto",
     onChange: () => {
-      for (const app of foundry.applications?.instances?.values?.() ?? []) {
-        if (app instanceof NaveFicha) app.render();
-      }
+      redesenharFichasDeNave();
     },
   });
 });

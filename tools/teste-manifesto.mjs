@@ -65,15 +65,20 @@ if (m) {
       `serve o arquivo errado`);
   }
 
-  /* ── O TIPO DE ATOR ──────────────────────────────────────────────────────── */
+  /* ── O MÓDULO NÃO DECLARA MAIS TIPO DE ATOR ──────────────────────────────── */
   //
-  // Duas naves do mundo dele deixaram de carregar porque foram criadas com
-  // `stardragon.nave`, de um módulo que saiu do ar. O tipo declarado aqui é o
-  // que amarra os atores a ESTE módulo: mexer nele órfã o que já existe.
+  // Esta asserção já foi a inversa: ela existia para impedir que o tipo `nave`
+  // sumisse por acidente, porque um ator cujo tipo não existe mais não carrega.
+  // Foi o que aconteceu com as naves do módulo `stardragon`.
+  //
+  // O tipo saiu de propósito na 1.40.0, depois de as naves da mesa serem
+  // convertidas em personagens. A asserção virou de lado e continua útil: ela
+  // agora impede que ele VOLTE. Um tipo de ator ressuscitado criaria naves
+  // novas numa estrutura que nenhuma ficha deste módulo abre.
   const tipos = m.documentTypes?.Actor ?? {};
-  confere("nave" in tipos,
-    "o tipo de ator `nave` saiu do manifesto — os atores já criados com " +
-    "`starwars-sd.nave` deixariam de carregar, como aconteceu com os do stardragon");
+  confere(!("nave" in tipos),
+    "o tipo de ator `nave` voltou ao manifesto — ele foi aposentado na 1.40.0, e " +
+    "criar atores nele agora é criar naves que nenhuma ficha abre");
 
   /* ── OS PACKS APONTAM PARA PASTAS QUE EXISTEM ────────────────────────────── */
 

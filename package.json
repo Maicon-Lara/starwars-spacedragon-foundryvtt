@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "node tools/build.mjs",
-    "validar": "node tools/build.mjs && node tools/teste-manifesto.mjs && node tools/teste-modos.mjs && node tools/validar.mjs && node tools/teste-nave.mjs && node tools/teste-pf.mjs && node tools/teste-arco.mjs && node tools/teste-progressao.mjs && node tools/teste-estilo.mjs && node tools/teste-tripulacao.mjs && node tools/teste-carga.mjs && node tools/teste-equipamentos-nave.mjs && node tools/teste-ordem.mjs && node tools/teste-efeitos-criticos.mjs && node tools/teste-responsivo.mjs && node tools/teste-cartoes.mjs && node tools/teste-nave-pc.mjs && node tools/teste-nave-pc-dados.mjs && node tools/teste-nave-voo.mjs && node tools/teste-nave-sistemas.mjs && node tools/teste-nave-salto.mjs && node tools/teste-nave-converter.mjs && node tools/teste-tipos-raca.mjs && node tools/teste-classes-nave.mjs",
+    "validar": "node tools/build.mjs && node tools/teste-manifesto.mjs && node tools/teste-modos.mjs && node tools/validar.mjs && node tools/teste-pf.mjs && node tools/teste-progressao.mjs && node tools/teste-estilo.mjs && node tools/teste-tripulacao.mjs && node tools/teste-carga.mjs && node tools/teste-equipamentos-nave.mjs && node tools/teste-ordem.mjs && node tools/teste-efeitos-criticos.mjs && node tools/teste-responsivo.mjs && node tools/teste-cartoes.mjs && node tools/teste-nave-pc.mjs && node tools/teste-nave-pc-dados.mjs && node tools/teste-nave-voo.mjs && node tools/teste-nave-sistemas.mjs && node tools/teste-nave-salto.mjs && node tools/teste-nave-converter.mjs && node tools/teste-tipos-raca.mjs && node tools/teste-classes-nave.mjs",
     "teste": "node tools/teste-nave.mjs",
     "banners": "node tools/make-banners.mjs",
     "empacotar": "python tools/make-zip.py",

@@ -73,7 +73,14 @@ for (const f of arquivos) {
   }
 }
 
-confere(cartoes >= 4, `só ${cartoes} cartões encontrados — a varredura deve ter deixado de achar algum`);
+// O piso existe para pegar a VARREDURA quebrada, e não para exigir uma
+// quantidade de cartões: se o regex parar de casar, `cartoes` vai a zero e tudo
+// passa verde sem ter olhado nada.
+//
+// Era 4 enquanto a ficha de nave antiga emitia os dela. Ela saiu na 1.40.0, e o
+// número caiu junto — abaixar o piso é o certo; manter 4 obrigaria a inventar
+// um cartão para satisfazer o teste.
+confere(cartoes >= 3, `só ${cartoes} cartões encontrados — a varredura deve ter deixado de achar algum`);
 
 /* ── O CONTRASTE, CALCULADO ──────────────────────────────────────────────── */
 

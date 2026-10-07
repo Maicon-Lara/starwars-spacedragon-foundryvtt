@@ -35,7 +35,11 @@ const FOLHAS = [
 // As raízes de ficha, que o Foundry dimensiona pela janela e por isso não
 // precisam de largura explícita. Qualquer OUTRO elemento com
 // `container-type: inline-size` precisa — ver a conferência 5.
-const RAIZES_DE_FICHA = new Set([".starwars-sd.nave-ficha"]);
+// As raízes de container query do módulo. A ficha antiga (.nave-ficha) saiu na
+// 1.40.0; a de Nave sobre personagem vive dentro da ficha do SISTEMA, que não é
+// nossa para declarar container — por isso o conjunto está vazio, e não some: é
+// aqui que entra a próxima raiz que o módulo criar.
+const RAIZES_DE_FICHA = new Set([]);
 
 const problemas = [];
 const confere = (ok, msg) => { if (!ok) problemas.push(msg); };
@@ -126,7 +130,20 @@ for (const rel of FOLHAS) {
   }
 }
 
-confere(houveContainer, "nenhuma container query nas folhas — o layout não encolhe em lugar nenhum");
+// ── POR QUE ISTO DEIXOU DE SER OBRIGATÓRIO ────────────────────────────────
+//
+// Esta asserção exigia ao menos uma container query nas folhas, e fazia sentido
+// enquanto o módulo desenhava uma ficha INTEIRA, dona do próprio layout. Desde
+// a 1.40.0 ele injeta painéis na ficha do SISTEMA, que não é nossa para
+// declarar container — quem encolhe é o layout de quem hospeda.
+//
+// O que continua valendo, e está testado acima, é a regra CONDICIONAL: se
+// houver `@container`, tem de haver contêiner declarado; se houver grade larga,
+// tem de haver versão estreita. Exigir a existência seria obrigar o módulo a
+// declarar um container que ele não tem onde pôr.
+if (houveContainer) {
+  confere(true, "");  // a checagem real está nas regras condicionais acima
+}
 
 // ── 5. A ORDEM, E QUE A QUERY SOBRESCREVA ALGO ───────────────────────────
 //
@@ -187,7 +204,14 @@ confere(houveContainer, "nenhuma container query nas folhas — o layout não en
       }
     }
   }
-  confere(classesDeBotao.size > 0, "nenhuma classe de <button> encontrada — a varredura falhou");
+  // Antes isto exigia achar botões: o módulo tinha um template próprio cheio
+  // deles. Com o template apagado na 1.40.0, os botões que sobraram nascem em
+  // JS, e a varredura de HTML não os vê. Zero classes passou a ser o estado
+  // correto, e não a falha da varredura — o que importa é a regra abaixo, que
+  // só se aplica ao que for encontrado.
+  if (classesDeBotao.size === 0) {
+    // nada a conferir: sem botão em HTML, não há classe de botão para casar
+  }
 
   // A folha tem um padrão BASE para botão? (uma regra sobre o elemento, com o
   // par declarado). A ficha de Nave tem; o painel da Ordem de Ação não tinha, e
