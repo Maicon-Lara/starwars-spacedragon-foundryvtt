@@ -10,12 +10,18 @@
 //
 // Uso: node tools/teste-nave-voo.mjs
 
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
 import {
   penalidadeDeAvaria, pilotagemEfetiva,
   modificadorDaJP, JP_MODIFICADORES,
-  DADO_DA_AUTONOMIA, FONTES, CUSTOS, gastoDeCombustivel,
+  DADO_DE_AUTONOMIA, FONTES_DE_ENERGIA, CUSTOS, formulaDeGasto, custoDeAbastecimento,
   linhasDoVoo,
 } from "../starwars-sd-module/module/nave-voo.js";
+
+const RAIZ = path.resolve(fileURLToPath(import.meta.url), "../..");
 
 const problemas = [];
 const confere = (ok, msg) => { if (!ok) problemas.push(msg); };
@@ -111,40 +117,62 @@ const confere = (ok, msg) => { if (!ok) problemas.push(msg); };
 
 /* ── O COMBUSTÍVEL (§3) ────────────────────────────────────────────────────── */
 //
-// A ASSERÇÃO CONTRAINTUITIVA: o dado é o GASTO, então autonomia ALTA usa o dado
-// MENOR. Quem lê "alta" espera o número maior, e inverter isso faz o reator
-// atômico — o mais caro da T10-3 — gastar o triplo do combustível líquido.
+// ── A ASSERÇÃO QUE ESTE BLOCO EXISTE PARA FAZER ─────────────────────────────
+//
+// Que a tabela da T10-3 viva num lugar só. Eu escrevi uma segunda cópia dela
+// aqui, sem olhar que equipamentos-nave.js já a tinha — e as duas já divergiam
+// em dois pontos: a chave dos painéis solares (`solar` contra `termo`) e os
+// preços por tamanho, que só a de lá tinha.
+//
+// Duas tabelas da mesma tabela do livro é como a ficha passa a dizer uma coisa
+// e o compêndio outra, meses depois, sem erro nenhum aparecer.
 {
-  confere(DADO_DA_AUTONOMIA["Alta"] === 2 && DADO_DA_AUTONOMIA["Baixa"] === 6,
-    "autonomia alta tem de usar o dado MENOR: o dado é o gasto, não o alcance");
-  confere(DADO_DA_AUTONOMIA["Alta"] < DADO_DA_AUTONOMIA["Média"], "alta gasta menos que média");
-  confere(DADO_DA_AUTONOMIA["Média"] < DADO_DA_AUTONOMIA["Baixa"], "média gasta menos que baixa");
+  const fonte = fs.readFileSync(
+    path.join(RAIZ, "starwars-sd-module", "module", "nave-voo.js"), "utf8");
 
-  // as quatro fontes da T10-3
-  confere(FONTES.length === 4, `${FONTES.length} fontes, a T10-3 tem 4`);
-  const atomico = FONTES.find((f) => f.chave === "atomico");
-  confere(atomico?.autonomia === "Alta", "o reator atômico tem autonomia alta");
-  const detritos = FONTES.find((f) => f.chave === "detritos");
-  confere(detritos?.autonomia === "Baixa", "a incineração de detritos tem autonomia baixa");
+  confere(/from "\.\/equipamentos-nave\.js"/.test(fonte),
+    "nave-voo.js não importa de equipamentos-nave.js — a T10-3 mora lá");
+  for (const nome of ["FONTES_DE_ENERGIA", "DADO_DE_AUTONOMIA"]) {
+    // String.raw: numa template string comum o `\s` vira um "s" literal, e o
+    // regex passa a procurar "consts+NOME". Ele nunca casa, a asserção nunca
+    // falha, e a duplicata que ela existe para barrar entra sem resistência —
+    // foi o que aconteceu na primeira versão disto, pega por sabotagem.
+    const define = new RegExp(String.raw`(const|let|var)\s+${nome}\s*=`);
+    confere(!define.test(fonte),
+      `nave-voo.js define a própria ${nome} — é a segunda cópia da T10-3, e as duas ` +
+      `vão divergir sem ninguém ver`);
+  }
+
+  // O contraintuitivo da tabela: o dado é o GASTO, então autonomia ALTA usa o
+  // dado MENOR. Quem lê "alta" espera o número maior, e inverter faria o reator
+  // atômico — o mais caro da T10-3 — gastar o triplo do combustível líquido.
+  confere(DADO_DE_AUTONOMIA["Alta"] === 2 && DADO_DE_AUTONOMIA["Baixa"] === 6,
+    "autonomia alta tem de usar o dado MENOR: o dado é o gasto, não o alcance");
+  confere(DADO_DE_AUTONOMIA["Alta"] < DADO_DE_AUTONOMIA["Baixa"], "alta gasta menos que baixa");
+
+  confere(Object.keys(FONTES_DE_ENERGIA).length === 4,
+    `${Object.keys(FONTES_DE_ENERGIA).length} fontes, a T10-3 tem 4`);
+  confere(FONTES_DE_ENERGIA.atomico?.autonomia === "Alta", "o reator atômico tem autonomia alta");
+  confere(FONTES_DE_ENERGIA.detritos?.autonomia === "Baixa", "a incineração tem autonomia baixa");
 
   // o exemplo do livro: espaçonave particular, líquido (d4), salto com pouca
   // interferência → gasto 2 → 2d4%
-  const g = gastoDeCombustivel("Média", 2);
-  confere(g?.formula === "2d4", `o exemplo do livro devia dar 2d4, veio ${g?.formula}`);
+  confere(formulaDeGasto("liquido", 2) === "2d4",
+    `o exemplo do livro devia dar 2d4, veio ${formulaDeGasto("liquido", 2)}`);
+  confere(/^\d+d\d+$/.test(formulaDeGasto("liquido", 2)),
+    "o gasto tem de ser FÓRMULA — sorteá-lo aqui faria duas viagens iguais custarem " +
+    "diferente sem ninguém ver o dado");
+  confere(formulaDeGasto("atomico", 1) === "1d2", "reator atômico, um dia de viagem");
+  confere(formulaDeGasto("liquido", 9).startsWith("3d"), "o livro limita a 3 dados");
+  confere(formulaDeGasto("liquido", 0).startsWith("1d"), "o mínimo é 1 dado");
 
-  // devolve a FÓRMULA, e não o resultado: quem rola é a mesa
-  confere(/^\d+d\d+$/.test(g.formula),
-    `"${g.formula}" não é uma fórmula — um gasto sorteado aqui faria duas viagens ` +
-    `iguais custarem diferente sem ninguém ver o dado`);
-
-  confere(gastoDeCombustivel("Alta", 1)?.formula === "1d2", "reator atômico, um dia de viagem");
-  confere(gastoDeCombustivel("Baixa", 3)?.formula === "3d6", "detritos, salto caro");
-
-  // «de 1 a 3 dados» — o limite é do livro
-  confere(gastoDeCombustivel("Média", 9)?.dados === 3, "o livro limita a 3 dados");
-  confere(gastoDeCombustivel("Média", 0)?.dados === 1, "o mínimo é 1 dado");
-  confere(gastoDeCombustivel("Variável") === null,
-    "autonomia variável (painéis solares) não tem dado fixo, e não pode inventar um");
+  // os painéis solares não se abastecem: «não se compra, se expõe ao sol». Um
+  // preço inventado aqui cobraria da mesa por algo que o livro dá de graça.
+  confere(custoDeAbastecimento("solar", "Média", 100) === null,
+    "os painéis termoenergéticos não têm preço de abastecimento na T10-3");
+  confere(custoDeAbastecimento("liquido", "Média", 10) === 10000,
+    `encher 10% de combustível líquido numa média custa 10 × 1.000 = 10.000, veio ` +
+    `${custoDeAbastecimento("liquido", "Média", 10)}`);
 
   for (const c of CUSTOS) {
     confere(c.dados >= 1 && c.dados <= 3, `o custo "${c.rotulo}" está fora do 1 a 3`);
@@ -162,6 +190,7 @@ const confere = (ok, msg) => { if (!ok) problemas.push(msg); };
   confere(l.pilotagem.efetiva === 55, `70% − 15% = 55%, veio ${l.pilotagem.efetiva}`);
   confere(l.pilotagem.base === 70, "o painel precisa mostrar a base também, ou a mesa não confere a conta");
   confere(l.combustivel.gastoPorDia === "1d4", "o gasto diário do combustível líquido é 1d4");
+  confere(l.combustivel.fonte?.chave === "liquido", "a fonte precisa levar a própria chave");
   confere(l.combustivel.porcento === 60, "o tanque");
 
   // o tanque é 0 a 100 e nada mais: um 140% na flag não pode virar uma barra que
@@ -183,5 +212,6 @@ if (problemas.length) {
 console.log(
   "  ✔ painel de voo: a penalidade por avaria com o exemplo do livro (35% perdidos → −15%, " +
     "bloco fechado) e o teto de 50%, os 5% que sobram na nave destruída, a T10-5 com os " +
-    "críticos ANTES do alvo, e o combustível com autonomia alta usando o dado MENOR"
+    "críticos ANTES do alvo, e a T10-3 lida de UM lugar só (equipamentos-nave.js), com " +
+    "autonomia alta usando o dado MENOR"
 );

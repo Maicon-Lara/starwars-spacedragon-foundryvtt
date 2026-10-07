@@ -93,36 +93,23 @@ export function modificadorDaJP(rolagem, chance) {
 }
 
 /* ── O COMBUSTÍVEL (§3) ────────────────────────────────────────────────────── */
+//
+// ── POR QUE AQUI NÃO HÁ TABELA ──────────────────────────────────────────────
+//
+// As fontes, os preços e o dado da autonomia moram em equipamentos-nave.js, que
+// é quem lê a T10-3. Eu havia reescrito tudo aqui sem olhar para lá, e as duas
+// versões já divergiam: a chave dos painéis solares era `solar` de um lado e
+// `termo` do outro, e só a de lá tinha os preços por tamanho.
+//
+// Uma regra, um lugar. Duas tabelas da mesma tabela do livro é como a ficha
+// passa a dizer uma coisa e o compêndio outra, meses depois, sem erro nenhum
+// aparecer.
 
-/**
- * «A autonomia escolhe o dado: Baixa d6 · Média d4 · Alta d2.»
- *
- * O dado é o GASTO, então autonomia alta usa o dado MENOR. É contraintuitivo o
- * bastante para já ter sido invertido uma vez em planilha: quem lê "alta" espera
- * o número maior.
- */
-export const DADO_DA_AUTONOMIA = { Baixa: 6, Média: 4, Alta: 2 };
+import { FONTES_DE_ENERGIA, formulaDeGasto } from "./equipamentos-nave.js";
 
-/** As quatro fontes da T10-3, com a autonomia de cada uma. */
-export const FONTES = [
-  { chave: "liquido", rotulo: "Combustível líquido", autonomia: "Média", raridade: "Comum" },
-  { chave: "detritos", rotulo: "Incineração de detritos", autonomia: "Baixa", raridade: "Incomum" },
-  { chave: "termo", rotulo: "Painéis termoenergéticos", autonomia: "Variável", raridade: "Rara" },
-  { chave: "atomico", rotulo: "Reatores atômicos", autonomia: "Alta", raridade: "Comum" },
-];
-
-/**
- * A fórmula do gasto: «o custo da ação escolhe quantos dados, de 1 a 3».
- *
- * Devolve a fórmula, e não o resultado: quem rola é a mesa. Um gasto sorteado
- * aqui faria duas viagens iguais custarem diferente sem ninguém ver o dado.
- */
-export function gastoDeCombustivel(autonomia, custo = 1) {
-  const faces = DADO_DA_AUTONOMIA[autonomia];
-  if (!faces) return null;
-  const dados = Math.max(1, Math.min(3, Math.round(Number(custo) || 1)));
-  return { formula: `${dados}d${faces}`, dados, faces };
-}
+export {
+  FONTES_DE_ENERGIA, DADO_DE_AUTONOMIA, formulaDeGasto, custoDeAbastecimento,
+} from "./equipamentos-nave.js";
 
 /** O custo de cada ação que gasta combustível, em dados (§3). */
 export const CUSTOS = [
@@ -141,8 +128,8 @@ export const CUSTOS = [
  */
 export function linhasDoVoo({ pv, pvMax, cp, ba, jp, movimento, combustivel, fonte, pilotagem }) {
   const penalidade = penalidadeDeAvaria(pv, pvMax);
-  const f = FONTES.find((x) => x.chave === fonte) ?? null;
-  const gasto = f ? gastoDeCombustivel(f.autonomia, 1) : null;
+  const f = FONTES_DE_ENERGIA[fonte] ?? null;
+  const gasto = f ? formulaDeGasto(fonte, 1) : null;
 
   return {
     // o que o sistema já calcula, repetido aqui para a mesa ler num lugar só
@@ -160,9 +147,9 @@ export function linhasDoVoo({ pv, pvMax, cp, ba, jp, movimento, combustivel, fon
     },
     combustivel: {
       porcento: Math.max(0, Math.min(100, Number(combustivel) || 0)),
-      fonte: f,
+      fonte: f ? { chave: fonte, ...f } : null,
       // o gasto de UM dado, que é a viagem de um dia; o resto se multiplica
-      gastoPorDia: gasto?.formula ?? null,
+      gastoPorDia: gasto,
     },
   };
 }
