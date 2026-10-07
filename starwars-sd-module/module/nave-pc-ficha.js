@@ -41,7 +41,9 @@ import {
   orcamentoDeCamaras, CAMARAS_BASE,
 } from "./nave-pc-dados.js";
 import { linhasDoVoo, CUSTOS } from "./nave-voo.js";
-import { avisosDaNave, bonusDeAtaqueDasCamaras, podeAtacar, operacional } from "./nave-sistemas.js";
+import {
+  avisosDaNave, bonusDeAtaque, equipamentosDoAtor, podeAtacar, operacional,
+} from "./nave-sistemas.js";
 import { POSTOS, ACOES_DE_POSTO, AUTOMATIZA } from "./tripulacao.js";
 import {
   painelDasCamadas, MARCA_CAMADAS, CLASSE_ENERGIA, CLASSE_RELOGIO,
@@ -238,7 +240,9 @@ export function painelDeVoo(ator, nave) {
   // O +2 do Computador Balístico vem da PONTE, e some com ela. Mostrar o BA já
   // somado evita a conta de cabeça no meio do combate; mostrar as duas parcelas
   // evita a pergunta "de onde saiu esse número".
-  const extra = bonusDeAtaqueDasCamaras(nave);
+  // o +2 exige o Computador Balístico instalado E a Ponte operacional: são
+  // duas condições, e o equipamento entra como item arrastado do compêndio
+  const extra = bonusDeAtaque(nave, equipamentosDoAtor(ator, ID));
   const ba = extra
     ? `+${l.ba + extra} <small>(${l.ba} +${extra} balístico)</small>`
     : `+${l.ba}`;

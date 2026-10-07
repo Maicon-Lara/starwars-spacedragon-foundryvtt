@@ -6,7 +6,7 @@
   "img": "systems/olddragon2e/assets/icons/weapon.svg",
   "system": {
     "odo_id": "escudo-de-forca",
-    "description": "Campo de força que repele a maioria dos ataques enquanto durar. Garante +10 no CP, mas gasta combustível a cada rodada de combate — o Mestre faz as rolagens. Cabe em nave: média, gigantesca, colossal. Efeito: +10 no CP.",
+    "description": "Campo de força que repele a maioria dos ataques enquanto durar. Garante +10 no CP, mas gasta combustível a cada rodada de combate — o Mestre faz as rolagens. Cabe em nave: média, gigantesca, colossal.",
     "quantity": 1,
     "cost": "",
     "weight_in_load": 0,

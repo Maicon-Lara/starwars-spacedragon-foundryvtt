@@ -6,7 +6,7 @@
   "img": "systems/olddragon2e/assets/icons/misc.svg",
   "system": {
     "odo_id": "piloto-automatico",
-    "description": "Garante um sucesso automático em qualquer jogada de pilotagem enquanto ativo. NÃO pode ser usado em combate. Cabe em nave: média, gigantesca, colossal.",
+    "description": "Garante um sucesso automático em qualquer jogada de pilotagem enquanto ativo. NÃO pode ser usado em combate. Cabe em nave: média, gigantesca, colossal. Efeito: sucesso automático em pilotagem enquanto ativo. NUNCA em combate.",
     "quantity": 1,
     "cost": "",
     "weight_in_load": 0,

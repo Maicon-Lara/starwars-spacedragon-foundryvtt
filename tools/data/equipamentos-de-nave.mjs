@@ -51,12 +51,66 @@ export function tamanhosQueCabem(cabe) {
  */
 export function descricaoDoEquipamento(e) {
   const linhas = [e.nota, tamanhosQueCabem(e.cabe)];
-  if (e.efeito?.cp) linhas.push(`Efeito: +${e.efeito.cp} no CP.`);
-  if (e.efeito?.ataque) linhas.push(`Efeito: +${e.efeito.ataque} no ataque.`);
-  if (e.efeito?.movimento) linhas.push(`Efeito: movimentação ×${e.efeito.movimento}.`);
-  if (e.efeito?.arma) linhas.push(`Arma: ${e.efeito.arma.nome}, dano ${e.efeito.arma.dano}.`);
-  if (e.efeito?.permiteSalto) linhas.push("Sem ele não há salto para o hiperespaço.");
-  return linhas.filter(Boolean).join(" ");
+  const ef = e.efeito ?? {};
+
+  if (ef.cp) {
+    // o escudo gasta combustível por rodada, e quem rola é o Mestre (T10-4)
+    linhas.push(`Efeito: +${ef.cp} no CP enquanto ativo. Gasta combustível a cada rodada de combate.`);
+  }
+  if (ef.ataque) {
+    // as DUAS condições, ditas aqui porque é onde a mesa olha ao comprar
+    linhas.push(`Efeito: +${ef.ataque} nas rolagens de ataque da nave. Exige a Ponte de Comando operacional.`);
+  }
+  if (ef.movimento) {
+    linhas.push(`Efeito: movimentação ×${ef.movimento} (+${Math.round((ef.movimento - 1) * 100)}%), consumindo combustível rápido.`);
+  }
+
+  /* ── A ARMA, COM A REGRA INTEIRA ─────────────────────────────────────────
+   *
+   * A descrição é onde a mesa lê a regra, porque o botão de ataque da ficha só
+   * rola o dano — ele não sabe dos 4 disparos da metralhadora nem da JP dos
+   * mísseis. Escrever só "dano 4d10" nos mísseis esconde a metade que decide
+   * se o tiro acerta.
+   */
+  if (ef.arma) {
+    const a = ef.arma;
+    const quantos = (a.ataques ?? 1) > 1
+      ? ` ${a.ataques} ataques por rodada, de ${a.dano} cada.`
+      : ` Dano ${a.dano}.`;
+    linhas.push(`Arma montada:${quantos}`);
+    if (a.jpDoAlvo) {
+      linhas.push("Só atinge se o alvo FALHAR numa jogada de proteção — role o ataque e, se acertar, o alvo faz a JP dele.");
+    }
+    if (a.perseguePor) {
+      linhas.push(`Segue o alvo por ${a.perseguePor} rodadas antes do impacto.`);
+    }
+  }
+
+  if (ef.redireciona) {
+    linhas.push(`Efeito: ${ef.redireciona}% de redirecionar contra o atacante qualquer ataque de raio, por ${ef.rodadas} rodadas.`);
+  }
+  if (ef.pilotagemAutomatica) {
+    linhas.push("Efeito: sucesso automático em pilotagem enquanto ativo. NUNCA em combate.");
+  }
+  if (ef.permiteSalto) linhas.push("Sem ele não há salto para o hiperespaço.");
+  /* ── SEM REPETIR O QUE A NOTA JÁ DISSE ───────────────────────────────────
+   *
+   * A nota é a prosa do livro, e muitas delas já trazem o número: «Concede +2
+   * em rolagens de ataque». A linha de Efeito então repetia a mesma frase dois
+   * parágrafos abaixo, e uma descrição que se repete ensina a mesa a parar de
+   * ler — justamente onde estão as regras que o botão de ataque não aplica.
+   *
+   * O corte é pela presença do NÚMERO: se a nota já traz "+2" ou "4d10", a
+   * linha estruturada não acrescenta nada.
+   */
+  const nota = String(e.nota ?? "");
+  const util = linhas.filter((l, i) => {
+    if (i < 2 || !l) return Boolean(l);
+    const numeros = l.match(/[+×]?\d+(?:d\d+)?%?/g) ?? [];
+    if (!numeros.length) return true;
+    return !numeros.every((n) => nota.includes(n));
+  });
+  return util.filter(Boolean).join(" ");
 }
 
 export const equipamentosDeNave = Object.entries(EQUIPAMENTOS_DE_NAVE).map(([chave, e]) => ({
@@ -66,4 +120,10 @@ export const equipamentosDeNave = Object.entries(EQUIPAMENTOS_DE_NAVE).map(([cha
   cabe: e.cabe,
   img: ICONE[e.grupo] ?? ICONE.utilitario,
   desc: descricaoDoEquipamento(e),
+  // O dano sai da regra para o item, e é ele que decide se o equipamento vira
+  // `weapon` ou `misc` no build. Sem repassar isto, as quatro armas da T10-4
+  // nasciam item genérico — e um item genérico não tem o que clicar para
+  // atacar, que foi o que a mesa relatou.
+  dano: e.efeito?.arma?.dano ?? null,
+  ataques: e.efeito?.arma?.ataques ?? 1,
 }));

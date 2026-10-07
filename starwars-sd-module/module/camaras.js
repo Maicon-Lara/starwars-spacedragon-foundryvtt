@@ -28,7 +28,13 @@ export const CAMARAS = {
   ponte: {
     rotulo: "Ponte de Comando", obra: 120000, prazo: "2 semanas",
     efeito: "Controle central. Abriga o Computador Balístico (+2 nos ataques da nave) e o piloto automático; é onde se rolam os 3 testes de Pilotar do salto hiperespacial. Sem ela operacional, a nave não pode ser pilotada nem operar escudos ou armas.",
-    ataque: 2, exigeParaAtacar: true, exigeParaPilotar: true, exigeParaEscudos: true,
+    // O +2 do Computador Balístico NÃO mora aqui: ele é equipamento da T10-4,
+    // e a Ponte apenas o habilita («exige a Ponte operacional»). Enquanto o
+    // bônus estava na câmara, TODA nave com Ponte ganhava +2 — inclusive a que
+    // nunca comprou o computador, que custa caro e cabe em qualquer tamanho
+    // justamente porque é uma escolha.
+    exigeParaAtacar: true, exigeParaPilotar: true, exigeParaEscudos: true,
+    habilitaEquipamento: "balistico",
   },
   aposentos: {
     rotulo: "Aposentos da Tripulação", obra: 40000, prazo: "1 semana",

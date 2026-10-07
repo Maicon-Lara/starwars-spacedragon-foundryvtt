@@ -99,21 +99,33 @@ export const EQUIPAMENTOS_DE_NAVE = {
     rotulo: "Canhões de energia",
     grupo: "combate",
     cabe: { Pequena: false, "Média": false, Gigantesca: true, Colossal: true },
-    efeito: { arma: { nome: "Canhões de energia", dano: "3d10" } },
-    nota: "Versão mais poderosa dos disparadores laser. O dano acima é a leitura da casa: o livro só diz 'mais poderoso', e 3d10 é o degrau seguinte ao 2d10 dos disparadores.",
+    efeito: { arma: { nome: "Canhões de energia", dano: "5d10" } },
+    nota: "Versão pesada dos disparadores laser: 5d10 de dano. O módulo trazia 3d10 como leitura da casa, de quando o livro parecia dizer só 'mais poderoso'; as Regras Compiladas (T10-4) fixam 5d10, e é o que vale.",
   },
   metralhadora: {
     rotulo: "Metralhadora de energia",
     grupo: "combate",
     cabe: { Pequena: false, "Média": true, Gigantesca: true, Colossal: true },
-    efeito: { arma: { nome: "Metralhadora de energia", dano: "1d10" }, ataques: 4 },
+    // `ataques` fica DENTRO de `arma`: é propriedade da arma, não do
+    // equipamento. Fora dali ninguém o lia — `armasInstaladas` devolvia 1
+    // ataque, e os quatro disparos por rodada da T10-4 sumiam em silêncio.
+    efeito: { arma: { nome: "Metralhadora de energia", dano: "1d10", ataques: 4 } },
     nota: "Versão automática dos disparadores. Permite 4 ataques por rodada, de 1d10 cada.",
   },
   misseis: {
     rotulo: "Mísseis teleguiados",
     grupo: "combate",
     cabe: { Pequena: false, "Média": true, Gigantesca: true, Colossal: true },
-    efeito: { arma: { nome: "Mísseis teleguiados", dano: "4d10" } },
+    // A JP do alvo e as rodadas de perseguição são METADE da regra do míssil, e
+    // estavam só na nota em prosa. Nos dados, a descrição as escreve sozinha —
+    // e quem for automatizar o disparo tem onde ler que o acerto depende de uma
+    // JP, em vez de rolar 4d10 e pronto.
+    efeito: {
+      arma: {
+        nome: "Mísseis teleguiados", dano: "4d10",
+        jpDoAlvo: true, perseguePor: "1d4+1",
+      },
+    },
     nota: "Um míssil que segue o alvo por 1d4+1 rodadas, causando 4d10 no impacto.",
   },
   balistico: {
@@ -185,7 +197,11 @@ export function conflitosDeTamanho(instalados = {}, tamanho = "Média") {
 export function armasInstaladas(instalados = {}, tamanho = "Média") {
   return Object.entries(EQUIPAMENTOS_DE_NAVE)
     .filter(([k, e]) => e.efeito?.arma && instalados[k] === true && cabeNoTamanho(k, tamanho))
-    .map(([, e]) => ({ ...e.efeito.arma, ataques: e.efeito.ataques ?? 1 }));
+    // `ataques` vem de DENTRO de `arma`, onde ele mora. Lia-se
+    // `e.efeito.ataques` — um nível acima —, e como lá não havia nada a
+    // metralhadora saía com 1 ataque em vez dos 4 da T10-4. O espalhamento de
+    // `...e.efeito.arma` já traz o campo; o `?? 1` cobre as armas de tiro único.
+    .map(([, e]) => ({ ataques: 1, ...e.efeito.arma }));
 }
 
 /* ── FONTES DE ENERGIA E COMBUSTÍVEL (T10-3) ───────────────────────────────

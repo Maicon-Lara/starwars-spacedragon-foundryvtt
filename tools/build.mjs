@@ -472,8 +472,43 @@ function buildNavesDocs() {
 
   const fEquip = pasta("Equipamentos adicionais (T10-4)", "nave-equip-pasta");
   equipamentosDeNave.forEach((e, i) => {
-    const doc = miscDoc({ nome: e.nome, desc: e.desc, img: e.img },
-      fEquip._id, "nave-equip", (i + 1) * 100000);
+    /* ── AS ARMAS SÃO `weapon`, E NÃO `misc` ──────────────────────────────
+     *
+     * Todos os equipamentos da T10-4 nasciam `misc` — item genérico. A mesa
+     * reportou o efeito: as armas «estão como item geral, não como arma, e não
+     * geram ataque». É exatamente isso: o sistema só desenha o botão de rolar
+     * dano para itens do tipo `weapon` com `damage` preenchido, e um `misc`
+     * fica na mochila sem nada para clicar.
+     *
+     * As cinco de combate com dano declarado (disparadores, canhões,
+     * metralhadora, mísseis) viram arma de verdade. O Computador Balístico, os
+     * Defletores e o Escudo de Força continuam `misc`, e devem continuar: eles
+     * não atiram, modificam o que atira — e um "ataque" de Escudo de Força na
+     * ficha seria um botão que ninguém saberia o que faz.
+     *
+     * `ranged` porque é o que o sistema usa para o que dispara à distância, e
+     * `two_handed` porque uma arma de nave não é empunhada por ninguém — o
+     * campo existe para o cálculo de mãos livres do personagem, e deixá-la
+     * como arma de uma mão a tornaria combinável com escudo.
+     */
+    const dano = e.dano;
+    const doc = dano
+      ? weaponDoc(
+          {
+            nome: e.nome,
+            desc: e.desc,
+            img: e.img,
+            damage: dano,
+            ranged: true,
+            melee: false,
+            two_handed: true,
+            // o alcance é o do combate espacial, que o §10.6 não mede em
+            // metros: quem decide se a nave alvo está ao alcance é o Mestre
+            shoot_range: 0,
+          },
+          fEquip._id, "nave-equip", (i + 1) * 100000)
+      : miscDoc({ nome: e.nome, desc: e.desc, img: e.img },
+          fEquip._id, "nave-equip", (i + 1) * 100000);
     doc.flags["starwars-sd"] = { equipamentoDeNave: { chave: e.chave, grupo: e.grupo, cabe: e.cabe } };
     docs.push(doc);
   });

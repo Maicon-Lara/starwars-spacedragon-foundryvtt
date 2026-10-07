@@ -15,7 +15,7 @@
 
 import {
   operacional, podePilotar, podeAtacar, podeUsarEscudos, podeRepararEmCombate,
-  podeEscapar, bonusDeAtaqueDasCamaras, recuperacaoEmViagem, custoDeConserto,
+  podeEscapar, bonusDeAtaque, equipamentosDoAtor, recuperacaoEmViagem, custoDeConserto,
   avisosDaNave,
 } from "../starwars-sd-module/module/nave-sistemas.js";
 import { CAMARAS } from "../starwars-sd-module/module/camaras.js";
@@ -54,13 +54,30 @@ const inteira = () =>
     confere(!podeUsarEscudos(n),
       `com a Ponte ${estado} o escudo de força ainda liga — «não pode ser pilotada nem ` +
       `operar escudos ou armas» veta os três juntos`);
-    confere(bonusDeAtaqueDasCamaras(n) === 0,
+    confere(bonusDeAtaque(n, new Set(["balistico"])) === 0,
       `com a Ponte ${estado} o Computador Balístico ainda dá bônus`);
   }
 
-  // o +2 existe quando a Ponte está de pé
-  confere(bonusDeAtaqueDasCamaras(nave()) === 2,
-    `a Ponte operacional devia dar +2, veio ${bonusDeAtaqueDasCamaras(nave())}`);
+  // ── O +2 EXIGE AS DUAS COISAS ──────────────────────────────────────────
+  //
+  // A T10-4 diz que o Computador Balístico dá +2 e «exige a Ponte
+  // operacional». O bônus morava na CÂMARA, e toda nave com Ponte o ganhava —
+  // inclusive a que nunca comprou o computador, que é um equipamento caro e
+  // uma escolha. Duas condições, e as duas importam.
+  const comBalistico = new Set(["balistico"]);
+  confere(bonusDeAtaque(nave(), comBalistico) === 2,
+    `Ponte de pé + computador instalado devia dar +2, veio ${bonusDeAtaque(nave(), comBalistico)}`);
+  confere(bonusDeAtaque(nave(), new Set()) === 0,
+    "a nave ganhou +2 SEM ter o Computador Balístico — o bônus é do equipamento, " +
+    "e a Ponte só o habilita (T10-4)");
+  confere(bonusDeAtaque(nave({ ponte: "ausente" }), comBalistico) === 0,
+    "o computador deu bônus com a Ponte arrancada");
+
+  // os equipamentos vêm dos ITENS do ator, não da flag: eles entram por arrasto
+  const ator = { items: [{ flags: { "starwars-sd": { equipamentoDeNave: { chave: "escudo" } } } }] };
+  confere(equipamentosDoAtor(ator).has("escudo"), "o equipamento arrastado não foi reconhecido");
+  confere(!equipamentosDoAtor({ items: [] }).has("escudo"), "nave sem itens não tem equipamento");
+  confere(equipamentosDoAtor(null).size === 0, "ator ausente não quebra");
 
   // e perder OUTRA câmara não cala as armas: só a Ponte faz isso
   const semHospital = nave({ hospital: "ausente" });

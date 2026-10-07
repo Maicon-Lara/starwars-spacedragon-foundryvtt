@@ -6,7 +6,7 @@
   "img": "systems/olddragon2e/assets/icons/weapon.svg",
   "system": {
     "odo_id": "computador-balistico",
-    "description": "Calcula a melhor maneira de atingir os inimigos. Concede +2 em rolagens de ataque. Exige a Ponte de Comando operacional. Qualquer tamanho de nave. Efeito: +2 no ataque.",
+    "description": "Calcula a melhor maneira de atingir os inimigos. Concede +2 em rolagens de ataque. Exige a Ponte de Comando operacional. Qualquer tamanho de nave.",
     "quantity": 1,
     "cost": "",
     "weight_in_load": 0,

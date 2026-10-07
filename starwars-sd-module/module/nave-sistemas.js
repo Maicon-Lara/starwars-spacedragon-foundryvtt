@@ -26,6 +26,7 @@
  */
 
 import { CAMARAS } from "./camaras.js";
+import { EQUIPAMENTOS_DE_NAVE } from "./equipamentos-nave.js";
 import { estadoDoComodo } from "./nave-pc-dados.js";
 
 /** Uma câmara está operacional? Só «instalada» conta. */
@@ -63,16 +64,42 @@ export function podeEscapar(nave) {
 }
 
 /**
- * O +2 do Computador Balístico.
+ * Os equipamentos da T10-4 instalados nesta nave.
  *
- * Vem da Ponte, e o equipamento é da T10-4 — ter o computador numa nave de
- * ponte destruída não vale nada, porque «exige a Ponte operacional». Por isso o
- * bônus mora aqui, e não na lista de equipamentos.
+ * Eles entram pelo ARRASTO do compêndio, como itens — então quem sabe o que a
+ * nave tem são os itens do ator, e não a flag. A flag guarda o que é estado
+ * (câmaras, postos, combustível); o que é posse é item.
  */
-export function bonusDeAtaqueDasCamaras(nave) {
+export function equipamentosDoAtor(ator, id = "starwars-sd") {
+  const chaves = new Set();
+  for (const i of ator?.items ?? []) {
+    const c = i?.flags?.[id]?.equipamentoDeNave?.chave ?? i?.getFlag?.(id, "equipamentoDeNave")?.chave;
+    if (c) chaves.add(c);
+  }
+  return chaves;
+}
+
+/**
+ * O bônus de ataque que vem dos equipamentos instalados.
+ *
+ * ── A CORREÇÃO QUE ISTO FAZ ───────────────────────────────────────────────
+ *
+ * O +2 do Computador Balístico estava na CÂMARA, e toda nave com Ponte o
+ * ganhava — inclusive a que nunca comprou o computador. A T10-4 é clara: o
+ * bônus é do equipamento, e a Ponte apenas o habilita («exige a Ponte
+ * operacional»).
+ *
+ * São duas condições, e as duas importam. Ter o computador numa nave de ponte
+ * destruída não vale nada; ter a ponte sem o computador também não.
+ */
+export function bonusDeAtaque(nave, equipamentos = new Set()) {
   let total = 0;
   for (const [chave, c] of Object.entries(CAMARAS)) {
-    if (c.ataque && operacional(nave, chave)) total += c.ataque;
+    if (!c.habilitaEquipamento) continue;
+    if (!operacional(nave, chave)) continue;              // a câmara habilita
+    if (!equipamentos.has(c.habilitaEquipamento)) continue; // o equipamento dá
+    const e = EQUIPAMENTOS_DE_NAVE[c.habilitaEquipamento];
+    total += Number(e?.efeito?.ataque) || 0;
   }
   return total;
 }

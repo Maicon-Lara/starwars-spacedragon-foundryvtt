@@ -6,7 +6,7 @@
   "img": "systems/olddragon2e/assets/icons/misc.svg",
   "system": {
     "odo_id": "propulsores-a-jato",
-    "description": "Aumentam a movimentação da nave em 50%, mas consomem combustível rapidamente. Cabe em nave: pequena, média. Efeito: movimentação ×1.5.",
+    "description": "Aumentam a movimentação da nave em 50%, mas consomem combustível rapidamente. Cabe em nave: pequena, média. Efeito: movimentação ×1.5 (+50%), consumindo combustível rápido.",
     "quantity": 1,
     "cost": "",
     "weight_in_load": 0,

@@ -1,5 +1,42 @@
 # Changelog
 
+## 1.45.0 — as armas de nave viraram armas
+
+As quatro armas da T10-4 nasciam como **item genérico**: ficavam na mochila sem
+nada para clicar, porque o sistema só desenha o botão de ataque para itens do
+tipo *arma* com dano preenchido. Agora são armas de verdade — Disparadores
+laser, Canhões de energia, Metralhadora e Mísseis teleguiados.
+
+O Computador Balístico, os Defletores e o Escudo de Força continuam item comum,
+e devem continuar: eles não atiram, modificam quem atira. Um "ataque" de Escudo
+de Força na ficha seria um botão que ninguém saberia o que faz.
+
+### Duas regras estavam erradas no módulo
+
+**Canhões de energia faziam 3d10.** A T10-4 diz **5d10**. O valor antigo era
+leitura da casa, de quando o livro parecia dizer só *"mais poderoso"* — a nota
+no código admitia isso. As Regras Compiladas fixaram 5d10.
+
+**A Metralhadora dava 1 ataque.** São **4 por rodada**, de 1d10 cada. O campo
+existia, mas guardado um nível acima de onde era lido: ninguém o via, e os
+quatro disparos sumiam em silêncio.
+
+### O +2 do Computador Balístico exigia só a Ponte
+
+Toda nave com a Ponte operacional ganhava +2 no ataque — **inclusive a que nunca
+comprou o computador**. A T10-4 é clara: o bônus é do equipamento, e a Ponte
+apenas o habilita. São duas condições, e as duas importam agora.
+
+### A regra inteira na descrição
+
+O botão de ataque rola o dano, e só. Ele não sabe dos quatro disparos da
+metralhadora nem da JP dos mísseis — *"só atinge se o alvo falhar numa jogada de
+proteção"* é metade da regra do míssil, e estava só na prosa.
+
+As descrições agora trazem a regra estruturada, sem repetir o que a prosa já
+disse: uma descrição que se repete ensina a mesa a parar de ler, justamente onde
+estão as regras que o botão não aplica.
+
 ## 1.44.0 — a nave aguenta cinco pessoas ao mesmo tempo
 
 A ficha gravava a flag **inteira** a cada clique. Com uma pessoa operando a

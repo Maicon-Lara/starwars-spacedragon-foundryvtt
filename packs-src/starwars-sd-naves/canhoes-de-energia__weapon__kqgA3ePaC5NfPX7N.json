@@ -1,18 +1,32 @@
 {
   "folder": "HrqAzC6v3ObyDVZk",
   "name": "Canhões de energia",
-  "type": "misc",
-  "_id": "RsF9OmR8QP9vGUC8",
+  "type": "weapon",
+  "_id": "kqgA3ePaC5NfPX7N",
   "img": "systems/olddragon2e/assets/icons/weapon.svg",
   "system": {
     "odo_id": "canhoes-de-energia",
-    "description": "Versão mais poderosa dos disparadores laser. O dano acima é a leitura da casa: o livro só diz 'mais poderoso', e 3d10 é o degrau seguinte ao 2d10 dos disparadores. Cabe em nave: gigantesca, colossal. Arma: Canhões de energia, dano 3d10.",
+    "description": "Versão pesada dos disparadores laser: 5d10 de dano. O módulo trazia 3d10 como leitura da casa, de quando o livro parecia dizer só 'mais poderoso'; as Regras Compiladas (T10-4) fixam 5d10, e é o que vale. Cabe em nave: gigantesca, colossal.",
     "quantity": 1,
     "cost": "",
     "weight_in_load": 0,
     "weight_in_grams": 0,
     "magic_item": false,
-    "is_equipped": false
+    "is_equipped": false,
+    "type": "ranged",
+    "damage_type": "none",
+    "damage": "5d10",
+    "bonus_damage": 0,
+    "bonus_ba": 0,
+    "bonus_ca": 0,
+    "shoot_range": 0,
+    "throw_range": 0,
+    "arrow": false,
+    "bolt": false,
+    "bolt_small": false,
+    "polearm": false,
+    "two_handed": true,
+    "versatile": false
   },
   "effects": [],
   "flags": {
@@ -44,5 +58,5 @@
   "ownership": {
     "default": 0
   },
-  "_key": "!items!RsF9OmR8QP9vGUC8"
+  "_key": "!items!kqgA3ePaC5NfPX7N"
 }
