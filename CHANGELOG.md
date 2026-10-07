@@ -1,5 +1,37 @@
 # Changelog
 
+## 1.39.0 — o conversor das naves antigas
+
+**Leia isto antes da próxima versão.** O tipo de ator `Nave` vai sair do módulo,
+e um ator cujo tipo não existe mais **não carrega**: ele some da barra lateral e
+não há interface para recuperá-lo. É o que já acontece com as naves criadas pelo
+módulo `stardragon`, que enchem o log a cada recarga.
+
+Se você tem naves no tipo antigo, converta **agora**, enquanto ele ainda existe.
+No console (F12):
+
+```js
+await game.modules.get("starwars-sd").api.converterTodas()
+```
+
+Cada nave vira um **personagem** com a Ficha de Nave já selecionada. Chegam
+inteiros: o tipo, o CP, a BA, a JP, o tanque, os PV **como estavam** (o 1d1000
+daquela nave saiu uma vez e virou história), os postos ocupados e — o que mais
+importa — o **estado de cada câmara**, inclusive as danificadas. É o que a mesa
+construiu pagando obra em jogo.
+
+**A nave velha não é apagada.** Ela fica para você comparar lado a lado e apagar
+quando quiser: apagar aqui transformaria um erro de conversão em perda
+definitiva.
+
+**O que o Combate Tático leva embora**, dito nome por nome na saída: a manobra
+planejada e o dial, a sobrecarga, a manobra evasiva em curso, o alvo travado, o
+relógio de fuga e as armas montadas (reinstale pelo compêndio de Equipamentos).
+
+**O que não se converte sozinho:** a raça e a classe de nave. Elas entram pelo
+arrasto, que é o que dispara o cálculo do CP no sistema — e o tipo vem anotado
+na ficha para você saber qual arrastar.
+
 ## 1.38.1 — a ficha ensina a montar a nave
 
 O sistema recusa em silêncio. Arrastar a **classe antes da raça** produz uma
