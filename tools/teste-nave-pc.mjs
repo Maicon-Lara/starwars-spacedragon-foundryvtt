@@ -22,7 +22,7 @@ import { fileURLToPath } from "node:url";
 import {
   ROTULOS, MARCA_NAVE_PC, renomearAbas,
   CAMPOS_NAO_USADOS, CLASSE_OCULTO, alvoDoCampo, ocultarOQueNaveNaoUsa,
-  AINDA_A_ESCONDER, guiaDeMontagem,
+  AINDA_A_ESCONDER, guiaDeMontagem, painelDaTripulacao,
 } from "../starwars-sd-module/module/nave-pc-ficha.js";
 
 const RAIZ = path.resolve(fileURLToPath(import.meta.url), "../..");
@@ -369,6 +369,78 @@ function no(tag, name, filhos = []) {
 
   confere(guiaDeMontagem(null) === "" || typeof guiaDeMontagem(null) === "string",
     "ator ausente não pode quebrar a ficha");
+}
+
+/* ── OS POSTOS SE EDITAM NA FICHA ─────────────────────────────────────────── */
+//
+// ── POR QUE ISTO É REQUISITO, E NÃO CONFORTO ────────────────────────────────
+//
+// A tripulação troca de vaga no meio do combate: o piloto assume a artilharia
+// quando o artilheiro cai, alguém corre para a Engenharia quando a Sala de
+// Máquinas pega fogo. Um painel que só mostra quem está onde obriga a mesa a
+// anotar isso fora da ficha — e aí a ficha passa a mentir na rodada seguinte,
+// que é pior do que não mostrar nada.
+{
+  const html = painelDaTripulacao({}, { postos: { leme: "Han" } });
+
+  const campos = [...html.matchAll(/data-posto="(\w+)"/g)].map((m) => m[1]);
+  confere(campos.length === 5,
+    `${campos.length} campos editáveis, deviam ser 5 — um por posto`);
+  for (const p of ["leme", "artilharia", "engenharia", "sensores", "comando"]) {
+    confere(campos.includes(p), `o posto ${p} não tem campo para trocar quem está nele`);
+  }
+
+  confere(/<input[^>]*class="sw-posto-nome"/.test(html),
+    "os postos não viraram campo de texto — continuam só exibindo");
+  confere(/value="Han"/.test(html), "quem já estava no posto não aparece no campo");
+
+  // o placeholder leva QUEM PODE ocupar: é a informação útil com a vaga vazia,
+  // e some sozinho quando alguém senta
+  confere(/placeholder="Veterano \/ Contrabandista"/.test(html),
+    "o campo vazio não diz quem pode ocupar o posto");
+
+  // aspas no nome não podem quebrar o HTML do campo
+  const comAspas = painelDaTripulacao({}, { postos: { leme: 'O "Rato"' } });
+  confere(/value="O &quot;Rato&quot;"/.test(comAspas),
+    'um nome com aspas quebra o atributo value e come o resto do painel');
+
+  // a lista de sugestões existe e está amarrada aos campos
+  confere(/<datalist id="sw-tripulacao-sugestoes">/.test(html), "falta a lista de sugestões");
+  confere(/list="sw-tripulacao-sugestoes"/.test(html),
+    "os campos não apontam para a lista — a sugestão não apareceria");
+}
+
+{
+  // ── O VAZIO APAGA, E NÃO GRAVA "" ──────────────────────────────────────
+  //
+  // `postosOcupados` conta o que está preenchido. Gravar string vazia deixaria
+  // a chave lá, e um posto vago passaria a contar como ocupado em qualquer
+  // contagem que olhe as chaves em vez dos valores.
+  const js = fs.readFileSync(
+    path.join(RAIZ, "starwars-sd-module", "module", "nave-pc-ficha.js"), "utf8");
+  // ── A JANELA TEM DE SER O MÉTODO, E NÃO UM PEDAÇO FIXO ──
+  //
+  // A primeira versão disto lia 1400 caracteres a partir do nome do método. A
+  // janela passava do fim dele e alcançava o listener vizinho, que também
+  // checa `isEditable` — e a asserção dessa checagem passava verde mesmo com a
+  // linha REMOVIDA do método certo. Pegar o corpo pelo balanço de chaves lê o
+  // método, e só ele.
+  const i = js.indexOf("#ligarPostos(raiz) {");
+  confere(i > 0, "a ficha não tem o listener que grava os postos");
+  const corpo = (() => {
+    let nivel = 0, j = js.indexOf("{", i);
+    for (let k = j; k < js.length; k += 1) {
+      if (js[k] === "{") nivel += 1;
+      else if (js[k] === "}") { nivel -= 1; if (nivel === 0) return js.slice(i, k + 1); }
+    }
+    return "";
+  })();
+  confere(/delete postos\[/.test(corpo),
+    "o campo vazio não APAGA o posto — gravaria \"\" e a vaga contaria como ocupada");
+  confere(/isEditable/.test(corpo),
+    "o campo grava mesmo com a ficha travada — um jogador sem permissão mudaria a tripulação");
+  confere(/"change"/.test(corpo),
+    "grava a cada tecla: a ficha redesenharia no meio da palavra e o campo perderia o foco");
 }
 
 /* ── O REGISTRO ───────────────────────────────────────────────────────────── */

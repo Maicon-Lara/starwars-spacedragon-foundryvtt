@@ -1,5 +1,38 @@
 # Changelog
 
+## 1.41.0 — botão "Nova nave", e a tripulação se edita
+
+### Criar uma nave virou uma ação
+
+Botão **Nova nave** no cabeçalho da aba de Atores. Pergunta o nome e o tipo, e
+entrega a nave pronta: ator criado, Ficha de Nave já escolhida, raça e classe
+aplicadas na ordem certa e com as habilidades sincronizadas.
+
+Antes eram quatro passos, e nenhum óbvio: criar um ator do tipo *personagem*
+(e não "Nave", que não existe mais), trocar a ficha numa engrenagem do
+cabeçalho, arrastar a raça do compêndio e **depois** a classe — nessa ordem,
+porque o sistema recusa a classe sem raça com uma notificação que some em
+segundos.
+
+A ordem importa dentro do criador também: as habilidades de raça entram pelo
+sync do sistema, e é a habilidade que carrega o **CP**. Uma nave criada sem esse
+passo nasce com CP 10, e o erro só aparece quando alguém leva um tiro.
+
+**Os PV ficam em zero, de propósito.** A T10-1 dá uma fórmula (`1d100`,
+`2d1000`) e quem rola é a mesa — o aviso diz qual rolar. Sortear na criação faria
+duas naves do mesmo tipo nascerem diferentes sem ninguém ver o dado.
+
+### A tripulação se edita na ficha
+
+Os cinco postos viraram campos. A tripulação troca de vaga no meio do combate —
+o piloto assume a artilharia quando o artilheiro cai, alguém corre para a
+Engenharia quando a Sala de Máquinas pega fogo — e um painel que só *mostra*
+quem está onde obriga a anotar isso fora da ficha, que então passa a mentir.
+
+Com a vaga vazia, o campo sugere quem **pode** ocupá-la («Veterano /
+Contrabandista»), e há uma lista com os personagens do mundo. A digitação livre
+continua: o posto aceita um NPC sem ficha.
+
 ## 1.40.0 — uma ficha de nave, e só
 
 Saíram do módulo, de uma vez:

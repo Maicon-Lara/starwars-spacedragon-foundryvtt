@@ -273,6 +273,30 @@ export function porPainelDeVoo(raiz, ator) {
 /* ── O PAINEL DA TRIPULAÇÃO (§7) ──────────────────────────────────────────── */
 
 export const MARCA_TRIPULACAO = "sw-painel-tripulacao";
+export const CLASSE_POSTO = "sw-posto-nome";
+export const LISTA_TRIPULACAO = "sw-tripulacao-sugestoes";
+
+/**
+ * Os nomes que o campo de posto sugere: os personagens do mundo que NÃO são
+ * naves.
+ *
+ * Uma nave na tripulação de outra nave não é um erro que valha impedir — o
+ * livro tem caça acoplado em nave-mãe —, mas sugerir isso num campo que se
+ * preenche depressa seria convidar o engano. A digitação livre continua: o
+ * posto aceita «um droide qualquer» e o nome de um NPC que não tem ficha.
+ */
+export function sugestoesDeTripulacao() {
+  const todos = globalThis.game?.actors ?? [];
+  const nomes = [];
+  for (const a of todos) {
+    try {
+      if (a?.type !== "character") continue;
+      if (a.getFlag?.(ID, FLAG)?.tipo) continue;   // é uma nave
+      if (a.name) nomes.push(a.name);
+    } catch { /* um ator problemático não derruba a lista */ }
+  }
+  return [...new Set(nomes)].sort((x, y) => x.localeCompare(y, "pt-BR"));
+}
 
 /**
  * Os cinco postos, cada um com quem o ocupa e as opções da rodada.
@@ -311,7 +335,20 @@ export function painelDaTripulacao(ator, nave) {
       `<div class="posto${travado ? " posto-travado" : ""}${quemEsta ? " posto-ocupado" : ""}">` +
       `<div class="posto-cabeca">` +
         `<strong>${posto.rotulo}</strong> ` +
-        `<span class="posto-quem">${quemEsta || posto.quem}</span>` +
+        // ── O POSTO SE EDITA NA FICHA ──
+        //
+        // A tripulação troca de vaga no meio do combate: o piloto assume a
+        // artilharia quando o artilheiro cai, alguém corre para a Engenharia
+        // quando a Sala de Máquinas pega fogo. Um painel que só MOSTRA quem
+        // está onde obriga a mesa a anotar isso fora da ficha, e aí a ficha
+        // mente na rodada seguinte.
+        //
+        // O `placeholder` leva quem PODE ocupar o posto («Veterano /
+        // Contrabandista»), que é a informação útil enquanto a vaga está
+        // vazia — e some sozinho quando alguém senta.
+        `<input type="text" class="${CLASSE_POSTO}" data-posto="${posto.chave}" ` +
+        `value="${quemEsta.replace(/"/g, "&quot;")}" placeholder="${posto.quem}" ` +
+        `list="${LISTA_TRIPULACAO}" title="Quem está neste posto. Deixe vazio e o posto não age.">` +
       `</div>` +
       `<div class="posto-faz">${posto.oQueFaz}</div>` +
       (travado
@@ -327,6 +364,9 @@ export function painelDaTripulacao(ator, nave) {
     `<p class="tripulacao-nota">Cada posto é a ação daquele personagem na rodada. ` +
     `Posto vazio não age. <em>Em negrito, o que a ficha aplica sozinha.</em></p>` +
     linhas +
+    `<datalist id="${LISTA_TRIPULACAO}">` +
+    sugestoesDeTripulacao().map((n) => `<option value="${n.replace(/"/g, "&quot;")}">`).join("") +
+    `</datalist>` +
     `</section>`
   );
 }
@@ -561,6 +601,34 @@ export function registrarFichaDeNavePC() {
      * Delegado na raiz e registrado uma vez: a ficha redesenha a cada
      * alteração, e um listener por botão se multiplicaria a cada render.
      */
+    /**
+     * Grava quem está em cada posto.
+     *
+     * No `change`, e não a cada tecla: gravar por tecla faria a ficha
+     * redesenhar no meio de uma palavra e tirar o foco do campo. O `change`
+     * dispara ao sair do campo ou no Enter, que é quando a pessoa terminou.
+     *
+     * Delegado e registrado uma vez, como o dos cômodos — a ficha redesenha a
+     * cada alteração, e um listener por campo se multiplicaria a cada render.
+     */
+    #ligarPostos(raiz) {
+      if (!raiz?.dataset || raiz.dataset.swPostos === "1") return;
+      raiz.dataset.swPostos = "1";
+      raiz.addEventListener("change", async (ev) => {
+        const campo = ev.target?.closest?.(`.${CLASSE_POSTO}`);
+        if (!campo?.dataset?.posto) return;
+        if (!this.isEditable) return;
+        const nave = naveDe(this.actor, ID);
+        const quem = String(campo.value ?? "").trim();
+        const postos = { ...(nave.postos ?? {}) };
+        // vazio APAGA a chave em vez de gravar "": um posto vago é a ausência
+        // do registro, e é o que `postosOcupados` conta
+        if (quem) postos[campo.dataset.posto] = quem;
+        else delete postos[campo.dataset.posto];
+        await this.actor.setFlag(ID, FLAG, { ...nave, postos });
+      });
+    }
+
     #ligarComodos(raiz) {
       if (!raiz?.dataset || raiz.dataset.swComodos === "1") return;
       raiz.dataset.swComodos = "1";
@@ -608,6 +676,7 @@ export function registrarFichaDeNavePC() {
         porPainelDaTripulacao(raiz, this.actor);
         porGuiaDeMontagem(raiz, this.actor);
         this.#ligarComodos(raiz);
+        this.#ligarPostos(raiz);
       } catch (e) {
         console.warn(`${ID} | não pude preparar a Ficha de Nave`, e);
       }

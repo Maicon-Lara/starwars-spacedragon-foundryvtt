@@ -25,6 +25,7 @@
 
 import { navesAntigas, converterNave, converterTodas } from "./nave-converter.js";
 import { redesenharFichasDeNave } from "./nave-pc-ficha.js";
+import { criarNave, dialogoDeNovaNave, ligarBotaoDeNovaNave } from "./nave-nova.js";
 import { ligarPontosDeForca } from "./pontos-de-forca.js";
 import { registrarTema, ligarTema } from "./tema.js";
 import { registrarCombate, ligarResumoDaRodada, avisarSeOrdemPerdida } from "./ordem-inversao.js";
@@ -124,6 +125,8 @@ Hooks.once("init", () => {
 });
 
 Hooks.once("ready", () => {
+  ligarBotaoDeNovaNave();
+
   // ── O CONVERSOR DE NAVES ──
   //
   // Exposto na API do módulo para o Mestre chamar do console. Não é um botão
@@ -134,6 +137,8 @@ Hooks.once("ready", () => {
   if (mod) {
     mod.api = {
       ...(mod.api ?? {}),
+      criarNave,
+      dialogoDeNovaNave,
       navesAntigas,
       converterNave,
       converterTodas,

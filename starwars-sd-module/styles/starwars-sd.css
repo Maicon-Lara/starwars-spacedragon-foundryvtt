@@ -495,10 +495,36 @@
   gap: 6px;
   flex-wrap: wrap;
 }
-.starwars-sd-nave-pc .sw-painel-tripulacao .posto-quem {
-  font-size: 11px;
-  opacity: .75;
+/* O campo de quem ocupa o posto.
+ *
+ * Discreto enquanto está preenchido — sem moldura de formulário, para o painel
+ * continuar parecendo um painel — e visível ao focar, para quem vai digitar
+ * saber onde está. O par cor + fundo declarado, como no resto. */
+.starwars-sd-nave-pc .sw-painel-tripulacao .sw-posto-nome {
+  flex: 1 1 10ch;
+  min-width: 8ch;
+  font-size: 12px;
+  padding: 1px 4px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--sd-tinta, #1a1a18) 5%, transparent);
   color: var(--sd-tinta, #1a1a18);
+}
+.starwars-sd-nave-pc .sw-painel-tripulacao .sw-posto-nome:hover {
+  border-color: color-mix(in srgb, var(--sd-tinta, #1a1a18) 20%, transparent);
+}
+.starwars-sd-nave-pc .sw-painel-tripulacao .sw-posto-nome:focus {
+  border-color: var(--sd-brilho, #2f9e8f);
+  background: color-mix(in srgb, var(--sd-tinta, #1a1a18) 8%, transparent);
+  color: var(--sd-tinta, #1a1a18);
+  outline: none;
+}
+/* o placeholder diz QUEM PODE ocupar: é informação, não ruído, e por isso não
+   fica apagado demais */
+.starwars-sd-nave-pc .sw-painel-tripulacao .sw-posto-nome::placeholder {
+  color: var(--sd-tinta, #1a1a18);
+  opacity: .5;
+  font-style: italic;
 }
 .starwars-sd-nave-pc .sw-painel-tripulacao .posto-faz {
   font-size: 11px;
