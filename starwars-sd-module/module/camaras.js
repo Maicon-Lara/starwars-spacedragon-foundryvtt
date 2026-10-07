@@ -28,11 +28,12 @@ export const CAMARAS = {
   ponte: {
     rotulo: "Ponte de Comando", obra: 120000, prazo: "2 semanas",
     efeito: "Controle central. Abriga o Computador Balístico (+2 nos ataques da nave) e o piloto automático; é onde se rolam os 3 testes de Pilotar do salto hiperespacial. Sem ela operacional, a nave não pode ser pilotada nem operar escudos ou armas.",
-    ataque: 2, exigeParaAtacar: true, exigeParaPilotar: true,
+    ataque: 2, exigeParaAtacar: true, exigeParaPilotar: true, exigeParaEscudos: true,
   },
   aposentos: {
     rotulo: "Aposentos da Tripulação", obra: 40000, prazo: "1 semana",
     efeito: "Recuperação natural de PV e de Alcance da Força para a tripulação orgânica durante viagens no hiperespaço. Sem aposentos, a viagem simplesmente não recupera nada.",
+    recuperaEmViagem: true,
   },
   maquinas: {
     rotulo: "Sala de Máquinas", obra: 200000, prazo: "3 semanas",
@@ -54,6 +55,7 @@ export const CAMARAS = {
   hospital: {
     rotulo: "Ala Hospitalar", obra: 120000, prazo: "2 semanas",
     efeito: "Habilita os feitos de Operação Cirúrgica, Curar Doença e Diagnosticar Doença, e dobra a recuperação natural de PV em viagem.",
+    dobraRecuperacao: true,
   },
   laboratorio: {
     rotulo: "Laboratório", obra: 150000, prazo: "2 semanas",

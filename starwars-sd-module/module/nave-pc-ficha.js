@@ -41,6 +41,7 @@ import {
   orcamentoDeCamaras, CAMARAS_BASE,
 } from "./nave-pc-dados.js";
 import { linhasDoVoo, CUSTOS } from "./nave-voo.js";
+import { avisosDaNave, bonusDeAtaqueDasCamaras, podeAtacar } from "./nave-sistemas.js";
 import { CAMARAS } from "./camaras.js";
 
 const ID = "starwars-sd";
@@ -223,15 +224,28 @@ export function painelDeVoo(ator, nave) {
       `</div>`
     : "";
 
+  // O +2 do Computador Balístico vem da PONTE, e some com ela. Mostrar o BA já
+  // somado evita a conta de cabeça no meio do combate; mostrar as duas parcelas
+  // evita a pergunta "de onde saiu esse número".
+  const extra = bonusDeAtaqueDasCamaras(nave);
+  const ba = extra
+    ? `+${l.ba + extra} <small>(${l.ba} +${extra} balístico)</small>`
+    : `+${l.ba}`;
+
+  const avisos = avisosDaNave(nave)
+    .map((a) => `<li class="voo-${a.grau}">${a.texto}</li>`)
+    .join("");
+
   return (
     `<section class="${MARCA_VOO}">` +
     `<div class="voo-linha">` +
       campo("CP", l.cp, "Coeficiente de Proteção — vem do tipo (raça), T10-1") +
-      campo("BA", `+${l.ba}`, "Bônus de Ataque da nave — vem da classe, T10-1") +
+      campo("BA", ba, "Bônus de Ataque da nave (classe, T10-1) + o Computador Balístico da Ponte") +
       campo("JP", l.jp, "Número-alvo: menor é melhor. O piloto rola antes e modifica (T10-5)") +
       campo("Mov.", l.movimento) +
     `</div>` +
     avaria + tanque +
+    (avisos ? `<ul class="voo-avisos">${avisos}</ul>` : "") +
     `</section>`
   );
 }

@@ -881,6 +881,29 @@ body.theme-dark .starwars-sd.nave-ficha.tema-auto,
   background: var(--sd-brilho, #2f9e8f);
 }
 
+/* Os avisos da nave: o que ela deixou de conseguir fazer.
+   Três graus, do mais urgente ao menos, cada um com o par cor + fundo. O grave
+   é o que cala a nave — a mesa precisa vê-lo antes de rolar um ataque que não
+   pode acontecer. */
+.starwars-sd-nave-pc .sw-painel-voo .voo-avisos {
+  margin: 5px 0 0;
+  padding: 0 0 0 16px;
+  font-size: 11px;
+  color: var(--sd-tinta, #1a1a18);
+}
+.starwars-sd-nave-pc .sw-painel-voo .voo-avisos li { margin: 1px 0; }
+.starwars-sd-nave-pc .sw-painel-voo .voo-grave {
+  color: #8c3a20;
+  font-weight: 700;
+}
+.starwars-sd-nave-pc .sw-painel-voo .voo-aviso { color: #8a6d1f; }
+.starwars-sd-nave-pc .sw-painel-voo .voo-nota {
+  color: var(--sd-tinta, #1a1a18);
+  opacity: .75;
+}
+.starwars-sd-nave-pc .sw-painel-voo small { opacity: .7; font-weight: 400; }
+
+
 /* ── A FICHA ENCOLHENDO ────────────────────────────────────────────────────
  *
  * O perfil tático nasceu com SEIS colunas, e seis colunas numa janela estreita
