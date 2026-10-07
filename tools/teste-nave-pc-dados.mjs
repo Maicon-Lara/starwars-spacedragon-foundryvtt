@@ -21,6 +21,7 @@ import {
   CAMARAS_BASE, LIVRES_POR_TAMANHO, padraoDoComodo, orcamentoDeCamaras,
 } from "../starwars-sd-module/module/nave-pc-dados.js";
 import { TIPOS } from "../starwars-sd-module/module/tipos-de-nave.js";
+import { ACOES_DE_POSTO } from "../starwars-sd-module/module/tripulacao.js";
 
 const problemas = [];
 const confere = (ok, msg) => { if (!ok) problemas.push(msg); };
@@ -92,6 +93,26 @@ confere(aplicarTipo(undefined) === null, "tipo ausente não quebra");
 /* ── OS POSTOS ────────────────────────────────────────────────────────────── */
 {
   confere(POSTOS_DA_NAVE.length === 5, `são 5 postos, achei ${POSTOS_DA_NAVE.length}`);
+
+  // ── A ASSERÇÃO ANTI-DIVERGÊNCIA ────────────────────────────────────────
+  //
+  // Os postos têm de ser os do §7, e vir de tripulacao.js. A primeira versão
+  // disto era uma lista inventada por mim — "pilotagem, armas, escudos,
+  // engenharia, sensores" — com um posto de Escudos que não existe e SEM o
+  // Comando, que é o posto que mais muda a rodada. Ela conviveu com a lista
+  // certa, em outro arquivo, sem nenhum erro aparecer.
+  const DO_DOCUMENTO = ["leme", "artilharia", "engenharia", "sensores", "comando"];
+  confere(JSON.stringify(POSTOS_DA_NAVE.map((p) => p[0])) === JSON.stringify(DO_DOCUMENTO),
+    `os postos são ${POSTOS_DA_NAVE.map((p) => p[0]).join(", ")} — o §7 define ` +
+    `${DO_DOCUMENTO.join(", ")}`);
+  // e cada um tem de ter as ações correspondentes, ou a ficha mostra um posto
+  // vazio que a mesa não consegue usar
+  for (const [chave] of POSTOS_DA_NAVE) {
+    confere(Array.isArray(ACOES_DE_POSTO[chave]) && ACOES_DE_POSTO[chave].length >= 2,
+      `o posto "${chave}" não tem ações em tripulacao.js — apareceria vazio na ficha`);
+  }
+  confere(Object.keys(ACOES_DE_POSTO).length === POSTOS_DA_NAVE.length,
+    "há ações para um posto que não existe, ou um posto sem ações");
   for (const [chave, rotulo, oQueFaz] of POSTOS_DA_NAVE) {
     confere(chave && rotulo, "posto sem chave ou sem rótulo");
     confere(typeof oQueFaz === "string" && oQueFaz.length > 15,
@@ -99,7 +120,7 @@ confere(aplicarTipo(undefined) === null, "tipo ausente não quebra");
   }
 
   confere(postosOcupados(naveVazia()) === 0, "nave vazia não tem posto ocupado");
-  const comDois = { ...naveVazia(), postos: { pilotagem: "Han", armas: "Chewie", escudos: "  " } };
+  const comDois = { ...naveVazia(), postos: { leme: "Han", artilharia: "Chewie", sensores: "  " } };
   confere(postosOcupados(comDois) === 2,
     `dois postos ocupados (espaço em branco não conta), veio ${postosOcupados(comDois)}`);
 }

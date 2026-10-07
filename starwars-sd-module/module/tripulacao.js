@@ -24,6 +24,42 @@
  * posto escolheu na rodada.
  */
 
+/* ── OS CINCO POSTOS (§7) ──────────────────────────────────────────────────
+ *
+ * Os nomes são os do documento: Leme, Artilharia, Engenharia, Sensores,
+ * Comando. Eu já tinha escrito uma segunda lista em nave-pc-dados.js com
+ * "pilotagem, armas, escudos, engenharia, sensores" — inventada, com um posto
+ * de Escudos que não existe e sem o Comando, que é o posto que mais muda a
+ * rodada. As duas listas agora nascem daqui.
+ *
+ * `quem` não é decoração: «Engenharia — Técnico (precisa da Sala de Máquinas
+ * instalada)» é a regra inteira num campo, e é o que a ficha mostra antes de a
+ * mesa descobrir no meio do combate que ninguém pode ocupar o posto.
+ */
+export const POSTOS = [
+  {
+    chave: "leme", rotulo: "Leme", quem: "Veterano / Contrabandista",
+    oQueFaz: "Move a nave, firma para os artilheiros, ou corre o dobro.",
+  },
+  {
+    chave: "artilharia", rotulo: "Artilharia", quem: "qualquer um",
+    oQueFaz: "Dispara as armas montadas: tiro certeiro, rajada ou supressão.",
+  },
+  {
+    chave: "engenharia", rotulo: "Engenharia", quem: "Técnico",
+    exigeCamara: "maquinas",
+    oQueFaz: "Repara avarias, distribui a energia do reator ou força o reator.",
+  },
+  {
+    chave: "sensores", rotulo: "Sensores", quem: "qualquer um",
+    oQueFaz: "Trava alvos, varre o espaço ou interfere no inimigo.",
+  },
+  {
+    chave: "comando", rotulo: "Comando", quem: "Emissário / líder",
+    oQueFaz: "Faz um posto agir duas vezes, rerrola um dado, ou cancela uma avaria.",
+  },
+];
+
 /* ── OS POSTOS, E O QUE CADA UM PODE FAZER ─────────────────────────────────
  *
  * Cada posto tem de 2 a 3 opções, e é isso que resolve o problema que o dial

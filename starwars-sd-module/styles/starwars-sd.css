@@ -903,6 +903,80 @@ body.theme-dark .starwars-sd.nave-ficha.tema-auto,
 }
 .starwars-sd-nave-pc .sw-painel-voo small { opacity: .7; font-weight: 400; }
 
+/* ── O PAINEL DA TRIPULAÇÃO (§7) ───────────────────────────────────────────
+ *
+ * Cinco postos, cada um com as opções da rodada. O par cor + fundo em toda
+ * regra, como no painel de voo.
+ *
+ * As ações vêm em dois pesos: o que a ficha APLICA sozinha vem em negrito, o
+ * que fica para a mesa vem leve. É a diferença entre esperar uma automação e
+ * saber que ela não vem — e a nota do painel diz isso em palavras, porque
+ * negrito sozinho ninguém decifra.
+ */
+.starwars-sd-nave-pc .sw-painel-tripulacao {
+  color: var(--sd-tinta, #1a1a18);
+}
+.starwars-sd-nave-pc .sw-painel-tripulacao .tripulacao-nota {
+  margin: 0 0 6px;
+  font-size: 11px;
+  opacity: .8;
+  color: var(--sd-tinta, #1a1a18);
+}
+.starwars-sd-nave-pc .sw-painel-tripulacao .posto {
+  margin: 0 0 6px;
+  padding: 5px 8px;
+  border-left: 3px solid color-mix(in srgb, var(--sd-brilho, #2f9e8f) 55%, transparent);
+  background: color-mix(in srgb, var(--sd-brilho, #2f9e8f) 6%, transparent);
+  color: var(--sd-tinta, #1a1a18);
+  border-radius: 0 3px 3px 0;
+}
+/* o posto ocupado puxa a cor: é onde há alguém para agir */
+.starwars-sd-nave-pc .sw-painel-tripulacao .posto-ocupado {
+  border-left-color: var(--sd-brilho, #2f9e8f);
+  background: color-mix(in srgb, var(--sd-brilho, #2f9e8f) 14%, transparent);
+}
+/* o travado não some: ele precisa estar à vista, dizendo por que não age */
+.starwars-sd-nave-pc .sw-painel-tripulacao .posto-travado {
+  border-left-color: #8c3a20;
+  background: color-mix(in srgb, #8c3a20 8%, transparent);
+}
+.starwars-sd-nave-pc .sw-painel-tripulacao .posto-cabeca {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.starwars-sd-nave-pc .sw-painel-tripulacao .posto-quem {
+  font-size: 11px;
+  opacity: .75;
+  color: var(--sd-tinta, #1a1a18);
+}
+.starwars-sd-nave-pc .sw-painel-tripulacao .posto-faz {
+  font-size: 11px;
+  opacity: .85;
+  color: var(--sd-tinta, #1a1a18);
+}
+.starwars-sd-nave-pc .sw-painel-tripulacao .posto-aviso {
+  margin-top: 3px;
+  font-size: 11px;
+  color: #8c3a20;
+}
+.starwars-sd-nave-pc .sw-painel-tripulacao .posto-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 11px;
+}
+.starwars-sd-nave-pc .sw-painel-tripulacao .posto-acao {
+  min-width: max-content;
+  color: var(--sd-tinta, #1a1a18);
+}
+.starwars-sd-nave-pc .sw-painel-tripulacao .acao-auto { font-weight: 700; }
+.starwars-sd-nave-pc .sw-painel-tripulacao .acao-texto { opacity: .7; }
+
 
 /* ── A FICHA ENCOLHENDO ────────────────────────────────────────────────────
  *

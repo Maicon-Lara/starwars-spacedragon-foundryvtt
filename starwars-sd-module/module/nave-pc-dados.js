@@ -26,6 +26,7 @@
 /* Da tabela PURA, e não do modelo: importar do modelo arrastaria o DataModel
    junto, que precisa do global `foundry` e estoura fora do VTT — e aí nada que
    dependa da T10-1 poderia ser testado sem fingir metade do Foundry. */
+import { POSTOS } from "./tripulacao.js";
 import { TIPOS } from "./tipos-de-nave.js";
 
 export const FLAG = "nave";
@@ -110,13 +111,21 @@ export function faltaConfigurar(nave) {
  * Os cinco do suplemento, na ordem em que a rodada acontece: quem pilota decide
  * para onde, quem mira decide no quê, e os outros três sustentam os dois.
  */
-export const POSTOS_DA_NAVE = [
-  ["pilotagem", "Pilotagem", "Move a nave e faz as manobras evasivas."],
-  ["armas", "Armas", "Dispara as armas montadas."],
-  ["escudos", "Escudos", "Reparte a energia entre escudo e casco."],
-  ["engenharia", "Engenharia", "Repara avarias e gerencia o reator."],
-  ["sensores", "Sensores", "Trava alvos e lê o espaço em volta."],
-];
+/**
+ * Os cinco postos, derivados dos de tripulacao.js — não reescritos.
+ *
+ * A primeira versão disto era uma lista minha: "pilotagem, armas, escudos,
+ * engenharia, sensores". Inventada. O §7 define Leme, Artilharia, Engenharia,
+ * Sensores e Comando — não há posto de Escudos (a energia é da Engenharia), e
+ * faltava o Comando, que é o que mais muda a rodada.
+ *
+ * O formato de trio continua, porque a ficha já o consumia.
+ */
+export const POSTOS_DA_NAVE = POSTOS.map((p) => [
+  p.chave,
+  p.rotulo,
+  `${p.oQueFaz} (${p.quem})`,
+]);
 
 /** Quantos postos estão ocupados — o número que diz se a nave anda. */
 export function postosOcupados(nave) {

@@ -41,7 +41,8 @@ import {
   orcamentoDeCamaras, CAMARAS_BASE,
 } from "./nave-pc-dados.js";
 import { linhasDoVoo, CUSTOS } from "./nave-voo.js";
-import { avisosDaNave, bonusDeAtaqueDasCamaras, podeAtacar } from "./nave-sistemas.js";
+import { avisosDaNave, bonusDeAtaqueDasCamaras, podeAtacar, operacional } from "./nave-sistemas.js";
+import { POSTOS, ACOES_DE_POSTO, AUTOMATIZA } from "./tripulacao.js";
 import { CAMARAS } from "./camaras.js";
 
 const ID = "starwars-sd";
@@ -269,6 +270,78 @@ export function porPainelDeVoo(raiz, ator) {
   return true;
 }
 
+/* ── O PAINEL DA TRIPULAÇÃO (§7) ──────────────────────────────────────────── */
+
+export const MARCA_TRIPULACAO = "sw-painel-tripulacao";
+
+/**
+ * Os cinco postos, cada um com quem o ocupa e as opções da rodada.
+ *
+ * ── POR QUE AS OPÇÕES APARECEM MESMO COM O POSTO VAZIO ────────────────────
+ *
+ * Porque é lendo o que o posto FAZ que alguém decide ocupá-lo. Esconder as
+ * opções até alguém sentar transforma a escolha num chute, e o §7 existe
+ * justamente para que cada posto seja uma decisão com consequência.
+ *
+ * ── O QUE A FICHA APLICA E O QUE ELA SÓ DIZ ───────────────────────────────
+ *
+ * AUTOMATIZA lista o que vira efeito sozinho. O resto — Ordem, Sangue frio —
+ * sai como texto porque depende de alguém escolher QUEM, e um menu de "escolha
+ * o aliado" no meio da rodada custa mais tempo do que a mesa ganha. A ficha
+ * marca os dois de forma diferente, para ninguém esperar uma automação que não
+ * vem.
+ */
+export function painelDaTripulacao(ator, nave) {
+  const ocupantes = nave?.postos ?? {};
+
+  const linhas = POSTOS.map((posto) => {
+    const quemEsta = String(ocupantes[posto.chave] ?? "").trim();
+    // a Engenharia precisa da Sala de Máquinas: dizer isso ANTES evita a
+    // descoberta no meio do combate, de que ninguém pode reparar nada
+    const travado = posto.exigeCamara && !operacional(nave, posto.exigeCamara);
+    const acoes = (ACOES_DE_POSTO[posto.chave] ?? [])
+      .map((a) => {
+        const auto = AUTOMATIZA.has(a.chave);
+        return `<li class="posto-acao${auto ? " acao-auto" : " acao-texto"}" ` +
+          `title="${a.nota ?? ""}">${a.rotulo}</li>`;
+      })
+      .join("");
+
+    return (
+      `<div class="posto${travado ? " posto-travado" : ""}${quemEsta ? " posto-ocupado" : ""}">` +
+      `<div class="posto-cabeca">` +
+        `<strong>${posto.rotulo}</strong> ` +
+        `<span class="posto-quem">${quemEsta || posto.quem}</span>` +
+      `</div>` +
+      `<div class="posto-faz">${posto.oQueFaz}</div>` +
+      (travado
+        ? `<div class="posto-aviso">Sem a Sala de Máquinas operacional, este posto não age (§7).</div>`
+        : "") +
+      `<ul class="posto-acoes">${acoes}</ul>` +
+      `</div>`
+    );
+  }).join("");
+
+  return (
+    `<section class="${MARCA_TRIPULACAO}">` +
+    `<p class="tripulacao-nota">Cada posto é a ação daquele personagem na rodada. ` +
+    `Posto vazio não age. <em>Em negrito, o que a ficha aplica sozinha.</em></p>` +
+    linhas +
+    `</section>`
+  );
+}
+
+/** Põe o painel na aba de Tripulação (a de poderes, renomeada). */
+export function porPainelDaTripulacao(raiz, ator) {
+  if (!raiz?.querySelector || !ator) return false;
+  const aba = raiz.querySelector(".character-tab-spells") ??
+              raiz.querySelector('[data-tab="spells"]:not(nav [data-tab="spells"])');
+  if (!aba) return false;
+  aba.querySelector(`.${MARCA_TRIPULACAO}`)?.remove();
+  aba.insertAdjacentHTML("afterbegin", painelDaTripulacao(ator, naveDe(ator, ID)));
+  return true;
+}
+
 let Registrada = null;
 
 /** Esta ficha é a de Nave sobre personagem? */
@@ -453,6 +526,7 @@ export function registrarFichaDeNavePC() {
         marcarComodos(raiz, this.actor);
         ocultarOQueNaveNaoUsa(raiz);
         porPainelDeVoo(raiz, this.actor);
+        porPainelDaTripulacao(raiz, this.actor);
         this.#ligarComodos(raiz);
       } catch (e) {
         console.warn(`${ID} | não pude preparar a Ficha de Nave`, e);
