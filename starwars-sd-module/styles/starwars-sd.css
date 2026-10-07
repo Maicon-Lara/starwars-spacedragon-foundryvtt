@@ -550,6 +550,38 @@
   color: var(--sd-tinta, #1a1a18);
 }
 .starwars-sd-nave-pc .sw-painel-tripulacao .acao-auto { font-weight: 700; }
+/* A ação automática é BOTÃO; a de mesa é texto. A diferença está na forma, e
+   não só no peso: um item que parece clicável e não é custa um clique e uma
+   dúvida toda vez que alguém tenta. */
+.starwars-sd-nave-pc .sw-painel-tripulacao .sw-posto-acao {
+  min-width: max-content;
+  padding: 0 7px;
+  font-size: 11px;
+  line-height: 1.6;
+  border: 1px solid color-mix(in srgb, var(--sd-brilho, #2f9e8f) 50%, transparent);
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--sd-brilho, #2f9e8f) 12%, transparent);
+  color: var(--sd-tinta, #1a1a18);
+  cursor: pointer;
+}
+.starwars-sd-nave-pc .sw-painel-tripulacao .sw-posto-acao:hover {
+  background: color-mix(in srgb, var(--sd-brilho, #2f9e8f) 26%, transparent);
+}
+/* o fim da rodada fica à parte e discreto: é frequente, mas não é a ação
+   principal de ninguém */
+.starwars-sd-nave-pc .sw-painel-tripulacao .sw-fim-rodada {
+  display: block;
+  margin: 6px 0 0 auto;
+  min-width: max-content;
+  padding: 1px 10px;
+  font-size: 11px;
+  border: 1px dashed color-mix(in srgb, var(--sd-tinta, #1a1a18) 35%, transparent);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--sd-tinta, #1a1a18);
+  opacity: .8;
+}
+.starwars-sd-nave-pc .sw-painel-tripulacao .sw-fim-rodada:hover { opacity: 1; }
 .starwars-sd-nave-pc .sw-painel-tripulacao .acao-texto { opacity: .7; }
 
 /* ── AS TRÊS CAMADAS OPCIONAIS (§7) ────────────────────────────────────────

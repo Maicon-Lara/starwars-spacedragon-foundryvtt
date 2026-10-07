@@ -1,5 +1,39 @@
 # Changelog
 
+## 1.43.0 — as ações de posto viraram botão
+
+Na aba Tripulação, **oito das quinze ações agora se clicam**: Firmar, Correr,
+Rajada, Supressão, Forçar o reator, Travar alvo, Interferência e Aguentem
+firme. A ficha aplica o efeito, grava o estado e manda um cartão ao chat — o
+cartão importa porque quem firmou precisa que os artilheiros saibam do +2, e um
+efeito que só aparece na ficha de quem clicou não chega a quem ele beneficia.
+
+As outras sete continuam texto, e isso é escolha: *Ordem* precisa saber **qual**
+posto age de novo, *Sangue frio* **qual** dado rerrolar, *Reparar* tem a própria
+rolagem. Automatizá-las seria abrir um menu no meio da rodada para perguntar o
+que a mesa já decidiu. A diferença está na forma — botão contra texto — e não só
+no peso da fonte: um item que parece clicável e não é custa um clique e uma
+dúvida toda vez.
+
+**Correr avança o perseguidor em duas marcas**, como o §7 manda. É a regra que
+torna a fuga uma decisão: correr aproxima o fim do salto e o fim do perseguidor
+ao mesmo tempo. Um botão que dobrasse o movimento sem mexer no relógio daria a
+vantagem de graça.
+
+**Forçar o reator** entrega os +2 pontos e rola o 1d6 no chat, com o resultado
+dito em palavras — num 1, avaria na Sala de Máquinas, que é justamente a câmara
+que permite reparar em combate.
+
+### Fim da rodada
+
+Botão no rodapé do painel. Firmar, Supressão, Interferência, Aguentem firme e a
+energia valem *até o fim da rodada*, e sem um lugar para dizer que ela acabou os
+efeitos ficam ligados para sempre — o sintoma seria uma nave que nunca sai do
+Firmar, sessões depois, sem ninguém ligar a causa.
+
+Ele **não** mexe nos relógios da fuga nem nas câmaras: esses atravessam rodadas,
+e é o que os torna relógios.
+
 ## 1.42.0 — as três camadas opcionais, e o tanque que nunca aparecia
 
 ### O combustível estava invisível

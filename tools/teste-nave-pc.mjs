@@ -384,7 +384,10 @@ function no(tag, name, filhos = []) {
 {
   const html = painelDaTripulacao({}, { postos: { leme: "Han" } });
 
-  const campos = [...html.matchAll(/data-posto="(\w+)"/g)].map((m) => m[1]);
+  // Conta só os INPUTS. A primeira versão casava `data-posto` solto, e desde
+  // que as ações viraram botão — que também levam `data-posto` — ela contava 13
+  // onde há 5 campos. O atributo não identifica mais o que é campo; a tag sim.
+  const campos = [...html.matchAll(/<input[^>]*data-posto="(\w+)"/g)].map((m) => m[1]);
   confere(campos.length === 5,
     `${campos.length} campos editáveis, deviam ser 5 — um por posto`);
   for (const p of ["leme", "artilharia", "engenharia", "sensores", "comando"]) {

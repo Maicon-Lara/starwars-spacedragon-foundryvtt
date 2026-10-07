@@ -48,6 +48,7 @@ import {
 } from "./nave-camadas.js";
 import { MARCAS_DO_PERSEGUIDOR } from "./tripulacao.js";
 import { ETAPAS } from "./nave-salto.js";
+import { aplicarAcao, ehAutomatica, limparFimDaRodada } from "./nave-acoes.js";
 import { CAMARAS } from "./camaras.js";
 
 const ID = "starwars-sd";
@@ -283,6 +284,8 @@ export function porPainelDeVoo(raiz, ator) {
 
 export const MARCA_TRIPULACAO = "sw-painel-tripulacao";
 export const CLASSE_POSTO = "sw-posto-nome";
+export const CLASSE_ACAO = "sw-posto-acao";
+export const CLASSE_FIM_RODADA = "sw-fim-rodada";
 export const LISTA_TRIPULACAO = "sw-tripulacao-sugestoes";
 
 /**
@@ -334,9 +337,16 @@ export function painelDaTripulacao(ator, nave) {
     const travado = posto.exigeCamara && !operacional(nave, posto.exigeCamara);
     const acoes = (ACOES_DE_POSTO[posto.chave] ?? [])
       .map((a) => {
-        const auto = AUTOMATIZA.has(a.chave);
-        return `<li class="posto-acao${auto ? " acao-auto" : " acao-texto"}" ` +
-          `title="${a.nota ?? ""}">${a.rotulo}</li>`;
+        const auto = ehAutomatica(a.chave);
+        const dica = String(a.nota ?? "").replace(/"/g, "&quot;");
+        // a automática é BOTÃO, a de mesa é texto. A diferença tem de estar na
+        // forma e não só na cor: um item que parece clicável e não é custa um
+        // clique e uma dúvida toda vez.
+        return auto
+          ? `<li class="posto-acao acao-auto">` +
+            `<button type="button" class="${CLASSE_ACAO}" data-posto="${posto.chave}" ` +
+            `data-acao="${a.chave}" title="${dica}">${a.rotulo}</button></li>`
+          : `<li class="posto-acao acao-texto" title="${dica}">${a.rotulo}</li>`;
       })
       .join("");
 
@@ -373,6 +383,16 @@ export function painelDaTripulacao(ator, nave) {
     `<p class="tripulacao-nota">Cada posto é a ação daquele personagem na rodada. ` +
     `Posto vazio não age. <em>Em negrito, o que a ficha aplica sozinha.</em></p>` +
     linhas +
+    // ── O FIM DA RODADA ──
+    //
+    // Firmar, Supressão, Interferência, Aguentem firme e a energia valem «até o
+    // fim da rodada». Sem um lugar para dizer que a rodada acabou, eles ficam
+    // ligados para sempre — e o sintoma é uma nave que nunca sai do Firmar,
+    // três sessões depois, sem ninguém ligar a causa.
+    `<button type="button" class="${CLASSE_FIM_RODADA}" ` +
+    `title="Apaga o que vale até o fim da rodada: Firmar, Supressão, Interferência, ` +
+    `Aguentem firme e a energia do reator. Não mexe nos relógios nem nas câmaras.">` +
+    `Fim da rodada</button>` +
     `<datalist id="${LISTA_TRIPULACAO}">` +
     sugestoesDeTripulacao().map((n) => `<option value="${n.replace(/"/g, "&quot;")}">`).join("") +
     `</datalist>` +
@@ -646,6 +666,65 @@ export function registrarFichaDeNavePC() {
      * impede o clique, mas um estado gravado fora da faixa — por outra versão,
      * por uma macro, por edição à mão — continuaria fora até alguém notar.
      */
+    /**
+     * Os botões das ações de posto e o do fim da rodada.
+     *
+     * O cartão vai para o chat porque a ação é da MESA, e não da ficha: quem
+     * firmou precisa que os artilheiros saibam do +2. Um efeito que só aparece
+     * na ficha de quem clicou não chega a quem ele beneficia.
+     */
+    #ligarAcoes(raiz) {
+      if (!raiz?.dataset || raiz.dataset.swAcoes === "1") return;
+      raiz.dataset.swAcoes = "1";
+      raiz.addEventListener("click", async (ev) => {
+        const fim = ev.target?.closest?.(`.${CLASSE_FIM_RODADA}`);
+        const botao = ev.target?.closest?.(`.${CLASSE_ACAO}`);
+        if (!fim && !botao) return;
+        ev.preventDefault();
+        ev.stopPropagation();
+        if (!this.isEditable) return;
+
+        const nave = naveDe(this.actor, ID);
+
+        if (fim) {
+          await this.actor.setFlag(ID, FLAG, limparFimDaRodada(nave));
+          globalThis.ui?.notifications?.info?.("Fim da rodada: os efeitos temporários saíram.");
+          return;
+        }
+
+        const r = aplicarAcao(nave, botao.dataset.posto, botao.dataset.acao);
+        if (r.erro) {
+          globalThis.ui?.notifications?.warn?.(r.erro);
+          return;
+        }
+        await this.actor.setFlag(ID, FLAG, r.nave);
+
+        const linhas = r.cartao.linhas.map((l) => `<li>${l.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")}</li>`).join("");
+        await globalThis.ChatMessage?.create?.({
+          speaker: globalThis.ChatMessage?.getSpeaker?.({ actor: this.actor }),
+          content:
+            `<div class="starwars-sd-cartao">` +
+            `<h4>${r.cartao.titulo}</h4>` +
+            `<ul>${linhas}</ul>` +
+            (r.cartao.nota ? `<p class="cartao-nota">${r.cartao.nota}</p>` : "") +
+            `</div>`,
+        });
+
+        // a rolagem fica com a mesa, mas o dado é rolado aqui para não exigir
+        // que alguém digite /r 1d6 no meio da rodada
+        for (const rol of r.rolagens) {
+          const roll = await new globalThis.Roll(rol.formula).evaluate();
+          const caiu = roll.total <= rol.falhaEm;
+          await roll.toMessage({
+            speaker: globalThis.ChatMessage?.getSpeaker?.({ actor: this.actor }),
+            flavor: caiu
+              ? `${rol.rotulo}: <strong>avaria</strong> na Sala de Máquinas`
+              : `${rol.rotulo}: sem avaria`,
+          });
+        }
+      });
+    }
+
     #ligarCamadas(raiz) {
       if (!raiz?.dataset || raiz.dataset.swCamadas === "1") return;
       raiz.dataset.swCamadas = "1";
@@ -746,6 +825,7 @@ export function registrarFichaDeNavePC() {
         this.#ligarComodos(raiz);
         this.#ligarPostos(raiz);
         this.#ligarCamadas(raiz);
+        this.#ligarAcoes(raiz);
       } catch (e) {
         console.warn(`${ID} | não pude preparar a Ficha de Nave`, e);
       }
