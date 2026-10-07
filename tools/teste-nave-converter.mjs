@@ -13,9 +13,14 @@
 //
 // Uso: node tools/teste-nave-converter.mjs
 
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
 import { converterDados, dadosDoPersonagem } from "../starwars-sd-module/module/nave-converter.js";
 import { FLAG } from "../starwars-sd-module/module/nave-pc-dados.js";
 
+const RAIZ = path.resolve(fileURLToPath(import.meta.url), "../..");
 const problemas = [];
 const confere = (ok, msg) => { if (!ok) problemas.push(msg); };
 
@@ -116,6 +121,43 @@ const naveAntiga = () => ({
   confere(vazio.dados.system.hp.max === 0, "sem PV, zero — e não undefined");
 }
 
+/* ── O CONVERSOR PRECISA ESTAR AO ALCANCE DA MESA ─────────────────────────── */
+//
+// ── POR QUE ISTO VIROU ASSERÇÃO ─────────────────────────────────────────────
+//
+// Porque o conversor pode estar perfeito e inalcançável. A mesa rodou
+// `api.converterTodas()` e recebeu "Cannot read properties of undefined" — ali
+// era versão desatualizada, mas o mesmo erro sairia se o ponto de entrada
+// deixasse de expor a API, e nenhum teste veria.
+//
+// Uma ferramenta de migração que não está pendurada em lugar nenhum é código
+// morto com teste verde.
+{
+  const entrada = fs.readFileSync(
+    path.join(RAIZ, "starwars-sd-module", "module", "starwars-sd.js"), "utf8");
+
+  confere(/from "\.\/nave-converter\.js"/.test(entrada),
+    "o ponto de entrada não importa o conversor");
+  for (const fn of ["navesAntigas", "converterNave", "converterTodas"]) {
+    // String.raw de novo: numa template string comum `\b` vira o caractere
+    // BACKSPACE, não a borda de palavra do regex — e o teste passaria a
+    // procurar um caractere de controle que nunca está no arquivo.
+    confere(new RegExp(String.raw`\b${fn}\b`).test(entrada),
+      `${fn} não é exposta no ponto de entrada — a mesa não teria como chamá-la`);
+  }
+  confere(/mod\.api\s*=/.test(entrada),
+    "a API do módulo não é montada: `game.modules.get(...).api` ficaria undefined, " +
+    "que é exatamente o erro que a mesa viu");
+
+  // o aviso de que há naves a converter: sem ele, quem não lê o changelog perde
+  // as naves quando o tipo sair
+  confere(/navesAntigas\(\)\.length/.test(entrada),
+    "o módulo não conta as naves antigas no ready — quem não leu o changelog " +
+    "descobriria a perda só depois de o tipo sair");
+  confere(/notifications/.test(entrada),
+    "a contagem não vira aviso na tela; só no console, onde ninguém olha sem motivo");
+}
+
 if (problemas.length) {
   for (const p of problemas) console.error(`  ✘ ${p}`);
   process.exit(1);
@@ -123,5 +165,6 @@ if (problemas.length) {
 console.log(
   "  ✔ conversor de nave: as câmaras chegam com o estado que a mesa pagou (inclusive a " +
     "danificada), os postos ocupados, os PV já rolados, a Ficha de Nave já selecionada — " +
-    "e o que o Tático leva embora dito nome por nome, sem avisar perda que não houve"
+    "o que o Tático leva embora dito nome por nome, e a API pendurada no ponto de entrada " +
+    "(um conversor inalcançável é código morto com teste verde)"
 );

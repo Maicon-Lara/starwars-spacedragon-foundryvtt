@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.39.1 — o conversor coberto por teste
+
+Sem mudança de comportamento: o registro da API do conversor passou a ter
+asserção própria.
+
+A mesa chamou `api.converterTodas()` e recebeu *"Cannot read properties of
+undefined"*. Ali a causa era só versão desatualizada — mas o mesmo erro sairia
+se o ponto de entrada deixasse de expor a API, e **nenhum teste veria**. Um
+conversor perfeito e inalcançável é código morto com teste verde.
+
+Agora há asserção para a API montada, para as três funções expostas e para o
+aviso que conta as naves antigas no carregamento.
+
 ## 1.39.0 — o conversor das naves antigas
 
 **Leia isto antes da próxima versão.** O tipo de ator `Nave` vai sair do módulo,
