@@ -1,5 +1,68 @@
 # Changelog
 
+## 1.38.0 — a nave na ficha de personagem
+
+Quatro painéis novos na Ficha de Nave, todos tirados das *Regras Compiladas*.
+
+### O mínimo para voar, e o orçamento do tamanho
+
+A nave **não nasce mais com as doze câmaras**. De fábrica vêm só as duas que o
+texto veta dispensar: **Ponte de Comando** (sem ela a nave não é pilotada nem
+opera armas) e **Sala de Máquinas** (motores, gerador, tanques). São 320.000 CR
+dos 1.035.000 das doze.
+
+Sobre elas, o tamanho dá um orçamento de câmaras livres — **Pequena 0, Média 2,
+Gigantesca 4, Colossal 6**. É o que faz o caça ser cabine e motor enquanto a
+nave-mãe nasce cidade, e o que deixa duas espaçonaves particulares do mesmo tipo
+saírem diferentes.
+
+O orçamento **avisa e não trava**: a nave comprada usada, a de enredo e a
+reforma paga em jogo são justamente as naves interessantes.
+
+### Painel de Voo
+
+CP, BA, JP e movimento numa linha; abaixo, a avaria e o tanque.
+
+A **penalidade por avaria** sai calculada: 5% a cada 10% dos PV perdidos, em
+bloco fechado — 200 PV com 70 de dano dá −15%, como no exemplo do livro. E a
+ficha mostra o que sobra da pilotagem, com o piso de 5% que o livro garante
+mesmo na nave destruída.
+
+O **BA mostra as duas parcelas** (`+18 (16 +2 balístico)`), porque o +2 do
+Computador Balístico vem da Ponte e some com ela.
+
+### As câmaras decidem o que a nave consegue fazer
+
+Só **instalada** é operacional: a danificada ocupa lugar no orçamento e não
+funciona. A Ponte avariada cala pilotagem, armas, escudos **e** o balístico, os
+quatro juntos — é duro de propósito, e é o que faz a Engenharia valer o lugar.
+
+Os avisos aparecem no painel, do mais grave ao menos. Entre eles, o que ninguém
+quer descobrir tarde: *sem Saída de Emergência, a 0 PV a nave explode e ninguém
+escapa*.
+
+Consertar uma câmara danificada custa **25% da obra**; construir uma ausente
+custa a obra inteira.
+
+### Tripulação: os cinco postos do §7
+
+**Leme, Artilharia, Engenharia, Sensores e Comando**, cada um com as opções da
+rodada. As opções aparecem mesmo com o posto vazio — é lendo o que ele faz que
+alguém decide ocupá-lo.
+
+A Engenharia aparece **travada** quando a Sala de Máquinas não está operacional,
+com o motivo escrito: melhor saber antes do que no meio do combate.
+
+O que a ficha aplica sozinha vem em negrito; o que fica para a mesa vem leve.
+
+### Salto hiperespacial
+
+As três etapas — Distância, Direção, Execução — com a regra que inverte o
+esperado: **só a terceira falha cancela**. As duas primeiras levam a nave para o
+lugar errado, e a sequência não pode ser abortada no meio. Falhar a Distância
+não interrompe nada: a nave salta, some do mapa e reaparece onde o Mestre
+quiser.
+
 ## 1.37.2 — o pergaminho, os botões e a aba
 
 **O painel de Pontos de Força ficava amarelo-neon sobre papel.** O tema tem dois
