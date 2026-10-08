@@ -27,7 +27,6 @@ import { navesAntigas, converterNave, converterTodas } from "./nave-converter.js
 import { redesenharFichasDeNave } from "./nave-pc-ficha.js";
 import { criarNave, dialogoDeNovaNave, ligarBotaoDeNovaNave } from "./nave-nova.js";
 import { ligarPontosDeForca } from "./pontos-de-forca.js";
-import { registrarTema, ligarTema } from "./tema.js";
 import { registrarCombate, ligarResumoDaRodada, avisarSeOrdemPerdida } from "./ordem-inversao.js";
 import { registrarFichaDeNavePC } from "./nave-pc-ficha.js";
 
@@ -63,13 +62,6 @@ Hooks.once("init", () => {
   // cada ordenação. Registrar condicionalmente exigiria reload para voltar.
   registrarCombate();
 
-  // ── A paleta do livro nas fichas do sistema ──
-  //
-  // A ficha de personagem é do SISTEMA, e o módulo Space Dragon já tem a
-  // camada que a repinta. Esta opção só troca as cinco cores dela pela paleta
-  // do livro — ver module/tema.js, que explica por que não se reescreve
-  // seletor nenhum aqui.
-  registrarTema();
 
   // ── As camadas da tripulação ──
   //
@@ -97,31 +89,6 @@ Hooks.once("init", () => {
   }
 
 
-  // ── Claro ou escuro na ficha de nave ──
-  //
-  // A ficha tem paleta própria, e por isso não acompanha sozinha um módulo de
-  // modo escuro — cada um marca a página de um jeito. No "automático" ela segue
-  // os dois sinais que existem na prática: a classe `theme-dark` no corpo da
-  // página, que o Foundry v13 e a maioria desses módulos põem, e a preferência
-  // do sistema operacional. Quem quiser fixar, fixa.
-  //
-  // É opção de CLIENTE: tema é preferência de quem olha, não da mesa.
-  game.settings.register(ID, "temaDaNave", {
-    name: "starwars-sd.settings.temaDaNave.nome",
-    hint: "starwars-sd.settings.temaDaNave.dica",
-    scope: "client",
-    config: true,
-    type: String,
-    choices: {
-      auto: "starwars-sd.settings.temaDaNave.auto",
-      claro: "starwars-sd.settings.temaDaNave.claro",
-      escuro: "starwars-sd.settings.temaDaNave.escuro",
-    },
-    default: "auto",
-    onChange: () => {
-      redesenharFichasDeNave();
-    },
-  });
 });
 
 Hooks.once("ready", () => {
@@ -164,7 +131,6 @@ Hooks.once("ready", () => {
   // A classe do tema no <body>. Vai no `ready` porque é aqui que o <body>
   // existe e que a classe do módulo Space Dragon já está lá — o aviso de
   // "tema do vizinho desligado" depende de poder conferi-la.
-  ligarTema();
 
   // A Ordem de Ação: a declaração mora no módulo spacedragon (aba de ataques);
   // aqui fica o resumo da rodada para o Mestre, e a inversão registrada acima.

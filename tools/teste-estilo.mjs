@@ -160,263 +160,32 @@ for (const d of journals) {
 confere(numeros.size === journals.length,
   `números de capítulo repetidos: ${[...numeros].sort().join(", ")}`);
 
-// ── O TEMA DO LIVRO NA FICHA DO SISTEMA ───────────────────────────────────
-//
-// A ficha de personagem é do sistema `olddragon2e`; quem cobre os seletores
-// dele é a folha do módulo Space Dragon, sob `body.spacedragon-tema`. Esta
-// camada só troca as cinco variáveis. O que pode dar errado em silêncio:
-//
-//   1. perder a regra de classe DUPLA, e aí num empate de especificidade vence
-//      quem o navegador carregou depois — entre dois módulos, imprevisível;
-//   2. pôr o amarelo do letreiro em `--sd-barra`, que é FUNDO com
-//      `color: #ffffff !important` fixado pelo vizinho: branco sobre #FFD93B
-//      não se lê, e na ficha de nave o mesmo amarelo funciona porque lá a cor
-//      do texto é nossa;
-//   3. reescrever os seletores do sistema aqui, que é o que a folha do vizinho
-//      diz que quebra na versão seguinte dele.
-// CADA bloco que define as variáveis precisa da variante de classe dupla, e
-// não só um deles: o claro, o escuro e o @media são três, e um que fique sem
-// ela perde o empate de especificidade em silêncio, naquele tema só.
-const blocosComBarra = (livroCss.match(/--sd-barra:/g) ?? []).length;
-const duplas = (livroCss.match(/\.starwars-sd-tema\.spacedragon-tema/g) ?? []).length;
-confere(duplas >= blocosComBarra,
-  `${blocosComBarra} bloco(s) definem --sd-barra, mas só ${duplas} têm a classe dupla ` +
-  `— o que ficar sem ela perde o empate de especificidade naquele tema`);
-confere(/body\.theme-dark\.starwars-sd-tema/.test(livroCss),
-  "o tema do livro não tem variante escura na ficha do sistema");
+/* ── O TEMA SAIU DO MÓDULO ────────────────────────────────────────────────
+ *
+ * Aqui se conferia que o `tema.js` respeitava a camada do módulo vizinho, que
+ * a opção era de cliente e que começava desligada — regras boas para um módulo
+ * que pinta.
+ *
+ * A mesa pediu que o visual volte a ser o do sistema e que só a TIPOGRAFIA
+ * seja nossa. Sem cores não há tema, e o arquivo foi apagado junto com as
+ * opções que o controlavam.
+ */
 
-// a barra tem de ser escura nos DOIS temas, porque o texto em cima é branco
-const barras = [...livroCss.matchAll(/--sd-barra:\s*([^;]+);/g)].map((m) => m[1].trim());
-confere(barras.length >= 2, `só ${barras.length} definição(ões) de --sd-barra`);
-for (const b of barras) {
-  confere(!/crawl|ffd93b/i.test(b),
-    `--sd-barra: ${b} — é fundo com texto branco fixo; o amarelo do letreiro não se lê`);
-}
 
-// Escopar em `.olddragon2e.sheet` para DEFINIR VARIÁVEIS é legítimo e é o que
-// esta camada faz. O que quebra na versão seguinte do sistema é COPIAR os
-// caminhos internos dele — foi o erro que a folha do módulo Space Dragon
-// documenta ter cometido na primeira versão.
-// Sem os comentários: eles EXPLICAM o !important da folha do vizinho e os
-// caminhos do sistema, e analisá-los junto com o código dá falso positivo —
-// foi o que aconteceu na primeira versão desta asserção.
-const cssSemComentarios = livroCss.replace(/\/\*[\s\S]*?\*\//g, "");
-const INTERNOS_DO_SISTEMA = [
-  ".tab-title", ".ability-level", ".character-tab-", ".race-abilities",
-  ".class-abilities", ".jp-value", ".race-value",
-];
-for (const regra of cssSemComentarios.split("}")) {
-  const seletor = regra.split("{")[0];
-  if (!/starwars-sd-tema/.test(seletor)) continue;
-  for (const interno of INTERNOS_DO_SISTEMA) {
-    confere(!seletor.includes(interno),
-      `a camada do livro copia um caminho interno do sistema (${interno}) em` +
-      ` "${seletor.trim().slice(0, 70)}" — é o que quebra quando o sistema muda`);
-  }
-}
-// A PROFUNDIDADE do seletor, e não o `!important`.
-//
-// A primeira versão desta asserção proibia `!important`, supondo que bastaria
-// trocar as variáveis `--sd-*`. Medir a ficha refutou isso: há fundo claro
-// FIXADO em hexadecimal — `ol.item-list` em #ffffff, `.character-race` em
-// #e0ddca — que variável nenhuma alcança, e contra cor fixa não há seletor
-// curto que ganhe na contagem. O `!important` passou a ser necessário, pela
-// mesma razão que a folha do módulo Space Dragon já o usava.
-//
-// O que de fato quebra quando o sistema muda é a PROFUNDIDADE: um nome de
-// componente (`ol.item-list`) sobrevive a uma remodelagem de layout; uma
-// cadeia de cinco descendentes não. O limite é dois níveis depois do escopo.
-const LIMITE_DE_NIVEIS = 2;
-for (const regra of cssSemComentarios.split("}")) {
-  const bruto = regra.split("{")[0];
-  if (!/starwars-sd-tema/.test(bruto)) continue;
-  for (const sel of bruto.split(",")) {
-    const depoisDoEscopo = sel.split(".olddragon2e.sheet")[1];
-    if (!depoisDoEscopo) continue;
-    const niveis = depoisDoEscopo.trim().split(/\s+/).filter(Boolean).length;
-    confere(niveis <= LIMITE_DE_NIVEIS,
-      `seletor fundo demais no sistema (${niveis} níveis): "${sel.trim().slice(0, 80)}"` +
-      ` — cadeias longas quebram quando o sistema remodela o layout`);
-  }
-}
-
-// ── O TEXTO DOS CAMPOS DESABILITADOS ──────────────────────────────────────
-//
-// Num `input` desabilitado o Chrome pinta o texto com `-webkit-text-fill-color`,
-// que IGNORA `color`. Escurecer o fundo desses campos sem tratar essa
-// propriedade apaga metade dos números da ficha — os modificadores, a Base do
-// CP, a BA, as JP —, e nada no build acusa: só se vê na tela.
-//
-// Foi exatamente o que aconteceu na 1.16.4, e o sintoma denunciava a causa: os
-// campos editáveis continuavam mostrando o valor, e só os calculados sumiam.
-if (/\.olddragon2e\.sheet input[^{]*\{[^}]*background-color/.test(cssSemComentarios)) {
-  confere(/input:disabled[^{]*\{[^}]*-webkit-text-fill-color/.test(cssSemComentarios),
-    "a camada escurece o fundo dos campos mas não trata -webkit-text-fill-color" +
-    " em input:disabled — os valores calculados ficam invisíveis no Chrome");
-  confere(/\.olddragon2e\.sheet input[^{]*\{[^}]*-webkit-text-fill-color/.test(cssSemComentarios),
-    "falta -webkit-text-fill-color nos campos em geral");
-}
-
-// ── A LISTA MEDIDA, E NADA DE FORA ────────────────────────────────────────
-//
-// Estes são os elementos que a medição numa ficha real apontou com fundo claro
-// — luminância acima de 140 — e que por isso somem sob o tema escuro. A lista
-// vira constante aqui porque o erro que ela previne já aconteceu: na 1.16.4 eu
-// medi, documentei os sete no CHANGELOG, e deixei `.spacedragon-testes` de fora
-// do CSS. O painel de Desativar Robôs ficou ilegível, e nada acusou.
-//
-// Acrescentar um elemento medido a esta lista é como se registra que ele existe;
-// esquecer de cobri-lo passa a quebrar o teste, e não a ficha de alguém.
-const FUNDOS_CLAROS_MEDIDOS = [
-  "ol.item-list",          // #ffffff — a lista de habilidades e poderes
-  ".editor",               // #ffffff — o editor de texto rico
-  ".character-race",       // #e0ddca — o campo ao lado do nome
-  ".character-class",      // #e0ddca
-  "option",                // #dad8cc — as opções dos seletores
-  ".spacedragon-testes",   // rgba(204,211,240,.35) — Desativar Robôs
-  // `code` sozinho é genérico demais para esta checagem: a folha dos journals
-  // também o estiliza, e a busca acharia aquela ocorrência. O alvo é o da ficha.
-  ".olddragon2e.sheet code",  // rgba(204,238,255,.267)
-];
-for (const alvo of FUNDOS_CLAROS_MEDIDOS) {
-  // O seletor tem de TERMINAR ali. Um `includes` simples aceitaria
-  // ".spacedragon-testesX", que é outro elemento e não cobre coisa alguma —
-  // foi assim que a primeira versão desta asserção deixou a sabotagem passar.
-  const coberto = cssSemComentarios
-    .split(alvo)
-    .slice(1)
-    .some((depois) => !/^[a-zA-Z0-9_-]/.test(depois));
-  confere(coberto,
-    `a medição apontou ${alvo} com fundo claro, e a camada escura não o cobre` +
-    ` — ele fica ilegível no tema do livro`);
-}
-
-// o tema sai de um arquivo próprio, com a opção e o aviso
-const temaJs = ler(MOD, "module", "tema.js");
-confere(temaJs.includes("spacedragon-tema"),
-  "o tema.js não confere se a camada do vizinho está ligada");
-confere(temaJs.includes("scope: \"client\""),
-  "a opção do tema devia ser client, como a do vizinho: quem olha decide");
-confere(temaJs.includes("default: false"),
-  "o tema devia começar desligado: num mundo misto, impor a paleta é erro");
-
-// ── OS DOIS MODOS DO LIVRO ────────────────────────────────────────────────
-//
-// O tema do livro segue o Foundry por padrão: pergaminho no claro, espaço no
-// escuro. Quem roda o VTT escuro e quer a ficha em pergaminho precisa poder
-// pedir — o tema do VTT é escolha de interface, a cara do livro é de cenário.
-//
-// A ASSERÇÃO QUE IMPORTA: com `sw-papel` forçado, as regras ESCURAS têm de
-// ceder. Sem o `:not`, elas continuariam valendo e o pergaminho não apareceria —
-// e o sintoma seria "liguei a opção e não mudou nada", que é o pior tipo.
-{
-  const livro = fs.readFileSync(
-    new URL("../starwars-sd-module/styles/livro.css", import.meta.url), "utf8");
-  const semComentarios = livro.replace(/\/\*[\s\S]*?\*\//g, "");
-
-  // O BLOCO que define as variáveis, e não qualquer menção: `.sw-papel` aparece
-  // dezenas de vezes dentro de `:not(.sw-papel)`, e procurar a classe solta dava
-  // verde mesmo com o bloco apagado — a sabotagem passou batida na primeira
-  // versão desta conferência.
-  for (const [classe, nome] of [["sw-papel", "pergaminho"], ["sw-espaco", "espaço"]]) {
-    const temBloco = new RegExp(
-      String.raw`body\.starwars-sd-tema\.${classe}\s*[,{]`
-    ).test(semComentarios);
-    confere(temBloco, `falta o BLOCO do modo ${nome} (body.starwars-sd-tema.${classe})`);
-  }
-
-  // toda regra que pinta o ESCURO por causa do tema do Foundry tem de ceder
-  for (const m of semComentarios.matchAll(/([^{}]*theme-dark[^{}]*)\{/g)) {
-    for (const parte of m[1].split(",")) {
-      if (!/starwars-sd-tema/.test(parte)) continue;
-      confere(/:not\(\.sw-papel\)/.test(parte),
-        `"${parte.trim().slice(0, 60)}" não cede ao pergaminho forçado`);
-    }
-  }
-}
-
-// ── OS DOIS MODOS DEFINEM AS MESMAS VARIÁVEIS ─────────────────────────────
-//
-// O bloco escuro redefine as variáveis de texto do Foundry porque sobre o fundo
-// de espaço elas têm de ser claras. Quando o pergaminho forçado fez aquele bloco
-// ceder, NINGUÉM mais as definia — e com o VTT em escuro elas voltavam ao claro
-// dele, sobre o pergaminho claro.
-//
-// O sintoma foi preciso e cruel: a ficha certa, e todos os RÓTULOS invisíveis.
-// Valor legível, rótulo não.
-//
-// A lista é EXPLÍCITA. A primeira versão desta conferência extraía as variáveis
-// dos dois blocos por regex e comparava os conjuntos — e passou verde com uma
-// variável apagada, porque a extração não pegou o bloco que eu imaginava. Lista
-// escrita à mão não tem esse problema: o que está aqui é o que se cobra.
-{
-  const VARIAVEIS = [
-    "--color-text-dark-primary",
-    "--color-text-dark-secondary",
-    "--color-text-dark-inactive",
-    "--color-text-dark-5",
-    "--color-text-dark-6",
-    "--color-text-primary",
-    "--color-text-secondary",
-    "--color-text-subtle",
-    "--color-text-emphatic",
-  ];
-  const livro2 = fs.readFileSync(
-    new URL("../starwars-sd-module/styles/livro.css", import.meta.url), "utf8")
-    .replace(/\/\*[\s\S]*?\*\//g, "");
-
-  // o trecho do modo pergaminho: do seletor até o fim do bloco
-  const i = livro2.indexOf("body.starwars-sd-tema.sw-papel .olddragon2e.sheet");
-  confere(i > 0, "falta o bloco de cores de texto do modo pergaminho");
-  const trecho = i > 0 ? livro2.slice(i, livro2.indexOf("}", i)) : "";
-
-  for (const v of VARIAVEIS) {
-    confere(trecho.includes(v + ":"),
-      `o modo pergaminho não define ${v} — com o VTT em escuro ela fica clara ` +
-      `sobre o pergaminho claro, e o rótulo some`);
-  }
-}
-
-// ── O DESTAQUE NO PAPEL PRECISA SER LEGÍVEL E CALMO ───────────────────────
-//
-// `--sw-fosforo-claro` pinta a aba ativa, os links e a caixa marcada quando o
-// livro está em pergaminho. O valor original era o fósforo de tela escurecido
-// só o bastante para passar raspando na WCAG — 4,50:1, com 75% de saturação —
-// e na mesa isso se lê como berrante, não como destaque.
-//
-// Duas exigências, e as duas vieram da mesa: contraste com folga, e saturação
-// baixa o suficiente para não gritar sobre o papel.
-{
-  const livro3 = fs.readFileSync(
-    new URL("../starwars-sd-module/styles/livro.css", import.meta.url), "utf8")
-    .replace(/\/\*[\s\S]*?\*\//g, "");
-
-  const m = livro3.match(/--sw-fosforo-claro:\s*(#[0-9a-fA-F]{6})/);
-  const perg = livro3.match(/--sw-pergaminho:\s*(#[0-9a-fA-F]{6})/);
-  confere(!!m && !!perg, "não achei o destaque do papel ou o pergaminho");
-
-  if (m && perg) {
-    const lum = (hex) => {
-      const n = hex.replace("#", "");
-      const c = [0, 2, 4].map((i) => parseInt(n.slice(i, i + 2), 16) / 255)
-        .map((x) => (x <= 0.03928 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4));
-      return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2];
-    };
-    const [maior, menor] = [lum(m[1]), lum(perg[1])].sort((a, b) => b - a);
-    const contraste = (maior + 0.05) / (menor + 0.05);
-    confere(contraste >= 6,
-      `o destaque no papel tem ${contraste.toFixed(2)}:1 — a WCAG pede 4,5, mas ` +
-      `no limite ele fica desconfortável; aqui se cobra folga`);
-
-    const n = m[1].replace("#", "");
-    const [r, g, b] = [0, 2, 4].map((i) => parseInt(n.slice(i, i + 2), 16) / 255);
-    const max = Math.max(r, g, b), min = Math.min(r, g, b);
-    const saturacao = max === 0 ? 0 : (max - min) / max;
-    confere(saturacao <= 0.55,
-      `o destaque no papel tem ${(saturacao * 100).toFixed(0)}% de saturação — ` +
-      `acima disso ele grita sobre o pergaminho em vez de destacar`);
-  }
-}
+/* ── OS BLOCOS DE COR SAÍRAM DAQUI ────────────────────────────────────────
+ *
+ * Este arquivo media quatro coisas que dependiam de o módulo pintar: o tema do
+ * livro sobre a ficha do sistema, a lista de elementos com fundo claro que a
+ * camada escura tinha de cobrir, as variáveis que os dois modos definiam, e o
+ * contraste do destaque sobre o papel.
+ *
+ * Cada uma nasceu de um bug medido na mesa, e todas deixaram de ter objeto: as
+ * cores voltaram a ser do sistema a pedido do autor, e só a TIPOGRAFIA é nossa.
+ *
+ * O que ficou neste arquivo é o que não depende de cor: os selos e tarjas, as
+ * fontes citadas existindo de verdade, a ordem das folhas e as epígrafes dos
+ * capítulos.
+ */
 
 /* ── AS EPÍGRAFES DOS CAPÍTULOS ───────────────────────────────────────────── */
 //

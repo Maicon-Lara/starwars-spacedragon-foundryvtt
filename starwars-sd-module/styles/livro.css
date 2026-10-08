@@ -23,167 +23,40 @@
  */
 
 :root {
-  /* ── Paleta base ── */
-  --sw-espaco: #0b0e14;       /* fundo, na tela   */
-  --sw-painel: #151a24;       /* caixas           */
-  --sw-texto: #d9d6cc;        /* corpo, na tela   */
-  --sw-crawl: #ffd93b;        /* destaque         */
-  --sw-aco: #3a4252;          /* linhas           */
-  --sw-pergaminho: #f2ebd9;   /* fundo, impresso  */
-
-  /* ── Correntes da Força ── */
-  --sw-universal: #a8b2c1;
-  --sw-luz: #3fa7ff;
-  --sw-sombra: #e0262b;
-  --sw-cinza: #9b6dff;
-  --sw-corrompe: #ff6a1a;
-
-  /* ── Classes ── */
-  --sw-veterano: #e8751a;
-  --sw-operativo: #5c7a4b;
-  --sw-tecnico: #2ec4c4;
-  --sw-sensivel: #f2e6b8;
-
-  /* ── Capítulos temáticos ── */
-  --sw-beskar: #4a5d4e;
-  --sw-prata: #c0c7cc;
-  --sw-radar: #1e6bff;
-  --sw-fosforo: #39ff88;
-  --sw-ambar: #ffb000;
-  --sw-ferrugem: #a0522d;
-  --sw-terra: #6b4f2a;
-
-  /* ── Tipografia ── */
+  /* ── Paleta base ── */;
+  /* fundo, na tela   */;
+  /* caixas           */;
+  /* corpo, na tela   */;
+  /* destaque         */;
+  /* linhas           */;
+  /* fundo, impresso  */;
+  /* ── Correntes da Força ── */;
+  /* ── Classes ── */;
+  /* ── Capítulos temáticos ── */;
+  /* ── Tipografia ── */;
   --sw-serif: "Source Serif 4", Georgia, serif;
   --sw-display: "Orbitron", "Exo 2", sans-serif;
   --sw-condensada: "Saira Condensed", "Exo 2", sans-serif;
-
   /* ── Os tokens que as regras usam de fato ──────────────────────────────
    * O PADRÃO É O CLARO, porque o journal do Foundry é claro por natureza e
    * uma mesa sem modo escuro tem de ficar legível sem configurar nada. São
    * os valores que o livro usa na impressão.
-   */
-  --sw-fundo: var(--sw-pergaminho);
-  --sw-caixa: #e6dcc3;
-  --sw-tinta: #1a1a18;
-  --sw-linha: #8c8272;
-  --sw-cor: #9a7b00;          /* o crawl, escurecido para o papel */
-
+   */;
+  /* o crawl, escurecido para o papel */;
   /* As cores que não se leem sobre papel claro, escurecidas — os mesmos
    * valores do bloco @media print do livro. Têm nome próprio para deixar
-   * claro que são a MESMA cor em outro valor, e não outra cor. */
+   * claro que são a MESMA cor em outro valor, e não outra cor. */;
   /* O cabeçalho de tabela do livro é painel ESCURO com texto claro, nos dois
    * temas — é o que sustenta o filete amarelo por baixo. Na impressão o livro
    * usa #2A2E38 em vez do #151A24 da tela, porque sobre papel o painel puro
-   * fica num preto chapado. */
-  --sw-cabecalho: #2a2e38;
-  --sw-cabecalho-tinta: #f2ebd9;
-
-  --sw-universal-claro: #5a6472;
-  --sw-sensivel-claro: #8a7a3c;
-  --sw-prata-claro: #6e757a;
+   * fica num preto chapado. */;
   /* O fósforo no PAPEL. Não é o mesmo verde da tela: sobre o pergaminho, o
    * #1e7a45 dava 4,50:1 — o mínimo exato da WCAG — com 75% de saturação, e na
    * mesa isso se lê como berrante, não como destaque. Este tem 7,7:1 com 41%:
    * continua verde, e para de gritar.
    *
    * Ele pinta a aba ativa, os links e a caixa marcada — tudo o que o tema do
-   * vizinho liga a `--sd-brilho`. */
-  --sw-fosforo-claro: #2f4f3a;
-}
-
-/* ── O ESCURO: a paleta de tela do livro ───────────────────────────────────
- *
- * Os mesmos dois sinais que a ficha de nave já respeitava: a classe
- * theme-dark, que o Foundry v13 e os módulos de modo escuro põem no corpo da
- * página, e a preferência do sistema operacional.
- */
-body.theme-dark,
-.theme-dark {
-  --sw-fundo: var(--sw-espaco);
-  --sw-caixa: var(--sw-painel);
-  --sw-tinta: var(--sw-texto);
-  --sw-linha: var(--sw-aco);
-  --sw-cor: var(--sw-crawl);
-  --sw-cabecalho: var(--sw-painel);
-  --sw-cabecalho-tinta: var(--sw-texto);
-  --sw-universal-claro: var(--sw-universal);
-  --sw-sensivel-claro: var(--sw-sensivel);
-  --sw-prata-claro: var(--sw-prata);
-  --sw-fosforo-claro: var(--sw-fosforo);
-}
-
-@media (prefers-color-scheme: dark) {
-  body:not(.theme-light) {
-    --sw-fundo: var(--sw-espaco);
-    --sw-caixa: var(--sw-painel);
-    --sw-tinta: var(--sw-texto);
-    --sw-linha: var(--sw-aco);
-    --sw-cor: var(--sw-crawl);
-    --sw-cabecalho: var(--sw-painel);
-    --sw-cabecalho-tinta: var(--sw-texto);
-    --sw-universal-claro: var(--sw-universal);
-    --sw-sensivel-claro: var(--sw-sensivel);
-    --sw-prata-claro: var(--sw-prata);
-    --sw-fosforo-claro: var(--sw-fosforo);
-  }
-}
-
-/* ── OS MODOS FORÇADOS TAMBÉM MANDAM NAS VARIÁVEIS DO LIVRO ────────────────
- *
- * ── O BUG QUE ISTO CONSERTA ───────────────────────────────────────────────
- *
- * Os blocos `--sd-*` do tema da ficha já cediam ao pergaminho forçado, com
- * `:not(.sw-papel)`. Os blocos `--sw-*` acima NÃO cediam. Resultado, com o
- * Foundry em tema escuro e o pergaminho ligado: o fundo vinha claro e
- * `--sw-cor` continuava `#ffd93b`. O painel de Pontos de Força, que pinta
- * título e números com ela, ficava amarelo-neon sobre papel — ilegível.
- *
- * O mesmo valia ao contrário: espaço forçado com o Foundry em claro deixava as
- * variáveis na versão de papel, escuras sobre fundo escuro.
- *
- * ── POR QUE TRÊS SELETORES EM CADA ────────────────────────────────────────
- *
- * `body.sw-papel` sozinho empata com `body.theme-dark` e venceria só pela
- * ordem — frágil. `body.sw-papel.theme-dark` vence sempre. E
- * `body.sw-papel .theme-dark` é para as JANELAS: o Foundry marca cada janela
- * com a própria classe de tema, e sem este seletor o painel dentro delas
- * voltaria ao amarelo.
- *
- * Os valores são os mesmos do `:root` (papel) e do `body.theme-dark` (espaço).
- * Há um teste que falha se os conjuntos divergirem — foi uma variável
- * esquecida que produziu este bug.
- */
-body.sw-papel,
-body.sw-papel.theme-dark,
-body.sw-papel .theme-dark {
-  --sw-fundo: var(--sw-pergaminho);
-  --sw-caixa: #e6dcc3;
-  --sw-tinta: #1a1a18;
-  --sw-linha: #8c8272;
-  --sw-cor: #9a7b00;
-  --sw-cabecalho: #2a2e38;
-  --sw-cabecalho-tinta: #f2ebd9;
-  --sw-universal-claro: #5a6472;
-  --sw-sensivel-claro: #8a7a3c;
-  --sw-prata-claro: #6e757a;
-  --sw-fosforo-claro: #2f4f3a;
-}
-
-body.sw-espaco,
-body.sw-espaco.theme-light,
-body.sw-espaco .theme-light {
-  --sw-fundo: var(--sw-espaco);
-  --sw-caixa: var(--sw-painel);
-  --sw-tinta: var(--sw-texto);
-  --sw-linha: var(--sw-aco);
-  --sw-cor: var(--sw-crawl);
-  --sw-cabecalho: var(--sw-painel);
-  --sw-cabecalho-tinta: var(--sw-texto);
-  --sw-universal-claro: var(--sw-universal);
-  --sw-sensivel-claro: var(--sw-sensivel);
-  --sw-prata-claro: var(--sw-prata);
-  --sw-fosforo-claro: var(--sw-fosforo);
+   * vizinho liga a `--sd-brilho`. */;
 }
 
 /* ══ OS COMPONENTES DO LIVRO ═══════════════════════════════════════════════
@@ -213,17 +86,10 @@ body.sw-espaco .theme-light {
   font-family: var(--sw-condensada);
   font-weight: 700;
   font-size: 0.82em;
-  color: #fff;
-  background: var(--sw-universal-claro);
   clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
   vertical-align: -0.3em;
   margin: 0 0.12em;
 }
-.sw-selo.u { background: var(--sw-universal-claro); }
-.sw-selo.l { background: var(--sw-luz); }
-.sw-selo.s { background: var(--sw-sombra); }
-.sw-selo.c { background: var(--sw-cinza); }
-.sw-selo.estrela { background: var(--sw-corrompe); }
 
 /* ── Tarja de nível ───────────────────────────────────────────────────────
  * O marcador de nível que o build do livro já gerava. O corte em diagonal é
@@ -234,8 +100,6 @@ body.sw-espaco .theme-light {
   font-family: var(--sw-condensada);
   font-weight: 700;
   font-size: 0.8em;
-  color: var(--sw-fundo);
-  background: var(--sw-cor);
   padding: 0 0.45em;
   letter-spacing: 0.04em;
   clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
@@ -250,12 +114,7 @@ body.sw-espaco .theme-light {
   grid-template-columns: auto 1fr;
   align-items: center;
   gap: 0 1.1em;
-  background: linear-gradient(
-    90deg,
-    color-mix(in srgb, var(--sw-cor) 26%, transparent),
-    transparent 82%
-  );
-  border-left: 5px solid var(--sw-cor);
+  border-left: 5px solid;
   padding: 0.9em 1.1em;
   margin: 0 0 1.6em;
 }
@@ -264,7 +123,6 @@ body.sw-espaco .theme-light {
   font-weight: 900;
   font-size: 2.6em;
   line-height: 1;
-  color: var(--sw-cor);
   opacity: 0.85;
   grid-row: span 2;
 }
@@ -273,12 +131,12 @@ body.sw-espaco .theme-light {
   font-weight: 700;
   font-size: 1.35em;
   letter-spacing: 0.04em;
-  /* o journal do Foundry põe borda e espaço nos títulos; a abertura é um
+  /* o journal do Foundry põe borda e espaço nos títulos;
+  a abertura é um
      bloco fechado em si, e a borda dele cortaria a faixa ao meio */
   margin: 0;
   padding: 0;
   border: 0;
-  color: var(--sw-tinta);
   text-align: left;
 }
 .starwars-sd-doc .abertura .epigrafe {
@@ -288,32 +146,6 @@ body.sw-espaco .theme-light {
   margin: 0.25em 0 0;
   text-align: left;
 }
-
-/* ── A cor de cada capítulo ───────────────────────────────────────────────
- * O build marca a página com a classe; daqui para baixo tudo que usa
- * --sw-cor (abertura, tarja, marcador de lista, fio da tabela) acompanha.
- */
-.starwars-sd-doc.c-index { --sw-cor: var(--sw-crawl); }
-.starwars-sd-doc.c-usando { --sw-cor: var(--sw-crawl); }
-.starwars-sd-doc.c-atributos { --sw-cor: var(--sw-universal-claro); }
-.starwars-sd-doc.c-especies { --sw-cor: var(--sw-operativo); }
-.starwars-sd-doc.c-classes { --sw-cor: var(--sw-veterano); }
-.starwars-sd-doc.c-forca { --sw-cor: var(--sw-sensivel-claro); }
-.starwars-sd-doc.c-poderes { --sw-cor: var(--sw-luz); }
-.starwars-sd-doc.c-sabre { --sw-cor: var(--sw-luz); }
-.starwars-sd-doc.c-mando { --sw-cor: var(--sw-beskar); }
-.starwars-sd-doc.c-ordens { --sw-cor: var(--sw-prata-claro); }
-.starwars-sd-doc.c-equip { --sw-cor: var(--sw-aco); }
-.starwars-sd-doc.c-aventuras { --sw-cor: var(--sw-radar); }
-.starwars-sd-doc.c-combate { --sw-cor: var(--sw-sombra); }
-.starwars-sd-doc.c-aparatos { --sw-cor: var(--sw-tecnico); }
-.starwars-sd-doc.c-naves { --sw-cor: var(--sw-radar); }
-/* o combate espacial e o capitulo de naves sao o mesmo assunto e dividem a
-   cor; o modulo tatico, que e opcional, fica no fosforo para se distinguir */
-.starwars-sd-doc.c-espacial { --sw-cor: var(--sw-radar); }
-.starwars-sd-doc.c-tatico { --sw-cor: var(--sw-fosforo-claro); }
-.starwars-sd-doc.c-bestiario { --sw-cor: var(--sw-ferrugem); }
-.starwars-sd-doc.c-mestre { --sw-cor: var(--sw-ambar); }
 
 /* ── Tipografia do corpo ──────────────────────────────────────────────────
  * O livro é serif no corpo e condensada nos títulos e nas tabelas; o display
@@ -347,11 +179,6 @@ body.sw-espaco .theme-light {
   font-weight: 600;
 }
 
-/* o marcador da lista na cor do capítulo, como no livro */
-.starwars-sd-doc li::marker {
-  color: var(--sw-cor);
-}
-
 /* ── Caixas de destaque ───────────────────────────────────────────────────
  * No livro todo blockquote é uma caixa: fundo de painel e uma barra na cor
  * do capítulo. O journal do Foundry desenha o blockquote como citação
@@ -360,84 +187,20 @@ body.sw-espaco .theme-light {
 .starwars-sd-doc blockquote {
   margin: 1.1em 0;
   padding: 0.8em 1em;
-  background: var(--sw-caixa);
-  border-left: 4px solid var(--sw-cor);
+  border-left: 4px solid;
   border-radius: 0 3px 3px 0;
 }
-.starwars-sd-doc blockquote p:first-child { margin-top: 0; }
-.starwars-sd-doc blockquote p:last-child { margin-bottom: 0; }
+.starwars-sd-doc blockquote p:first-child {
+  margin-top: 0;
+}
+.starwars-sd-doc blockquote p:last-child {
+  margin-bottom: 0;
+}
 /* o rótulo, quando a caixa abre em negrito */
 .starwars-sd-doc blockquote > p:first-child > strong:first-child {
   font-family: var(--sw-condensada);
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--sw-cor);
-}
-
-/* ══ O TEMA DO LIVRO NA FICHA DE PERSONAGEM ════════════════════════════════
- *
- * A ficha de personagem é do sistema `olddragon2e`, não deste módulo — e o
- * módulo Space Dragon já tem uma camada que a repinta, sob `body.spacedragon-
- * tema`. Essa camada fez o trabalho difícil: o sistema pinta o mesmo carmim em
- * vinte e três seletores longos, e a folha do vizinho os cobre com
- * `!important` e concentra TUDO em cinco variáveis.
- *
- * Então aqui não se reescreve seletor nenhum. Só se trocam as cinco cores pela
- * paleta do livro, e a maquinaria do vizinho faz o resto. Reescrever os vinte e
- * três caminhos seria quebrar na próxima versão do sistema — é o que a folha
- * dele diz, e está certo.
- *
- * ── DEPENDE DO TEMA DO VIZINHO ESTAR LIGADO ───────────────────────────────
- *
- * As REGRAS que consomem estas variáveis moram sob `body.spacedragon-tema`.
- * Sem aquela classe, definir as variáveis não alcança nada — e é por isso que
- * a opção deste módulo avisa, e o código confere ao ligar.
- *
- * ── A ESPECIFICIDADE, E POR QUE A CLASSE DUPLA ────────────────────────────
- *
- * `body.spacedragon-tema` tem um elemento e uma classe; `body.starwars-sd-tema`
- * tem o mesmo peso, e num empate vence quem o navegador carregou depois — que
- * entre dois módulos não é garantido. A segunda regra, com as DUAS classes,
- * vence sempre.
- *
- * ── POR QUE A BARRA NÃO É O AMARELO DO LETREIRO ───────────────────────────
- *
- * `--sd-barra` é fundo, e o vizinho fixa `color: #ffffff !important` em cima
- * dela. Na ficha de NAVE o amarelo funciona porque lá a cor do texto é nossa;
- * aqui, branco sobre #FFD93B não se lê. A barra fica escura nos dois temas: o
- * #2A2E38 que o livro usa no papel, e o aço no escuro.
- */
-
-body.starwars-sd-tema,
-body.starwars-sd-tema.spacedragon-tema {
-  --sd-fundo: var(--sw-pergaminho);
-  --sd-caixa: #e6dcc3;
-  --sd-barra: #2a2e38;
-  --sd-tinta: #1a1a18;
-  --sd-brilho: var(--sw-fosforo-claro);
-}
-
-/* `:not(.sw-papel)` — ver a nota do modo, mais abaixo: com o pergaminho
-   forçado, o escuro do Foundry não manda mais aqui. */
-body.theme-dark.starwars-sd-tema:not(.sw-papel),
-body.theme-dark.starwars-sd-tema:not(.sw-papel).spacedragon-tema:not(.sw-papel) {
-  --sd-fundo: var(--sw-espaco);
-  --sd-caixa: var(--sw-painel);
-  /* o aço, e não o crawl: o texto em cima é branco e fixado pelo vizinho */
-  --sd-barra: var(--sw-aco);
-  --sd-tinta: var(--sw-texto);
-  --sd-brilho: var(--sw-fosforo);
-}
-
-@media (prefers-color-scheme: dark) {
-  body.starwars-sd-tema:not(.theme-light):not(.sw-papel),
-  body.starwars-sd-tema.spacedragon-tema:not(.theme-light):not(.sw-papel) {
-    --sd-fundo: var(--sw-espaco);
-    --sd-caixa: var(--sw-painel);
-    --sd-barra: var(--sw-aco);
-    --sd-tinta: var(--sw-texto);
-    --sd-brilho: var(--sw-fosforo);
-  }
 }
 
 /* O nome do personagem em Orbitron, como o título de capítulo. É a ÚNICA
@@ -448,51 +211,6 @@ body.starwars-sd-tema .olddragon2e.sheet input[name="name"] {
   font-family: var(--sw-display);
   font-weight: 700;
   letter-spacing: 0.02em;
-}
-
-/* ── O CONTRASTE NO ESCURO, NA FICHA DO SISTEMA ────────────────────────────
- *
- * O tema do módulo Space Dragon é SEMPRE CLARO (--sd-fundo: #eef0f8). Ao pôr
- * o fundo do espaço atrás dele, esta camada quebrou o que ele nunca precisou
- * cobrir: os rótulos pequenos do sistema — "Nome", "Movimento", "Base",
- * "M. DES", os nomes dos atributos, as abas inativas — são cinza-escuro, que
- * sobre pergaminho se lê e sobre #0B0E14 não.
- *
- * A correção é pelas VARIÁVEIS DE TEXTO DO FOUNDRY, e não pelos seletores do
- * sistema: elas são da plataforma, valem para qualquer sistema e qualquer
- * versão dele, e um sistema que use cor literal apenas não é alcançado — ao
- * contrário de copiar caminhos longos, que quebra ativamente quando o sistema
- * muda.
- *
- * Escopado na ficha, e não no <body>: a interface do Foundry em volta tem o
- * próprio contraste resolvido.
- */
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet,
-body.theme-dark.starwars-sd-tema:not(.sw-papel).spacedragon-tema .olddragon2e.sheet {
-  --color-text-dark-primary: var(--sw-texto);
-  --color-text-dark-secondary: #b9b5a8;
-  --color-text-dark-inactive: #8d8a80;
-  --color-text-dark-5: #a9a59a;
-  --color-text-dark-6: #b9b5a8;
-  --color-text-primary: var(--sw-texto);
-  --color-text-secondary: #b9b5a8;
-  --color-text-subtle: #8d8a80;
-  --color-text-emphatic: #f0ede4;
-}
-
-@media (prefers-color-scheme: dark) {
-  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet,
-  body.starwars-sd-tema.spacedragon-tema:not(.theme-light) .olddragon2e.sheet {
-    --color-text-dark-primary: var(--sw-texto);
-    --color-text-dark-secondary: #b9b5a8;
-    --color-text-dark-inactive: #8d8a80;
-    --color-text-dark-5: #a9a59a;
-    --color-text-dark-6: #b9b5a8;
-    --color-text-primary: var(--sw-texto);
-    --color-text-secondary: #b9b5a8;
-    --color-text-subtle: #8d8a80;
-    --color-text-emphatic: #f0ede4;
-  }
 }
 
 /* ── O painel de Pontos de Força na barra lateral ──────────────────────────
@@ -522,7 +240,7 @@ body.theme-dark.starwars-sd-tema:not(.sw-papel).spacedragon-tema .olddragon2e.sh
 .sidebar .starwars-sd-pf .pf-acoes {
   justify-content: center;
   /* Em vez de espremer, DESCE. Sem isto os três botões dividem a coluna e cada
-     um fica menor que a própria palavra. */
+     um fica menor que a própria palavra. */;
   flex-wrap: wrap;
 }
 .sidebar .starwars-sd-pf .pf-acoes button {
@@ -530,311 +248,29 @@ body.theme-dark.starwars-sd-tema:not(.sw-papel).spacedragon-tema .olddragon2e.sh
   /* `min-width: 0` estava aqui, e era o bug: ele AUTORIZA o botão a encolher
      abaixo do conteúdo, e o rótulo "gastar" saía por baixo do "+1" ao lado.
      `max-content` é o contrário — o botão nunca fica menor que a palavra, e com
-     o wrap acima ele vai para a linha de baixo quando não couber. */
+     o wrap acima ele vai para a linha de baixo quando não couber. */;
   min-width: max-content;
-}
-
-/* Os campos de formulário, no escuro.
- *
- * "Raça" e "Classe" são inputs desabilitados: o navegador e o Foundry os
- * esmaecem com uma cor pensada para fundo claro, e sobre o espaço ela some.
- * Isto é seletor de ELEMENTO — input, select, textarea —, não um caminho
- * interno do sistema, e por isso não quebra quando o sistema mudar. */
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet input,
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet select,
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet textarea,
-body.theme-dark.starwars-sd-tema:not(.sw-papel).spacedragon-tema .olddragon2e.sheet input,
-body.theme-dark.starwars-sd-tema:not(.sw-papel).spacedragon-tema .olddragon2e.sheet select,
-body.theme-dark.starwars-sd-tema:not(.sw-papel).spacedragon-tema .olddragon2e.sheet textarea {
-  color: var(--sw-texto);
 }
 /* desabilitado continua parecendo desabilitado, mas legível */
 body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet input:disabled,
 body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet select:disabled,
 body.theme-dark.starwars-sd-tema:not(.sw-papel).spacedragon-tema .olddragon2e.sheet input:disabled,
 body.theme-dark.starwars-sd-tema:not(.sw-papel).spacedragon-tema .olddragon2e.sheet select:disabled {
-  color: #b9b5a8;
   opacity: 1;
-}
-
-@media (prefers-color-scheme: dark) {
-  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet input,
-  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet select,
-  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet textarea {
-    color: var(--sw-texto);
-  }
-}
-
-/* O losango do sistema, no escuro.
- *
- * `.diamond` é o marcador "⬥" que o sistema põe antes de algumas linhas, no
- * carmim #D72240 — que sobre pergaminho se lê e sobre o espaço fica quase
- * preto. É UMA classe curta e estável, e não um daqueles caminhos de cinco
- * níveis que a folha do módulo Space Dragon documenta ter copiado e tido de
- * desfazer: cobri-la custa uma linha e não cria dívida contra o sistema.
- *
- * Achado com o console do navegador, numa ficha real — era um dos três únicos
- * elementos que restavam com contraste baixo. */
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet .diamond,
-body.theme-dark.starwars-sd-tema:not(.sw-papel).spacedragon-tema .olddragon2e.sheet .diamond {
-  color: var(--sw-corrompe);
-}
-
-@media (prefers-color-scheme: dark) {
-  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet .diamond {
-    color: var(--sw-corrompe);
-  }
-}
-
-/* ── OS FUNDOS QUE NENHUMA VARIÁVEL ALCANÇA ────────────────────────────────
- *
- * Esta lista saiu de MEDIÇÃO, e não de leitura de código: com a ficha aberta,
- * o console listou todo elemento cujo fundo tem luminância alta. Foi o que
- * mostrou que o problema nunca foi texto escuro — era texto claro sobre fundo
- * CLARO, em áreas que o tema do módulo Space Dragon não cobre.
- *
- * Ele pinta três containers (.sidebar, .header, .main) e os campos, tudo por
- * variável. O que sobra tem a cor FIXA em hexadecimal, no sistema ou na folha
- * dele, e por isso trocar `--sd-*` não alcança:
- *
- *   ol.item-list       #ffffff              a lista de habilidades e poderes
- *   div.editor         #ffffff              o editor de texto rico
- *   .character-race    #e0ddca              os campos ao lado do nome
- *   .character-class   #e0ddca
- *   option             #dad8cc              as opções dos seletores
- *   input.system-*     rgba(204,211,240,.55)
- *   tr                 rgba(255,255,255,.2) a zebra das tabelas
- *
- * ── POR QUE AQUI TEM `!important`, E NA CAMADA DE CIMA NÃO ────────────────
- *
- * Porque isto é DISPUTA, e não troca de variável. É a mesma conclusão a que a
- * folha do módulo Space Dragon chegou, e pelo mesmo motivo: contra uma cor
- * fixada no sistema não há seletor curto que ganhe na contagem.
- *
- * São seletores CURTOS e semânticos — `ol.item-list`, `.character-race` —, e
- * não caminhos de cinco níveis como
- * `.character-tab-race .race-abilities ol li .ability-header .ability-level`.
- * A diferença importa: um nome de componente sobrevive a uma remodelagem de
- * layout; uma cadeia de descendentes não.
- */
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet ol.item-list,
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet .editor,
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet .character-race,
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet .character-class,
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet option {
-  background-color: var(--sw-painel) !important;
-  color: var(--sw-texto) !important;
-}
-
-/* os campos de valor, que o vizinho pinta num azul-lavanda sem variável */
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet input,
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet select,
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet textarea {
-  background-color: var(--sw-painel) !important;
-  border-color: color-mix(in srgb, var(--sw-aco) 70%, transparent) !important;
-}
-
-/* a zebra das tabelas: branco a 20% vira a cor do capítulo a 7%, como no livro */
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet tbody tr {
-  background-color: color-mix(in srgb, var(--sw-cor) 7%, transparent) !important;
-}
-
-/* o editor de texto rico também pinta o próprio corpo */
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet .editor-content,
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet .ProseMirror {
-  background-color: transparent !important;
-  color: var(--sw-texto) !important;
-}
-
-@media (prefers-color-scheme: dark) {
-  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet ol.item-list,
-  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet .editor,
-  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet .character-race,
-  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet .character-class,
-  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet option {
-    background-color: var(--sw-painel) !important;
-    color: var(--sw-texto) !important;
-  }
-  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet input,
-  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet select,
-  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet textarea {
-    background-color: var(--sw-painel) !important;
-  }
-}
-
-/* ── O TEXTO DOS CAMPOS CALCULADOS ─────────────────────────────────────────
- *
- * A ficha tem dois tipos de campo: os que se digitam (XP, PV, atributos) e os
- * CALCULADOS — os modificadores, a Base do CP, a BA, as JP, o limiar de Danos
- * Mortais, o Próximo Nível, o Movimento derivado. Os calculados são `input`
- * desabilitado.
- *
- * E aí está a armadilha: num input desabilitado o Chrome pinta o texto com
- * `-webkit-text-fill-color`, que IGNORA `color`. Escurecer o fundo desses
- * campos sem tratar essa propriedade deixou o texto na cor antiga — escura
- * sobre escuro —, e a ficha apareceu com metade dos números em branco.
- *
- * O sintoma denuncia a causa: os campos editáveis continuavam mostrando o
- * valor, e só os calculados sumiam.
- */
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet input,
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet select,
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet textarea {
-  color: var(--sw-texto) !important;
-  -webkit-text-fill-color: var(--sw-texto);
 }
 body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet input:disabled,
 body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet input[readonly],
 body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet select:disabled,
 body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet textarea:disabled {
-  /* legível, mas ainda com cara de campo que não se edita */
-  color: #c3bfb2 !important;
-  -webkit-text-fill-color: #c3bfb2;
+  /* legível, mas ainda com cara de campo que não se edita */;
   opacity: 1;
 }
 
 @media (prefers-color-scheme: dark) {
-  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet input,
-  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet select,
-  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet textarea {
-    color: var(--sw-texto) !important;
-    -webkit-text-fill-color: var(--sw-texto);
-  }
   body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet input:disabled,
   body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .olddragon2e.sheet input[readonly] {
-    color: #c3bfb2 !important;
-    -webkit-text-fill-color: #c3bfb2;
-    opacity: 1;
-  }
+  opacity: 1;
 }
-
-/* ── OS PAINÉIS DO MÓDULO SPACE DRAGON ─────────────────────────────────────
- *
- * O vizinho injeta painéis próprios na ficha — Desativar Robôs, Ordem de Ação,
- * Créditos, Danos Mortais —, e eles ficaram de fora da passagem anterior: a
- * medição os apontou (`div.spacedragon-testes → rgba(204,211,240,.35)`), e eu
- * cobri todo o resto da lista menos eles.
- *
- * ── A VARIÁVEL QUE SERVE A DOIS PAPÉIS OPOSTOS ────────────────────────────
- *
- * O tema dele pinta `.sd-rolar` — o nome clicável de cada linha — com
- * `color: var(--sd-barra) !important`. Mas `--sd-barra` é TAMBÉM o fundo das
- * barras de seção, onde o texto por cima é branco fixo; por isso ela teve de
- * ficar escura no nosso tema. O resultado é que o mesmo valor que funciona
- * como fundo vira texto escuro sobre o painel claro.
- *
- * Não há valor único que sirva aos dois papéis num tema escuro. A saída é
- * tratar este painel à parte, que é o que esta seção faz.
- */
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .spacedragon-testes,
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .spacedragon-creditos,
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .spacedragon-mortais,
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .spacedragon-ameaca,
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .spacedragon-mental,
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .sd-ordem,
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .sd-teste {
-  background: color-mix(in srgb, var(--sw-cor) 8%, transparent) !important;
-  border-left-color: var(--sw-cor) !important;
-  color: var(--sw-texto) !important;
-}
-
-/* o nome clicável de cada linha, que o tema do vizinho deixa na cor da barra */
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .spacedragon-testes .sd-rolar,
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .sd-teste .sd-rolar {
-  color: var(--sw-texto) !important;
-}
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .spacedragon-testes .sd-rolar:hover,
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .sd-teste .sd-rolar:hover {
-  color: var(--sw-cor) !important;
-}
-
-/* o número é o que a mesa procura na linha: fica no amarelo do letreiro */
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .spacedragon-testes .sd-alvo {
-  color: var(--sw-cor) !important;
-}
-
-@media (prefers-color-scheme: dark) {
-  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .spacedragon-testes,
-  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .spacedragon-creditos,
-  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .spacedragon-mortais,
-  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .sd-ordem,
-  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .sd-teste {
-    background: color-mix(in srgb, var(--sw-cor) 8%, transparent) !important;
-    border-left-color: var(--sw-cor) !important;
-    color: var(--sw-texto) !important;
-  }
-  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .spacedragon-testes .sd-rolar {
-    color: var(--sw-texto) !important;
-  }
-  body.starwars-sd-tema:not(.theme-light):not(.sw-papel) .spacedragon-testes .sd-alvo {
-    color: var(--sw-cor) !important;
-  }
-}
-
-/* o <code> dos textos de regra, que o Foundry pinta num azul claro translúcido */
-body.theme-dark.starwars-sd-tema:not(.sw-papel) .olddragon2e.sheet code {
-  background: color-mix(in srgb, var(--sw-luz) 14%, transparent) !important;
-  color: var(--sw-texto) !important;
-}
-
-/* ── O MODO DO LIVRO: PERGAMINHO OU ESPAÇO, POR ESCOLHA ────────────────────
- *
- * Por padrão o tema do livro segue o Foundry: pergaminho no claro, espaço no
- * escuro. É o que o livro impresso e o livro na tela fazem, cada um no seu meio.
- *
- * Mas quem usa o Foundry em escuro e quer a ficha em PERGAMINHO não tinha como
- * pedir — e era um pedido legítimo: o pergaminho é a cara do livro, e o tema do
- * VTT é uma escolha de interface, não de cenário.
- *
- * `sw-papel` força o pergaminho (as regras escuras acima cedem a ele);
- * `sw-espaco` força o escuro, mesmo com o Foundry em claro. Sem nenhuma das
- * duas, o comportamento é o de sempre. */
-body.starwars-sd-tema.sw-papel,
-body.starwars-sd-tema.spacedragon-tema.sw-papel {
-  --sd-fundo: var(--sw-pergaminho);
-  --sd-caixa: #e6dcc3;
-  --sd-barra: #2a2e38;
-  --sd-tinta: #1a1a18;
-  --sd-brilho: var(--sw-fosforo-claro);
-}
-
-body.starwars-sd-tema.sw-espaco,
-body.starwars-sd-tema.spacedragon-tema.sw-espaco {
-  --sd-fundo: var(--sw-espaco);
-  --sd-caixa: var(--sw-painel);
-  --sd-barra: var(--sw-aco);
-  --sd-tinta: var(--sw-texto);
-  --sd-brilho: var(--sw-fosforo);
-}
-
-/* ── O PERGAMINHO FORÇADO PRECISA DAS CORES DE TEXTO ───────────────────────
- *
- * O bloco escuro do livro redefine NOVE variáveis de texto do Foundry, porque
- * sobre o fundo de espaço elas têm de ser claras. Ao fazer aquele bloco ceder ao
- * pergaminho forçado, ninguém mais as definia — e com o Foundry em tema escuro
- * elas voltavam ao claro dele, sobre o pergaminho claro.
- *
- * O resultado na mesa: a ficha ficou certa, e TODOS os rótulos sumiram —
- * "Nome", "Raça", "Movimento", os nomes dos atributos, "Base", "Armadura".
- * Valor legível, rótulo invisível.
- *
- * As nove voltam aqui, com os valores do papel. Contrastes sobre o pergaminho
- * (#f2ebd9): principal 14,6:1, secundário 7,9:1, apagado 4,8:1 — todos acima dos
- * 4,5:1 da WCAG, o último por pouco, e é o texto menos importante da ficha.
- *
- * Escopado na ficha, como o bloco escuro: a interface do Foundry em volta tem o
- * próprio contraste resolvido. */
-body.starwars-sd-tema.sw-papel .olddragon2e.sheet,
-body.starwars-sd-tema.spacedragon-tema.sw-papel .olddragon2e.sheet {
-  --color-text-dark-primary: #1a1a18;
-  --color-text-dark-secondary: #4a463d;
-  --color-text-dark-inactive: #6b665c;
-  --color-text-dark-5: #5a564c;
-  --color-text-dark-6: #4a463d;
-  --color-text-primary: #1a1a18;
-  --color-text-secondary: #4a463d;
-  --color-text-subtle: #6b665c;
-  --color-text-emphatic: #0d0c0a;
 }
 
 /* ── A FONTE DO LIVRO NA FICHA ──────────────────────────────────────────────

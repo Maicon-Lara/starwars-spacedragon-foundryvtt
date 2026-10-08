@@ -1,40 +1,4 @@
-/* Star Wars — Suplemento para Space Dragon
- *
- * Uma camada só: .starwars-sd-doc, o conteúdo dos journals deste módulo
- * (container posto por journalDoc()). Sem esse escopo, estilizar tabela e
- * título vazaria para os journals do sistema e de outros módulos.
- *
- * Não há tema de ficha aqui, e é de propósito: a ficha é a do módulo Space
- * Dragon, com o tema dele. Dois temas brigando na mesma janela é o que o
- * Star Dragon e o Space Dragon tiveram de desembaraçar na 1.5.0.
- *
- * As regras abaixo são as do journal do Star Dragon, com as cores trocadas
- * pelas das capas deste módulo (brasa e o amarelo do letreiro). Toda cor mora
- * no bloco :root.
- */
 
-:root {
-  /* As cores eram as das capas deste módulo (brasa e o amarelo do letreiro),
-   * fixas em hexadecimal. Agora DERIVAM da paleta do livro (styles/livro.css),
-   * a mesma dos dois volumes em HTML. As sete variáveis continuam existindo
-   * com o mesmo papel, para que estas 400 linhas não precisassem ser
-   * reescritas: o que mudou é de onde vem o valor, e que ele agora acompanha
-   * o tema claro ou escuro em vez de ser um só. */
-  --starwars-sd-titulo: var(--sw-cabecalho);         /* fundo do cabeçalho de tabela */
-  --starwars-sd-texto-claro: var(--sw-cabecalho-tinta);
-  --starwars-sd-ouro: var(--sw-cor);                 /* o filete, na cor do capítulo */
-  --starwars-sd-acento: var(--sw-cor);               /* subtítulos e marcadores      */
-  --starwars-sd-linha: var(--sw-linha);
-  --starwars-sd-zebra: color-mix(in srgb, var(--sw-cor) 7%, transparent);
-  --starwars-sd-aviso-fundo: var(--sw-caixa);
-}
-
-/* O fundo e a tinta do tema. Sem isto o journal mantém o pergaminho do
-   Foundry no modo escuro, e o texto claro do livro desaparece dentro dele. */
-.starwars-sd-doc {
-  background: var(--sw-fundo);
-  color: var(--sw-tinta);
-}
 
 /* ── Títulos ───────────────────────────────────────────────────────────── */
 
@@ -44,8 +8,7 @@
 .starwars-sd-doc h2 {
   margin: 1.4em 0 0.5em;
   padding-bottom: 0.2em;
-  border-bottom: 2px solid var(--sw-cor);
-  color: var(--sw-cor);
+  border-bottom: 2px solid;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -53,7 +16,6 @@
 
 .starwars-sd-doc h3 {
   margin: 1.1em 0 0.4em;
-  color: var(--sw-cor);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -70,14 +32,12 @@
 }
 
 .starwars-sd-doc thead th {
-  background: var(--sw-cabecalho);
-  color: var(--sw-cabecalho-tinta);
   text-align: left;
   font-weight: 700;
   letter-spacing: 0.03em;
   /* O FILETE. É a marca da tabela no livro, e é o que amarra a tabela à cor do
-     capítulo sem ter de pintar o cabeçalho inteiro. */
-  border-bottom: 2px solid var(--sw-cor);
+     capítulo sem ter de pintar o cabeçalho inteiro. */;
+  border-bottom: 2px solid;
 }
 
 .starwars-sd-doc th,
@@ -87,15 +47,10 @@
   vertical-align: top;
 }
 
-.starwars-sd-doc tbody tr:nth-child(even) {
-  background: var(--starwars-sd-zebra);
-}
-
 /* A primeira coluna quase sempre é o rótulo da linha (tipo de nave, faixa de
    teste, classe de equivalência) — destacá-la faz a tabela ser lida em L. */
 .starwars-sd-doc tbody td:first-child {
   font-weight: 600;
-  color: var(--starwars-sd-acento);
 }
 
 /* Tabela larga não pode empurrar a página: rola dentro do próprio bloco. */
@@ -110,7 +65,6 @@
   margin: 0.8em 0;
   padding: 0.6em 0.8em;
   border-left: 4px solid var(--starwars-sd-ouro);
-  background: var(--starwars-sd-aviso-fundo);
   border-radius: 0 3px 3px 0;
 }
 
@@ -126,10 +80,6 @@
   margin: 0.25em 0;
 }
 
-.starwars-sd-doc li > strong:first-child {
-  color: var(--starwars-sd-acento);
-}
-
 /* Nota autoral em itálico solto no fim da seção: recua e esmaece um pouco,
    para separar comentário de regra. */
 .starwars-sd-doc p > em:only-child {
@@ -143,10 +93,19 @@
 }
 
 /* Diálogos de ataque e esquiva */
-.starwars-sd-nave-dialogo .linha { display: flex; align-items: center; gap: 8px; margin: 5px 0; }
-.starwars-sd-nave-dialogo .linha label { flex: 1; }
+.starwars-sd-nave-dialogo .linha {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 5px 0;
+}
+.starwars-sd-nave-dialogo .linha label {
+  flex: 1;
+}
 .starwars-sd-nave-dialogo .linha select,
-.starwars-sd-nave-dialogo .linha input[type="number"] { flex: 0 0 11em; }
+.starwars-sd-nave-dialogo .linha input[type="number"] {
+  flex: 0 0 11em;
+}
 
 /* ── Pontos de Força, na ficha do personagem ───────────────────────────────
  *
@@ -154,28 +113,55 @@
  * visita na casa dos outros, e não deve competir com o que o OD2 desenha.
  */
 .starwars-sd-pf {
-  border: 1px solid color-mix(in srgb, var(--sw-cor) 45%, transparent);
+  border: 1px solid;
   border-radius: 4px;
   padding: 6px 8px;
   margin: 0 0 8px;
-  background: color-mix(in srgb, var(--sw-cor) 10%, transparent);
   /* o par: sem a cor, o painel herda a do tema do Foundry e some
-     sobre o próprio fundo claro. Ver a nota em spacedragon.css. */
-  color: var(--sd-tinta, #191813);
+     sobre o próprio fundo claro. Ver a nota em spacedragon.css. */;
 }
-.starwars-sd-pf .pf-cabeca { display: flex; align-items: baseline; gap: 8px; font-size: 12px; font-family: var(--sw-condensada); text-transform: uppercase; letter-spacing: .04em; }
-.starwars-sd-pf .pf-conta { font-weight: 700; }
-.starwars-sd-pf .pf-dado { margin-left: auto; opacity: .7; font-size: 11px; }
-.starwars-sd-pf .pf-trilha { display: flex; flex-wrap: wrap; gap: 4px; margin: 5px 0; }
+.starwars-sd-pf .pf-cabeca {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 12px;
+  font-family: var(--sw-condensada);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.starwars-sd-pf .pf-conta {
+  font-weight: 700;
+}
+.starwars-sd-pf .pf-dado {
+  margin-left: auto;
+  opacity: .7;
+  font-size: 11px;
+}
+.starwars-sd-pf .pf-trilha {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 5px 0;
+}
 /* uma pastilha por ponto da reserva: cheia é ponto disponível */
 .starwars-sd-pf .pf-ponto {
-  width: 11px; height: 11px; border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--sw-cor) 70%, var(--sw-tinta));
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 1px solid;
 }
-.starwars-sd-pf .pf-ponto.cheio { background: var(--sw-cor); }
-.starwars-sd-pf .pf-ponto.vazio { background: transparent; opacity: .45; }
-.starwars-sd-pf .pf-acoes { display: flex; gap: 5px; }
-.starwars-sd-pf .pf-acoes button { font-size: 11px; padding: 1px 8px; line-height: 1.6; }
+.starwars-sd-pf .pf-ponto.vazio {
+  opacity: .45;
+}
+.starwars-sd-pf .pf-acoes {
+  display: flex;
+  gap: 5px;
+}
+.starwars-sd-pf .pf-acoes button {
+  font-size: 11px;
+  padding: 1px 8px;
+  line-height: 1.6;
+}
 
 /* Os botões do painel, com cor própria.
  *
@@ -184,13 +170,8 @@
  * se lê. O componente é nosso, então as cores dele são nossas e não dependem
  * do tema de quem o hospeda. */
 .starwars-sd-pf .pf-acoes button {
-  color: var(--sw-tinta, #1a1a18);
-  background: color-mix(in srgb, var(--sw-cor) 16%, transparent);
-  border: 1px solid color-mix(in srgb, var(--sw-cor) 50%, transparent);
+  border: 1px solid;
   border-radius: 3px;
-}
-.starwars-sd-pf .pf-acoes button:hover:not(:disabled) {
-  background: color-mix(in srgb, var(--sw-cor) 30%, transparent);
 }
 .starwars-sd-pf .pf-acoes button:disabled {
   opacity: 0.45;
@@ -221,37 +202,9 @@
  * Contraste: 15,7:1 no texto principal, 8,3:1 no de apoio. A WCAG pede 4,5:1. */
 .chat-message .message-content .sw-cartao,
 .chat-message .sw-cartao {
-  color: #191813 !important;
-  background: #f4f1e6 !important;
   border-radius: 3px;
   padding: 0.3rem 0.45rem;
 }
-/* ── CADA CLASSE PELO NOME, E NÃO POR ELEMENTO ─────────────────────────────
- *
- * Cobrir os filhos por ELEMENTO (`p`, `span`) não bastou: o print da mesa
- * mostrou que ficaram legíveis só as classes nomeadas, e continuaram invisíveis
- * as que não eram — `.result`, a mais usada dos cartões deste módulo (62 vezes).
- *
- * É especificidade: `.chat-message .sw-cartao p` perde para uma regra de classe
- * com `!important` do outro lado. Nomear a classe empata o peso, e a
- * especificidade dobrada desempata.
- *
- * A lista é gerada das classes que os cartões usam de fato, e
- * tools/teste-cartoes.mjs recusa classe nova que não esteja aqui. */
-.chat-message .sw-cartao .result,
-.chat-message .message-content .sw-cartao .result {
-  /* COR EXPLÍCITA, e não `inherit`: a herança depende de o bloco pai ter
-   * recebido a cor, e na mesa ele não recebeu — sobreviveram só as classes com
-   * cor própria. Ver a mesma nota em spacedragon.css. */
-  color: #191813 !important;
-}
-
-/* O texto de apoio é mais leve de propósito — por MISTURA com o fundo acima, e
- * não por `opacity` sobre cor herdada, que esconde a queda de contraste. */
-.chat-message .sw-cartao .nota-casa,
-.chat-message .sw-cartao .dica,
-.chat-message .message-content .sw-cartao .nota-casa,
-.chat-message .message-content .sw-cartao .dica { color: #4a463d !important; }
 
 /* ── A FICHA DE NAVE SOBRE A DE PERSONAGEM ──────────────────────────────────
  *
@@ -290,18 +243,7 @@
   font-size: 11px;
   text-transform: lowercase;
   cursor: pointer;
-  background: var(--sd-caixa, #e6dcc3);
-  color: var(--sd-tinta, #1a1a18);
-  border: 1px solid var(--sd-barra, #2a2e38);
-}
-.starwars-sd-nave-pc .sw-comodo-estado.estado-instalada {
-  background: var(--sd-barra, #2a2e38);
-  color: #f2f0ea;
-}
-.starwars-sd-nave-pc .sw-comodo-estado.estado-danificada {
-  background: #8c2230;
-  color: #f7ecec;
-  border-color: #8c2230;
+  border: 1px solid;
 }
 
 /* O cômodo que a nave NÃO tem fica apagado, mas legível: ele continua ali para
@@ -310,15 +252,21 @@
  * `opacity` aqui é deliberado e seguro — o texto por baixo tem contraste de
  * sobra, e o que se quer é justamente o apagado. Não é o caso que o teste dos
  * cartões proíbe, que era opacidade escondendo contraste perdido. */
-.starwars-sd-nave-pc .comodo-ausente { opacity: .55; }
-.starwars-sd-nave-pc .comodo-danificada { text-decoration: line-through dotted; }
+.starwars-sd-nave-pc .comodo-ausente {
+  opacity: .55;
+}
+.starwars-sd-nave-pc .comodo-danificada {
+  text-decoration: line-through dotted;
+}
 
 /* O que a nave não usa: XP, alinhamento e idiomas.
    Quem marca é a ficha (ocultarOQueNaveNaoUsa), pelo CAMINHO DO SCHEMA e com
    limite de subida — ver a nota em nave-pc-ficha.js. Aqui só se esconde o que
    já foi marcado, e nunca um seletor do sistema: assim um erro de mira não
    pode apagar a ficha inteira. */
-.starwars-sd-nave-pc .sw-nave-nao-usa { display: none !important; }
+.starwars-sd-nave-pc .sw-nave-nao-usa {
+  display: none !important;
+}
 
 /* ── O PAINEL DE VOO ───────────────────────────────────────────────────────
  *
@@ -341,10 +289,8 @@
 .starwars-sd-nave-pc .sw-guia-nave {
   margin: 0 0 8px;
   padding: 7px 10px;
-  border: 1px dashed color-mix(in srgb, var(--sd-brilho, #2f9e8f) 55%, transparent);
+  border: 1px dashed;
   border-radius: 4px;
-  background: color-mix(in srgb, var(--sd-brilho, #2f9e8f) 7%, transparent);
-  color: var(--sd-tinta, #1a1a18);
   font-size: 12px;
 }
 .starwars-sd-nave-pc .sw-guia-nave ol {
@@ -354,25 +300,25 @@
 }
 .starwars-sd-nave-pc .sw-guia-nave li {
   margin: 3px 0;
-  color: var(--sd-tinta, #1a1a18);
 }
 /* o passo feito recua: o que importa é o que falta */
-.starwars-sd-nave-pc .sw-guia-nave .guia-feito { opacity: .55; }
-.starwars-sd-nave-pc .sw-guia-nave .guia-falta { font-weight: 600; }
+.starwars-sd-nave-pc .sw-guia-nave .guia-feito {
+  opacity: .55;
+}
+.starwars-sd-nave-pc .sw-guia-nave .guia-falta {
+  font-weight: 600;
+}
 .starwars-sd-nave-pc .sw-guia-nave .guia-nota {
   margin: 5px 0 0;
   font-size: 11px;
   opacity: .8;
-  color: var(--sd-tinta, #1a1a18);
 }
 
 .starwars-sd-nave-pc .sw-painel-voo {
   margin: 0 0 8px;
   padding: 6px 8px;
-  border: 1px solid color-mix(in srgb, var(--sd-brilho, #2f9e8f) 40%, transparent);
+  border: 1px solid;
   border-radius: 4px;
-  background: color-mix(in srgb, var(--sd-brilho, #2f9e8f) 8%, transparent);
-  color: var(--sd-tinta, #1a1a18);
 }
 .starwars-sd-nave-pc .sw-painel-voo .voo-linha {
   display: flex;
@@ -384,7 +330,7 @@
   align-items: baseline;
   gap: 5px;
   /* nunca menor que o próprio conteúdo: foi assim que os botões dos Pontos de
-     Força passaram um por baixo do outro na coluna estreita */
+     Força passaram um por baixo do outro na coluna estreita */;
   min-width: max-content;
 }
 .starwars-sd-nave-pc .sw-painel-voo .voo-rotulo {
@@ -393,12 +339,10 @@
   text-transform: uppercase;
   letter-spacing: .04em;
   opacity: .75;
-  color: var(--sd-tinta, #1a1a18);
 }
 .starwars-sd-nave-pc .sw-painel-voo .voo-valor {
   font-weight: 700;
   font-size: 14px;
-  color: var(--sd-tinta, #1a1a18);
 }
 
 /* A avaria é aviso, e usa a cor de aviso — não a de destaque. O piloto precisa
@@ -406,8 +350,6 @@
 .starwars-sd-nave-pc .sw-painel-voo .voo-avaria {
   margin-top: 5px;
   font-size: 12px;
-  color: #8c3a20;
-  background: color-mix(in srgb, #8c3a20 10%, transparent);
   border-radius: 3px;
   padding: 2px 6px;
 }
@@ -415,19 +357,16 @@
 .starwars-sd-nave-pc .sw-painel-voo .voo-tanque {
   margin-top: 5px;
   font-size: 11px;
-  color: var(--sd-tinta, #1a1a18);
 }
 .starwars-sd-nave-pc .sw-painel-voo .voo-tanque-barra {
   height: 6px;
   border-radius: 3px;
   overflow: hidden;
   margin-bottom: 2px;
-  background: color-mix(in srgb, var(--sd-tinta, #1a1a18) 15%, transparent);
 }
 .starwars-sd-nave-pc .sw-painel-voo .voo-tanque-barra i {
   display: block;
   height: 100%;
-  background: var(--sd-brilho, #2f9e8f);
 }
 
 /* Os avisos da nave: o que ela deixou de conseguir fazer.
@@ -438,56 +377,30 @@
   margin: 5px 0 0;
   padding: 0 0 0 16px;
   font-size: 11px;
-  color: var(--sd-tinta, #1a1a18);
 }
-.starwars-sd-nave-pc .sw-painel-voo .voo-avisos li { margin: 1px 0; }
+.starwars-sd-nave-pc .sw-painel-voo .voo-avisos li {
+  margin: 1px 0;
+}
 .starwars-sd-nave-pc .sw-painel-voo .voo-grave {
-  color: #8c3a20;
   font-weight: 700;
 }
-.starwars-sd-nave-pc .sw-painel-voo .voo-aviso { color: #8a6d1f; }
 .starwars-sd-nave-pc .sw-painel-voo .voo-nota {
-  color: var(--sd-tinta, #1a1a18);
   opacity: .75;
 }
-.starwars-sd-nave-pc .sw-painel-voo small { opacity: .7; font-weight: 400; }
-
-/* ── O PAINEL DA TRIPULAÇÃO (§7) ───────────────────────────────────────────
- *
- * Cinco postos, cada um com as opções da rodada. O par cor + fundo em toda
- * regra, como no painel de voo.
- *
- * As ações vêm em dois pesos: o que a ficha APLICA sozinha vem em negrito, o
- * que fica para a mesa vem leve. É a diferença entre esperar uma automação e
- * saber que ela não vem — e a nota do painel diz isso em palavras, porque
- * negrito sozinho ninguém decifra.
- */
-.starwars-sd-nave-pc .sw-painel-tripulacao {
-  color: var(--sd-tinta, #1a1a18);
+.starwars-sd-nave-pc .sw-painel-voo small {
+  opacity: .7;
+  font-weight: 400;
 }
 .starwars-sd-nave-pc .sw-painel-tripulacao .tripulacao-nota {
   margin: 0 0 6px;
   font-size: 11px;
   opacity: .8;
-  color: var(--sd-tinta, #1a1a18);
 }
 .starwars-sd-nave-pc .sw-painel-tripulacao .posto {
   margin: 0 0 6px;
   padding: 5px 8px;
-  border-left: 3px solid color-mix(in srgb, var(--sd-brilho, #2f9e8f) 55%, transparent);
-  background: color-mix(in srgb, var(--sd-brilho, #2f9e8f) 6%, transparent);
-  color: var(--sd-tinta, #1a1a18);
+  border-left: 3px solid;
   border-radius: 0 3px 3px 0;
-}
-/* o posto ocupado puxa a cor: é onde há alguém para agir */
-.starwars-sd-nave-pc .sw-painel-tripulacao .posto-ocupado {
-  border-left-color: var(--sd-brilho, #2f9e8f);
-  background: color-mix(in srgb, var(--sd-brilho, #2f9e8f) 14%, transparent);
-}
-/* o travado não some: ele precisa estar à vista, dizendo por que não age */
-.starwars-sd-nave-pc .sw-painel-tripulacao .posto-travado {
-  border-left-color: #8c3a20;
-  background: color-mix(in srgb, #8c3a20 8%, transparent);
 }
 .starwars-sd-nave-pc .sw-painel-tripulacao .posto-cabeca {
   display: flex;
@@ -505,36 +418,25 @@
   min-width: 8ch;
   font-size: 12px;
   padding: 1px 4px;
-  border: 1px solid transparent;
+  border: 1px solid;
   border-radius: 3px;
-  background: color-mix(in srgb, var(--sd-tinta, #1a1a18) 5%, transparent);
-  color: var(--sd-tinta, #1a1a18);
-}
-.starwars-sd-nave-pc .sw-painel-tripulacao .sw-posto-nome:hover {
-  border-color: color-mix(in srgb, var(--sd-tinta, #1a1a18) 20%, transparent);
 }
 .starwars-sd-nave-pc .sw-painel-tripulacao .sw-posto-nome:focus {
-  border-color: var(--sd-brilho, #2f9e8f);
-  background: color-mix(in srgb, var(--sd-tinta, #1a1a18) 8%, transparent);
-  color: var(--sd-tinta, #1a1a18);
   outline: none;
 }
 /* o placeholder diz QUEM PODE ocupar: é informação, não ruído, e por isso não
    fica apagado demais */
 .starwars-sd-nave-pc .sw-painel-tripulacao .sw-posto-nome::placeholder {
-  color: var(--sd-tinta, #1a1a18);
   opacity: .5;
   font-style: italic;
 }
 .starwars-sd-nave-pc .sw-painel-tripulacao .posto-faz {
   font-size: 11px;
   opacity: .85;
-  color: var(--sd-tinta, #1a1a18);
 }
 .starwars-sd-nave-pc .sw-painel-tripulacao .posto-aviso {
   margin-top: 3px;
   font-size: 11px;
-  color: #8c3a20;
 }
 .starwars-sd-nave-pc .sw-painel-tripulacao .posto-acoes {
   display: flex;
@@ -547,9 +449,10 @@
 }
 .starwars-sd-nave-pc .sw-painel-tripulacao .posto-acao {
   min-width: max-content;
-  color: var(--sd-tinta, #1a1a18);
 }
-.starwars-sd-nave-pc .sw-painel-tripulacao .acao-auto { font-weight: 700; }
+.starwars-sd-nave-pc .sw-painel-tripulacao .acao-auto {
+  font-weight: 700;
+}
 /* A ação automática é BOTÃO; a de mesa é texto. A diferença está na forma, e
    não só no peso: um item que parece clicável e não é custa um clique e uma
    dúvida toda vez que alguém tenta. */
@@ -558,14 +461,9 @@
   padding: 0 7px;
   font-size: 11px;
   line-height: 1.6;
-  border: 1px solid color-mix(in srgb, var(--sd-brilho, #2f9e8f) 50%, transparent);
+  border: 1px solid;
   border-radius: 3px;
-  background: color-mix(in srgb, var(--sd-brilho, #2f9e8f) 12%, transparent);
-  color: var(--sd-tinta, #1a1a18);
   cursor: pointer;
-}
-.starwars-sd-nave-pc .sw-painel-tripulacao .sw-posto-acao:hover {
-  background: color-mix(in srgb, var(--sd-brilho, #2f9e8f) 26%, transparent);
 }
 /* o fim da rodada fica à parte e discreto: é frequente, mas não é a ação
    principal de ninguém */
@@ -575,14 +473,16 @@
   min-width: max-content;
   padding: 1px 10px;
   font-size: 11px;
-  border: 1px dashed color-mix(in srgb, var(--sd-tinta, #1a1a18) 35%, transparent);
+  border: 1px dashed;
   border-radius: 3px;
-  background: transparent;
-  color: var(--sd-tinta, #1a1a18);
   opacity: .8;
 }
-.starwars-sd-nave-pc .sw-painel-tripulacao .sw-fim-rodada:hover { opacity: 1; }
-.starwars-sd-nave-pc .sw-painel-tripulacao .acao-texto { opacity: .7; }
+.starwars-sd-nave-pc .sw-painel-tripulacao .sw-fim-rodada:hover {
+  opacity: 1;
+}
+.starwars-sd-nave-pc .sw-painel-tripulacao .acao-texto {
+  opacity: .7;
+}
 
 /* ── AS TRÊS CAMADAS OPCIONAIS (§7) ────────────────────────────────────────
  *
@@ -592,15 +492,12 @@
  */
 .starwars-sd-nave-pc .sw-painel-camadas {
   margin-top: 8px;
-  color: var(--sd-tinta, #1a1a18);
 }
 .starwars-sd-nave-pc .sw-painel-camadas .camada {
   margin: 0 0 6px;
   padding: 5px 8px;
-  border: 1px solid color-mix(in srgb, var(--sd-brilho, #2f9e8f) 35%, transparent);
+  border: 1px solid;
   border-radius: 4px;
-  background: color-mix(in srgb, var(--sd-brilho, #2f9e8f) 5%, transparent);
-  color: var(--sd-tinta, #1a1a18);
 }
 .starwars-sd-nave-pc .sw-painel-camadas .camada-cabeca {
   display: flex;
@@ -613,12 +510,10 @@
   font-size: 11px;
   opacity: .8;
   min-width: max-content;
-  color: var(--sd-tinta, #1a1a18);
 }
 /* gastar além do reator é possível — "Forçar o reator" dá +2, com risco de
    avaria — então isto é aviso, e não erro */
 .starwars-sd-nave-pc .sw-painel-camadas .camada-sobra.excedeu {
-  color: #8c3a20;
   font-weight: 700;
   opacity: 1;
 }
@@ -635,17 +530,14 @@
 .starwars-sd-nave-pc .sw-painel-camadas .relogio-nome {
   min-width: 9ch;
   font-weight: 600;
-  color: var(--sd-tinta, #1a1a18);
 }
 .starwars-sd-nave-pc .sw-painel-camadas .energia-pontos {
   min-width: 2ch;
   text-align: center;
   font-weight: 700;
-  color: var(--sd-tinta, #1a1a18);
 }
 .starwars-sd-nave-pc .sw-painel-camadas .energia-efeito {
   opacity: .7;
-  color: var(--sd-tinta, #1a1a18);
 }
 /* as marcas do relógio em monoespaçada: sem isso as bolinhas cheias e vazias
    têm larguras diferentes e o relógio treme a cada clique */
@@ -653,37 +545,32 @@
   font-family: monospace;
   font-size: 14px;
   letter-spacing: 2px;
-  color: var(--sd-brilho, #2f9e8f);
 }
 .starwars-sd-nave-pc .sw-painel-camadas button {
   min-width: max-content;
   padding: 0 7px;
   line-height: 1.5;
-  border: 1px solid color-mix(in srgb, var(--sd-brilho, #2f9e8f) 45%, transparent);
+  border: 1px solid;
   border-radius: 3px;
-  background: color-mix(in srgb, var(--sd-brilho, #2f9e8f) 12%, transparent);
-  color: var(--sd-tinta, #1a1a18);
 }
-.starwars-sd-nave-pc .sw-painel-camadas button:disabled { opacity: .35; }
+.starwars-sd-nave-pc .sw-painel-camadas button:disabled {
+  opacity: .35;
+}
 .starwars-sd-nave-pc .sw-painel-camadas .camada-lista {
   margin: 4px 0;
   padding-left: 16px;
   font-size: 11px;
 }
-.starwars-sd-nave-pc .sw-painel-camadas .avaria-corre { color: #8a6d1f; }
 .starwars-sd-nave-pc .sw-painel-camadas .avaria-venceu {
-  color: #8c3a20;
   font-weight: 600;
 }
 .starwars-sd-nave-pc .sw-painel-camadas .camada-resumo {
   margin-top: 4px;
   font-size: 11px;
   font-weight: 600;
-  color: var(--sd-tinta, #1a1a18);
 }
 .starwars-sd-nave-pc .sw-painel-camadas .camada-nota {
   margin-top: 3px;
   font-size: 10px;
   opacity: .7;
-  color: var(--sd-tinta, #1a1a18);
 }
