@@ -86,28 +86,6 @@ Hooks.once("init", () => {
 
 Hooks.once("ready", () => {
 
-  // ── O CONVERSOR DE NAVES ──
-  //
-  // Exposto na API do módulo para o Mestre chamar do console. Não é um botão
-  // porque é uma ação de uma vez só na vida do mundo, e um botão permanente
-  // para isso vira entulho — mas também não é um script para colar, porque
-  // script colado não tem teste e este tem.
-  const mod = game.modules.get(ID);
-  if (mod) {
-    mod.api = {
-      ...(mod.api ?? {}),
-    };
-    const quantas = navesAntigas().length;
-    if (quantas > 0) {
-      console.log(
-        `${ID} | ${quantas} nave(s) no tipo antigo. Para converter: ` +
-        `game.modules.get("${ID}").api.converterTodas()`
-      );
-      ui.notifications?.info(
-        `${quantas} nave(s) ainda usam o tipo antigo. O console diz como converter.`
-      );
-    }
-  }
 
   // O Foundry já recusa ligar o módulo sem a dependência, mas um mundo antigo
   // pode ter o Space Dragon desligado depois. Avisar custa uma linha.

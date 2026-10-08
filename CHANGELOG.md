@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.48.1 — o módulo volta a carregar
+
+A 1.48.0 derrubava o `ready`: **"navesAntigas is not defined"**. Ao tirar as
+naves daqui, os `import` de `nave-converter.js` saíram e um bloco de 23 linhas
+que chamava `navesAntigas()` ficou. O arquivo CARREGA assim — a chamada só
+explode quando a linha roda, e ela rodava ao abrir o mundo. Tudo o que vinha
+depois no `ready` deixava de acontecer, inclusive o painel de Pontos de Força.
+
+Nenhum teste viu: o de carga importa os módulos, e importar não executa o
+`ready`. Entrou `tools/teste-simbolos.mjs`, que recusa qualquer função chamada
+sem estar definida ou importada — e que foi provado contra este bug.
+
 ## 1.48.0 — as naves foram para o Space Dragon
 
 O capítulo 10 é do **livro**, não do cenário. Os tipos de nave, as câmaras, o

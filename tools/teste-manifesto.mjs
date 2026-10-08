@@ -109,6 +109,6 @@ if (problemas.length) {
 }
 console.log(
   `  ✔ manifesto: ${m.version} com conteúdo de verdade (${cru.length} bytes), os campos ` +
-    `obrigatórios, o id intacto, as URLs em /latest/, o tipo de ator nave, os ` +
+    `obrigatórios, o id intacto, as URLs em /latest/, o tipo de ator "nave" fora (aposentado na 1.40.0), os ` +
     `${m.packs.length} packs apontando para pastas que existem, e o CHANGELOG na mesma versão`
 );
