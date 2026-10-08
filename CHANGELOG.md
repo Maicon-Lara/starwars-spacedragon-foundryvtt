@@ -1,5 +1,35 @@
 # Changelog
 
+## 1.46.0 — o que era do cofre saiu dos compêndios
+
+Três journals publicavam **nomes de arquivo do cofre pessoal** do autor, dentro
+de tabelas tortas: `[[SW-SUP-Equipamentos#A carga dos itens` numa célula e
+`Equipamentos]]` na seguinte.
+
+A causa era mecânica. O `|` de um wikilink do Obsidian é separador de coluna em
+Markdown — o parser partia o link ao meio **antes** de o conversor vê-lo, e o que
+deveria sair como "Equipamentos" virava o caminho de uma nota privada. Agora os
+pipes de dentro de um wikilink são protegidos antes da divisão, e os links saem
+como os títulos legíveis: *Combate Tático de Naves*, *O Sensível à Força*.
+
+Também saiu um **meta-comentário de desenvolvimento** que eu havia publicado na
+descrição dos Canhões de energia, contando o histórico do número. Quem abre o
+item quer saber o que a arma faz hoje; o porquê da mudança é assunto do
+changelog.
+
+Um teste novo varre os 645 documentos dos compêndios e falha se voltar a sair
+wikilink, nome de arquivo do cofre, frontmatter do Obsidian ou meta-comentário
+sobre o próprio módulo.
+
+### O banner de Naves
+
+A epígrafe tinha 78 caracteres, com travessão e duas orações — a única que não
+cabia no padrão dos outros capítulos, cuja mediana é 44. Num banner, a frase
+longa quebra de linha e desfaz o bloco.
+
+Agora é **"Motores, combustível e gente."**, que nomeia os três recursos do
+capítulo: as câmaras, o tanque e os postos. Um teste trava o limite.
+
 ## 1.45.0 — as armas de nave viraram armas
 
 As quatro armas da T10-4 nasciam como **item genérico**: ficavam na mochila sem

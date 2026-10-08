@@ -418,6 +418,35 @@ confere(temaJs.includes("default: false"),
   }
 }
 
+/* ── AS EPÍGRAFES DOS CAPÍTULOS ───────────────────────────────────────────── */
+//
+// O banner de cada capítulo é número + título + epígrafe. As epígrafes são
+// aforismos curtos — "Esta é a Doutrina.", "Não é magia. É atenção." — e a de
+// Naves tinha 78 caracteres com travessão e duas orações: a única que não cabia
+// no padrão. Num banner, a frase longa quebra de linha e desfaz o bloco.
+//
+// O limite não é gosto: é o ponto em que a frase deixa de caber numa linha na
+// largura de um journal.
+{
+  const dir = path.join(ROOT, "packs-src", "starwars-sd-journal");
+  const eps = [];
+  for (const arq of fs.readdirSync(dir)) {
+    if (!arq.includes("__doc__")) continue;
+    const d = JSON.parse(fs.readFileSync(path.join(dir, arq), "utf8"));
+    const m = /epigrafe[^>]*>([^<]+)/.exec(JSON.stringify(d).replace(/\\"/g, '"'));
+    if (m) eps.push({ nome: d.name, texto: m[1], n: m[1].length });
+  }
+
+  confere(eps.length >= 10, `só ${eps.length} epígrafes encontradas — a varredura falhou`);
+
+  for (const e of eps) {
+    confere(e.n <= 62,
+      `"${e.nome}": epígrafe de ${e.n} caracteres — passa de 62 e quebra a linha do banner: "${e.texto}"`);
+    confere(/[.!?]$/.test(e.texto.trim()),
+      `"${e.nome}": a epígrafe não termina em ponto — as outras são frases fechadas`);
+  }
+}
+
 if (problemas.length) {
   for (const p of problemas) console.error(`  ✘ ${p}`);
   process.exit(1);

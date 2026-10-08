@@ -6,7 +6,7 @@
   "img": "systems/olddragon2e/assets/icons/weapon.svg",
   "system": {
     "odo_id": "canhoes-de-energia",
-    "description": "Versão pesada dos disparadores laser: 5d10 de dano. O módulo trazia 3d10 como leitura da casa, de quando o livro parecia dizer só 'mais poderoso'; as Regras Compiladas (T10-4) fixam 5d10, e é o que vale. Cabe em nave: gigantesca, colossal.",
+    "description": "Versão pesada dos disparadores laser, montada em naves gigantescas e colossais. Causa 5d10 de dano. Cabe em nave: gigantesca, colossal.",
     "quantity": 1,
     "cost": "",
     "weight_in_load": 0,

@@ -100,7 +100,12 @@ export const EQUIPAMENTOS_DE_NAVE = {
     grupo: "combate",
     cabe: { Pequena: false, "Média": false, Gigantesca: true, Colossal: true },
     efeito: { arma: { nome: "Canhões de energia", dano: "5d10" } },
-    nota: "Versão pesada dos disparadores laser: 5d10 de dano. O módulo trazia 3d10 como leitura da casa, de quando o livro parecia dizer só 'mais poderoso'; as Regras Compiladas (T10-4) fixam 5d10, e é o que vale.",
+    // A nota é o que a MESA lê ao abrir o item: o que a arma faz, e nada do
+    // histórico de como chegamos nesse número. Esta linha já carregou "o módulo
+    // trazia 3d10… as Regras Compiladas fixam 5d10" — conversa de
+    // desenvolvimento publicada num compêndio. O porquê da mudança é assunto do
+    // changelog, e lá ele está.
+    nota: "Versão pesada dos disparadores laser, montada em naves gigantescas e colossais. Causa 5d10 de dano.",
   },
   metralhadora: {
     rotulo: "Metralhadora de energia",

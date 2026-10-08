@@ -33,7 +33,35 @@ const DESTINO_BESTIARIO = path.join(ROOT, "tools", "data", "bestiario-do-cofre.m
 const ler = (nota) => fs.readFileSync(path.join(COFRE, `${nota}.md`), "utf8").replace(/\r\n/g, "\n");
 
 /** "| a | b |" → ["a", "b"]. */
-const celulas = (linha) => linha.trim().replace(/^\|/, "").replace(/\|$/, "").split("|").map((c) => c.trim());
+/* ── O PIPE DENTRO DE UM WIKILINK NÃO SEPARA COLUNA ────────────────────────
+ *
+ * `[[Nota#Âncora|Rótulo]]` tem um `|` que é do LINK, não da tabela. Dividindo a
+ * linha crua, ele partia o link ao meio e criava uma coluna fantasma:
+ *
+ *   | A carga dos itens | [[SW-SUP-Equipamentos#A carga|Equipamentos]] |
+ *                         └─ virava duas células, e a tabela ganhava uma coluna
+ *
+ * O resultado publicado trazia `[[SW-SUP-Equipamentos#A carga` numa célula e
+ * `Equipamentos]]` na seguinte — ou seja, o nome de um arquivo do cofre pessoal
+ * exposto no compêndio, numa tabela torta.
+ *
+ * `md()` sabe converter o wikilink; ele só nunca chegava a vê-lo inteiro. A
+ * correção é esconder esses pipes antes de dividir e devolvê-los depois.
+ */
+// Sentinela escrito como ESCAPE, e não como o caractere em si. A primeira
+// versão pôs um NUL literal no arquivo: o git e o grep passaram a tratar o
+// fonte como binário — `grep` respondia "Binary file matches" em vez de
+// mostrar a linha. `` é da Área de Uso Privado do Unicode, não aparece
+// em texto de verdade, e escrito como escape o arquivo continua sendo texto.
+const PIPE = "";
+const celulas = (linha) =>
+  linha
+    .trim()
+    .replace(/\[\[[^\]]*\]\]/g, (m) => m.replace(/\|/g, PIPE))
+    .replace(/^\|/, "")
+    .replace(/\|$/, "")
+    .split("|")
+    .map((c) => c.trim().split(PIPE).join("|"));
 
 /** A primeira tabela markdown a partir da posição dada. */
 function tabelaApos(texto, inicio) {

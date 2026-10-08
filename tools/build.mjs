@@ -642,7 +642,14 @@ const CAPITULOS = [
   [ordensJournal, "ordens", "Quem manda, quem ensina, e quem cobra."],
   [sendaJournal, "mando", "Esta é a Doutrina."],
   [navesJournal, "naves",
-    "Ter uma nave é ter um problema com motores — e uma tripulação com o que fazer."],
+    // As epígrafes dos outros capítulos são aforismos curtos — "Esta é a
+    // Doutrina.", "Não é magia. É atenção." — com 44 caracteres de mediana.
+    // Esta tinha 78, com travessão e duas orações: era a única que não cabia no
+    // padrão, e num banner a frase longa quebra de linha e desfaz o bloco.
+    //
+    // A nova nomeia os três recursos que o capítulo administra: as câmaras, o
+    // tanque e os postos.
+    "Motores, combustível e gente."],
   [bestiarioJournal, "bestiario", "O que vive lá fora, e o que ele quer de você."],
   [mestreJournal, "mestre", "A parte que os jogadores não leem."],
 ];
