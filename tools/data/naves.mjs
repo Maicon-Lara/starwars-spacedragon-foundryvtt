@@ -16,7 +16,7 @@
 
 import { TEXTOS } from "./textos-do-cofre.mjs";
 import { CAMARAS, REPARO_DE_CAMARA, TRANCA_DO_ARSENAL, ETAPAS_DO_SALTO, AVARIA_VIRA_CAMARA }
-  from "../../starwars-sd-module/module/camaras.js";
+  from "../../../space-dragon-foundryvtt/spacedragon-module/module/camaras.js";
 
 const naves = TEXTOS["SW-SUP-Naves"];
 const tatico = TEXTOS["SW-SUP-Combate-Tatico-de-Naves"];

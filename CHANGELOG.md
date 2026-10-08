@@ -1,5 +1,36 @@
 # Changelog
 
+## 1.48.0 — as naves foram para o Space Dragon
+
+O capítulo 10 é do **livro**, não do cenário. Os tipos de nave, as câmaras, o
+combustível, os equipamentos, o combate espacial e a ordem de ação (T7-2)
+mudaram para o módulo **Space Dragon**, que este agora exige.
+
+**Por quê:** uma mesa de Space Dragon sem Star Wars ficava sem naves — o
+contrário do que o livro oferece. Quem joga Star Wars continua tendo tudo; quem
+joga só Space Dragon passou a ter.
+
+Saíram daqui 16 módulos, 14 testes e o compêndio de naves. Ficaram os Pontos de
+Força e o conteúdo do suplemento: espécies, classes, sabres, a Senda
+Mandaloriana, o bestiário e os journals — incluindo *Naves & Combate Espacial*,
+que explica a regra com os exemplos do cenário.
+
+**As naves que você já tem são migradas sozinhas** ao carregar o mundo: os dados
+mudam de lugar junto com o código, e a ficha continua abrindo. A flag antiga não
+é apagada, para o caso de algo sair errado.
+
+## 1.47.0 — as cores saem: o visual volta a ser o do sistema
+
+289 declarações de cor removidas das duas folhas — `livro.css` caiu de 37 KB
+para 12 KB. A tipografia ficou inteira: `fontes.css` não foi tocado.
+
+Saíram também as três opções que só serviam às cores — tema do livro, tema da
+nave e modo pergaminho/espaço — e o `tema.js` com elas.
+
+Os testes que mediam cor não foram apagados: viraram **condicionais**. Se alguém
+voltar a pintar um cartão, o par cor+fundo, o `!important` e o contraste de
+4,5:1 voltam a ser cobrados sozinhos.
+
 ## 1.46.0 — o que era do cofre saiu dos compêndios
 
 Três journals publicavam **nomes de arquivo do cofre pessoal** do autor, dentro

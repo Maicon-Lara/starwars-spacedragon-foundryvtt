@@ -46,10 +46,6 @@ import { macros } from "./data/macros.mjs";
 import { CORES_DE_PASTA } from "./data/pastas.mjs";
 import { tabelas } from "./data/tabelas.mjs";
 import { EFEITOS_CRITICOS, templateDoQdV, QDV_ID, QDV_FLAG } from "./data/efeitos-criticos.mjs";
-import { equipamentosDeNave } from "./data/equipamentos-de-nave.mjs";
-import { camarasDeNave } from "./data/camaras-de-nave.mjs";
-import { tiposComoRaca } from "./data/tipos-como-raca.mjs";
-import { classesDeNave, comodosDaNave } from "./data/classes-de-nave.mjs";
 
 const ROOT = path.resolve(fileURLToPath(import.meta.url), "../..");
 const SRC = path.join(ROOT, "packs-src");
@@ -64,7 +60,6 @@ const JOURNAL_PACK = "starwars-sd-journal";
 const MACROS_PACK = "starwars-sd-macros";
 const TABELAS_PACK = "starwars-sd-tabelas";
 const EFEITOS_PACK = "starwars-sd-efeitos";
-const NAVES_PACK = "starwars-sd-naves";
 
 // Agrupa documentos avulsos em pastas nomeadas pelo campo `folder`.
 function agrupaAvulsas(docs, lista, seed, build) {
@@ -453,123 +448,15 @@ function buildEquipamentosDocs() {
   return docs;
 }
 
-// ── Pack de Naves ──
-//
-// As peças da nave num compêndio só delas: quem está montando uma nave não quer
-// percorrer blasters e rações até achar a Sala de Máquinas, e quem está
-// equipando um personagem não quer tropeçar em Acelerador Hiperespacial.
-//
-// Os itens NÃO substituem o schema da nave — eles o ligam. Arrastar um para a
-// ficha instala o equipamento (T10-4) ou constrói a câmara (T10-2). A regra
-// continua em equipamentos-nave.js e camaras.js, testada sem Foundry.
-function buildNavesDocs() {
-  const docs = [];
-  const pasta = (nome, seed) => {
-    const f = folderDoc(nome, "Item", seed);
-    docs.push(f);
-    return f;
-  };
-
-  const fEquip = pasta("Equipamentos adicionais (T10-4)", "nave-equip-pasta");
-  equipamentosDeNave.forEach((e, i) => {
-    /* ── AS ARMAS SÃO `weapon`, E NÃO `misc` ──────────────────────────────
-     *
-     * Todos os equipamentos da T10-4 nasciam `misc` — item genérico. A mesa
-     * reportou o efeito: as armas «estão como item geral, não como arma, e não
-     * geram ataque». É exatamente isso: o sistema só desenha o botão de rolar
-     * dano para itens do tipo `weapon` com `damage` preenchido, e um `misc`
-     * fica na mochila sem nada para clicar.
-     *
-     * As cinco de combate com dano declarado (disparadores, canhões,
-     * metralhadora, mísseis) viram arma de verdade. O Computador Balístico, os
-     * Defletores e o Escudo de Força continuam `misc`, e devem continuar: eles
-     * não atiram, modificam o que atira — e um "ataque" de Escudo de Força na
-     * ficha seria um botão que ninguém saberia o que faz.
-     *
-     * `ranged` porque é o que o sistema usa para o que dispara à distância, e
-     * `two_handed` porque uma arma de nave não é empunhada por ninguém — o
-     * campo existe para o cálculo de mãos livres do personagem, e deixá-la
-     * como arma de uma mão a tornaria combinável com escudo.
-     */
-    const dano = e.dano;
-    const doc = dano
-      ? weaponDoc(
-          {
-            nome: e.nome,
-            desc: e.desc,
-            img: e.img,
-            damage: dano,
-            ranged: true,
-            melee: false,
-            two_handed: true,
-            // o alcance é o do combate espacial, que o §10.6 não mede em
-            // metros: quem decide se a nave alvo está ao alcance é o Mestre
-            shoot_range: 0,
-          },
-          fEquip._id, "nave-equip", (i + 1) * 100000)
-      : miscDoc({ nome: e.nome, desc: e.desc, img: e.img },
-          fEquip._id, "nave-equip", (i + 1) * 100000);
-    doc.flags["starwars-sd"] = { equipamentoDeNave: { chave: e.chave, grupo: e.grupo, cabe: e.cabe } };
-    docs.push(doc);
-  });
-
-  /* ── OS TIPOS DE NAVE, COMO RAÇA ─────────────────────────────────────────
-   *
-   * A nave numa ficha de personagem É de um tipo, e tipo é o que a raça
-   * significa no Old Dragon 2. Arrastar "Caça" para a ficha dá CP 28 e
-   * movimento 150 m pela maquinaria do sistema — `natural_armor` e `movement`
-   * —, sem automação nossa.
-   *
-   * Cada tipo leva uma habilidade de raça com o que a raça NÃO carrega: a BA e
-   * a JP (que no sistema vêm da classe) e a fórmula de PV (que a mesa rola).
-   */
-  {
-    const fTipos = pasta("Tipos de nave (T10-1)", "nave-tipo-pasta");
-    tiposComoRaca.forEach((t, i) => {
-      const hab = raceAbilityDoc(t.habilidade, fTipos._id, `nave-tipo:${t.chave}`, (i + 1) * 1000);
-      docs.push(hab);
-      const raca = raceDoc({ ...t }, fTipos._id, [itemUuid(NAVES_PACK, hab._id)]);
-      raca.sort = (i + 1) * 100000;
-      docs.push(raca);
-    });
-  }
-
-  /* ── UMA CLASSE POR TIPO, E OS CÔMODOS COMO HABILIDADES ──────────────────
-   *
-   * No Old Dragon 2 a BA e a JP vêm da CLASSE, por nível — e na T10-1 elas
-   * variam por tipo. Uma classe "Nave" genérica daria os mesmos números a
-   * todos; uma por tipo traz os certos pela maquinaria do sistema.
-   *
-   * As doze habilidades são COMPARTILHADAS pelas oito classes: o cômodo é o
-   * mesmo em qualquer nave, e o que muda é quais estão instalados — estado do
-   * ator, não da classe. Um cômodo, uma descrição, um lugar para corrigir.
-   */
-  {
-    const fComodos = pasta("Cômodos (T10-2)", "nave-comodo-pasta");
-    const uuids = comodosDaNave.map((c, i) => {
-      const hab = classAbilityDoc(c, fComodos._id, "nave-comodo", (i + 1) * 1000);
-      docs.push(hab);
-      return itemUuid(NAVES_PACK, hab._id);
-    });
-
-    const fClasses = pasta("Tipos de nave — classe (T10-1)", "nave-classe-pasta");
-    classesDeNave.forEach((c, i) => {
-      const cls = classDoc(c, fClasses._id, uuids);
-      cls.sort = (i + 1) * 100000;
-      docs.push(cls);
-    });
-  }
-
-  const fCamaras = pasta("Câmaras (T10-2)", "nave-camara-pasta");
-  camarasDeNave.forEach((c, i) => {
-    const doc = miscDoc({ nome: c.nome, desc: c.desc, img: c.img, cost: `${c.obra}` },
-      fCamaras._id, "nave-camara", (i + 1) * 100000);
-    doc.flags["starwars-sd"] = { camaraDeNave: { chave: c.chave } };
-    docs.push(doc);
-  });
-
-  return docs;
-}
+/* ── O PACK DE NAVES MUDOU DE MÓDULO ───────────────────────────────────────
+ *
+ * Os tipos, as câmaras e os equipamentos do capítulo 10 saíram daqui na 1.48.0:
+ * são regra do LIVRO, e agora moram no módulo Space Dragon, que este exige.
+ *
+ * O journal "Naves & Combate Espacial" FICOU, porque é o texto do suplemento —
+ * ele explica a regra com os exemplos do cenário (X-wing, TIE). Por isso o
+ * build ainda lê `camaras.js`, mas do módulo vizinho.
+ */
 
 // ── Pack de poderes da Força (1ª a 10ª Grandeza, por corrente) ──
 function buildPoderesDocs() {
@@ -749,7 +636,6 @@ async function main() {
   await compile(MACROS_PACK, buildMacrosDocs());
   await compile(TABELAS_PACK, buildTabelasDocs());
   await compile(EFEITOS_PACK, buildEfeitosDocs());
-  await compile(NAVES_PACK, buildNavesDocs());
   console.log("Concluído.");
 }
 

@@ -23,12 +23,7 @@
  * só chaves com o prefixo "starwars-sd.".
  */
 
-import { navesAntigas, converterNave, converterTodas } from "./nave-converter.js";
-import { redesenharFichasDeNave } from "./nave-pc-ficha.js";
-import { criarNave, dialogoDeNovaNave, ligarBotaoDeNovaNave } from "./nave-nova.js";
 import { ligarPontosDeForca } from "./pontos-de-forca.js";
-import { registrarCombate, ligarResumoDaRodada, avisarSeOrdemPerdida } from "./ordem-inversao.js";
-import { registrarFichaDeNavePC } from "./nave-pc-ficha.js";
 
 const ID = "starwars-sd";
 
@@ -60,7 +55,6 @@ Hooks.once("init", () => {
 
   // A subclasse de Combat entra sempre; quem decide inverter é a opção, lida a
   // cada ordenação. Registrar condicionalmente exigiria reload para voltar.
-  registrarCombate();
 
 
   // ── As camadas da tripulação ──
@@ -83,7 +77,6 @@ Hooks.once("init", () => {
       type: Boolean,
       default: padrao,
       onChange: () => {
-        redesenharFichasDeNave();
       },
     });
   }
@@ -92,7 +85,6 @@ Hooks.once("init", () => {
 });
 
 Hooks.once("ready", () => {
-  ligarBotaoDeNovaNave();
 
   // ── O CONVERSOR DE NAVES ──
   //
@@ -104,11 +96,6 @@ Hooks.once("ready", () => {
   if (mod) {
     mod.api = {
       ...(mod.api ?? {}),
-      criarNave,
-      dialogoDeNovaNave,
-      navesAntigas,
-      converterNave,
-      converterTodas,
     };
     const quantas = navesAntigas().length;
     if (quantas > 0) {
@@ -134,10 +121,8 @@ Hooks.once("ready", () => {
 
   // A Ordem de Ação: a declaração mora no módulo spacedragon (aba de ataques);
   // aqui fica o resumo da rodada para o Mestre, e a inversão registrada acima.
-  ligarResumoDaRodada();
   // No ready todos os módulos já carregaram: é aqui que dá para saber se algum
   // deles substituiu a classe de Combat e apagou a nossa ordenação crescente.
-  avisarSeOrdemPerdida();
 
   // O painel de Pontos de Força na ficha do personagem. Injetado, não
   // substitui nada do sistema, e sai junto se o módulo for desligado.
@@ -147,7 +132,6 @@ Hooks.once("ready", () => {
   // vizinho documenta: `registerSheet` entra numa fila processada depois do
   // `init`, e no `init` o registro de fichas do sistema ainda está vazio — a
   // classe-base não seria encontrada e a ficha não entraria.
-  registrarFichaDeNavePC();
 
   game.starwarsSD = {};
 });

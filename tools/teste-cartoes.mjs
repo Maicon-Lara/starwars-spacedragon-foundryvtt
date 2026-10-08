@@ -80,7 +80,13 @@ for (const f of arquivos) {
 // Era 4 enquanto a ficha de nave antiga emitia os dela. Ela saiu na 1.40.0, e o
 // número caiu junto — abaixar o piso é o certo; manter 4 obrigaria a inventar
 // um cartão para satisfazer o teste.
-confere(cartoes >= 3, `só ${cartoes} cartões encontrados — a varredura deve ter deixado de achar algum`);
+// O piso pega a VARREDURA quebrada, não exige uma quantidade: se o regex parar
+// de casar, `cartoes` vai a zero e tudo passa verde sem ter olhado nada.
+//
+// Caiu de 3 para 2 quando as naves foram para o Space Dragon na 1.48.0 — os
+// cartões delas foram junto. Abaixar é o certo; manter o número antigo
+// obrigaria a inventar um cartão para satisfazer o teste.
+confere(cartoes >= 2, `só ${cartoes} cartões encontrados — a varredura deve ter deixado de achar algum`);
 
 /* ── O CONTRASTE, CALCULADO ──────────────────────────────────────────────── */
 
