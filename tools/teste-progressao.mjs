@@ -43,13 +43,13 @@ const colunasDe = (nome) => {
 
 // ── O Artífice: os PV do 17º, e a Grandeza travada ─────────────────────────
 //
-// Os +4 do 17º ao 20º são o +2 que ele continua ganhando (não alcança a
-// plenitude do 16º, então o corpo não congela) mais os +2 extras da Carne
-// Compensada. Se esta asserção cair, a ficha voltou a congelar os PV.
+// Os +2 do 17º ao 20º são os do Hipercientista do livro: ele não alcança a
+// plenitude do 16º, então o corpo não congela. Se esta asserção cair, a ficha
+// voltou a congelar os PV (ou a dobrá-los, como até a 1.48.1).
 const art = colunasDe("Artífice");
 for (const n of ["17", "18", "19", "20"]) {
-  confere(art.dv?.[n] === "+4 PV",
-    `Artífice: PV do ${n}º devia ser "+4 PV", veio ${JSON.stringify(art.dv?.[n])}`);
+  confere(art.dv?.[n] === "+2 PV",
+    `Artífice: PV do ${n}º devia ser "+2 PV", veio ${JSON.stringify(art.dv?.[n])}`);
 }
 // nos níveis baixos a coluna DV traz o NÚMERO de dados ("5", "6"), não bônus
 for (const n of ["5", "6", "7", "8", "9"]) {
@@ -70,6 +70,27 @@ confere(art.alcanceMental?.["5"] === "9%", "Artífice: Alcance do 5º devia ser 
 confere(art.alcanceMental?.["7"] === "13%", "Artífice: Alcance do 7º devia ser 13% (a linha do 6º)");
 confere(art.alcanceMental?.["20"] === "53%", "Artífice: Alcance do 20º devia ser 53%");
 
+// e a BA e a JP seguem a do Mentálico: o Hipercientista não congela o corpo
+const levelsArt = classeDe("Artífice")?.system?.levels ?? {};
+confere(levelsArt["13"]?.ba === 5 && levelsArt["13"]?.jp === 10,
+  `Artífice: 13º devia ter BA +5 e JP 10, veio ${JSON.stringify(levelsArt["13"])}`);
+
+// ── O Consular PERDE PV do 10º ao 16º ──────────────────────────────────────
+//
+// O Psiquista do livro "perde 1 ou 2 pontos de vida ao subir de nível ao invés
+// de ganhá-los". Sem estas células a ficha cairia na tabela do Mentálico e
+// daria +1 PV, o contrário da regra.
+const cons = colunasDe("Consular");
+for (const n of ["10", "11", "12", "13", "14"]) {
+  confere(cons.dv?.[n] === "−1 PV", `Consular: ${n}º devia ser "−1 PV", veio ${JSON.stringify(cons.dv?.[n])}`);
+}
+for (const n of ["15", "16"]) {
+  confere(cons.dv?.[n] === "−2 PV", `Consular: ${n}º devia ser "−2 PV", veio ${JSON.stringify(cons.dv?.[n])}`);
+}
+// e o Alcance +2 níveis só começa no 10º
+confere(cons.alcanceMental?.["5"] === "9%", "Consular: Alcance do 5º devia ser o normal, 9%");
+confere(cons.alcanceMental?.["10"] === "53%", "Consular: Alcance do 10º devia ser o do 12º, 53%");
+
 // ── As outras Sendas não devem ganhar PV fixo por acidente ────────────────
 //
 // Passar a ler a coluna DV valeu para todas as especializações; nas outras os
@@ -86,4 +107,4 @@ if (problemas.length) {
   for (const p of problemas) console.error(`  ✘ ${p}`);
   process.exit(1);
 }
-console.log("  ✔ progressão: os PV do Artífice no 17º, a Grandeza travada e destravada, o Alcance de duas em duas, e as outras Sendas sem PV fixo");
+console.log("  ✔ progressão: os PV do Artífice no 17º, a perda do Consular, a Grandeza travada e destravada, o Alcance de duas em duas, e as outras Sendas sem PV fixo");

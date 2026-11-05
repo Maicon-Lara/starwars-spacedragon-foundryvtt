@@ -8,7 +8,7 @@
  * O que importa aqui:
  *
  *   · a reserva é do NÍVEL INTEIRO — não recarrega por descanso nem por sessão;
- *     ao subir de nível ela zera e volta como 5 + (nível ÷ 2);
+ *     ao subir de nível ela zera e volta cheia: 5 por dado da faixa;
  *   · o dado cresce por faixa: 1d6 até o 7º, o maior de 2d6 até o 14º, o maior
  *     de 3d6 daí em diante;
  *   · em rolagem de d20 "maior é melhor" (ataque, JP) o dado SOMA; em teste de
@@ -59,13 +59,27 @@ export const reservaDoNivel = (nivel) => 5 * dadoDaFaixa(Math.max(1, nivel)).dad
  * para um momento de virada por cena, e sem transformar o lado do Mestre numa
  * planilha de trinta reservas.
  *
- * Quem decide é a ficha: personagem do jogador, ou PNJ que o Mestre marcou como
- * protagonista pelo flag `heroico`.
+ * ── QUEM É PROTAGONISTA ────────────────────────────────────────────────────
+ *
+ * O flag `heroico`, quando o Mestre o marcou (no botão do painel), manda nos
+ * dois sentidos. Sem ele, protagonista é a ficha com jogador dono OU qualquer
+ * ficha de PERSONAGEM.
+ *
+ * Até a 1.48.1 só o dono contava. A ficha recém-criada pelo Mestre ainda não
+ * tem jogador, então nascia "PNJ comum", travada em 1 / 1 — o +1 e o ⟳
+ * desabilitados, e nada na tela para marcar o flag. Era o caso de toda ficha
+ * nova. O PNJ comum do Mestre continua existindo, mas agora por escolha: o
+ * botão do painel, só para o Mestre.
  */
+export function ehProtagonista(ator) {
+  const marcado = ator?.getFlag?.(ID, "heroico");
+  if (marcado === true || marcado === false) return marcado;
+  return !!ator?.hasPlayerOwner || ator?.type === "character";
+}
+
 export function reservaDoAtor(ator) {
   const nivel = Number(ator?.system?.level ?? 1);
-  const daMesa = ator?.hasPlayerOwner || ator?.getFlag?.(ID, "heroico");
-  return daMesa ? reservaDoNivel(nivel) : 1;
+  return ehProtagonista(ator) ? reservaDoNivel(nivel) : 1;
 }
 
 /** Quantos pontos o personagem ainda tem. */
@@ -125,6 +139,13 @@ export function montaPainel(ator) {
     ? `<button type="button" data-pf="recarregar" ${tem < limite ? "" : "disabled"}
             title="Devolve a reserva cheia da faixa — ao subir de nível, ou para corrigir a contagem. Só o Mestre vê este botão.">⟳</button>`
     : "";
+  // O papel também é só do Mestre: protagonista tem a reserva cheia, PNJ comum
+  // tem 1 ponto. O botão mostra o papel ATUAL e troca para o outro.
+  const heroi = ehProtagonista(ator);
+  const papel = doMestre
+    ? `<button type="button" data-pf="papel" class="pf-papel"
+            title="${heroi ? "Protagonista: reserva cheia. Clique para tornar PNJ comum (1 ponto)." : "PNJ comum: 1 ponto. Clique para tornar protagonista (reserva cheia)."} Só o Mestre vê este botão.">${heroi ? "protagonista" : "PNJ comum"}</button>`
+    : "";
 
   return `
 <div class="${MARCA}">
@@ -140,6 +161,7 @@ export function montaPainel(ator) {
     <button type="button" data-pf="devolver" ${tem < limite ? "" : "disabled"}
             title="Devolve 1 ponto — para desfazer um gasto">+1</button>
     ${recarregar}
+    ${papel}
   </div>
 </div>`;
 }
@@ -211,6 +233,15 @@ export function ligarPontosDeForca() {
         if (!acao) return;
         ev.preventDefault();
         const nivel = Number(ator.system?.level ?? 1);
+        if (acao === "papel") {
+          if (!game.user?.isGM) return;
+          // Grava o flag explícito, e a reserva já no limite do papel novo: quem
+          // vira protagonista ganha a reserva cheia, quem vira PNJ fica com 1.
+          const virar = !ehProtagonista(ator);
+          await ator.setFlag(ID, "heroico", virar);
+          await gravarPontos(ator, virar ? reservaDoNivel(nivel) : 1);
+          return;
+        }
         if (acao === "recarregar") {
           if (!game.user?.isGM) return;
           const cheia = reservaDoAtor(ator);

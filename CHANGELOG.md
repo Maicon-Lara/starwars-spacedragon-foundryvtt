@@ -1,5 +1,63 @@
 # Changelog
 
+## 1.49.0 — as tabelas das especializações conferidas contra o livro, e a ficha nova com Pontos de Força
+
+**Exige Space Dragon 1.33.0**, que passou a entender a perda de PV do Consular.
+
+### Pontos de Força: a ficha nova nascia travada em 1 / 1
+
+A reserva cheia é de protagonista, e protagonista era só a ficha com **jogador
+dono**. A ficha que o Mestre acaba de criar ainda não tem dono — então nascia
+"PNJ comum", com 1 ponto, o +1 e o ⟳ desabilitados, e nada na tela para mudar.
+
+Agora **toda ficha de personagem é protagonista** por padrão. O PNJ comum
+continua existindo, por escolha: o painel ganhou um botão **só do Mestre** que
+alterna *protagonista* / *PNJ comum*, e a marcação dele manda nos dois sentidos.
+
+### As tabelas das especializações
+
+Conferidas contra as tabelas do Cap. 3 do Space Dragon. Onde o texto deixava
+dúvida, vale o livro.
+
+- **Rodadas da Sabotagem:** "1" do 16º ao 20º (estava 1d4) no Espião e no
+  Sabotador. No Assassino e no Contrabandista, que congelam a Sabotagem no 5º,
+  as rodadas congelam junto em **1d8** — no livro é uma casa só, "35% / 1d8".
+- **Sabotador:** o Escalar congela em 89% no 10º, então o bônus trava em +11%.
+  Do 11º ao 19º a Sabotagem vai de 73% a 89% (estava 72% a 80%), e a armadilha
+  de 27% a 11%. Fecha com o 73%/27% que o livro imprime.
+- **Contrabandista:** a Furtividade para de subir para se esconder, mas a
+  **progressão** dela segue valendo para o ataque adicional, como o livro diz.
+  Coluna nova, *Ataque adicional*: 65% no 10º até 86% no 19º.
+- **Médico de Campo:** o Crédito Tecnológico extra começa em **+1%** no 5º
+  (estava +5%). Do 10º os aparatos contam 2 NT acima, então ele **cria** até
+  2 NT abaixo do seu máximo — 3º no 10º, 8º só no 19º.
+- **Slicer:** o que congela no 10º é o **Operar Máquinas** (⊘ 89%), e o
+  Crédito Tecnológico passa a ser ignorado — não a sabotagem, que segue em 1/3
+  dos níveis até 40% no 18º.
+- **Consular:** o Alcance de +2 níveis só começa no **10º** (do 5º ao 9º é o
+  normal). E a coluna DV, que dava +1/+2, agora **tira**: −1 PV do 10º ao 14º,
+  −2 no 15º e no 16º. A ficha aplica a perda.
+- **Vidente:** a Grandeza para na **8ª**, como o próprio texto diz (a tabela
+  dava 9ª e 10ª).
+- **Artífice:** BA e JP seguem a tabela do Sensível, como no Hipercientista do
+  livro; os PV do 17º em diante são **+2** (estavam +4, contando duas vezes o
+  mesmo +2). Do 10º usa qualquer aparato como um Técnico de metade do nível; do
+  20º, como um de igual nível.
+- **Mercenário:** o texto dizia crítico ×4 no 5º; é **×3**, como a tabela.
+- **Sentinela:** a coluna dos talentos é a de Furtividade e Furtar; os outros
+  saem da linha do Gatuno de metade do nível.
+
+### Os termos do cenário voltam às câmaras de nave
+
+O journal *Naves & Combate Espacial* lê as câmaras do Space Dragon, que agora
+falam como o livro (cientista, alcance mental, robôs). Aqui elas voltam a falar
+como a galáxia: Técnico, Alcance da Força, droides, swoop bikes.
+
+> ⚠️ **As tabelas vêm do cofre.** `tools/data/progressoes.mjs` é gerado por
+> `importar-cofre.mjs`: estas correções foram feitas no arquivo gerado, e o
+> próximo import as desfaz se as notas *SW-SUP-Classes* e *SW-SUP-Forca* não
+> forem atualizadas também.
+
 ## 1.48.1 — o módulo volta a carregar
 
 A 1.48.0 derrubava o `ready`: **"navesAntigas is not defined"**. Ao tirar as

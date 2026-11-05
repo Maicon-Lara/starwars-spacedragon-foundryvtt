@@ -43,6 +43,20 @@ const FICHA =
 // página de uma vez, e elas não podem divergir.
 const cr = (n) => n.toLocaleString("pt-BR");
 
+// Os efeitos das câmaras vêm do Space Dragon com o vocabulário do livro
+// (cientista, alcance mental, robôs). Aqui a galáxia é outra: quem conserta é o
+// Técnico, a reserva é o Alcance da Força, e as máquinas são droides. A troca é
+// por frase inteira, para não acertar palavra solta em outro sentido.
+const NO_CENARIO = [
+  ["testes de pilotagem", "testes de Pilotar"],
+  ["alcance mental", "Alcance da Força"],
+  ["ao cientista testar operar e consertar máquinas", "ao Técnico testar Operar e Consertar Máquinas"],
+  ["como aeromotos ou vestes de combate pesadas", "como swoop bikes ou trajes de combate pesados"],
+  ["para o cientista construir aparatos (com o desconto da aptidão tecnológica)", "para o Técnico construir aparatos (com o desconto da Aptidão Tecnológica)"],
+  ["em robôs e androides", "em droides"],
+];
+const noCenario = (texto) => NO_CENARIO.reduce((t, [livro, galaxia]) => t.split(livro).join(galaxia), texto);
+
 const BASE_DE_OPERACOES =
   "<p>Uma nave deixa de ser transporte e vira <strong>base de operações</strong> quando o grupo " +
   "assume as câmaras dela: repara as danificadas, constrói as que faltam, reforma as que tem. " +
@@ -50,7 +64,7 @@ const BASE_DE_OPERACOES =
   "<table><thead><tr><th>Câmara</th><th style='text-align:right'>Obra (CR)</th><th>Prazo</th><th>O que ela dá</th></tr></thead><tbody>" +
   Object.values(CAMARAS).map((c) =>
     `<tr><td><strong>${c.rotulo}</strong></td><td style="text-align:right">${cr(c.obra)}</td>` +
-    `<td>${c.prazo}</td><td>${c.efeito}</td></tr>`).join("") +
+    `<td>${c.prazo}</td><td>${noCenario(c.efeito)}</td></tr>`).join("") +
   "</tbody></table>" +
 
   "<h3>As três que a ficha lê</h3>" +

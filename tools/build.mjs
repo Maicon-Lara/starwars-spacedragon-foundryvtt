@@ -144,7 +144,7 @@ export function progressaoDaTabela(fonte, t) {
   const iRodadas = coluna(t, "Rodadas");
   // Os PV que a especialização dá por nível. O Artífice os teve numa coluna
   // própria ("PV por nível") e depois direto no DV: a tabela do cofre passou a
-  // trazer "+4" no 17º, somando o +2 da base ao +2 extra. Aceitamos as duas
+  // trazer "+2" no 17º, onde o Mentálico não dá nada. Aceitamos as duas
   // grafias — sem isto, mudar o cabeçalho no cofre apaga os PV em silêncio,
   // porque o build continua passando: ninguém valida uma coluna que sumiu.
   const iPV = coluna(t, "PV por nível", "DV");
@@ -160,12 +160,14 @@ export function progressaoDaTabela(fonte, t) {
       colunas[col][limpaCelula(l[iNv])] = v;
     }
   });
-  // Só as células "+N" entram: no começo da tabela a coluna DV traz o NÚMERO
-  // de dados de vida ("5", "6"…), que não é bônus fixo e não pode virar PV.
+  // Só as células "+N" e "−N" entram: no começo da tabela a coluna DV traz o
+  // NÚMERO de dados de vida ("5", "6"…), que não é bônus fixo e não pode virar
+  // PV. O "−N" é o Consular, que PERDE PV do 10º ao 16º (o Psiquista do livro);
+  // o motor do Space Dragon lê "−1 PV" como perda desde a 1.33.0.
   if (iPV >= 0) {
     for (const l of t.linhas) {
-      const v = limpaCelula(l[iPV]);
-      if (/^\+\d+$/.test(v)) (colunas.dv ??= {})[limpaCelula(l[iNv])] = `${v} PV`;
+      const v = limpaCelula(l[iPV]).replace(/^-/, "−");
+      if (/^[+−]\d+$/.test(v)) (colunas.dv ??= {})[limpaCelula(l[iNv])] = `${v} PV`;
     }
   }
   const ajuste = AJUSTE_DA_ESPECIALIZACAO[fonte];

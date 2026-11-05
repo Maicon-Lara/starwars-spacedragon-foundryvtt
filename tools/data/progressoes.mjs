@@ -1435,7 +1435,7 @@ export const ESPECIALIZACOES = {
       [
         "**16**",
         "**80%**",
-        "1d4",
+        "1",
         "95%",
         "80%",
         "80%",
@@ -1445,7 +1445,7 @@ export const ESPECIALIZACOES = {
       [
         "**17**",
         "**82%**",
-        "1d4",
+        "1",
         "96%",
         "82%",
         "82%",
@@ -1455,7 +1455,7 @@ export const ESPECIALIZACOES = {
       [
         "**18**",
         "**84%**",
-        "1d4",
+        "1",
         "97%",
         "84%",
         "84%",
@@ -1465,7 +1465,7 @@ export const ESPECIALIZACOES = {
       [
         "**19**",
         "**86%**",
-        "1d4",
+        "1",
         "98%",
         "86%",
         "86%",
@@ -1475,7 +1475,7 @@ export const ESPECIALIZACOES = {
       [
         "**20**",
         "**99%**",
-        "1d4",
+        "1",
         "99%",
         "**99%**",
         "**99%**",
@@ -1568,17 +1568,6 @@ export const ESPECIALIZACOES = {
       ],
       [
         "**11**",
-        "**72%**",
-        "1d4",
-        "⊘ 89%",
-        "⊘ 65%",
-        "⊘ 40%",
-        "⊘ 1-4",
-        "⊘ ×2",
-        "28%"
-      ],
-      [
-        "**12**",
         "**73%**",
         "1d4",
         "⊘ 89%",
@@ -1589,18 +1578,7 @@ export const ESPECIALIZACOES = {
         "27%"
       ],
       [
-        "**13**",
-        "**74%**",
-        "1d4",
-        "⊘ 89%",
-        "⊘ 65%",
-        "⊘ 40%",
-        "⊘ 1-4",
-        "⊘ ×2",
-        "26%"
-      ],
-      [
-        "**14**",
+        "**12**",
         "**75%**",
         "1d4",
         "⊘ 89%",
@@ -1611,18 +1589,7 @@ export const ESPECIALIZACOES = {
         "25%"
       ],
       [
-        "**15**",
-        "**76%**",
-        "1d4",
-        "⊘ 89%",
-        "⊘ 65%",
-        "⊘ 40%",
-        "⊘ 1-4",
-        "⊘ ×2",
-        "24%"
-      ],
-      [
-        "**16**",
+        "**13**",
         "**77%**",
         "1d4",
         "⊘ 89%",
@@ -1633,18 +1600,7 @@ export const ESPECIALIZACOES = {
         "23%"
       ],
       [
-        "**17**",
-        "**78%**",
-        "1d4",
-        "⊘ 89%",
-        "⊘ 65%",
-        "⊘ 40%",
-        "⊘ 1-4",
-        "⊘ ×2",
-        "22%"
-      ],
-      [
-        "**18**",
+        "**14**",
         "**79%**",
         "1d4",
         "⊘ 89%",
@@ -1655,20 +1611,64 @@ export const ESPECIALIZACOES = {
         "21%"
       ],
       [
-        "**19**",
-        "**80%**",
+        "**15**",
+        "**81%**",
         "1d4",
         "⊘ 89%",
         "⊘ 65%",
         "⊘ 40%",
         "⊘ 1-4",
         "⊘ ×2",
-        "20%"
+        "19%"
+      ],
+      [
+        "**16**",
+        "**83%**",
+        "1",
+        "⊘ 89%",
+        "⊘ 65%",
+        "⊘ 40%",
+        "⊘ 1-4",
+        "⊘ ×2",
+        "17%"
+      ],
+      [
+        "**17**",
+        "**85%**",
+        "1",
+        "⊘ 89%",
+        "⊘ 65%",
+        "⊘ 40%",
+        "⊘ 1-4",
+        "⊘ ×2",
+        "15%"
+      ],
+      [
+        "**18**",
+        "**87%**",
+        "1",
+        "⊘ 89%",
+        "⊘ 65%",
+        "⊘ 40%",
+        "⊘ 1-4",
+        "⊘ ×2",
+        "13%"
+      ],
+      [
+        "**19**",
+        "**89%**",
+        "1",
+        "⊘ 89%",
+        "⊘ 65%",
+        "⊘ 40%",
+        "⊘ 1-4",
+        "⊘ ×2",
+        "11%"
       ],
       [
         "**20**",
         "**99%**",
-        "1d4",
+        "1",
         "⊘ 89%",
         "⊘ 65%",
         "⊘ 40%",
@@ -1678,7 +1678,7 @@ export const ESPECIALIZACOES = {
       ]
     ],
     "legenda": "⊘ = congelado, repete o valor em que travou · **em negrito** = o valor desta especialização, no lugar do da classe base.",
-    "nota": "A coluna Sabotagem já traz o bônus somado (100% menos a sua % de Escalar) — é a porcentagem que você rola. O bônus é recalculado a cada nível e **não acumula**. A armadilha é o inverso dela."
+    "nota": "A coluna Sabotagem já traz o bônus somado (100% menos a sua % de Escalar) — é a porcentagem que você rola. O bônus é recalculado a cada nível e **não acumula**; como o Escalar congela em 89% no 10º, ele fica travado em +11% dali em diante. A armadilha é o inverso dela."
   },
   "Assassino": {
     "classe": "Operativo",
@@ -1708,7 +1708,7 @@ export const ESPECIALIZACOES = {
       [
         "**6**",
         "⊘ 35%",
-        "1d6",
+        "⊘ 1d8",
         "⊘ 84%",
         "45%",
         "45%",
@@ -1719,7 +1719,7 @@ export const ESPECIALIZACOES = {
       [
         "**7**",
         "⊘ 35%",
-        "1d6",
+        "⊘ 1d8",
         "⊘ 84%",
         "50%",
         "50%",
@@ -1730,7 +1730,7 @@ export const ESPECIALIZACOES = {
       [
         "**8**",
         "⊘ 35%",
-        "1d6",
+        "⊘ 1d8",
         "⊘ 84%",
         "55%",
         "55%",
@@ -1741,7 +1741,7 @@ export const ESPECIALIZACOES = {
       [
         "**9**",
         "⊘ 35%",
-        "1d6",
+        "⊘ 1d8",
         "⊘ 84%",
         "60%",
         "60%",
@@ -1752,7 +1752,7 @@ export const ESPECIALIZACOES = {
       [
         "**10**",
         "⊘ 35%",
-        "1d6",
+        "⊘ 1d8",
         "⊘ 84%",
         "65%",
         "⊘ 65%",
@@ -1763,7 +1763,7 @@ export const ESPECIALIZACOES = {
       [
         "**11**",
         "⊘ 35%",
-        "1d4",
+        "⊘ 1d8",
         "⊘ 84%",
         "70%",
         "⊘ 65%",
@@ -1774,7 +1774,7 @@ export const ESPECIALIZACOES = {
       [
         "**12**",
         "⊘ 35%",
-        "1d4",
+        "⊘ 1d8",
         "⊘ 84%",
         "72%",
         "⊘ 65%",
@@ -1785,7 +1785,7 @@ export const ESPECIALIZACOES = {
       [
         "**13**",
         "⊘ 35%",
-        "1d4",
+        "⊘ 1d8",
         "⊘ 84%",
         "74%",
         "⊘ 65%",
@@ -1796,7 +1796,7 @@ export const ESPECIALIZACOES = {
       [
         "**14**",
         "⊘ 35%",
-        "1d4",
+        "⊘ 1d8",
         "⊘ 84%",
         "76%",
         "⊘ 65%",
@@ -1807,7 +1807,7 @@ export const ESPECIALIZACOES = {
       [
         "**15**",
         "⊘ 35%",
-        "1d4",
+        "⊘ 1d8",
         "⊘ 84%",
         "78%",
         "⊘ 65%",
@@ -1818,7 +1818,7 @@ export const ESPECIALIZACOES = {
       [
         "**16**",
         "⊘ 35%",
-        "1d4",
+        "⊘ 1d8",
         "⊘ 84%",
         "80%",
         "⊘ 65%",
@@ -1829,7 +1829,7 @@ export const ESPECIALIZACOES = {
       [
         "**17**",
         "⊘ 35%",
-        "1d4",
+        "⊘ 1d8",
         "⊘ 84%",
         "82%",
         "⊘ 65%",
@@ -1840,7 +1840,7 @@ export const ESPECIALIZACOES = {
       [
         "**18**",
         "⊘ 35%",
-        "1d4",
+        "⊘ 1d8",
         "⊘ 84%",
         "84%",
         "⊘ 65%",
@@ -1851,7 +1851,7 @@ export const ESPECIALIZACOES = {
       [
         "**19**",
         "⊘ 35%",
-        "1d4",
+        "⊘ 1d8",
         "⊘ 84%",
         "86%",
         "⊘ 65%",
@@ -1862,7 +1862,7 @@ export const ESPECIALIZACOES = {
       [
         "**20**",
         "⊘ 35%",
-        "1d4",
+        "⊘ 1d8",
         "⊘ 84%",
         "88%",
         "⊘ 65%",
@@ -1884,7 +1884,8 @@ export const ESPECIALIZACOES = {
       "Furtividade",
       "Furtar",
       "Percepção",
-      "Atq. Furtivo"
+      "Atq. Furtivo",
+      "Ataque adicional"
     ],
     "linhas": [
       [
@@ -1895,161 +1896,177 @@ export const ESPECIALIZACOES = {
         "40%",
         "⊘ 40%",
         "1-3",
-        "×2"
+        "×2",
+        "**—**"
       ],
       [
         "**6**",
         "⊘ 35%",
-        "1d6",
+        "⊘ 1d8",
         "85%",
         "45%",
         "⊘ 40%",
         "1-3",
-        "×3"
+        "×3",
+        "**—**"
       ],
       [
         "**7**",
         "⊘ 35%",
-        "1d6",
+        "⊘ 1d8",
         "86%",
         "50%",
         "⊘ 40%",
         "1-3",
-        "×3"
+        "×3",
+        "**—**"
       ],
       [
         "**8**",
         "⊘ 35%",
-        "1d6",
+        "⊘ 1d8",
         "87%",
         "55%",
         "⊘ 40%",
         "1-3",
-        "×3"
+        "×3",
+        "**—**"
       ],
       [
         "**9**",
         "⊘ 35%",
-        "1d6",
+        "⊘ 1d8",
         "88%",
         "60%",
         "⊘ 40%",
         "1-3",
-        "×3"
+        "×3",
+        "**—**"
       ],
       [
         "**10**",
         "⊘ 35%",
-        "1d6",
+        "⊘ 1d8",
         "89%",
         "⊘ 65%",
         "⊘ 40%",
         "1-4",
-        "×3"
+        "×3",
+        "**65%**"
       ],
       [
         "**11**",
         "⊘ 35%",
-        "1d4",
+        "⊘ 1d8",
         "90%",
         "⊘ 65%",
         "⊘ 40%",
         "1-4",
-        "×3"
+        "×3",
+        "**70%**"
       ],
       [
         "**12**",
         "⊘ 35%",
-        "1d4",
+        "⊘ 1d8",
         "91%",
         "⊘ 65%",
         "⊘ 40%",
         "1-4",
-        "×4"
+        "×4",
+        "**72%**"
       ],
       [
         "**13**",
         "⊘ 35%",
-        "1d4",
+        "⊘ 1d8",
         "92%",
         "⊘ 65%",
         "⊘ 40%",
         "1-4",
-        "×4"
+        "×4",
+        "**74%**"
       ],
       [
         "**14**",
         "⊘ 35%",
-        "1d4",
+        "⊘ 1d8",
         "93%",
         "⊘ 65%",
         "⊘ 40%",
         "1-4",
-        "×4"
+        "×4",
+        "**76%**"
       ],
       [
         "**15**",
         "⊘ 35%",
-        "1d4",
+        "⊘ 1d8",
         "94%",
         "⊘ 65%",
         "⊘ 40%",
         "1-4",
-        "×4"
+        "×4",
+        "**78%**"
       ],
       [
         "**16**",
         "⊘ 35%",
-        "1d4",
+        "⊘ 1d8",
         "95%",
         "⊘ 65%",
         "⊘ 40%",
         "1-5",
-        "×4"
+        "×4",
+        "**80%**"
       ],
       [
         "**17**",
         "⊘ 35%",
-        "1d4",
+        "⊘ 1d8",
         "96%",
         "⊘ 65%",
         "⊘ 40%",
         "1-5",
-        "×4"
+        "×4",
+        "**82%**"
       ],
       [
         "**18**",
         "⊘ 35%",
-        "1d4",
+        "⊘ 1d8",
         "97%",
         "⊘ 65%",
         "⊘ 40%",
         "1-5",
-        "×5"
+        "×5",
+        "**84%**"
       ],
       [
         "**19**",
         "⊘ 35%",
-        "1d4",
+        "⊘ 1d8",
         "98%",
         "⊘ 65%",
         "⊘ 40%",
         "1-5",
-        "×5"
+        "×5",
+        "**86%**"
       ],
       [
         "**20**",
         "⊘ 35%",
-        "1d4",
+        "⊘ 1d8",
         "99%",
         "⊘ 65%",
         "⊘ 40%",
         "1-5",
-        "×5"
+        "×5",
+        "**sempre**"
       ]
     ],
     "legenda": "⊘ = congelado, repete o valor em que travou.",
-    "nota": "A % de Furtividade congelada *é* a sua chance de um ataque a mais no turno, com a BA de 7 níveis abaixo — por isso ela não vira uma coluna nova. No 20º são sempre dois ataques."
+    "nota": "A Furtividade congela no 10º, mas a progressão dela continua como a chance de um ataque a mais no turno, com a BA de 7 níveis abaixo — é a coluna Ataque adicional. No 20º são sempre dois ataques."
   },
   "Médico de Campo": {
     "classe": "Técnico",
@@ -2071,7 +2088,7 @@ export const ESPECIALIZACOES = {
         "14",
         "⊘ 84%",
         "3º",
-        "+5%",
+        "+1%",
         "3º"
       ],
       [
@@ -2081,7 +2098,7 @@ export const ESPECIALIZACOES = {
         "14",
         "⊘ 84%",
         "–",
-        "+6%",
+        "+2%",
         "3º"
       ],
       [
@@ -2091,7 +2108,7 @@ export const ESPECIALIZACOES = {
         "13",
         "⊘ 84%",
         "4º",
-        "+7%",
+        "+3%",
         "4º"
       ],
       [
@@ -2101,7 +2118,7 @@ export const ESPECIALIZACOES = {
         "13",
         "⊘ 84%",
         "–",
-        "+8%",
+        "+4%",
         "4º"
       ],
       [
@@ -2111,7 +2128,7 @@ export const ESPECIALIZACOES = {
         "13",
         "⊘ 84%",
         "5º",
-        "+9%",
+        "+5%",
         "5º"
       ],
       [
@@ -2121,8 +2138,8 @@ export const ESPECIALIZACOES = {
         "12",
         "⊘ 84%",
         "–",
-        "+10%",
-        "5º"
+        "+6%",
+        "3º"
       ],
       [
         "**11**",
@@ -2131,8 +2148,8 @@ export const ESPECIALIZACOES = {
         "12",
         "⊘ 84%",
         "6º",
-        "+11%",
-        "6º"
+        "+7%",
+        "4º"
       ],
       [
         "**12**",
@@ -2141,8 +2158,8 @@ export const ESPECIALIZACOES = {
         "12",
         "⊘ 84%",
         "–",
-        "+12%",
-        "6º"
+        "+8%",
+        "4º"
       ],
       [
         "**13**",
@@ -2151,8 +2168,8 @@ export const ESPECIALIZACOES = {
         "11",
         "⊘ 84%",
         "7º",
-        "+13%",
-        "7º"
+        "+9%",
+        "5º"
       ],
       [
         "**14**",
@@ -2161,8 +2178,8 @@ export const ESPECIALIZACOES = {
         "11",
         "⊘ 84%",
         "–",
-        "+14%",
-        "7º"
+        "+10%",
+        "5º"
       ],
       [
         "**15**",
@@ -2171,8 +2188,8 @@ export const ESPECIALIZACOES = {
         "11",
         "⊘ 84%",
         "8º",
-        "+15%",
-        "8º"
+        "+11%",
+        "6º"
       ],
       [
         "**16**",
@@ -2181,8 +2198,8 @@ export const ESPECIALIZACOES = {
         "10",
         "⊘ 84%",
         "–",
-        "+16%",
-        "8º"
+        "+12%",
+        "6º"
       ],
       [
         "**17**",
@@ -2191,8 +2208,8 @@ export const ESPECIALIZACOES = {
         "10",
         "⊘ 84%",
         "9º",
-        "+17%",
-        "8º"
+        "+13%",
+        "7º"
       ],
       [
         "**18**",
@@ -2201,8 +2218,8 @@ export const ESPECIALIZACOES = {
         "10",
         "⊘ 84%",
         "–",
-        "+18%",
-        "8º"
+        "+14%",
+        "7º"
       ],
       [
         "**19**",
@@ -2211,7 +2228,7 @@ export const ESPECIALIZACOES = {
         "9",
         "⊘ 84%",
         "10º",
-        "+19%",
+        "+15%",
         "8º"
       ],
       [
@@ -2226,7 +2243,7 @@ export const ESPECIALIZACOES = {
       ]
     ],
     "legenda": "⊘ = congelado, repete o valor em que travou.",
-    "nota": "A coluna é o que ele SOMA à Aptidão Tecnológica que já vem da Ciência. Do 10º em diante os aparatos dele contam 2 NT acima, o que o limita a criar até o 8º NT. No 20º o livro fixa o Crédito em 100%."
+    "nota": "A coluna é o que ele SOMA ao Crédito Tecnológico que já vem da Ciência: +1% no 5º e mais 1% a cada nível. Do 10º em diante os aparatos dele contam 2 NT acima, então ele cria até 2 NT abaixo do seu máximo — o 8º NT no 19º. No 20º o livro fixa o Crédito em 100%."
   },
   "Engenheiro": {
     "classe": "Técnico",
@@ -2456,7 +2473,7 @@ export const ESPECIALIZACOES = {
         "+1",
         "+4",
         "12",
-        "89%",
+        "⊘ 89%",
         "–",
         "25%",
         "Tabela 3-2"
@@ -2466,7 +2483,7 @@ export const ESPECIALIZACOES = {
         "+1",
         "+5",
         "12",
-        "90%",
+        "⊘ 89%",
         "6º",
         "25%",
         "Tabela 3-2"
@@ -2476,9 +2493,9 @@ export const ESPECIALIZACOES = {
         "+2",
         "+5",
         "12",
-        "91%",
+        "⊘ 89%",
         "–",
-        "25%",
+        "30%",
         "Tabela 3-2"
       ],
       [
@@ -2486,9 +2503,9 @@ export const ESPECIALIZACOES = {
         "+2",
         "+5",
         "11",
-        "92%",
+        "⊘ 89%",
         "7º",
-        "25%",
+        "30%",
         "Tabela 3-2"
       ],
       [
@@ -2496,9 +2513,9 @@ export const ESPECIALIZACOES = {
         "+3",
         "+6",
         "11",
-        "93%",
+        "⊘ 89%",
         "–",
-        "25%",
+        "30%",
         "Tabela 3-2"
       ],
       [
@@ -2506,9 +2523,9 @@ export const ESPECIALIZACOES = {
         "+3",
         "+6",
         "11",
-        "94%",
+        "⊘ 89%",
         "8º",
-        "25%",
+        "35%",
         "Tabela 3-2"
       ],
       [
@@ -2516,9 +2533,9 @@ export const ESPECIALIZACOES = {
         "+4",
         "+6",
         "10",
-        "95%",
+        "⊘ 89%",
         "–",
-        "25%",
+        "35%",
         "Tabela 3-2"
       ],
       [
@@ -2526,9 +2543,9 @@ export const ESPECIALIZACOES = {
         "+4",
         "+7",
         "10",
-        "96%",
+        "⊘ 89%",
         "9º",
-        "25%",
+        "35%",
         "Tabela 3-2"
       ],
       [
@@ -2536,9 +2553,9 @@ export const ESPECIALIZACOES = {
         "+5",
         "+7",
         "10",
-        "97%",
+        "⊘ 89%",
         "–",
-        "25%",
+        "40%",
         "Tabela 3-2"
       ],
       [
@@ -2546,9 +2563,9 @@ export const ESPECIALIZACOES = {
         "+5",
         "+7",
         "9",
-        "98%",
+        "⊘ 89%",
         "10º",
-        "25%",
+        "40%",
         "Tabela 3-2"
       ],
       [
@@ -2556,14 +2573,14 @@ export const ESPECIALIZACOES = {
         "+6",
         "+8",
         "9",
-        "99%",
+        "⊘ 89%",
         "–",
-        "25%",
+        "40%",
         "Tabela 3-2"
       ]
     ],
-    "legenda": "*Nada congela nem muda: a tabela é a mesma da classe base.*",
-    "nota": "Sabota como um Operativo de 1/3 dos seus níveis. Do 10º em diante essa % congela, mas um “D” na Tabela 3-2 passa a significar robô reprogramado para sempre."
+    "legenda": "⊘ = congelado, repete o valor em que travou.",
+    "nota": "Sabota como um Operativo de 1/3 dos seus níveis, e essa % continua subindo. Do 10º em diante o Operar Máquinas congela e o Crédito Tecnológico é ignorado, mas um “D” na Tabela 3-2 passa a significar robô reprogramado para sempre."
   },
   "Guardião": {
     "classe": "Sensível à Força",
@@ -2725,7 +2742,7 @@ export const ESPECIALIZACOES = {
         "5",
         "⊘ +2",
         "13",
-        "**17%**",
+        "**9%**",
         "**4ª**",
         "—"
       ],
@@ -2734,7 +2751,7 @@ export const ESPECIALIZACOES = {
         "6",
         "⊘ +2",
         "13",
-        "**23%**",
+        "**13%**",
         "**4ª**",
         "—"
       ],
@@ -2743,7 +2760,7 @@ export const ESPECIALIZACOES = {
         "7",
         "⊘ +2",
         "12",
-        "**28%**",
+        "**17%**",
         "**5ª**",
         "—"
       ],
@@ -2752,7 +2769,7 @@ export const ESPECIALIZACOES = {
         "8",
         "⊘ +2",
         "12",
-        "**36%**",
+        "**23%**",
         "**5ª**",
         "—"
       ],
@@ -2761,13 +2778,13 @@ export const ESPECIALIZACOES = {
         "9",
         "⊘ +2",
         "12",
-        "**43%**",
+        "**28%**",
         "**6ª**",
         "—"
       ],
       [
         "**10**",
-        "+1",
+        "−1",
         "⊘ +2",
         "⊘ 11",
         "**53%**",
@@ -2776,7 +2793,7 @@ export const ESPECIALIZACOES = {
       ],
       [
         "**11**",
-        "+1",
+        "−1",
         "⊘ +2",
         "⊘ 11",
         "**62%**",
@@ -2785,7 +2802,7 @@ export const ESPECIALIZACOES = {
       ],
       [
         "**12**",
-        "+1",
+        "−1",
         "⊘ +2",
         "⊘ 11",
         "**74%**",
@@ -2794,7 +2811,7 @@ export const ESPECIALIZACOES = {
       ],
       [
         "**13**",
-        "+1",
+        "−1",
         "⊘ +2",
         "⊘ 11",
         "**86%**",
@@ -2803,7 +2820,7 @@ export const ESPECIALIZACOES = {
       ],
       [
         "**14**",
-        "+1",
+        "−1",
         "⊘ +2",
         "⊘ 11",
         "**100%**",
@@ -2812,7 +2829,7 @@ export const ESPECIALIZACOES = {
       ],
       [
         "**15**",
-        "+2",
+        "−2",
         "⊘ +2",
         "⊘ 11",
         "**115%**",
@@ -2821,7 +2838,7 @@ export const ESPECIALIZACOES = {
       ],
       [
         "**16**",
-        "+2",
+        "−2",
         "⊘ +2",
         "⊘ 11",
         "**131%**",
@@ -2866,7 +2883,7 @@ export const ESPECIALIZACOES = {
       ]
     ],
     "legenda": "⊘ = congelado, repete o valor em que travou · **em negrito** = o valor desta especialização, no lugar do da classe base.",
-    "nota": "Ganha a 4ª Grandeza direto no 5º e +1 a cada 2 níveis, chegando à 10ª no 17º. O Alcance conta como o de um Sensível +2 níveis. O corpo paga a conta."
+    "nota": "Ganha a 4ª Grandeza direto no 5º e +1 a cada 2 níveis, chegando à 10ª no 17º. Do 10º em diante o Alcance conta como o de um Sensível +2 níveis, e a coluna DV vira perda: −1 PV por nível até o 14º, −2 no 15º e no 16º. O corpo paga a conta."
   },
   "Sentinela": {
     "classe": "Sensível à Força",
@@ -2877,7 +2894,7 @@ export const ESPECIALIZACOES = {
       "JP",
       "Alcance",
       "Grandeza",
-      "Talentos (metade do nível)",
+      "Furtividade / Furtar (½ nível)",
       "JPM contra a Força"
     ],
     "linhas": [
@@ -3043,7 +3060,7 @@ export const ESPECIALIZACOES = {
       ]
     ],
     "legenda": "⊘ = congelado, repete o valor em que travou.",
-    "nota": "Escolhe três talentos de Operativo, com a % de um Gatuno de metade do seu nível. A JP congela no 10º — mais tarde que nas outras Sendas, que é o preço de ser a mais versátil — mas em compensação ganha **+4 nas JPM** contra a Força e efeitos mentais."
+    "nota": "Escolhe três talentos de Operativo, com a % de um Gatuno de metade do seu nível. A coluna mostra Furtividade e Furtar; Escalar, Sabotagem, Percepção e Ataque Furtivo saem da linha da tabela do Gatuno de metade do nível. A JP congela no 10º — mais tarde que nas outras Sendas, que é o preço de ser a mais versátil — mas em compensação ganha **+4 nas JPM** contra a Força e efeitos mentais."
   },
   "Vidente": {
     "classe": "Sensível à Força",
@@ -3197,7 +3214,7 @@ export const ESPECIALIZACOES = {
         "⊘ +4",
         "⊘ 13",
         "115%",
-        "9ª",
+        "—",
         "40 m",
         "⅓",
         "30%"
@@ -3219,7 +3236,7 @@ export const ESPECIALIZACOES = {
         "⊘ +4",
         "⊘ 13",
         "139%",
-        "10ª",
+        "—",
         "40 m",
         "⅓",
         "30%"
@@ -3237,7 +3254,7 @@ export const ESPECIALIZACOES = {
       ]
     ],
     "legenda": "⊘ = congelado, repete o valor em que travou.",
-    "nota": "Canaliza a Força dos seres inteligentes por perto, somando os bônus de Intelecto deles. A sintonia é involuntária: do 10º em diante ele atrai raios."
+    "nota": "Canaliza a Força dos seres inteligentes por perto, somando os bônus de Intelecto deles. A Grandeza para na 8ª, no 15º nível. A sintonia é involuntária: do 10º em diante ele atrai raios."
   },
   "Artífice": {
     "classe": "Sensível à Força",
@@ -3256,8 +3273,8 @@ export const ESPECIALIZACOES = {
       [
         "**5**",
         "5",
-        "⊘ +2",
-        "⊘ 13",
+        "+2",
+        "13",
         "9%",
         "3ª",
         "defensivos",
@@ -3267,8 +3284,8 @@ export const ESPECIALIZACOES = {
       [
         "**6**",
         "6",
-        "⊘ +2",
-        "⊘ 13",
+        "+2",
+        "13",
         "**9%**",
         "**3ª**",
         "defensivos",
@@ -3278,8 +3295,8 @@ export const ESPECIALIZACOES = {
       [
         "**7**",
         "7",
-        "⊘ +2",
-        "⊘ 13",
+        "+3",
+        "12",
         "**13%**",
         "**3ª**",
         "defensivos",
@@ -3289,8 +3306,8 @@ export const ESPECIALIZACOES = {
       [
         "**8**",
         "8",
-        "⊘ +2",
-        "⊘ 13",
+        "+3",
+        "12",
         "**13%**",
         "**3ª**",
         "defensivos",
@@ -3300,8 +3317,8 @@ export const ESPECIALIZACOES = {
       [
         "**9**",
         "9",
-        "⊘ +2",
-        "⊘ 13",
+        "+3",
+        "12",
         "**17%**",
         "**4ª**",
         "defensivos",
@@ -3311,126 +3328,126 @@ export const ESPECIALIZACOES = {
       [
         "**10**",
         "+1",
-        "⊘ +2",
-        "⊘ 13",
+        "+4",
+        "11",
         "**17%**",
         "**4ª**",
-        "**todos**",
+        "**todos (Técnico de ½ nível)**",
         "**3º NT**",
         "—"
       ],
       [
         "**11**",
         "+1",
-        "⊘ +2",
-        "⊘ 13",
+        "+4",
+        "11",
         "**23%**",
         "**4ª**",
-        "**todos**",
+        "**todos (Técnico de ½ nível)**",
         "**3º NT**",
         "—"
       ],
       [
         "**12**",
         "+1",
-        "⊘ +2",
-        "⊘ 13",
+        "+4",
+        "11",
         "**23%**",
         "**4ª**",
-        "**todos**",
+        "**todos (Técnico de ½ nível)**",
         "**3º NT**",
         "—"
       ],
       [
         "**13**",
         "+1",
-        "⊘ +2",
-        "⊘ 13",
+        "+5",
+        "10",
         "**28%**",
         "**5ª**",
-        "**todos**",
+        "**todos (Técnico de ½ nível)**",
         "**3º NT**",
         "—"
       ],
       [
         "**14**",
         "+1",
-        "⊘ +2",
-        "⊘ 13",
+        "+5",
+        "10",
         "**28%**",
         "**5ª**",
-        "**todos**",
+        "**todos (Técnico de ½ nível)**",
         "**3º NT**",
         "—"
       ],
       [
         "**15**",
         "+2",
-        "⊘ +2",
-        "⊘ 13",
+        "+5",
+        "10",
         "**36%**",
         "**6ª**",
-        "**todos**",
+        "**todos (Técnico de ½ nível)**",
         "**3º NT**",
         "—"
       ],
       [
         "**16**",
         "+2",
-        "⊘ +2",
-        "⊘ 13",
+        "+6",
+        "9",
         "**36%**",
         "**6ª**",
-        "**todos**",
+        "**todos (Técnico de ½ nível)**",
         "**3º NT**",
         "—"
       ],
       [
         "**17**",
-        "**+4**",
-        "⊘ +2",
-        "⊘ 13",
+        "**+2**",
+        "+6",
+        "9",
         "**43%**",
         "**7ª**",
-        "**todos**",
+        "**todos (Técnico de ½ nível)**",
         "**3º NT**",
         "—"
       ],
       [
         "**18**",
-        "**+4**",
-        "⊘ +2",
-        "⊘ 13",
+        "**+2**",
+        "+6",
+        "9",
         "**43%**",
         "**7ª**",
-        "**todos**",
+        "**todos (Técnico de ½ nível)**",
         "**3º NT**",
         "—"
       ],
       [
         "**19**",
-        "**+4**",
-        "⊘ +2",
-        "⊘ 13",
+        "**+2**",
+        "+6",
+        "9",
         "**53%**",
         "**8ª**",
-        "**todos**",
+        "**todos (Técnico de ½ nível)**",
         "**3º NT**",
         "—"
       ],
       [
         "**20**",
-        "**+4**",
-        "⊘ +2",
-        "⊘ 13",
+        "**+2**",
+        "+6",
+        "9",
         "**53%**",
         "**8ª**",
-        "**todos**",
+        "**todos (Técnico de igual nível)**",
         "**5º NT (cria)**",
         "**d% ≤ INT**"
       ]
     ],
     "legenda": "⊘ = congelado, repete o valor em que travou · **em negrito** = o valor desta especialização, no lugar do da classe base.",
-    "nota": "Ele extrai o poder **do cristal**, não de si — e a Força própria atrofia. No 20º alcança o auge como artífice e o fundo como místico: **cria** aparatos de até 5º NT, como um Técnico de 9º, mas **todo** poder da Força passa a exigir rolagem de ativação, porque ele já desaprendeu a sentir."
+    "nota": "Ele extrai o poder **do cristal**, não de si — e a Força própria atrofia. BA e JP seguem a tabela da classe; quem paga é a Grandeza e o Alcance. No 20º alcança o auge como artífice e o fundo como místico: **usa** aparatos como um Técnico de igual nível e **cria** os de até 5º NT, como um Técnico de metade do nível, mas **todo** poder da Força passa a exigir rolagem de ativação, porque ele já desaprendeu a sentir."
   }
 };

@@ -5,7 +5,7 @@
   "_id": "5fz7lfsaHYGjTZFO",
   "img": "systems/olddragon2e/assets/icons/kit.svg",
   "system": {
-    "description": "<p><strong>Carne Compensada:</strong> o corpo e os implantes cibernéticos cobrem o desgaste espiritual. Como você <strong>não</strong> alcança a iluminação mental do 16º, seus PV também <strong>não congelam</strong> junto com ela: você segue ganhando os <strong>+2 por nível</strong> do 15º–16º e recebe <strong>mais +2 extras</strong> — <strong>+4 PV por nível</strong> daí em diante.</p>",
+    "description": "<p><strong>Carne Compensada:</strong> o corpo e os implantes cibernéticos cobrem o desgaste espiritual. Como você <strong>não</strong> alcança a iluminação mental do 16º, seus PV também <strong>não congelam</strong> junto com ela: você recebe <strong>+2 PV por nível</strong> do 17º em diante, onde o Sensível comum não ganha nada.</p>",
     "level": 17,
     "level3": "",
     "level6": "",

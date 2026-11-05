@@ -58,7 +58,7 @@ export const variantes = [
     habilidades: [
       { nome: "Mercenário", level: 5,
         desc: degraus(
-          "Para de progredir em **Pilotar Naves**. Escolhe **uma arma** com a qual fica mais perigoso do que nunca: o dano crítico com ela é sempre **um multiplicador acima** do da tabela do Veterano. Assim, um Mercenário de **5º nível** tem crítico **×4** com a arma preferida, e um de **18º nível** tem **×6**.",
+          "Para de progredir em **Pilotar Naves**. Escolhe **uma arma** com a qual fica mais perigoso do que nunca: o dano crítico com ela é sempre **um multiplicador acima** do da tabela do Veterano. Assim, um Mercenário de **5º nível** tem crítico **×3** com a arma preferida, e um de **18º nível** tem **×6**.",
           "**−4** ao usar qualquer arma que não a preferida e **+2** com ela (só no 1º ataque); pode **sacrificar o 2º ataque** para garantir chance de crítico; a **JP para de progredir**.",
           "só usa a arma escolhida, mas **garante chance de crítico nos dois ataques**.",
         ) },
@@ -113,7 +113,7 @@ export const variantes = [
       { nome: "Sabotador", level: 5,
         desc: degraus(
           "Ganha um **bônus em Sabotagem** igual à diferença entre a % de Escalar e 100% (ex.: no 5º, Escalar 84% → **+16%**). O bônus **não é cumulativo**: a cada nível ele é recalculado sobre a % da tabela, resultando numa porcentagem nova. Para de progredir em **Furtar** e **Ataque Furtivo**.",
-          "para de progredir em **todo talento exceto Sabotagem**, e passa a **criar armadilhas** com as máquinas que sabota: a chance de **desarmá-las** é inversa à sua % de Sabotagem (quanto melhor ele sabota, mais difícil desfazer sua obra). No 10º isso dá **29% de desarme**, contra os 71% de sabotagem já com o bônus e sem contar atributo. *(O livro imprime 27%/73% neste exemplo, mas isso só fecha com a linha do 11º nível: no 10º a Sabotagem é 60% e Escalar 89%, então o bônus é +11% e o total 71%. A fórmula confere com o exemplo do 5º nível, que o próprio livro dá: Escalar 84% → +16%.)*",
+          "para de progredir em **todo talento exceto Sabotagem**, e passa a **criar armadilhas** com as máquinas que sabota: a chance de **desarmá-las** é inversa à sua % de Sabotagem (quanto melhor ele sabota, mais difícil desfazer sua obra). No 10º isso dá **29% de desarme**, contra os 71% de sabotagem já com o bônus e sem contar atributo. *(O livro imprime 27%/73% neste exemplo, mas isso só fecha com a linha do 11º nível: no 10º a Sabotagem é 60% e Escalar 89%, então o bônus é +11% e o total 71%. Como o Escalar congela em 89% no 10º, o bônus fica travado em +11% dali em diante: no 11º dá 62% + 11% = 73%, com 27% de desarme. A fórmula confere com o exemplo do 5º nível, que o próprio livro dá: Escalar 84% → +16%.)*",
           "Sabota a **99%**; armadilhas dele têm **1% de chance de desarme**.",
         ) },
     ],
@@ -140,8 +140,8 @@ export const variantes = [
       { nome: "Contrabandista", level: 5,
         desc: degraus(
           "Para de progredir em **Sabotagem** e **Furtar**. Usa o **Crédito Tecnológico** (por Ciência) como desconto em **qualquer negociação**, e o **dobro** dessa % para **extorsão**; é proficiente em **escudos de energia**.",
-          "para de progredir também em **Furtividade**, mas usa a **% de Furtividade** já alcançada como chance de um **ataque adicional** no turno (com a BA de 7 níveis abaixo); pilota e usa qualquer aparato como um Técnico de **metade** dos seus níveis; **tripulação fiel** = seu número máximo de seguidores (mínimo 2).",
-          "desfere **sempre 2 ataques** (o 2º com a BA de 5 níveis abaixo); **dobra/quadruplica** o Crédito; tripulação **triplica** (mínimo 4).",
+          "para de progredir também em **Furtividade**, mas usa a **progressão de Furtividade** como chance de um **ataque adicional** no turno (com a BA de 7 níveis abaixo): ela para de subir para se esconder, mas segue subindo para esse ataque (coluna *Ataque adicional*); pilota e usa qualquer aparato como um Técnico de **metade** dos seus níveis; **tripulação fiel** = seu número máximo de seguidores (mínimo 2).",
+          "desfere **sempre 2 ataques** (o 2º com a BA de 5 níveis abaixo); usa o **dobro** do Crédito Tecnológico nas negociações e o **quádruplo** nas extorsões; tripulação **triplica** (mínimo 4).",
         ) },
     ],
   },
@@ -155,8 +155,8 @@ export const variantes = [
     habilidades: [
       { nome: "Médico de Campo", level: 5,
         desc: degraus(
-          "Para de progredir em **Operar Máquinas**, mas o **Crédito Tecnológico sobe +1%/nível**; abre mão de armas, exceto os artefatos que ele mesmo cria. Dedica a ciência à carne viva — cirurgia, bacta, próteses, antídotos.",
-          "usa a **% de Operar Máquinas** como chance de ter à mão a informação ou o artefato médico relevante; em troca, seus aparatos contam **2 NT acima** (limitando-o a criar até o 8º NT).",
+          "Para de progredir em **Operar Máquinas**, mas o **Crédito Tecnológico sobe +1%** já no 5º e mais 1% a cada nível; abre mão de armas, exceto os artefatos que ele mesmo cria. Dedica a ciência à carne viva — cirurgia, bacta, próteses, antídotos.",
+          "usa a **% de Operar Máquinas do seu nível** (a da tabela do Técnico, que segue subindo só para isso) como chance de ter à mão a informação ou o artefato médico relevante; em troca, seus aparatos contam **2 NT acima** (cria até 2 NT abaixo do seu máximo — o 8º NT, no 19º nível).",
           "Crédito Tecnológico de **100%**; submete-se a um código de ética: **proibido causar dano a seres vivos** — quebrar isso suspende as habilidades da especialização até uma reparação.",
         ) },
     ],
@@ -181,8 +181,8 @@ export const variantes = [
     habilidades: [
       { nome: "Slicer", level: 5,
         desc: lista([
-          "`5º` passa a **sabotar e reprogramar máquinas como um Operativo de 1/3 dos seus níveis** (arromba fechaduras eletrônicas, derruba alarmes, força cofres de dados).",
-          "`10º` para de progredir na sabotagem, mas passa a **Reprogramar Robôs**: contra a Tabela 3-2, um resultado **\"D\"** significa **robô reprogramado permanentemente** para servi-lo, e um **\"A\"**, controlável por **24 horas**. Não destrói o exército de droides do inimigo — vira-o contra o dono.",
+          "`5º` passa a **sabotar e reprogramar máquinas como um Operativo de 1/3 dos seus níveis** — e essa % continua subindo até o 20º (arromba fechaduras eletrônicas, derruba alarmes, força cofres de dados).",
+          "`10º` para de progredir em **Operar Máquinas** e passa a **ignorar o Crédito Tecnológico**, mas passa a **Reprogramar Robôs**: contra a Tabela 3-2, um resultado **\"D\"** significa **robô reprogramado permanentemente** para servi-lo, e um **\"A\"**, controlável por **24 horas**. Não destrói o exército de droides do inimigo — vira-o contra o dono.",
           "`20º` **Faísca do Oculto:** de tanto mergulhar nos fluxos de dados, a mente do Slicer toca o **Espírito Galáctico** e passa a manifestar **poderes da Força de 1ª Grandeza** (lista Universal), com **alcance mental diário = bônus de Ciência**.",
         ]) +
         citacao("⚙️ **Divergência deliberada do livro (travada).** No SD nativo, a faísca do Niilógico corre pelo **Intelecto** — mas o Niilógico é um **Mentálico** (classe de Intelecto). Nosso Slicer é um **Técnico** (Cientista, classe de **Ciência**), então a faísca dele nasce da **maestria científica**: usa **Ciência**. Isso mantém o Slicer num atributo só (sem atributo secundário órfão) e preserva o contraste do cenário — *o Jedi sente (Intelecto), o hacker calcula (Ciência)*. *Variante fiel ao livro: troque por Intelecto se quiser o número nativo cru.*") },
@@ -214,7 +214,7 @@ export const variantes = [
       { nome: "Consular", level: 5,
         desc: lista([
           "`5º` ganha a **4ª Grandeza direto** (englobando a 3ª) e **+1 Grandeza a cada 2 níveis** (chega à 10ª no 17º); a **BA congela** no 5º.",
-          "`10º` a **JP congela**; seu Alcance conta como o de um Sensível **+2 níveis** (100% já no 14º); começa a **perder 1-2 PV** a cada nível que sobe.",
+          "`10º` a **JP congela**; seu Alcance conta como o de um Sensível **+2 níveis** (100% já no 14º); em vez de ganhar PV, **perde** os da tabela a cada nível que sobe: **−1** do 10º ao 14º, **−2** no 15º e no 16º.",
           "`17º+` a cada subida de nível, faça **JPF ou perca 1 de Constituição** (permanente).",
           "`20º` **JPF ou morre**; Alcance a **200%**; realiza qualquer poder **sem rolagem**.",
         ]) },
@@ -230,7 +230,7 @@ export const variantes = [
       { nome: "Ofícios do Submundo", level: 5, flags: doLivro("Talentos de Gatuno"),
         desc: p("**Ofícios do Submundo:** ganha **três talentos de Operativo** à escolha (Furtividade, Sabotagem, Escalar, Ataque Furtivo…), com a % de um Gatuno de **metade** do seu nível (mínimo 1).") +
               p("**Progressão:** mantém a Grandeza e o Alcance da coluna normal — sem o teto do Guardião nem o salto do Consular. É a mais versátil das quatro, e por isso paga **mais tarde**: a JP só congela no 10º, enquanto as outras pagam já no 5º.") +
-              "<p class='nota-casa'><em>Os botões abaixo calculam pelo nível inteiro. Para a Sentinela, role com a % da coluna \"Talentos (metade do nível)\" da tabela — Shift-clique abre o diálogo, onde se corrige o nível.</em></p>" },
+              "<p class='nota-casa'><em>Os botões abaixo calculam pelo nível inteiro. Para a Sentinela, role com a % da coluna \"Furtividade / Furtar (½ nível)\" da tabela (os outros talentos, pela linha do Gatuno de metade do nível) — Shift-clique abre o diálogo, onde se corrige o nível.</em></p>" },
       { nome: "Vontade Inquebrável", level: 10,
         desc: p("**Vontade Inquebrável:** **+4 nas JPM** contra poderes da Força e efeitos mentais. Em troca, a sua **JP congela** neste nível.") },
       { nome: "Caçador da Força", level: 15,
@@ -274,14 +274,14 @@ export const variantes = [
                 "`9º` a Grandeza destrava na **4ª**.",
                 "`13º` a Grandeza destrava na **5ª** e volta a progredir normalmente, de dois em dois, até o teto da **8ª Grandeza** no 19º nível.",
               ]) +
-              p("**Troca:** **BA e JP congelam no 5º** e nunca mais progridem. É a única Senda que paga as duas colunas de uma vez — e, por isso, **a única em que o Caminho não decide nada**. Ele está tão fora do eixo místico que nem a escolha moral chega ao corpo dele.") },
+              p("**Troca:** **BA e JP seguem a tabela da classe**, como no Hipercientista do livro: quem paga é a Grandeza e o Alcance. É a única Senda que não congela nenhuma coluna de corpo — e, por isso, **a única em que o Caminho não decide nada**. Ele está tão fora do eixo místico que nem a escolha moral chega ao corpo dele.") },
       { nome: "Mãos de Oficina", level: 10,
-        desc: p("**Mãos de Oficina:** você domina os segredos das armas energéticas de kyber e passa a operar também **aparatos ofensivos** — sabres modificados, projetores energéticos. É a **única exceção** à regra de que só o Técnico os opera. Além disso, **conserta e modifica** qualquer aparato ou droide de até **3º NT** com um **teste de Ciência**.") +
+        desc: p("**Mãos de Oficina:** você domina os segredos das armas energéticas de kyber e passa a operar **qualquer aparato**, inclusive os **ofensivos** — sabres modificados, projetores energéticos —, com a % de Operar Máquinas de um Técnico de **metade do seu nível**. É a **única exceção** à regra de que só o Técnico os opera. Além disso, **conserta e modifica** qualquer aparato ou droide de até **3º NT** com um **teste de Ciência**.") +
               "<p class='nota-casa'><em>O conserto é um <strong>teste de atributo</strong>: role 1d20 ≤ Ciência na ficha. Não é a % de Operar Máquinas do Técnico — por isso esta habilidade não traz os botões dela.</em></p>" },
       { nome: "Carne Compensada", level: 17,
-        desc: p("**Carne Compensada:** o corpo e os implantes cibernéticos cobrem o desgaste espiritual. Como você **não** alcança a iluminação mental do 16º, seus PV também **não congelam** junto com ela: você segue ganhando os **+2 por nível** do 15º–16º e recebe **mais +2 extras** — **+4 PV por nível** daí em diante.") },
+        desc: p("**Carne Compensada:** o corpo e os implantes cibernéticos cobrem o desgaste espiritual. Como você **não** alcança a iluminação mental do 16º, seus PV também **não congelam** junto com ela: você recebe **+2 PV por nível** do 17º em diante, onde o Sensível comum não ganha nada.") },
       { nome: "O Preço da Lente", level: 20,
-        desc: p("**O Preço da Lente:** você alcança o ápice da engenharia de kyber e passa a **criar** seus próprios aparatos de até **5º NT**, o que um Técnico só faz no 9º nível. Contudo, desaprendeu a sentir a Força intuitivamente: **todo** uso de poder — conhecido ou não — passa a exigir uma **rolagem de ativação** (d% ≤ Intelecto, Tabela 1-4), e a falha gasta o Alcance mesmo assim, como qualquer poder.") },
+        desc: p("**O Preço da Lente:** você alcança o ápice da engenharia de kyber e passa a **usar** qualquer aparato como um Técnico de igual nível e a **criar** os seus de até **5º NT**, como um Técnico de metade do seu nível. Contudo, desaprendeu a sentir a Força intuitivamente: **todo** uso de poder — conhecido ou não — passa a exigir uma **rolagem de ativação** (d% ≤ Intelecto, Tabela 1-4), e a falha gasta o Alcance mesmo assim, como qualquer poder.") },
       eco("A Matéria e o Cristal — a Força que lê, molda e desperta objetos, e a que mexe na engenharia dos próprios poderes"),
     ],
   },
@@ -292,7 +292,7 @@ export const variantes = [
  * Vem de "O Caminho decide o que você perde", em SW-SUP-Forca.
  */
 export const CAMINHO_E_CORPO =
-  p("Toda especialização de Mentálico no *Space Dragon* paga com as **duas colunas de corpo**: a Base de Ataque e a Jogada de Proteção param de progredir, uma no 5º nível e a outra no 10º. É o preço fixo de mergulhar na Força, e vale para as quatro Sendas.") +
+  p("Toda especialização de Mentálico no *Space Dragon* paga com as **duas colunas de corpo**: a Base de Ataque e a Jogada de Proteção param de progredir, uma no 5º nível e a outra no 10º. É o preço fixo de mergulhar na Força, e vale para as Sendas — com as exceções abaixo.") +
   p("**Qual das duas congela primeiro é o seu Caminho que diz:**") +
   lista([
     "**Luz** — congela a **Base de Ataque** no 5º: a serenidade abre mão da agressão.",
@@ -300,5 +300,5 @@ export const CAMINHO_E_CORPO =
     "**Sem Caminho** — você escolhe, e a escolha é definitiva.",
   ]) +
   p("A outra congela no **10º**. Repare que as duas Sendas de base nativa já nascem com o Caminho \"natural\" delas: o **Consular** (o Psiquista do livro) congela a BA primeiro, perfil de Luz; o **Vidente** (o Radiestésico) congela a JP primeiro, perfil de Sombra. Seguir o outro Caminho inverte a ordem, e o personagem sente a diferença no corpo antes de sentir na alma.") +
-  citacao("**O Guardião é a exceção.** Ele trocou a Base de Ataque pela de um Veterano, então não tem essa moeda para gastar: congela sempre a **JP**, nos dois Caminhos. E a **Sentinela** paga tarde — só no 10º —, que é o preço de não se comprometer com nenhum extremo.") +
+  citacao("**O Guardião é a exceção.** Ele trocou a Base de Ataque pela de um Veterano, então não tem essa moeda para gastar: congela sempre a **JP**, nos dois Caminhos. E a **Sentinela** paga tarde — só no 10º —, que é o preço de não se comprometer com nenhum extremo. E o **Artífice** não congela nenhuma das duas: paga com a Grandeza e o Alcance.") +
   citacao("✅ **As Sendas NÃO têm restrição de Afiliação.** Nas classes mundanas, cada especialização é presa a Leal/Neutro/Rebelde. Aqui isso é **removido de propósito**: no Sensível, a diferenciação moral já é feita pelo **Caminho** (Luz, Sombra ou Cinza) e pela **Corrupção** — e o Caminho **tem peso mecânico**: é ele que decide qual coluna do corpo congela primeiro.");

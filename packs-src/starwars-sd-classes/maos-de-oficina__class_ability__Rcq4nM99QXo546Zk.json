@@ -5,7 +5,7 @@
   "_id": "Rcq4nM99QXo546Zk",
   "img": "systems/olddragon2e/assets/icons/kit.svg",
   "system": {
-    "description": "<p><strong>Mãos de Oficina:</strong> você domina os segredos das armas energéticas de kyber e passa a operar também <strong>aparatos ofensivos</strong> — sabres modificados, projetores energéticos. É a <strong>única exceção</strong> à regra de que só o Técnico os opera. Além disso, <strong>conserta e modifica</strong> qualquer aparato ou droide de até <strong>3º NT</strong> com um <strong>teste de Ciência</strong>.</p>",
+    "description": "<p><strong>Mãos de Oficina:</strong> você domina os segredos das armas energéticas de kyber e passa a operar <strong>qualquer aparato</strong>, inclusive os <strong>ofensivos</strong> — sabres modificados, projetores energéticos —, com a % de Operar Máquinas de um Técnico de <strong>metade do seu nível</strong>. É a <strong>única exceção</strong> à regra de que só o Técnico os opera. Além disso, <strong>conserta e modifica</strong> qualquer aparato ou droide de até <strong>3º NT</strong> com um <strong>teste de Ciência</strong>.</p>",
     "level": 10,
     "level3": "",
     "level6": "",

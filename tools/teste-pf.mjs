@@ -58,7 +58,7 @@ confere(r.valor <= 6, "o dado nunca passa de 6, em faixa nenhuma");
 const ator = (nivel, flag, heroico = true) => ({
   system: { level: nivel },
   hasPlayerOwner: heroico,
-  getFlag: (_id, chave) => (chave === "heroico" ? false : flag),
+  getFlag: (_id, chave) => (chave === "heroico" ? undefined : flag),
 });
 confere(pontosAtuais(ator(3, null)) === 5, "sem flag, a reserva é a cheia do nível");
 confere(pontosAtuais(ator(3, { nivel: 3, valor: 2 })) === 2, "com flag do mesmo nível, vale o guardado");
@@ -84,6 +84,20 @@ confere(reservaDoAtor({ system: { level: 10 }, hasPlayerOwner: false, getFlag: (
   "PNJ marcado como heroico tem a reserva cheia");
 confere(pontosAtuais(ator(10, null, false)) === 1, "e o painel do PNJ comum mostra 1");
 confere(reservaDoAtor({ system: { level: 20 }, hasPlayerOwner: true }) === 15, "no 20º são 15");
+
+// ── A FICHA NOVA DE PERSONAGEM É PROTAGONISTA ──────────────────────────────
+//
+// O bug da 1.48.1: a ficha que o Mestre acaba de criar ainda não tem jogador
+// dono, e nascia "PNJ comum" — 1 / 1, com o +1 e o ⟳ desabilitados e nada na
+// tela para mudar isso. Ficha de personagem é protagonista até o Mestre dizer
+// o contrário; o flag explícito manda nos dois sentidos.
+const nova = (heroico) => ({ type: "character", system: { level: 3 }, hasPlayerOwner: false,
+  getFlag: (_i, c) => (c === "heroico" ? heroico : undefined) });
+confere(reservaDoAtor(nova(undefined)) === 5, "ficha nova de personagem, sem dono, devia ter a reserva cheia (5), não 1");
+confere(reservaDoAtor(nova(false)) === 1, "personagem que o Mestre marcou como PNJ comum tem 1 ponto");
+confere(reservaDoAtor({ ...nova(false), hasPlayerOwner: true }) === 1, "a marcação do Mestre vale mesmo com jogador dono");
+confere(reservaDoAtor({ type: "monster", system: { level: 3 }, hasPlayerOwner: false, getFlag: () => undefined }) === 1,
+  "ator que não é personagem, sem dono nem marca, segue PNJ comum");
 
 // ── O BOTÃO DE RECARREGAR É SÓ DO MESTRE ──────────────────────────────────
 //
@@ -129,6 +143,12 @@ confere(reservaDoAtor({ system: { level: 20 }, hasPlayerOwner: true }) === 15, "
   const alto = { id: "a2", system: { level: 15 }, hasPlayerOwner: true, getFlag: () => ({ nivel: 15, valor: 1 }) };
   confere(reservaDoAtor(alto) === 15, "no 15º o ⟳ devolve 15, não 5");
 
+  // O botão de papel (protagonista / PNJ comum) é do Mestre, como o ⟳
+  confere(doMestre.includes('data-pf="papel"') && doMestre.includes("protagonista"),
+    "o Mestre devia ver o botão de papel, dizendo protagonista");
+  confere(!doJogador.includes('data-pf="papel"'), "o jogador não pode trocar o próprio papel");
+  confere(montaPainel(nova(false)).includes(">PNJ comum<"), "o botão do PNJ comum diz PNJ comum");
+
   globalThis.game = { user: { isGM: false } };
   // PNJ comum: 1 ponto, e o painel não promete mais do que isso
   const pnj = { id: "a3", system: { level: 9 }, hasPlayerOwner: false, getFlag: () => null };
@@ -140,4 +160,4 @@ if (problemas.length) {
   process.exit(1);
 }
 console.log("  ✔ pontos de força: reserva por nível e por tipo de ator, as três faixas, o maior de N, " +
-    "o zerar ao subir, e o ⟳ de recarregar SÓ para o Mestre (desabilitado com a reserva cheia)");
+    "o zerar ao subir, a ficha nova com reserva cheia, e o ⟳ e o papel SÓ para o Mestre (o ⟳ desabilitado com a reserva cheia)");
