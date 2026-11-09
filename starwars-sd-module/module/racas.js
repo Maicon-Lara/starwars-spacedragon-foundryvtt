@@ -17,6 +17,19 @@ export const REGRAS_DE_RACA = {
   // Droide
   "corpo robotico": { venceJP: { jpc: (ator) => Number(ator.system?.hp?.value) >= 0 } },
   "cerebro positronico": { rm: 5 },
+  "vulnerabilidade a ion": { recebe: ({ chave, critico }) => (/(^|\s)(ions?|pulso)(\s|$)/.test(chave) ? { mult: 2, desativa: critico } : null) },
+  // Trandoshano
+  regeneracao: { regenera: 1 },
+  // Zabrak
+  "resistencia a dor": { aoCair: { jp: "jpc", sucesso: "age, cambaleante, até o fim da próxima rodada." } },
+  "dois coracoes": { jpSituacao: { jpc: [{ rotulo: "veneno, doença ou asfixia", bonus: 2 }] } },
+  "vontade ferrea": { jpSituacao: { jps: [{ rotulo: "medo, encantamento ou controle mental", bonus: 1 }] } },
+  // Wookiee
+  inabalavel: { jpSituacao: { jps: [{ rotulo: "medo ou intimidação", bonus: 2 }] } },
+  // Chiss
+  "sangue-frio": { jpSituacao: { jps: [{ rotulo: "medo, provocação ou intimidação", bonus: 1 }] } },
+  // Rodiano: "Fácil" é +2, como na janela de ataque do motor
+  "sangue frio": { contraQuemFeriu: 2 },
 };
 
 /** Uma vez, no `ready`. */

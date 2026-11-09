@@ -25,6 +25,10 @@ confere(R.restricao.dano(ator(30), { system: { two_handed: false } }) === -1, "a
 confere(R.restricao.dano(ator(30), { system: { two_handed: true } }) === 0, "arma de duas mãos não dá −1");
 confere(R["corpo robotico"].venceJP.jpc(ator(0)) && !R["corpo robotico"].venceJP.jpc(ator(-1)), "Corpo Robótico rola com PV negativo");
 
+confere(R["vulnerabilidade a ion"].recebe({ chave: "pistola de ions", critico: true }).desativa === true, "Íon no crítico desativa");
+confere(R["vulnerabilidade a ion"].recebe({ chave: "pistola blaster" }) === null, "só Íon dobra: Blaster não");
+confere(R["vulnerabilidade a ion"].recebe({ chave: "uniao" }) === null, "a palavra Íon inteira, não um pedaço");
+
 const recebidas = [];
 globalThis.game = { modules: { get: () => ({ api: { racas: { registrar: (t) => recebidas.push(t) } } }) } };
 confere(registrarRacas() === true && recebidas[0] === R, "a tabela não chegou ao motor");

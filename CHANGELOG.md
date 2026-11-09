@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.52.0 — as espécies reagem à mesa
+
+- **Trandoshano:** Regeneração recupera 1 PV a cada rodada inteira sem perder PV.
+- **Zabrak:** Resistência à Dor rola a JPF ao chegar a 0 PV, uma vez por combate.
+- **Droide:** armas de Íon dobram o dano; no crítico, o Droide é desativado.
+- **Rodiano:** Sangue Frio dá +2 no ataque contra quem já o feriu.
+- **JP por situação:** Inabalável, Vontade Férrea, Sangue-frio e Dois Corações viram caixas na janela da JP.
+- **Mon Calamari:** Liderança Serena ganha botão com 1 uso por dia; Shift-clique recarrega.
+- Exige o Space Dragon 1.43.0.
+
 ## 1.51.0 — as mecânicas das espécies na ficha
 
 **Exige Space Dragon 1.41.0**, que passou a aceitar regras de raça de outros módulos.

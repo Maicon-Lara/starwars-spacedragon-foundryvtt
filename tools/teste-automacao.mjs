@@ -14,7 +14,7 @@ import { EQUIVALENTES, PROPRIOS, registrarAutomacao } from "../starwars-sd-modul
 const chave = (s) => String(s ?? "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "packs-src");
 const itens = new Map();
-for (const pack of ["starwars-sd-poderes", "starwars-sd-equipamentos"]) {
+for (const pack of ["starwars-sd-poderes", "starwars-sd-equipamentos", "starwars-sd-especies"]) {
   for (const n of fs.readdirSync(path.join(RAIZ, pack))) {
     const d = JSON.parse(fs.readFileSync(path.join(RAIZ, pack, n), "utf8"));
     if (!d.type) continue;
