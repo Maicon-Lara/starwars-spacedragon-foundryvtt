@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.51.0 — as mecânicas das espécies na ficha
+
+**Exige Space Dragon 1.41.0**, que passou a aceitar regras de raça de outros módulos.
+
+Valem também para as habilidades que já estão nas fichas:
+
+- **Wookiee:** Fúria Selvagem (+2 no dano corpo a corpo abaixo da metade do PV) e Restrição (−1 no dano com arma de uma mão).
+- **Chiss:** Mente Tática (−1 na Ordem de Ação declarada).
+- **Droide:** Corpo Robótico (vence a JPF sem rolar, exceto com PV negativo) e Cérebro Positrônico (RM de 5%).
+
 ## 1.50.0 — o botão Usar nos poderes da Força e nos aparatos
 
 **Exige Space Dragon 1.39.0**, que passou a aceitar tabelas de outros módulos.
