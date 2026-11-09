@@ -24,6 +24,7 @@
  */
 
 import { ligarPontosDeForca } from "./pontos-de-forca.js";
+import { registrarAutomacao } from "./automacao.js";
 
 const ID = "starwars-sd";
 
@@ -105,6 +106,9 @@ Hooks.once("ready", () => {
   // O painel de Pontos de Força na ficha do personagem. Injetado, não
   // substitui nada do sistema, e sai junto se o módulo for desligado.
   ligarPontosDeForca();
+
+  // O botão "Usar": o motor é do Space Dragon, e a tabela de itens é daqui.
+  registrarAutomacao();
 
   // A Ficha de Nave sobre a de personagem. No `ready` pelo mesmo motivo que o
   // vizinho documenta: `registerSheet` entra numa fila processada depois do

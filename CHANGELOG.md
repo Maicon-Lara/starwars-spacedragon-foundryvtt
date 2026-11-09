@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.50.0 — o botão Usar nos poderes da Força e nos aparatos
+
+**Exige Space Dragon 1.39.0**, que passou a aceitar tabelas de outros módulos.
+
+Os poderes da Força e os aparatos da galáxia ganham o botão **Usar**: rola o que o item pede, e cada alvo resolve a JP e aplica o resultado pelo cartão no chat. Quem tem equivalente no livro segue o item do Space Dragon; os poderes criados para o cenário seguem o texto deles.
+
 ## 1.49.0 — as tabelas das especializações conferidas contra o livro, e a ficha nova com Pontos de Força
 
 **Exige Space Dragon 1.33.0**, que passou a entender a perda de PV do Consular.
