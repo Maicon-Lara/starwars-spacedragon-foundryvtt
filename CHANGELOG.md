@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.52.1 — exige as correções do motor
+
+- Exige o Space Dragon 1.43.2: conta dos dados no chat, Sangue Frio pela ficha da barra lateral e Resistência à Dor ao chegar a 0 PV.
+
 ## 1.52.0 — as espécies reagem à mesa
 
 - **Trandoshano:** Regeneração recupera 1 PV a cada rodada inteira sem perder PV.
