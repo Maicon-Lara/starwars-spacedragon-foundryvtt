@@ -72,6 +72,12 @@ export const PROPRIOS = {
       { rotulo: "Inimigos (JPM anula)", jp: "jpm", aoPassar: "anula", efeito: { nome: "Meditação de Batalha inimiga", descricao: "−2 em ataque e nas JP.", mods: emAtaqueEJp(-2), segundos: 100 }, nota: "Os inimigos de Moral mais baixa começam a recuar." },
     ],
   },
+  "lideranca serena": {
+    proprio: true,
+    semAlvo: true,
+    limite: { vezes: 1, por: "dia" },
+    nota: "Um aliado que o escute repete uma JP contra medo ou pânico.",
+  },
   "sentir o perigo": {
     proprio: true,
     efeito: { nome: "Sentir o Perigo", descricao: "+2 na JPR contra o próximo ataque-surpresa ou armadilha da cena.", mods: [{ key: "jpd", value: 2 }] },
