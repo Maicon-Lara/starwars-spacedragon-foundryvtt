@@ -1,5 +1,58 @@
 # Changelog
 
+## 1.53.0 — os Pontos de Força seguem a regra
+
+O painel de Pontos de Força foi conferido contra a regra do cofre, e cinco
+pontos não batiam.
+
+### O gasto pergunta antes de rolar
+
+O botão **gastar** rolava o dado e o cartão mostrava as três leituras lado a lado
+(+X, −X, +X0% ou re-rolar). Em talento de d%, isso deixava o jogador escolher
+entre *Empurrar* e *Insistir* **depois** de ver o dado, que é o que a regra
+proíbe. Agora o gasto abre a pergunta **"Em quê?"** e só então rola, se o uso
+pedir dado:
+
+| Uso | Rola? | O cartão |
+|---|:-:|---|
+| Ataque ou JP | sim | **+X** |
+| Teste de atributo | sim | **−X** no d20 |
+| Talento d%: Empurrar | sim | **+X0%** |
+| Talento d%: Insistir | não | re-rola o talento |
+| Recuperação da Força: Alcance | sim | recupera X% do Alcance gasto |
+| Recuperação da Força: reativar um poder | não | anuncia |
+| Escapar da morte | não | 0 PV, inconsciente e estável |
+
+O cartão mostra só a direção do uso escolhido.
+
+### Os dois usos especiais
+
+- **Recuperação da Força** só aparece para quem tem Alcance (o chassi
+  Mentálico). Abate o dado do Alcance gasto que o Space Dragon guarda na ficha.
+  Com o Alcance cheio, avisa e não gasta o ponto.
+- **Escapar da morte:** com PV negativo, a ficha vai para 0. Com PV ainda
+  positivo, o cartão lembra o Mestre de deixar em 0 ao aplicar o golpe.
+
+### Um ponto por rodada em combate
+
+Com o personagem num combate começado, a ficha guarda a rodada do gasto e recusa
+o segundo ponto na mesma rodada. Fora de combate a regra é "1 por teste", e isso
+fica com a mesa.
+
+### O +1 é do Mestre
+
+O jogador tinha o +1 "para desfazer um gasto", e cinco cliques nele enchiam a
+reserva: o ⟳ que tinha saído da mão dele, por outro caminho. Agora o +1 é só do
+Mestre, como o ⟳, e desfazer o gasto também libera a rodada.
+
+### O PNJ do Mestre tem o ponto
+
+O painel só entrava na ficha de personagem, e o "PNJ comum tem 1 Ponto de
+Força" nunca chegava à ficha de ameaça. Agora as fichas de **ameaça** e de
+**ajudante** também têm o painel, com 1 ponto. Na ameaça, ele fica no bloco de
+estatísticas, e ela conta como 1º nível. O Mestre pode marcá-la como
+protagonista para ganhar a reserva cheia.
+
 ## 1.52.1 — exige as correções do motor
 
 - Exige o Space Dragon 1.43.2: conta dos dados no chat, Sangue Frio pela ficha da barra lateral e Resistência à Dor ao chegar a 0 PV.
