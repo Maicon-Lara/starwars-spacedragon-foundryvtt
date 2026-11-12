@@ -18,7 +18,8 @@ globalThis.Hooks = { on() {} };
 globalThis.ChatMessage = { create: async () => {}, getSpeaker: () => ({}) };
 globalThis.CONFIG = { sounds: { dice: null } };
 
-const { dadoDaFaixa, reservaDoNivel, reservaDoAtor, pontosAtuais, rolarPonto, montaPainel } =
+const { dadoDaFaixa, reservaDoNivel, reservaDoAtor, pontosAtuais, rolarPonto, montaPainel,
+  nivelDe, TIPOS_COM_PAINEL, USOS, USO, usosDe, temAlcance, textoDoUso, rodadaAtual, jaGastouNaRodada } =
   await import("../starwars-sd-module/module/pontos-de-forca.js");
 
 const problemas = [];
@@ -115,13 +116,16 @@ confere(reservaDoAtor({ type: "monster", system: { level: 3 }, hasPlayerOwner: f
   const doJogador = montaPainel(heroi);
   confere(!doJogador.includes('data-pf="recarregar"'),
     "o jogador NÃO pode ter botão de recarregar — ele desfaria a regra da reserva");
-  // e os dois que ele deve ter continuam lá
-  confere(doJogador.includes('data-pf="gastar"') && doJogador.includes('data-pf="devolver"'),
-    "o jogador perdeu gastar ou +1");
+  // o gastar continua com ele; o +1 não: cinco cliques nele enchiam a
+  // reserva, e era o ⟳ por outro caminho
+  confere(doJogador.includes('data-pf="gastar"'), "o jogador perdeu o gastar");
+  confere(!doJogador.includes('data-pf="devolver"'),
+    "o jogador NÃO pode ter o +1 — cinco cliques enchiam a reserva, como o ⟳");
 
   globalThis.game = { user: { isGM: true } };
   const doMestre = montaPainel(heroi);
   confere(doMestre.includes('data-pf="recarregar"'), "o Mestre devia ter o botão de recarregar");
+  confere(doMestre.includes('data-pf="devolver"'), "o Mestre devia ter o +1, para desfazer um gasto");
 
   // Com a reserva CHEIA o botão não tem o que fazer, e botão que não faz nada
   // é botão que a mesa clica e desconfia.
@@ -155,9 +159,75 @@ confere(reservaDoAtor({ type: "monster", system: { level: 3 }, hasPlayerOwner: f
   confere(montaPainel(pnj).includes("1 / 1"), "o PNJ comum tem 1 ponto, e o painel diz isso");
 }
 
+// ── O PNJ DO MESTRE TAMBÉM TEM O PONTO ─────────────────────────────────────
+//
+// Até a 1.50 o painel só entrava na ficha de personagem, e o "PNJ comum tem 1
+// Ponto de Força" nunca chegava à ficha de ameaça.
+confere(TIPOS_COM_PAINEL.includes("monster") && TIPOS_COM_PAINEL.includes("retainer"),
+  "a ficha de ameaça e a de ajudante deviam receber o painel");
+confere(nivelDe({ type: "monster", system: {} }) === 1, "a ameaça sem nível conta como 1º");
+confere(nivelDe({ type: "character", system: { level: 0 } }) === 0, "personagem sem nível segue sem painel");
+confere(nivelDe({ type: "character", system: { level: 9 } }) === 9, "o nível do personagem é o da ficha");
+{
+  globalThis.game = { user: { isGM: false } };
+  const ameaca = { id: "m1", type: "monster", system: {}, hasPlayerOwner: false, getFlag: () => undefined };
+  const html = montaPainel(ameaca);
+  confere(!!html && html.includes("1 / 1"), "a ameaça devia mostrar o painel com 1 / 1");
+}
+
+// ── EM QUÊ, ANTES DO DADO ──────────────────────────────────────────────────
+//
+// A escolha entre Empurrar e Insistir vem antes de rolar. Insistir, reativar um
+// poder e Escapar da morte não rolam: o ponto é o efeito inteiro.
+for (const c of ["ataque", "atributo", "empurrar", "insistir", "alcance", "poder", "morte"]) {
+  confere(!!USO[c], `falta o uso ${c}`);
+}
+confere(USO.empurrar.rola && !USO.insistir.rola, "Empurrar rola o dado; Insistir não");
+confere(!USO.morte.rola && !USO.poder.rola, "Escapar da morte e reativar um poder não rolam");
+confere(USO.alcance.rola, "recuperar Alcance rola o dado da faixa");
+
+// as direções: soma no d20 maior-é-melhor, subtrai no roll-under, ×10 no d%
+confere(textoDoUso("ataque", 4).includes("+4"), "ataque/JP soma o dado");
+confere(textoDoUso("atributo", 4).includes("−4"), "atributo subtrai o dado do d20");
+confere(textoDoUso("empurrar", 4).includes("+40%"), "Empurrar soma o dado × 10%");
+confere(!textoDoUso("ataque", 4).includes("−4") && !textoDoUso("atributo", 4).includes("+4"),
+  "cada uso mostra só a direção dele");
+
+// ── RECUPERAÇÃO DA FORÇA SÓ PARA QUEM TEM ALCANCE ──────────────────────────
+const comClasse = (chassi, nome = "x") => ({ items: [{ type: "class", name: nome, flags: { spacedragon: { chassi } } }] });
+confere(temAlcance(comClasse("Mentálico")), "o Sensível (Mentálico) tem Alcance");
+confere(!temAlcance(comClasse("Cosmonauta")), "o Veterano (Cosmonauta) não tem Alcance");
+confere(temAlcance({ items: [{ type: "class", name: "Consular — Mentálico" }] }), "sem flag, o chassi sai do nome");
+confere(usosDe(comClasse("Cosmonauta")).every((u) => !u.soAlcance), "o Veterano não vê a Recuperação da Força");
+confere(usosDe(comClasse("Mentálico")).length === USOS.length, "o Sensível vê todos os usos");
+
+// ── UM PONTO POR RODADA EM COMBATE ─────────────────────────────────────────
+{
+  const combate = (round, started = true, ids = ["a1"]) =>
+    ({ id: "c1", round, started, combatants: ids.map((actorId) => ({ actorId })) });
+  const quem = (flag) => ({ id: "a1", getFlag: (_i, c) => (c === "pfRodada" ? flag : undefined) });
+
+  confere(rodadaAtual(quem(null), null) === null, "fora de combate não há rodada");
+  confere(rodadaAtual(quem(null), combate(2, false)) === null, "combate não começado não conta");
+  confere(rodadaAtual(quem(null), combate(2, true, ["outro"])) === null,
+    "quem não está no combate não tem rodada");
+  confere(rodadaAtual(quem(null), combate(2))?.rodada === 2, "no combate, a rodada é a dele");
+
+  confere(!jaGastouNaRodada(quem(null), combate(2)), "sem gasto marcado, pode gastar");
+  confere(jaGastouNaRodada(quem({ combate: "c1", rodada: 2 }), combate(2)),
+    "gastou nesta rodada: não pode gastar de novo");
+  confere(!jaGastouNaRodada(quem({ combate: "c1", rodada: 1 }), combate(2)),
+    "a rodada seguinte libera o gasto");
+  confere(!jaGastouNaRodada(quem({ combate: "c0", rodada: 2 }), combate(2)),
+    "a mesma rodada de outro combate não conta");
+  confere(!jaGastouNaRodada(quem({ combate: "c1", rodada: 2 }), null),
+    "fora de combate não há limite por rodada");
+}
+
 if (problemas.length) {
   for (const p of problemas) console.error(`  ✘ ${p}`);
   process.exit(1);
 }
 console.log("  ✔ pontos de força: reserva por nível e por tipo de ator, as três faixas, o maior de N, " +
-    "o zerar ao subir, a ficha nova com reserva cheia, e o ⟳ e o papel SÓ para o Mestre (o ⟳ desabilitado com a reserva cheia)");
+    "o zerar ao subir, a ficha nova com reserva cheia, o ⟳, o +1 e o papel SÓ para o Mestre, o PNJ com painel, " +
+    "o uso escolhido antes do dado, a Recuperação só com Alcance e um ponto por rodada");
